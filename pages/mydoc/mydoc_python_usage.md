@@ -14,11 +14,11 @@ output: web, pdf
 
 El primer paso es generar un archivo "Name.md" en la carpeta `\pages\mydoc`
 
-dentro de este archivo se coloca en el campo **permalink:** `Name.html`
+dentro de este archivo se modifica en la cabecera del mismo el campo **permalink:** `Name.html`
 
 El nombre del archivo se debe incluir en el indexado, esto se realiza en la carpeta **_data/sidebars/mydoc_sidebar.yml**
 
-en este archivo se debe actualizar su correspondiente **url**
+en este archivo se debe actualizar el titulo de la sección y su correspondiente **url**
 
 Por último compruebe que la correspondiente seccion se ha añadido correctamente al navegador lateral
 

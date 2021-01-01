@@ -27,10 +27,14 @@ entries:
       url: /mydoc_test_lg.html
       output: web, pdf
 
-    - title: Python usage
+    - title: Python Usage
       url: /mydoc_python_usage.html
       output: web, pdf
-    
+
+    - title: Python Pypower
+      url: /mydoc_python_pypower.html
+      output: web, pdf
+       
       
   - title: Overview
     output: web, pdf
