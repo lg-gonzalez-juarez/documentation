@@ -2,8 +2,8 @@
 
 entries:
 - title: sidebar
-  product: Jekyll Doc Theme
-  version: 6.0
+  product: Doc Theme
+  version: #6.0
   folders:
 
   - title:
@@ -19,6 +19,14 @@ entries:
       output: pdf
       type: frontmatter
 
+  - title: LG
+    output: web, pdf
+    folderitems:
+
+    - title: LG Get started
+      url: /mydoc_test_lg.html
+      output: web, pdf
+      
   - title: Overview
     output: web, pdf
     folderitems:
