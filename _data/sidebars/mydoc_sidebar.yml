@@ -26,6 +26,11 @@ entries:
     - title: Python Knowlodge
       url: /mydoc_test_lg.html
       output: web, pdf
+
+    - title: Python usage
+      url: /mydoc_python_usage.html
+      output: web, pdf
+    
       
   - title: Overview
     output: web, pdf
