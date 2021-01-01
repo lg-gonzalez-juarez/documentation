@@ -10,16 +10,25 @@ folder: mydoc
 output: web, pdf
 
 ---
-## Como añadir una nueva seccion - página?
 
-El primer paso es generar un archivo "Name.md" en la carpeta `\pages\mydoc`
+## Aplicaciones de interes
 
-dentro de este archivo se coloca en el campo **permalink:** `Name.html`
+- Python
+- Pypower
+- OpenMDAO
 
-El nombre del archivo se debe incluir en el indexado, esto se realiza en la carpeta **_data/sidebars/mydoc_sidebar.yml**
+## Pypower
 
-en este archivo se debe actualizar su correspondiente **url**
+### 1. Download the package Pypower
 
-Por último compruebe que la correspondiente seccion se ha añadido correctamente al navegador lateral
+First, download or clone the package from the [Github repo pypower](https://rwl.github.io/PYPOWER/). In Github, click the **Clone or download** button, and then click **Download ZIP**.
+
+### 2. Install Pypower
+
+If you've never installed or run a PyPower site locally on your computer, follow these instructions to install PyPower:
+
+*[Install Pypower on Windows][mydoc_install_jekyll_on_windows]
+
+*[Pypower][https://rwl.github.io/PYPOWER/install.html]
 
 {% include links.html %}
