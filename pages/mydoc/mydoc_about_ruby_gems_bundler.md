@@ -1,35 +1,24 @@
 ---
-title: Abouts install python
+title: About Ruby, Gems, Bundler, and other prerequisites
 tags: [getting_started, troubleshooting]
 keywords:
-summary: "Here is the first comment."
+summary: "Ruby is a programming language you must have on your computer in order to build Jekyll locally. Ruby has various gems (or plugins) that provide various functionality. Each Jekyll project usually requires certain gems."
 sidebar: mydoc_sidebar
 permalink: mydoc_about_ruby_gems_etc.html
 folder: mydoc
 ---
 
-## About Python Pypower
+## About Ruby
 
-Python is a interpreter
-
-## About usage python pypower
-
-Here describe some example, and
-
-download and unpack the tarball and install:
-
-```python
-git clone http://github.com/rwl/PYPOWER.git
-python setup.py installl
-```
-
-[Doc Api](https://rwl.github.io/PYPOWER/api/) contained main commands of API PyPower
-
-[github-pages PyPower](https://rwl.github.io/PYPOWER/usage.html#application-programming-interface)
+Jekyll runs on Ruby, a programming language. You have to have Ruby on your computer in order to run Ruby-based programs like Jekyll. Ruby is installed on the Mac by default, but you must add it to Windows.
 
 ## About Ruby Gems
 
-Here more information
+Ruby has a number of plugins referred to as "gems." Just because you have Ruby doesn't mean you have all the necessary Ruby gems that your program needs to run. Gems provide additional functionality for Ruby programs. There are thousands of [Rubygems](https://rubygems.org/) available for you to use.
+
+Some gems depend on other gems for functionality. For example, the Jekyll gem might depend on 20 other gems that must also be installed.
+
+Each gem has a version associated with it, and not all gem versions are compatible with each other.
 
 ## Rubygem package managers
 

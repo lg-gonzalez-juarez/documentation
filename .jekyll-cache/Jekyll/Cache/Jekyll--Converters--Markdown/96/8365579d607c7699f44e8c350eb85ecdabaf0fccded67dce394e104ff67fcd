@@ -1,9 +1,0 @@
-I"<p>El primer paso es generar un archivo “Name.md” en la carpeta <code class="language-plaintext highlighter-rouge">\pages\mydoc</code></p>
-
-<p>dentro de este archivo se coloca en el campo <strong>permalink:</strong> <code class="language-plaintext highlighter-rouge">Name.html</code></p>
-
-<p>El nombre del archivo se debe incluir en el indexado, esto se realiza en la carpeta <strong>_data/sidebars/mydoc_sidebar.yml</strong></p>
-
-<p>en este archivo se debe actualizar su correspondiente <strong>url</strong></p>
-
-:ET

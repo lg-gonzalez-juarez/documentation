@@ -1,0 +1,14 @@
+I"
+<h2 id="como-añadir-una-nueva-seccion---página">Como añadir una nueva seccion - página?</h2>
+
+<p>El primer paso es generar un archivo “Name.md” en la carpeta <code class="language-plaintext highlighter-rouge">\pages\mydoc</code></p>
+
+<p>dentro de este archivo se modifica en la cabecera del mismo el campo <strong>permalink:</strong> <code class="language-plaintext highlighter-rouge">Name.html</code></p>
+
+<p>El nombre del archivo se debe incluir en el indexado, esto se realiza en la carpeta <strong>_data/sidebars/mydoc_sidebar.yml</strong></p>
+
+<p>en este archivo se debe actualizar el titulo de la sección y su correspondiente <strong>url</strong></p>
+
+<p>Por último compruebe que la correspondiente seccion se ha añadido correctamente al navegador lateral</p>
+
+:ET
