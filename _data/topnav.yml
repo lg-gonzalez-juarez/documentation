@@ -23,7 +23,7 @@ topnav_dropdowns:
           external_url: http://stackoverflow.com/questions/tagged/jekyll
         - title: Jekyll on my blog
           external_url: http://idratherbewriting.com/category-jekyll/
-    - title: ProductsLG
+    - title: How use
       folderitems:
         - title: LG Doc Theme
           url: /mydoc_introduction.html

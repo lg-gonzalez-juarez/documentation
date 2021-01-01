@@ -23,7 +23,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: LG Get started
+    - title: Python Knowlodge
       url: /mydoc_test_lg.html
       output: web, pdf
       

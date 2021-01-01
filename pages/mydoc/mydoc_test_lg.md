@@ -1,22 +1,24 @@
 ---
-title: This is my first subtitle
-keywords: documentation theme, jekyll, technical writers, help authoring tools, hat replacements
+title: Python initial concepts
+keywords: documentation, python, technical writers, help, authoring tools, replacements
 last_updated: December 30th, 2020
 tags: [formatting]
-summary: "I have used this theme for projects that I've worked on as a professional technical writer."
+summary: Here documentation relative python
 sidebar: mydoc_sidebar
 permalink: mydoc_test_lg.html
 folder: mydoc
 output: web, pdf
-topnav: topnav
+
 ---
+Este es mi pinino como documentalista de software (cierta ironia), enfatizo esto tiene el fin de ayudar y ayudarme a tener notitas de todo lo que aprendo en python, si le es útil a alguien mas ya es una ganancia.
 
-My name is Lorena Gonzalez-Juarez, and I'm a technical writer, based in Madrid, Spain. For more details, see my [technical writing blog](http://idratherbewriting.com) and my [course on API documentation](http://idratherbewriting.com/learnapidoc/).  See [my blog's about page](http://idratherbewriting.com/aboutme/) for more details about me.
+Antes que nada, algunas lineas acerca de mi, soy Lorena Gonzalez-Juarez, soy una terricola con dos hogares, el primero por derecho de nacimiento y el disfrutar de ella mientras se trabaja.
 
-I have used this theme and variations of it for various documentation projects. This theme has undergone several major iterations, and now it's fairly stable and full of all the features that I need. You are welcome to use it for your documentation projects for free.
+ [personal git link](https://github.com/lg-gonzalez-juarez) 
+ 
+La siguiente pagina es super útil para documentar [course on API documentation](http://idratherbewriting.com/learnapidoc/).  
+ 
+See [my blog's about page](http://idratherbewriting.com/aboutme/) for more details about me.
 
-I think this theme does pretty much everything that you can do with something like OxygenXML, but without the constraints of structured authoring. Everything is completely open and changeable, so if you start tinkering around with the theme's files, you can break things. But it's completely empowering as well!
-
-With a completely open architecture and code base, you can modify the code to make it do exactly what you want, without having to jump through all kinds of confusing or proprietary code.
 
 {% include links.html %}
