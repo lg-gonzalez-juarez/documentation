@@ -32,4 +32,8 @@ en este archivo se debe actualizar el titulo de la sección y su correspondiente
 
 Por último compruebe que la correspondiente seccion se ha añadido correctamente al navegador lateral
 
+If you've never installed or run a jekill site locally on your computer, follow these instructions to install:
+
+*[Install jekill on Windows][mydoc_install_jekyll_on_windows]
+
 {% include links.html %}
