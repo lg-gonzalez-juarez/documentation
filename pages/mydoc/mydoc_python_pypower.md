@@ -21,9 +21,7 @@ output: web, pdf
 
 ### 2. Install Pypower
 
-If you've never installed or run a PyPower site locally on your computer, follow these instructions to install PyPower:
-
-*[Install Pypower on Windows][https://rwl.github.io/PYPOWER/install.html]
+{% include important.html content="If you've never installed or run a PyPower site locally on your computer, follow these instructions to install PyPower: <a alt='install process' href='https://rwl.github.io/PYPOWER/install.html'>Install Pypower on Windows</a>., info." %}
 
 code is the following:
 
@@ -31,9 +29,11 @@ code is the following:
 git clone http://github.com/rwl/PYPOWER.git
 python setup.py installl
 ```
+### 3. Commands
+{% include note.html content=" 
+More information above main commands of API PyPower are updated with the latest trends, best practices, and main methods on:"%}
 
-[Doc Api](https://rwl.github.io/PYPOWER/api/) contained main commands of API PyPower
-
-[github-pages PyPower](https://rwl.github.io/PYPOWER/usage.html#application-programming-interface)
+* [Documentation about API](https://rwl.github.io/PYPOWER/api/) 
+* [github-pages PyPower](https://rwl.github.io/PYPOWER/usage.html#application-programming-interface)
 
 {% include links.html %}
