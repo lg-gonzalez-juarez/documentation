@@ -25,7 +25,7 @@ output: web, pdf
 {% include note.html content=" 
 There a excellent blog on technical writing called <a alt='technical writing blog' href='http://idratherbewriting.com'>I'd Rather Be Writing</a>. If you'd like to stay updated with the latest trends, best practices, and other methods for writing documentation, consider <a href='https://tinyletter.com/tomjoht'>subscribing</a>. I also have a site on <a href='http://idratherbewriting.com/learnapidoc'>writing API documentation</a>." %}
 
-{% include important.html content="Is important keep and record processs, info." %}
+{% include important.html content="Is important keep and record info." %}
 
 {% include callout.html content="This is my **danger** type callout. It has a border on the left whose color you define by passing a type parameter." type="danger" %}
 

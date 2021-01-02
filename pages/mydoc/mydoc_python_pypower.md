@@ -17,6 +17,10 @@ output: web, pdf
 
 {% include callout.html content="First, download or clone the package from the [Github repo pypower](https://rwl.github.io/PYPOWER/). In Github, click the **Clone or download** button, and then click **Download ZIP**" type="info" %}
 
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> download
+<a alt='install process' href='https://pypi.org/project/PYPOWER/'>source code PyPower</a>
+</div>
+
 {% include tip.html content="For a better terminal emulator on Windows, use [Git Bash](https://git-for-windows.github.io/). Git Bash gives you Linux-like control on Windows." %}
 
 ### 2. Install Pypower
