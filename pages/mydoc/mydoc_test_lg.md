@@ -8,7 +8,6 @@ sidebar: mydoc_sidebar
 permalink: mydoc_test_lg.html
 folder: mydoc
 output: web, pdf
-
 ---
 
 Este es mi pinino como documentalista de software (cierta ironia), enfatizo esto tiene el fin de ayudar y ayudarme a tener notitas de todo lo que aprendo en python, si le es útil a alguien mas ya es una ganancia.
