@@ -15,7 +15,7 @@ Este es mi pinino como documentalista de software (cierta ironia), enfatizo esto
 
 Antes que nada, algunas lineas acerca de mi, soy Lorena Gonzalez-Juarez, soy una terricola con dos hogares, el primero por derecho de nacimiento y el disfrutar de ella mientras se trabaja.
 
- [personal git link](https://github.com/lg-gonzalez-juarez) 
+[personal git link](https://github.com/lg-gonzalez-juarez)
  
 La siguiente pagina es super útil para documentar [course on API documentation](http://idratherbewriting.com/learnapidoc/).  
  
