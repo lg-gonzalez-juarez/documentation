@@ -15,7 +15,9 @@ output: web, pdf
 
 ### 1. Download the package Pypower
 
-First, download or clone the package from the [Github repo pypower](https://rwl.github.io/PYPOWER/). In Github, click the **Clone or download** button, and then click **Download ZIP**.
+{% include callout.html content="First, download or clone the package from the [Github repo pypower](https://rwl.github.io/PYPOWER/). In Github, click the **Clone or download** button, and then click **Download ZIP**" type="info" %}
+
+{% include tip.html content="For a better terminal emulator on Windows, use [Git Bash](https://git-for-windows.github.io/). Git Bash gives you Linux-like control on Windows." %}
 
 ### 2. Install Pypower
 
