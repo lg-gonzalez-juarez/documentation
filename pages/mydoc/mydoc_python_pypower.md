@@ -23,8 +23,17 @@ output: web, pdf
 
 If you've never installed or run a PyPower site locally on your computer, follow these instructions to install PyPower:
 
-*[Install Pypower on Windows][mydoc_install_jekyll_on_windows]
+*[Install Pypower on Windows][https://rwl.github.io/PYPOWER/install.html]
 
-*[Pypower][https://rwl.github.io/PYPOWER/install.html]
+code is the following:
+
+```python
+git clone http://github.com/rwl/PYPOWER.git
+python setup.py installl
+```
+
+[Doc Api](https://rwl.github.io/PYPOWER/api/) contained main commands of API PyPower
+
+[github-pages PyPower](https://rwl.github.io/PYPOWER/usage.html#application-programming-interface)
 
 {% include links.html %}

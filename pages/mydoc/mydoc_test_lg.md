@@ -20,7 +20,7 @@ La siguiente pagina es super útil para documentar [course on API documentation]
  
 See [my blog's about page](http://idratherbewriting.com/aboutme/) for more details about me.
 
-## Como añadir una nueva seccion - página?
+## How add a new section & page?
 
 El primer paso es generar un archivo "Name.md" en la carpeta `\pages\mydoc`
 
@@ -32,6 +32,7 @@ en este archivo se debe actualizar el titulo de la sección y su correspondiente
 
 Por último compruebe que la correspondiente seccion se ha añadido correctamente al navegador lateral
 
+## Install jekill on windows
 If you've never installed or run a jekill site locally on your computer, follow these instructions to install:
 
 *[Install jekill on Windows][mydoc_install_jekyll_on_windows]
