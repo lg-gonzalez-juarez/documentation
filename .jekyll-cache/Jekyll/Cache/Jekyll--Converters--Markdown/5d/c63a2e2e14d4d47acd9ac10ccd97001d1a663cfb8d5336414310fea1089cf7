@@ -1,0 +1,26 @@
+I"ì<h2 id="aplicaciones-de-interes">Aplicaciones de interes</h2>
+<h3 id="python">Python</h3>
+
+<h3 id="pypower">Pypower</h3>
+
+<h3 id="openmdao">OpenMDAO</h3>
+
+<h2 id="about-python-pypower">About Python Pypower</h2>
+
+<p>Python is a interpreter</p>
+
+<h2 id="about-usage-python-pypower">About usage python pypower</h2>
+
+<p>Here describe some example, and</p>
+
+<p>download and unpack the tarball and install:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">rwl</span><span class="o">/</span><span class="n">PYPOWER</span><span class="p">.</span><span class="n">git</span>
+<span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">installl</span>
+</code></pre></div></div>
+
+<p><a href="https://rwl.github.io/PYPOWER/api/">Doc Api</a> contained main commands of API PyPower</p>
+
+<p><a href="https://rwl.github.io/PYPOWER/usage.html#application-programming-interface">github-pages PyPower</a></p>
+
+:ET

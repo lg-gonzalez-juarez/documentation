@@ -19,23 +19,27 @@ entries:
       output: pdf
       type: frontmatter
 
+  - title: Preliminary Knowledge
+    output: web, pdf
+    folderitems:
+
+    - title: Usage package
+      url: /mydoc_test_lg.html
+      output: web, pdf
+
   - title: Python
     output: web, pdf
     folderitems:
 
-    - title: Preliminary Knowledge
-      url: /mydoc_test_lg.html
-      output: web, pdf
-
     - title: Python Usage
       url: /mydoc_python_usage.html
       output: web, pdf
+      type: homepage
 
     - title: Python Pypower
       url: /mydoc_python_pypower.html
       output: web, pdf
-       
-      
+
   - title: Overview
     output: web, pdf
     folderitems:

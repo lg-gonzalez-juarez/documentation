@@ -1,0 +1,23 @@
+I"#<h2 id="aplicaciones-de-interes">Aplicaciones de interes</h2>
+
+<ul>
+  <li>Python</li>
+  <li>Pypower</li>
+  <li>OpenMDAO</li>
+</ul>
+
+<h2 id="pypower">Pypower</h2>
+
+<h3 id="1-download-the-package-pypower">1. Download the package Pypower</h3>
+
+<p>First, download or clone the package from the <a href="https://rwl.github.io/PYPOWER/">Github repo pypower</a>. In Github, click the <strong>Clone or download</strong> button, and then click <strong>Download ZIP</strong>.</p>
+
+<h3 id="2-install-pypower">2. Install Pypower</h3>
+
+<p>If you’ve never installed or run a PyPower site locally on your computer, follow these instructions to install PyPower:</p>
+
+<p>*<a href="mydoc_install_jekyll_on_windows.html">Install Pypower on Windows</a></p>
+
+<p>*[Pypower][https://rwl.github.io/PYPOWER/install.html]</p>
+
+:ET

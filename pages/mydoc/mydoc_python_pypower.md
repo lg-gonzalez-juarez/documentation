@@ -11,12 +11,6 @@ output: web, pdf
 
 ---
 
-## Aplicaciones de interes
-
-- Python
-- Pypower
-- OpenMDAO
-
 ## Pypower
 
 ### 1. Download the package Pypower
