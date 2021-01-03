@@ -37,4 +37,15 @@ If you've never installed or run a jekill site locally on your computer, follow 
 
 *[Install jekill on Windows][mydoc_install_jekyll_on_windows]
 
+
+### Jekyll help
+
+* [Jekyll Talk](https://talk.jekyllrb.com)
+
+* [Jekyll documentation](http://jekyllrb.com/docs/home/)
+
+* [Jekyll on Stack Overflow](http://stackoverflow.com/questions/tagged/jekyll)
+
+* [Jekyll on my blog](http://idratherbewriting.com/category-jekyll/)
+
 {% include links.html %}
