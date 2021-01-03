@@ -27,6 +27,15 @@ entries:
       url: /mydoc_test_lg.html
       output: web, pdf
 
+  - title: Courses
+    output: web, pdf
+    folderitems:
+
+    - title: Coursera
+      url: /course_kb_layout.html
+      output: web, pdf
+
+  
   - title: Python
     output: web, pdf
     folderitems:

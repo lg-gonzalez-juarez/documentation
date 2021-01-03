@@ -1,16 +1,4 @@
----
-title: MY firts COURSE
-tags: [special_layouts]
-keywords: knowledge base, support portal, grid, doc portal
-last_updated: July 3, 2016
-summary: "This shows a sample layout for a knowledge base. Each square could link to a tag archive page. In this example, font icons from Font Awesome are used for the graphics, and the layout is pulled from the Modern Business theme. ."
-sidebar: mydoc_sidebar
-permalink: course_kb_layout.html
-toc: false
-folder: course
----
-
-Here's the sample knowledge-base style layout:
+I"t<p>Here’s the sample knowledge-base style layout:</p>
 
 <div class="row">
          <div class="col-lg-12">
@@ -78,38 +66,388 @@ Here's the sample knowledge-base style layout:
          </div>
 </div>
 
+<h2 id="generating-a-list-of-all-pages-with-a-certain-tag">Generating a list of all pages with a certain tag</h2>
 
-## Generating a list of all pages with a certain tag
+<p>If you don’t want to link to a tag archive index, but instead want to list all pages that have a certain tag, you could use this code:</p>
 
-If you don't want to link to a tag archive index, but instead want to list all pages that have a certain tag, you could use this code:
-
-```html
-{% raw %}Getting started pages:
-<ul>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Getting started pages:
+<span class="nt">&lt;ul&gt;</span>
 {% assign sorted_pages = site.pages | sort: 'title' %}
 {% for page in sorted_pages %}
 {% for tag in page.tags %}
 {% if tag == "getting_started" %}
-<li><a href="{{ page.url | remove: "/" }}">{{page.title}}</a></li>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ page.url | remove: "</span><span class="err">/"</span> <span class="err">}}"</span><span class="nt">&gt;</span>{{page.title}}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 {% endif %}
 {% endfor %}
 {% endfor %}
-</ul>{% endraw %}
-```
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
 
-Here's the result:
+<p>Here’s the result:</p>
 
-Getting started pages:
+<p>Getting started pages:</p>
 
 <ul>
-{% assign sorted_pages = site.pages | sort: 'title' %}
-{% for page in sorted_pages %}
-{% for tag in page.tags %}
-{% if tag == "getting_started" %}
-<li><a href="{{ page.url | remove: "/"}}">{{page.title}}</a></li>
-{% endif %}
-{% endfor %}
-{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mydoc_about_ruby_gems_etc.html">About Ruby, Gems, Bundler, and other prerequisites</a></li>
+
+
+
+
+
+
+
+<li><a href="mydoc_about.html">About the theme's author</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="index.html">Getting started with the Documentation Theme for Jekyll</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mydoc_install_jekyll_on_mac.html">Install Jekyll on Mac</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mydoc_pages.html">Pages</a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="mydoc_posts.html">Posts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mydoc_release_notes_50.html">Release notes 5.0</a></li>
+
+
+
+
+
+<li><a href="mydoc_release_notes_60.html">Release notes 6.0</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mydoc_sidebar_navigation.html">Sidebar Navigation</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mydoc_support.html">Support</a></li>
+
+
+
+
+
+
+
+<li><a href="mydoc_supported_features.html">Supported features</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 
-{% include links.html %}
+:ET
