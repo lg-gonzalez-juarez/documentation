@@ -1,8 +1,8 @@
-I"N<p>Here’s the review style layout:</p>
+I"t<p>Here’s the sample knowledge-base style layout:</p>
 
 <div class="row">
          <div class="col-lg-12">
-             <h2 class="page-header">Coursera</h2>
+             <h2 class="page-header">Knowledge Base Categories</h2>
          </div>
          <div class="col-md-3 col-sm-6">
              <div class="panel panel-default text-center">
@@ -13,9 +13,9 @@
                      </span>
                  </div>
                  <div class="panel-body">
-                     <h4>coursera</h4>
+                     <h4>Getting started</h4>
                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                     <a href="https://www.coursera.org/" class="btn btn-primary">Learn More</a>
+                     <a href="tag_getting_started.html" class="btn btn-primary">Learn More</a>
                  </div>
              </div>
          </div>
@@ -119,6 +119,8 @@
 
 
 <li><a href="mydoc_about.html">About the theme's author</a></li>
+
+
 
 
 
@@ -307,8 +309,6 @@
 
 
 <li><a href="mydoc_release_notes_60.html">Release notes 6.0</a></li>
-
-
 
 
 
