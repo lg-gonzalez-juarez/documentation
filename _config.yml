@@ -123,4 +123,4 @@ github: [metadata]
 gems: [jekyll-mermaid]
 
 mermaid:
-  src: 'path/to/mermaid.js'
+ src: 'path/to/mermaid.js'
