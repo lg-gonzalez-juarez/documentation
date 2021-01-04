@@ -119,3 +119,8 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 # baseurl: /documentation-theme-jekyll
 
 github: [metadata]
+
+gems: [jekyll-mermaid]
+
+mermaid:
+  src: 'path/to/mermaid.js'
