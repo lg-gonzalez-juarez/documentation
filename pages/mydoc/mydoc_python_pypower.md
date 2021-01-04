@@ -135,8 +135,7 @@ Brnch   From   To    From Bus Injection   To Bus Injection     Loss (I^2 * Z)
                                                     Total:     0.000      0.00
 ```
 
-
-
+{% include warning.html content="Es importante comprobar un consumo de potencia solo activa (MW)." %}
 
 ### links
 * [MATPOWER from PSERC - Cornell](http://www.pserc.cornell.edu/matpower/)
