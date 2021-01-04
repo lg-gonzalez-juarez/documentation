@@ -120,7 +120,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 
 github: [metadata]
 
-gems: [jekyll-mermaid]
+# gems: [jekyll-mermaid]
 
-mermaid:
- src: 'path/to/mermaid.js'
+ # mermaid:
+  # src: 'path/to/mermaid.js'
