@@ -1,0 +1,80 @@
+I"9<h2 id="comments">Comments</h2>
+
+<p>When writing scripts, we often want to leave ourselves notes or explanations. Python (along with most scripting languages) uses the # character to signify that the line should be ignored and not executed.</p>
+
+<h3 id="single-line-comment">Single Line Comment</h3>
+<p>We can comment out a whole line:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is a full line comment
+</span></code></pre></div></div>
+<p>or we can comment at the end of a line:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># This will add the numbers
+</span></code></pre></div></div>
+<h3 id="what-about-block-comments">What About Block Comments?</h3>
+<p>Python does not have the concept of block commenting that you may have encountered in other languages. Many people mistake a triple quoted string as being a comment, but it is not. It’s a multi-line string. That being said, multi-line strings can functionally work like comments, but they will still be allocated into memory.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"""
+This is not a block comment,
+but it will still work when you need
+for some lines of code to not execute.
+"""
+</code></pre></div></div>
+
+<h2 id="variables-and-the-assignment-operator">Variables and the Assignment Operator</h2>
+
+<p>Almost any script that we write will need to provide a way for us to hold onto information for use later on. That’s where variables come into play.</p>
+
+<h3 id="working-with-variables">Working with Variables</h3>
+<p>We can assign a value to a variable by using a single = and we don’t need to (nor can we) specify the type of the variable.</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>my_str = “This is a simple string”
+Now we can print the value of that string by using my_var later on:</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>print(my_str)
+This is a simple string
+We can also change the value that is assigned to a variable later on, either by using the standard assignment operator = or by using some of the short-hand operators that we’ll learn about as we continue.</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; my_str += " testing"
+&gt;&gt;&gt; my_str
+</code></pre>
+
+<p>‘This is a simple string testing’
+An important thing to realize is that the contents of a variable can be changed and we don’t need to maintain the same type:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; my_str = 1
+&gt;&gt;&gt; print(my_str)
+1
+</code></pre>
+<p>Ideally, we wouldn’t change the contents of a variable called my_str to be an interger, but it is something that Python will allow us do.</p>
+
+<p>One last thing to remember is that, if we assign a variable with another variable, it will be assigned to the initial result of the variable and not whatever that variable points to later.</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; my_str = 1
+&gt;&gt;&gt; my_int = my_str
+&gt;&gt;&gt; my_str = "testing"
+&gt;&gt;&gt; print(my_int)
+1
+&gt;&gt;&gt; print(my_str)
+testing
+</code></pre>
+
+<h3 id="short-hand-assignment-operators">Short-Hand Assignment Operators</h3>
+
+<p>There are numerous shorthand assignment operators we can use that allow us to perform operations and also assign back to variables in the way that we did with the += operator. The form for these shorthand assignment operations always follows the same pattern. We’ll take the operator that we want to use, say +, and create a new operator by adding = to the right-hand side of it. So, for the subtraction operation, we could subtract from the current value and assign the new value to a variable using the -= operator.</p>
+
+<p>As we learn about more and more operators we’ll be able to follow this pattern if we want to reassess our current variable based on an operation.</p>
+
+:ET
