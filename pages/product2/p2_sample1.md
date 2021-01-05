@@ -35,6 +35,7 @@ In this lesson, we'll cover some more foundational concepts of programming langu
 
 ## Using the REPL
 [LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413)
+
 Python is an interpreted language, and code is evaluated in a line-by-line fashion. Since each line can be evaluated by itself, the time between evaluating each line doesn't matter, and this allows us to have a REPL.
 
 ### Documentation
@@ -47,14 +48,20 @@ Each line is read and evaluated, the return value is printed to the screen, and 
 
 Python ships with a REPL and you can access it by running `python3.7` from your terminal.
 
-The `>>>p` indicates that you can type on that line. Later on, you'll also see a `...` which means that you are currently in a scoped area and will need to enter a blank line (no spaces) before it will evaluate the entire code block.
+The `>>>` indicates that you can type on that line. Later on, you'll also see a `...` which means that you are currently in a scoped area and will need to enter a blank line (no spaces) before it will evaluate the entire code block.
 
 The simplest use of this would be to do some math:
-```python
-1 + 1
+```cmd
+$ 1 + 1
+2
+>>>
 ```
 
 `2` is the return value of the expression and it is then printed to the screen. If something doesn't have a return value, then nothing will be printed to the screen and you'll see the next prompt immediately. We'll cover this later, but an example would be None:
+```cmd
+$ None
+>>>
+```
 
 To exit the REPL, you can either type `exit()` (the parentheses are important) or you can hit `Ctrl+d` on your keyboard.
 
