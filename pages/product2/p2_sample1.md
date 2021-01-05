@@ -28,16 +28,83 @@ In this secction is covered some of the steps involved in the compilation and in
 ## Python Specifics: Keywords and Instructions
 [LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/3/module/413)
 
+In this lesson, we'll cover some more foundational concepts of programming languages:
 
+* Keywords
+* Bytecode Instructions
 
+## Using the REPL
+[LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413)
+Python is an interpreted language, and code is evaluated in a line-by-line fashion. Since each line can be evaluated by itself, the time between evaluating each line doesn't matter, and this allows us to have a REPL.
 
+### Documentation
+[Python Interpreter](https://docs.python.org/3/tutorial/interpreter.html)
 
-## More sample content
+What is a REPL?
+REPL stands for: Read, Evaluate, Print, Loop
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+Each line is read and evaluated, the return value is printed to the screen, and then the process repeats.
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+Python ships with a REPL and you can access it by running `python3.7` from your terminal.
 
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+The `>>>p` indicates that you can type on that line. Later on, you'll also see a `...` which means that you are currently in a scoped area and will need to enter a blank line (no spaces) before it will evaluate the entire code block.
+
+The simplest use of this would be to do some math:
+```python
+1 + 1
+```
+
+`2` is the return value of the expression and it is then printed to the screen. If something doesn't have a return value, then nothing will be printed to the screen and you'll see the next prompt immediately. We'll cover this later, but an example would be None:
+
+To exit the REPL, you can either type `exit()` (the parentheses are important) or you can hit `Ctrl+d` on your keyboard.
+
+## Creating a Python File
+[info](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/5/module/413)
+
+Since this is a course about Python scripting, we will be writing the majority of our code in scripts instead of using the REPL. To create a Python script we can create a file ending with the file extension of `.py`.
+
+### Creating Our First Python Script
+Let's create our first script to write our obligatory "Hello, 
+World!" program, calling it `hello.py`.
+
+```python
+touch hello.py
+```
+From inside this file, we can enter the lines of Python that we need. For the "Hello, World!" example we only need
+
+```
+~/code/hello.py
+```
+```python
+print("Hello, World!")
+```
+
+There are a few different pays that we can run this file. The first is by passing it to the `python3.7` CLI.
+
+```
+$ python3.7 hello.py
+Hello, World!
+```
+### Setting a Shebang
+We'll most likely want our scripts to be:
+
+1. Executable from anywhere (in our $PATH)
+2. Executable without explicitly using the `python3.7` CLI
+
+Thankfully, we can set the process to interpret our scripts by setting a shebang at the top of the file:
+
+`hello.py:`
+
+```
+#!/usr/bin/env python3.7
+print("Hello, World")
+```
+We're not quite done. Now we need to make the file executable using `chmod:`
+
+```
+$ chmod u+x hello.py
+```
+Run the script now by using `./hello.py` and we'll see the same result. If we'd rather not have a file extension on our script, we can remove it since we've put a shebang in the file. Running `mv hello.py` hello then performing `./hello` will still result in the same thing.
+
 
 {% include links.html %}
