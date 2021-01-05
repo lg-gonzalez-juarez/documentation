@@ -67,21 +67,19 @@ Since this is a course about Python scripting, we will be writing the majority o
 Let's create our first script to write our obligatory "Hello, 
 World!" program, calling it `hello.py`.
 
-```python
-touch hello.py
+```cmd
+$ touch hello.py
 ```
 From inside this file, we can enter the lines of Python that we need. For the "Hello, World!" example we only need
 
-```
+```powershell
 ~/code/hello.py
-```
-```python
 print("Hello, World!")
 ```
 
 There are a few different pays that we can run this file. The first is by passing it to the `python3.7` CLI.
 
-```
+```bash
 $ python3.7 hello.py
 Hello, World!
 ```
@@ -95,13 +93,13 @@ Thankfully, we can set the process to interpret our scripts by setting a shebang
 
 `hello.py:`
 
-```
+```cmd
 #!/usr/bin/env python3.7
 print("Hello, World")
 ```
 We're not quite done. Now we need to make the file executable using `chmod:`
 
-```
+```dos
 $ chmod u+x hello.py
 ```
 Run the script now by using `./hello.py` and we'll see the same result. If we'd rather not have a file extension on our script, we can remove it since we've put a shebang in the file. Running `mv hello.py` hello then performing `./hello` will still result in the same thing.
