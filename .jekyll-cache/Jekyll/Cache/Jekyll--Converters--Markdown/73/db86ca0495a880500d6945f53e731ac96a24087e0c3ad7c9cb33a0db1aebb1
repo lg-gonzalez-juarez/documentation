@@ -1,0 +1,146 @@
+I"c<h2 id="comments">Comments</h2>
+
+<p>When writing scripts, we often want to leave ourselves notes or explanations. Python (along with most scripting languages) uses the # character to signify that the line should be ignored and not executed.</p>
+
+<h3 id="single-line-comment">Single Line Comment</h3>
+<p>We can comment out a whole line:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is a full line comment
+</span></code></pre></div></div>
+<p>or we can comment at the end of a line:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># This will add the numbers
+</span></code></pre></div></div>
+<h3 id="what-about-block-comments">What About Block Comments?</h3>
+<p>Python does not have the concept of block commenting that you may have encountered in other languages. Many people mistake a triple quoted string as being a comment, but it is not. It’s a multi-line string. That being said, multi-line strings can functionally work like comments, but they will still be allocated into memory.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"""
+This is not a block comment,
+but it will still work when you need
+for some lines of code to not execute.
+"""
+</code></pre></div></div>
+
+<h2 id="variables-and-the-assignment-operator">Variables and the Assignment Operator</h2>
+
+<p>Almost any script that we write will need to provide a way for us to hold onto information for use later on. That’s where variables come into play.</p>
+
+<h3 id="working-with-variables">Working with Variables</h3>
+<p>We can assign a value to a variable by using a single <code class="language-plaintext highlighter-rouge">=</code> and we don’t need to (nor can we) specify the type of the variable.</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; my_str = "This is a simple string"
+</code></pre>
+
+<p>Now we can print the value of that string by using <code class="language-plaintext highlighter-rouge">my_var</code> later on:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; print(my_str)
+This is a simple string
+</code></pre>
+
+<p>We can also change the value that is assigned to a variable later on, either by using the standard assignment operator = or by using some of the short-hand operators that we’ll learn about as we continue.</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; my_str += " testing"
+&gt;&gt;&gt; my_str
+'This is a simple string testing'
+</code></pre>
+
+<p>An important thing to realize is that the contents of a variable can be changed and we don’t need to maintain the same type:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; my_str = 1
+&gt;&gt;&gt; print(my_str)
+1
+</code></pre>
+<p>Ideally, we wouldn’t change the contents of a variable called <code class="language-plaintext highlighter-rouge">my_str</code> to be an interger, but it is something that Python will allow us do.</p>
+
+<p>One last thing to remember is that, if we assign a variable with another variable, it will be assigned to the initial result of the variable and not whatever that variable points to later.</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; my_str = 1
+&gt;&gt;&gt; my_int = my_str
+&gt;&gt;&gt; my_str = "testing"
+&gt;&gt;&gt; print(my_int)
+1
+&gt;&gt;&gt; print(my_str)
+testing
+</code></pre>
+
+<h3 id="short-hand-assignment-operators">Short-Hand Assignment Operators</h3>
+
+<p>There are numerous shorthand assignment operators we can use that allow us to perform operations and also assign back to variables in the way that we did with the <code class="language-plaintext highlighter-rouge">+=</code> operator. The form for these shorthand assignment operations always follows the same pattern. We’ll take the operator that we want to use, say <code class="language-plaintext highlighter-rouge">+</code>, and create a new operator by adding <code class="language-plaintext highlighter-rouge">=</code> to the right-hand side of it. So, for the subtraction operation, we could subtract from the current value and assign the new value to a variable using the <code class="language-plaintext highlighter-rouge">-=</code> operator.</p>
+
+<p>As we learn about more and more operators we’ll be able to follow this pattern if we want to reassess our current variable based on an operation.</p>
+
+<h2 id="strings-and-string-operators">Strings and String Operators</h2>
+
+<p><a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">link</a></p>
+
+<p>Let’s learn about one of the core data types in Python: the <code class="language-plaintext highlighter-rouge">str</code> type.</p>
+
+<h3 id="strings">Strings</h3>
+
+<p>Open a REPL to start exploring Python strings:</p>
+
+<pre><code class="language-cmd">$ python3.7
+</code></pre>
+
+<p>We’ve already worked with a string when we created our “Hello, World!” program. We create strings using either single quotes <code class="language-plaintext highlighter-rouge">(')</code>, double quotes <code class="language-plaintext highlighter-rouge">(")</code>, or triple-single <code class="language-plaintext highlighter-rouge">(''')</code> or double quotes for a multi-line string.</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; 'single quoted string'
+'single quoted string'
+&gt;&gt;&gt; "double quoted string"
+'double quoted string'
+&gt;&gt;&gt; '''
+... this is a triple
+... quoted string
+... '''
+'\nthis is a triple\nquoted string\n'
+</code></pre>
+
+<p>Strings also work with some arithmetic operators.</p>
+
+<p>We can combine strings using the + operator and multiply a string by a number using the * operator:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; "pass" + "word"
+'password'
+&gt;&gt;&gt; "Ha" * 4
+'HaHaHaHa'
+</code></pre>
+<p>A string is a sequence of grouped characters. We do need to cover the concept of an “Object” in object-oriented programming before moving on. An “object” encapsulates two things: state and behavior. For the built-in types, the state makes sense because it’s the entire contents of the object. The behavior aspect means that there are functions that we can call on the instances of the objects that we have. A function bound to an object is called a method. Here are some example methods that we can call on strings:</p>
+
+<p><code class="language-plaintext highlighter-rouge">find</code> locates the first instance of a character (or string) in a string. This function returns the index of the character or string.</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; "double".find('s')
+-1
+&gt;&gt;&gt; "double".find('u')
+2
+&gt;&gt;&gt; "double".find('bl')
+3
+</code></pre>
+
+<p><code class="language-plaintext highlighter-rouge">lower</code> converts all of the characters in a string to their lowercase versions (if they have one). This function returns a new string without changing the original, and this becomes important later.</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; "TeStInG".lower() # "testing"
+'testing'
+&gt;&gt;&gt; "another".lower()
+'another'
+&gt;&gt;&gt; "PassWord123".lower()
+'password123'
+</code></pre>
+
+<p>Lastly, if we need to use quotes or special characters in a string, we can do that using the backslash character <code class="language-plaintext highlighter-rouge">\</code>:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; print("Tab\tDelimited")
+Tab     Delimited
+&gt;&gt;&gt; print("New\nLine")
+New
+Line
+&gt;&gt;&gt; print("Slash\\Character")
+Slash\Character
+&gt;&gt;&gt; print("'Single' in Double")
+'Single' in Double
+&gt;&gt;&gt; print('"Double" in Single')
+"Double" in Single
+&gt;&gt;&gt; print("\"Double\" in Double")
+"Double" in Double
+</code></pre>
+
+:ET
