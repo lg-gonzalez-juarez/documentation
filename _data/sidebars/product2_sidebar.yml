@@ -1,8 +1,8 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
-- title: Product2
-  product: Product2
+- title: Tutorial
+  product: Python
   version: 1.0
   folders:
 
@@ -27,11 +27,11 @@ entries:
       url: /p2_landing_page.html
       output: web
 
-  - title: Simple Workflow
+  - title: Initial Workflow
     output: web, pdf
     folderitems:
 
-    - title: Sample 1
+    - title: Fundamental Concepts
       url: /p2_sample1.html
       output: web, pdf
 
