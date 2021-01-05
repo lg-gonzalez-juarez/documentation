@@ -170,4 +170,24 @@ Slash\Character
 "Double" in Double
 ```
 
+## Booleans
+
+[DocPython](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)
+[DocPython](https://docs.python.org/3/library/stdtypes.html#boolean-values)
+
+Learn about how Python represents truthiness and nothingness.
+
+### Booleans
+
+Booleans represent "truthiness" and Python has two boolean constants: `True` and `False`.
+
+Notice that these both start with capital letters. Later we will learn about comparisons operations, and those will often return either `True` or `False`.
+
+### Everything has a Boolean Value
+We can check the Boolean value for any object in Python by using the `bool` function. For instance, the empty string `""` has the boolean value of `False` where any other string as a boolean value of `True`.
+
+
+
+
+
 {% include links.html %}
