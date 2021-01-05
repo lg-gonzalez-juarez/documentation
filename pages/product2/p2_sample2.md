@@ -186,8 +186,25 @@ Notice that these both start with capital letters. Later we will learn about com
 ### Everything has a Boolean Value
 We can check the Boolean value for any object in Python by using the `bool` function. For instance, the empty string `""` has the boolean value of `False` where any other string as a boolean value of `True`.
 
+## Numbers: Integers, Floats, and Scientific Notation
 
+[Doc](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
 
+Let's learn about some of the core data types in Python: the number types `int` and `float`.
 
+### Numbers
+There are two main types of numbers that we'll use in Python, int and float. The big difference between an `int` and a `float` being that the `float` class handles decimal point information.
+
+If either of the numbers in a mathematical operation in Python is a float, then the other will be converted before carrying out the operation and the result will always be a float.
+
+### Scientific notation
+If we happen to be working with really large numbers, and it's easier to use scientific notation, then Python can help us. For the equivalent of a float times 10 to a specified power we're able to use `e` or `E` when specifying the number:
+
+```cmd
+>>> 4.5e9
+4500000000.0
+>>> 4.5e9 == 4.5 * (10 ** 9) == 4.5E9 == 4.5E+9
+True
+```
 
 {% include links.html %}
