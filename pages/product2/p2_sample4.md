@@ -154,4 +154,129 @@ False
 False
 ```
 
+## Comparison Operators
+
+The last operators that we need to learn about are the comparison operators. These operators allow us to know if two items are equivalent, or if one is great than the other.
+
+## Documentation For This Video
+
+- [Comparisons](https://docs.python.org/3/library/stdtypes.html#comparisons)
+- [The ord function](https://docs.python.org/3/library/functions.html#ord)
+
+
+### The Greater Than and Less Than Operators
+
+We're going to work our way through the comparison operators by starting with the ones that will feel most familiar from mathematics. The four greater than and less than operators work exactly as you'd expect:
+
+```cmd
+>>> 1 < 2
+True
+>>> 2 > 1
+True
+>>> 2 < 1
+False
+>>> 1 <= 1
+True
+>>> 2.0 >= 3
+False
+```
+
+A few things to note are that we can compare numeric types to one other, so it's not hard to compare floats with integers.
+
+Another thing to notice is that these comparison operators always return a boolean value.
+
+Remember that individual types dictate whether or not they work with specific operands. And strings, for instance, work with these comparison operators too:
+
+```cmd
+>>> 'a' > 'b'
+False
+>>> 'b' > 'a'
+True
+>>> 'bb' >= 'ba'
+True
+>>> 'a' <= 'c'
+True
+```
+
+When comparing strings, each character is compared with the character at the same index in the other string to determine which one is larger. Behind the scenes, each character as a numeric value that we can find using the [ord] function, and these are used to do the comparisons.
+
+Once again, if we try to compare types that aren't comparable, then we'll receive an error indicating such:
+
+```cmd
+>>> 'a' <= 1
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: '<=' not supported between instances of 'str' and 'int'
+```
+
+### The Equals Operators
+
+The equals operators are a little different than you might expect, because we already use a single equals sign for variable assignment operations. Because of this, to see if two things are equal we use a double equals sign ==:
+
+```cmd
+>>> 1 == 1
+True
+>>> 1.0 == 1
+True
+>>> 2 == 1.0
+False
+>>> 'a' == 2
+False
+>>> 'a' == 'a'
+True
+```
+
+Notice that this checks equivalence, so comparing an equivalent float and integer will return True. Additionally, we're able to compare two completely different types without receiving an error because they're not equivalent.
+
+If we want to know if two objects aren't equivalent, then we can use the not equal operators !=. This will return True only if the items aren't equivalent:
+
+```cmd
+>>> 1 != 1
+False
+>>> 1.0 != 1
+False
+>>> 2 != 1.0
+True
+>>> 'a' != 2
+True
+>>> 'a' != 'a'
+False
+```
+
+### The Identity Operators
+
+If we want to know if two objects are or are not exactly the same object, then we can use the identity operators. The identity operator is the keyword is and the opposite is is not (with a space).
+
+```cmd
+>>> 1 is 1
+True
+>>> 1 is 1.0
+False
+>>> 'a' is 'a'
+True
+>>> 'a' is not 'b'
+True
+>>> 'a' is not 'a'
+False
+```
+
+The identity operators work based on the id of the object, and most of the basic types in Python are immutable (meaning they cannot be changed), so every time that we reference a specific literal it will point to the same item in memory. We can check the id of an object by using the id function (your return values will be different):
+
+```cmd
+>>> id('a')
+4444195248
+>>> id('a')
+4444195248
+>>> id('a') == id('a')
+True
+```
+
+We'll discuss immutability later, but not all objects are immutable, so you'll run into situations where you can compare two objects that look the same using is and have False returned. Here are two list literals (which aren't immutable):
+
+```
+>>> [] is []
+False
+```
+
+
 {% include links.html %}
