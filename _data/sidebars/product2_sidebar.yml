@@ -1,7 +1,7 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
-- title: Tutorial
+- title: Sidebar
   product: Python
   version: 1.0
   folders:

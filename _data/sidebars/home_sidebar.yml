@@ -5,13 +5,10 @@ entries:
   levels: one
   folders:
 
-  - title: ProductsLG
+  - title: More
     output: web
     folderitems:
-    - title: News
-      url: /news.html
-      output: web
-    - title: Theme instructions
+    - title: Doc Theme
       url: /mydoc_introduction.html
       output: web
     - title: Product 1
@@ -20,3 +17,6 @@ entries:
     - title: Linux Python
       url: /p2_landing_page.html
       output: web
+  - title: News
+    url: /news.html
+    output: web
