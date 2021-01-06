@@ -35,7 +35,7 @@ entries:
       url: /p2_sample1.html
       output: web, pdf
 
-    - title: Sample 2
+    - title: Literals, variables, and comments
       url: /p2_sample2.html
       output: web, pdf
 
