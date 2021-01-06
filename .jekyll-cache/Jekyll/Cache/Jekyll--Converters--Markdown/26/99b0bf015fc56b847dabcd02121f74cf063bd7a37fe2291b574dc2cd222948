@@ -1,0 +1,119 @@
+I"=<h2 id="sample-content">Sample Content</h2>
+
+<p><a href="https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/1">link</a></p>
+
+<p>We’ve seen numbers in Python, but how do we go about using them? In this lesson, we’ll learn about the various numeric operators that we’ll use in our Python programs.</p>
+
+<h3 id="documentation-for-this-video">Documentation For This Video</h3>
+<p><a href="https://docs.python.org/3/library/operator.html#mapping-operators-to-functions">Python Operators</a></p>
+
+<h3 id="the-numeric-operators">The Numeric Operators</h3>
+<p>When we think about what we can do with numbers in math, there are quite a few things that come to mind such as addition, subtraction, multiplication, and division. All of those actions are carried out in our programs by using “operators”, special characters we put between the two numbers that carry out a specific calculation. In Python, and in most programming languages, there are more operators than we would typically use when doing arithmetic. Here are the most common operators used in the REPL:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; 2 + 2 # Addition
+4
+&gt;&gt;&gt; 10 - 4 # Subtraction
+6
+&gt;&gt;&gt; 3 * 9 # Multiplication
+27
+&gt;&gt;&gt; 5 / 3 # Division, converts the result to a float even when evenly divided.
+1.66666666666667
+&gt;&gt;&gt; 5 // 3 # Floor division, always returns a number without a remainder as an int
+1
+&gt;&gt;&gt; 8 % 3 # Modulo division, returns the remainder as an int
+2
+&gt;&gt;&gt; 2 ** 3 # Exponent
+8
+</code></pre>
+
+<p>There are even more operators than this, but they don’t all apply to numbers. We’ll learn about some of the other operators in different lessons.</p>
+
+<h2 id="number-systems">Number Systems</h2>
+
+<p>In our day to day work, we almost always work with decimal numbers. These are not necessarily numbers with decimal points, but numbers derived from a base 10 number system. In this lesson, we’ll take a look at how we could use other number systems in Python.</p>
+
+<h3 id="documentation-for-this-video-1">Documentation For This Video</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Numeral_system">Numeral Systems</a>
+<a href="https://en.wikipedia.org/wiki/Bit_numbering">Bit Numbering</a>
+<a href="https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/s5-number-systems-and-floating-point-accuracy_1568816995.pdf">Download the Presentation</a></p>
+
+<h3 id="what-are-number-systems">What are Number Systems?</h3>
+<p>We normally count using the decimal number system, which means that for each digit in a number we will cycle between the numbers 0-9 before adding another digit. These same numbers can be represented using other numbering systems though, such as binary which only uses the number 0-1.</p>
+
+<p>The decimal number of 15 is equivalent to 1111 in binary notation. To convert from decimal to binary we divide the decimal number (15) by the base of the other numbering system, in binary’s case that’s 2 and then we take the remainder as a digit in the binary number. We then take the part that divided cleanly and divide it by the base again. Here’s the process for converting 15 to binary:</p>
+
+<pre><code class="language-cmd">15 / 2 =&gt; 7 w/ remainder of 1
+7 / 2 =&gt; 3 w/ remainder of 1
+3 / 2 =&gt; 1 w/ remainder of 1
+1 / 2 =&gt; 0 w/ remainder of 1
+</code></pre>
+
+<p>If we do this with the number 12 we’ll get something different:</p>
+
+<pre><code class="language-cmd">12 / 2 =&gt; 6 w/ remainder of 0
+6 / 2 =&gt; 3 w/ remainder of 0
+3 / 2 = 1 w/ remainder of 1
+1 / 2 = 0 w/ remainder of 1
+</code></pre>
+
+<p>The bits go from least significant to most, so the remainders at the end of our division will be the most significant digits. 12 as binary is 1100.</p>
+
+<p>Converting back to decimal requires us to multiply each bit from least to greatest by the base (2 in binary) to the power of it’s position (starting with the 0 power) and then add those numbers together. Converting 1100 back to decimal looks like this:</p>
+
+<pre><code class="language-cmd">(1 * 2 ^ 3) + (1 * 2 ^ 2) + (0 * 2 ^ 1) + (0 * 2 ^ 0)
+(1 * 8) + (1 * 4) + (0 * 2) + (0 * 1)
+8 + 4 + 0 + 0
+12
+</code></pre>
+
+<h3 id="common-numeral-systems">Common Numeral Systems</h3>
+<p>The most common numbering systems are decimal (10), binary (2), octal (8), and hexadecimal (16). You might be asking yourself, “How do I represent a digit with 16 different numbers?”. That’s a reasonable question. The answer is to start using letters in addition to numbers. Hexadecimal digits go from 0-9, then from A-F. The binary number <code class="language-plaintext highlighter-rouge">12</code> is <code class="language-plaintext highlighter-rouge">C</code> in Hexadecimal.</p>
+
+<p>Representing Binary, Octal, and Hexadecimal Numbers in Python
+Now that we know how various and common number systems work let’s go about actually using them in Python. To represent a number in a different number system in Python, we do this by prefixing the number with a 0 and the number system identifier:</p>
+
+<ul>
+  <li>Binary uses <code class="language-plaintext highlighter-rouge">b</code></li>
+  <li>Octal uses <code class="language-plaintext highlighter-rouge">o</code></li>
+  <li>Hexadecimal uses <code class="language-plaintext highlighter-rouge">x</code></li>
+</ul>
+
+<p>Here are examples in the REPL:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; 0b1001
+9
+&gt;&gt;&gt; 0o7424
+3860
+&gt;&gt;&gt; 0xFF012
+1044498
+</code></pre>
+
+<p>The result printed out will be the decimal value. If we want to work in decimal values and represent them in a different numbering system we can use the bin, oct, and hex functions like so:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; bin(10)
+'0b1010'
+&gt;&gt;&gt; oct(59)
+'0o73'
+&gt;&gt;&gt; hex(1024)
+'0x400'
+</code></pre>
+
+<p>The value returned from these functions will always be a string.</p>
+
+<h2 id="floating-point-accuracy">Floating-Point Accuracy</h2>
+
+<p>To complete our conversation about numbers in Python we do need to discuss how accurate floats are.</p>
+
+<p>Documentation For This Video
+<a href="https://docs.python.org/3/tutorial/floatingpoint.html#floating-point-arithmetic-issues-and-limitations">Floating Point Arithmetic: Issues and Limitations</a>
+<a href="https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/s5-number-systems-and-floating-point-accuracy_1568816995.pdf">Download the Presentation</a></p>
+
+<h3 id="float-limitations">Float Limitations</h3>
+<p>Not all decimal numbers that we write out can be represented by a computer as a float. The reason for this is that floats are stored on computer hardware as binary fractions, and not all decimal (base 10 numbers) can be represented as binary fractions. This leads to the floating-point numbers that we work with actually being approximations of the binary fraction representation.</p>
+
+<p>An example of this is the decimal number <code class="language-plaintext highlighter-rouge">0.1</code> which has no binary fraction equivalent. Depending on the machine, the exact approximation used behind the scenes may be different. But since Python 3.1, the representation that is returned to the user is the clean number even though the number used behind the scenes is something like <code class="language-plaintext highlighter-rouge">0.1000000000000000055511151231257827021181583404541015625.</code></p>
+
+<p>All of this is to say that sometimes floating-point math doesn’t work the way that we expect it to.</p>
+
+:ET
