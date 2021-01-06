@@ -10,7 +10,7 @@ box_number: 3
 folder: product2
 ---
 
-## Sample Content
+##  Numeric Operators
 
 [link](https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/1)
 
