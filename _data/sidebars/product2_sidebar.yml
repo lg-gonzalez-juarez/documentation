@@ -23,9 +23,29 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Overview
+    - title: Python intro
       url: /p2_landing_page.html
       output: web
+
+    - title: Python 6
+      url: /p2_python6.html
+      output: web, pdf
+
+    - title: Python 7
+      url: /p2_python7.html
+      output: web, pdf
+
+    - title: Python 8
+      url: /p2_python8.html
+      output: web, pdf
+
+    - title: Python 9
+      url: /p2_python9.html
+      output: web, pdf
+
+    - title: Python 10
+      url: /p2_python10.html
+      output: web, pdf
 
   - title: Initial Workflow
     output: web, pdf
