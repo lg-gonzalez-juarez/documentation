@@ -1,5 +1,5 @@
 ---
-title: Python6
+title: Strings, Operations, and Calculations
 keywords: sample
 summary: "This is just a sample topic..."
 sidebar: product2_sidebar
@@ -10,106 +10,43 @@ permalink: p2_python6.html
 folder: product2
 ---
 
-## Compilers and Interpreters
+## Understanding Immutability
 
-[LunixAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/1/module/413)
+As we start digging into sequence types like strings, lists, tuples, and dictionaries, we need to start thinking about the mutability of a type or whether or not it can change. Normally, we'll talk about whether or not a type is "immutable," meaning that it can't be changed, and most of the types we've looked at thus far are immutable.
 
-The compiler would be something that produces machine code. So at its core, what a compiler does is it takes code from one type, transfers it into a different type. So most of the time, this is going to be going from a high-level language like Python or something else down to something that is lower level and can run on the machine directly, or it can run in a virtual machine. So that's what a compiler does; it just translates code from one type of code to another type of code. That's the simplified version of this, and there are many different types of compilers that can exist, and we're not going to cover all of them.We just need to loosely know what a compiler does,but the compilation process consist of five basic steps here.
+### Documentation For This Video
 
-## Lexing, Syntax, and Semantics
-[LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/2/module/413)
+[Immutable Sequences](https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types)
 
-In this secction is covered some of the steps involved in the compilation and interpreting process:
+### Why Does Immutability Matter?
 
-* Lexical Analysis
-* Syntactic Analysis
-* Semantic Analysis
+Immutability is something that we don't always have to think about, but it does matter in a few very common cases:
 
-## Python Specifics: Keywords and Instructions
-[LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/3/module/413)
+### Understanding why we can't modify a string in-place
 
-In this lesson, we'll cover some more foundational concepts of programming languages:
+Using objects as keys for dictionaries (we'll get to this later)
+We'll cover dictionaries in a different section, but when it comes to strings, wanting to modify a string variable is fairly common. Strings are an immutable type in Python, so we can't change a string object. We can only create new strings with the modifications that we wanted. This means that the only way for us to change the string value of a variable is to explicitly reassign it. As we learn about mutable types, we'll see that other types allow us to modify the value of a variable without explicitly reassigning it.
 
-* Keywords
-* Bytecode Instructions
+### Immutability of Strings
 
-## Using the REPL
-[LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413)
-
-Python is an interpreted language, and code is evaluated in a line-by-line fashion. Since each line can be evaluated by itself, the time between evaluating each line doesn't matter, and this allows us to have a REPL.
-
-### Documentation
-[Python Interpreter](https://docs.python.org/3/tutorial/interpreter.html)
-
-What is a REPL?
-REPL stands for: Read, Evaluate, Print, Loop
-
-Each line is read and evaluated, the return value is printed to the screen, and then the process repeats.
-
-Python ships with a REPL and you can access it by running `python3.7` from your terminal.
-
-The `>>>` indicates that you can type on that line. Later on, you'll also see a `...` which means that you are currently in a scoped area and will need to enter a blank line (no spaces) before it will evaluate the entire code block.
-
-The simplest use of this would be to do some math:
-```cmd
-$ 1 + 1
-2
->>>
-```
-
-`2` is the return value of the expression and it is then printed to the screen. If something doesn't have a return value, then nothing will be printed to the screen and you'll see the next prompt immediately. We'll cover this later, but an example would be None:
-```cmd
-$ None
->>>
-```
-
-To exit the REPL, you can either type `exit()` (the parentheses are important) or you can hit `Ctrl+d` on your keyboard.
-
-## Creating a Python File
-[info](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/5/module/413)
-
-Since this is a course about Python scripting, we will be writing the majority of our code in scripts instead of using the REPL. To create a Python script we can create a file ending with the file extension of `.py`.
-
-### Creating Our First Python Script
-Let's create our first script to write our obligatory "Hello, 
-World!" program, calling it `hello.py`.
+When looking at str class there are many methods that return a str to us, such as capitalize:
 
 ```cmd
-$ touch hello.py
+>>> my_str = 'testing'
+>>> my_str.capitalize()
+'Testing'
+>>> my_str
+'testing'
 ```
-From inside this file, we can enter the lines of Python that we need. For the "Hello, World!" example we only need
-
-```powershell
-~/code/hello.py
-print("Hello, World!")
-```
-
-There are a few different pays that we can run this file. The first is by passing it to the `python3.7` CLI.
-
-```bash
-$ python3.7 hello.py
-Hello, World!
-```
-### Setting a Shebang
-We'll most likely want our scripts to be:
-
-1. Executable from anywhere (in our $PATH)
-2. Executable without explicitly using the `python3.7` CLI
-
-Thankfully, we can set the process to interpret our scripts by setting a shebang at the top of the file:
-
-`hello.py:`
+We won't find a method that changes the value of my_str in this example. Beyond this, each unique string that we can only type will only exist once in memory. In our case, we referenced the literal 'testing' when we assigned the value to our variable, and if we ever use the literal of 'testing' again it will point to the same point in memory, because that value can't be modified.
 
 ```cmd
-#!/usr/bin/env python3.7
-print("Hello, World")
+>>> id(my_str)
+4522355248
+>>> id('testing')
+4522355248
 ```
-We're not quite done. Now we need to make the file executable using `chmod:`
-
-```dos
-$ chmod u+x hello.py
-```
-Run the script now by using `./hello.py` and we'll see the same result. If we'd rather not have a file extension on our script, we can remove it since we've put a shebang in the file. Running `mv hello.py` hello then performing `./hello` will still result in the same thing.
+This feature prevents the same value being allocated more than once and taking up more spots in our computer's memory than we need it to.
 
 
 {% include links.html %}
