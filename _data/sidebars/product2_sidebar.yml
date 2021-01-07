@@ -39,15 +39,15 @@ entries:
       url: /p2_sample2.html
       output: web, pdf
 
-    - title: Sample 3
+    - title: Number Systems and Numeric Operators
       url: /p2_sample3.html
       output: web, pdf
 
-    - title: Sample 4
+    - title: Operators and Bindings
       url: /p2_sample4.html
       output: web, pdf
 
-    - title: Sample 5
+    - title: Input and Output Operations
       url: /p2_sample5.html
       output: web, pdf
 
