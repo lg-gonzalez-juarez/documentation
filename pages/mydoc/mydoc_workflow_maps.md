@@ -23,15 +23,15 @@ You can implement workflow maps at the top of your pages. This is helpful if you
 
     ```xml  
     <div id="userMap">
-    <div class="content"><a href="p2_sample1.html"><div class="box box1">Connect to ADB</div></a></div>
+    <div class="content"><a href="p2_sample1.html"><div class="box box1">Fundamental Concepts</div></a></div>
     <div class="arrow">→</div>
-    <div class="content"><a href="p2_sample2.html"><div class="box box2">Download and Build the Starter Kit</div></a></div>
+    <div class="content"><a href="p2_sample2.html"><div class="box box2">Literals, Variables, and Comments</div></a></div>
     <div class="arrow">→</div>
-    <div class="content"><a href="p2_sample3.html"><div class="box box3">Take a Tour</div></a></div>
+    <div class="content"><a href="p2_sample3.html"><div class="box box3">Number Systems and Numeric Operators</div></a></div>
     <div class="arrow">→</div>
-    <div class="content"><a href="p2_sample4.html"><div class="box box4">Load Your Widgets</div></a></div>
+    <div class="content"><a href="p2_sample4.html"><div class="box box4">Operators and Bindings</div></a></div>
     <div class="arrow">→</div>
-    <div class="content"><a href="p2_sample5.html"><div class="box box5">Query for Something</div></a></div>
+    <div class="content"><a href="p2_sample5.html"><div class="box box5">Input and Output Operations</div></a></div>
     <div class="clearfix"></div>
     </div>
     ```
