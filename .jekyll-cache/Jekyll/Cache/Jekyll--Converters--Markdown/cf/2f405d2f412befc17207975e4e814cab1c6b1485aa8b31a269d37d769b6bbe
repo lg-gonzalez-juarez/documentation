@@ -1,0 +1,148 @@
+I"6<h2 id="looping">Looping</h2>
+
+<h3 id="the-while-loop">The <code class="language-plaintext highlighter-rouge">while</code> Loop</h3>
+
+<p>We work with collections of data and sequence a lot in programming, and it is common for us to want to perform the same action on each item or a subset of items in the content. To handle this, we need iteration and looping. In this lesson, we’ll learn about one type of loop that we can use: the while loop.</p>
+
+<h3 id="documentation-for-this-video">Documentation For This Video</h3>
+
+<p><a href="https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming">while statement</a></p>
+
+<h3 id="the-while-loop-1">The while Loop</h3>
+
+<p>The most basic type of loop that we have at our disposal is the while loop. This type of loop repeats itself based on a condition that we pass to it. Here’s the general structure of a while loop:</p>
+
+<pre><code class="language-cmd">while CONDITION:
+    pass
+</code></pre>
+
+<p>The CONDITION in this statement works the same way that it does for an if statement. When we demonstrated the if statement, we first tried it by simply passing in True as the condition. Let’s see when we try that same condition with a while loop:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; while True:
+...     print("looping")
+...
+looping
+looping
+looping
+looping
+</code></pre>
+
+<p>That loop will continue forever, we’ve created an infinite loop. To stop the loop, press Ctrl-C. Infinite loops are one of the potential problems with while loops. If we don’t use a condition that we can change from within the loop, then it will continue forever if it’s initially true. Here’s how we’ll normally approach using a while loop, where we modify something about the condition on each iteration:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; count = 1
+&gt;&gt;&gt; while count &lt;= 4:
+...     print("looping")
+...     count += 1
+...
+looping
+looping
+looping
+looping
+&gt;&gt;&gt;
+</code></pre>
+
+<p>## The <code class="language-plaintext highlighter-rouge">for</code> Loop</p>
+
+<p>We work with collections of data and sequence a lot in programming, and it is common for us to want to perform the same action on each item or a subset of items in the content. To handle this we need iteration and looping. In this lesson, we’ll learn about the most common type of loop that we will use: the for loop.</p>
+
+<h3 id="documentation-for-this-video-1">Documentation For This Video</h3>
+<p><a href="https://docs.python.org/3/tutorial/controlflow.html#for-statements">The for statement</a></p>
+
+<h3 id="the-for-loop">The for Loop</h3>
+<p>The most common use we have for looping is when we want to execute some code for each item in a sequence. For this type of looping or iteration, we’ll use the for loop. The general structure for a for loop is:</p>
+
+<pre><code class="language-cmd">for TEMP_VAR in SEQUENCE:
+    pass
+</code></pre>
+<p>The TEMP_VAR will be populated with each item as we iterate through the SEQUENCE, and it will be available to us in the context of the loop. After the loop finishes one iteration, then the TEMP_VAR will be populated with the next item in the SEQUENCE, and the loop’s body will execute again. This process continues until we either hit a break statement or we’ve iterated over every item in the SEQUENCE. Here’s an example that loops over a list of colors:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; colors = ['blue', 'green', 'red', 'purple']
+&gt;&gt;&gt; for color in colors:
+...     print(color)
+...
+blue
+green
+red
+purple
+&gt;&gt;&gt; color
+'purple'
+</code></pre>
+
+<h3 id="other-iterable-types">Other Iterable Types</h3>
+
+<p>Lists will be the most common type that we iterate over using a for loop, but we can also iterate over other sequence types. Of the types we already know, we can iterate over strings, dictionaries, and tuples.</p>
+
+<p>Here’s a tuple example:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; point = (2.1, 3.2, 7.6)
+&gt;&gt;&gt; for value in point:
+...     print(value)
+...
+2.1
+3.2
+7.6
+&gt;&gt;&gt;
+</code></pre>
+
+<p>In this dictionary example, by default, will first unpack each key:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; ages = {'kevin': 59, 'bob': 40, 'kayla': 21}
+&gt;&gt;&gt; for key in ages:
+...     print(key)
+...
+kevin
+bob
+kayla
+</code></pre>
+
+<p>If we leverage what we’ve learned about dictionaries, we can actually get the key and value on each iteration by using dict.items and unpacking the tuple in each iteration:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; for key, value in ages.items():
+...     print(key, value)
+...
+kevin 59
+bob 40
+kayla 21
+</code></pre>
+
+<p>A string example:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; for letter in "my_string":
+...     print(letter)
+...
+m
+y
+_
+s
+t
+r
+i
+n
+g
+&gt;&gt;&gt;
+</code></pre>
+<h2 id="nesting-loops-and-conditionals">Nesting Loops and Conditionals</h2>
+
+<p>Now that we’ve learned how to use loops and conditionals, we can do a lot more with our programs. We can do even more when we combine them by nesting loops within conditionals or conditionals within loops.</p>
+
+<h3 id="nesting-conditionals-within-loops">Nesting Conditionals within Loops</h3>
+
+<p>We’ve seen two of the most common types of code contexts in Python: the body of a conditional and the body of a loop. To signify code contexts in Python, we use indentation. If we need to nest contexts, like conditionals or loops, then we can add more indentation. Let’s say we’re looping through a list of numbers, and we only want to print the number if it’s a multiple of 4. In this case, we can add a conditional check within our loop:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; counter = 1
+&gt;&gt;&gt; while counter &lt;= 25:
+...     if counter % 4 == 0:
+...         print(counter)
+...     counter += 1
+...
+4
+8
+12
+16
+20
+24
+</code></pre>
+
+<p>For each nested context, we’ll need to indent an extra 4 spaces. When we’re done doing what we need to do in a nested context, then we go back to the previous indentation level to continue at that level. This is how we’re able to continue past the if statement to increment the counter, all still within the while loop.</p>
+
+:ET

@@ -1,0 +1,44 @@
+I"�<h2 id="looping">Looping</h2>
+
+<h3 id="the-while-loop">The <code class="language-plaintext highlighter-rouge">while</code> Loop</h3>
+
+<p>We work with collections of data and sequence a lot in programming, and it is common for us to want to perform the same action on each item or a subset of items in the content. To handle this, we need iteration and looping. In this lesson, we’ll learn about one type of loop that we can use: the while loop.</p>
+
+<h3 id="documentation-for-this-video">Documentation For This Video</h3>
+
+<p><a href="https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming">while statement</a></p>
+
+<h3 id="the-while-loop-1">The while Loop</h3>
+
+<p>The most basic type of loop that we have at our disposal is the while loop. This type of loop repeats itself based on a condition that we pass to it. Here’s the general structure of a while loop:</p>
+
+<pre><code class="language-cmd">while CONDITION:
+    pass
+</code></pre>
+
+<p>The CONDITION in this statement works the same way that it does for an if statement. When we demonstrated the if statement, we first tried it by simply passing in True as the condition. Let’s see when we try that same condition with a while loop:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; while True:
+...     print("looping")
+...
+looping
+looping
+looping
+looping
+</code></pre>
+
+<p>That loop will continue forever, we’ve created an infinite loop. To stop the loop, press Ctrl-C. Infinite loops are one of the potential problems with while loops. If we don’t use a condition that we can change from within the loop, then it will continue forever if it’s initially true. Here’s how we’ll normally approach using a while loop, where we modify something about the condition on each iteration:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; count = 1
+&gt;&gt;&gt; while count &lt;= 4:
+...     print("looping")
+...     count += 1
+...
+looping
+looping
+looping
+looping
+&gt;&gt;&gt;
+</code></pre>
+
+:ET
