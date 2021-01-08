@@ -289,6 +289,117 @@ This might seem a little useless because we could have just as easily written th
 ### Orange is in the list
 This is not the most efficient way to search through a list, but it's a good example of when the else clause of a loop has an effect besides just being the expression run after the loop.
 
+## Using `range`
+
+Sometimes we want to iterate a set number of times, but we don't necessarily have a collection to work with. An easy way to achieve this is by creating a range object and iterating over it.
+
+### Python Documentation For This Video
+
+- [Sequence Types](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
+- [Ranges](https://docs.python.org/3/library/stdtypes.html#range)
+
+### Ranges
+
+A range is an immutable sequence type that defines a start, a stop, and a step value. The values within the range start with the beginning value and are incremented until the last value in the range is reached. This allows for ranges to be used in place of sequential lists while taking less memory and including more items.
+
+```cmd
+>>> my_range = range(10)
+>>> my_range
+range(0, 10)
+>>> list(my_range)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> list(range(1, 14, 2))
+[1, 3, 5, 7, 9, 11, 13]
+```
+
+Notice that the "stop" value (in this example, 10) is not included in the range.
+
+By using a range with a for loop, we can specify the number of times we would like to iterate without needing to manually worry about incrementing a counter like we had to do with a while loop. Here's a previous example where we printed "looping" four times using a while loop:
+
+
+```
+>>> count = 1
+>>> while count <= 4:
+...     print("looping")
+...     count += 1
+looping
+looping
+looping
+looping
+>>>
+```
+
+We could achieve this same thing using for and range like this:
+
+```
+>>> for _ in range(1, 5):
+...     print("looping")
+...
+looping
+looping
+looping
+looping
+>>>
+```
+
+## List Comprehensions
+
+Iterating over a sequence is great, but needing to transform a list into a different list is fairly common. Python has a special feature to make doing this concise, called "list comprehensions".
+
+## Documentation For This Video
+
+[List Comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+
+### List Comprehensions
+
+If we want to loop through a list, modify each item, and have a new list with the modified items, then we could do something like this:
+
+```
+>>> colors = ['red', 'blue', 'orange', 'green', 'yellow']
+>>> uppercase_colors = []
+>>> for color in colors:
+...     uppercase_colors.append(color.upper())
+...
+>>> uppercase_colors
+['RED', 'BLUE', 'ORANGE', 'GREEN', 'YELLOW']
+```
+
+This procedure is common enough that Python provides a shorthand method for doing it in the form of "list comprehensions." These have a unique syntax where we essentially put the for loop within square brackets ([]). Here's the equivalent for the above, using a list comprehension:
+
+```
+>>> colors = ['red', 'blue', 'orange', 'green', 'yellow']
+>>> uppercase_colors = [color.upper() for color in colors]
+>>> uppercase_colors
+['RED', 'BLUE', 'ORANGE', 'GREEN', 'YELLOW']
+```
+
+The biggest difference here is that we don't need to create an empty list and append to it. Whatever we place to the left of the for statement within the comprehension will be returned as part of the final list.
+
+### List Comprehensions for Filtering
+
+List comprehensions also have another feature that allows for filtering while iterating through the initial list by adding a trailing if statement within the square brackets ([]). If we wanted to iterate through our colors and only return "warm" colors (red, orange, yellow) then we could write this loop to achieve these results:
+
+```
+>>> colors = ['red', 'blue', 'orange', 'green', 'yellow']
+>>> warm_colors = []
+>>> for color in colors:
+...     if color in ['red', 'orange', 'yellow']:
+...         warm_colors.append(color.upper())
+...
+>>> warm_colors
+['RED', 'ORANGE', 'YELLOW']
+```
+
+If we remove the concept of warm_colors being used within the loop, we can write it as a list comprehension:
+
+```
+>>> colors = ['red', 'blue', 'orange', 'green', 'yellow']
+>>> warm_colors = [color.upper() for color in colors if color in ['red', 'orange', 'yellow']]
+>>> warm_colors
+['RED', 'ORANGE', 'YELLOW']
+```
+
+The syntax for list comprehensions are a little odd to get started with. But if you read it as a sentence, then it will start to make more sense and feel more useful. The sentence would read something like this: Uppercase each color in the colors variable if the colors are red, orange, and yellow.
 
 
 {% include links.html %}
