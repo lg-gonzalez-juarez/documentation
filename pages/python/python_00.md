@@ -1,0 +1,115 @@
+---
+title: Python_intro
+tags: [special_layouts]
+keywords: trainning, courses
+last_updated: January 3th, 2021
+summary: "This shows a review of mainly courses that I have considered"
+sidebar: mydoc_sidebar
+permalink: python_00.html
+toc: false
+folder: python
+---
+
+Here's the review style layout:
+
+<div class="row">
+         <div class="col-lg-12">
+             <h2 class="page-header">Coursera</h2>
+         </div>
+         <div class="col-md-3 col-sm-6">
+             <div class="panel panel-default text-center">
+                 <div class="panel-heading">
+                     <span class="fa-stack fa-5x">
+                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                           <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
+                     </span>
+                 </div>
+                 <div class="panel-body">
+                     <h4>coursera</h4>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                     <a href="https://www.coursera.org/" class="btn btn-primary">Learn More</a>
+                 </div>
+             </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+             <div class="panel panel-default text-center">
+                 <div class="panel-heading">
+                     <span class="fa-stack fa-5x">
+                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                           <i class="fa fa-car fa-stack-1x fa-inverse"></i>
+                     </span>
+                 </div>
+                 <div class="panel-body">
+                     <h4>Navigation</h4>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                     <a href="tag_navigation.html" class="btn btn-primary">Learn More</a>
+                 </div>
+             </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+             <div class="panel panel-default text-center">
+                 <div class="panel-heading">
+                     <span class="fa-stack fa-5x">
+                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                           <i class="fa fa-support fa-stack-1x fa-inverse"></i>
+                     </span>
+                 </div>
+                 <div class="panel-body">
+                     <h4>Single sourcing</h4>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                     <a href="tag_single_sourcing.html" class="btn btn-primary">Learn More</a>
+                 </div>
+             </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+             <div class="panel panel-default text-center">
+                 <div class="panel-heading">
+                     <span class="fa-stack fa-5x">
+                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                           <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                     </span>
+                 </div>
+                 <div class="panel-body">
+                     <h4>Formatting</h4>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                     <a href="tag_formatting.html" class="btn btn-primary">Learn More</a>
+                 </div>
+             </div>
+         </div>
+</div>
+
+
+## Generating a list of all pages with a certain tag
+
+If you don't want to link to a tag archive index, but instead want to list all pages that have a certain tag, you could use this code:
+
+```html
+{% raw %}Getting started pages:
+<ul>
+{% assign sorted_pages = site.pages | sort: 'title' %}
+{% for page in sorted_pages %}
+{% for tag in page.tags %}
+{% if tag == "getting_started" %}
+<li><a href="{{ page.url | remove: "/" }}">{{page.title}}</a></li>
+{% endif %}
+{% endfor %}
+{% endfor %}
+</ul>{% endraw %}
+```
+
+Here's the result:
+
+Getting started pages:
+
+<ul>
+{% assign sorted_pages = site.pages | sort: 'title' %}
+{% for page in sorted_pages %}
+{% for tag in page.tags %}
+{% if tag == "getting_started" %}
+<li><a href="{{ page.url | remove: "/"}}">{{page.title}}</a></li>
+{% endif %}
+{% endfor %}
+{% endfor %}
+</ul>
+
+{% include links.html %}
