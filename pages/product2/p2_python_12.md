@@ -448,7 +448,7 @@ Occasionally, we want to be able to modify a global variable from within a more 
 ### Documentation For This Video
 [The global Statement](https://docs.python.org/3/reference/simple_stmts.html?highlight=global#the-global-statement)
 
-###  Modifying the Global State from a Nested Scope
+### Modifying the Global State from a Nested Scope
 
 If we would like one of our functions to have the side effect of changing or creating a global variable, we can utilize the global statement. This isn't something that we'll use all that often since it is better to keep global state to a minimum as we start working on larger and more complex programs. But it is useful now and then. Let's modify scopes.py so that we can change the global y variable from within our set_x function:
 
