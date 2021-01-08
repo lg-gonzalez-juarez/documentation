@@ -1,5 +1,5 @@
 ---
-title: Number Systems and Numeric Operators
+title: Tuples & Dictionaries
 keywords: sample
 summary: "This is just a sample topic..."
 sidebar: product2_sidebar
@@ -10,127 +10,106 @@ permalink: p2_python8.html
 folder: product2
 ---
 
-##  Numeric Operators
+## Tuples
 
-[link](https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/1)
-
-We've seen numbers in Python, but how do we go about using them? In this lesson, we'll learn about the various numeric operators that we'll use in our Python programs.
-
-### Documentation For This Video
-[Python Operators](https://docs.python.org/3/library/operator.html#mapping-operators-to-functions)
-
-### The Numeric Operators
-When we think about what we can do with numbers in math, there are quite a few things that come to mind such as addition, subtraction, multiplication, and division. All of those actions are carried out in our programs by using "operators", special characters we put between the two numbers that carry out a specific calculation. In Python, and in most programming languages, there are more operators than we would typically use when doing arithmetic. Here are the most common operators used in the REPL:
-
-```cmd
->>> 2 + 2 # Addition
-4
->>> 10 - 4 # Subtraction
-6
->>> 3 * 9 # Multiplication
-27
->>> 5 / 3 # Division, converts the result to a float even when evenly divided.
-1.66666666666667
->>> 5 // 3 # Floor division, always returns a number without a remainder as an int
-1
->>> 8 % 3 # Modulo division, returns the remainder as an int
-2
->>> 2 ** 3 # Exponent
-8
-```
-
-There are even more operators than this, but they don't all apply to numbers. We'll learn about some of the other operators in different lessons.
-
-## Number Systems
-
-In our day to day work, we almost always work with decimal numbers. These are not necessarily numbers with decimal points, but numbers derived from a base 10 number system. In this lesson, we'll take a look at how we could use other number systems in Python.
+The most common immutable sequence type that we're going to work with is going to be the tuple.
 
 ### Documentation For This Video
 
-[Numeral Systems](https://en.wikipedia.org/wiki/Numeral_system)
-[Bit Numbering](https://en.wikipedia.org/wiki/Bit_numbering)
-[Download the Presentation](https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/s5-number-systems-and-floating-point-accuracy_1568816995.pdf)
+- [Sequence Types](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
+- [Tuples](https://docs.python.org/3/library/stdtypes.html#tuple)
 
-### What are Number Systems?
-We normally count using the decimal number system, which means that for each digit in a number we will cycle between the numbers 0-9 before adding another digit. These same numbers can be represented using other numbering systems though, such as binary which only uses the number 0-1.
+### Tuples
 
-The decimal number of 15 is equivalent to 1111 in binary notation. To convert from decimal to binary we divide the decimal number (15) by the base of the other numbering system, in binary's case that's 2 and then we take the remainder as a digit in the binary number. We then take the part that divided cleanly and divide it by the base again. Here's the process for converting 15 to binary:
+Tuples are a fixed width, immutable sequence type. We create tuples using parenthesis (()) and at least one comma (,):
 
-```cmd
-15 / 2 => 7 w/ remainder of 1
-7 / 2 => 3 w/ remainder of 1
-3 / 2 => 1 w/ remainder of 1
-1 / 2 => 0 w/ remainder of 1
+```mcd
+>>> point = (2.0, 3.0)
 ```
 
-If we do this with the number 12 we'll get something different:
+Since tuples are immutable, we don't have access to the same methods that we do on a list. We can use tuples in some operations like concatenation, but we can't change the original tuple that we created:
 
-```cmd
-12 / 2 => 6 w/ remainder of 0
-6 / 2 => 3 w/ remainder of 0
-3 / 2 = 1 w/ remainder of 1
-1 / 2 = 0 w/ remainder of 1
+```mcd
+>>> point_3d = point + (4.0,)
+>>> point_3d
+(2.0, 3.0, 4.0)
 ```
 
-The bits go from least significant to most, so the remainders at the end of our division will be the most significant digits. 12 as binary is 1100.
+One interesting characteristic of tuples is that we can unpack them into multiple variables at the same time:
 
-Converting back to decimal requires us to multiply each bit from least to greatest by the base (2 in binary) to the power of it's position (starting with the 0 power) and then add those numbers together. Converting 1100 back to decimal looks like this:
-
-```cmd
-(1 * 2 ^ 3) + (1 * 2 ^ 2) + (0 * 2 ^ 1) + (0 * 2 ^ 0)
-(1 * 8) + (1 * 4) + (0 * 2) + (0 * 1)
-8 + 4 + 0 + 0
-12
+```mcd
+>>> x, y, z = point_3d
+>>> x
+2.0
+>>> y
+3.0
+>>> z
+4.0
 ```
 
-### Common Numeral Systems
-The most common numbering systems are decimal (10), binary (2), octal (8), and hexadecimal (16). You might be asking yourself, "How do I represent a digit with 16 different numbers?". That's a reasonable question. The answer is to start using letters in addition to numbers. Hexadecimal digits go from 0-9, then from A-F. The binary number `12` is `C` in Hexadecimal.
+When we'll most likely to see tuples is while looking at a format string that's compatible with Python 2 (though this will go away soon):
 
-Representing Binary, Octal, and Hexadecimal Numbers in Python
-Now that we know how various and common number systems work let's go about actually using them in Python. To represent a number in a different number system in Python, we do this by prefixing the number with a 0 and the number system identifier:
-
-
-- Binary uses `b`
-- Octal uses `o`
-- Hexadecimal uses `x`
-
-Here are examples in the REPL:
-
-```cmd
->>> 0b1001
-9
->>> 0o7424
-3860
->>> 0xFF012
-1044498
+```mcd
+>>> print("My name is: %s %s" % ("Keith", "Thompson"))
 ```
 
-The result printed out will be the decimal value. If we want to work in decimal values and represent them in a different numbering system we can use the bin, oct, and hex functions like so:
+## Tuples Versus Lists
 
-```cmd
->>> bin(10)
-'0b1010'
->>> oct(59)
-'0o73'
->>> hex(1024)
-'0x400'
+One of the biggest questions that we'll have when working with collections is whether we should use a tuple or a list. In this lesson, we'll take a look at when each is useful.
+
+### Tuples vs Lists
+
+When determining if we should use a list or a tuple, we need to ask ourselves one important question:
+
+Will we ever not know the exact number of items that we're storing?
+
+If we answer "yes" to this question, then we should use a list. Lists are great for holding onto real collections: users, phone numbers, etc.
+
+Tuples make more sense in two general situations:
+
+When we're trying to return more than one piece of information from a function
+If we want to model something that has a specific number of fields that we can positionally hold in a tuple:
+This would be something like a point in 2D or 3D space having x, y, and potentially z. Those values should always be in a specific spot.
+Another way that this could be used is to quickly model a "person" that has a name, age, and phone number:
+
+```mcd
+>>> person = ('Kevin Bacon', 61, '555-555-5555')
+>>> person2 = ('Bob Ross', 76, '')
+>>> person[0]
+'Kevin Bacon'
+>>> person2[0]
+'Bob Ross'
 ```
 
-The value returned from these functions will always be a string.
+In this case index, 0 will always return the "name" for a person stored as a tuple.
 
-## Floating-Point Accuracy
+Fun Fact: While tuples are immutable, their values can change when a tuple holds a reference to a mutable object, like a list.
 
-To complete our conversation about numbers in Python we do need to discuss how accurate floats are.
+### Lists in Tuples and Tuples in Lists
 
-Documentation For This Video
-[Floating Point Arithmetic: Issues and Limitations](https://docs.python.org/3/tutorial/floatingpoint.html#floating-point-arithmetic-issues-and-limitations)
-[Download the Presentation](https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/s5-number-systems-and-floating-point-accuracy_1568816995.pdf)
+To be thorough, we need to understand how having lists within tuples (and tuples within lists) works. Let's start with lists within tuples, followed by tuples within lists:
 
-### Float Limitations
-Not all decimal numbers that we write out can be represented by a computer as a float. The reason for this is that floats are stored on computer hardware as binary fractions, and not all decimal (base 10 numbers) can be represented as binary fractions. This leads to the floating-point numbers that we work with actually being approximations of the binary fraction representation.
+```mcd
+>>> my_list = [1, 2, 3]
+>>> my_tuple = (my_list, 1)
+>>> my_tuple
+([1, 2, 3], 1)
+>>> other_list = [1, 2, my_tuple]
+>>> other_list
+[1, 2, ([1, 2, 3], 1)]
+```
 
-An example of this is the decimal number `0.1` which has no binary fraction equivalent. Depending on the machine, the exact approximation used behind the scenes may be different. But since Python 3.1, the representation that is returned to the user is the clean number even though the number used behind the scenes is something like `0.1000000000000000055511151231257827021181583404541015625.`
+We're able to embed lists in tuples and tuples in lists without issues. It's worth noting that tuples are immutable, but they do not require that the items within the tuple be immutable. We can modify the list that is inside of my_tuple:
 
-All of this is to say that sometimes floating-point math doesn't work the way that we expect it to.
+```mcd
+>>> my_tuple
+([1, 2, 3], 1)
+>>> my_list.append(1)
+>>> my_tuple
+([1, 2, 3, 1], 1)
+```
+
+
+## Dictionaries
 
 {% include links.html %}
