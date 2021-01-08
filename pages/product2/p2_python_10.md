@@ -109,5 +109,31 @@ Your name is long.
 
 Notice that we fell into the first elif statement's block, and then the second elif block was never executed even though it was true. We can only exercise one branch in an if statement.
 
+## Utilizing `pass`
+
+Occasionally, we want to add a branch or other code block without providing any useful code in the block. This is a useful approach if we're outlining some code. In this lesson, we'll learn how to achieve this by using the pass statement.
+
+### Documentation For This Video
+
+[The pass Statement](https://docs.python.org/3/reference/simple_stmts.html?highlight=pass#the-pass-statement)
+
+### The pass Statement
+
+When we're first working through a conditional, it's good to handle all cases, even if we don't have an else case that we'd like to run. This is good practice, just to ensure that we're thinking about the whole problem. We can remove it later.
+
+To add an else statement without a body, we'll place a pass statement within. The pass statement is what is known as a null operation. Absolutely nothing happens when we execute a pass statement, but they are useful as a code placeholder:
+
+```cmd
+>>> name = "Keith"
+>>> if name == "Kevin":
+...     print("Hello Kevin")
+... else:
+...     pass
+...
+>>>
+```
+
+There are other types of code contexts with Python such as functions, classes, and loops. In all of these, we're able to leverage pass if we want to create the context and not do anything.
+
 
 {% include links.html %}
