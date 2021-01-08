@@ -47,6 +47,15 @@ entries:
       url: /p2_python10.html
       output: web, pdf
 
+    - title: Python 11
+      url: /p2_python11.html
+      output: web, pdf
+
+    - title: Python 12
+      url: /p2_python12.html
+      output: web, pdf
+
+
   - title: Initial Workflow
     output: web, pdf
     folderitems:
