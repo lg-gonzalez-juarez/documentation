@@ -1,0 +1,124 @@
+I"<h2 id="function-basics">Function Basics</h2>
+
+<h3 id="defining-and-using-functions">Defining and Using Functions</h3>
+
+<p>Being able to write code that we can call multiple times without repeating ourselves is one of the most powerful things that we can do when programming. Let’s learn how to define functions in Python.</p>
+
+<h3 id="documentation-for-this-video">Documentation For This Video</h3>
+
+<p><a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">Defining Functions</a></p>
+
+<h3 id="function-basics-1">Function Basics</h3>
+
+<p>We can create functions in Python using the following:</p>
+
+<ul>
+  <li>The def keyword</li>
+  <li>The function name - lowercase starting with a letter or underscore (_)</li>
+  <li>Left parenthesis (()</li>
+  <li>0 or more parameter names</li>
+  <li>Right parenthesis ())</li>
+  <li>A colon :</li>
+  <li>An indented function body</li>
+</ul>
+
+<p>Here’s an example without any parameters:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def hello_world():
+...     print("Hello, World!")
+...
+&gt;&gt;&gt; hello_world()
+Hello, World!
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>If we want to define a parameter, we will put the variable name we want it to have within the parentheses:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def print_name(name):
+...     print(f"Name is {name}")
+...
+&gt;&gt;&gt; print_name("Keith")
+Name is Keith
+</code></pre></div></div>
+
+<p>Let’s try to assign the value from print_name to a variable called output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; output = print_name("Keith")
+Name is Keith
+&gt;&gt;&gt; output
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>Neither of these examples has a return value, but we will usually want to have a return value unless the function is our “main” function or carries out a “side-effect” like printing. If we don’t explicitly declare a return value, then the result will be None (as you saw when our body used print).</p>
+
+<p>We can declare what we’re returning from a function using the return keyword:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def add_two(num):
+...     return num + 2
+...
+&gt;&gt;&gt; result = add_two(2)
+&gt;&gt;&gt; result
+4
+</code></pre></div></div>
+<h3 id="working-with-multiple-parameters">Working with Multiple Parameters</h3>
+
+<p>When we have a function that takes multiple parameters, we need to separate them using commas and give them unique names:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def add(num1, num2):
+...     return num1 + num2
+...
+&gt;&gt;&gt; result = add(1, 5)
+&gt;&gt;&gt; result
+6
+</code></pre></div></div>
+
+<h2 id="parameters-vs-arguments">Parameters vs. Arguments</h2>
+
+<p>When talking about functions, the words “parameter” and “argument” are often used interchangeably. But they represent two different things. In this lesson, we’ll look at the differences between parameters and arguments, and the different ways we can use arguments when calling functions.</p>
+
+<h3 id="documentation-for-this-video-1">Documentation For This Video</h3>
+
+<p><a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">Defining Functions</a></p>
+
+<h3 id="parameters-vs-aruguments">Parameters VS Aruguments</h3>
+
+<p>The difference between a parameter and an argument is all about timing. When we’re working with the definition of a function, then the variables defined in the function declaration are the “parameters.” When we’re calling the function, the data that we provide for each parameter is the “argument.” Accidentally using these words interchangeably in practice isn’t an issue, because other programmers will know exactly what you’re talking about. But it is good to know that there is a distinction.</p>
+
+<p>With the semantic differences covered, we’re ready to move onto the more interesting topic of the various types of arguments that we can use: position and keyword arguments.</p>
+
+<h2 id="using-keyword-arguments">Using Keyword Arguments</h2>
+
+<p>Every function call we’ve made up to this point has used what are known as positional arguments. But if we know the name of the parameters, and not necessarily the positions, we can all them all using keyword arguments like so:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def contact_card(name, age, car_model):
+...     return f"{name} is {age} and drives a {car_model}"
+...
+&gt;&gt;&gt; contact_card("Keith", 29, "Honda Civic")
+'Keith is 29 and drives a Honda Civic'
+&gt;&gt;&gt; contact_card(age=29, car_model="Civic", name="Keith")
+'Keith is 29 and drives a Civic'
+&gt;&gt;&gt; contact_card("Keith", car_model="Civic", age="29")
+'Keith is 29 and drives a Civic'
+&gt;&gt;&gt; contact_card(age="29", "Keith", car_model="Civic")
+  File "&lt;stdin&gt;", line 1
+SyntaxError: positional argument follows keyword argument
+</code></pre></div></div>
+
+<p>When we’re using position and keyword arguments, every argument after the first keyword argument must also be a keyword argument. It’s sometimes useful to mix them, but oftentimes we’ll use either all positional or all keyword.</p>
+
+<h3 id="defining-parameters-with-default-arguments">Defining Parameters with Default Arguments</h3>
+
+<p>Along with being able to use keyword arguments when we’re calling a function, we’re able to define default values for parameters to make them optional when the information is commonly known and the same. To do this, we use the assignment operator (=) when we’re defining the parameter:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def can_drive(age, driving_age=16):
+...     return age &gt;= driving_age
+...
+&gt;&gt;&gt; can_drive(16)
+True
+&gt;&gt;&gt; can_drive(16, driving_age=18)
+False
+</code></pre></div></div>
+
+<p>Parameters with default arguments need to go at the end of the parameters list when defining the function so that positional arguments can still be used to call the function.</p>
+
+:ET
