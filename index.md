@@ -12,4 +12,4 @@ summary: These brief of alls docs
 
 ## General
 
-[Install Jekyll on Mac][mydoc_install_jekyll_on_mac]
+[Install Jekyll on Mac][/pages/mydoc/mydoc_install_jekyll_on_mac]

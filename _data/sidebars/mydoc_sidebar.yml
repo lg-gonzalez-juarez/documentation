@@ -21,6 +21,7 @@ entries:
 
   - title: Preliminary Knowledge
     output: web, pdf
+    type: homepage
     folderitems:
 
     - title: Usage package
@@ -35,7 +36,6 @@ entries:
       url: /course_kb_layout.html
       output: web, pdf
 
-  
   - title: Python
     output: web, pdf
     folderitems:
@@ -224,8 +224,8 @@ entries:
 
   - title: Publishing
     output: web, pdf
-
     folderitems:
+    
     - title: Build arguments
       url: /mydoc_build_arguments.html
       output: web, pdf
@@ -260,7 +260,7 @@ entries:
 
   - title: Special layouts
     output: web, pdf
-
+    
     folderitems:
     - title: Knowledge-base layout
       url: /mydoc_kb_layout.html
