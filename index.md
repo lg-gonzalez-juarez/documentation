@@ -12,4 +12,6 @@ summary: These brief of alls docs
 
 ## General
 
-[Install Jekyll on Mac][/pages/mydoc/mydoc_install_jekyll_on_mac]
+- [Tutorial Python](/p2_landing_page.html)
+- [Install Jekyll on Mac](mydoc_install_jekyll_on_mac.html)
+- [Producto 1](/p1_landing_page.html)

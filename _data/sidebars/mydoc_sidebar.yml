@@ -24,6 +24,11 @@ entries:
     type: homepage
     folderitems:
 
+    - title: Indice General
+      url: /index.html
+      output: web, pdf
+      type: homepage
+
     - title: Usage package
       url: /mydoc_test_lg.html
       output: web, pdf
@@ -52,11 +57,6 @@ entries:
   - title: Overview
     output: web, pdf
     folderitems:
-
-    - title: New index
-      url: /index.html
-      output: web, pdf
-      type: homepage
 
     - title: Get started
       url: /getting_started.html
@@ -260,7 +260,7 @@ entries:
 
   - title: Special layouts
     output: web, pdf
-    
+
     folderitems:
     - title: Knowledge-base layout
       url: /mydoc_kb_layout.html
