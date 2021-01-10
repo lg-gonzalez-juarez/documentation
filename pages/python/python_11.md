@@ -1,13 +1,11 @@
 ---
 title: Conditionals
+tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."
 sidebar: product2_sidebar
-permalink: p2_python10.html
-# simple_map: true
-# map_name: usermap
-# box_number: 5
-folder: product2
+permalink: python_11.html
+folder: python
 ---
 
 ## The `if` and `else` Statements

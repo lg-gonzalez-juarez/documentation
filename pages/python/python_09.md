@@ -1,13 +1,11 @@
 ---
 title: Tuples & Dictionaries
+tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."
 sidebar: product2_sidebar
-permalink: p2_python8.html
-# simple_map: true
-# map_name: usermap
-# box_number: 3
-folder: product2
+permalink: python_09_.html
+folder: python
 ---
 
 ## Tuples
