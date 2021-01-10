@@ -1,13 +1,11 @@
 ---
 title: Strings, Operations, and Calculations
+tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."
-sidebar: product2_sidebar
-permalink: p2_python6.html
-# simple_map: false
-# map_name: usermap
-# box_number: 1
-folder: product2
+sidebar: mydoc_sidebar
+permalink: python_07_.html
+folder: python
 ---
 
 ## Understanding Immutability
