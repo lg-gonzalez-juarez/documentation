@@ -33,6 +33,10 @@ entries:
       url: /python_00.html
       output: web, pdf
 
+    - title: Python 1
+      url: /python_01.html
+      output: web, pdf
+
     - title: Usage package
       url: /mydoc_test_lg.html
       output: web, pdf
