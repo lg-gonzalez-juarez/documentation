@@ -30,7 +30,7 @@ entries:
       type: homepage
 
     - title: Python 0
-      url: /python_01.html
+      url: /python_00.html
       output: web, pdf
 
     - title: Usage package

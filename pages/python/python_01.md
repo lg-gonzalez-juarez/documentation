@@ -1,6 +1,7 @@
 ---
 title: Fundamental Concepts
 keywords: sample
+tags: [special_layouts]
 summary: "This is just a sample topic..."
 sidebar: product2_sidebar
 permalink: python_01.html
