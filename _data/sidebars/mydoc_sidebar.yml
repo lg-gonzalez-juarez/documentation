@@ -29,6 +29,10 @@ entries:
       output: web, pdf
       type: homepage
 
+    - title: Python 0
+      url: /python_01.html
+      output: web, pdf
+
     - title: Usage package
       url: /mydoc_test_lg.html
       output: web, pdf
