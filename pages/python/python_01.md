@@ -1,11 +1,12 @@
 ---
 title: Fundamental Concepts
+tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."
 sidebar: mydoc_sidebar
 permalink: python_01.html
 folder: python
-tags: [special_layouts]
+
 ---
 
 ## Compilers and Interpreters
