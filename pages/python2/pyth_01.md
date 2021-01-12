@@ -186,3 +186,169 @@ You can also see that this created a new array and did not affect the original a
 ### What Did We Learn?
 
 In this lesson, we looked at NumPy arrays. We learned to create them by various means, including reading a CSV file. We learned how to change the type stored in the array and how to index and slice. Finally, we discussed basic operations on arrays, such as printing and simple math. For more information on [NumPy arrays](https://numpy.org/devdocs/user/quickstart.html), take a look at the official documentation.
+
+# Reshaping a Numpy Array Into a Matrix
+
+[NumPy](https://numpy.org/) has a matrix function, but the documentation indicates that this function is being deprecated, and using multi-dimension arrays is strongly suggested instead. We will be doing just that in this lesson: creating multi-dimension arrays that are matrices.
+
+Arrays, or vectors, are one-dimensional. That is, they have a single column of items. A matrix is a rectangular arrangement of n rows and m columns, where n and m are greater than one. (For example: A 1 by 5 matrix is an array.)
+
+Vectors (arrays) and matrices are essential to many science, math, and engineering operations. With these, we are reminded of linear algebra.
+
+Note: If you have never used NumPy before, we strongly suggest you see the first lesson in this section, "What are NumPy Arrays?".
+
+## Matrices
+
+### Create a Matrix From a Single Array
+
+A matrix can be formed from a single array by re-arranging it. From the last lesson, we looked at int_list as an array. Remember to import NumPy.
+
+```
+>>> import numpy as np
+>>> int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494]
+>>> int_array = np.array(int_list)
+>>> print(int_array)
+[1297  603 1071  539 1222 1424  986  397  970 1102  499  533  908  559
+  386 1183  595   69 1141   76  863 1343  185  895 1312   50  918  677
+  394  629 1317  944  466  751 1050  301  415  784   19 1395 1223  979
+  252 1155   59  107  632  995  972  867  332  751  810   50   55  218
+  997 1085  475 1494]
+```
+
+```shape``` is a tuple that gives dimensions of the array.
+
+```
+>>> int_array.shape
+(60,)
+```
+
+Let's [reshape](https://numpy.org/doc/1.18/reference/generated/numpy.reshape.html) the ```int_array``` into a 10 x 6 matrix:
+
+```
+>>> int_matrix = int_array.reshape(10, 6)
+>>> print(int_matrix)
+[[1297  603 1071  539 1222 1424]
+ [ 986  397  970 1102  499  533]
+ [ 908  559  386 1183  595   69]
+ [1141   76  863 1343  185  895]
+ [1312   50  918  677  394  629]
+ [1317  944  466  751 1050  301]
+ [ 415  784   19 1395 1223  979]
+ [ 252 1155   59  107  632  995]
+ [ 972  867  332  751  810   50]
+ [  55  218  997 1085  475 1494]]
+ >>> int_matrix
+array([[1297,  603, 1071,  539, 1222, 1424],
+       [ 986,  397,  970, 1102,  499,  533],
+       [ 908,  559,  386, 1183,  595,   69],
+       [1141,   76,  863, 1343,  185,  895],
+       [1312,   50,  918,  677,  394,  629],
+       [1317,  944,  466,  751, 1050,  301],
+       [ 415,  784,   19, 1395, 1223,  979],
+       [ 252, 1155,   59,  107,  632,  995],
+       [ 972,  867,  332,  751,  810,   50],
+       [  55,  218,  997, 1085,  475, 1494]])
+>>>
+```
+
+As you can see above, while we are calling this a matrix and it will function as a matrix, it is actually an array type.
+
+### Stacking Arrays
+
+Two functions can be used to stack arrays, [vstack](https://numpy.org/doc/1.18/reference/generated/numpy.vstack.html#numpy.vstack) and [hstack](https://numpy.org/doc/1.18/reference/generated/numpy.hstack.html#numpy.hstack). ```vstack``` stacks the arrays vertically and ```hstack``` stacks the arrays horizontally:
+
+```
+>>> a = np.array([1, 2, 3])
+>>> print(a)
+[1 2 3]
+>>> b = np.array([4, 5, 6])
+>>> print(b)
+[4 5 6]
+>>> c = np.vstack((a, b))
+>>> print(c)
+[[1 2 3]
+ [4 5 6]]
+>>> d = np.hstack((a,b))
+>>> print(d)
+[1 2 3 4 5 6]
+>>>
+```
+
+These functions can also be used on a matrix, however the matrices must be of the same dimensions. As an example, let's do a horizontal stack of a, b, and c:
+
+```
+>>> np.hstack((a,b,c))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<__array_function__ internals>", line 5, in hstack
+  File "/Users/lfritts/.pyenv/versions/621-3.8.2/lib/python3.8/site-packages/numpy/core/shape_base.py", line 343, in hstack
+    return _nx.concatenate(arrs, 0)
+  File "<__array_function__ internals>", line 5, in concatenate
+ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 2 has 2 dimension(s)
+```
+
+This is also an example of a well-formed error message. It is specific in describing the problem. ```a``` (index 0) has one dimension, and ```c``` (index 2) has two dimensions.
+
+### The concatenate function
+
+```concatenate``` joins arrays and/or matrices along an axis. Axis ```0``` stacks them horizontally, axis ```1``` stacks them vertically, and axis ```None``` flattens them into an array.
+
+```axis = None```
+
+```
+>>> a = np.array([[1, 2], [3, 4]])  # this is a matrix
+>>> b = np.array([[5, 6]])
+>>> np.concatenate((a,b), axis=None) # should flatten them
+array([1, 2, 3, 4, 5, 6])
+>>>
+```
+
+```axis = 0```
+
+```
+>>> np.concatenate((a,b), axis = 0)
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+>>>
+```
+
+Notice the element in ```b``` was appended to the items in ```a```. But what would happen if ```b = [5]``` instead of ```b = [5, 6]```? An error would occur.
+
+```
+>>> b = np.array([5])
+>>> np.concatenate((a,b), axis = 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<__array_function__ internals>", line 5, in concatenate
+ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 2 dimension(s) and the array at index 1 has 1 dimension(s)
+>>>
+```
+
+Remember, the dimensions must be the same along the axis you are joining.
+
+```axis = 1```
+
+```
+>>> b = np.array([[5, 6]])
+>>> np.concatenate((a,b), axis = 1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<__array_function__ internals>", line 5, in concatenate
+ValueError: all the input array dimensions for the concatenation axis must match exactly, but along dimension 0, the array at index 0 has size 2 and the array at index 1 has size 1
+>>>
+```
+
+Please take a minute and determine what the problem is before reading on for the fix.
+
+```
+>>> b = np.array([[5, 6], [7, 8]])
+>>> np.concatenate((a,b), axis = 1)
+array([[1, 2, 5, 6],
+       [3, 4, 7, 8]])
+>>>
+```
+
+### What Did We Learn
+
+In this lesson, we learned various ways of making matrices and ways to concatenate matrices. It is important to consider the dimensions when concatenating arrays or matrices, regardless of the method.
