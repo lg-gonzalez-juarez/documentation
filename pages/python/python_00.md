@@ -1,15 +1,14 @@
 ---
-title: Python_intro
+title: Index Course
 tags: [python]
 keywords: trainning, courses
 last_updated: January 3th, 2021
-summary: "This shows a review of mainly courses that I have considered"
+summary: "This shows a review of mainly points about python that I have considered"
 sidebar: product2_sidebar
 permalink: python_00.html
 toc: false
 folder: python
 ---
-
 
 ## List of all pages with a python tag
 
