@@ -4,7 +4,7 @@ tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."
 sidebar: mydoc_sidebar
-permalink: python_07_.html
+permalink: python_07.html
 folder: python
 ---
 
