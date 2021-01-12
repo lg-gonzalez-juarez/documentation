@@ -11,11 +11,20 @@ topnav:
     - title: Other Links
       url: /news
 
-
 #Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
+    - title: dropdowns
+      folderitems:
+        - title: LGGJ Doc
+          url: /mydoc_introduction.html
+        - title: Linux Academy
+          url: /python_00.html
+        - title: Product 1
+          url: /p1_landing_page.html
+        - title: Product 2
+          url: /p2_landing_page.html
     - title: About me
       folderitems:
         - title: Linkedin
@@ -26,11 +35,3 @@ topnav_dropdowns:
           external_url: https://lg-gonzalez-juarez.github.io/pruebas-web/
         - title: Personal web
           external_url: https://lg-gonzalez-juarez.github.io/
-    - title: dropdowns
-      folderitems:
-        - title: LGGJ Doc
-          url: /mydoc_introduction.html
-        - title: Product 1
-          url: /p1_landing_page.html
-        - title: Linux Academy
-          url: /p2_landing_page.html

@@ -22,12 +22,16 @@ entries:
   - title: Python-Entry-Level
     output: web, pdf
     folderitems:
+
     - title: Index 
       url: /python_00.html
       output: web, pdf
+      type: homepage
+    
     - title: Py01
       url: /python_01.html
       output: web, pdf
+    
     - title: Py02
       url: /python_02.html
       output: web, pdf
@@ -144,3 +148,4 @@ entries:
     - title: Sample 14
       url: /p2_sample14.html
       output: web, pdf
+      
