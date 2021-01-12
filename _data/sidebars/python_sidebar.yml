@@ -84,3 +84,6 @@ entries:
       url: /pyth_00.html
       output: web, pdf
 
+    - title: Py2_01
+      url: /pyth_01.html
+      output: web, pdf

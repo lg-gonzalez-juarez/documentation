@@ -1,0 +1,170 @@
+I"m*<h1 id="using-scipy">Using SciPy</h1>
+
+<h2 id="overview-of-scipy">Overview of SciPy</h2>
+
+<p><a href="https://scipy.org/">SciPy</a> is an ecosystem of Python, distinct and separately maintained packages for math, science, and engineering. This ecosystem is composed of:</p>
+
+<ul>
+  <li><a href="https://numpy.org/">NumPy</a>: array package</li>
+  <li><a href="https://scipy.org/scipylib/index.html">SciPy library</a>: scientific computing package</li>
+  <li><a href="https://matplotlib.org/">matplotlib</a>: 2-d plotting package</li>
+  <li><a href="https://ipython.org/">Ipython</a>: interactive console package, Jupyter Notebook</li>
+  <li><a href="https://www.sympy.org/en/index.html">SymPy</a>: symbolic math package</li>
+  <li><a href="https://pandas.pydata.org/">pandas</a>: data structure and analysis package</li>
+</ul>
+
+<p>In later lessons, will be demonstrating NumPy, matplotlib, and pandas. In this lesson, we are going to briefly look at the documentation for the SciPy library.</p>
+
+<p>The SciPy library contains functions that make computation of higher-order math, science, and engineering calculations easier. However, these concepts are not the focus of this course, and we will not do more than become aware of the possibilities.</p>
+
+<h1 id="using-numpy">Using NumPy</h1>
+
+<h2 id="what-are-numpy-arrays">What are NumPy Arrays?</h2>
+
+<p><a href="https://numpy.org/">NumPy</a> is a fundamental package for many math and science computations using Python. NumPy provides an array that can have N-dimensions. NumPy serves as the base for many packages that can extend its capabilities, such as, <code class="language-plaintext highlighter-rouge">pandas</code> and <code class="language-plaintext highlighter-rouge">scikit-learn</code>. It is a lean package focusing on operations on arrays. These other packages add functionality to it. However, it is a powerful package for many higher-level math operations.</p>
+
+<h2 id="overview-of-numpy">Overview of NumPy</h2>
+
+<h3 id="installing-and-using-numpy">Installing and Using NumPy</h3>
+
+<p>Installing NumPy is as simple as using <code class="language-plaintext highlighter-rouge">pip install</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -m pip install numpy
+</code></pre></div></div>
+
+<p>Once the package is installed, it must be imported to use it. Enter into the REPL, by entering <code class="language-plaintext highlighter-rouge">python</code>. Once inside the REPL, standard practice is to import it as <code class="language-plaintext highlighter-rouge">np</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import numpy as np
+</code></pre></div></div>
+
+<h3 id="arrays">Arrays</h3>
+
+<p>NumPy operates on arrays. A 1-d array can be thought of as a Python list or as a column from a database. A multi-dimensional array can be thought of as many lists or columns in a database. While this is not exactly what the array is, it’s a useful way to imagine them. If you create arrays using the array module, all elements of the array must be of the same type.</p>
+
+<h3 id="create-array">Create Array</h3>
+
+<p>Let’s create an array that holds the first ten integers:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; simple_array = np.arange(10)
+&gt;&gt;&gt; simple_array
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>We can also do the same thing, but instead of integers we’ll use floats by using <a href="https://numpy.org/doc/stable/user/basics.types.html">dtypes</a>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; float_array = np.arange(10, dtype=float)
+&gt;&gt;&gt; float_array
+array([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>It is possible to change the type of the elements in an array using <code class="language-plaintext highlighter-rouge">astype</code>. Let’s convert our float array to complex numbers:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; complex_array = float_array.astype(complex)
+&gt;&gt;&gt; complex_array
+array([0.+0.j, 1.+0.j, 2.+0.j, 3.+0.j, 4.+0.j, 5.+0.j, 6.+0.j, 7.+0.j,
+       8.+0.j, 9.+0.j])
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>We can also create a NumPy array for a list or data file.</p>
+
+<p>Let’s load <code class="language-plaintext highlighter-rouge">int_list</code> as an array named <code class="language-plaintext highlighter-rouge">example_array</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494]
+&gt;&gt;&gt; int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494]
+&gt;&gt;&gt; int_array = np.array(int_list)
+&gt;&gt;&gt; int_array.dtype
+dtype('int64')
+&gt;&gt;&gt; int_array
+array([1297,  603, 1071,  539, 1222, 1424,  986,  397,  970, 1102,  499,
+        533,  908,  559,  386, 1183,  595,   69, 1141,   76,  863, 1343,
+        185,  895, 1312,   50,  918,  677,  394,  629, 1317,  944,  466,
+        751, 1050,  301,  415,  784,   19, 1395, 1223,  979,  252, 1155,
+         59,  107,  632,  995,  972,  867,  332,  751,  810,   50,   55,
+        218,  997, 1085,  475, 1494])
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>Let’s load the same information from a file named <code class="language-plaintext highlighter-rouge">scores.csv</code>. We will use <code class="language-plaintext highlighter-rouge">np.genfromtxt</code> function to read the file and create an array out of its content. First, let’s download the <code class="language-plaintext highlighter-rouge">scores.csv</code> file we want to use:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/scores.csv 
+&gt;&gt;&gt; scores_array = np.genfromtxt('scores.csv', delimiter = ',', dtype=int)
+&gt;&gt;&gt; scores_array
+array([1297,  603, 1071,  539, 1222, 1424,  986,  397,  970, 1102,  499,
+        533,  908,  559,  386, 1183,  595,   69, 1141,   76,  863, 1343,
+        185,  895, 1312,   50,  918,  677,  394,  629, 1317,  944,  466,
+        751, 1050,  301,  415,  784,   19, 1395, 1223,  979,  252, 1155,
+         59,  107,  632,  995,  972,  867,  332,  751,  810,   50,   55,
+        218,  997, 1085,  475, 1494])
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<h3 id="index-and-slice-an-array">Index and Slice an Array</h3>
+
+<p>Slicing an array in NumPy looks like slicing a list in Python.</p>
+
+<p>From <code class="language-plaintext highlighter-rouge">scores_array</code>, let’s count the elements by using <code class="language-plaintext highlighter-rouge">.size</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; scores_array.size
+60
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>Let’s make an array with the 2nd, 3rd, and 4th element of <code class="language-plaintext highlighter-rouge">scores_array</code>. It should be equal to [1071, 539, 1222]:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; scores_array[2:5]
+array([1071,  539, 1222])
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>As you can see, the indexing and slicing works the same here as it does in basic Python.</p>
+
+<h3 id="basic-operations-on-numpy-arrays">Basic Operations on NumPy Arrays</h3>
+
+<p>Information on these operations can be found here.</p>
+
+<h3 id="printing">Printing</h3>
+
+<p>Printing an array is as simple as using print:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; print(scores_array)
+[1297  603 1071  539 1222 1424  986  397  970 1102  499  533  908  559
+  386 1183  595   69 1141   76  863 1343  185  895 1312   50  918  677
+  394  629 1317  944  466  751 1050  301  415  784   19 1395 1223  979
+  252 1155   59  107  632  995  972  867  332  751  810   50   55  218
+  997 1085  475 1494]
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>Note this array doesn’t possess commas as the genfromtxt() does.</p>
+
+<h3 id="simple-math-operations">Simple Math Operations</h3>
+
+<p>In NumPy, math operations are elementwise. That is, NumPy applies the math operand to the zeroth element of each array, and that is the zeroth element of a new array. It does this for each element in the arrays. You can perform all basic math operands on these arrays.</p>
+
+<p>Let’s raise each element in the scores_array to the zero power:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; scores_array ** 0
+array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+&gt;&gt;&gt; scores_array
+array([1297,  603, 1071,  539, 1222, 1424,  986,  397,  970, 1102,  499,
+        533,  908,  559,  386, 1183,  595,   69, 1141,   76,  863, 1343,
+        185,  895, 1312,   50,  918,  677,  394,  629, 1317,  944,  466,
+        751, 1050,  301,  415,  784,   19, 1395, 1223,  979,  252, 1155,
+         59,  107,  632,  995,  972,  867,  332,  751,  810,   50,   55,
+        218,  997, 1085,  475, 1494])
+&gt;&gt;&gt;
+</code></pre></div></div>
+
+<p>As you can see, the resulting array is an array of 1’s. Remember: Raising a number to the exponent 0 results in 1.
+You can also see that this created a new array and did not affect the original array.</p>
+
+<h3 id="what-did-we-learn">What Did We Learn?</h3>
+
+<p>In this lesson, we looked at NumPy arrays. We learned to create them by various means, including reading a CSV file. We learned how to change the type stored in the array and how to index and slice. Finally, we discussed basic operations on arrays, such as printing and simple math. For more information on NumPy arrays, take a look at the official documentation.</p>
+:ET
