@@ -352,3 +352,40 @@ array([[1, 2, 5, 6],
 ### What Did We Learn
 
 In this lesson, we learned various ways of making matrices and ways to concatenate matrices. It is important to consider the dimensions when concatenating arrays or matrices, regardless of the method.
+
+# Math Operations on Arrays/Matrices
+
+[NumPy](https://numpy.org/) allows for simple math and linear algebra operations to be used on arrays and matrices. In this lesson, we will look at simple math operands. Here are some [linear algebra](https://numpy.org/doc/stable/reference/routines.linalg.html) operations.
+
+Note: If you have never used NumPy before, we strongly suggest you see the first two lessons in this section, What are NumPy Arrays? and Reshaping a Numpy Array into a Matrix.
+
+### Math Operands on Arrays and Matrices
+
+In NumPy, math operations are elementwise. That is, NumPy applies the math operand to the zeroth element of each array, and that is the zeroth element of a new array. It does this for each element in the arrays.
+
+Let's try addition on two arrays. Note that these arrays need the same amount of elements in both arrays when adding:
+
+```
+>>> a = np.array([1, 2, 3, 4, 5])
+>>> b = np.array([10, 20, 30, 40, 50])
+>>> c = a + b
+>>> print(c)
+[11 22 33 44 55]
+>>>
+```
+
+You can also perform operations between an array and a single value:
+
+```
+>>> print(a)
+[1 2 3 4 5]
+>>> a / 2.5
+array([0.4, 0.8, 1.2, 1.6, 2. ])
+>>>
+```
+
+Notice the ints in the array were changed to floats.
+
+### Linear Algebra
+
+In this lesson, we looked at simple math operands. You can also do linear algebra on arrays and matrices. For more information, see [here](https://numpy.org/doc/stable/reference/routines.linalg.html).
