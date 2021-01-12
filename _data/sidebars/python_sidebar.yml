@@ -79,3 +79,8 @@ entries:
     - title: Py13
       url: /python_13.html
       output: web, pdf
+
+    - title: Py2_00
+      url: /pyth_00.html
+      output: web, pdf
+
