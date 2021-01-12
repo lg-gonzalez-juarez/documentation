@@ -5,7 +5,7 @@ entries:
   levels: one
   folders:
 
-  - title: More
+  - title: LG sites
     output: web
     folderitems:
 
@@ -13,8 +13,8 @@ entries:
       url: /mydoc_introduction.html
       output: web
 
-    - title: Linux Python
-      url: /p2_landing_page.html
+    - title: Python Entry Level
+      url: /python_00.html
       output: web
 
     - title: Product 1

@@ -19,7 +19,7 @@ topnav_dropdowns:
       folderitems:
         - title: LGGJ Doc
           url: /mydoc_introduction.html
-        - title: Linux Academy
+        - title: Python Entry Level
           url: /python_00.html
         - title: Product 1
           url: /p1_landing_page.html

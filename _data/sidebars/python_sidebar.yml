@@ -79,8 +79,3 @@ entries:
     - title: Py13
       url: /python_13.html
       output: web, pdf
-
-    - title: p2 landing page
-      url: /p2_landing_page.html
-      output: web
- 
