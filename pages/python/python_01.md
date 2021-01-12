@@ -6,7 +6,6 @@ keywords: sample
 sidebar: python_sidebar
 permalink: python_01.html
 folder: python
-
 ---
 
 ## Compilers and Interpreters
