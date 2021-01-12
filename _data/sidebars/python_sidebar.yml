@@ -87,3 +87,11 @@ entries:
     - title: Py2_01
       url: /pyth_01.html
       output: web, pdf
+
+    - title: Py2_02
+      url: /pyth_02.html
+      output: web, pdf
+
+    - title: Py2_03
+      url: /pyth_03.html
+      output: web, pdf

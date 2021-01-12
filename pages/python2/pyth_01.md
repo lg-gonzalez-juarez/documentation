@@ -1,5 +1,5 @@
 ---
-title: Pyth 02
+title: Pyth 01
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
