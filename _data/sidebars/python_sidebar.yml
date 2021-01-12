@@ -1,0 +1,86 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  product: Python
+  version: 1.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Python-Entry-Level
+    output: web, pdf
+    folderitems:
+
+    - title: Index 
+      url: /python_00.html
+      type: homepage
+      output: web, pdf
+      
+    - title: Py01
+      url: /python_01.html
+      output: web, pdf
+    
+    - title: Py02
+      url: /python_02.html
+      output: web, pdf
+
+    - title: Py03
+      url: /python_03.html
+      output: web, pdf
+
+    - title: Py04
+      url: /python_04.html
+      output: web, pdf
+
+    - title: Py05
+      url: /python_05.html
+      output: web, pdf
+
+    - title: Py06
+      url: /python_06.html
+      output: web, pdf
+
+    - title: Py07
+      url: /python_07.html
+      output: web, pdf
+
+    - title: Py08
+      url: /python_08.html
+      output: web, pdf
+
+    - title: Py09
+      url: /python_09.html
+      output: web, pdf
+
+    - title: Py10
+      url: /python_10.html
+      output: web, pdf
+
+    - title: Py11
+      url: /python_11.html
+      output: web, pdf
+
+    - title: Py12
+      url: /python_12.html
+      output: web, pdf
+
+    - title: Py13
+      url: /python_13.html
+      output: web, pdf
+
+    - title: p2 landing page
+      url: /p2_landing_page.html
+      output: web
+ 

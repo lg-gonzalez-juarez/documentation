@@ -2,8 +2,8 @@
 title: String
 tags: [python]
 keywords: sample
-summary: "This is just a sample topic..."
-sidebar: product2_sidebar
+#summary: "This is just a sample topic..."
+sidebar: python_sidebar
 permalink: python_10.html
 folder: python
 ---

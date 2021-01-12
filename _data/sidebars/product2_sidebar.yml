@@ -2,7 +2,7 @@
 
 entries:
 - title: Sidebar
-  product: Python
+  product: Product2
   version: 1.0
   folders:
 
@@ -18,76 +18,18 @@ entries:
       url: /tocpage.html
       output: pdf
       type: frontmatter
-
-  - title: Python-Entry-Level
+ 
+  - title: Getting Started
     output: web, pdf
     folderitems:
-
-    - title: Index 
-      url: /python_00.html
-      output: web, pdf
-      type: homepage
-    
-    - title: Py01
-      url: /python_01.html
-      output: web, pdf
-    
-    - title: Py02
-      url: /python_02.html
-      output: web, pdf
-
-    - title: Py03
-      url: /python_03.html
-      output: web, pdf
-
-    - title: Py04
-      url: /python_04.html
-      output: web, pdf
-
-    - title: Py05
-      url: /python_05.html
-      output: web, pdf
-
-    - title: Py06
-      url: /python_06.html
-      output: web, pdf
-
-    - title: Py07
-      url: /python_07.html
-      output: web, pdf
-
-    - title: Py08
-      url: /python_08.html
-      output: web, pdf
-
-    - title: Py09
-      url: /python_09.html
-      output: web, pdf
-
-    - title: Py10
-      url: /python_10.html
-      output: web, pdf
-
-    - title: Py11
-      url: /python_11.html
-      output: web, pdf
-
-    - title: Py12
-      url: /python_12.html
-      output: web, pdf
-
-    - title: Py13
-      url: /python_13.html
-      output: web, pdf
-
-    - title: p2 landing page
+    - title: Product 1 home
       url: /p2_landing_page.html
-      output: web
+      type: homepage
+      output: web, pdf
 
-
-  - title: Initial Workflow
-    output: web, pdf
-    folderitems:
+    - title: Initial Workflow
+      output: web, pdf
+      folderitems:
 
     - title: Sample1
       url: /p2_sample1.html

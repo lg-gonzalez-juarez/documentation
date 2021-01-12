@@ -4,7 +4,7 @@ tags: [python]
 keywords: trainning, courses
 last_updated: January 3th, 2021
 summary: "This shows a review of mainly points about python that I have considered"
-sidebar: product2_sidebar
+sidebar: python_sidebar
 permalink: python_00.html
 toc: false
 folder: python

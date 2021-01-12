@@ -3,7 +3,7 @@ title: Function Basics, Generators and Scoping
 tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."
-sidebar: product2_sidebar
+sidebar: python_sidebar
 permalink: python_13.html
 folder: python
 ---
