@@ -3,7 +3,7 @@ title: Literals, variables, and comments
 tags: [python]
 keywords: python
 summary: "This is just a sample topic..."
-sidebar: mydoc_sidebar
+sidebar: product2_sidebar
 permalink: python_02.html
 folder: python
 ---

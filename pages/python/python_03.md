@@ -3,7 +3,7 @@ title: Number Systems and Numeric Operators
 tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."
-sidebar: mydoc_sidebar
+sidebar: product2_sidebar
 permalink: python_03.html
 folder: python
 ---
