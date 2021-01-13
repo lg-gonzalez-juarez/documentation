@@ -7,7 +7,7 @@ permalink: index.html
 summary: These brief of alls docs 
 ---
 
-{% include note.html content="This is general index <a alt='Personal Web Page' href='https://lg-gonzalez-juarez.github.io/pruebas-web/'>I'd Rather Be Writing</a>. If you'd like to stay updated with the latest trends, best practices, and other methods for writing documentation, consider <a href='https://tinyletter.com/tomjoht'> subscribing</a>." %}
+{% include note.html content="This is general index, more information can be found in the <a alt='Personal Web Page' href='https://lg-gonzalez-juarez.github.io/pruebas-web/'> personal web page</a>." %}
 
 ## General
 
