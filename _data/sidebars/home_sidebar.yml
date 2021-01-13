@@ -17,6 +17,10 @@ entries:
       url: /python_00.html
       output: web
 
+    - title: Introduction Javascript
+      url: /javascript_00.html
+      output: web
+
     - title: Product 1
       url: /p1_landing_page.html
       output: web
