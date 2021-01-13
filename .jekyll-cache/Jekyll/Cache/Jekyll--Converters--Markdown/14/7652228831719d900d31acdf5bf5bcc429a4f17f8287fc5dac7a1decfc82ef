@@ -1,0 +1,44 @@
+I"
+<h1 id="introduction-to-javascript">Introduction to JavaScript</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<h3 id="welcome-to-this-course">Welcome to this course</h3>
+<p>by Michael McClaren</p>
+
+<p>This is a text test</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<ul>
+  <li>basic skills</li>
+</ul>
+
+<h2 id="the-history-of-javascript">The History of JavaScript</h2>
+
+<h3 id="implementing-client-side-scripting">Implementing Client-Side Scripting</h3>
+
+<p>Hypertext is a way to link and access information of various kinds as a web of nodes in which the user can browse at will. It provides a simple user-interface to large classes of information (reports, notes, data-bases, computer documentation and on-line help)</p>
+
+<p>In this lesson we will look back at the history of the internet and the creation of the World Wide Web. We will see how the internet used to be a very dull and boring place filled with a lot of static web pages. This leads us to the reason that client-side scripting was implemented. Once we see where we came from, compared to where we are now, we can understand the need for JavaScript.</p>
+
+<h4 id="the-challenge-of-dynamic-content">The challenge of dynamic content</h4>
+<p>The problem was that the network speeds that were available made it difficult to load elements.</p>
+
+<p>Photos and graphics were especially troublesome.</p>
+
+<p>Page events such as mouse-over and on-click required the whole page to be reloaded.</p>
+
+<p>This was slow and pages were not responsive.</p>
+
+<p>Netscape navigator was the first browser to implement client-side scripting via the scheme script language. This would later become JavaScript. Others would follow, and eventually all modern browsers would support JavaScript as we know it today.</p>
+
+<p>Javascript on the client allows just in time compilation of the code, to permit manipulation of the HTML elements in a page without requiring reloads of the full page.</p>
+
+<h2 id="creating-a-modern-and-dynamic-internet">Creating a Modern and Dynamic Internet</h2>
+
+<p>In this lesson we will look at synchronous and asynchronous update methods, and how asynchronous JavaScript and XML AJAX is used to speed up the load times of web pages. The concept of asynchronous loading becomes fundamental in creating dynamic and responsive web pages. Once we understand these ideas we can move forward with creating awesome dynamic content, or maybe just a place to store photos of cats. That is what the internet is used for right?</p>
+
+<p>updating pages dynamically requires standards for describing data and objects.</p>
+
+:ET
