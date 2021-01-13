@@ -97,3 +97,42 @@ We end with this:
     </body>
 </hmtl>
 ```
+
+## Understanding JavaScript Syntax (Hello World)
+
+In this lesson we will be working with the template from the previous lesson, and creating some dynamic elements. In this process we want to ensure that we understand the concept of ```syntax``` as it relates to JavaScript. Since this is an introduction to JavaScript, we will not be getting too caught up in the syntax. But we want to be aware of it and ensure that we are writing our code correctly.
+
+The web browser used in this lesson is FireFox, and the Integrated Developer Environment is Visual Studio Code with only the default installation. All code in these lessons can be created in the text editor of your choice, and then opened using the file:// prefix in your browser.
+
+Here is the final code that was used in this lesson. See if you can figure out the mistake.
+
+```
+<hmtl>
+    <head>
+        <h1>This is some text</h1>
+    </head>
+    <body>
+        <p id='p1'>This is a paragraph</p>
+        <p id='p2'>This is a second paragraph</p>
+        <button type='button' 
+        onclick="document.getElementById('p1').innerHTML='Hello World!';">
+        hello</button>
+        <button type='button' 
+        onclick="document.getElementById('p2').innerHTML='This is JavaScript.';">
+        JavaScript</button>
+    </body>
+</hmtl>
+```
+
+### Sintax highlights
+
+Sintax refers to rules that define a correctly structured program
+
+- Case sensitive .log() is not the same as .Log()
+- Semicolon (;) line endings Java codes goes here;
+- Comments //single line comment
+
+[link video](https://linuxacademy.com/cp/courses/lesson/course/7548/lesson/2/module/686)
+
+### Working with Image Tags (Cats and Dogs)
+
