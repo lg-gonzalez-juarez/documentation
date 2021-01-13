@@ -136,3 +136,134 @@ Sintax refers to rules that define a correctly structured program
 
 ### Working with Image Tags (Cats and Dogs)
 
+In this lesson we will be taking what we have learned about the Document Object Model (DOM) and use that to put the real power of the internet to work! We will be leveraging the power of JavaScript to display pictures of pets. I do not want to take a side, so we will be switching between a photo of a cat and a photo of a dog. This will show how media can be manipulated with JavaScript by leveraging the src property of an HTML element.
+
+Git repo for this lesson:
+
+´´´
+https://github.com/linuxacademy/content-introduction-to-javaScript
+´´´
+
+[video link][https://linuxacademy.com/cp/courses/lesson/course/7548/lesson/3/module/686]
+
+# More Advanced Client-Side Scripting
+
+## Using Variables and Arrays
+
+In this lesson we will look at variables and arrays. We will see that varaibles are place holders for values, and the place holders sometimes make it easier to work with the value that they represent. We will also see that an array is a special type of variable that is used to group objects logically in one place. We will introduce the concept of the ```zero index```, which means that items are counted starting at 0. This is a bit strange at first, but it is something that is present in almost all programming languages.
+
+[link video](https://linuxacademy.com/cp/courses/lesson/course/7549/lesson/1/module/686)
+
+## Working with Conditionals and Looping
+
+In this lesson we will be looking at adding some decision making to our programs using conditionals with the if statement. We will also use what we know about arrays to make use of looping with for. This will allow us to access all of the items in the array so that we can disaply the data on the page. We are just skimming the surface of these knowledge areas, but we need to be familiar with them so that as we move forward we understand the terms that are fundamental to programming.
+
+Code used in the conditionals example:
+
+```
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id = 'p1'>value not set </p>
+        <script>
+            var value = 4;
+            if(value < 5)
+            {
+                document.getElementById('p1').innerHTML = value;
+            }
+
+
+        </script>
+
+    </body>
+</html>
+```
+Code used in the looping example:
+
+```
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id = "p1">value no set</p>
+        <script>
+            var array = ["one","two","three","four"];
+            var output = "";
+            for(i = 0; i < array.length; i++){
+                output += "This is item " + array[i] + "</br>" ;
+            }
+            document.getElementById('p1').innerHTML = output;
+        </script>
+
+    </body>
+</html>
+```
+
+[link video](https://linuxacademy.com/cp/courses/lesson/course/7549/lesson/2/module/686)
+
+## Understanding the Basics of Functions
+
+In this lesson we will learn about the structure of a function. We will see some practical examples of functions, and see how they can be applied to create an interactive web page. These are just the basics of functions, and this lessons will be a building block as you progress in your journey.
+
+[link video](https://linuxacademy.com/cp/courses/lesson/course/7549/lesson/3/module/686)
+
+A function is a named reusable block of code that begins with thr function keyowrd
+
+- function key word
+- name of the funcion
+- arguments 
+- return key word (optional)
+- value that gets returned (optional)
+
+## Introducing JavaScript Frameworks
+
+In this lesson we will see how to use an external source for JavaScript in our pages. We will look at libraries and convert one of our projects so that it uses an external library as its JavaScript source.
+
+We will then quickly look at some of the more popular JavaScript libraries and frameworks that you may want to use for your projects.
+
+# Server-Side Basics
+
+## Exploring Server-Side JavaScript with NodeJS
+
+[video link](https://linuxacademy.com/cp/courses/lesson/course/7550/lesson/1/module/686)
+
+In this lesson we will be using NodeJS to create a web server that can handle a basic request. This is one of the simplest implementations of Java Script on the server.
+
+Some of the reasons that we might want to implement server-side JavaScript is so that we can handle both sides of the transaction using one language. Also, server-side technologies are the other half of the equation when we think about how we access and serve persistent data on the internet. While client-side JavaScript is concerned with how the data is displayed, server-side JavaScript an concern itself with how that data is manipulated and stored.
+
+## Resources for this lesson:
+
+### Node Installer
+
+```
+URI : https://github.com/nodesource/distributions/blob/master/README.md#rpminstall
+
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+
+sudo yum install -y  nodejs
+
+node -v
+```
+
+Simple Node HTTP server ( index.js )
+
+```
+var http = require('http');
+
+http.createServer (function(req, res)
+{
+    res.write('Hello World');
+    res.end();
+}).listen(8080);
+```
+
+## Introducing REST and APIs
+
+[video link](https://linuxacademy.com/cp/courses/lesson/course/7550/lesson/2/module/686)
+
+In this lesson we will be looking at how web applications are built using REpresentational State Transfer (REST). We will explore the guidelines that describe REST architecture, and try to understand how they allow the internet to be responsive and uniform. We will talk about Application Programming Interfaces (API)s and see some real world examples of APIs in action.
+
+This is intended to be just a peek into these topics. There are many wonderful explorations of these topics to be found, and in the end I really want to encourage you to learn more about them.
