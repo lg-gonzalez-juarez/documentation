@@ -103,7 +103,6 @@ defaults:
       topnav: topnav
 
 # these are defaults used for the frontmatter for these file types
-
 sidebars:
 - home_sidebar
 - mydoc_sidebar

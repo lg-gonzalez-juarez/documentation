@@ -8,8 +8,8 @@ topnav:
       external_url: https://euangoddard.github.io/clipboard2markdown/
     - title: News
       url: /news
-    - title: Other Links
-      url: /news
+    - title: Python
+      url: /python_00.html
 
 #Topnav dropdowns
 topnav_dropdowns:
