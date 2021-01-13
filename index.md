@@ -13,6 +13,7 @@ summary: These brief of alls docs
 ## General
 
 - [Python Entry Level](/python_00.html)
-- [Tutorial Python](/p2_landing_page.html)
+- [Introduction Javascript](/javascript_00.html)
 - [Install Jekyll on Mac](mydoc_install_jekyll_on_mac.html)
 - [Producto 1](/p1_landing_page.html)
+- [Producto 2](/p2_landing_page.html)

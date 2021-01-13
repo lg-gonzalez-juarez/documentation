@@ -15,7 +15,7 @@ topnav:
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: dropdowns
+    - title: Sections #dropdowns
       folderitems:
         - title: LGGJ Doc
           url: /mydoc_introduction.html
