@@ -1,5 +1,5 @@
 ---
-title: Input and Output Operations
+title: 4.Operators and Bindings
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
@@ -8,327 +8,308 @@ permalink: python_04.html
 folder: python
 ---
 
-## Typecasting
+## 4.1. Unary and Bitwise Operators
 
+Before we start using the types that we've learned to write larger scripts with, we're going to want to know about the operators that we have access to. In this lesson, we'll be defining unary and bitwise operators.
 
-Up to this point, we've worked with a lot of different types, but before we can start taking user input and do interesting things with it we'll need to convert from one type to another. This process is called "typecasting".
+Documentation 
 
-### Documentation For This Video
+- [Python Bitwise Operator Documentation](https://wiki.python.org/moin/BitwiseOperators)
+- [Python Operators](https://docs.python.org/3/library/operator.html#mapping-operators-to-functions)
 
-[Typecasting: int](https://docs.python.org/3/library/functions.html#int)
-[Typecasting: float](https://docs.python.org/3/library/functions.html#float)
-[Typecasting: str](https://docs.python.org/3/library/functions.html#str)
-[Typecasting: bool](https://docs.python.org/3/library/functions.html#bool)
-[Trust Value Testing](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)
+### What is a Unary Operator?
 
-### Converting from a Number Type to a Number Type
+A unary operator is an operator that only has one operand. Where the + operation is a binary operator, because we need to provide an operand to the right and left of the operator, a unary operator only takes a right-side operand.
 
-We've already seen some typecasting happen behind the scenes when we performed some of the mathematical operations. For instance, performing "true division" (using the / operator) will always return a float even if we provide two integer operands. How do we go about converting from an integer to a float ourselves though?
+### What are Bitwise Operators?
 
-The answer is by using the float initializer.
+Bitwise operators are operators that work off of the bit information (binary notation) for numbers. These aren't used that often, but it's good to have an understanding of what they do.
 
-```cmd
->>> float(1)
-1.0
+Positions in binary numbers are known as "bits" and they can either be 0 or 1. Bitwise operations do various things based on the values of these bits.
+
+### A Brief Aside About Truth Tables
+
+One tool from logic (from philosophy) that is used at every level of computer science is the idea of truth tables. Truth tables describe how various operations in boolean algebra work, and can show us all of the available options. Bitwise operators are boolean algebra operations because they deal with 0 and 1, which will equate to false and true. We won't go too deep into truth tables, but if you'd like to have a better understanding of boolean logic then I would encourage you to research them.
+
+### Operators: Bitwise Complement
+
+The first bitwise operator that we're going to talk about is probably the most confusing one: the bitwise complement operator ```~```. This is the only unary operator that we're going to talk about in this lesson. It takes a number that we're going to call x, and returns the result of ```-x - 1```. To show what this looks like in binary we'll also use the ```bin``` function to show our integers as binary numbers:
+
 ```
-
-We can do the same thing going from a float to an integer using the int initializer:
-
-```cmd
->>> int(1.3)
-1
->>> int(2.6)
+>>> a = 0b010
 2
+>>> bin(a)
+'0b10'
+>>> ~a
+-3
+>>> bin(~a)
+'-0b11'
 ```
 
-Notice that the result from converting 2.6 to an integer doesn't round, it truncates. It's as though the decimal point value doesn't exist.
+### Bitwise OR
 
-Converting between number types is pretty straight forward because they're both numbers, but what happens if we try to convert to and from a string?
+The remainder of the bitwise operators make a lot more sense and require two numbers as the operands. The bitwise OR operation will take two numbers, and if one of them has a 1 in a bit position then it will return a 1 at that position in the final result. To use the bitwise OR we'll use a single pipe characters |:
 
-### Converting to and from a String
-
-Converting to a string is done by using the str initializer and the results are what you would expect:
-
-```cmd
->>> str(1)
-'1'
->>> str(2.6)
-'2.6'
->>> str(False)
-'False'
+```
+>>> a = 0b1001
+>>> b = 0b1100
+>>> bin(a | b)
+'0b1101'
 ```
 
-As we see, even booleans can be typecast to strings. More interesting than converting to strings is trying to convert strings into other usable types, like integers and floats:
+### Bitwise AND
 
-```cmd
->>> int('1')
-1
->>> float('1')
-1.0
->>> float('1.2')
-1.2
->>> int('1.2')
-### Traceback (most recent call last):
+Where bitwise OR will return a 1 for a bit position if that position is a 1 in either number, bitwise AND requires that both have a 1 at that position, otherwise it will have a 0 at that position in the final result. The bitwise AND operator is a single ampersand &:
+
+```
+>>> a = 0b1001
+>>> b = 0b1100
+>>> bin(a & b)
+'0b1000'
+```
+
+### Bitwise XOR
+
+Bitwise XOR (exclusive or) is an interesting operator where the position in the final result will have a 1 if exactly one of the operands has a 1 in that position. The bitwise XOR operator is a caret ^:
+
+```
+>>> a = 0b1001
+>>> b = 0b1100
+>>> bin(a ^ b)
+'0b101'
+```
+
+### Bitwise Right Shift
+
+The final two operators allow us to shift our bit values directly sideways by a certain number of positions. To shift our bits to the right we'll use the bitwise right shift operator which is >>. Our initial values are on the left-hand side and the number of positions to shift is on the right:
+
+```
+>>> a = 0b110
+>>> bin(a >> 2)
+'0b1'
+>>> bin(a >> 4)
+'0b0'
+```
+
+Notice that if we shift beyond the number of bits in our number then we simply get 0 as the result.
+
+### Bitwise Left Shift
+
+Bitwise left shift uses the << operator with the same rules as the right shift operator. For each position that we shift then we'll add a new 0 bit to the right.
+
+```
+>>> a = 0b110
+>>> bin(a << 2)
+'0b11000'
+>>> bin(a << 4)
+'0b1100000''
+```
+## 4.2 Boolean Operators
+
+Believe it or not, now that we understand bitwise operators we've learned the basics of doing boolean logic. We're in a great spot to learn about boolean operators.
+
+Python Documentation: [Boolean Operators](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
+
+### The not Operation
+Sometimes we want to know the opposite boolean value for something. To do this, we use the unary operators ```not```:
+
+```
+>>> not True
+False
+>>> not False
+True
+```
+
+### The or Operation
+
+The boolean ```or``` operator works the same way that the bitwise OR operator did if we are only considering one bit. The bit of ```1``` is equivalent to ```True``` and ```0``` is equivalent to ```False```
+
+```
+>>> True or True
+True
+>>> True or False
+True
+>>> False or False
+False
+>>> False or True
+True
+```
+
+### The and Operation
+
+The ```and``` operator is the opposite of ```or```, and both of the operands need to be true.
+
+```
+>>> True and True
+True
+>>> True and False
+False
+>>> False and False
+False
+>>> False and True
+False
+```
+
+## 4.3. Comparison Operators
+
+The last operators that we need to learn about are the comparison operators. These operators allow us to know if two items are equivalent, or if one is great than the other.
+
+Documentation 
+[Comparisons](https://docs.python.org/3/library/stdtypes.html#comparisons)
+[The ord function](https://docs.python.org/3/library/functions.html#ord)
+
+### he Greater Than and Less Than Operators
+
+We're going to work our way through the comparison operators by starting with the ones that will feel most familiar from mathematics. The four greater than and less than operators work exactly as you'd expect:
+
+```
+>>> 1 < 2
+True
+>>> 2 > 1
+True
+>>> 2 < 1
+False
+>>> 1 <= 1
+True
+>>> 2.0 >= 3
+False
+```
+
+A few things to note are that we can compare numeric types to one other, so it's not hard to compare floats with integers.
+
+Another thing to notice is that these comparison operators always return a boolean value.
+
+Remember that individual types dictate whether or not they work with specific operands. And strings, for instance, work with these comparison operators too:
+
+```
+>>> 'a' > 'b'
+False
+>>> 'b' > 'a'
+True
+>>> 'bb' >= 'ba'
+True
+>>> 'a' <= 'c'
+True
+```
+
+When comparing strings, each character is compared with the character at the same index in the other string to determine which one is larger. Behind the scenes, each character as a numeric value that we can find using the [ord] function, and these are used to do the comparisons.
+
+Once again, if we try to compare types that aren't comparable, then we'll receive an error indicating such:
+
+```
+>>> 'a' <= 1
+Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-ValueError: invalid literal for int() with base 10: '1.2'
+TypeError: '<=' not supported between instances of 'str' and 'int'
 ```
 
-If the string contains something that would be a valid int or float if we typed it into the interpreter, then we're able to typecast it. But as soon as the type doesn't match, or we try to convert something that's not a number to a float or int, then we'll run into issues.
+### The Equals Operators
 
-### Converting to a Boolean
+The equals operators are a little different than you might expect, because we already use a single equals sign for variable assignment operations. Because of this, to see if two things are equal we use a double equals sign ==:
 
-One of the more important, and subtle type, conversions that we use in programming is casting to a boolean. We can cast anything to a boolean in Python by using the bool function.
-
-```cmd
->>> bool(1)
+```
+>>> 1 == 1
 True
->>> bool(2.4)
+>>> 1.0 == 1
 True
->>> bool('Tada')
-True
->>> bool('Tada'.lower)
-True
->>> bool(0)
+>>> 2 == 1.0
 False
->>> bool(0.0)
+>>> 'a' == 2
 False
->>> bool("")
-False
-```
-
-There are a select few items that convert into False. These are detailed in the Python truth value testing documentation, but can be summed up as False, None, any 0 value, and any empty sequence (an empty string for instance).
-
-### Boolean Operators with Non-Boolean Objects
-
-Now that we know that every object has a boolean representation, we're ready to revisit the boolean operators of and, or, and not. These operators will operate on any objects by using their boolean representations automatically.
-
-These operations get a little more complicated as we use non-boolean operands:
-
-```cmd
->>> 1 and 0
-0
->>> 'This' and 'That'
-'That'
->>> 'This' and 0 and 'That'
-0
->>> 0.0 and 1
-0.0
-```
-
-Remember that and requires both operands to be true in order to return true, and this means that it will automatically return the first falsy value that it finds or the rightmost operand if they're both true.
-
-The or operator works in the opposite way. It will return the first object that would evaluate to true, or the rightmost falsy value.
-
-```cmd
->>> 1 or 0
-1
->>> 0 or 1
-1
->>> 0 or ""
-""
->>> 0 or 1 or 'This'
-1
-```
-
-Lastly, the not operator will simply return the opposite boolean value for whatever we pass to it:
-
-```cmd
->>> not ""
+>>> 'a' == 'a'
 True
->>> not 1
+```
+
+Notice that this checks equivalence, so comparing an equivalent float and integer will return True. Additionally, we're able to compare two completely different types without receiving an error because they're not equivalent.
+
+If we want to know if two objects aren't equivalent, then we can use the not equal operators !=. This will return True only if the items aren't equivalent:
+
+```
+>>> 1 != 1
+False
+>>> 1.0 != 1
+False
+>>> 2 != 1.0
+True
+>>> 'a' != 2
+True
+>>> 'a' != 'a'
 False
 ```
 
-### The `input` Function
+### The Identity Operators
 
-
-With an understanding of the basic types in Python, we're finally ready to start writing some programs. In this lesson, we'll take a look at the input function that allows us to write command-line scripts that take in user input.
-
-### Documentation For This Video
-
-[The input function](https://docs.python.org/3/library/functions.html#input)
-
-### Prompting for User Input
-
-Computer programs aren't that interesting until they can be more dynamic. Over the next few short lessons, we'll be learning about how we can receive input from a user who's running our program from the command-line, and then how we can manage to present information back to the screen.
-
-Before we dig into the input function, let's talk a little bit about functions in general. Functions allow us to package up bits of code to be able to run them more than once. Additionally, functions specify expected inputs and can also return information. If we take a look at a function from mathematics, we can see the same thing:
-
-```cmd
-f(x) = x + 2
-```
-
-In this case, the name of the function is f, the input is x, and the code that will be executed is x + 2. We can provide a variety of values for x and get a different return value. So f(1) would return 3. In Python, we can reference functions by name, allowing us to pass them around like variables. But a function won't be executed unless we "call it" by using parenthesis. We can see this in the REPL by typing in input without any parenthesis:
-
-```cmd
->>> input
-<built-in function input>
-```
-
-The input function is the easiest way that we can make our programs request user interaction. This function is simple in that it only takes one optional argument to be the prompt that we present the user. Whatever the user types will be returned by the input function as a string, and that means we can store it in a variable. Let's try this out in the REPL now:
-
-```cmd
->>> favorite = input("Favorite Color: ")
-Favorite Color:
-```
-
-Now we're left in a new prompt and we can type our answer. When we hit Enter/Return it will submit all of what we wrote and store it in the variable favorite. Note that the prompt argument is optional, so we can simply run input() without an argument and it will leave us at an empty prompt waiting once again for us to hit Enter/Return before then returning that value.
-
-### Prompting for Multiple Values
-
-Now that we know how the input function works, let's create our first real script. In this script, we're going to ask the user to answer a series of questions, and store those answers in variables. In the next lesson, we'll then use these values.
-
-Let's call our script bio.py, and in this script, we'll ask for the following:
-
-- The user's name
-- The user's favorite color
-- The user's age
-
-Create and open bio.py in your text editor and call input three different times, once for each piece of information that we want:
+If we want to know if two objects are or are not exactly the same object, then we can use the identity operators. The identity operator is the keyword is and the opposite is is not (with a space).
 
 ```
-~/code/bio.py
+>>> 1 is 1
+True
+>>> 1 is 1.0
+False
+>>> 'a' is 'a'
+True
+>>> 'a' is not 'b'
+True
+>>> 'a' is not 'a'
+False
 ```
 
-```cmd
-name = input("What is your name? ")
-color = input("What is your favorite color? ")
-age = input("How old are you today? ")
-```
-
-Both name and color make sense to be strings, but age should be a number. Let's cast the value returned from the age prompt to be an int before assigning it to the variable. We can do this by placing the parenthesis for the int function around the entire input function call:
+The identity operators work based on the id of the object, and most of the basic types in Python are immutable (meaning they cannot be changed), so every time that we reference a specific literal it will point to the same item in memory. We can check the id of an object by using the id function (your return values will be different):
 
 ```
-~/code/bio.py
+>>> id('a')
+4444195248
+>>> id('a')
+4444195248
+>>> id('a') == id('a')
+True
 ```
 
-```cmd
-name = input("What is your name? ")
-color = input("What is your favorite color? ")
-age = int(input("How old are you today? "))
-```
-
-Now that we've written our script, let's run it:
-
-```cmd
-$ python3.7 bio.py
-What is your name? Kevin Bacon
-What is your favorite color? Orange
-How old are you today? 61
-$
-```
-
-We didn't do anything with the values that were returned, but since we were returned to our shell without an error we know that everything executed properly. If we were to give an invalid answer for the age question (something that wasn't an int) Python will raise an error. We need to keep that in mind.
-
-## The `print` Function
-
-Now that we've taken in some user input, we're going to look at how we can customize some information and write it out to the screen. In this lesson, we're going to dig into how the print function works, and see how we can place variable values into strings.
-
-### Documentation For This Video
-
-[The print function](https://docs.python.org/3/library/functions.html#print)
-
-### Printing to the Screen
-
-In the first program that we wrote, we printed "Hello, World!" out to the screen using the print function. That's as simple as it gets, but printing in Python is incredibly easy. Now that our bio.py script is taking in some input from a user, we're ready to write some code to print information back out. Our goal is to take the information from the user for their name, color, and age and print out this sentence with the variables substituted in:
+We'll discuss immutability later, but not all objects are immutable, so you'll run into situations where you can compare two objects that look the same using is and have False returned. Here are two list literals (which aren't immutable):
 
 ```
-NAME is AGE years old and loves the color COLOR.
+>>> [] is []
+False
 ```
 
-We're going to take a look at a few different ways to do this using the print function.
+## 4.4. Operator Priority (Binding)
 
-### The print Function
+Now that we've learned about quite a few operators, we're ready to learn how Python determines the order to run them if there are multiple in a single expression.
 
-As with most things in programming, there's more than one way for us to achieve our goal of printing the user's information in the proper format. For the exam, we need to understand how to use the sep and end optional arguments to the print function.
+Documentation 
+[Operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
 
-Let's take a quick look at how the print function works by default and also when we set the sep and end arguments.
+### Operator Precedence
 
-```
-~/code/bio.py
+In mathematics, we have the order of operations that tell us how we're going perform our calculations, and in Python, we have operator precedence. We haven't covered all of the contents of this table just yet, but we can look at how everything that we have used so far will be processed.
 
-name = input("What is your name? ")
-color = input("What is your favorite color? ")
-age = int(input("How old are you today? "))
+For whatever reason, the Python documentation shows the least binding operators first, but we'll talk about them from most binding to least. We'll leave the ones that we won't cover in this course out of the list though:
 
-print(name)
-print("is " + str(age) + " years old")
-print("and loves the color " + color + ".")
-```
+* Parenthesis and List/Dictionary/Set literals
+* Accessing attributes (subscription, slicing, function/method call, attribute reference)
+* Exponentiation (**)
+* Positive, Negative, and bitwise complement
+* Multiplication *, Division /, Floor Division //, Modulo %
+* Addition +, Subtraction -
+* Bitwise Shifts << & >>
+* Bitwise AND &
+* Bitwise XOR ^
+* Bitwise OR |
+* Comparison operators (in, not in, is, is not, <, >, <=, >=, ==, !=)
+* Boolean NOT not
+* Boolean AND and
+* Boolean OR or
+* Conditions if
 
-If we run this now we'll see this:
-
-```
-$ python3.7 bio.py
-What is your name? Kevin Bacon
-What is your favorite color? Orange
-How old are you today? 61
-Kevin Bacon
-is 61 years old
-and loves the color Orange.
-```
-
-Every time we call print, the string will be printed to the screen with a trailing newline, so the next print will always be on the next line. We can change this by setting the end value using a keyword argument. The end argument is set to '\n' by default, but if we change it to ' ' then it should print the three lines as one. When a function takes multiple arguments, then we separate them using commas. And for keyword arguments, we use the argument's name = the value that we want it to use. We'll learn more about how arguments work for functions later, but this is enough for now.
-
-Let's modify our script to set the end value:
+Let's look at some examples:
 
 ```
-~/code/bio.py
-
-name = input("What is your name? ")
-color = input("What is your favorite color? ")
-age = int(input("How old are you today? "))
-
-print(name, end=" ")
-print("is " + str(age) + " years old", end=" ")
-print("and loves the color " + color + ".", end=" ")
+>>> 14 & 3 * 2 + 4
+10
+>>> 14 & 3 * (2 + 4)
+2
+>>> (14 & 3) * 2 + 4
+8
+>>> 14 & (3 * 2) + 4
+10
 ```
-
-Running it again shows this:
-
-```
-$ python3.7 bio.py
-What is your name? Kevin Bacon
-What is your favorite color? Orange
-How old are you today? 61
-Kevin Bacon is 61 years old and loves the color Orange.
-```
-
-We've successfully printed out what we needed to, but it feels a little tedious. The print function can take any number of arguments before we use keyword arguments like sep and end. It will then print each argument separated by the sep character which is '' by default. If we set this to a single space then we should be able to use a single print call to print the sentence properly.
-
-Let's see what this looks like:
-
-```
-~/code/bio.py
-
-name = input("What is your name? ")
-color = input("What is your favorite color? ")
-age = int(input("How old are you today? "))
-
-print(name, 'is', age, 'years old and loves the color', color, '.', sep=" ")
-```
-
-Running it again shows this:
-```
-$ python3.7 bio.py
-What is your name? Kevin Bacon
-What is your favorite color? Orange
-How old are you today? 61
-Kevin Bacon is 61 years old and loves the color Orange .
-```
-
-We're so close, but there's an extra space between the color and the period. We'll need to combine those into a single string instead.
-
-```
-~/code/bio.py
-
-name = input("What is your name? ")
-color = input("What is your favorite color? ")
-age = int(input("How old are you today? "))
-
-print(name, 'is', age, 'years old and loves the color', color + '.', sep=" ")
-```
-
-
-
-{% include links.html %}
