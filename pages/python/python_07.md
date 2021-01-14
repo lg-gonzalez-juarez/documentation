@@ -1,154 +1,281 @@
 ---
-title: Strings, Operations, and Calculations
+title: 7. Lists
 tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."
-sidebar: product2_sidebar
+sidebar: python_sidebar
 permalink: python_07.html
 folder: python
 ---
 
-## Understanding Immutability
+## 7.1. Lists
 
-As we start digging into sequence types like strings, lists, tuples, and dictionaries, we need to start thinking about the mutability of a type or whether or not it can change. Normally, we'll talk about whether or not a type is "immutable," meaning that it can't be changed, and most of the types we've looked at thus far are immutable.
+In Python, there are a few different sequence types that we're going to work with, the most common of which is the list type. In this lesson, we'll go through how we can create and modify lists.
 
-### Documentation For This Video
+### Documentation 
 
-[Immutable Sequences](https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types)
+- [Sequence Types](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
+- [Lists](https://docs.python.org/3/library/stdtypes.html#list)
 
-### Why Does Immutability Matter?
+### Lists
 
-Immutability is something that we don't always have to think about, but it does matter in a few very common cases:
-
-### Understanding why we can't modify a string in-place
-
-Using objects as keys for dictionaries (we'll get to this later)
-We'll cover dictionaries in a different section, but when it comes to strings, wanting to modify a string variable is fairly common. Strings are an immutable type in Python, so we can't change a string object. We can only create new strings with the modifications that we wanted. This means that the only way for us to change the string value of a variable is to explicitly reassign it. As we learn about mutable types, we'll see that other types allow us to modify the value of a variable without explicitly reassigning it.
-
-### Immutability of Strings
-
-When looking at str class there are many methods that return a str to us, such as capitalize:
+We create a list in Python by using the square brackets ([]) and separating the values with commas. Here's an example list:
 
 ```cmd
->>> my_str = 'testing'
->>> my_str.capitalize()
-'Testing'
->>> my_str
-'testing'
+>>> my_list = [1, 2, 3, 4, 5]
 ```
-We won't find a method that changes the value of my_str in this example. Beyond this, each unique string that we can only type will only exist once in memory. In our case, we referenced the literal 'testing' when we assigned the value to our variable, and if we ever use the literal of 'testing' again it will point to the same point in memory, because that value can't be modified.
+
+For standard use, there's not a limit to how long our list can be. Lists are a heterogeneous collection type, so the items within the list do not all need to be of the same type:
 
 ```cmd
->>> id(my_str)
-4522355248
->>> id('testing')
-4522355248
+>>> other_list = ['a', 1, 1.0, False]
 ```
-This feature prevents the same value being allocated more than once and taking up more spots in our computer's memory than we need it to.
 
-## The `len` Function
+### Reading from Lists
 
-In this short lesson, we're going to take a look at a built-in function that will help us see how long any sequence or collection type is, including strings: the len function.
-
-### Documentation For This Video
-
-[The len function](https://docs.python.org/3/library/functions.html#len)
-
-### The len Function
-Needing to know the length of a string is very common. Thankfully, the len function will return how many characters are in a string:
+To access an individual element of a list, we index it the same way that we would for a character in a string:
 
 ```cmd
->>> len('testing')
-7
->>> len('')
-0
+>>> my_list[0]
+1
+>>> my_list[2]
+2
 ```
 
-This may seem a little boring, but it will help us to keep from causing too many errors when we start learning about indexing and slicing in the next lesson.
-
-## String Indexing and Slicing
-
-Sometimes we need to access a specific item, or a subset of items, in a sequence. To do that in Python, we'll use indexing and slicing.
-
-### Documentation For This Video
-
-[Text Sequence Type str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-
-### Indexing
-
-When we need to access a single item from a sequence, like a string, we'll use "indexing." Every item in a sequence type has an index that indicates the item's position in the sequence. The first item in a Python sequence has the index of 0, and each subsequent item's index increases by one. To perform indexing, we'll use square brackets ([ and ]) on the right-hand side of our string (or string variable), and within the square brackets we'll put the index number that we'd like to access:
-
-```cmd 
->>> test_str = 'testing'
->>> test_str[0]
-'t'
-```
-There isn't a character type in Python, so the return value will be a length one string. When indexing a string, the index must exist, otherwise, Python will raise an error:
+If we try to access an index that is too high (or too low) then we'll receive an error:
 
 ```cmd
->>> test_str[10]
+>>> my_list[5]
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-IndexError: string index out of range
+IndexError: list index out of range
 ```
 
-This is one of the areas where using len can help us avoid using an index that is too high. But since the starting index is 0, then the final index will always be len(test_str) - 1:
+To make sure that we're not trying to get an index that is out of range, we can test the length using the len function (and then subtract 1):
 
 ```cmd
->>> test_str[len(test_str) - 1]
-'g'
+>>> len(my_list)
+5
 ```
 
-If we try to use a negative index, it will actually start giving us items relative to the end of the string:
+Additionally, we can access subsections of a list by "slicing" it. We provide the starting index and the ending index (the object at that index won't be included):
 
 ```cmd
->>> test_str[-1]
-'g'
->>> test_str[-4]
-'t'
->>> test_str[-8]
+>>> my_list[0:2]
+[1, 2]
+>>> my_list[1:0]
+[2, 3, 4, 5]
+>>> my_list[:3]
+[1, 2, 3]
+>>> my_list[0::1]
+[1, 2, 3, 4, 5]
+>>> my_list[0::2]
+[1, 3, 5]
+```
+
+### Modifying a List
+
+Unlike strings, which can't be modified (we can't change a character in a string), we can change a value in a list using the subscript equals operation:
+
+```cmd
+>>> my_list[0] = "a"
+>>> my_list
+['a', 2, 3, 4, 5]
+```
+
+Lists can be added together (concatenated). This operation will return a new list, but we can use the += compound operator to add items to the end of our lists:
+
+```cmd
+>>> my_list + [8, 9, 10]
+['a', 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> my_list += [8, 9, 10]
+>>> my_list
+['a', 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+Items in lists can be set using slices as well:
+
+```cmd
+>>> my_list[1:3] = ['b', 'c']
+>>> my_list
+['a', 'b', 'c', 4, 5, 6, 7, 8, 9, 10]
+```
+
+Slicing and assigning can still be used if the slice size is smaller than the list being assigned. This will insert additional elements:
+
+```cmd
+>>> my_list[3:5] = ['d', 'e', 'f']
+>>> print(my_list)
+['a', 'b', 'c', 'd', 'e', 'f', 6, 7, 8, 9, 10]
+```
+
+We can remove a section of a list by assigning an empty list to the slice:
+
+```cmd
+>>> my_list = ['a', 'b', 'c', 'd', 5, 6, 7]
+>>> my_list[4:] = []
+>>> my_list
+['a', 'b', 'c', 'd']
+```
+
+### Removing Items from a List
+
+Another way that we can remove an item from a list is by using the del statement and the indexing operation:
+
+```cmd
+>>> my_list = ['a', 'b', 'c', 'd']
+>>> del my_list[0]
+>>> my_list
+['b', 'c', 'd']
+```
+
+One thing to note about del is that it will remove the entire list variable if we don't pass it an index:
+
+```cmd
+>>> del my_list
+>>> my_list
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-IndexError: string index out of range
+NameError: name 'my_list' is not defined
 ```
 
-### Slicing
+## 7.2. List Functions and Methods
 
-If we want to get a subsection of our string then we'll do what is called slicing. Slicing allows us to specify the index of the first element that we would like, followed by the index just beyond the last item that we'd like. We separate these indexes by using a colon (:)
+We've learned how to use some list operators to interact with our lists, but there are quite a few useful methods and functions that will make working with lists even easier.
+
+### Documentation For This Video
+
+- [List Methods](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
+- [The sorted function](https://docs.python.org/3/library/functions.html#sorted)
+- [The reversed function](https://docs.python.org/3/library/functions.html#reversed)
+- [Common Sequence Operations](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations)
+
+### List Methods
+
+When it comes to lists, some methods allow us to easily achieve the same things that we previously did using operators, and in an arguably more readable way. Indexing and slicing for the sake of reading objects is easy enough, but when it comes to adding new items to a list, there are better methods.
+
+If we want to add an object to the end of a list, then we can use the append method:
 
 ```cmd
->>> test_str[0:2]
-'te'
->>> test_str[3:5]
-'ti'
+>>> my_list = [1, 2, 3]
+>>> my_list.append(4)
+>>> my_list
+[1, 2, 3, 4]
 ```
 
-If we'd like to get all of the items after our starting index then we can use the length of the string as our second index, even though it's technically out of range. Or we can simply put nothing after the colon:
+Additionally, if we'd like to insert an item at a particular index, we can use the insert method:
 
 ```cmd
->>> test_str[2:len(test_str)]
-'sting'
->>> test_str[2:]
-'sting'
+>>> my_list.insert(0, 'a')
+>>> my_list
+['a', 1, 2, 3, 4]
 ```
 
-The last thing to mention about slicing is that there is a third number that we can use: the "step" value. By default, this value is 1 and just means that we'll go one-by-one through the sequence. But we can change this to grab every other item if we'd like by adding a second colon and the step size that we'd like to use:
+Notice that we didn't replace the item that had previously been at the 0 index. We moved all items at or after the desired index, further back in the list.
+
+If we need to know the index of an item in a list (if the item is in the list), then we have the index method:
 
 ```cmd
->>> test_str
-'testing'
->>> test_str[1:5:2]
-'et'
->>> test_str[1::2]
-'etn'
+>>> my_list = [1, 2, 3]
+>>> my_list.index(2)
+1
+>>> my_list.index(15)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: 15 is not in list
 ```
 
-One neat thing that we can do with this step option is stepping backward by using a negative step value. We can reverse an entire string by leaving off the start and end indexes and setting the step value to -1:
+Since index raises an error, it's not something that we'll usually want to use by itself. Thankfully, there's an easy way for us to determine if an item is in a list.
+
+### The in and not in Operators
+
+Sequence types have a few additional operators that make it easy for us to check the contents. The in and not in operators take a value that we'd like to search the sequence for on the left-hand side and a sequence on the right-hand side:
 
 ```cmd
->>> test_str[::-1]
-'gnitset'
+>>> my_list = [1, 2, 3]
+>>> 4 in my_list
+False
+>>> 4 not in my_list
+True
+>>> 2 in my_list
+True
 ```
+
+These operators are great to use before employing the index method to ensure that we don't get a ValueError.
+
+### Helpful Functions
+
+Besides methods, some built-in functions work great with lists. We've already seen the len function that will return the length of the list to us, but if we need to sort the contents of a list, then we have the sorted and reversed functions:
+
+```cmd
+>>> my_list = [1, 3, 4, 8, 2]
+>>> sorted(my_list)
+[1, 2, 3, 4, 8]
+>>> reversed(my_list)
+<list_reverseiterator object at 0x110330d90>
+```
+
+The reversed function doesn't return a list, but typecasting works for the list type also, and when we have a list iterator we can turn it back into a list using the list function:
+
+```cmd
+>>> reversed(my_list)
+<list_reverseiterator object at 0x110330d90>
+>>> list(reversed(my_list))
+[2, 8, 4, 3, 1]
+```
+
+If we want to sort, reverse, and get a list back, we can combine all three of these functions:
+
+```cmd
+>>> list(reversed(sorted(my_list)))
+[8, 4, 3, 2, 1]
+```
+
+## 7.3. Nested Lists: Matrices and Cubes
+
+Lists are a heterogeneous data structure and can hold onto a variety of data types, this includes other lists. In this lesson, we'll take a look at how we can model matrices in Python by nesting lists.
+
+### Creating a Matrix
+
+Matrices are a structure that has rows and columns. To model a matrix in Python, we need a new list for each row, and we'll need to make sure that each list is the same length so that the columns work properly.
+
+Here's an example matrix not in code:
+```
+1 2 3
+4 5 6
+```
+
+To model this matrix in Python, we'll do this:
+
+```cmd
+>>> my_matrix = [[1, 2, 3],
+...              [4, 5, 6]]
+>>> my_matrix
+[[1, 2, 3], [4, 5, 6]]
+```
+
+To determine how many rows are in a multi-dimensional list, we need to use the len function on the matrix itself. To get the number of columns, we would use len on any row in the matrix (assuming that it's a proper matrix with each row having the same number of columns):
+
+```cmd
+>>> row_count = len(my_matrix)
+>>> column_count = len(my_matrix[0])
+>>> row_count
+2
+>>> column_count
+3
+```
+
+Now if we want to interact with an individual item in the matrix, we need to index our variable two times, first with the row, and second with the column:
+
+```cmd
+>>> my_matrix[0][1]
+2
+```
+
+### Squares and Cubes
+
+Matrixes with specific dimensions have names. If a matrix has the same number of rows as columns, then it can be classified as a "cube", and some cubes have unique names. A square is 2x2, and a cube (like the 3D shape) is 3x3. The matrix that we've already created is a 2x3 matrix, and this doesn't have a special name.
+
 
 
 {% include links.html %}
