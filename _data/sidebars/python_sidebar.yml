@@ -23,62 +23,71 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Index 
+    - title: 00. Course Index
       url: /python_00.html
       type: homepage
       output: web, pdf
       
-    - title: Py01
+    - title: 01. Fundamental Concepts
       url: /python_01.html
       output: web, pdf
     
-    - title: Py02
+    - title: 02. Literals, variables, and comments
       url: /python_02.html
       output: web, pdf
 
-    - title: Py03
+    - title: 03. Number Systems and Numeric Operators
       url: /python_03.html
       output: web, pdf
 
-    - title: Py04
+    - title: 04.Operators and Bindings
       url: /python_04.html
       output: web, pdf
 
-    - title: Py05
+    - title: 05. Input and Output Operations
       url: /python_05.html
       output: web, pdf
 
-    - title: Py06
+    - title: 06. Strings, Operations, and Calculations
       url: /python_06.html
       output: web, pdf
 
-    - title: Py07
+    - title: 07. Lists
       url: /python_07.html
       output: web, pdf
 
-    - title: Py08
+    - title: 08. Tuples & Dictionaries
       url: /python_08.html
       output: web, pdf
 
-    - title: Py09
+    - title: 09. Dictionaries
       url: /python_09.html
       output: web, pdf
 
-    - title: Py10
+    - title: 10. String
       url: /python_10.html
       output: web, pdf
 
-    - title: Py11
+    - title: 11. Conditionals
       url: /python_11.html
       output: web, pdf
 
-    - title: Py12
+    - title: 12. Looping
       url: /python_12.html
       output: web, pdf
 
-    - title: Py13
+    - title: 13. Function Basics, Generators and Scoping
       url: /python_13.html
       output: web, pdf
+
+    - title: 14. Generators
+      url: /python_14.html
+      output: web, pdf
+
+    - title: 15. Scoping
+      url: /python_15.html
+      output: web, pdf
+
 
   - title: Use Maths and libraries
     output: web, pdf

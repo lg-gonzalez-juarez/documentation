@@ -14,7 +14,7 @@ folder: python
 
 We've seen numbers in Python, but how do we go about using them? In this lesson, we'll learn about the various numeric operators that we'll use in our Python programs.
 
-### Documentation For This Video
+### Documentation 
 [Python Operators](https://docs.python.org/3/library/operator.html#mapping-operators-to-functions)
 
 ### The Numeric Operators
@@ -43,7 +43,7 @@ There are even more operators than this, but they don't all apply to numbers. We
 
 In our day to day work, we almost always work with decimal numbers. These are not necessarily numbers with decimal points, but numbers derived from a base 10 number system. In this lesson, we'll take a look at how we could use other number systems in Python.
 
-### Documentation For This Video
+### Documentation 
 
 [Numeral Systems](https://en.wikipedia.org/wiki/Numeral_system)
 [Bit Numbering](https://en.wikipedia.org/wiki/Bit_numbering)

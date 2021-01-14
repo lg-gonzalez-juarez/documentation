@@ -106,7 +106,7 @@ Since our function defines the y parameter, it's as though the outer y variable 
 
 Occasionally, we want to be able to modify a global variable from within a more specific context. In this situation, Python provides us with the global keyword. In this lesson, we'll learn how to use the global keyword.
 
-### Documentation For This Video
+### Documentation 
 [The global Statement](https://docs.python.org/3/reference/simple_stmts.html?highlight=global#the-global-statement)
 
 ### Modifying the Global State from a Nested Scope
