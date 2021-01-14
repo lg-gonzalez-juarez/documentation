@@ -12,7 +12,7 @@ summary: These brief of alls docs
 # General
 
 ## Courses
-- [Python Entry Level](/python_00.html)
+- [Python Entry Level](python_00.html)
 - [Python Programming GUI](/python_00.html)
 - [Introduction Javascript](/javascript_00.html)
 
