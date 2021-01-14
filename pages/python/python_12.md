@@ -1,5 +1,5 @@
 ---
-title: Conditionals
+title: 12. Looping
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
@@ -8,13 +8,13 @@ permalink: python_12.html
 folder: python
 ---
 
-## Looping
+## 12.1. Looping
 
 ### The `while` Loop
 
 We work with collections of data and sequence a lot in programming, and it is common for us to want to perform the same action on each item or a subset of items in the content. To handle this, we need iteration and looping. In this lesson, we'll learn about one type of loop that we can use: the while loop.
 
-### Documentation For This Video
+### Documentation 
 
 [while statement](https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming)
 
@@ -54,11 +54,11 @@ looping
 >>>
 ```
 
- ## The `for` Loop
+ ## 12.2. The `for` Loop
 
 We work with collections of data and sequence a lot in programming, and it is common for us to want to perform the same action on each item or a subset of items in the content. To handle this we need iteration and looping. In this lesson, we'll learn about the most common type of loop that we will use: the for loop.
 
-### Documentation For This Video
+### Documentation 
 [The for statement](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
 
 ### The for Loop
@@ -140,7 +140,8 @@ n
 g
 >>>
 ```
-## Nesting Loops and Conditionals
+
+## 12.3. Nesting Loops and Conditionals
 
 Now that we've learned how to use loops and conditionals, we can do a lot more with our programs. We can do even more when we combine them by nesting loops within conditionals or conditionals within loops.
 
@@ -165,11 +166,11 @@ We've seen two of the most common types of code contexts in Python: the body of 
 
 For each nested context, we'll need to indent an extra 4 spaces. When we're done doing what we need to do in a nested context, then we go back to the previous indentation level to continue at that level. This is how we're able to continue past the if statement to increment the counter, all still within the while loop.
 
-###  Controlling Loop Execution with `break` and `continue`
+### 12.4. Controlling Loop Execution with `break` and `continue`
 
 There are times while working with loops, that we want to skip a single iteration, or even completely stop a loop before it is finished. We can accomplish these two things by using the continue and break statements.
 
-### Documentation For This Video
+### Documentation 
 
 [The break and continue statements](https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops)
 
@@ -230,15 +231,15 @@ green
 >>>
 ```
 
-## Integrating `else` with Loops
+## 12.5. Integrating `else` with Loops
 
 Unlike many languages, loops in Python have an additional clause that we can use: the else clause. In this lesson, we'll take a look at why and when we might want to use this additional Python feature.
 
-### Documentation For This Video 
+### Documentation 
 
 - [The break and continue statements and the else clause](https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops)
 
-## The else Clause
+### The else Clause
 
 The else clause for loops in Python allows us to define an additional code context that will execute when the loop has naturally finished its iteration. In a for loop, this means that we've reached the end of our iteration, and in a while loop it means the conditional has evaluated to False. Here's an example for each of these:
 
@@ -287,11 +288,11 @@ This might seem a little useless because we could have just as easily written th
 ### Orange is in the list
 This is not the most efficient way to search through a list, but it's a good example of when the else clause of a loop has an effect besides just being the expression run after the loop.
 
-## Using `range`
+## 12.6. Using `range`
 
 Sometimes we want to iterate a set number of times, but we don't necessarily have a collection to work with. An easy way to achieve this is by creating a range object and iterating over it.
 
-### Python Documentation For This Video
+### Documentation 
 
 - [Sequence Types](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
 - [Ranges](https://docs.python.org/3/library/stdtypes.html#range)
@@ -340,11 +341,11 @@ looping
 >>>
 ```
 
-## List Comprehensions
+## 12.7. List Comprehensions
 
 Iterating over a sequence is great, but needing to transform a list into a different list is fairly common. Python has a special feature to make doing this concise, called "list comprehensions".
 
-## Documentation For This Video
+## Documentation 
 
 [List Comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
 

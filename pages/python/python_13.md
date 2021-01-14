@@ -1,5 +1,5 @@
 ---
-title: Function Basics, Generators and Scoping
+title: 13. Function Basics, Generators and Scoping
 tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."

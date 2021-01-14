@@ -1,5 +1,5 @@
 ---
-title: Conditionals 2
+title: 11. Conditionals 
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
@@ -8,11 +8,11 @@ permalink: python_11.html
 folder: python
 ---
 
-## The `if` and `else` Statements
+## 11.1. The `if` and `else` Statements
 
 Up to this point, all of the code that we've written will always execute sequentially regardless of the inputs that we provide (assuming that we don't cause an error). In this lesson, we're going to learn about conditionals. Conditionals allow us to add branching logic to our code, and take different actions based on conditions.
 
-### Documentation For This Video
+### Documentation 
 
 - [The if and else Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
 
@@ -48,11 +48,11 @@ To add an alternative code path, we'll use the else keyword, followed by a colon
 Was False
 ```
 
-## Handling Multiple Cases with `elif`
+## 11.2. Handling Multiple Cases with `elif`
 
 Being able to perform one thing or another based on a condition is useful. But there are many situations where we want to check multiple possible conditions, and have more than two possible branches. In this lesson, we'll learn about how we can use the elif statement to have multiple branching paths in our conditionals.
 
-### Documentation For This Video
+### Documentation 
 
 -[The if, elif, and else Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
 
@@ -107,11 +107,11 @@ Your name is long.
 
 Notice that we fell into the first elif statement's block, and then the second elif block was never executed even though it was true. We can only exercise one branch in an if statement.
 
-## Utilizing `pass`
+## 11.3. Utilizing `pass`
 
 Occasionally, we want to add a branch or other code block without providing any useful code in the block. This is a useful approach if we're outlining some code. In this lesson, we'll learn how to achieve this by using the pass statement.
 
-### Documentation For This Video
+### Documentation 
 
 [The pass Statement](https://docs.python.org/3/reference/simple_stmts.html?highlight=pass#the-pass-statement)
 

@@ -1,5 +1,5 @@
 ---
-title: String
+title: 10. String
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
@@ -8,11 +8,11 @@ permalink: python_10.html
 folder: python
 ---
 
-## String Encodings and Functions
+## 10.1. String Encodings and Functions
 
 Strings hold onto characters and those characters don't need to be alphanumeric. Depending on how a string is encoded, some characters might not be valid. Before we can dig into string encodings, we need to take a look at some of the functions that allow us to interact with Unicode code points (the numbers behind characters). In this video, we'll delve into the ord and chr functions.
 
-### Documentation For This Video
+### Documentation 
 
 - [The ord Function](https://docs.python.org/3/library/functions.html#ord)
 - [The chr Function](https://docs.python.org/3/library/functions.html#chr)
@@ -76,11 +76,11 @@ Because we can write integers in hexadecimal notation using the 0x prefix, and t
 '™'
 ```
 
-## Useful String Methods, Part 1
+## 10.2. Useful String Methods, Part 1
 
 As strings are one of the most important and common types that we work with, we're going to dive into some different sets of methods that we have at our disposal when working with strings. In this lesson, we'll take a look at some capitalization methods and how to evaluate the contents of a string against common patterns.
 
-### Documentation For This Video
+### Documentation 
 
 - [The str.lower Method](https://docs.python.org/3/library/stdtypes.html#str.lower)
 - [The str.upper Method](https://docs.python.org/3/library/stdtypes.html#str.upper)
@@ -133,11 +133,11 @@ There are quite a few of these methods. Here's a list:
 - isidentifier - Return True if the string is a valid Python identifier, False otherwise. String could be used as a variable, function, or class name.
 - isprintable - Return True if the string is printable, False otherwise. Meaning that if the character can't be printed as-is, then it's not printable. So escape characters like \n are considered not printable even though they change how the string is printed.
 
-## Useful String Methods, Part 2
+## 10.3. Useful String Methods, Part 2
 
 As strings are one of the most important and common data types that we work with, we're going to dive into some different sets of methods that we have at our disposal when working with strings. In this lesson, we'll take a look at how to split strings apart, build them up from a list, and substitute information into a string using the `format` method.
 
-### Documentation For This Video
+### Documentation 
 
 - [The str.split Method](https://docs.python.org/3/library/stdtypes.html#str.split)
 - [The str.join Method](https://docs.python.org/3/library/stdtypes.html#str.join)
@@ -203,7 +203,5 @@ If we want to use the same value multiple times within the string, then we can p
 ```
 
 It's worth noting that these two approaches can't be mixed. There's a lot more that we can do with the format method, and reading the Format String Syntax documentation can help.
-
-
 
 {% include links.html %}
