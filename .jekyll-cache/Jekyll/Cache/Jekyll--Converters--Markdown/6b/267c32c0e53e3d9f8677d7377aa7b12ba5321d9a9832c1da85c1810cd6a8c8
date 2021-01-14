@@ -1,0 +1,222 @@
+I"@%<h2 id="81-tuples">8.1. Tuples</h2>
+
+<p>The most common immutable sequence type that we’re going to work with is going to be the tuple.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<ul>
+  <li><a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">Sequence Types</a></li>
+  <li><a href="https://docs.python.org/3/library/stdtypes.html#tuple">Tuples</a></li>
+</ul>
+
+<h3 id="tuples">Tuples</h3>
+
+<p>Tuples are a fixed width, immutable sequence type. We create tuples using parenthesis (()) and at least one comma (,):</p>
+
+<pre><code class="language-mcd">&gt;&gt;&gt; point = (2.0, 3.0)
+</code></pre>
+
+<p>Since tuples are immutable, we don’t have access to the same methods that we do on a list. We can use tuples in some operations like concatenation, but we can’t change the original tuple that we created:</p>
+
+<pre><code class="language-mcd">&gt;&gt;&gt; point_3d = point + (4.0,)
+&gt;&gt;&gt; point_3d
+(2.0, 3.0, 4.0)
+</code></pre>
+
+<p>One interesting characteristic of tuples is that we can unpack them into multiple variables at the same time:</p>
+
+<pre><code class="language-mcd">&gt;&gt;&gt; x, y, z = point_3d
+&gt;&gt;&gt; x
+2.0
+&gt;&gt;&gt; y
+3.0
+&gt;&gt;&gt; z
+4.0
+</code></pre>
+
+<p>When we’ll most likely to see tuples is while looking at a format string that’s compatible with Python 2 (though this will go away soon):</p>
+
+<pre><code class="language-mcd">&gt;&gt;&gt; print("My name is: %s %s" % ("Keith", "Thompson"))
+</code></pre>
+
+<h2 id="82-tuples-versus-lists">8.2. Tuples Versus Lists</h2>
+
+<p>One of the biggest questions that we’ll have when working with collections is whether we should use a tuple or a list. In this lesson, we’ll take a look at when each is useful.</p>
+
+<h3 id="tuples-vs-lists">Tuples vs Lists</h3>
+
+<p>When determining if we should use a list or a tuple, we need to ask ourselves one important question:</p>
+
+<p>Will we ever not know the exact number of items that we’re storing?</p>
+
+<p>If we answer “yes” to this question, then we should use a list. Lists are great for holding onto real collections: users, phone numbers, etc.</p>
+
+<p>Tuples make more sense in two general situations:</p>
+
+<p>When we’re trying to return more than one piece of information from a function
+If we want to model something that has a specific number of fields that we can positionally hold in a tuple:
+This would be something like a point in 2D or 3D space having x, y, and potentially z. Those values should always be in a specific spot.
+Another way that this could be used is to quickly model a “person” that has a name, age, and phone number:</p>
+
+<pre><code class="language-mcd">&gt;&gt;&gt; person = ('Kevin Bacon', 61, '555-555-5555')
+&gt;&gt;&gt; person2 = ('Bob Ross', 76, '')
+&gt;&gt;&gt; person[0]
+'Kevin Bacon'
+&gt;&gt;&gt; person2[0]
+'Bob Ross'
+</code></pre>
+
+<p>In this case index, 0 will always return the “name” for a person stored as a tuple.</p>
+
+<p>Fun Fact: While tuples are immutable, their values can change when a tuple holds a reference to a mutable object, like a list.</p>
+
+<h3 id="lists-in-tuples-and-tuples-in-lists">Lists in Tuples and Tuples in Lists</h3>
+
+<p>To be thorough, we need to understand how having lists within tuples (and tuples within lists) works. Let’s start with lists within tuples, followed by tuples within lists:</p>
+
+<pre><code class="language-mcd">&gt;&gt;&gt; my_list = [1, 2, 3]
+&gt;&gt;&gt; my_tuple = (my_list, 1)
+&gt;&gt;&gt; my_tuple
+([1, 2, 3], 1)
+&gt;&gt;&gt; other_list = [1, 2, my_tuple]
+&gt;&gt;&gt; other_list
+[1, 2, ([1, 2, 3], 1)]
+</code></pre>
+
+<p>We’re able to embed lists in tuples and tuples in lists without issues. It’s worth noting that tuples are immutable, but they do not require that the items within the tuple be immutable. We can modify the list that is inside of my_tuple:</p>
+
+<pre><code class="language-mcd">&gt;&gt;&gt; my_tuple
+([1, 2, 3], 1)
+&gt;&gt;&gt; my_list.append(1)
+&gt;&gt;&gt; my_tuple
+([1, 2, 3, 1], 1)
+</code></pre>
+
+<h2 id="dictionaries">Dictionaries</h2>
+
+<p>Learn how to use dictionaries (the dict type) to hold onto key/value information in Python.</p>
+
+<h3 id="python-documentation-for-this-video">Python Documentation For This Video</h3>
+
+<p><a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">Dictionaries</a></p>
+
+<h3 id="dictionaries-1">Dictionaries</h3>
+
+<p>Dictionaries are the main mapping type that we’ll use in Python. This object is comparable to a Hash or “associative array” in other languages.</p>
+
+<p>Things to note about dictionaries:</p>
+
+<ol>
+  <li>Unlike Python 2 dictionaries, Python 3.7 keys are ordered in dictionaries. We will need OrderedDict if we want this to work on another version of Python.</li>
+  <li>You can set the key to any IMMUTABLE TYPE (no lists).</li>
+  <li>Avoid using things other than simple objects as keys.</li>
+  <li>Each key can only have one value (so we don’t have duplicates when creating with dict).
+We create dictionary literals by using curly braces ({ and }), separating keys from values using colons (:), and separating key/value pairs using commas (,). Here’s an example dictionary:</li>
+</ol>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; ages = { 'kevin': 59, 'alex': 29, 'bob': 40 }
+&gt;&gt;&gt; ages
+{'kevin': 59, 'alex': 29, 'bob': 40}
+</code></pre>
+
+<p>We can read a value from a dictionary by subscripting using the key:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; ages['kevin']
+59
+&gt;&gt;&gt; ages['billy']
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+KeyError: 'billy'
+</code></pre></div></div>
+
+<p>Keys can be added or changed using subscripting and assignment:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; ages['kayla'] = 21
+&gt;&gt;&gt; ages
+{'kevin': 59, 'alex': 29, 'bob': 40, 'kayla': 21}
+</code></pre>
+
+<p>Items can be removed from a dictionary using the del statement:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; del ages['kevin']
+&gt;&gt;&gt; ages
+{'alex': 29, 'bob': 40, 'kayla': 21}
+&gt;&gt;&gt; del ages
+&gt;&gt;&gt; ages
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+NameError: name 'ages' is not defined
+</code></pre>
+
+<h3 id="the-in-and-not-in-operators">The <code class="language-plaintext highlighter-rouge">in</code> and <code class="language-plaintext highlighter-rouge">not</code> in Operators</h3>
+
+<p>Just like with lists and tuples, dictionaries have access to the in and not in operators. Notably, this only considers the keys:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; ages = {'kevin': 59, 'bob': 40}
+&gt;&gt;&gt; 'kevin' in ages
+True
+&gt;&gt;&gt; 59 in ages
+False
+Alternative Ways to Create a dict Using Keyword Arguments
+</code></pre>
+
+<p>There are a few other ways to create dictionaries that we might see, which are those using the dict constructor with key/value arguments and a list of tuples:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; weights = dict(kevin=160, bob=240, kayla=135)
+&gt;&gt;&gt; weights
+{'kevin': 160, 'bob': 240, 'kayla': 135}
+&gt;&gt;&gt; colors = dict([('kevin', 'blue'), ('bob', 'green'), ('kayla', 'red')])
+&gt;&gt;&gt; colors
+{'kevin': 'blue', 'bob': 'green', 'kayla': 'red'}
+</code></pre>
+
+<h2 id="dictionary-methods">Dictionary Methods</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">dict</code> type has plenty of useful methods that we should know, in order to make them even more useful in our code. This lesson illustrates the main methods that we’ll use:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">keys</code></li>
+  <li><code class="language-plaintext highlighter-rouge">values</code></li>
+  <li><code class="language-plaintext highlighter-rouge">items</code></li>
+</ul>
+
+<h3 id="documentation-for-this-video">Documentation For This Video</h3>
+
+<ul>
+  <li><a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">Dictionary Methods</a></li>
+</ul>
+
+<h2 id="dictionary-methods-1">Dictionary Methods</h2>
+
+<p>When we’re working with dictionaries, we often need to perform actions on all of the keys, all of the values, or each pair (item). Thankfully the keys, values, and items methods each return something to make this easier. Let’s take a look at the key method first:</p>
+
+<pre><code class="language-mcd">&gt;&gt;&gt; ages = {'kevin': 61, 'bob': 79}
+&gt;&gt;&gt; ages.keys()
+dict_keys(['kevin', 'bob'])
+</code></pre>
+
+<p>Take notice of the return value, it’s a dict_keys item. This by itself may not seem useful, but it can be cast to a list if that type makes more sense for what we’re doing:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; list(ages.keys())
+['kevin', 'bob']
+</code></pre>
+
+<p>We’ll also follow this pattern for both values and items:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; ages.values()
+dict_values([61, 79])
+&gt;&gt;&gt; list(ages.values())
+[61, 79]
+&gt;&gt;&gt; ages.items()
+dict_items([('kevin', 61), ('bob', 79)])
+&gt;&gt;&gt; list(ages.items())
+[('kevin', 61), ('bob', 79)]
+</code></pre>
+
+<p>Because each item in a dictionary is a key and value, the result of items (when typecast to a list) is a list of 2-tuples (often called “pairs”). This is a good example of using a tuple, because we know these items will always be two items long.</p>
+
+<p>As we learn about iterating, these methods will become incredibly valuable for doing useful things with dictionaries.</p>
+
+<p>[]:</p>
+
+:ET
