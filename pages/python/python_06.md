@@ -1,5 +1,5 @@
 ---
-title: 6. Strings, Operations, and Calculations
+title: 06. Strings, Operations, and Calculations
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."

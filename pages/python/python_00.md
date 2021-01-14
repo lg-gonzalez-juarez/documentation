@@ -1,5 +1,5 @@
 ---
-title: Course Index
+title: 00. Course Index
 tags: [python]
 keywords: trainning, courses
 last_updated: January 14th, 2021

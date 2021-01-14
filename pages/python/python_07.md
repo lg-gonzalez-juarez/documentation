@@ -1,5 +1,5 @@
 ---
-title: 7. Lists
+title: 07. Lists
 tags: [python]
 keywords: sample
 summary: "This is just a sample topic..."

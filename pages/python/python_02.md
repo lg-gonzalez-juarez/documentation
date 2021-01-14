@@ -1,5 +1,5 @@
 ---
-title: 2. Literals, variables, and comments
+title: 02. Literals, variables, and comments
 tags: [python]
 keywords: python
 #summary: "This is just a sample topic..."

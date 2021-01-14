@@ -1,5 +1,5 @@
 ---
-title: 3. Number Systems and Numeric Operators
+title: 03. Number Systems and Numeric Operators
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."

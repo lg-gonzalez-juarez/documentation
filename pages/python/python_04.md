@@ -1,5 +1,5 @@
 ---
-title: 4.Operators and Bindings
+title: 04.Operators and Bindings
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."

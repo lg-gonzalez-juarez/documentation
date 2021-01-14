@@ -1,5 +1,5 @@
 ---
-title: 8. Tuples & Dictionaries
+title: 08. Tuples & Dictionaries
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
