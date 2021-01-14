@@ -8,6 +8,11 @@ permalink: pyth_00.html
 folder: python2
 ---
 
+Course: Using Python's Math, Science, and Engineering Libraries
+
+[link Linux Academy](https://linuxacademy.com/cp/modules/view/id/621)
+
+
 ## Common `math` Functions and Constants
 
 Python's [math library](https://docs.python.org/3/library/math.html) has a number of functions and constants that are used in everyday math applications. These include trigonometric functions, common math operations, and math constants.
