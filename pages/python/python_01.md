@@ -1,5 +1,5 @@
 ---
-title: Fundamental Concepts
+title: 1. Fundamental Concepts
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
@@ -8,13 +8,13 @@ permalink: python_01.html
 folder: python
 ---
 
-## Compilers and Interpreters
+## 1.1. Compilers and Interpreters
 
 [LunixAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/1/module/413)
 
 The compiler would be something that produces machine code. So at its core, what a compiler does is it takes code from one type, transfers it into a different type. So most of the time, this is going to be going from a high-level language like Python or something else down to something that is lower level and can run on the machine directly, or it can run in a virtual machine. So that's what a compiler does; it just translates code from one type of code to another type of code. That's the simplified version of this, and there are many different types of compilers that can exist, and we're not going to cover all of them.We just need to loosely know what a compiler does,but the compilation process consist of five basic steps here.
 
-## Lexing, Syntax, and Semantics
+## 1.2. Lexing, Syntax, and Semantics
 [LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/2/module/413)
 
 In this secction is covered some of the steps involved in the compilation and interpreting process:
@@ -23,7 +23,7 @@ In this secction is covered some of the steps involved in the compilation and in
 * Syntactic Analysis
 * Semantic Analysis
 
-## Python Specifics: Keywords and Instructions
+## 1.3. Python Specifics: Keywords and Instructions
 [LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/3/module/413)
 
 In this lesson, we'll cover some more foundational concepts of programming languages:
@@ -31,7 +31,7 @@ In this lesson, we'll cover some more foundational concepts of programming langu
 * Keywords
 * Bytecode Instructions
 
-## Using the REPL
+## 1.4. Using the REPL
 [LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413)
 
 Python is an interpreted language, and code is evaluated in a line-by-line fashion. Since each line can be evaluated by itself, the time between evaluating each line doesn't matter, and this allows us to have a REPL.
@@ -108,6 +108,5 @@ We're not quite done. Now we need to make the file executable using `chmod:`
 $ chmod u+x hello.py
 ```
 Run the script now by using `./hello.py` and we'll see the same result. If we'd rather not have a file extension on our script, we can remove it since we've put a shebang in the file. Running `mv hello.py` hello then performing `./hello` will still result in the same thing.
-
 
 {% include links.html %}

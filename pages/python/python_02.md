@@ -1,5 +1,5 @@
 ---
-title: Literals, variables, and comments
+title: 2. Literals, variables, and comments
 tags: [python]
 keywords: python
 #summary: "This is just a sample topic..."
@@ -8,7 +8,7 @@ permalink: python_02.html
 folder: python
 ---
 
-## Comments
+## 2.1. Comments
 
 When writing scripts, we often want to leave ourselves notes or explanations. Python (along with most scripting languages) uses the # character to signify that the line should be ignored and not executed.
 
@@ -34,7 +34,7 @@ for some lines of code to not execute.
 """
 ```
 
-## Variables and the Assignment Operator
+## 2.2. Variables and the Assignment Operator
 
 Almost any script that we write will need to provide a way for us to hold onto information for use later on. That's where variables come into play.
 
@@ -88,7 +88,7 @@ There are numerous shorthand assignment operators we can use that allow us to pe
 As we learn about more and more operators we'll be able to follow this pattern if we want to reassess our current variable based on an operation.
 
 
-## Strings and String Operators
+## 2.3. Strings and String Operators
 
 [link](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
 
@@ -168,7 +168,7 @@ Slash\Character
 "Double" in Double
 ```
 
-## Booleans
+## 2.4. Booleans
 
 [DocPython](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)
 [DocPython](https://docs.python.org/3/library/stdtypes.html#boolean-values)
@@ -184,7 +184,7 @@ Notice that these both start with capital letters. Later we will learn about com
 ### Everything has a Boolean Value
 We can check the Boolean value for any object in Python by using the `bool` function. For instance, the empty string `""` has the boolean value of `False` where any other string as a boolean value of `True`.
 
-## Numbers: Integers, Floats, and Scientific Notation
+## 2.5. Numbers: Integers, Floats, and Scientific Notation
 
 [Doc](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
 

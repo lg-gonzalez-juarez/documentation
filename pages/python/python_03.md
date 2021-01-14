@@ -1,5 +1,5 @@
 ---
-title: Number Systems and Numeric Operators
+title: 3. Number Systems and Numeric Operators
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
@@ -8,7 +8,7 @@ permalink: python_03.html
 folder: python
 ---
 
-##  Numeric Operators
+## 3.1. Numeric Operators
 
 [link](https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/1)
 
@@ -39,7 +39,7 @@ When we think about what we can do with numbers in math, there are quite a few t
 
 There are even more operators than this, but they don't all apply to numbers. We'll learn about some of the other operators in different lessons.
 
-## Number Systems
+## 3.2. Number Systems
 
 In our day to day work, we almost always work with decimal numbers. These are not necessarily numbers with decimal points, but numbers derived from a base 10 number system. In this lesson, we'll take a look at how we could use other number systems in Python.
 
@@ -116,7 +116,7 @@ The result printed out will be the decimal value. If we want to work in decimal 
 
 The value returned from these functions will always be a string.
 
-## Floating-Point Accuracy
+## 3.3. Floating-Point Accuracy
 
 To complete our conversation about numbers in Python we do need to discuss how accurate floats are.
 
