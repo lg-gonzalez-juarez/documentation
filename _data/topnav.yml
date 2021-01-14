@@ -10,6 +10,9 @@ topnav:
       url: /news
     - title: Python
       url: /python_00.html
+    - title: Jekyll
+      url: /getting_started.html
+
 
 #Topnav dropdowns
 topnav_dropdowns:

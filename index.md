@@ -2,7 +2,8 @@
 title: "Indíce"
 keywords: sample homepage
 tags: [getting_started]
-sidebar: mydoc_sidebar
+#sidebar: mydoc_sidebar
+sidebar: general_sidebar
 permalink: index.html
 summary: These brief of alls docs 
 ---

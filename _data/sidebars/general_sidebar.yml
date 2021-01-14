@@ -1,0 +1,63 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  product: jekyll
+  version: #1.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Preliminary Knowledge
+    output: web, pdf
+    type: homepage
+    folderitems:
+
+  - title: Preliminary Knowledge
+    output: web, pdf
+    type: homepage
+    folderitems:
+
+    - title: Indice General
+      url: /index.html
+      output: web, pdf
+      type: homepage
+
+    - title: Usage package
+      url: /mydoc_test_lg.html
+      output: web, pdf
+
+  - title: Courses
+    output: web, pdf
+    folderitems:
+
+    - title: Coursera
+      url: /course_kb_layout.html
+      output: web, pdf
+
+  - title: Python
+    output: web, pdf
+    folderitems:
+
+    - title: Python Usage
+      url: /mydoc_python_usage.html
+      output: web, pdf
+      type: homepage
+
+    - title: Python Pypower
+      url: /mydoc_python_pypower.html
+      output: web, pdf
+
+  
+
