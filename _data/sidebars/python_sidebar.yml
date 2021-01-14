@@ -80,8 +80,13 @@ entries:
       url: /python_13.html
       output: web, pdf
 
-    - title: Py2_00
+  - title: Use Maths and libraries
+    output: web, pdf
+    folderitems:
+
+    - title: Index Math-Lib
       url: /pyth_00.html
+      type: homepage
       output: web, pdf
 
     - title: Py2_01
