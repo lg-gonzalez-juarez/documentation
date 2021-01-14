@@ -8,9 +8,9 @@ permalink: pyth_00.html
 folder: python2
 ---
 
-Course: Using Python's Math, Science, and Engineering Libraries
+Course: Using Python's Math, Science, and Engineering Libraries. Extracted from [link Linux Academy](https://linuxacademy.com/cp/modules/view/id/621).
 
-[link Linux Academy](https://linuxacademy.com/cp/modules/view/id/621)
+This covers:
 
 
 ## Common `math` Functions and Constants
