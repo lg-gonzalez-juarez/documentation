@@ -8,12 +8,12 @@ permalink: python_05.html
 folder: python
 ---
 
-## Typecasting
+## 5.1. Typecasting
 
 
 Up to this point, we've worked with a lot of different types, but before we can start taking user input and do interesting things with it we'll need to convert from one type to another. This process is called "typecasting".
 
-### Documentation For This Video
+### Documentation
 
 [Typecasting: int](https://docs.python.org/3/library/functions.html#int)
 [Typecasting: float](https://docs.python.org/3/library/functions.html#float)
@@ -139,12 +139,12 @@ True
 False
 ```
 
-### The `input` Function
+## 5.2. The `input` Function
 
 
 With an understanding of the basic types in Python, we're finally ready to start writing some programs. In this lesson, we'll take a look at the input function that allows us to write command-line scripts that take in user input.
 
-### Documentation For This Video
+### Documentation 
 
 [The input function](https://docs.python.org/3/library/functions.html#input)
 
@@ -220,11 +220,11 @@ $
 
 We didn't do anything with the values that were returned, but since we were returned to our shell without an error we know that everything executed properly. If we were to give an invalid answer for the age question (something that wasn't an int) Python will raise an error. We need to keep that in mind.
 
-## The `print` Function
+## 5.3. The `print` Function
 
 Now that we've taken in some user input, we're going to look at how we can customize some information and write it out to the screen. In this lesson, we're going to dig into how the print function works, and see how we can place variable values into strings.
 
-### Documentation For This Video
+### Documentation 
 
 [The print function](https://docs.python.org/3/library/functions.html#print)
 
@@ -328,7 +328,4 @@ age = int(input("How old are you today? "))
 
 print(name, 'is', age, 'years old and loves the color', color + '.', sep=" ")
 ```
-
-
-
 {% include links.html %}
