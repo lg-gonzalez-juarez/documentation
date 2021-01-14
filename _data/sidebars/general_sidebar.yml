@@ -30,7 +30,20 @@ entries:
       type: homepage
 
     - title: Usage package
-      url: /mydoc_test_lg.html
+      url: /gral_test_lg.html
+      output: web, pdf
+
+  - title: Python
+    output: web, pdf
+    folderitems:
+
+    - title: Python Usage
+      url: /gral_python_usage.html
+      output: web, pdf
+      type: homepage
+
+    - title: Python Pypower
+      url: /gral_python_pypower.html
       output: web, pdf
 
   - title: Courses
@@ -40,19 +53,5 @@ entries:
     - title: Coursera
       url: /course_kb_layout.html
       output: web, pdf
-
-  - title: Python
-    output: web, pdf
-    folderitems:
-
-    - title: Python Usage
-      url: /mydoc_python_usage.html
-      output: web, pdf
-      type: homepage
-
-    - title: Python Pypower
-      url: /mydoc_python_pypower.html
-      output: web, pdf
-
   
 
