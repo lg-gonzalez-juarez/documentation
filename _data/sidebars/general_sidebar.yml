@@ -2,7 +2,7 @@
 
 entries:
 - title: Sidebar
-  product: jekyll
+  product: Doc Gral
   version: #1.0
   folders:
 
@@ -18,11 +18,6 @@ entries:
       url: /tocpage.html
       output: pdf
       type: frontmatter
-
-  - title: Preliminary Knowledge
-    output: web, pdf
-    type: homepage
-    folderitems:
 
   - title: Preliminary Knowledge
     output: web, pdf
