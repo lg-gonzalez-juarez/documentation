@@ -12,9 +12,9 @@ summary: These brief of alls docs
 # General
 
 ## Courses
-- [Python Entry Level](https://lg-gonzalez-juarez.github.io/python_00.html)
-- [Python Programming GUI](https://lg-gonzalez-juarez.github.io/python_00.html)
-- [Introduction Javascript](https://lg-gonzalez-juarez.github.io/javascript_00.html)
+- [Python Entry Level](/python_00.html)
+- [Python Programming GUI](/python_00.html)
+- [Introduction Javascript](/javascript_00.html)
 
 ## Tutorial usage
 - [Install Jekyll on Mac](mydoc_install_jekyll_on_mac.html)
