@@ -88,12 +88,11 @@ entries:
       url: /python_15.html
       output: web, pdf
 
-
   - title: Use Maths and libraries
     output: web, pdf
     folderitems:
 
-    - title: Index Math-Lib
+    - title: 20. Index Math-Lib
       url: /pyth_00.html
       type: homepage
       output: web, pdf
