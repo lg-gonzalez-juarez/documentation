@@ -5,7 +5,7 @@ keywords: python,certification
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: pyth_41.html
-folder: python
+folder: python3
 ---
 
 ## 41.1. Defining and Using Lambdas

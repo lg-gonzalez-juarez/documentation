@@ -5,7 +5,7 @@ keywords: python,certification
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: pyth_45.html
-folder: python
+folder: python3
 ---
 vcbcv 
 
