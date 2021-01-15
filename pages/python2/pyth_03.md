@@ -372,11 +372,7 @@ Notice the ints in the array were changed to floats.
 In this lesson, we looked at simple math operands. You can also do linear algebra on arrays and matrices. For more information, see [here](https://numpy.org/doc/stable/reference/routines.linalg.html).
 
 
-
-
-
-
-
+## Hands-On Lab 23: Creating a Matrix Using NumPy Arrays
 
 
 

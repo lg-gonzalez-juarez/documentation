@@ -3,6 +3,11 @@
 dir IP publica + ```:8080```
 
 
+to get started, is necesary to create a file to view our revenue:
+```
+touch revenue.py
+```
+
 ## Notas laboratorios
 
 We'll need to use a few different things from Python's math module to calculate these values and ensure that the result is accurate given that we're working with PI and our starting measurements can be floats. We want our calculations to be accurate to the 1/100th of a unit.
