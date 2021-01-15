@@ -1,7 +1,7 @@
 ---
 title: 41. Lambdas and Collection Functions
 tags: [python]
-keywords: python,certification
+keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: pyth_41.html

@@ -22,7 +22,6 @@ entries:
   - title: Python-Entry-Level
     output: web, pdf
     folderitems:
-
     - title: 00. Course Index
       url: /python_00.html
       type: homepage
@@ -109,7 +108,7 @@ entries:
       url: /pyth_03.html
       output: web, pdf
 
- - title: Certified Associate in Python Programming Certification 
+ - title: Programming Certification 
     output: web, pdf
     folderitems:
 
