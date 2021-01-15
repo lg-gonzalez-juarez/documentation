@@ -197,3 +197,8 @@ You can see the lack of precision in the first two; however, fsum implementation
 ### Log and Trig functions
 
 This library also functions to calculate the log, natural log, sin, cos, tan, and many other types of common math calculations.
+
+# Hands-On Lab: 
+## Calculating Circular Values with Python's Math Modules
+
+path: **D:\LAB-python\math-python\Hands-on-21**
