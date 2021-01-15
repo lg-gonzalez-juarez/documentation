@@ -8,12 +8,14 @@ permalink: pyth_00.html
 folder: python2
 ---
 
+# 1. Simple Math Using the `math` Module
+
 Course: Using Python's Math, Science, and Engineering Libraries. Extracted from [link Linux Academy](https://linuxacademy.com/cp/modules/view/id/621).
 
 This covers:
 
 
-## Common `math` Functions and Constants
+## 1.1. Common `math` Functions and Constants
 
 Python's [math library](https://docs.python.org/3/library/math.html) has a number of functions and constants that are used in everyday math applications. These include trigonometric functions, common math operations, and math constants.
 
@@ -39,7 +41,7 @@ import math
 ```
 Many math operations behave differently for "floats" versus "ints". Let's take a look at some examples.
 
-### Modulo (%)
+### Modulo (```%```)
 
 A simple explanation of modulo is the remainder when two numbers are divided:
 
@@ -53,7 +55,7 @@ A simple explanation of modulo is the remainder when two numbers are divided:
 
 A common use is to determine if a number is even or odd. In some applications, it is important to do one thing if a number is even and another if it is odd. An easy way to determine this is to modulo the number by 2. If it is even, the modulo is 0, and if it's odd, then the modulo is 1.
 
-Given the list [5, 6, 4, 2, 8, 9, 4, 6, 7], determine how many odd and even numbers there are. From looking at each number, you can tell there are three odd numbers and six even numbers.
+Given the list ```[5, 6, 4, 2, 8, 9, 4, 6, 7]```, determine how many odd and even numbers there are. From looking at each number, you can tell there are three odd numbers and six even numbers.
 
 Let's write a Python program to do that calculation for us:
 
@@ -105,11 +107,11 @@ The ```fmod``` function is based on the platform C library. I can't honestly tel
 There are three ways to raise one number to the power of another:
 
 
-1. x ** y
-2. pow(x, y)
-3. math.pow(x, y)
+1. ```x ** y```
+2. ```pow(x, y)```
+3. ```math.pow(x, y)```
 
-As with other functions we have looked at in the math library, there are some idiosyncrasies:
+As with other functions we have looked at in the ```math library```, there are some idiosyncrasies:
 
 ```
 >>> # exponentials using **
@@ -124,7 +126,7 @@ As with other functions we have looked at in the math library, there are some id
 >>>
 ```
 
-That all seems to work as we would expect. However, math.pow() does not behave as the other the other two. It always returns a float, while the other two will return a int, if that is what they are given:
+That all seems to work as we would expect. However, ```math.pow()``` does not behave as the other the other two. It always returns a ```float```, while the other two will return a ```int```, if that is what they are given:
 
 ```
 >>> type(2 ** 2)
@@ -152,9 +154,9 @@ ValueError: math domain error
 
 ### ceil(x) and floor(y)
 
-```math.ceil(x)``` returns the smallest integer greater than or equal to x. (If x is already an integer, the same number is returned.)
+```math.ceil(x)``` returns the smallest integer greater than or equal to ```x```. (If x is already an integer, the same number is returned.)
 
-```math.floor(x)``` returns the largest integer less than or equal to x. (If x is already an integer, the same number is returned.)
+```math.floor(x)``` returns the largest integer less than or equal to ```x```. (If x is already an integer, the same number is returned.)
 
 ```
 >>> math.ceil(math.pi)
@@ -166,7 +168,7 @@ ValueError: math domain error
 
 ### math.fsum(iterable)
 
-```float ``` math by computers is not precise, but it is usually precise enough. This is just an artifact of the way computers handle float math:
+```float ``` math by computers is not precise, but it is usually precise enough. This is just an artifact of the way computers handle ```float``` math:
 
 ```
 import math

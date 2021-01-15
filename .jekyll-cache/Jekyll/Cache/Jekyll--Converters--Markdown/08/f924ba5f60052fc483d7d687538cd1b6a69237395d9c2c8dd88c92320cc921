@@ -1,8 +1,10 @@
-I"�'<p>Course: Using Python’s Math, Science, and Engineering Libraries. Extracted from <a href="https://linuxacademy.com/cp/modules/view/id/621">link Linux Academy</a>.</p>
+I"�)<h1 id="1-simple-math-using-the-math-module">1. Simple Math Using the <code class="language-plaintext highlighter-rouge">math</code> Module</h1>
+
+<p>Course: Using Python’s Math, Science, and Engineering Libraries. Extracted from <a href="https://linuxacademy.com/cp/modules/view/id/621">link Linux Academy</a>.</p>
 
 <p>This covers:</p>
 
-<h2 id="common-math-functions-and-constants">Common <code class="language-plaintext highlighter-rouge">math</code> Functions and Constants</h2>
+<h2 id="11-common-math-functions-and-constants">1.1. Common <code class="language-plaintext highlighter-rouge">math</code> Functions and Constants</h2>
 
 <p>Python’s <a href="https://docs.python.org/3/library/math.html">math library</a> has a number of functions and constants that are used in everyday math applications. These include trigonometric functions, common math operations, and math constants.</p>
 
@@ -27,7 +29,7 @@
 </code></pre></div></div>
 <p>Many math operations behave differently for “floats” versus “ints”. Let’s take a look at some examples.</p>
 
-<h3 id="modulo-">Modulo (%)</h3>
+<h3 id="modulo-">Modulo (<code class="language-plaintext highlighter-rouge">%</code>)</h3>
 
 <p>A simple explanation of modulo is the remainder when two numbers are divided:</p>
 
@@ -40,7 +42,7 @@
 
 <p>A common use is to determine if a number is even or odd. In some applications, it is important to do one thing if a number is even and another if it is odd. An easy way to determine this is to modulo the number by 2. If it is even, the modulo is 0, and if it’s odd, then the modulo is 1.</p>
 
-<p>Given the list [5, 6, 4, 2, 8, 9, 4, 6, 7], determine how many odd and even numbers there are. From looking at each number, you can tell there are three odd numbers and six even numbers.</p>
+<p>Given the list <code class="language-plaintext highlighter-rouge">[5, 6, 4, 2, 8, 9, 4, 6, 7]</code>, determine how many odd and even numbers there are. From looking at each number, you can tell there are three odd numbers and six even numbers.</p>
 
 <p>Let’s write a Python program to do that calculation for us:</p>
 
@@ -89,12 +91,12 @@ There were 227 even numbers and 273 odd numbers.
 <p>There are three ways to raise one number to the power of another:</p>
 
 <ol>
-  <li>x ** y</li>
-  <li>pow(x, y)</li>
-  <li>math.pow(x, y)</li>
+  <li><code class="language-plaintext highlighter-rouge">x ** y</code></li>
+  <li><code class="language-plaintext highlighter-rouge">pow(x, y)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">math.pow(x, y)</code></li>
 </ol>
 
-<p>As with other functions we have looked at in the math library, there are some idiosyncrasies:</p>
+<p>As with other functions we have looked at in the <code class="language-plaintext highlighter-rouge">math library</code>, there are some idiosyncrasies:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; # exponentials using **
 &gt;&gt;&gt; 2**2
