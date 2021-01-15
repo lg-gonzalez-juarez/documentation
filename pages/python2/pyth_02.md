@@ -4,7 +4,7 @@ tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
-permalink: pyth_01.html
+permalink: pyth_02.html
 folder: python
 ---
 
@@ -24,3 +24,5 @@ folder: python
 In later lessons, will be demonstrating NumPy, matplotlib, and pandas. In this lesson, we are going to briefly look at the documentation for the SciPy library.
 
 The SciPy library contains functions that make computation of higher-order math, science, and engineering calculations easier. However, these concepts are not the focus of this course, and we will not do more than become aware of the possibilities.
+
+{% include links.html %}

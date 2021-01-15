@@ -21,3 +21,5 @@ folder: python
 
 ## Hands on 24-
 https://app.linuxacademy.com/hands-on-labs/fc56cb34-866b-4f0c-9841-b119b59b97d1?redirect_uri=https:%2F%2Flinuxacademy.com%2Fcp%2Fmodules%2Fview%2Fid%2F621
+
+{% include links.html %}
