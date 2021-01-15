@@ -108,3 +108,21 @@ entries:
     - title: Py2_03
       url: /pyth_03.html
       output: web, pdf
+
+
+ - title: Certified Associate in Python Programming Certification 
+    output: web, pdf
+    folderitems:
+
+    - title: 40. Index Math-Lib
+      url: /pyth_40.html
+      type: homepage
+      output: web, pdf
+
+    - title: 41.Lambdas and Collection Functions
+      url: /pyth_41.html
+      output: web, pdf
+
+    - title: 42. bc
+      url: /pyth_42.html
+      output: web, pdf
