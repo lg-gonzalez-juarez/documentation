@@ -1,391 +1,199 @@
 ---
-title: Pyth 01
+title: 21. Math Functions
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: pyth_01.html
-folder: python
+folder: python2
 ---
 
-# Using SciPy
+# 1. Simple Math Using the `math` Module
 
-## Overview of SciPy
+Course: Using Python's Math, Science, and Engineering Libraries. Extracted from [link Linux Academy](https://linuxacademy.com/cp/modules/view/id/621).
 
-[SciPy](https://scipy.org/) is an ecosystem of Python, distinct and separately maintained packages for math, science, and engineering. This ecosystem is composed of:
+This covers:
 
-- [NumPy](https://numpy.org/): array package
-- [SciPy library](https://scipy.org/scipylib/index.html): scientific computing package
-- [matplotlib](https://matplotlib.org/): 2-d plotting package
-- [Ipython](https://ipython.org/): interactive console package, Jupyter Notebook
-- [SymPy](https://www.sympy.org/en/index.html): symbolic math package
-- [pandas](https://pandas.pydata.org/): data structure and analysis package
 
-In later lessons, will be demonstrating NumPy, matplotlib, and pandas. In this lesson, we are going to briefly look at the documentation for the SciPy library.
+## 1.1. Common `math` Functions and Constants
 
-The SciPy library contains functions that make computation of higher-order math, science, and engineering calculations easier. However, these concepts are not the focus of this course, and we will not do more than become aware of the possibilities.
+Python's [math library](https://docs.python.org/3/library/math.html) has a number of functions and constants that are used in everyday math applications. These include trigonometric functions, common math operations, and math constants.
 
-# Using NumPy
+Applications involving relatively simple math operations are a great use for the math package.
 
-## What are NumPy Arrays?
+## Overview of Math Library and Operations
 
-[NumPy](https://numpy.org/) is a fundamental package for many math and science computations using Python. NumPy provides an array that can have N-dimensions. NumPy serves as the base for many packages that can extend its capabilities, such as, ```pandas``` and ```scikit-learn```. It is a lean package focusing on operations on arrays. These other packages add functionality to it. However, it is a powerful package for many higher-level math operations.
+### Common math Constants
 
-## Overview of NumPy
-
-### Installing and Using NumPy
-
-Installing NumPy is as simple as using ```pip install```:
+First, we must import the math package
 
 ```
-python -m pip install numpy
+import math
+>>> math.pi
+3.141592653589793
+>>>
+>>> math.e
+2.718281828459045
+>>>
+>>> math.tau
+6.283185307179586
+>>>
 ```
+Many math operations behave differently for "floats" versus "ints". Let's take a look at some examples.
 
-Once the package is installed, it must be imported to use it. Enter into the REPL, by entering ```python```. Once inside the REPL, standard practice is to import it as ```np```:
+### Modulo (```%```)
 
-```
-import numpy as np
-```
-
-### Arrays
-
-NumPy operates on arrays. A 1-d array can be thought of as a Python list or as a column from a database. A multi-dimensional array can be thought of as many lists or columns in a database. While this is not exactly what the array is, it's a useful way to imagine them. If you create arrays using the array module, all elements of the array must be of the same type.
-
-### Create Array
-
-Let's create an array that holds the first ten integers:
+A simple explanation of modulo is the remainder when two numbers are divided:
 
 ```
->>> import numpy as np
->>> simple_array = np.arange(10)
->>> simple_array
-array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+>>> 3 % 2
+1
+>>> 75 % 3
+0
 >>>
 ```
 
-We can also do the same thing, but instead of integers we'll use floats by using [dtypes](https://numpy.org/doc/stable/user/basics.types.html):
+A common use is to determine if a number is even or odd. In some applications, it is important to do one thing if a number is even and another if it is odd. An easy way to determine this is to modulo the number by 2. If it is even, the modulo is 0, and if it's odd, then the modulo is 1.
+
+Given the list ```[5, 6, 4, 2, 8, 9, 4, 6, 7]```, determine how many odd and even numbers there are. From looking at each number, you can tell there are three odd numbers and six even numbers.
+
+Let's write a Python program to do that calculation for us:
 
 ```
->>> float_array = np.arange(10, dtype=float)
->>> float_array
-array([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
+int_list = [5, 6, 4, 2, 8, 9, 4, 6, 7]
+
+odd = 0
+even = 0
+for num in int_list:
+    if num % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+
+print(f"There were {even} even numbers and {odd} odd numbers.")
+There were 6 even numbers and 3 odd numbers.
+```
+
+That was a simple example and may have taken more time to write the program than to count them by hand. So given the list below, determine the number of odd and even numbers. Not quite as trivial!
+
+```
+int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 1156, 249, 1005, 1340, 570, 1459, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494, 372, 648, 428, 673, 629, 445, 392, 504, 288, 626, 707, 1302, 1449, 83, 1441, 1274, 271, 1151, 101, 657, 1381, 1384, 1102, 21, 298, 1131, 540, 720, 333, 251, 35, 1239, 1071, 313, 784, 381, 311, 1241, 1377, 996, 1342, 329, 380, 874, 1431, 1489, 922, 939, 501, 1208, 356, 1111, 828, 204, 3, 86, 262, 362, 669, 618, 1272, 889, 991, 620, 449, 1044, 774, 707, 1425, 904, 217, 870, 43, 1430, 1321, 1379, 1175, 622, 1445, 730, 672, 1376, 779, 15, 1170, 1199, 1278, 1482, 17, 227, 1363, 441, 1309, 550, 657, 485, 725, 865, 267, 991, 294, 1375, 1479, 905, 1229, 1023, 323, 657, 1409, 451, 1456, 964, 263, 1388, 735, 1304, 499, 238, 992, 384, 34, 208, 1253, 1011, 362, 350, 1267, 377, 639, 167, 857, 895, 1220, 577, 652, 200, 1475, 375, 1440, 11, 1285, 1371, 370, 314, 658, 411, 616, 699, 830, 682, 472, 121, 916, 167, 1243, 1211, 1490, 252, 1147, 1462, 1499, 667, 566, 1268, 687, 1370, 1063, 65, 335, 1183, 354, 1483, 1090, 139, 959, 603, 1303, 1019, 1237, 760, 1382, 33, 118, 176, 978, 657, 1127, 33, 704, 585, 1128, 990, 284, 344, 100, 160, 67, 397, 1306, 1316, 124, 99, 22, 1040, 25, 1312, 39, 886, 1430, 89, 350, 1105, 439, 1026, 130, 908, 719, 1001, 571, 280, 310, 242, 1168, 249, 1422, 7, 1373, 1401, 800, 777, 737, 1109, 1040, 1226, 547, 816, 579, 971, 151, 269, 108, 663, 1213, 300, 299, 458, 1024, 970, 868, 942, 1043, 365, 1438, 240, 608, 1391, 791, 378, 286, 1309, 1090, 70, 116, 390, 465, 428, 125, 953, 75, 261, 553, 294, 569, 1406, 175, 1472, 425, 584, 1285, 1359, 231, 553, 215, 406, 1007, 1294, 1276, 944, 201, 94, 605, 212, 508, 814, 564, 1403, 262, 1012, 92, 109, 585, 264, 260, 123, 1136, 643, 73, 966, 1180, 281, 1291, 1267, 1293, 988, 814, 930, 1050, 43, 1402, 1113, 181, 379, 951, 52, 668, 54, 881, 249, 1428, 1500, 8, 1289, 640, 95, 559, 1303, 52, 243, 604, 461, 81, 1449, 106, 1127, 78, 740, 1204, 1374, 1197, 1230, 176, 61, 403, 25, 1115, 603, 1119, 27, 316, 106, 1260, 1132, 29, 523, 1094, 987, 1065, 562, 664, 897, 821, 383, 612, 261, 239, 1062, 1236, 1374, 337, 288, 104, 163, 451, 1223, 208, 663, 1066, 737, 803, 1040, 90, 1490, 735, 155, 1389, 222, 512, 591, 321, 35, 377, 153, 981, 838, 1420, 1071, 1300, 867, 11, 259, 1161, 339, 564, 1439, 1056, 1475, 337, 288, 238, 242, 525, 1353, 885, 1417, 127, 677, 16, 1300, 1408, 604, 9, 1071, 175, 964]
+
+There were 227 even numbers and 273 odd numbers.
+```
+
+The modulo operator works great for this case and with many integers. However, the math library has a modulo function: ```math.fmod(x, y)```. These actually work a little differently:
+
+```
+>>> # fmod_neg_first_number
+>>> math.fmod(-67.1, 7.5)
+-7.099999999999994
+>>> # fmod_neg_second_number
+>>> math.fmod(67.1, -7.5)
+7.099999999999994
+>>> # mod_neg_first_number
+>>> -67.1 % 7.5
+0.4000000000000057
+>>> # mod_neg_second_number
+>>> 67.1 % -7.5
+-0.4000000000000057
 >>>
 ```
 
-It is possible to change the type of the elements in an array using ```astype```. Let's convert our float array to complex numbers:
+The ```fmod``` function is based on the platform C library. I can't honestly tell you what that means or why it functions in this fashion. But for Python programming, use ```%``` for integers and ```math.fmod``` for floats.
+
+### x raised to y
+
+There are three ways to raise one number to the power of another:
+
+
+1. ```x ** y```
+2. ```pow(x, y)```
+3. ```math.pow(x, y)```
+
+As with other functions we have looked at in the ```math library```, there are some idiosyncrasies:
 
 ```
->>> complex_array = float_array.astype(complex)
->>> complex_array
-array([0.+0.j, 1.+0.j, 2.+0.j, 3.+0.j, 4.+0.j, 5.+0.j, 6.+0.j, 7.+0.j,
-       8.+0.j, 9.+0.j])
+>>> # exponentials using **
+>>> 2**2
+4
+>>> # pow() function to achieve exponentials
+>>> pow(2, 2)
+4
+>>> # math.pow() pow function in math package
+>>> math.pow(2, 2)
+4.0
 >>>
 ```
 
-We can also create a NumPy array for a list or data file.
-
-Let's load ```int_list``` as an array named ```example_array```:
+That all seems to work as we would expect. However, ```math.pow()``` does not behave as the other the other two. It always returns a ```float```, while the other two will return a ```int```, if that is what they are given:
 
 ```
-int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494]
->>> int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494]
->>> int_array = np.array(int_list)
->>> int_array.dtype
-dtype('int64')
->>> int_array
-array([1297,  603, 1071,  539, 1222, 1424,  986,  397,  970, 1102,  499,
-        533,  908,  559,  386, 1183,  595,   69, 1141,   76,  863, 1343,
-        185,  895, 1312,   50,  918,  677,  394,  629, 1317,  944,  466,
-        751, 1050,  301,  415,  784,   19, 1395, 1223,  979,  252, 1155,
-         59,  107,  632,  995,  972,  867,  332,  751,  810,   50,   55,
-        218,  997, 1085,  475, 1494])
+>>> type(2 ** 2)
+<class 'int'>
+>>> type(pow(2, 2))
+<class 'int'>
+>>> type(math.pow(2, 2))
+<class 'float'>
 >>>
 ```
 
-Let's load the same information from a file named ```scores.csv```. We will use ```np.genfromtxt``` function to read the file and create an array out of its content. First, let's download the ```scores.csv``` file we want to use:
+Also, it cannot compute a negative number raised to the power of a non-integer:
 
 ```
-$ curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/scores.csv 
->>> scores_array = np.genfromtxt('scores.csv', delimiter = ',', dtype=int)
->>> scores_array
-array([1297,  603, 1071,  539, 1222, 1424,  986,  397,  970, 1102,  499,
-        533,  908,  559,  386, 1183,  595,   69, 1141,   76,  863, 1343,
-        185,  895, 1312,   50,  918,  677,  394,  629, 1317,  944,  466,
-        751, 1050,  301,  415,  784,   19, 1395, 1223,  979,  252, 1155,
-         59,  107,  632,  995,  972,  867,  332,  751,  810,   50,   55,
-        218,  997, 1085,  475, 1494])
->>>
-```
-
-### Index and Slice an Array
-
-Slicing an array in NumPy looks like slicing a list in Python.
-
-From ```scores_array```, let's count the elements by using ```.size```:
-
-```
->>> scores_array.size
-60
->>>
-```
-
-Let's make an array with the 2nd, 3rd, and 4th element of ```scores_array```. It should be equal to [1071, 539, 1222]:
-
-```
->>> scores_array[2:5]
-array([1071,  539, 1222])
->>>
-```
-
-As you can see, the indexing and slicing works the same here as it does in basic Python.
-
-### Basic Operations on NumPy Arrays
-
-Information on these operations can be found here.
-
-### Printing
-
-Printing an array is as simple as using ```print```:
-
-```
->>> print(scores_array)
-[1297  603 1071  539 1222 1424  986  397  970 1102  499  533  908  559
-  386 1183  595   69 1141   76  863 1343  185  895 1312   50  918  677
-  394  629 1317  944  466  751 1050  301  415  784   19 1395 1223  979
-  252 1155   59  107  632  995  972  867  332  751  810   50   55  218
-  997 1085  475 1494]
->>>
-```
-
-Note this array doesn't possess commas as the ```genfromtxt()``` does.
-
-### Simple Math Operations
-
-In NumPy, math operations are elementwise. That is, NumPy applies the math operand to the zeroth element of each array, and that is the zeroth element of a new array. It does this for each element in the arrays. You can perform all basic math operands on these arrays.
-
-Let's raise each element in the scores_array to the zero power:
-
-```
->>> scores_array ** 0
-array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
->>> scores_array
-array([1297,  603, 1071,  539, 1222, 1424,  986,  397,  970, 1102,  499,
-        533,  908,  559,  386, 1183,  595,   69, 1141,   76,  863, 1343,
-        185,  895, 1312,   50,  918,  677,  394,  629, 1317,  944,  466,
-        751, 1050,  301,  415,  784,   19, 1395, 1223,  979,  252, 1155,
-         59,  107,  632,  995,  972,  867,  332,  751,  810,   50,   55,
-        218,  997, 1085,  475, 1494])
->>>
-```
-
-As you can see, the resulting array is an array of 1's. Remember: Raising a number to the exponent 0 results in 1.
-You can also see that this created a new array and did not affect the original array.
-
-### What Did We Learn?
-
-In this lesson, we looked at NumPy arrays. We learned to create them by various means, including reading a CSV file. We learned how to change the type stored in the array and how to index and slice. Finally, we discussed basic operations on arrays, such as printing and simple math. For more information on [NumPy arrays](https://numpy.org/devdocs/user/quickstart.html), take a look at the official documentation.
-
-# Reshaping a Numpy Array Into a Matrix
-
-[NumPy](https://numpy.org/) has a matrix function, but the documentation indicates that this function is being deprecated, and using multi-dimension arrays is strongly suggested instead. We will be doing just that in this lesson: creating multi-dimension arrays that are matrices.
-
-Arrays, or vectors, are one-dimensional. That is, they have a single column of items. A matrix is a rectangular arrangement of n rows and m columns, where n and m are greater than one. (For example: A 1 by 5 matrix is an array.)
-
-Vectors (arrays) and matrices are essential to many science, math, and engineering operations. With these, we are reminded of linear algebra.
-
-Note: If you have never used NumPy before, we strongly suggest you see the first lesson in this section, "What are NumPy Arrays?".
-
-## Matrices
-
-### Create a Matrix From a Single Array
-
-A matrix can be formed from a single array by re-arranging it. From the last lesson, we looked at int_list as an array. Remember to import NumPy.
-
-```
->>> import numpy as np
->>> int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494]
->>> int_array = np.array(int_list)
->>> print(int_array)
-[1297  603 1071  539 1222 1424  986  397  970 1102  499  533  908  559
-  386 1183  595   69 1141   76  863 1343  185  895 1312   50  918  677
-  394  629 1317  944  466  751 1050  301  415  784   19 1395 1223  979
-  252 1155   59  107  632  995  972  867  332  751  810   50   55  218
-  997 1085  475 1494]
-```
-
-```shape``` is a tuple that gives dimensions of the array.
-
-```
->>> int_array.shape
-(60,)
-```
-
-Let's [reshape](https://numpy.org/doc/1.18/reference/generated/numpy.reshape.html) the ```int_array``` into a 10 x 6 matrix:
-
-```
->>> int_matrix = int_array.reshape(10, 6)
->>> print(int_matrix)
-[[1297  603 1071  539 1222 1424]
- [ 986  397  970 1102  499  533]
- [ 908  559  386 1183  595   69]
- [1141   76  863 1343  185  895]
- [1312   50  918  677  394  629]
- [1317  944  466  751 1050  301]
- [ 415  784   19 1395 1223  979]
- [ 252 1155   59  107  632  995]
- [ 972  867  332  751  810   50]
- [  55  218  997 1085  475 1494]]
- >>> int_matrix
-array([[1297,  603, 1071,  539, 1222, 1424],
-       [ 986,  397,  970, 1102,  499,  533],
-       [ 908,  559,  386, 1183,  595,   69],
-       [1141,   76,  863, 1343,  185,  895],
-       [1312,   50,  918,  677,  394,  629],
-       [1317,  944,  466,  751, 1050,  301],
-       [ 415,  784,   19, 1395, 1223,  979],
-       [ 252, 1155,   59,  107,  632,  995],
-       [ 972,  867,  332,  751,  810,   50],
-       [  55,  218,  997, 1085,  475, 1494]])
->>>
-```
-
-As you can see above, while we are calling this a matrix and it will function as a matrix, it is actually an array type.
-
-### Stacking Arrays
-
-Two functions can be used to stack arrays, [vstack](https://numpy.org/doc/1.18/reference/generated/numpy.vstack.html#numpy.vstack) and [hstack](https://numpy.org/doc/1.18/reference/generated/numpy.hstack.html#numpy.hstack). ```vstack``` stacks the arrays vertically and ```hstack``` stacks the arrays horizontally:
-
-```
->>> a = np.array([1, 2, 3])
->>> print(a)
-[1 2 3]
->>> b = np.array([4, 5, 6])
->>> print(b)
-[4 5 6]
->>> c = np.vstack((a, b))
->>> print(c)
-[[1 2 3]
- [4 5 6]]
->>> d = np.hstack((a,b))
->>> print(d)
-[1 2 3 4 5 6]
->>>
-```
-
-These functions can also be used on a matrix, however the matrices must be of the same dimensions. As an example, let's do a horizontal stack of a, b, and c:
-
-```
->>> np.hstack((a,b,c))
+>>> -2 ** 1.3
+-2.4622888266898326
+>>> pow(-2, 1.3)
+(-1.4472970592128211-1.992033505851624j)
+>>> math.pow(-2, 1.3)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "<__array_function__ internals>", line 5, in hstack
-  File "/Users/lfritts/.pyenv/versions/621-3.8.2/lib/python3.8/site-packages/numpy/core/shape_base.py", line 343, in hstack
-    return _nx.concatenate(arrs, 0)
-  File "<__array_function__ internals>", line 5, in concatenate
-ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 1 dimension(s) and the array at index 2 has 2 dimension(s)
-```
-
-This is also an example of a well-formed error message. It is specific in describing the problem. ```a``` (index 0) has one dimension, and ```c``` (index 2) has two dimensions.
-
-### The concatenate function
-
-```concatenate``` joins arrays and/or matrices along an axis. Axis ```0``` stacks them horizontally, axis ```1``` stacks them vertically, and axis ```None``` flattens them into an array.
-
-```axis = None```
-
-```
->>> a = np.array([[1, 2], [3, 4]])  # this is a matrix
->>> b = np.array([[5, 6]])
->>> np.concatenate((a,b), axis=None) # should flatten them
-array([1, 2, 3, 4, 5, 6])
+ValueError: math domain error
 >>>
 ```
 
-```axis = 0```
+### ceil(x) and floor(y)
+
+```math.ceil(x)``` returns the smallest integer greater than or equal to ```x```. (If x is already an integer, the same number is returned.)
+
+```math.floor(x)``` returns the largest integer less than or equal to ```x```. (If x is already an integer, the same number is returned.)
 
 ```
->>> np.concatenate((a,b), axis = 0)
-array([[1, 2],
-       [3, 4],
-       [5, 6]])
+>>> math.ceil(math.pi)
+4
+>>> math.floor(math.pi)
+3
 >>>
 ```
 
-Notice the element in ```b``` was appended to the items in ```a```. But what would happen if ```b = [5]``` instead of ```b = [5, 6]```? An error would occur.
+### math.fsum(iterable)
+
+```float ``` math by computers is not precise, but it is usually precise enough. This is just an artifact of the way computers handle ```float``` math:
 
 ```
->>> b = np.array([5])
->>> np.concatenate((a,b), axis = 0)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<__array_function__ internals>", line 5, in concatenate
-ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 2 dimension(s) and the array at index 1 has 1 dimension(s)
->>>
+import math
+
+sum_list = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+
+# sum list using the `+` operand
+addition_total = 0
+for num in sum_list:
+    addition_total += num
+
+# sum using python's sum function
+sum_total = sum(sum_list)
+
+# sum using python's math library fsum
+fsum_total = math.fsum(sum_list)
+
+print(f"addtion: {addition_total}\nsum: {sum_total}\nfsum: {fsum_total}")
+addtion: 0.9999999999999999
+sum: 0.9999999999999999
+fsum: 1.0
 ```
 
-Remember, the dimensions must be the same along the axis you are joining.
+You can see the lack of precision in the first two; however, fsum implementation more precisely sums floats when that extra precision is needed.
 
-```axis = 1```
+### Log and Trig functions
 
-```
->>> b = np.array([[5, 6]])
->>> np.concatenate((a,b), axis = 1)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<__array_function__ internals>", line 5, in concatenate
-ValueError: all the input array dimensions for the concatenation axis must match exactly, but along dimension 0, the array at index 0 has size 2 and the array at index 1 has size 1
->>>
-```
-
-Please take a minute and determine what the problem is before reading on for the fix.
-
-```
->>> b = np.array([[5, 6], [7, 8]])
->>> np.concatenate((a,b), axis = 1)
-array([[1, 2, 5, 6],
-       [3, 4, 7, 8]])
->>>
-```
-
-### What Did We Learn
-
-In this lesson, we learned various ways of making matrices and ways to concatenate matrices. It is important to consider the dimensions when concatenating arrays or matrices, regardless of the method.
-
-# Math Operations on Arrays/Matrices
-
-[NumPy](https://numpy.org/) allows for simple math and linear algebra operations to be used on arrays and matrices. In this lesson, we will look at simple math operands. Here are some [linear algebra](https://numpy.org/doc/stable/reference/routines.linalg.html) operations.
-
-Note: If you have never used NumPy before, we strongly suggest you see the first two lessons in this section, What are NumPy Arrays? and Reshaping a Numpy Array into a Matrix.
-
-### Math Operands on Arrays and Matrices
-
-In NumPy, math operations are elementwise. That is, NumPy applies the math operand to the zeroth element of each array, and that is the zeroth element of a new array. It does this for each element in the arrays.
-
-Let's try addition on two arrays. Note that these arrays need the same amount of elements in both arrays when adding:
-
-```
->>> a = np.array([1, 2, 3, 4, 5])
->>> b = np.array([10, 20, 30, 40, 50])
->>> c = a + b
->>> print(c)
-[11 22 33 44 55]
->>>
-```
-
-You can also perform operations between an array and a single value:
-
-```
->>> print(a)
-[1 2 3 4 5]
->>> a / 2.5
-array([0.4, 0.8, 1.2, 1.6, 2. ])
->>>
-```
-
-Notice the ints in the array were changed to floats.
-
-### Linear Algebra
-
-In this lesson, we looked at simple math operands. You can also do linear algebra on arrays and matrices. For more information, see [here](https://numpy.org/doc/stable/reference/routines.linalg.html).
+This library also functions to calculate the log, natural log, sin, cos, tan, and many other types of common math calculations.
