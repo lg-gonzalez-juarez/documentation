@@ -5,7 +5,7 @@ keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: pyth_02.html
-folder: python
+folder: python2
 ---
 
 # Using SciPy

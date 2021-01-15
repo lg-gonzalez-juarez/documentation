@@ -5,7 +5,7 @@ keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: pyth_03.html
-folder: python
+folder: python2
 ---
 
 ## 23.1. What are NumPy Arrays?
