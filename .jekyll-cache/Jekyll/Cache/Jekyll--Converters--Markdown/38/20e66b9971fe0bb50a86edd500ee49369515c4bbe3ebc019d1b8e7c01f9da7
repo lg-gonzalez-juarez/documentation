@@ -1,0 +1,33 @@
+I"�<h2 id="261-numpy-and-scikit-image">26.1. NumPy and Scikit-Image</h2>
+
+<p>scikit-image is an open-source package for image processing. It has a wide range of algorithms that allow you to process your images. Documentation can be found <a href="https://scikit-image.org/docs/stable/">here</a>.</p>
+
+<p>In this lesson, we are going to take a look at how to load an image into scikit-image and examine the NumPy array that results.</p>
+
+<p>Installation
+To install scikit-image:</p>
+
+<p>python -m pip install scikit-image
+Loading an Image
+First, we need to get the photo we are planning to use. In this case, the photo is one I took of some flowers.</p>
+
+<p>/home/cloud_user/notebooks</p>
+
+<p>curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/flowers.jpg
+/home/cloud_user/notebooks/lesson1.py</p>
+
+<h1>%%</h1>
+<p>import numpy as np
+from skimage import io</p>
+
+<p>img = io.imread(‘flowers.jpg’)
+io.imshow(img)
+type(img)
+img.shape
+We should make a backup of the picture before proceeding. The file extension (.jpg, .tiff) tells Jupyter the format in which it will be saved.</p>
+
+<p>Let’s make a backup of the picture:</p>
+
+<p>io.imsave(“img_bup.jpg”, img)
+io.imsave(“img_bup.tiff”, img)</p>
+:ET
