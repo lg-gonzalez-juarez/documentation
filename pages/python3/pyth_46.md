@@ -174,11 +174,226 @@ $
 
 ## 46.3. Using Built-In Exceptions
 
+When it comes to exceptions most of the time we'll be using exception handling, but sometimes we want to raise an exception from our code and then expect the code using our code to handle the exceptions that we might potentially raise.
+
+### Documentation 
+- [Python Errors and Exceptions Documentation](https://docs.python.org/3.7/tutorial/errors.html)
+- [Python Exceptions Documentation](https://docs.python.org/3/library/exceptions.html)
+
+### Creating an Exception
+
+To trigger an exception in Python code we need to utilize another keyword: `raise`. We refer to this as "raising an exception". Before we can raise an exception though, we need to create an exception, but thankfully exceptions are objects just like everything else. Hoping into the REPL, let's create our first exception:
+
+```
+$ python3.7
+>>> err = Exception('something went wrong')
+>>> err
+Exception('something went wrong')
+>>> str(err)
+'something went wrong'
+>>> dir(err)
+['__cause__', '__class__', '__context__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__get
+attribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__redu
+ce_ex__', '__repr__', '__setattr__', '__setstate__', '__sizeof__', '__str__', '__subclasshook__', '__suppress_context__', '__traceb
+ack__', 'args', 'with_traceback']
+```
+
+Notice that just creating an exception doesn't stop excecution. The `Exception` class is the parent class for most exceptions, and we can see these by using `Exception.__subclasses__()`:
+
+```
+>>> Exception.__subclasses__()
+[<class 'TypeError'>, <class 'StopAsyncIteration'>, <class 'StopIteration'>, <class 'ImportError'>, <class 'OSError'>, <class 'EOFError'>, <class 'RuntimeError'>, <class 'NameError'>, <class 'AttributeError'>, <class 'SyntaxError'>, <class 'LookupError'>, <class 'ValueError'>, <class 'AssertionError'>, <class 'ArithmeticError'>, <class 'SystemError'>, <class 'ReferenceError'>, <class 'MemoryError'>, <class 'BufferError'>, <class 'Warning'>, <class 'locale.Error'>, <class 're.error'>, <class 'sre_parse.Verbose'>]
+```
+
+Let's dig a little deeper into the inheritance struction here:
+
+```
+>>> Exception.__bases__
+(<class 'BaseException'>,)
+>>> BaseException.__bases__
+(<class 'object'>,)
+>>> BaseException.__subclasses__()
+[<class 'Exception'>, <class 'GeneratorExit'>, <class 'SystemExit'>, <class 'KeyboardInterrupt'>]
+```
+
+Since `BaseException` only inherits from `object` it is essentially the parent of all errors, but we really won't ever use it.
+
+### Raising an Exception
+
+Now that we know how to create an exception, let's go ahead and create and raise an exception from a new script called `using_exceptions.py`:
+
+`~/exception_handling/using_exceptions.py`
+
+```
+import sys
+
+if len(sys.argv) < 2:
+    raise Exception('not enough arguments')
+
+name = sys.argv[1]
+print(f"Name is {name}")
+```
+
+Now, if we run into the situation where not enough arguments are provided when the script is run we can create and raise an exception with the message that we want. This puts us back to having a not great user experience for our script, but it's great for showcasing how to use exceptions.
+
+Let's put this to the test:
+
+```
+$ python3.7 using_exceptions.py
+Traceback (most recent call last):
+  File "using_exceptions.py", line 4, in <module>
+    raise Exception("not enough arguments")
+Exception: not enough arguments
+$ python3.7 using_exceptions.py Keith
+Name is Keith
+```
 
 ## 46.4. Creating Custom Exception Types
 
+Specific error types make it easier to tailor exception handling to handle different potential error cases, and sometimes we want to build something that could benefit from having a more detailed error type that doesn't exist.
+
+In this lesson, we'll learn how to create custom exception types.
+
+### Documentation 
+
+- [Python Errors and Exceptions Tutorial](https://docs.python.org/3.7/tutorial/errors.html)
+- [Python Exceptions Documentation](https://docs.python.org/3/library/exceptions.html)
+
+### Creating a Custom Exception Type
+
+Custom exception types are things that we'll use more often when we're building larger libraries that have different types of contextual errors. These custom exceptions can be caught by the code using our modules so that they only catch our exception and not more generic exceptions. We won't be creating a large library to showcase custom exceptions, but we can create a simple package that has an `errors` module, and then we can raise those errors in the code provided by our package. To begin, let's create a package called `cli`:
+
+```
+$ mkdir cli
+$ touch cli/__init__.py
+$ touch cli/errors.py
+```
+
+To follow what we've been doing around exceptions related to script arguments, let's create an `ArgumentError` class in our `errors` module:
+
+`~/exception_handling/cli/errors.py`
+
+```
+class ArgumentError(Exception):
+    pass
+```
+
+That's it! Now we have an identifier for our custom exception scenario, but exceptions all need to do the same things, and the `Exception` class defines all of that. Let's create a `main` function in our package's `__init__.py` file, and we can run that function from a new script.
+
+`~/exception_handling/cli/__init__.py`
+
+```
+import sys
+
+from .errors import ArgumentError
+
+def main():
+    if len(sys.argv) < 2:
+        raise ArgumentError('too few arguments')
+    print(f"Name is {sys.argv[1]}")
+```
+
+From `using_exceptions.py`, let's import our `main` function and use exception handling to catch our new `ArgumentError`:
+
+`~/exception_handling/using_exceptions.py`
+
+```
+import sys
+
+from cli import main
+from cli.errors import ArgumentError
+
+try:
+    main()
+except ArgumentError as err:
+    print(f"Error: {err}")
+    sys.exit(1)
+```
+
+Finally, let's run `using_exceptions.py` a few more times:
+
+```
+$ python3.7 using_exceptions.py
+Error: too few arguments
+$ python3.7 using_exceptions.py Keith
+Name is Keith
+```
 
 ## 46.5. Using Assertions
 
+
+When we've raised exceptions to this point, we've done so because some criteria wasn't met. When developing and debugging code, this is something that can be done using the built-in `assert` keyword, and in this lesson, we'll give that a try.
+
+### Documentation 
+- [Python Errors and Exceptions Tutorial](https://docs.python.org/3.7/tutorial/errors.html)
+- [Python Exceptions Documentation](https://docs.python.org/3/library/exceptions.html)
+- [The assert statement](https://docs.python.org/3/reference/simple_stmts.html#assert)
+- [The -O Python Flag](https://docs.python.org/3/using/cmdline.html#cmdoption-o)
+
+### What is an Assertion?
+
+Assertions are statements that raise an `AssertionError` if the passed in expression returns a `False` value (or something that would convert to `False` via the `bool` constructor). This is what we've been doing when we use code like this:
+
+```
+if len(sys.argv) < 2:
+    raise ArgumentError('too few arguments')
+```
+
+We can achieve this same thing using an `assert` statement, except it will raise an `AssertionError` instead of our custom `ArgumentError`. Here's what this would look like in our `main` function in the `cli/__init__.py` file:
+
+`~/exception_handling/cli/__init__.py`
+
+```
+import sys
+
+from .errors import ArgumentError
+
+def main():
+    # if len(sys.argv) < 2:
+    #     raise ArgumentError("too few arguments")
+    assert len(sys.argv) >= 2, "too few arguments"
+    print(f"Name is {sys.argv[1]}")
+```
+
+We will need to change our `using_exceptions.py` file to except the `AssertionError` type to not break our program:
+
+`~/exception_handling/using_exceptions.py`
+
+```
+import sys
+
+from cli import main
+from cli.errors import ArgumentError
+
+try:
+    main()
+except (ArgumentError, AssertionError) as err:
+    print(f"Error: {err}")
+    sys.exit(1)
+Let's run our script once again:
+
+$ python3.7 using_exceptions.py
+Error: too few arguments
+$ python3.7 using_exceptions.py Keith
+Name is Keith
+```
+
+### Assertion is a debugging Tool
+
+This isn't a great use of `assert` because assertions are a tool specifically designed for developing and debugging code. The Python parser can remove `assert` statements when our script is run with the `-O` or `-OO` flags (capital 'o' for "optimize").
+
+```
+$ python3.7 using_exceptions.py
+Error: too few arguments
+$ python3.7 -O using_exceptions.py
+Traceback (most recent call last):
+  File "using_exceptions.py", line 4, in <module>
+    main()
+  File "/home/cloud_user/exception_handling/cli/__init__.py", line 10, in main
+    print(f"Name is {sys.argv[1]}")
+IndexError: list index out of range
+```
+
+When we use the `-O` or `-OO` flags, we optimize our code to remove assertions (and docstrings with `-OO`), so we can't reliably use asserts to determine if we're going to raise errors.
 
 {% include links.html %}
