@@ -1,0 +1,40 @@
+I"-
+<h2 id="461-what-are-exceptions">46.1. What are Exceptions?</h2>
+
+<p>Things don’t always go according to plan when we’re programming, and when issues arise, we run into exceptions. In this lesson, we’ll learn about what exceptions are and when we’ll run into them.</p>
+
+<p>Documentation For This Video
+Python Errors and Exceptions Documentation
+Python Exceptions Documentation
+Syntax Errors vs Exceptions
+As we’ve been learning how to do various things with Python, we’ve run into both syntax errors and exceptions. There’s a subtle difference between the two: syntax errors cannot be recovered from. The reason that we can’t recover from a syntax error is that our code is simply not valid Python code, so the parser doesn’t know what to do with anything after it runs into the error.</p>
+
+<p>Exceptions are issues that occur during the execution of syntactically valid code that prevents the code from executing as planned. An exception occurring doesn’t necessarily mean that our program needs to fail; it might just mean that we need to do something differently.</p>
+
+<p>An example of an exception that we can handle is a TypeError. This type of exception that we would run into if we tried to add an int and a str like this:</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>1 + ‘a’
+Traceback (most recent call last):
+  File “<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+This might seem like something that we would never do, but say we had code that tried to add two different variables, without using type checking or type casting we can't know for certain that two random variables both hold onto types that can be added, so it is possible to run into a TypeError in that situation.</module></stdin></p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>As we write more and more complex code, there will be times when we need to handle errors, raise errors ourselves, and even create custom error types.</p>
+
+<h2 id="462-handling-exceptions-with-try-except-else-and-finally">46.2. Handling Exceptions with <code class="language-plaintext highlighter-rouge">try</code>, <code class="language-plaintext highlighter-rouge">except</code>, <code class="language-plaintext highlighter-rouge">else</code>, and <code class="language-plaintext highlighter-rouge">finally</code></h2>
+
+<h2 id="463-using-built-in-exceptions">46.3. Using Built-In Exceptions</h2>
+
+<h2 id="464-creating-custom-exception-types">46.4. Creating Custom Exception Types</h2>
+
+<h2 id="465-using-assertions">46.5. Using Assertions</h2>
+
+<p>[]:</p>
+
+:ET
