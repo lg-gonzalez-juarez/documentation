@@ -349,11 +349,85 @@ $ python3.7 helpers.py
 HELLO FROM HELPERS
 ```
 
-
-
-
-
 ## 43.4. Hiding Module Entities
+
+Now that we know how to import our modules, we might want to restrict what is exposed. In this lesson, we'll look at how we can hide some of our module's contents from being imported by other modules and scripts.
+
+### Documentation 
+
+[Python Modules Documentation](https://docs.python.org/3/tutorial/modules.html)
+
+### What Are Module Entities?
+
+When we see `module entities`, we need to see `variables`, `functions`, and `classes` (we'll cover classes in the next section). A module entity is anything we provide with a name in our module. As we've seen, these things are importable by name when we used `from <module> import <name>`.
+
+### Using `__all__`
+
+If we want to prevent someone from importing an entity from our module, there aren't very many options. There are only two reasonable things we can do to restrict what is imported if someone uses from `<module> import *`. The first is by setting the `__all__` variable in our module. Let's test this out by setting `__all__` to a list including only `extract_upper` to see what happens in `main.py`.
+
+`~/using_modules/helpers.py`
+
+```
+__all__ = ["extract_upper"]
+
+def extract_upper(phrase):
+    return list(filter(str.isupper, phrase))
+
+def extract_lower(phrase):
+    return list(filter(str.islower, phrase))
+
+if __name__ == "__main__":
+    print("HELLO FROM HELPERS")
+```
+
+In `main.py`, we had been using both of these functions after loading them with `from helpers import *`. Here's another look at what `main.py` currently looks like.
+
+`~/using_modules/main.py`
+
+```
+from helpers import *
+import extras
+
+print(f"Lowercase letters: {extract_lower(extras.name)}")
+print(f"Uppercase letters: {extract_upper(extras.name)}")
+```
+
+With `__all__` set in `helpers`, let's run `main.py` to see what happens.
+
+```
+$ python3.7 main.py
+Traceback (most recent call last):
+  File "main.py", line 4, in <module>
+    print(f"Lowercase letters: {extract_lower(extras.name)}")
+NameError: name 'extract_lower' is not defined
+```
+
+Although `name` exists within `helpers.py`, it is not available in other modules via `from helpers import *`. This does not mean that we can't explicitly import `extract_lower` though. Let's modify `main.py` to import `extract_lower` by name.
+
+`~/using_modules/main.py`
+
+```
+from helpers import *
+from helpers import extract_lower
+import extras
+
+print(f"Lowercase letters: {extract_lower(extras.name)}")
+print(f"Uppercase letters: {extract_upper(extras.name)}")
+```
+
+Let's run this one more time.
+
+```
+$ python3.7 main.py
+Lowercase letters: ['e', 'i', 't', 'h', 'h', 'o', 'm', 'p', 's', 'o', 'n']
+Uppercase letters: ['K', 'T']
+```
+
+While it doesn't allow us to prevent an entity from ever being imported, using `__all__` does provide a way of sometimes restricting what is imported by modules and scripts consuming our modules and packages.
+
+### Using Underscored Entities
+
+The other way we can prevent an entity from being exported automatically when someone uses `from <module> import *` is by making the first character an underscore `(_)`. If we removed `__all__ `from `helpers.py` and created a variable called `_hidden_var = "test"`, we would not have access to `_hidden_var` after running `from helpers import *`.
 
 
 ## 43.5. The Module Search Path
