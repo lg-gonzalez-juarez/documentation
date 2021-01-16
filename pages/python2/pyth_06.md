@@ -8,6 +8,7 @@ permalink: pyth_06.html
 folder: python2
 ---
 
+
 ## 26.1. NumPy and Scikit-Image
 
 scikit-image is an open-source package for image processing. It has a wide range of algorithms that allow you to process your images. Documentation can be found [here](https://scikit-image.org/docs/stable/).
