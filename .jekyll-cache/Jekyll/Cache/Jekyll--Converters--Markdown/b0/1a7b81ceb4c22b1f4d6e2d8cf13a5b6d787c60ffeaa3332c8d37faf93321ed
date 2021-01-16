@@ -1,4 +1,5 @@
-I"�+<h2 id="411-defining-and-using-lambdas">41.1. Defining and Using Lambdas</h2>
+I"
+/<h2 id="411-defining-and-using-lambdas">41.1. Defining and Using Lambdas</h2>
 
 <p>Sometimes we want to group some lines of code so that they can be reused, but creating a named function feels unnecessary. In these situations, such as when we’re acting on the items of a collection, we can use lambdas or “lambda expressions” to create anonymous functions. In this lesson, we’ll learn how to create and use lambdas.</p>
 
@@ -19,8 +20,8 @@
 
 <p>The name portion is only a requirement so that we can reference it later. But if we want a “function” that isn’t useful anywhere else besides the current context, we can define a function without a name by using the <code class="language-plaintext highlighter-rouge">lambda</code> keyword to create a “lambda expression”. We could still assign it to a variable if we want. There is one catch: the lambda’s body can only be one expression.</p>
 
-<p>Creating a Lambda
-To learn more about lambdas, let’s create a folder called <code class="language-plaintext highlighter-rouge">lambdas-and-collections</code>. Within it, let’s create a new file called <code class="language-plaintext highlighter-rouge">learning_lambdas.py</code>.</p>
+<h3 id="creating-a-lambda">Creating a Lambda</h3>
+<p>To learn more about lambdas, let’s create a folder called <code class="language-plaintext highlighter-rouge">lambdas-and-collections</code>. Within it, let’s create a new file called <code class="language-plaintext highlighter-rouge">learning_lambdas.py</code>.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir ~/lambdas-and-collections
 $ cd ~/lambdas-and-collections
@@ -28,40 +29,37 @@ $ cd ~/lambdas-and-collections
 
 <p>The easiest way to wrap our minds around lambdas is to convert an existing function into one. Let’s convert the following <code class="language-plaintext highlighter-rouge">square</code> function to be a lambda:</p>
 
-<pre><code class="language-~/lambdas-and-collections/learning_lambdas.py```">
-</code></pre>
-<p>def square(num):
-    return num * num</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-Lambdas are most commonly used for single-line functions like this, and the last expression in the lambda is always returned. With that in mind, this function could be written as a lambda like this:
-
-```~/lambdas-and-collections/learning_lambdas.py```
-
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/lambdas-and-collections/learning_lambdas.py
 </code></pre></div></div>
-<p>def square(num):
-    return num * num</p>
 
-<p>square_lambda = lambda num : num * num</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-To call our lambda, we use parenthesis the same way we do when calling a function. Let's ensure that this function and lambda are equivalent by adding an assert statement to the end of the file before running the file:
-
-```~/lambdas-and-collections/learning_lambdas.py```
-
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def square(num):
+    return num * num
 </code></pre></div></div>
-<p>def square(num):
-    return num * num</p>
 
-<p>square_lambda = lambda num : num * num</p>
+<p>Lambdas are most commonly used for single-line functions like this, and the last expression in the lambda is always returned. With that in mind, this function could be written as a lambda like this: <code class="language-plaintext highlighter-rouge">~/lambdas-and-collections/learning_lambdas.py</code></p>
 
-<p>assert square(3) == square_lambda(3)</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-If we run this file, we should see that there are no errors:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def square(num):
+    return num * num
 
+square_lambda = lambda num : num * num
 </code></pre></div></div>
-<p>$ cd ~/lambdas-and-collections
+
+<p>To call our lambda, we use parenthesis the same way we do when calling a function. Let’s ensure that this function and lambda are equivalent by adding an assert statement to the end of the file before running the file:<code class="language-plaintext highlighter-rouge">~/lambdas-and-collections/learning_lambdas.py</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def square(num):
+    return num * num
+
+square_lambda = lambda num : num * num
+
+assert square(3) == square_lambda(3)
+</code></pre></div></div>
+
+<p>If we run this file, we should see that there are no errors:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ~/lambdas-and-collections
 $ python3.7 learning_lambdas.py
 $
-```</p>
+</code></pre></div></div>
 
 <p>Now that we know how to define and call lambda expressions, we’re ready to learn about when we’re most likely to put them to use: when using collection functions.</p>
 
@@ -69,23 +67,31 @@ $
 
 <p>When thinking of times where we might want to use a lambda function, we’ll also want to think about when we might want to repeat a single expression. The most common example is when we want to process a collection using a function that can also take a function as an argument. Some examples of functions like these are:</p>
 
-<p>map
-filter
-reduce
-reversed
-sorted
-There’s also the sort method on the list type.</p>
+<ul>
+  <li><a href="https://docs.python.org/3/library/functions.html#map">map</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#filter">filter</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#reduce">reduce</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#reversed">reversed</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#sorted">sorted</a></li>
+</ul>
 
-<p>Documentation For This Video
-Lambda Expressions
-The map function
-The filter function
-The reduce function
-The reversed function
-The sorted function
-The list.sort method
-What are “Higher-Order Functions”?
-When a function or method takes a function as an argument (or returns a function), it is called a “higher-order function”. This term isn’t explicitly mentioned anywhere in the PCAP syllabus, but it is worth knowing. Most of the higher-order functions that we’ll be working with take a collection and a function as parameters so that each item in the collection can be processed by the function argument.</p>
+<p>There’s also the sort method on the list type.</p>
+
+<h3 id="documentation-1">Documentation</h3>
+
+<ul>
+  <li>Lambda Expressions</li>
+  <li>The map function</li>
+  <li>The filter function</li>
+  <li>The reduce function</li>
+  <li>The reversed function</li>
+  <li>The sorted function</li>
+  <li>The list.sort method</li>
+</ul>
+
+<h3 id="what-are-higher-order-functions">What are “Higher-Order Functions”?</h3>
+
+<p>When a function or method takes a function as an argument (or returns a function), it is called a “higher-order function”. This term isn’t explicitly mentioned anywhere in the PCAP syllabus, but it is worth knowing. Most of the higher-order functions that we’ll be working with take a collection and a function as parameters so that each item in the collection can be processed by the function argument.</p>
 
 <p>Let’s start digging into some of these functions.</p>
 
