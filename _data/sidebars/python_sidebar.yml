@@ -135,6 +135,6 @@ entries:
       url: /pyth_41.html
       output: web, pdf
 
-    #- title: 42. bc
-    #  url: /pyth_42.html
-    #  output: web, pdf
+    - title: 42. The `if` Operator
+      url: /pyth_42.html
+      output: web, pdf
