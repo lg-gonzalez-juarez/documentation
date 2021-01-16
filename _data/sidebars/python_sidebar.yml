@@ -140,5 +140,9 @@ entries:
       output: web, pdf
 
     - title: 43. Modules and Packages
-      url: /pyth_42.html
+      url: /pyth_43.html
+      output: web, pdf
+
+    - title: 44. Classes and Object-Oriented Programming
+      url: /pyth_44.html
       output: web, pdf
