@@ -123,14 +123,13 @@ entries:
       output: web, pdf
 
 
-# - title: Programming Certification 
-#    output: web, pdf
-    #folderitems:
+  - title: Programming Certification 
+    output: web, pdf
+    folderitems:
 
-    #- title: 40. Index Math-Lib
-     # url: /pyth_40.html
-      #type: homepage
-      #output: web, pdf
+    - title: 40. Index Math-Lib
+      url: /pyth_40.html
+      output: web, pdf
 
     #- title: 41.Lambdas and Collection Functions
     #  url: /pyth_41.html
