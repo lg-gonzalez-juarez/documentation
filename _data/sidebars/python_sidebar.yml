@@ -138,3 +138,7 @@ entries:
     - title: 42. The `if` Operator
       url: /pyth_42.html
       output: web, pdf
+
+    - title: 43. Modules and Packages
+      url: /pyth_42.html
+      output: web, pdf
