@@ -1,0 +1,16 @@
+I";<h2 id="code-samples">Code Samples</h2>
+
+<p>Use fenced code blocks with the language specified, like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```js
+console.log('hello');
+````
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'hello'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>For the list of commands supported languages you can use (similar to <code class="language-plaintext highlighter-rouge">python</code> for python), see <a href="https://rwl.github.io/PYPOWER/usage.html">Pypower use website</a>.</p>
+:ET

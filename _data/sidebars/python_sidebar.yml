@@ -98,31 +98,44 @@ entries:
       type: homepage
       output: web, pdf
 
-    - title: Py2_01
+    - title: 21. Math Functions
       url: /pyth_01.html
       output: web, pdf
 
-    - title: Py2_02
+    - title: 22. Using SciPy
       url: /pyth_02.html
       output: web, pdf
 
-    - title: Py2_03
+    - title: 23. Using NumPy
       url: /pyth_03.html
       output: web, pdf
 
- - title: Programming Certification 
-    output: web, pdf
-    folderitems:
-
-    - title: 40. Index Math-Lib
-      url: /pyth_40.html
-      type: homepage
+    - title: 24. Using NumPy
+      url: /pyth_04.html
       output: web, pdf
 
-    - title: 41.Lambdas and Collection Functions
-      url: /pyth_41.html
+    - title: 25. Using Matplotlib
+      url: /pyth_05.html
       output: web, pdf
 
-    - title: 42. bc
-      url: /pyth_42.html
+    - title: 26. Using SciKit-image
+      url: /pyth_06.html
       output: web, pdf
+
+
+# - title: Programming Certification 
+#    output: web, pdf
+    #folderitems:
+
+    #- title: 40. Index Math-Lib
+     # url: /pyth_40.html
+      #type: homepage
+      #output: web, pdf
+
+    #- title: 41.Lambdas and Collection Functions
+    #  url: /pyth_41.html
+    #  output: web, pdf
+
+    #- title: 42. bc
+    #  url: /pyth_42.html
+    #  output: web, pdf

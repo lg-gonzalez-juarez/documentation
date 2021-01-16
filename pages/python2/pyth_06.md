@@ -8,7 +8,6 @@ permalink: pyth_06.html
 folder: python2
 ---
 
-
 ## 26.1. NumPy and Scikit-Image
 
 scikit-image is an open-source package for image processing. It has a wide range of algorithms that allow you to process your images. Documentation can be found [here](https://scikit-image.org/docs/stable/).
@@ -30,7 +29,7 @@ First, we need to get the photo we are planning to use. In this case, the photo 
 ```/home/cloud_user/notebooks```
 
 ```curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/flowers.jpg/home/cloud_user/notebooks/lesson1.py```
-
+```
 
 ```
 # %%
@@ -141,5 +140,4 @@ hsv.shape
 hsv[0][0]
 io.imshow(hsv)
 ```
-
 {% include links.html %}
