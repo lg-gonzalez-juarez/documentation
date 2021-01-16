@@ -131,9 +131,9 @@ entries:
       url: /pyth_40.html
       output: web, pdf
 
-    #- title: 41.Lambdas and Collection Functions
-    #  url: /pyth_41.html
-    #  output: web, pdf
+    - title: 41.Lambdas and Collection Functions
+      url: /pyth_41.html
+      output: web, pdf
 
     #- title: 42. bc
     #  url: /pyth_42.html
