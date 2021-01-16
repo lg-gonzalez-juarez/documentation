@@ -754,6 +754,7 @@ class MappingSubclass(Mapping):
 
 Let's load this into the REPL and see the identifiers that exist on our classes.
 
+```
 $ python -i mapping.py
 >>> Mapping.__update
 Traceback (most recent call last):
@@ -773,8 +774,146 @@ Notice that `Mapping` has a `_Mapping__update` identifier, but not `__update`, a
 
 ## 44.7. Inspecting Objects
 
+As we work with more and more custom classes, we will need to start inspecting the variables we have to see what information we have to work with. We won't be able to keep the information about all of the types in our systems in our minds after a certain point, and knowing the tools we can use to get more information from our objects is very useful. In this lesson, we'll learn about various built-in functions, methods, and attributes that we can use to get more information about classes and objects we're working with.
 
+### Documentation 
 
+- [Classes](https://docs.python.org/3/tutorial/classes.html#classes)
+- [Special Attirbutes](https://docs.python.org/3.7/library/stdtypes.html#special-attributes)
+- [Basic Object Customization](https://docs.python.org/3.7/reference/datamodel.html#basic-customization)
+- [The __str__ Method](https://docs.python.org/3.7/reference/datamodel.html#object.__str__)
+- [The type Function](https://docs.python.org/3.7/library/functions.html#type)
+- [The hasattr Function](https://docs.python.org/3.7/library/functions.html#hasattr)
+- [The issubclass Function](https://docs.python.org/3.7/library/functions.html#issubclass)
+- [The isinstance Function](https://docs.python.org/3.7/library/functions.html#isinstance)
 
+### Inspecting Instances and Classes
+
+There are two main things we'll want to get more information about when we're doing object-oriented programming:
+
+1. The classes
+2. The instances of those classes
+
+By learning more about the classes that we'll need to work with, we can have a better idea of how they were intended to be used. By learning more about the instances created as code where our system is running, we can better debug and understand what is going on as we interact with the objects. Let's start by taking a look at how we can learn more about a class by loading our `amphibious_vehicle.py` class into the REPL and taking a look at some of the "private" attributes and methods on the class.
+
+```
+$ python3.7 -i amphibious_vehicle.py
+>>> AmphibiousVehicle.__bases__
+(<class 'car.Car'>, <class 'boat.Boat'>)
+>>> from vehicle import Vehicle
+>>> Vehicle.__subclasses__()
+[<class 'boat.Boat'>, <class 'car.Car'>]
+>>> dir(AmphibiousVehicle)
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'default_tire', 'description', 'drive', 'travel', 'voyage']
+```
+
+Notice that `__bases__` doesn't show up when we pass our class to the `dir` function. Some of the [special attributes](https://docs.python.org/3.7/library/stdtypes.html#special-attributes) that exist don't show up when using `dir`, and we just need to know them. We also have some functions we can use to get information about our classes:
+
+* The [hasattr function](https://docs.python.org/3.7/library/functions.html#hasattr): Takes an object and a string with the name of the identifier we'd like to check for. It's worth noting that if we pass in the class, it will check for class-level attributes, not instance-level attributes.
+
+```
+>>> from boat import Boat
+>>> hasattr(Boat, 'boat_type')
+False
+>>> from car import Car
+>>> hasattr(Car, 'default_tire')
+True
+```
+
+* The [issubclass function](https://docs.python.org/3.7/library/functions.html#issubclass): Checks to see if the first class passed in is a subclass of the second class. The order is important.
+
+```
+>>> from vehicle import Vehicle
+>>> issubclass(Boat, Vehicle)
+True
+>>> issubclass(Boat, AmphibiousVehicle)
+False
+>>> issubclass(AmphibiousVehicle, Boat)
+True
+```
+
+* The [isinstance function](https://docs.python.org/3.7/library/functions.html#isinstance): Checks to see if an object is an instance of the given class. Note that an object is an instance of its class's subclasses.
+
+```
+>>> from bicycle import Bicycle
+>>> water_car = AmphibiousVehicle('4 cylinder')
+>>> isinstance(water_car, Bicycle)
+False
+>>> isinstance(water_car, AmphibiousVehicle)
+True
+>>> isinstance(water_car, Boat)
+True
+```
+
+* The [__dict__ attribute](https://docs.python.org/3/library/stdtypes.html#object.__dict__): Returns a dictionary (or dictionary-like object) containing all of the custom (i.e. writable) attributes on the object. This can be used on both classes and instances of classes. The result for a class is a bit weird looking, but notice that it only contains the methods and attributes we defined.
+
+```
+>>> water_car.__dict__
+{'distance_traveled': 0, 'unit': 'miles', 'boat_type': 'motor', 'tires': ['tire', 'tire'], 'engine': '4 cylinder'}
+>>> Boat.__dict__
+mappingproxy({'__module__': 'boat', '__init__': <function Boat.__init__ at 0x7ff9228b9f80>, 'voyage': <function Boat.voyage at 0x7ff9228b9dd0>, 'description': <function Boat.description at 0x7ff922835050>, '__doc__': None})
+```
+
+* The [type function](https://docs.python.org/3.7/library/functions.html#type): Returns the class used to create the object.
+
+```
+>>> type(water_car)
+<class '__main__.AmphibiousVehicle'>
+```
+
+Notice that the class is `__main__.AmphibiousVehicle`. This shows the value of the `__module__` attribute for the class and then the class name. Normally, this will not be `__main__`, it would be the module that defines the class. It's `__main__` right now because we launched the REPL using `python3.7 -i amphibious_vehicle.py`. That means it interpreted the file, effectively running those lines in the REPL itself. If we access the `__module__` attribute on a different class, we will see the name of the defining module.
+
+```
+>>> Boat.__module__
+'boat'
+```
+
+### Customizing Objects with __str__
+
+In addition to being able to get information from classes and instances that we're working with, we can also make our class instances present their information in a better way for various situations. The primary situation where we'll customize our object's behavior is when it's converted to a string.
+
+Let's take a look at what an `AmphibiousVehicle` looks like when converted to a string or returned.
+
+```
+>>> str(water_car)
+'<__main__.AmphibiousVehicle object at 0x7ff92
+283a6d0>'
+```
+
+This is not super helpful, but we can customize this output by defining the `__str__` method. Let's define this method to return the class name and the attributes currently on the instance, using the `__dict__` attribute. We'll also add a main section so that we can quickly test what this output will look like.
+
+`~/python_objects/amphibious_vehicle.py`
+
+```
+from boat import Boat
+from car import Car
+
+class AmphibiousVehicle(Car, Boat):
+    def __init__(self, engine, tires=[], distance_traveled=0, unit="miles"):
+        super().__init__(
+            engine=engine, tires=tires, distance_traveled=distance_traveled, unit=unit,
+        )
+        self.boat_type = "motor"
+
+    def travel(self, land_distance=0, water_distance=0):
+        self.voyage(water_distance)
+        self.drive(land_distance)
+
+    def __str__(self):
+        return f"<{self.__class__.__name__} {self.__dict__}>"
+
+if __name__ == "__main__":
+    water_car = AmphibiousVehicle('4 cylinder')
+    print(water_car)
+```
+
+Let's run this file to see our newly-configured string output.
+
+```
+$ python3.7 amphibious_vehicle.py
+<AmphibiousVehicle {'distance_traveled': 0, 'unit': 'miles', 'boat_type': 'motor', 'tires': ['tire', 'tire'], 'engine': '4 cylinder'}>
+```
+
+We wouldn't want to drop that into a message printed to end-users of our code, but this makes print debugging way more informative than seeing the location for the object in memory.
 
 {% include links.html %}
