@@ -189,6 +189,169 @@ Uppercase letters: ['K', 'T']
 
 ## 43.3. Executing Modules as Scripts
 
+Python modules are just files, but sometimes we want them to behave slightly differently if they're being run directly. In this lesson, we'll learn about how modules are interpreted when imported and also how to only run code when a module is run directly by using the __name__ variable.
+
+### Documentation 
+
+- [Python Modules Documentation](https://docs.python.org/3/tutorial/modules.html)
+- [The import Statement](https://docs.python.org/3/reference/simple_stmts.html#import)
+- [The __name__ Variable](https://docs.python.org/3/library/__main__.html)
+
+### Expressions in a Module
+
+Since modules are just Python files, they can contain expressions and the file will be interpreted from top to bottom. So a few good questions to ask ourselves are:
+
+1. When is a module interpreted?
+2. Can a module be interpreted twice?
+
+To test this, let's create another module that imports our `helpers` module and also import that new module into our `main.py`. We'll call this module `extras.py`.
+
+`~/using_modules/extras.py`
+
+```
+print("Importing 'helpers' in 'extras'")
+import helpers
+
+name = "Keith Thompson"
+```
+
+In `main.py`, let's import extras.
+
+`~/using_modules/main.py`
+
+```
+print("We're importing 'helpers' from 'main'")
+from helpers import *
+
+print("We're importing 'extras' from 'main'")
+import extras
+
+print(f"Lowercase letters: {extract_lower(extras.name)}")
+print(f"Uppercase letters: {extract_upper(extras.name)}")
+```
+
+Finally, in `helpers.py` we'll add `print`, so that we can see when it is run and how many times it is run.
+
+`~/using_modules/helpers.py`
+
+```
+def extract_upper(phrase):
+    return list(filter(str.isupper, phrase))
+
+def extract_lower(phrase):
+    return list(filter(str.islower, phrase))
+
+print("HELLO FROM HELPERS")
+```
+
+We now have enough print lines to helps us really see how `main.py` is processed and when our modules are interpreted. When we run it, this is what we see:
+
+```
+$ python3.7 main.py
+
+We're importing 'helpers' from 'main'
+HELLO FROM HELPERS
+We're importing 'extras' from 'main'
+We're import 'helpers' from 'extras'
+Lowercase letters: ['e', 'i', 't', 'h', 'h', 'o', 'm', 'p', 's', 'o', 'n']
+Uppercase letters: ['K', 'T']
+```
+
+As we can see, the code within the `helpers` module was only interpreted the first time that it was imported. So even though it was imported into two different modules, it was only ever run one time.
+
+### Running a Module Directly
+
+Ideally, we don't want to run this `print` line when our module is imported, but sometimes we do want a module to execute something if it is run directly. To handle this, we can access the `__name__` variable. The `__name__` variable is set in each module and can be used to determine if the module is being run directly as opposed to being imported. Let's change the various print lines from our previous lesson to help us understand the values set to `__name__` in each of our scripts.
+
+`~/using_modules/main.py`
+
+```
+from helpers import *
+import extras
+
+print(f"__name__ in main.py: {__name__}")
+
+print(f"Lowercase letters: {extract_lower(extras.name)}")
+print(f"Uppercase letters: {extract_upper(extras.name)}")
+```
+
+`~/using_modules/helpers.py`
+
+```
+def extract_upper(phrase):
+    return list(filter(str.isupper, phrase))
+
+def extract_lower(phrase):
+    return list(filter(str.islower, phrase))
+
+print(f"__name__ in helpers.py: {__name__}")
+print("HELLO FROM HELPERS")
+```
+
+`~/using_modules/extras.py`
+
+```
+import helpers
+
+print(f"__name__ in extras.py: {__name__}")
+
+name = "Keith Thompson"
+Here's what we see when we run main.py:
+```
+
+`$ python3.7 main.py`
+
+```
+__name__ in helpers.py: helpers
+HELLO FROM HELPERS
+__name__ in extras.py: extras
+__name__ in main.py: __main__
+Lowercase letters: ['e', 'i', 't', 'h', 'h', 'o', 'm', 'p', 's', 'o', 'n']
+Uppercase letters: ['K', 'T']
+```
+
+All of the modules that we imported have `__name__` set to the actual module name, but main.py is set to `__main__` because it is running in the main context. A common pattern is to add a condition like this if we want to add functionality to a module only if it is running in the main context:
+
+```
+if __name__ == "__main__":
+    print("Something only when running in main scope")
+```
+
+To demonstrate this, let's remove all of these debugging lines, but move "HELLO FROM HELPERS" into this conditional in `helpers.py`.
+
+(We're only showing the change to `helpers.py`, but we removed all of the `'__name__` in ...' output)
+
+`~/using_modules/helpers.py`
+
+
+```
+def extract_upper(phrase):
+    return list(filter(str.isupper, phrase))
+
+def extract_lower(phrase):
+    return list(filter(str.islower, phrase))
+
+if __name__ == "__main__":
+    print("HELLO FROM HELPERS")
+```
+If we now run `main.py` we should see the following:
+
+```
+$ python3.7 main.py
+Lowercase letters: ['e', 'i', 't', 'h', 'h', 'o', 'm', 'p', 's', 'o', 'n']
+Uppercase letters: ['K', 'T']
+```
+
+If we run `helpers.py` directly, we should see the print line being run.
+
+```
+$ python3.7 helpers.py
+HELLO FROM HELPERS
+```
+
+
+
+
 
 ## 43.4. Hiding Module Entities
 
