@@ -146,3 +146,11 @@ entries:
     - title: 44. Classes and Object-Oriented Programming
       url: /pyth_44.html
       output: web, pdf
+
+    - title: 45. Input and Output Basics
+      url: /pyth_45.html
+      output: web, pdf
+
+    - title: 46. Exceptions and Exception Handling
+      url: /pyth_46.html
+      output: web, pdf
