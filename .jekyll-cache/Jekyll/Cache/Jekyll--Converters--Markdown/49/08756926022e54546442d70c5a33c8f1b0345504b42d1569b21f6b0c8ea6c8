@@ -1,0 +1,162 @@
+I"�%<p>vcbcv</p>
+
+<h2 id="431-creating-and-using-python-modules">43.1. Creating and Using Python Modules</h2>
+
+<p>To have truly reusable code, we need to access functions, variables, and objects that have already been written. Thus we need to have a way to share our code. This is where modules and packages are useful. In this lesson, we demonstrate how to create our first Python module and access its contents from a different Python program.</p>
+
+<p>Documentation</p>
+<ul>
+  <li><a href="https://docs.python.org/3/tutorial/modules.html">Python Modules Documentation</a></li>
+  <li><a href="https://docs.python.org/3/reference/simple_stmts.html#import">The import Statement</a></li>
+</ul>
+
+<h3 id="what-is-a-module">What Is a Module?</h3>
+
+<p>Working with Python it’s very easy to define new functions and assign values to variables that we would like to use multiple times. It would be great if we could write these useful pieces of code once and then use them whenever we need them. Thankfully, we can do just that because of modules. In Python, a module is just a Python file. This means that we can use modules to divide our code into logical groupings by putting them into separate modules and then pulling those modules into our scripts or applications when we need them.</p>
+
+<h3 id="creating-our-first-module">Creating Our First Module</h3>
+<p>To demonstrate how to create and use modules, let’s create a new directory called <code class="language-plaintext highlighter-rouge">using_modules</code>. Within it, we’ll define our first module by creating the <code class="language-plaintext highlighter-rouge">using_modules/helpers.py</code> file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir ~/using_modules
+$ cd ~/using_modules
+$ touch helpers.py
+</code></pre></div></div>
+
+<p>Within <code class="language-plaintext highlighter-rouge">helpers.py</code>, we’re placing some functions that we think will be generally useful and likely to be used in other files. Let’s write a few functions that can manipulate strings. <code class="language-plaintext highlighter-rouge">~/using_modules/helpers.py</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def extract_upper(phrase):
+    return list(filter(str.isupper, phrase))
+
+def extract_lower(phrase):
+    return list(filter(str.islower, phrase))
+</code></pre></div></div>
+
+<p>Now we have two functions defined and we’d like to use them in other scripts and modules.</p>
+
+<h3 id="using-our-module-from-another-script">Using Our Module from Another Script</h3>
+
+<p>For this section of the course, we’re going to be putting our example code into a script called main.py. Let’s create that script now and look at what we can do to pull in these functions so that we can use them.</p>
+
+<p>The key to working with modules is the <a href="https://docs.python.org/3/reference/simple_stmts.html#import">import statement</a> . We’re going to dig deeper into all that we can do while importing modules in the next lesson. But for now, we’re going to leverage the fact that we can import modules in the same directory as our script by referencing them by their file name minus the extension. In our case, this will <code class="language-plaintext highlighter-rouge">be helpers</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/using_modules/main.py
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import helpers
+</code></pre></div></div>
+
+<p>Before we use our functions, let’s make sure that this file is valid by running it.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python3.7 main.py
+$
+No output is a good sign. To utilize the functions defined in our module, we'll add a period to the end of our module name (i.e. the file name) and then type the name of our function to call it as we otherwise would.
+
+~/using_modules/main.py
+
+import helpers
+
+name = "Keith Thompson"
+print(f"Lowercase letters: {helpers.extract_lower(name)}")
+print(f"Uppercase letters: {helpers.extract_upper(name)}")
+Let's run this and verify it works as expected.
+
+$ python3.7 main.py
+Lowercase letters: ['e', 'i', 't', 'h', 'h', 'o', 'm', 'p', 's', 'o', 'n']
+Uppercase letters: ['K', 'T']
+
+</code></pre></div></div>
+
+<p>Perfect! Now we know the simplest way to define and use modules. In the next lesson, we’ll dig deeper into the various ways and places that we can import modules.</p>
+
+<h2 id="432-importing-modules">43.2. Importing Modules</h2>
+
+<p>Python provides a few different ways to import modules and packages. In this lesson, we’ll take a look at how importing works and the various ways we can import definitions from a module.</p>
+
+<h3 id="documentation">Documentation</h3>
+<ul>
+  <li><a href="https://docs.python.org/3/tutorial/modules.html">Python Modules Documentation</a></li>
+  <li><a href="https://docs.python.org/3/reference/simple_stmts.html#import">The import Statement</a></li>
+</ul>
+
+<h2 id="the-standard-import-statement">The Standard import Statement</h2>
+
+<p>When we learned how to create a module, we also learned how to import the module as a singular entity into other Python files. To reiterate this, we use the following format to import an entire module under its namespace.</p>
+
+<p>import my_module_name
+By doing this, we’re able to access anything exposed by the module by chaining off of the module’s name. Occasionally, we might have a naming conflict when importing a module. In those cases, we can also use the keyword as in the import statement to change the identifier that we use to represent the module. Let’s change our using_modules/main.py so that the helpers module is accessed using the h name.</p>
+
+<p>~/using_modules/helpers.py</p>
+
+<p>import helpers as h</p>
+
+<p>name = “Keith Thompson”
+print(f”Lowercase letters: {h.extract_lower(name)}”)
+print(f”Uppercase letters: {h.extract_upper(name)}”)
+The name of h isn’t great, but it does demonstrate that we can change the name of modules when we import them. If we run this script, we will see there’s no difference in the output.</p>
+
+<p>$ python3.7 main.py
+Lowercase letters: [‘e’, ‘i’, ‘t’, ‘h’, ‘h’, ‘o’, ‘m’, ‘p’, ‘s’, ‘o’, ‘n’]
+Uppercase letters: [‘K’, ‘T’]
+Importing from
+More often than not, we don’t need to use everything provided by a module. In these cases, we can leverage the from version of an import statement to import only the definitions we need from the module, and then we can access them directly. To demonstrate how to do this for multiple functions, let’s directly import the functions from our helpers module. The from statement works like this:</p>
+
+<p>from <MODULE_NAME> import <definition>, <definition>, <etc.>
+Here's what it looks like in main.py:</etc.></definition></definition></MODULE_NAME></p>
+
+<p>~/using_modules/main.py</p>
+
+<p>from helpers import extract_lower, extract_upper</p>
+
+<p>name = “Keith Thompson”
+print(f”Lowercase letters: {extract_lower(name)}”)
+print(f”Uppercase letters: {extract_upper(name)}”)
+It’s worth noting that now we don’t have access to the helpers name in our code at all. If we change our extract_upper line to be chained off of helpers name it will cause an error.</p>
+
+<p>$ python3.7 main.py
+Lowercase letters: [‘e’, ‘i’, ‘t’, ‘h’, ‘h’, ‘o’, ‘m’, ‘p’, ‘s’, ‘o’, ‘n’]
+Traceback (most recent call last):
+  File “using_modules/main.py”, line 5, in <module>
+    print(f"Uppercase letters: {helpers.extract_upper(name)}")
+NameError: name 'helpers' is not defined
+Lastly, we can also combine the as keyword with each definition that we're importing to explicitly rename that definition.</module></p>
+
+<p>~/using_modules/main.py</p>
+
+<p>from helpers import extract_lower as e_low, extract_upper</p>
+
+<p>name = “Keith Thompson”
+print(f”Lowercase letters: {e_low(name)}”)
+print(f”Uppercase letters: {extract_upper(name)}”)
+Importing Everything from a Module
+The final way we can import definitions from a module is to import all of them at once by using *. This is generally not the recommended way of importing things, but sometimes a module provides a lot of functions that we’ll be using, and we don’t want to explicitly import them one at a time.</p>
+
+<p>Let’s utilize the * to import our two functions from the helpers module without explicitly naming them.</p>
+
+<p>~/using_modules/main.py</p>
+
+<p>from helpers import *</p>
+
+<p>name = “Keith Thompson”
+print(f”Lowercase letters: {extract_lower(name)}”)
+print(f”Uppercase letters: {extract_upper(name)}”)
+Once again, if we run this, it will work just as it did before.</p>
+
+<p>$ python3.7 main.py
+Lowercase letters: [‘e’, ‘i’, ‘t’, ‘h’, ‘h’, ‘o’, ‘m’, ‘p’, ‘s’, ‘o’, ‘n’]
+Uppercase letters: [‘K’, ‘T’]</p>
+
+<h2 id="433-executing-modules-as-scripts">43.3. Executing Modules as Scripts</h2>
+
+<h2 id="434-hiding-module-entities">43.4. Hiding Module Entities</h2>
+
+<h2 id="435-the-module-search-path">43.5. The Module Search Path</h2>
+
+<h2 id="436-creating-and-using-python-packages">43.6. Creating and Using Python Packages</h2>
+
+<h2 id="437-distributing-and-installing-packages">43.7. Distributing and Installing Packages</h2>
+
+<h2 id="438-docstrings-doctests-and-shebangs">43.8. Docstrings, Doctests, and Shebangs</h2>
+
+<p>[]:</p>
+
+:ET
