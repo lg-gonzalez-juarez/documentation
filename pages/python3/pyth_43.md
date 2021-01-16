@@ -432,6 +432,53 @@ The other way we can prevent an entity from being exported automatically when so
 
 ## 43.5. The Module Search Path
 
+We've seen how to create our modules, and we've been able to import them from scripts adjacent to them in the file system, but where else can we import modules from?
+
+### Documentation 
+- [Python Modules Documentation](https://docs.python.org/3/tutorial/modules.html)
+- [Python Standard Libary](https://docs.python.org/3/library/)
+- [Sys Module](https://docs.python.org/3/library/sys.html)
+
+### Where Do Modules Come From?
+
+Python is a language with a large and powerful [standard library](https://docs.python.org/3/library/) of modules. To use these modules, we need to import them the same way that we've been importing our local modules, but how does Python know where to find the code for these modules? To understand this we need to look at the module search path. When Python goes looking for a module it has a path that works very much like the `PATH` variable used by our shell to find executables. A few different things are combined to make this path:
+
+- The directory containing the running script is automatically the first item in the search path. When running the REPL this will be the current directory.
+- The values set in the `PYTHONPATH` environment variable (if it is set) will be next in the list.
+- Finally, a list of directories configured when Python was installed. This list contains paths to directories that have the standard library modules and other packages we've installed.
+
+If we want to see the module search path, we can import the [sys](https://docs.python.org/3/library/sys.html) module and view the `path` variable. Let's do this from a REPL.
+
+```
+$ python3.7
+Python 3.7.6 (default, Jan 29 2020, 21:20:26)
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-39)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> sys.path
+['', '/home/cloud_user/.pyenv/versions/3.7.6/lib/python37.zip', '/home/cloud_user/.pyenv/versions/3.7.6/lib/python3.7', '/home/cloud_user/.pyenv/versions/3.7.6/lib/python3.7/lib-dynload', '/home/cloud_user/.pyenv/versions/3.7.6/lib/python3.7/site-packages']
+>>> exit()
+```
+
+Our Python install is in `~/.pyenv/versions/3.7.6`, and the directories within contain the standard library. The `site-packages` directory contains third-party packages that we might install.
+
+Just to show that we can change this, let's set the `PYTHONPATH` environment variable when starting the REPL.
+
+```
+$ PYTHONPATH=/home/cloud_user python3.7
+Python 3.7.6 (default, Jan 29 2020, 21:20:26)
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-39)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> sys.path
+['', '/home/cloud_user', '/home/cloud_user/.pyenv/versions/3.7.6/lib/python37.zip', '/home/cloud_user/.pyenv/versions/3.7.6/lib/python3.7', '/home/cloud_user/.pyenv/versions/3.7.6/lib/python3.7/lib-dynload', '/home/cloud_user/.pyenv/versions/3.7.6/lib/python3.7/site-packages']
+>>> exit()
+```
+
+Now we can see that `/home/cloud_user` is the second item in the list. If we don't have a package in our current directory (the '' in the list), then it will check items passed in via `PYTHONPATH` before looking at items provided by our Python installation.
+
+Note: Python will search for a built-in module by name before searching the paths in `sys.path`. This means you can't accidentally create a module with the same name as a built-in module, which prevents you from overwriting the built-in module.
+
 
 ## 43.6. Creating and Using Python Packages
 
