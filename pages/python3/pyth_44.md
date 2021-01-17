@@ -14,7 +14,7 @@ Python is an object-oriented programming language and that means we work primari
 
 ### Documentation 
 
-[Python Classes Documentation](https://docs.python.org/3/tutorial/classes.html)
+* [Python Classes Documentation](https://docs.python.org/3/tutorial/classes.html)
 
 ### What Is an Object?
 
