@@ -358,7 +358,7 @@ Now that we know how to import our modules, we might want to restrict what is ex
 
 ### Documentation 
 
-[Python Modules Documentation](https://docs.python.org/3/tutorial/modules.html)
+* [Python Modules Documentation](https://docs.python.org/3/tutorial/modules.html)
 
 ### What Are Module Entities?
 
@@ -490,7 +490,7 @@ Python modules are simply Python files, but they are not the only way we can bun
 ### Documentation 
 
 - [Python Packages Documentation](https://docs.python.org/3/tutorial/modules.html#packages)
--[Implicit Namespace Packages](https://www.python.org/dev/peps/pep-0420/#specification)
+- [Implicit Namespace Packages](https://www.python.org/dev/peps/pep-0420/#specification)
 
 ### What Is a Package in Python?
 
