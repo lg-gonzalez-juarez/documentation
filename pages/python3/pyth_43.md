@@ -582,7 +582,7 @@ Packages are invaluable when working in Python because the community has publish
 
 ### Documentation 
 
--[Distributing Packages and Setuptools](https://packaging.python.org/guides/distributing-packages-using-setuptools/)
+- [Distributing Packages and Setuptools](https://packaging.python.org/guides/distributing-packages-using-setuptools/)
 - [The Python Package Index](https://pypi.org/)
 - [pip](https://pip.pypa.io/en/stable/quickstart/)
 - [requests PyPi Page](https://pypi.org/project/requests/)
@@ -990,10 +990,9 @@ Our package is installed and our script runs again without using a module local 
 
 ## 43.8. Docstrings, Doctests, and Shebangs
 
+Now that we've created both modules and packages, we should help the potential users of our code by adding some documentation. Additionally, it's a little cumbersome to continually pass our `main.py` script to the Python executable to run it, so we're going to turn that script into an executable to make using it a little easier.
 
-Now that we've created both modules and packages, we should help the potential users of our code by adding some documentation. Additionally, it's a little cumbersome to continually pass our main.py script to the Python executable to run it, so we're going to turn that script into an executable to make using it a little easier.
-
- ### Documentation 
+### Documentation 
 
 - [Python Packages Documentation](https://docs.python.org/3/tutorial/modules.html#packages)
 - [Python doctest Module](https://docs.python.org/3/library/doctest.html)
@@ -1015,7 +1014,7 @@ __all__ = ["extract_upper"]
 from .strings import *
 ```
 
-One of the most common misconceptions in Python is that we just created a "block comment". That's entirely incorrect. We created a multi-line string and the interpreter has to do some work to read that content. An actual comment starts with an octothorp/hash/pound sign and the interpreter completely ignores it. In the very specific case of a docstring, this string will actually be assigned to a hidden variable on the package, module, function: the `__doc__` variable. To demonstrate this, we're going to change how we installed our package so that it will pick up code changes as we write them. First, let's uninstall the existing `helpers` package.
+One of the most common misconceptions in Python is that we just created a "block comment". That's entirely incorrect. We created a multi-line string and the interpreter has to do some work to read that content. An actual comment starts with an `octothorp/hash/`pound sign and the interpreter completely ignores it. In the very specific case of a docstring, this string will actually be assigned to a hidden variable on the package, module, function: the `__doc__` variable. To demonstrate this, we're going to change how we installed our package so that it will pick up code changes as we write them. First, let's uninstall the existing `helpers` package.
 
 Note: Since `pip` matches your Python version, if you are not using `pip 3.7` you can use the `pip -V` command to find its version.
 
@@ -1109,8 +1108,11 @@ def extract_lower(phrase):
 
 if __name__ == "__main__":
     print("HELLO FROM HELPERS")
-If we run doctest again, we should see no output because the results match the expected outcome.
+```
 
+If we run `doctest` again, we should see no output because the results match the expected outcome.
+
+```
 $ python3.7 -m doctest src/helpers/strings.py
 $
 ```
