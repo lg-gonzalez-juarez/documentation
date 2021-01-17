@@ -1,6 +1,4 @@
-I"�!<p>vcbcv</p>
-
-<h2 id="431-creating-and-using-python-modules">43.1. Creating and Using Python Modules</h2>
+I""<h2 id="431-creating-and-using-python-modules">43.1. Creating and Using Python Modules</h2>
 
 <p>To have truly reusable code, we need to access functions, variables, and objects that have already been written. Thus we need to have a way to share our code. This is where modules and packages are useful. In this lesson, we demonstrate how to create our first Python module and access its contents from a different Python program.</p>
 
@@ -35,7 +33,7 @@ def extract_lower(phrase):
 
 <h3 id="using-our-module-from-another-script">Using Our Module from Another Script</h3>
 
-<p>For this section of the course, we’re going to be putting our example code into a script called main.py. Let’s create that script now and look at what we can do to pull in these functions so that we can use them.</p>
+<p>For this section of the course, we’re going to be putting our example code into a script called <code class="language-plaintext highlighter-rouge">main.py</code>. Let’s create that script now and look at what we can do to pull in these functions so that we can use them.</p>
 
 <p>The key to working with modules is the <a href="https://docs.python.org/3/reference/simple_stmts.html#import">import statement</a> . We’re going to dig deeper into all that we can do while importing modules in the next lesson. But for now, we’re going to leverage the fact that we can import modules in the same directory as our script by referencing them by their file name minus the extension. In our case, this will <code class="language-plaintext highlighter-rouge">be helpers</code>.</p>
 

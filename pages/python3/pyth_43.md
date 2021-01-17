@@ -7,9 +7,6 @@ sidebar: python_sidebar
 permalink: pyth_43.html
 folder: python3
 ---
-vcbcv 
-
-
 ## 43.1. Creating and Using Python Modules
 
 To have truly reusable code, we need to access functions, variables, and objects that have already been written. Thus we need to have a way to share our code. This is where modules and packages are useful. In this lesson, we demonstrate how to create our first Python module and access its contents from a different Python program.
@@ -45,7 +42,7 @@ Now we have two functions defined and we'd like to use them in other scripts and
 
 ### Using Our Module from Another Script
 
-For this section of the course, we're going to be putting our example code into a script called main.py. Let's create that script now and look at what we can do to pull in these functions so that we can use them.
+For this section of the course, we're going to be putting our example code into a script called `main.py`. Let's create that script now and look at what we can do to pull in these functions so that we can use them.
 
 The key to working with modules is the [import statement](https://docs.python.org/3/reference/simple_stmts.html#import) . We're going to dig deeper into all that we can do while importing modules in the next lesson. But for now, we're going to leverage the fact that we can import modules in the same directory as our script by referencing them by their file name minus the extension. In our case, this will ```be helpers```.
 
@@ -62,17 +59,23 @@ Before we use our functions, let's make sure that this file is valid by running 
 ```
 $ python3.7 main.py
 $
+```
+
 No output is a good sign. To utilize the functions defined in our module, we'll add a period to the end of our module name (i.e. the file name) and then type the name of our function to call it as we otherwise would.
 
-~/using_modules/main.py
+`~/using_modules/main.py`
 
+```
 import helpers
 
 name = "Keith Thompson"
 print(f"Lowercase letters: {helpers.extract_lower(name)}")
 print(f"Uppercase letters: {helpers.extract_upper(name)}")
+```
+
 Let's run this and verify it works as expected.
 
+```
 $ python3.7 main.py
 Lowercase letters: ['e', 'i', 't', 'h', 'h', 'o', 'm', 'p', 's', 'o', 'n']
 Uppercase letters: ['K', 'T']
