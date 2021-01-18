@@ -1,7 +1,7 @@
 ---
 title: 00. index
-tags: [python]
-keywords: sample
+tags: [machinelearning]
+keywords: #
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: mchlrn_00.html
