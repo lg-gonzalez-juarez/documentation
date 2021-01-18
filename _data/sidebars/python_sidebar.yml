@@ -110,7 +110,7 @@ entries:
       url: /pyth_03.html
       output: web, pdf
 
-    - title: 24. Using NumPy
+    - title: 24. Using Pandas
       url: /pyth_04.html
       output: web, pdf
 
