@@ -20,7 +20,7 @@ topnav_dropdowns:
     - title: Sections #dropdowns
       folderitems:
         - title: LGGJ
-          url: /mydoc_introduction.html
+          url: /index.html
         - title: Python Entry Level
           url: /python_00.html
         - title: Introduccion Java Script
