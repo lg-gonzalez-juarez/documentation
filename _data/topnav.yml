@@ -4,15 +4,14 @@
 topnav:
 - title: Topnav
   items:
-    - title: Paste2Markdown
-      external_url: https://euangoddard.github.io/clipboard2markdown/
-    - title: News
-      url: /news
     - title: Python
       url: /python_00.html
     - title: Jekyll
       url: /getting_started.html
-
+    - title: Paste2Markdown
+      external_url: https://euangoddard.github.io/clipboard2markdown/
+    - title: News
+      url: /news
 
 #Topnav dropdowns
 topnav_dropdowns:
