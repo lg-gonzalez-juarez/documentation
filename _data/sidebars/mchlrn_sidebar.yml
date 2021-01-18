@@ -29,39 +29,39 @@ entries:
       type: homepage
       output: web, pdf
       
-    - title: 01. Fundamental Concepts
+    - title: 01. Data Collection
       url: //mchlrn_01.html
       output: web, pdf
     
-    - title: 02. Literals, variables, and comments
+    - title: 02. Streaming Data Collection
       url: //mchlrn_02.html
       output: web, pdf
 
-    - title: 03. Number Systems and Numeric Operators
+    - title: 03. Data Preparation
       url: /mchlrn_03.html
       output: web, pdf
 
-    - title: 04.Operators and Bindings
+    - title: 04.Data Analysis and Visualization
       url: /mchlrn_04.html
       output: web, pdf
 
-    - title: 05. Input and Output Operations
+    - title: 05. Modeling
       url: /mchlrn_05.html
       output: web, pdf
 
-    - title: 06. Strings, Operations, and Calculations
+    - title: 06. Algorithms
       url: /mchlrn_06.html
       output: web, pdf
 
-    - title: 07. Lists
+    - title: 07. Evaluation and Optimization
       url: /mchlrn_07.html
       output: web, pdf
 
-    - title: 08. Tuples & Dictionaries
+    - title: 08. Implementation and Operations
       url: /mchlrn_08.html
       output: web, pdf
 
-    - title: 09. Dictionaries
+    - title: 09. Wrap-Up
       url: /mchlrn_09.html
       output: web, pdf
 
