@@ -70,18 +70,14 @@ entries:
       url: /mchlrn_10.html
       output: web, pdf
 
-  - title: Introducction Machine Learning
-    output: web, pdf
-    folderitems:
-
-    - title: 01. Welcome
-      url: //mchlrn_01.html
-      output: web, pdf
-
   - title: Machine Learning (AWS)
     output: web, pdf
     folderitems:
-  
+
+    - title: 20. Index
+      url: //mchlrn_20.html
+      output: web, pdf
+
     - title: 21. Welcome
       url: //mchlrn_21.html
       output: web, pdf
