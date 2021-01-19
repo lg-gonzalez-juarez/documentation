@@ -12,14 +12,6 @@ folder: machinelearning
 
 # Introduction to Machine Learning
 
-## About this course
-
-# 1. Welcome
-    - An Important Note About A Cloud Guru and Linux Academy Courses
-    - Introduction
-    - About This Course
-    - About The Labs
-
 # 2. Back in  the day
 ## 2.1 Introduction
 
@@ -95,15 +87,6 @@ _ Neural Networks
 ## 2.6 Lab: Logic Gates
 
 try with logic.ly
-
-# 3. The raw ingredients
-# 4. Original recipe
-# 5. New and improved
-# 6. A new way of thinking
-# 7. The toolbox
-# 8. Unlesh the kraken!
-# 9. A cautionary tale
-
 
 
 
