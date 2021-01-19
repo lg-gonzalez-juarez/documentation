@@ -45,16 +45,23 @@ Talos, greek mithology
 
 Can machine think? by A.M. Turing
 
-The fist use of the term "Artificial intelligence" was founded in the proposal for the Dartmouth summer research project on Artificial intelligence
+The fist use of the term "Artificial intelligence" was founded in the proposal for the Dartmouth summer research project on Artificial intelligence at 1955
 
 This is related to
 1. Automatic computers
 2. How can a computer be programmed to use a language?
 3. Neuron nets
-
-
-
+4. Theory of size of a calculation
+5. Self-improvement
+6. Abstraction
+7. Randomness and creativity
+\
+\
     - Machine Learning
+
+Arthur Samuel, in 1959, he created a checker playing program. That was one of the first examples of a self-learning program. This contained the first concepts relative to reiforcement learning 
+
+
     - Machine Learning Models
     - Why it Works: Logic Gates
     - Lab: Logic Gates
