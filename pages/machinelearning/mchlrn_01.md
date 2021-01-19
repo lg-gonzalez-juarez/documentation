@@ -39,6 +39,20 @@ folder: machinelearning
     - Origins
 
 
+Elektro, 1936, Electric house
+Talos, greek mithology
+1945, Alan Turing
+
+Can machine think? by A.M. Turing
+
+The fist use of the term "Artificial intelligence" was founded in the proposal for the Dartmouth summer research project on Artificial intelligence
+
+This is related to
+1. Automatic computers
+2. How can a computer be programmed to use a language?
+3. Neuron nets
+
+
 
     - Machine Learning
     - Machine Learning Models
