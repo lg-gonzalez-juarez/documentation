@@ -16,7 +16,8 @@ summary: These brief of alls docs
 - [Using Python's Math, Science, and Engineering Libraries](pyth_00.html)
 - [Python Programming GUI](python_00.html)
 - [Introduction Javascript](javascript_00.html)
-- [AWS Certified Machine Learning - Specialty 2020](mchlrn_00.html)
+- [Introduction Machine Learning](mchlrn_00.html)
+- [AWS Certified Machine Learning - Specialty 2020](mchlrn_20.html)
 
 
 ## Tutorial usage
