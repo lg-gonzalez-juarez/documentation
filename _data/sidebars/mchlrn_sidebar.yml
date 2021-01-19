@@ -2,8 +2,8 @@
 
 entries:
 - title: sidebar
-  product: machine learning
-  version: 1.0
+  product: Machine Learning
+  version: #1.0
   folders:
 
   - title:
@@ -20,6 +20,10 @@ entries:
       url: /tocpage.html
       output: pdf
       type: frontmatter
+
+  - title: About this
+    output: web, pdf
+    folderitems:
 
     - title: 00. Course Index
       url: /mchlrn_00.html
@@ -70,7 +74,7 @@ entries:
       url: /mchlrn_10.html
       output: web, pdf
 
-  - title: Machine Learning (AWS)
+  - title: Introduction to Machine Learning
     output: web, pdf
     folderitems:
 
