@@ -64,10 +64,33 @@ Arthur Samuel, in 1959, he created a checker playing program. That was one of th
 
 {% include image.html file="Data_Science_and_Machine_Learning.PNG" url="http://jekyllrb.com" alt="Jekyll" caption="Data Science vs Machine Learning" max-width="800" %}
 
+Data science and machine learning share a common branch of the "Math roots", that being applied mathematics  
 
+### Artificial Intelligence Space
 
+This include:
+- Natural Language processing
+- Speech
+- Robotics
+- Expert Systems
+- Vision
+_ Neural Networks
+- Machine Learning
+
+### Machine Learning Space
+- Ensemble
+- Reinforcement
+- Supervised
+- Semi-supervised
+- Unsupervised
+- Whatever's next ...
+
+-
 
     - Machine Learning Models
+
+
+    
     - Why it Works: Logic Gates
     - Lab: Logic Gates
 
