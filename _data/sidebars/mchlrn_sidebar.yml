@@ -28,7 +28,19 @@ entries:
       url: /mchlrn_00.html
       type: homepage
       output: web, pdf
-      
+
+  - title: Introducction Machine Learning
+    output: web, pdf
+    folderitems:
+
+    - title: 01. Data Collection
+      url: //mchlrn_01.html
+      output: web, pdf
+
+  - title: Machine Learning (AWS)
+    output: web, pdf
+    folderitems:
+  
     - title: 01. Data Collection
       url: //mchlrn_01.html
       output: web, pdf
