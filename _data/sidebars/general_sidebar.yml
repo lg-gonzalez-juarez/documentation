@@ -46,6 +46,19 @@ entries:
       url: /gral_python_pypower.html
       output: web, pdf
 
+  - title: Machine Learning
+    output: web, pdf
+    folderitems:
+
+    - title: Introduction to machine learning
+      url: /mchlrn_20.html
+      output: web, pdf
+      type: homepage
+
+    - title: AWS Machine Learning
+      url: /mchlrn_20.html
+      output: web, pdf
+
   - title: Courses
     output: web, pdf
     folderitems:
