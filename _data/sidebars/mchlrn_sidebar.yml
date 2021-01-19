@@ -26,7 +26,7 @@ entries:
       type: homepage
       output: web, pdf
 
-  - title: Introducction Machine Learning
+  - title: AWS Machine Learning Certification
     output: web, pdf
     folderitems:
 
@@ -70,11 +70,11 @@ entries:
       url: /mchlrn_10.html
       output: web, pdf
 
-  - title: machine learning 
+  - title: Introducction Machine Learning
     output: web, pdf
     folderitems:
 
-    - title: 01. Data Collection
+    - title: 01. Welcome
       url: //mchlrn_01.html
       output: web, pdf
 
@@ -82,42 +82,42 @@ entries:
     output: web, pdf
     folderitems:
   
-    - title: 01. Data Collection
+    - title: 21. Welcome
       url: //mchlrn_21.html
       output: web, pdf
     
-    - title: 02. Streaming Data Collection
+    - title: 22. Back in the day
       url: //mchlrn_22.html
       output: web, pdf
 
-    - title: 03. Data Preparation
+    - title: 23. The raw ingredients
       url: /mchlrn_23.html
       output: web, pdf
 
-    - title: 04.Data Analysis and Visualization
+    - title: 24.Original recipe
       url: /mchlrn_24.html
       output: web, pdf
 
-    - title: 05. Modeling
+    - title: 25. New and improved
       url: /mchlrn_25.html
       output: web, pdf
 
-    - title: 06. Algorithms
+    - title: 26. A new way of thinking
       url: /mchlrn_26.html
       output: web, pdf
 
-    - title: 07. Evaluation and Optimization
+    - title: 27. The toolbox
       url: /mchlrn_27.html
       output: web, pdf
 
-    - title: 08. Implementation and Operations
+    - title: 28. Unlesh the kraken!
       url: /mchlrn_28.html
       output: web, pdf
 
-    - title: 09. Wrap-Up
+    - title: 29. A cautionary tale
       url: /mchlrn_29.html
       output: web, pdf
 
-    - title: 10. String
+    - title: 30. Practice Exam
       url: /mchlrn_30.html
       output: web, pdf
