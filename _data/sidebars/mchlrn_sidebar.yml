@@ -21,9 +21,6 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: machine learning 
-    output: web, pdf
-    folderitems:
     - title: 00. Course Index
       url: /mchlrn_00.html
       type: homepage
@@ -33,14 +30,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: 01. Data Collection
-      url: //mchlrn_01.html
-      output: web, pdf
-
-  - title: Machine Learning (AWS)
-    output: web, pdf
-    folderitems:
-  
     - title: 01. Data Collection
       url: //mchlrn_01.html
       output: web, pdf
@@ -79,4 +68,56 @@ entries:
 
     - title: 10. String
       url: /mchlrn_10.html
+      output: web, pdf
+
+  - title: machine learning 
+    output: web, pdf
+    folderitems:
+
+    - title: 01. Data Collection
+      url: //mchlrn_01.html
+      output: web, pdf
+
+  - title: Machine Learning (AWS)
+    output: web, pdf
+    folderitems:
+  
+    - title: 01. Data Collection
+      url: //mchlrn_21.html
+      output: web, pdf
+    
+    - title: 02. Streaming Data Collection
+      url: //mchlrn_22.html
+      output: web, pdf
+
+    - title: 03. Data Preparation
+      url: /mchlrn_23.html
+      output: web, pdf
+
+    - title: 04.Data Analysis and Visualization
+      url: /mchlrn_24.html
+      output: web, pdf
+
+    - title: 05. Modeling
+      url: /mchlrn_25.html
+      output: web, pdf
+
+    - title: 06. Algorithms
+      url: /mchlrn_26.html
+      output: web, pdf
+
+    - title: 07. Evaluation and Optimization
+      url: /mchlrn_27.html
+      output: web, pdf
+
+    - title: 08. Implementation and Operations
+      url: /mchlrn_28.html
+      output: web, pdf
+
+    - title: 09. Wrap-Up
+      url: /mchlrn_29.html
+      output: web, pdf
+
+    - title: 10. String
+      url: /mchlrn_30.html
       output: web, pdf
