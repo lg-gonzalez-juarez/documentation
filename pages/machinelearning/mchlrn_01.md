@@ -94,6 +94,8 @@ _ Neural Networks
 
 ## 2.6 Lab: Logic Gates
 
+try with logic.ly
+
 # 3. The raw ingredients
 # 4. Original recipe
 # 5. New and improved
