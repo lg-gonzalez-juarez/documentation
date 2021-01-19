@@ -21,7 +21,7 @@ folder: machinelearning
     - About The Labs
 
 # 2. Back in  the day
-    - Introduction
+## 2.1 Introduction
 
     Learning objectives
     1. Brief history of AI and ML
@@ -36,8 +36,7 @@ folder: machinelearning
 \
 
 
-    - Origins
-
+## 2.2 Origins
 
 Elektro, 1936, Electric house
 Talos, greek mithology
@@ -57,7 +56,7 @@ This is related to
 7. Randomness and creativity
 \
 \
-    - Machine Learning
+## 2.3 Machine Learning
 
 Arthur Samuel, in 1959, he created a checker playing program. That was one of the first examples of a self-learning program. This contained the first concepts relative to reiforcement learning 
 
@@ -87,12 +86,13 @@ _ Neural Networks
 
 -
 
-    - Machine Learning Models
+## 2.4 Machine Learning Models
 
 
-    
-    - Why it Works: Logic Gates
-    - Lab: Logic Gates
+
+## 2.5 Why it Works: Logic Gates
+
+## 2.6 Lab: Logic Gates
 
 # 3. The raw ingredients
 # 4. Original recipe

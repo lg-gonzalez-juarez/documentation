@@ -1,0 +1,114 @@
+I"<p><a href="https://linuxacademy.com/cp/coursescheduler/view/id/492070">link course</a></p>
+
+<h1 id="introduction-to-machine-learning">Introduction to Machine Learning</h1>
+
+<h2 id="about-this-course">About this course</h2>
+
+<h1 id="1-welcome">1. Welcome</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- An Important Note About A Cloud Guru and Linux Academy Courses
+- Introduction
+- About This Course
+- About The Labs
+</code></pre></div></div>
+
+<h1 id="2-back-in--the-day">2. Back in  the day</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Introduction
+
+Learning objectives
+1. Brief history of AI and ML
+2. Difference between AI, ML, statistics and data science
+3. Understand why computers compute!
+</code></pre></div></div>
+
+<p>Talk the talk</p>
+<ul>
+  <li>Algorithm</li>
+  <li>Heuristic</li>
+  <li>
+    <p>Logic Gate
+<br />
+\</p>
+
+    <ul>
+      <li>Origins</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Elektro, 1936, Electric house
+Talos, greek mithology
+1945, Alan Turing</p>
+
+<p>Can machine think? by A.M. Turing</p>
+
+<p>The fist use of the term “Artificial intelligence” was founded in the proposal for the Dartmouth summer research project on Artificial intelligence at 1955</p>
+
+<p>This is related to</p>
+<ol>
+  <li>Automatic computers</li>
+  <li>How can a computer be programmed to use a language?</li>
+  <li>Neuron nets</li>
+  <li>Theory of size of a calculation</li>
+  <li>Self-improvement</li>
+  <li>Abstraction</li>
+  <li>Randomness and creativity
+<br />
+
+    <ul>
+      <li>Machine Learning</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Arthur Samuel, in 1959, he created a checker playing program. That was one of the first examples of a self-learning program. This contained the first concepts relative to reiforcement learning</p>
+
+<figure><a class="no_icon" target="_blank" rel="noopener" href="http://jekyllrb.com"><img class="docimage" src="images/Data_Science_and_Machine_Learning.PNG" alt="Jekyll" style="max-width: 800px" /></a><figcaption>Data Science vs Machine Learning</figcaption></figure>
+
+<p>Data science and machine learning share a common branch of the “Math roots”, that being applied mathematics</p>
+
+<h3 id="artificial-intelligence-space">Artificial Intelligence Space</h3>
+
+<p>This include:</p>
+<ul>
+  <li>Natural Language processing</li>
+  <li>Speech</li>
+  <li>Robotics</li>
+  <li>Expert Systems</li>
+  <li>Vision
+_ Neural Networks</li>
+  <li>Machine Learning</li>
+</ul>
+
+<h3 id="machine-learning-space">Machine Learning Space</h3>
+<ul>
+  <li>Ensemble</li>
+  <li>Reinforcement</li>
+  <li>Supervised</li>
+  <li>Semi-supervised</li>
+  <li>Unsupervised</li>
+  <li>Whatever’s next …</li>
+</ul>
+
+<p>-</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Machine Learning Models
+
+
+
+- Why it Works: Logic Gates
+- Lab: Logic Gates
+</code></pre></div></div>
+
+<h1 id="3-the-raw-ingredients">3. The raw ingredients</h1>
+<h1 id="4-original-recipe">4. Original recipe</h1>
+<h1 id="5-new-and-improved">5. New and improved</h1>
+<h1 id="6-a-new-way-of-thinking">6. A new way of thinking</h1>
+<h1 id="7-the-toolbox">7. The toolbox</h1>
+<h1 id="8-unlesh-the-kraken">8. Unlesh the kraken!</h1>
+<h1 id="9-a-cautionary-tale">9. A cautionary tale</h1>
+
+<hr />
+
+<p>[]:</p>
+
+:ET
