@@ -14,8 +14,20 @@ folder: machinelearning
 
 ## About this course
 
-* Introduction 
+* Welcome
+    - An Important Note About A Cloud Guru and Linux Academy Courses
+    - Introduction
+    - About This Course
+    - About The Labs
+
 * Back in  the day
+    - Introduction
+    - Origins
+    - Machine Learning
+    - Machine Learning Models
+    - Why it Works: Logic Gates
+    - Lab: Logic Gates
+
 * The raw ingredients
 * Original recipe
 * New and improved
