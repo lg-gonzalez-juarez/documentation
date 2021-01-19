@@ -12,7 +12,17 @@ folder: machinelearning
 
 # Introduction to Machine Learning
 
+## About this course
 
+* Introduction 
+* Back in  the day
+* The raw ingredients
+* Original recipe
+* New and improved
+* A new way of thinking
+* The toolbox
+* Unlesh the kraken!
+* A cautionary tale
 
 
 
