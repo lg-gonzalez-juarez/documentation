@@ -50,7 +50,12 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Introduction to machine learning
+    - title: Index Machine Learning
+      url: /mchlrn_00.html
+      output: web, pdf
+      type: homepage
+
+    - title: Introduction to Machine Learning
       url: /mchlrn_20.html
       output: web, pdf
       type: homepage
