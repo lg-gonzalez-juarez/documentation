@@ -14,13 +14,13 @@ folder: machinelearning
 
 ## About this course
 
-* Welcome
+# 1. Welcome
     - An Important Note About A Cloud Guru and Linux Academy Courses
     - Introduction
     - About This Course
     - About The Labs
 
-* Back in  the day
+# 2. Back in  the day
     - Introduction
 
     Learning objectives
@@ -62,9 +62,7 @@ This is related to
 Arthur Samuel, in 1959, he created a checker playing program. That was one of the first examples of a self-learning program. This contained the first concepts relative to reiforcement learning 
 
 
-{% include image2.html file="Data_Science_and_Machine_Learning.PNG" url="http://jekyllrb.com" alt="Jekyll" caption="This is a sample caption" %}
-
-
+{% include image.html file="Data_Science_and_Machine_Learning.PNG" url="http://jekyllrb.com" alt="Jekyll" caption="Data Science vs Machine Learning" max-width="800" %}
 
 
 
@@ -73,13 +71,13 @@ Arthur Samuel, in 1959, he created a checker playing program. That was one of th
     - Why it Works: Logic Gates
     - Lab: Logic Gates
 
-* The raw ingredients
-* Original recipe
-* New and improved
-* A new way of thinking
-* The toolbox
-* Unlesh the kraken!
-* A cautionary tale
+# 3. The raw ingredients
+# 4. Original recipe
+# 5. New and improved
+# 6. A new way of thinking
+# 7. The toolbox
+# 8. Unlesh the kraken!
+# 9. A cautionary tale
 
 
 

@@ -1,0 +1,93 @@
+I"�	<p><a href="https://linuxacademy.com/cp/coursescheduler/view/id/492070">link course</a></p>
+
+<h1 id="introduction-to-machine-learning">Introduction to Machine Learning</h1>
+
+<h2 id="about-this-course">About this course</h2>
+
+<ul>
+  <li>Welcome
+    <ul>
+      <li>An Important Note About A Cloud Guru and Linux Academy Courses</li>
+      <li>Introduction</li>
+      <li>About This Course</li>
+      <li>About The Labs</li>
+    </ul>
+  </li>
+  <li>Back in  the day
+    <ul>
+      <li>Introduction</li>
+    </ul>
+
+    <p>Learning objectives</p>
+    <ol>
+      <li>Brief history of AI and ML</li>
+      <li>Difference between AI, ML, statistics and data science</li>
+      <li>Understand why computers compute!</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Talk the talk</p>
+<ul>
+  <li>Algorithm</li>
+  <li>Heuristic</li>
+  <li>
+    <p>Logic Gate
+<br />
+\</p>
+
+    <ul>
+      <li>Origins</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Elektro, 1936, Electric house
+Talos, greek mithology
+1945, Alan Turing</p>
+
+<p>Can machine think? by A.M. Turing</p>
+
+<p>The fist use of the term “Artificial intelligence” was founded in the proposal for the Dartmouth summer research project on Artificial intelligence at 1955</p>
+
+<p>This is related to</p>
+<ol>
+  <li>Automatic computers</li>
+  <li>How can a computer be programmed to use a language?</li>
+  <li>Neuron nets</li>
+  <li>Theory of size of a calculation</li>
+  <li>Self-improvement</li>
+  <li>Abstraction</li>
+  <li>Randomness and creativity
+<br />
+
+    <ul>
+      <li>Machine Learning</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Arthur Samuel, in 1959, he created a checker playing program. That was one of the first examples of a self-learning program. This contained the first concepts relative to reiforcement learning</p>
+
+<figure><a class="no_icon" target="_blank" rel="noopener" href="http://jekyllrb.com"><img class="docimage" src="images/Data_Science_and_Machine_Learning.PNG" alt="Jekyll" style="max-width: 800px" /></a><figcaption>Data Science vs Machine Learning</figcaption></figure>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Machine Learning Models
+- Why it Works: Logic Gates
+- Lab: Logic Gates
+</code></pre></div></div>
+
+<ul>
+  <li>The raw ingredients</li>
+  <li>Original recipe</li>
+  <li>New and improved</li>
+  <li>A new way of thinking</li>
+  <li>The toolbox</li>
+  <li>Unlesh the kraken!</li>
+  <li>A cautionary tale</li>
+</ul>
+
+<hr />
+
+<p>[]:</p>
+
+:ET
