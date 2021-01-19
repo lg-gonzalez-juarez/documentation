@@ -62,6 +62,13 @@ This is related to
 Arthur Samuel, in 1959, he created a checker playing program. That was one of the first examples of a self-learning program. This contained the first concepts relative to reiforcement learning 
 
 
+{% include image2.html file="Data_Science_and_Machine_Learning.PNG" url="http://jekyllrb.com" alt="Jekyll" caption="This is a sample caption" %}
+
+
+
+
+
+
     - Machine Learning Models
     - Why it Works: Logic Gates
     - Lab: Logic Gates
