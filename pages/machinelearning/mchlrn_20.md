@@ -8,6 +8,10 @@ permalink: mchlrn_20.html
 folder: machinelearning
 ---
 
+# Introduction to Machine Learning
+
+[Link General Course](https://linuxacademy.com/cp/coursescheduler/view/id/492070)
+
 
 # 3. The raw ingredients
 # 4. Original recipe
