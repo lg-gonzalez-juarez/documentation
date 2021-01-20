@@ -1,0 +1,17 @@
+I"�<h2 id="conexion-al-servidor">Conexion al servidor</h2>
+
+<p>dir IP publica + <code class="language-plaintext highlighter-rouge">:8080</code></p>
+
+<p>to get started, is necesary to create a file to view our revenue:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch revenue.py
+</code></pre></div></div>
+
+<h2 id="notas-laboratorios">Notas laboratorios</h2>
+
+<p>We’ll need to use a few different things from Python’s math module to calculate these values and ensure that the result is accurate given that we’re working with PI and our starting measurements can be floats. We want our calculations to be accurate to the 1/100th of a unit.</p>
+
+<p>We’ll be writing our code in calcs.py and we’ll be able to check our work by running the automated tests within the test_calcs.py file by running the following command:</p>
+
+<p>[]:</p>
+
+:ET

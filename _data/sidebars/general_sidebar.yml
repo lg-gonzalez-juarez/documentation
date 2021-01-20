@@ -19,7 +19,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Preliminary Knowledge
+  - title: Index
     output: web, pdf
     type: homepage
     folderitems:
@@ -29,13 +29,18 @@ entries:
       output: web, pdf
       type: homepage
 
-    - title: Usage package
-      url: /gral_test_lg.html
-      output: web, pdf
-
   - title: Python
     output: web, pdf
     folderitems:
+
+    - title: Python Tutorials
+      url: /python_00.html
+      output: web, pdf
+      type: homepage
+
+    - title: Preliminary Knowledge
+      url: /gral_test_lg.html
+      output: web, pdf
 
     - title: Python Usage
       url: /gral_python_usage.html
