@@ -13,8 +13,9 @@ summary: These brief of alls docs
 
 ## Courses
 - [Python Entry Level](python_00.html)
-- [Using Python's Math, Science, and Engineering Libraries](pyth_00.html)
+- [Using Python's Math, Science, and Engineering Libraries](pyth_01.html)
 - [Python Programming GUI](python_00.html)
+- [Certified Associate in Python](pyth_41.html)
 - [Introduction Javascript](javascript_00.html)
 - [Introduction Machine Learning](mchlrn_00.html)
 - [AWS Certified Machine Learning - Specialty 2020](mchlrn_20.html)

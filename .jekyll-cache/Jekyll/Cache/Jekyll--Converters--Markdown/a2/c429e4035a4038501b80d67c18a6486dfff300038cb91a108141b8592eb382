@@ -1,4 +1,4 @@
-I"5<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is general index, more information can be found in the <a alt="Personal Web Page" href="https://lg-gonzalez-juarez.github.io/pruebas-web/"> personal web page</a>.</div>
+I"y<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is general index, more information can be found in the <a alt="Personal Web Page" href="https://lg-gonzalez-juarez.github.io/pruebas-web/"> personal web page</a>.</div>
 
 <h1 id="general">General</h1>
 
@@ -7,6 +7,7 @@
   <li><a href="python_00.html">Python Entry Level</a></li>
   <li><a href="pyth_00.html">Using Python’s Math, Science, and Engineering Libraries</a></li>
   <li><a href="python_00.html">Python Programming GUI</a></li>
+  <li><a href="pyth_41.html">Certified Associate in Python</a></li>
   <li><a href="javascript_00.html">Introduction Javascript</a></li>
   <li><a href="mchlrn_00.html">Introduction Machine Learning</a></li>
   <li><a href="mchlrn_20.html">AWS Certified Machine Learning - Specialty 2020</a></li>
