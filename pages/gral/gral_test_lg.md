@@ -10,9 +10,13 @@ folder: mydoc
 output: web, pdf
 ---
 
+## Usage package 
+
 Este es mi pinino como documentalista de software (cierta ironia), enfatizo esto tiene el fin de ayudar y ayudarme a tener notitas de todo lo que aprendo en python, si le es útil a alguien mas ya es una ganancia.
 
+<!--
 Antes que nada, algunas lineas acerca de mi, soy Lorena Gonzalez-Juarez, soy una terricola con dos hogares, el primero por derecho de nacimiento y el disfrutar de ella mientras se trabaja.
+-->
 
 [personal git link](https://github.com/lg-gonzalez-juarez)
  
