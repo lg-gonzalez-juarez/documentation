@@ -8,11 +8,9 @@ permalink: pyth_01.html
 folder: python2
 ---
 
-# 1. Simple Math Using the `math` Module
+## 21.1. Simple Math Using the `math` Module
 
-Course: Using Python's Math, Science, and Engineering Libraries. Extracted from [link Linux Academy](https://linuxacademy.com/cp/modules/view/id/621).
-
-This covers:
+Extracted from the course [Using Python's Math, Science, and Engineering Libraries - Linux Academy](https://linuxacademy.com/cp/modules/view/id/621). This covers following:
 
 
 ## 1.1. Common `math` Functions and Constants
