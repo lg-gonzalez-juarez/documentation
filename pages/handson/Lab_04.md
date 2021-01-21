@@ -54,7 +54,7 @@ emails = {}assert emails == {}, f"Expected `emails` to be {{}} but got: {repr(us
 
 Now if we run the file (python3.7 using-dictionaries.py), we should see the error for the second task:
 
-```cmd
+```python
 $ python3.7 using-dictionaries.py
 Traceback (most recent call last):
   File "using-dictionaries-final.py", line 12, in <module>
@@ -100,7 +100,7 @@ assert emails == {
 
 When we run the script again, we'll get an error about it expecting a `dalton`. To fix that, we need to add it in. Here's how:
 
-```cmd
+```python
 # 4) Add 'dalton' to the emails dictionary without reassigning the variable.
 emails["dalton"] = "dalton@example.com"
 assert emails == {
