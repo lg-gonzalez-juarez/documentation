@@ -37,9 +37,9 @@ This process will show us the line where the issue was encountered, and show us 
 
 There are a couple of ways to get in and work with the code. One is to use the credentials provided in the hands-on lab overview page, log in with SSH, and use a text editor in the terminal.
 
-The other is using VS Code in the browser. If you'd like to go this route, then you will need to navigate to the public IP address of the workstation server (provided in the hands-on lab overview page) on port 8080 (example: http://PUBLIC_IP:8080).
+The other is using VS Code in the browser. If you'd like to go this route, then you will need to navigate to the public IP address of the workstation server (provided in the hands-on lab overview page) on port `8080` (example: `http://PUBLIC_IP:8080`).
 
-Once we are in the server, open up using-dictionaries.py (with either VS Code or a command line text editor) and we can continue.
+Once we are in the server, open up `using-dictionaries.py` (with either VS Code or a command line text editor) and we can continue.
 
 ## Create the emails Dictionary and Add Initial Items
 
@@ -47,16 +47,14 @@ Our first few tasks require us to create the emails variable that we're going to
 
 **using-dictionaries.py** (partial)
 
-```
+```python
 # 1) Set the emails variable to be an empty dictionary
-emails = {}
-
-assert emails == {}, f"Expected `emails` to be {{}} but got: {repr(users)}"
+emails = {}assert emails == {}, f"Expected `emails` to be {{}} but got: {repr(users)}"
 ```
 
 Now if we run the file (python3.7 using-dictionaries.py), we should see the error for the second task:
 
-```python
+```cmd
 $ python3.7 using-dictionaries.py
 Traceback (most recent call last):
   File "using-dictionaries-final.py", line 12, in <module>
@@ -102,11 +100,9 @@ assert emails == {
 
 When we run the script again, we'll get an error about it expecting a `dalton`. To fix that, we need to add it in. Here's how:
 
-```python
+```cmd
 # 4) Add 'dalton' to the emails dictionary without reassigning the variable.
-
 emails["dalton"] = "dalton@example.com"
-
 assert emails == {
     "ashley": "ashley@example.com",
     "elizabeth": "elizabeth@example.com",
