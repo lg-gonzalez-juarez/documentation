@@ -9,8 +9,8 @@ permalink: python_00.html
 toc: false
 folder: python
 ---
-This pages shown the fundamentals of python required to take and pass the certified Entry-Level Python Programmer Certification exam. 
-This was extracted from [Linux Academy Course](https://linuxacademy.com/cp/coursescheduler/view/id/469202)
+This pages shown the fundamentals of python required to take and pass the **certified Entry-Level Python Programmer Certification** exam. 
+This was extracted from [Linux Academy Course](https://linuxacademy.com/cp/modules/view/id/413?redirect_uri=https://app.linuxacademy.com/search?query=entry%20level%20programmer%20certification)
 This covers:
 
 <!-- List of all pages with a python tag -->

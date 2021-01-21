@@ -109,4 +109,3 @@ $ chmod u+x hello.py
 ```
 Run the script now by using `./hello.py` and we'll see the same result. If we'd rather not have a file extension on our script, we can remove it since we've put a shebang in the file. Running `mv hello.py` hello then performing `./hello` will still result in the same thing.
 
-{% include links.html %}
