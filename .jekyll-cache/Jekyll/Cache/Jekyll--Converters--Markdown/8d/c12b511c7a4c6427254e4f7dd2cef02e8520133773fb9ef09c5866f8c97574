@@ -1,0 +1,127 @@
+I"$<h1 id="making-calculations-from-user-input-with-python">Making Calculations from User Input with Python</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>After learning about data structures, user input and output programming becomes a lot more powerful. There are many things that we can accomplish by simply taking user input, running it through a process, and returning some useful output. To put these skills to use, we’ll write a simple tool to perform temperature conversions from Fahrenheit to Celsius. To feel comfortable completing this lab you’ll want to know how to handle user input with the <code class="language-plaintext highlighter-rouge">input</code> function, be familiar with type casting from strings to floats, and understand the process of printing to the screen.</p>
+
+<h2 id="the-scenario">The Scenario</h2>
+
+<p>We have international coworkers, and there’s no topic of conversation more common than the weather. This simple script will be quite useful to us, providing a quick reference to check in the middle of any “How is the weather over there,” types of conversations. Here is what the final process (running the script) will look like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./to-celsius.py
+What temperature (in Fahrenheit) would you like converted to Celsius? 68.18
+68.18 F is 20.1 C
+$
+</code></pre></div></div>
+
+<p>For us to implement it, we’ll need to do the following:</p>
+
+<ol>
+  <li>Prompt the user for the temperature in Fahrenheit.</li>
+  <li>Convert the string temperature to a float.</li>
+  <li>Process the Fahrenheit float value through the formula: <code class="language-plaintext highlighter-rouge">celsius = (temp - 32) * 5 / 9</code></li>
+  <li>Print the original and converted values to the screen.</li>
+</ol>
+
+<p>To feel comfortable completing this lab you’ll want to know how to do the following:</p>
+
+<ul>
+  <li>Handling user input using the input function. Watch the videos from the “Input and Output Operations” section of the Certified Entry-Level Python Programmer Certification course.</li>
+  <li>Type casting from strings to floats. Watch the “Type Casting” video from the Certified Entry-Level Python Programmer Certification course.</li>
+  <li>Printing to the screen. Watch the videos from the “Input and Output Operations” section of the Certified Entry-Level Python Programmer Certification course.</li>
+</ul>
+
+<h2 id="logging-in">Logging In</h2>
+
+<p>There are a couple of ways to get in and work with the code. One is to use the credentials provided in the hands-on lab overview page, log in with SSH, and use a text editor in the terminal.</p>
+
+<p>The other is using VS Code in the browser. If you’d like to go this route, then you will need to navigate to the public IP address of the workstation server (provided in the hands-on lab overview page) on port <code class="language-plaintext highlighter-rouge">8080</code> (example: <code class="language-plaintext highlighter-rouge">http://PUBLIC_IP:8080</code>).</p>
+
+<p>Create the <code class="language-plaintext highlighter-rouge">~/to-celsius.py</code> Script and Make It Executable with python3.7</p>
+
+<p>For the time being, we’re going to write our script in our home directory (~) and we want to be able to run it right away. To make sure that we’re not completely tied to the path of our python3.7 binary, we need to we set up our shebang properly.</p>
+
+<p>Let’s create the file and set the shebang:</p>
+
+<p><strong>~/to-celsius.py</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python3.7
+# Python implementation here
+</code></pre></div></div>
+
+<p>Now that the file is created, we need to also make it executable by using <code class="language-plaintext highlighter-rouge">chmod</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ chmod u+x ~/to-celsius.py
+</code></pre></div></div>
+
+<p>Now we can run our script by running <code class="language-plaintext highlighter-rouge">./to-celsius.py</code> from our home directory.</p>
+
+<h2 id="prompt-and-store-fahrenheit-value-from-user">Prompt and Store Fahrenheit Value from User</h2>
+
+<p>When we run our script, we would like to prompt the user for a temperature value in Fahrenheit. Let’s do this using the <code class="language-plaintext highlighter-rouge">input</code> function:</p>
+
+<p><code class="language-plaintext highlighter-rouge">~/to-celsius.py</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python3.7
+
+# Python implementation here
+fahrenheit = input("What temperature (in Fahrenheit) would you like converted to Celsius? ")
+</code></pre></div></div>
+
+<p>By default, this variable will be a string, so we’ll need to cast it to be a float:</p>
+
+<p><strong>~/to-celsius.py</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python3.7
+
+# Python implementation here
+fahrenheit = float(input("What temperature (in Fahrenheit) would you like converted to Celsius? "))
+</code></pre></div></div>
+
+<p>Now we’re ready to use this value in our calculation.</p>
+
+<h2 id="calculating-the-celsius-value">Calculating the Celsius Value</h2>
+
+<p>The Fahrenheit to Celsius formula is celsius = (temp - 32) * 5 / 9 and this converts almost perfectly to Python. We only need to change temp to be our variable fahrenheit.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/to-celsius.py
+
+#!/usr/bin/env python3.7
+
+# Python implementation here
+fahrenheit = float(input("What temperature (in Fahrenheit) would you like converted to Celsius? "))
+celsius = (fahrenheit - 32) * 5 / 9
+Print the Calculated Value to the Screen
+</code></pre></div></div>
+
+<p>Now that we have our final value we’re ready to print it to the screen in the form of:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FAHRENHEIT F is CELSIUS C
+</code></pre></div></div>
+
+<p>We can do this by passing our values into the print function:</p>
+
+<p>*~/to-celsius.py *</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python3.7
+
+# Python implementation here
+fahrenheit = float(input("What temperature (in Fahrenheit) would you like converted to Celsius? "))
+celsius = (fahrenheit - 32) * 5 / 9
+print(fahrenheit, "F is", celsius, "C")
+</code></pre></div></div>
+
+<p>Now if we use our script we should see the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./to-celsius.py
+What temperature (in Fahrenheit) would you like converted to Celsius? 68.18
+68.18 F is 20.100000000000005 C
+</code></pre></div></div>
+
+<p>We’re showing more decimal places in our Celsius value than we might like, but we can hide these by using the round function to round to 2 decimal places like this: round(celsius, 2). The whole last line of the script would now read:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(fahrenheit, "F is", round(celsius, 2), "C")
+</code></pre></div></div>
+
+<p>-&gt; Congratulations!</p>
+:ET

@@ -51,7 +51,7 @@ For the time being, we're going to write our script in our home directory (~) an
 
 Let's create the file and set the shebang:
 
-`~/to-celsius.py`
+**~/to-celsius.py**
 
 ```
 #!/usr/bin/env python3.7
@@ -69,7 +69,7 @@ Now we can run our script by running `./to-celsius.py` from our home directory.
 
 ## Prompt and Store Fahrenheit Value from User
 
-When we run our script, we would like to prompt the user for a temperature value in Fahrenheit. Let's do this using the input function:
+When we run our script, we would like to prompt the user for a temperature value in Fahrenheit. Let's do this using the `input` function:
 
 `~/to-celsius.py`
 
@@ -82,7 +82,7 @@ fahrenheit = input("What temperature (in Fahrenheit) would you like converted to
 
 By default, this variable will be a string, so we'll need to cast it to be a float:
 
-`~/to-celsius.py`
+**~/to-celsius.py**
 
 ```
 #!/usr/bin/env python3.7
@@ -108,20 +108,17 @@ celsius = (fahrenheit - 32) * 5 / 9
 Print the Calculated Value to the Screen
 ```
 
-
 Now that we have our final value we're ready to print it to the screen in the form of:
 
-
 ```
-
 FAHRENHEIT F is CELSIUS C
 ```
 
 We can do this by passing our values into the print function:
 
-```
-~/to-celsius.py
+**~/to-celsius.py**
 
+```
 #!/usr/bin/env python3.7
 
 # Python implementation here
