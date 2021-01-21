@@ -40,6 +40,3 @@ This covers:
 {% endfor %}
 </ul>
 
-
-
-{% include links.html %}
