@@ -26,4 +26,20 @@ This covers:
 {% endfor %}
 </ul>
 
+
+## Hands-on Labs
+
+<ul>
+{% assign sorted_pages = site.pages | sort: 'title' %}
+{% for page in sorted_pages %}
+{% for tag in page.tags %}
+{% if tag == "handson" %}
+<li><a href="{{ page.url | remove: "/"}}">{{page.title}}</a></li>
+{% endif %}
+{% endfor %}
+{% endfor %}
+</ul>
+
+
+
 {% include links.html %}
