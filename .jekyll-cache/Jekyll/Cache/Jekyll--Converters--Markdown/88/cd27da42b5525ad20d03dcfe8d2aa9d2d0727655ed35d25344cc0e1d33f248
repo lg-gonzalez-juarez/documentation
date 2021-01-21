@@ -1,0 +1,179 @@
+I"� <h1 id="utilizing-python-loops">Utilizing Python Loops</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>One of the great strengths of computer programs is that they can process an incredible amount of information far faster than we could do it manually. To achieve this we need to be able to loop through collections and sequences. In this hands-on lab, we’ll work through the popular interviewing Fizz-Buzz problem by creating a script that will prompt the user for the number of items to process, and then print out either the number, “Fizz”, “Buzz”, or “FizzBuzz” for each number between 1 and the user-provided number.</p>
+
+<p>To feel comfortable completing this lab you’ll want to know how to do the following:</p>
+
+<p>Utilize for loops. Watch “The for Loop” video from the Certified Entry-Level Python Programmer Certification course.
+Nest conditionals and loops. Watch the “Nesting Loops and Conditionals” video from the Certified Entry-Level Python Programmer Certification course.
+Utilize the range type. Watch “Using range” video from the Certified Entry-Level Python Programmer Certification course.</p>
+
+<h2 id="the-scenario">The Scenario</h2>
+
+<p>A typical Fizz-Buzz problem goes like this:</p>
+
+<p>Write a program that prints the numbers from 1 - 100. For each multiple of three print “Fizz” instead of the number. For multiples of five print “Buzz” instead of the number. If a number is a multiple of three and five then print “FizzBuzz”. Solving this problem requires two key components: looping and conditionals.</p>
+
+<p>We’re going to write a script that prompts the user for the number of items to process (starting with 1). For each number, we’ll print either “Fizz”, “Buzz”, “FizzBuzz”, or the number. The criteria for what to print is:</p>
+
+<ul>
+  <li>Print “FizzBuzz” if the number is divisible by 3 and 5.</li>
+  <li>Print “Fizz” if the number is divisible by 3.</li>
+  <li>Print “Buzz” if the number is divisible by 5.</li>
+  <li>Otherwise print the number.</li>
+</ul>
+
+<p>Here’s how the final script should work:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./fizz-buzz.py
+How many values should we process: 20
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz
+</code></pre></div></div>
+
+<h2 id="logging-in">Logging In</h2>
+
+<p>There are a couple of ways to get in and work with the code. One is to use the credentials provided in the hands-on lab overview page, log in with SSH, and use a text editor in the terminal.</p>
+
+<p>The other is using VS Code in the browser. If you’d like to go this route, then you will need to navigate to the public IP address of the workstation server (provided in the hands-on lab overview page) on port 8080 (example: http://PUBLIC_IP:8080).</p>
+
+<p>Create the fizz-buzz.py Script, Make It Executable with python3.7, and Accept User Input
+We’re going to create fizz-buzz.py, placing it in our home directory (~), and we want to make sure that we can run it directly. To keep from being completely tied to the path of our python3.7 binary, we want to make sure that our shebang is set up properly.</p>
+
+<p>Let’s create the file (using either a terminal or VS Code) and set the shebang:</p>
+
+<p><strong>~/fizz-buzz.py</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python3.7
+# Python implementation here
+</code></pre></div></div>
+
+<p>With the file created, we need to also make sure that it’s executable, and we can do this using <code class="language-plaintext highlighter-rouge">chmod</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ chmod u+x ~/fizz-buzz.py
+</code></pre></div></div>
+
+<p>Next, we’ll prompt the user for a value, convert it to an int, and store it off in a variable.</p>
+
+<p><strong>~/fizz-buzz.py</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python3.7
+
+upper_number = int(input("How many values should we process: "))
+</code></pre></div></div>
+
+<h2 id="create-a-range-from-1-to-the-users-provided-number-and-loop-through-it">Create a Range from 1 to the User’s Provided Number and Loop Through It</h2>
+
+<p>To print the number from <code class="language-plaintext highlighter-rouge">1</code> to the user’s provided number (including that number), we’ll want to utilize the <code class="language-plaintext highlighter-rouge">range</code> type and a <code class="language-plaintext highlighter-rouge">for</code> loop. Here’s what our loop will look like:</p>
+
+<p><strong>~/fizz-buzz.py</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python3.7
+
+upper_number = int(input("How many values should we process: "))
+
+for number in range(1, upper_number + 1):
+    print(number)
+</code></pre></div></div>
+
+<p>If we run it again, and enter 10 at the prompt, we’ll see the numbers 1-10 printed out to the terminal. For now, replace <code class="language-plaintext highlighter-rouge">print(number)</code> with <code class="language-plaintext highlighter-rouge">pass</code>, and we can move on to write the conditional logic to process each number.</p>
+
+<h2 id="print-fizzbuzz-if-the-value-is-a-multiple-of-three-and-five">Print “FizzBuzz” if the Value Is a Multiple of Three and Five</h2>
+
+<p>Now that we have a <code class="language-plaintext highlighter-rouge">number</code> value to use, we can create our conditional. Since we have a case that should trigger if the value is a multiple of three and five, then we’ll want that branch to be before the only multiple of three or only multiple of five branches, because either of those would also be true. Let’s create our <code class="language-plaintext highlighter-rouge">if</code> statement and print “FizzBuzz”if the condition is met, then add an <code class="language-plaintext highlighter-rouge">else</code> to just print the value otherwise:</p>
+
+<p><strong>~/fizz-buzz.py</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python3.7
+
+upper_number = int(input("How many values should we process: "))
+
+for number in range(1, upper_number + 1):
+  if number % 3 == 0 and number % 5 == 0:
+      print("FizzBuzz")
+  else:
+      print(number)
+</code></pre></div></div>
+
+<p>Now we can run the script to make sure that what we’ve written up to this point is working properly:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./fizz-buzz.py
+How many values should we process: 20
+...
+12
+13
+14
+FizzBuzz
+16
+...
+$
+</code></pre></div></div>
+
+<p>15 is replaced by FizzBuzz, because it’s evenly divisible by 3 and 5, and the rest of the numbers print out normally.</p>
+
+<h2 id="print-fizz-if-the-number-is-a-multiple-of-three-and-buzz-if-its-a-multiple-of-five">Print “Fizz” if the Number Is a Multiple of Three and “Buzz” if It’s a Multiple of Five</h2>
+
+<p>To handle the other two cases of the Fizz-Buzz problem, we’ll need to utilize <code class="language-plaintext highlighter-rouge">elif</code> statements for each of the individual comparisons that we used in our <code class="language-plaintext highlighter-rouge">if</code> statement. Let’s add those now:</p>
+
+<p><strong>~/fizz-buzz.py</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python3.7
+
+upper_number = int(input("How many values should we process: "))
+
+for number in range(1, upper_number + 1):
+  if number % 3 == 0 and number % 5 == 0:
+      print("FizzBuzz")
+  elif value % 3 == 0:
+      print("Fizz")
+  elif value % 5 == 0:
+      print("Buzz")
+  else:
+      print(number)
+</code></pre></div></div>
+
+<p>Now we can run the script to make sure that what we’ve written up to this point is working properly:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./fizz-buzz.py
+How many values should we process: 30
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+17
+...
+$
+</code></pre></div></div>
+:ET
