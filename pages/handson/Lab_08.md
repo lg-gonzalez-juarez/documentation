@@ -1,11 +1,11 @@
 ---
 title: 08. Hands-on Lab 08
-tags: [python]
+tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: Lab_08.html
-folder: python2
+folder: handson
 ---
 
 # Defining and Using Python Functions

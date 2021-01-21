@@ -1,11 +1,11 @@
 ---
 title: 06. Hands-on Lab 06
-tags: [python]
+tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: Lab_06.html
-folder: python2
+folder: handson
 ---
 
 # Using Python Conditionals

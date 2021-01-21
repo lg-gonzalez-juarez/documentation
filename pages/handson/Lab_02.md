@@ -1,11 +1,11 @@
 ---
 title: 02. Hands-on Lab 02
-tags: [python]
+tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: Lab_02.html
-folder: python2
+folder: handson
 ---
 
 # Indexing and Slicing Python Strings
