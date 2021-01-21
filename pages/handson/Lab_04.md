@@ -56,7 +56,7 @@ assert emails == {}, f"Expected `emails` to be {{}} but got: {repr(users)}"
 
 Now if we run the file (python3.7 using-dictionaries.py), we should see the error for the second task:
 
-```
+```python
 $ python3.7 using-dictionaries.py
 Traceback (most recent call last):
   File "using-dictionaries-final.py", line 12, in <module>
@@ -68,7 +68,7 @@ This shows us that we need to add values to the dictionary before we can continu
 
 **using-dictionaries.py** (partial)
 
-```
+```python
 # 2) Add 'ashley', 'craig', and 'elizabeth' to the emails dictionary without reassigning the variable.
 
 emails['ashley'] = 'ashley@example.com'
@@ -90,7 +90,7 @@ For tasks 3 and 4, we need to remove the `craig` key/value pair and add one call
 
 **using-dictionaries.py** (partial)
 
-```
+```python
 # 3) Remove 'craig' from the emails dictionary without reassigning the variable.
 del emails["craig"]
 
@@ -102,7 +102,7 @@ assert emails == {
 
 When we run the script again, we'll get an error about it expecting a `dalton`. To fix that, we need to add it in. Here's how:
 
-```
+```python
 # 4) Add 'dalton' to the emails dictionary without reassigning the variable.
 
 emails["dalton"] = "dalton@example.com"
@@ -122,7 +122,7 @@ For tasks 5 and 6, we'll be extracting information from the `emails` dictionary 
 
 **using-dictionaries.py** (partial)
 
-```
+```python
 # 5) Return a list of keys from the emails dictionary as `users`
 users = list(emails.keys())
 
@@ -150,7 +150,7 @@ For the final task, we'll extract a new list called `pairs` from emails that wil
 
 **using-dictionaries.py** (partial)
 
-```
+```python
 # 7) Return a list of tuples called `pairs` representing the key/value pairs in `emails`.
 pairs = list(emails.items())
 
