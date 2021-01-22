@@ -4,7 +4,7 @@ tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
-permalink: Lab_10.html
+permalink: Lab_13.html
 folder: handson
 ---
 
