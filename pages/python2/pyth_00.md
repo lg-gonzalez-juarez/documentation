@@ -27,7 +27,7 @@ We'll be writing our code in calcs.py and we'll be able to check our work by run
 
 
 
-# Index
+# Index Math
 
 Simple Math Using the `math` Module
  Common `math` Functions and Constants
@@ -62,3 +62,52 @@ Image Data Types
 Transforming Images
 Hands-On Lab: Editing Images with scikit-image
 
+
+# Index Certification 
+
+
+Lambdas and Collection Functions
+ Defining and Using Lambdas
+ Using Collection Functions
+ Hands-On Lab: Processing Collections in Python Using Lambdas
+
+The `if` Operator
+ The `if` Operator
+ Hands-On Lab: Using Python Conditional Expressions
+
+Modules and Packages
+    Creating and Using Python Modules
+    Importing Modules
+    Executing Modules as Scripts
+    Hiding Module Entities
+    The Module Search Path
+    Creating and Using Python Packages
+    Distributing and Installing Packages
+    Docstrings, Doctests, and Shebangs
+    Hands-On Lab: Creating a Python Module
+    Hands-On Lab: Creating a Python Package
+
+Classes and Object-Oriented Programming
+    What is an Object?
+    Creating and Using Python Classes
+    Custom Constructors, Class Methods, and Decorators
+    Inheritance and Super
+    Single and Multiple Inheritance
+    Name Mangling
+    Inspecting Objects
+    Hands-On Lab: Creating and Using Python Classes
+    Hands-On Lab: Using Inheritance in Python
+
+Input and Output Basics
+    Interacting with Files
+    Working with Bytes
+    Hands-On Lab: Reading and Writing Files with Python
+
+Exceptions and Exception Handling
+    What are Exceptions?
+    Handling Exceptions with `try`, `except`, `else`, and `finally`
+    Using Built-In Exceptions
+    Creating Custom Exception Types
+    Using Assertions
+    Hands-On Lab: Adding Exception Handling to a Python Script
+    Hands-On Lab: Creating Custom Python Exception Types
