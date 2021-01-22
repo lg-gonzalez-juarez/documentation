@@ -1,0 +1,104 @@
+I"�<h2 id="introduction">Introduction</h2>
+
+<p>In this lab, we’re writing a small script that can calculate the revenue numbers for a chain of stores in our local area. Each store sells the same 4 products at the same price. We keep track of the number of sales of each product from each store, and we’d like to use those sales numbers to calculate the total revenue of the business for the month. Thankfully, we can use multi-dimensional arrays and matrices to calculate our values.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>There are a couple of ways to get in and work with the code. One is to use the credentials provided in the hands-on lab overview page, log in with SSH, and use a text editor in the terminal.</p>
+
+<p>The other is using VS Code in the browser. If you’d like to go this route, you will need to navigate the workstation server’s public IP address (provided in the hands-on lab overview page) on port 8080 (example: http://PUBLIC_IP:8080). Your password will be the same password that you’d use to connect over SSH.</p>
+
+<h2 id="install-numpy">Install Numpy</h2>
+
+<p>Before we can start working with NumPy, we’ll need to make sure that we have it installed:</p>
+
+<ol>
+  <li>First, check which Python version we have, making sure it is 3.8.2 or higher:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python -V
+</code></pre></div></div>
+
+<ol>
+  <li>Install NumPy:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> pip3.8 install numpy
+</code></pre></div></div>
+
+<h2 id="creating-numpy-arrays-for-each-stores-sales-and-item-prices">Creating NumPy Arrays for Each Store’s Sales and Item Prices</h2>
+
+<p>Since we have the sales numbers for each item from each store, we can create an array for each store’s sales that can later be used to make calculations:</p>
+
+<ol>
+  <li>To get started, we need to create a file to view our revenue:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> touch revenue.py
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Using the VS Code Open File or Folder command, open the <code class="language-plaintext highlighter-rouge">revenue.py</code> file we just created.</p>
+  </li>
+  <li>
+    <p>In here, enter the following to create our array:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import numpy as np
+
+ # Item Positions: Pen, Notebook, Stapler, Backpack
+ north_sales = np.array([14, 12, 3, 20])
+ east_sales = np.array([9, 5, 23, 10])
+ south_sales = np.array([60, 42, 36, 90])
+ west_sales = np.array([23, 28, 91, 73])
+</code></pre></div></div>
+
+<h2 id="create-the-sales-and-prices-matrix">Create the Sales and Prices Matrix</h2>
+
+<p>Because we have 4 different items, each store’s sales are stored as a 4-item, one-dimensional array, or a 1x4 matrix. Combine all of our sales variables into a single 4x4 matrix so that we can calculate the revenue for all of the stores at the same time, and create a 4x1 prices matrix that has the <code class="language-plaintext highlighter-rouge">prices</code> list from top to bottom for <code class="language-plaintext highlighter-rouge">pen</code>, <code class="language-plaintext highlighter-rouge">notebook</code>, <code class="language-plaintext highlighter-rouge">stapler</code>, and <code class="language-plaintext highlighter-rouge">backpack</code>.</p>
+
+<ol>
+  <li>Under the code we created in the last step, add the following:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sales = np.vstack([
+     north_sales,
+     east_sales,
+     south_sales,
+     west_sales,
+ ])
+
+ prices = np.array([
+   [1.5],
+   [4.25],
+   [6.0],
+   [25.99]
+ ])
+</code></pre></div></div>
+
+<h2 id="calculate-store-revenues-and-total-revenue">Calculate Store Revenues and Total Revenue</h2>
+
+<p>Calculate the dot product of these two matrices to get the revenue for each store and then utilize those values to calculate the total revenue.</p>
+
+<ol>
+  <li>Enter in the following code under the code we already created:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> revenues = sales @ Prices
+ print(f"Revenues: {revenues}")
+ print(f"Total Revenue: {sum(revenues)}")
+</code></pre></div></div>
+
+<ol>
+  <li>With the code complete, we need to run it with Python:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python revenue.py
+</code></pre></div></div>
+
+<ol>
+  <li>Review the information that appears.</li>
+</ol>
+:ET
