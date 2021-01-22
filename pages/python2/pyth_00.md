@@ -25,4 +25,40 @@ We'll need to use a few different things from Python's math module to calculate 
 
 We'll be writing our code in calcs.py and we'll be able to check our work by running the automated tests within the test_calcs.py file by running the following command:
 
-{% include links.html %}
+
+
+# Index
+
+Simple Math Using the `math` Module
+ Common `math` Functions and Constants
+ Hands-On Lab: Calculating Circular Values with Python's Math Modules
+
+Using SciPy
+ Overview of SciPy
+
+Using NumPy
+What are NumPy Arrays?
+
+
+Reshaping a Numpy Array Into a Matrix
+Math Operations on Arrays/Matrices
+Hands-On Lab: Creating a Matrix Using NumPy Arrays
+
+Using Pandas
+Creating and Using DataFrame
+Slicing and Dicing DataFrame
+Creating Pivot Tables
+Stats With Dataframes
+Hands-On Lab: Using Pandas Data Frames and Pivot Tables in Python
+
+Using Matplotlib
+What Makes a Good Chart?
+Bar Plots, Histograms, and Scatter Plots
+Hands-On Lab: Creating Graphs with Matplotlib
+
+Using SciKit-image
+NumPy and Scikit-Image
+Image Data Types
+Transforming Images
+Hands-On Lab: Editing Images with scikit-image
+

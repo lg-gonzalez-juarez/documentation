@@ -1,0 +1,98 @@
+I"�<h1 id="calculating-circular-values-with-pythons-math-modules">Calculating Circular Values with Python’s Math Modules</h1>
+
+<p>In this lab, we are writing a few simple functions to calculate the circumference and area of some shapes, specifically, circles. We’ll need to use a few different things from Python’s math module to calculate these values and ensure that the result is accurate given that we’re working with PI and our starting measurements can be floats. We want our calculations to be accurate to the 1/100th of a unit.</p>
+
+<h2 id="before-we-begin">Before We Begin</h2>
+<p>Using the provided credentials, log in to Visual Studio Code. To do so, you will need to navigate to the public IP address of the workstation server (provided in the hands-on lab overview page) on port 8080 (example: http://PUBLIC_IP:8080).</p>
+
+<p>If you would prefer to use your own terminal and log in with SSH, you can do so with the provided credentials.</p>
+
+<p>Important: This guide is written with the use of the Visual Studio Code in mind.</p>
+
+<h2 id="implement-the-circle_circumference-function">Implement the circle_circumference Function</h2>
+
+<p>Once logged in to our preferred terminal, we can begin by implementing the <code class="language-plaintext highlighter-rouge">circle_circumference</code> function by completing the following:</p>
+
+<ol>
+  <li>We need to view our documents with ls and make sure we have the calcs.ph and test_calcs.py documents.</li>
+  <li>Use python -V to make sure our python version is 3.8.2 or higher.</li>
+  <li>Run automated tests with Python on our <code class="language-plaintext highlighter-rouge">test_calcs.py</code> doc:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python test_calcs.py
+</code></pre></div></div>
+
+<p>We find that both of our tests fail.</p>
+
+<ol>
+  <li>
+    <p>Enter Command + O to open up our folders in Visual Studio Code, and change it to <code class="language-plaintext highlighter-rouge">/home/cloud_user/calcs.py</code> to open the document.</p>
+  </li>
+  <li>
+    <p>Inside the file, change the file to read as follows:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python from math import pi
+
+def circle_circumference(radius):
+  return 2 * pi * radius
+
+def circle_area(radius):
+  pass
+</code></pre></div></div>
+
+<ol>
+  <li>Again, run the test field:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python test_calcs.py
+</code></pre></div></div>
+
+<p>We are told that our tests are still failing due to our return number being too specific.</p>
+
+<ol>
+  <li>Change the overly specific number by editing the <code class="language-plaintext highlighter-rouge">calcs.py</code> file as follows:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python from math import pi, ceil
+
+def circle_circumference(radius):
+  initial = 2 * pi * radius
+  return ceil(initial * 100) / 100
+
+
+def circle_area(radius):
+  pass
+</code></pre></div></div>
+
+<ol>
+  <li>Run our test:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python test_calcs.py
+</code></pre></div></div>
+
+<p>Now we only see the failure for <code class="language-plaintext highlighter-rouge">the test_area</code> function.</p>
+
+<h2 id="implement-the-circle_area-function">Implement the circle_area Function</h2>
+
+<p>With our circle_circumference function set, we need to set our circle_area function:</p>
+
+<p>While still in our calcs.py document, update it to read as follows:</p>
+
+<p>`python from math import pi, ceil</p>
+
+<p>def circle_circumference(radius):
+  initial = 2 * pi * radius
+  return ceil(initial * 100) / 100</p>
+
+<p>def circle_area(radius):
+  initial = pi * radius ** 2
+  return ceil(initial * 100) / 100
+```
+Run the test again:</p>
+
+<p>$ python3.8 test_calcs.py
+All tests will now show as passed.</p>
+:ET
