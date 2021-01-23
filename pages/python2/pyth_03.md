@@ -18,13 +18,13 @@ folder: python2
 
 Installing NumPy is as simple as using ```pip install```:
 
-```
+```powershell
 python -m pip install numpy
 ```
 
 Once the package is installed, it must be imported to use it. Enter into the REPL, by entering ```python```. Once inside the REPL, standard practice is to import it as ```np```:
 
-```
+```powershell
 import numpy as np
 ```
 
@@ -36,7 +36,7 @@ NumPy operates on arrays. A 1-d array can be thought of as a Python list or as a
 
 Let's create an array that holds the first ten integers:
 
-```
+```powershell
 >>> import numpy as np
 >>> simple_array = np.arange(10)
 >>> simple_array
@@ -46,7 +46,7 @@ array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 We can also do the same thing, but instead of integers we'll use floats by using [dtypes](https://numpy.org/doc/stable/user/basics.types.html):
 
-```
+```powershell
 >>> float_array = np.arange(10, dtype=float)
 >>> float_array
 array([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
@@ -55,7 +55,7 @@ array([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
 
 It is possible to change the type of the elements in an array using ```astype```. Let's convert our float array to complex numbers:
 
-```
+```powershell
 >>> complex_array = float_array.astype(complex)
 >>> complex_array
 array([0.+0.j, 1.+0.j, 2.+0.j, 3.+0.j, 4.+0.j, 5.+0.j, 6.+0.j, 7.+0.j,
@@ -67,7 +67,7 @@ We can also create a NumPy array for a list or data file.
 
 Let's load ```int_list``` as an array named ```example_array```:
 
-```
+```powershell
 int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494]
 >>> int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494]
 >>> int_array = np.array(int_list)
@@ -85,7 +85,7 @@ array([1297,  603, 1071,  539, 1222, 1424,  986,  397,  970, 1102,  499,
 
 Let's load the same information from a file named ```scores.csv```. We will use ```np.genfromtxt``` function to read the file and create an array out of its content. First, let's download the ```scores.csv``` file we want to use:
 
-```
+```powershell
 $ curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/scores.csv 
 >>> scores_array = np.genfromtxt('scores.csv', delimiter = ',', dtype=int)
 >>> scores_array
@@ -104,7 +104,7 @@ Slicing an array in NumPy looks like slicing a list in Python.
 
 From ```scores_array```, let's count the elements by using ```.size```:
 
-```
+```powershell
 >>> scores_array.size
 60
 >>>
@@ -112,7 +112,7 @@ From ```scores_array```, let's count the elements by using ```.size```:
 
 Let's make an array with the 2nd, 3rd, and 4th element of ```scores_array```. It should be equal to [1071, 539, 1222]:
 
-```
+```powershell
 >>> scores_array[2:5]
 array([1071,  539, 1222])
 >>>
@@ -128,7 +128,7 @@ Information on these operations can be found here.
 
 Printing an array is as simple as using ```print```:
 
-```
+```powershell
 >>> print(scores_array)
 [1297  603 1071  539 1222 1424  986  397  970 1102  499  533  908  559
   386 1183  595   69 1141   76  863 1343  185  895 1312   50  918  677
@@ -146,7 +146,7 @@ In NumPy, math operations are elementwise. That is, NumPy applies the math opera
 
 Let's raise each element in the scores_array to the zero power:
 
-```
+```powershell
 >>> scores_array ** 0
 array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -184,7 +184,7 @@ Note: If you have never used NumPy before, we strongly suggest you see the first
 
 A matrix can be formed from a single array by re-arranging it. From the last lesson, we looked at int_list as an array. Remember to import NumPy.
 
-```
+```powershell
 >>> import numpy as np
 >>> int_list = [1297, 603, 1071, 539, 1222, 1424, 986, 397, 970, 1102, 499, 533, 908, 559, 386, 1183, 595, 69, 1141, 76, 863, 1343, 185, 895, 1312, 50, 918, 677, 394, 629, 1317, 944, 466, 751, 1050, 301, 415, 784, 19, 1395, 1223, 979, 252, 1155, 59, 107, 632, 995, 972, 867, 332, 751, 810, 50, 55, 218, 997, 1085, 475, 1494]
 >>> int_array = np.array(int_list)
@@ -198,14 +198,14 @@ A matrix can be formed from a single array by re-arranging it. From the last les
 
 ```shape``` is a tuple that gives dimensions of the array.
 
-```
+```powershell
 >>> int_array.shape
 (60,)
 ```
 
 Let's [reshape](https://numpy.org/doc/1.18/reference/generated/numpy.reshape.html) the ```int_array``` into a 10 x 6 matrix:
 
-```
+```powershell
 >>> int_matrix = int_array.reshape(10, 6)
 >>> print(int_matrix)
 [[1297  603 1071  539 1222 1424]
@@ -238,7 +238,7 @@ As you can see above, while we are calling this a matrix and it will function as
 
 Two functions can be used to stack arrays, [vstack](https://numpy.org/doc/1.18/reference/generated/numpy.vstack.html#numpy.vstack) and [hstack](https://numpy.org/doc/1.18/reference/generated/numpy.hstack.html#numpy.hstack). ```vstack``` stacks the arrays vertically and ```hstack``` stacks the arrays horizontally:
 
-```
+```powershell
 >>> a = np.array([1, 2, 3])
 >>> print(a)
 [1 2 3]
@@ -257,7 +257,7 @@ Two functions can be used to stack arrays, [vstack](https://numpy.org/doc/1.18/r
 
 These functions can also be used on a matrix, however the matrices must be of the same dimensions. As an example, let's do a horizontal stack of a, b, and c:
 
-```
+```powershell
 >>> np.hstack((a,b,c))
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -276,7 +276,7 @@ This is also an example of a well-formed error message. It is specific in descri
 
 ```axis = None```
 
-```
+```powershell
 >>> a = np.array([[1, 2], [3, 4]])  # this is a matrix
 >>> b = np.array([[5, 6]])
 >>> np.concatenate((a,b), axis=None) # should flatten them
@@ -286,7 +286,7 @@ array([1, 2, 3, 4, 5, 6])
 
 ```axis = 0```
 
-```
+```powershell
 >>> np.concatenate((a,b), axis = 0)
 array([[1, 2],
        [3, 4],
@@ -296,7 +296,7 @@ array([[1, 2],
 
 Notice the element in ```b``` was appended to the items in ```a```. But what would happen if ```b = [5]``` instead of ```b = [5, 6]```? An error would occur.
 
-```
+```powershell
 >>> b = np.array([5])
 >>> np.concatenate((a,b), axis = 0)
 Traceback (most recent call last):
@@ -310,7 +310,7 @@ Remember, the dimensions must be the same along the axis you are joining.
 
 ```axis = 1```
 
-```
+```powershell
 >>> b = np.array([[5, 6]])
 >>> np.concatenate((a,b), axis = 1)
 Traceback (most recent call last):
@@ -322,7 +322,7 @@ ValueError: all the input array dimensions for the concatenation axis must match
 
 Please take a minute and determine what the problem is before reading on for the fix.
 
-```
+```powershell
 >>> b = np.array([[5, 6], [7, 8]])
 >>> np.concatenate((a,b), axis = 1)
 array([[1, 2, 5, 6],
@@ -346,7 +346,7 @@ In NumPy, math operations are elementwise. That is, NumPy applies the math opera
 
 Let's try addition on two arrays. Note that these arrays need the same amount of elements in both arrays when adding:
 
-```
+```powershell
 >>> a = np.array([1, 2, 3, 4, 5])
 >>> b = np.array([10, 20, 30, 40, 50])
 >>> c = a + b
@@ -357,7 +357,7 @@ Let's try addition on two arrays. Note that these arrays need the same amount of
 
 You can also perform operations between an array and a single value:
 
-```
+```powershell
 >>> print(a)
 [1 2 3 4 5]
 >>> a / 2.5
@@ -373,10 +373,3 @@ In this lesson, we looked at simple math operands. You can also do linear algebr
 
 
 ## Hands-On Lab 23: Creating a Matrix Using NumPy Arrays
-
-
-
-
-
-
-{% include links.html %}

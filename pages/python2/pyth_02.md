@@ -25,4 +25,3 @@ In later lessons, will be demonstrating NumPy, matplotlib, and pandas. In this l
 
 The SciPy library contains functions that make computation of higher-order math, science, and engineering calculations easier. However, these concepts are not the focus of this course, and we will not do more than become aware of the possibilities.
 
-{% include links.html %}

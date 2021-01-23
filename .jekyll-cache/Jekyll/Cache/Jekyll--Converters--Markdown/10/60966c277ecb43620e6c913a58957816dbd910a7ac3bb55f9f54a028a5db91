@@ -1,0 +1,124 @@
+I"KB<h2 id="261-numpy-and-scikit-image">26.1. NumPy and Scikit-Image</h2>
+
+<p>scikit-image is an open-source package for image processing. It has a wide range of algorithms that allow you to process your images. Documentation can be found <a href="https://scikit-image.org/docs/stable/">here</a>.</p>
+
+<p>In this lesson, we are going to take a look at how to load an image into scikit-image and examine the NumPy array that results.</p>
+
+<h3 id="installation">Installation</h3>
+
+<p>To install scikit-image:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python</span><span class="w"> </span><span class="nt">-m</span><span class="w"> </span><span class="nx">pip</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">scikit-image</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="loading-an-image">Loading an Image</h3>
+
+<p>First, we need to get the photo we are planning to use. In this case, the photo is one I took of some flowers.</p>
+
+<pre><code class="language-/home/cloud_user/notebooks```">
+```powershell
+curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/flowers.jpg/home/cloud_user/notebooks/lesson1.py```
+</code></pre>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># %%</span><span class="w">
+</span><span class="n">import</span><span class="w"> </span><span class="nx">numpy</span><span class="w"> </span><span class="nx">as</span><span class="w"> </span><span class="nx">np</span><span class="w">
+</span><span class="kr">from</span><span class="w"> </span><span class="n">skimage</span><span class="w"> </span><span class="nx">import</span><span class="w"> </span><span class="nx">io</span><span class="w">
+
+</span><span class="n">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io.imread</span><span class="p">(</span><span class="s1">'flowers.jpg'</span><span class="p">)</span><span class="w">
+</span><span class="n">io.imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="w">
+</span><span class="kr">type</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="w">
+</span><span class="n">img.shape</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We should make a backup of the picture before proceeding. The file extension (.jpg, .tiff) tells Jupyter the format in which it will be saved.</p>
+
+<p>Let’s make a backup of the picture:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">io.imsave</span><span class="p">(</span><span class="s2">"img_bup.jpg"</span><span class="p">,</span><span class="w"> </span><span class="n">img</span><span class="p">)</span><span class="w">
+</span><span class="n">io.imsave</span><span class="p">(</span><span class="s2">"img_bup.tiff"</span><span class="p">,</span><span class="w"> </span><span class="n">img</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="262-image-data-types">26.2. Image Data Types</h2>
+
+<p>This lesson continues from our previous lesson on NumPy and Scikit-Image, and we’ll review how data is stored and data types.</p>
+
+<p>In case you have shut your server down, please reload the image file as we did in the previous lesson.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># %%</span><span class="w">
+</span><span class="n">import</span><span class="w"> </span><span class="nx">numpy</span><span class="w"> </span><span class="nx">as</span><span class="w"> </span><span class="nx">np</span><span class="w">
+</span><span class="kr">from</span><span class="w"> </span><span class="n">skimage</span><span class="w"> </span><span class="nx">import</span><span class="w"> </span><span class="nx">io</span><span class="w">
+
+</span><span class="n">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io.imread</span><span class="p">(</span><span class="s1">'flowers.jpg'</span><span class="p">)</span><span class="w">
+</span><span class="n">io.imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="w">
+</span><span class="n">img.shape</span><span class="w">
+</span><span class="nx">img</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The image data is composed of arrays of 3 representing the RGB values.</p>
+
+<p>Notice this data type (<code class="language-plaintext highlighter-rouge">dtype</code>) is <code class="language-plaintext highlighter-rouge">uint8</code>. The <code class="language-plaintext highlighter-rouge">u</code> means unsigned, the <code class="language-plaintext highlighter-rouge">int</code> means integer, and the <code class="language-plaintext highlighter-rouge">8</code> means 8-bit. In other words, the data is a number between 0 and 255. These are the values used to represent colors in the RGB (Red, Green, Blue) color model.</p>
+
+<h2 id="263-transforming-images">26.3. Transforming Images</h2>
+
+<p>This lesson continues from the previous lesson and reviews how we can work with the image and colorspaces.</p>
+
+<p>In case you have shutdown your server, re-load the image:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># %%</span><span class="w">
+</span><span class="n">import</span><span class="w"> </span><span class="nx">numpy</span><span class="w"> </span><span class="nx">as</span><span class="w"> </span><span class="nx">np</span><span class="w">
+</span><span class="kr">from</span><span class="w"> </span><span class="n">skimage</span><span class="w"> </span><span class="nx">import</span><span class="w"> </span><span class="nx">io</span><span class="w">
+
+</span><span class="n">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io.imread</span><span class="p">(</span><span class="s1">'flowers.jpg'</span><span class="p">)</span><span class="w">
+</span><span class="n">io.imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>As you can see, the image is shown with axes values. These correspond to <code class="language-plaintext highlighter-rouge">img[i][j]</code>, where <code class="language-plaintext highlighter-rouge">i</code> represents the vertical axis, and <code class="language-plaintext highlighter-rouge">j</code> represents the horizontal axis.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">img</span><span class="p">[</span><span class="mi">250</span><span class="p">][</span><span class="mi">1500</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>As such, we can change the color of any pixel just by accessing it and changing the three-number array. Let’s create a banner along with the top showing blue, green, and white. We can split these by x values:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span><span class="w">
+    </span><span class="kr">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span><span class="w">
+        </span><span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">51</span><span class="w">
+        </span><span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="w">
+    </span><span class="n">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">):</span><span class="w">
+        </span><span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">204</span><span class="w">
+        </span><span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="w">
+        </span><span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">51</span><span class="w">
+    </span><span class="n">for</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="mi">3000</span><span class="p">):</span><span class="w">
+        </span><span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="w">
+        </span><span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="w">
+        </span><span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="w">
+
+</span><span class="n">io.imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="w">
+</span><span class="n">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io.imread</span><span class="p">(</span><span class="s1">'flowers.jpg'</span><span class="p">)</span><span class="w">
+</span><span class="n">io.imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Even though this picture is a rectangle, we can put a circular mask around it using the <a href="https://en.wikipedia.org/wiki/Pythagorean_theorem">Pythagorean theorem</a>.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="nx">ncols</span><span class="p">,</span><span class="w"> </span><span class="nx">nsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">img.shape</span><span class="w">
+</span><span class="nx">row</span><span class="p">,</span><span class="w"> </span><span class="nx">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.ogrid</span><span class="p">[:</span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="n">ncols</span><span class="p">]</span><span class="w">
+</span><span class="n">cnt_row</span><span class="p">,</span><span class="w"> </span><span class="nx">cnt_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nrows</span><span class="w"> </span><span class="nx">/</span><span class="w"> </span><span class="nx">2</span><span class="p">,</span><span class="w"> </span><span class="nx">ncols</span><span class="w"> </span><span class="nx">/</span><span class="w"> </span><span class="nx">2</span><span class="w">
+</span><span class="n">outer_disk_mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">row</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">cnt_row</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">col</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">cnt_col</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">nrows</span><span class="w"> </span><span class="nx">/</span><span class="w"> </span><span class="nx">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="w">
+</span><span class="n">img</span><span class="p">[</span><span class="n">outer_disk_mask</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
+
+</span><span class="n">io.imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Let’s examine <a href="https://scikit-image.org/docs/stable/api/skimage.color.html">colorspaces</a>. We will be making use of the <code class="language-plaintext highlighter-rouge">convert_colorpace</code> method. If you review the documentation on this method, you will find a list of colorspaces that can be used.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">from</span><span class="w"> </span><span class="n">skimage</span><span class="w"> </span><span class="nx">import</span><span class="w"> </span><span class="nx">color</span><span class="w">
+
+</span><span class="n">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io.imread</span><span class="p">(</span><span class="s1">'flowers.jpg'</span><span class="p">)</span><span class="w">
+</span><span class="n">io.imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="w">
+</span><span class="n">hsv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color.convert_colorspace</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="w"> </span><span class="s1">'RGB'</span><span class="p">,</span><span class="s1">'HSV'</span><span class="p">)</span><span class="w">
+</span><span class="n">hsv.shape</span><span class="w">
+</span><span class="nx">hsv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w">
+</span><span class="n">io.imshow</span><span class="p">(</span><span class="n">hsv</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+:ET

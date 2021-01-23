@@ -34,33 +34,33 @@ Creating an exceptional chart takes practice. In this lesson, we're going to pra
 
 Jupyter Notebooks allows you to create and share documents that contain live code, equations, visualizations, and narrative text. We need to set up Jupyter within a code-server by downloading a file:
 
-```
+```powershell
 sudo curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/jupyter-setup/setup.sh
 source setup.sh
 ```
 
 Check that the server is running Jupyter:
 
-```
+```powershell
 systemctl | grep jupyter
 ```
 
 If it's active and running, it will say so:
 
-```
+```powershell
 jupyter.service                                                         
 loaded active running   Jupyter Notebook
 ```
 
 If you don't see that it is, try enabling the service:
 
-```
+```powershell
 sudo systemctl enable --now jupyter.service
 ```
 
 ### Matplotlib Setup
 
-```
+```powershell
 python -m pip install matplotlib
 ```
 
@@ -68,7 +68,7 @@ Displaying charts and general operations inside of Jupyter Notebooks requires HT
 
 To enable this function:
 
-```
+```powershell
 sudo systemctl enable code-server-http --now 
 ```
 
@@ -82,7 +82,7 @@ Bar plots are relatively simple and are easy to demonstrate with a few data poin
 
 You are teaching five periods (classes) of Chemistry, and you are curious to see if there appears to be a discrepancy in the classes. So, you decide to use Matplotlib to look at the score averages for the last test by gender.
 
-```
+```powershell
 ~/chart.py
 
 # %% 
@@ -128,7 +128,7 @@ These datasets were developed from:
 
 Download the data file from the repo:
 
-```
+```powershell
 ! curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/hdi_master.csv
 ```
 
@@ -136,7 +136,7 @@ Download the data file from the repo:
 
 To create the environment we need, we should import pandas, NumPy, and Matplotlib from within the Python REPL:
 
-```
+```powershell
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -150,13 +150,13 @@ In this example, we create a histogram of the Human Development Index (HDI) for 
 
 Let's load and read the data, then set the DataFrame:
 
-```
+```powershell
 df = pd.read_csv('hdi_master.csv')
 ```
 
 We are not going to spend time looking at the data as we have seen how to do that in a previous lesson.
 
-```
+```powershell
 # pick the year you are interested in looking at
 year_of_interest = 2010
 
@@ -187,7 +187,7 @@ plt.show()
 
 In this example, we look at the suicides/100k population using a line plot. Afterward, we look at how easy it is to change the plot by just renaming the plot type to a scatter plot.
 
-```
+```powershell
 # create dataframe for male and female
 df_male = df[df['sex']=='male'].copy()
 df_female = df[df['sex']=='female'].copy()
@@ -234,5 +234,3 @@ plt.ylim([0, 30])
 
 plt.show()
 ```
-
-{% include links.html %}

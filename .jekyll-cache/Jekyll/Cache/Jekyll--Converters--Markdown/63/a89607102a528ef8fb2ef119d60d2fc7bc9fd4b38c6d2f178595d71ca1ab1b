@@ -1,0 +1,217 @@
+I"�z<h1 id="using-matplotlib">Using Matplotlib</h1>
+
+<h2 id="251-what-makes-a-good-chart">25.1. What Makes a Good Chart?</h2>
+
+<h3 id="what-makes-a-good-chart">What Makes a Good Chart</h3>
+
+<p>Perhaps this section should have been called “Misleading People with Charts”.</p>
+
+<h3 id="rules-for-good-charting">Rules for Good Charting</h3>
+<ol>
+  <li>Title: Make the title meaningful to the chart and to what the chart shows.</li>
+  <li>Axes: Make sure they do not distort the data.</li>
+  <li>Axes Labels: Should indicate what they show by stating the units. For example, years or miles per hour.</li>
+  <li>Legend: If the chart shows information for more than one data sequence, make sure a legend is provided that shows the differentiation.</li>
+</ol>
+
+<p>Many of these seem like common sense, but representational mistakes can and do happen. Let’s look at some examples, as shown in the article by National Geographic, <a href="https://www.nationalgeographic.com/news/2015/06/150619-data-points-five-ways-to-lie-with-charts/">“A Quick Guide to Spotting Graphics That Lie”</a>.</p>
+
+<h2 id="252-bar-plots-histograms-and-scatter-plots">25.2. Bar Plots, Histograms, and Scatter Plots</h2>
+
+<p>Creating an exceptional chart takes practice. In this lesson, we’re going to practice creating a bar plot, a histogram, and a scatter plot! We will be using a dataset that has data appropriate for these types of charts.</p>
+
+<h3 id="setup-jupyter-notebooks-on-server">Setup Jupyter Notebooks on Server</h3>
+
+<p>Jupyter Notebooks allows you to create and share documents that contain live code, equations, visualizations, and narrative text. We need to set up Jupyter within a code-server by downloading a file:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sudo</span><span class="w"> </span><span class="nx">curl</span><span class="w"> </span><span class="nt">-O</span><span class="w"> </span><span class="nx">https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/jupyter-setup/setup.sh</span><span class="w">
+</span><span class="n">source</span><span class="w"> </span><span class="nx">setup.sh</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Check that the server is running Jupyter:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">systemctl</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="nx">jupyter</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If it’s active and running, it will say so:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">jupyter.service</span><span class="w">                                                         
+</span><span class="n">loaded</span><span class="w"> </span><span class="nx">active</span><span class="w"> </span><span class="nx">running</span><span class="w">   </span><span class="nx">Jupyter</span><span class="w"> </span><span class="nx">Notebook</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If you don’t see that it is, try enabling the service:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sudo</span><span class="w"> </span><span class="nx">systemctl</span><span class="w"> </span><span class="nx">enable</span><span class="w"> </span><span class="nt">--now</span><span class="w"> </span><span class="nx">jupyter.service</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="matplotlib-setup">Matplotlib Setup</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python</span><span class="w"> </span><span class="nt">-m</span><span class="w"> </span><span class="nx">pip</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">matplotlib</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Displaying charts and general operations inside of Jupyter Notebooks requires HTTP rather than an HTTPS protocol. This is a function of using code-server over a remote server.</p>
+
+<p>To enable this function:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sudo</span><span class="w"> </span><span class="nx">systemctl</span><span class="w"> </span><span class="nx">enable</span><span class="w"> </span><span class="nx">code-server-http</span><span class="w"> </span><span class="nt">--now</span><span class="w"> 
+</span></code></pre></div></div>
+
+<p>Reload your code server using <code class="language-plaintext highlighter-rouge">http://&lt;remote-server&gt;:9090</code>. Please note it must be HTTP, not HTTPS. If you are having trouble loading code-server, please check to make sure you are using <code class="language-plaintext highlighter-rouge">http</code> in the URL.</p>
+
+<h3 id="bar-plots">Bar Plots</h3>
+
+<p>Bar plots are relatively simple and are easy to demonstrate with a few data points.</p>
+
+<h3 id="scenario">Scenario</h3>
+
+<p>You are teaching five periods (classes) of Chemistry, and you are curious to see if there appears to be a discrepancy in the classes. So, you decide to use Matplotlib to look at the score averages for the last test by gender.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">~/chart.py</span><span class="w">
+
+</span><span class="c"># %% </span><span class="w">
+</span><span class="n">import</span><span class="w"> </span><span class="nx">numpy</span><span class="w"> </span><span class="nx">as</span><span class="w"> </span><span class="nx">np</span><span class="w">
+</span><span class="n">import</span><span class="w"> </span><span class="nx">pandas</span><span class="w"> </span><span class="nx">as</span><span class="w"> </span><span class="nx">pd</span><span class="w">
+</span><span class="n">import</span><span class="w"> </span><span class="nx">matplotlib.pyplot</span><span class="w"> </span><span class="nx">as</span><span class="w"> </span><span class="nx">plt</span><span class="w">
+
+</span><span class="c"># create a list for the periods, this is the "x" axis</span><span class="w">
+</span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w"> </span><span class="s2">"6"</span><span class="p">]</span><span class="w">
+
+</span><span class="c"># create list of the scores you want to plot</span><span class="w">
+</span><span class="n">boyscores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">92</span><span class="p">]</span><span class="w">
+</span><span class="n">girlscores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">]</span><span class="w">
+
+</span><span class="c"># set the width of the bars</span><span class="w">
+</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.3</span><span class="w">
+
+</span><span class="c"># set the data to be plotted</span><span class="w">
+</span><span class="n">plt.figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="w">
+</span><span class="n">y_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.arange</span><span class="p">(</span><span class="n">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="w">
+</span><span class="n">plt.title</span><span class="p">(</span><span class="s1">'Boys and Girls Scores By Period'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.xlabel</span><span class="p">(</span><span class="s1">'Periods'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.ylabel</span><span class="p">(</span><span class="s1">'Score'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.xticks</span><span class="p">(</span><span class="n">y_pos</span><span class="p">,</span><span class="w"> </span><span class="nx">labels</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.bar</span><span class="p">(</span><span class="n">y_pos</span><span class="p">,</span><span class="w"> </span><span class="nx">boyscores</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s1">'boys'</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span><span class="w"> </span><span class="n">align</span><span class="o">=</span><span class="s1">'center'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.bar</span><span class="p">(</span><span class="n">y_pos</span><span class="o">+</span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">girlscores</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s2">"girls"</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span><span class="w"> </span><span class="n">align</span><span class="o">=</span><span class="s1">'center'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.show</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="dataset">Dataset</h2>
+
+<p>Scatter plots and histograms require more data. As a result, we are going to use a dataset we have used before. Information about this dataset is below.</p>
+
+<p>Dataset obtained from Kaggle and created by <a href="https://www.kaggle.com/russellyates88">Rusty</a>.</p>
+
+<p>These datasets were developed from:</p>
+
+<ul>
+  <li>United Nations Development Program (2018): Human development index (HDI) (<a href="http://hdr.undp.org/en/indicators/137506">Source</a>)</li>
+  <li>World Bank (2018): World development indicators: GDP (current US$) by country: 1985 to 2016 (<a href="http://hdr.undp.org/en/indicators/137506">Source</a>)</li>
+  <li>Szamil from Kaggle (2017): Suicide in the Twenty-First Century dataset (<a href="https://www.kaggle.com/szamil/suicide-in-the-twenty-first-century/notebook">Source</a>)
+-World Health Organization (2018): Suicide prevention (<a href="http://www.who.int/mental_health/suicide-prevention/en/">Source</a>)</li>
+</ul>
+
+<p>Download the data file from the repo:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="w"> </span><span class="n">curl</span><span class="w"> </span><span class="nt">-O</span><span class="w"> </span><span class="nx">https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/hdi_master.csv</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="setting-up-the-data">Setting Up the Data</h2>
+
+<p>To create the environment we need, we should import pandas, NumPy, and Matplotlib from within the Python REPL:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">import</span><span class="w"> </span><span class="nx">numpy</span><span class="w"> </span><span class="nx">as</span><span class="w"> </span><span class="nx">np</span><span class="w">
+</span><span class="n">import</span><span class="w"> </span><span class="nx">pandas</span><span class="w"> </span><span class="nx">as</span><span class="w"> </span><span class="nx">pd</span><span class="w">
+</span><span class="n">import</span><span class="w"> </span><span class="nx">matplotlib.pyplot</span><span class="w"> </span><span class="nx">as</span><span class="w"> </span><span class="nx">plt</span><span class="w">
+</span></code></pre></div></div>
+
+<p>NumPy and pandas can help you isolate the data you want to chart but are not necessary. However, they are usually used to prepare data for charting.</p>
+
+<h2 id="histogram">Histogram</h2>
+
+<p>In this example, we create a histogram of the Human Development Index (HDI) for a specific year. We will also examine how to put some statistical information in the plot.</p>
+
+<p>Let’s load and read the data, then set the DataFrame:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pd.read_csv</span><span class="p">(</span><span class="s1">'hdi_master.csv'</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We are not going to spend time looking at the data as we have seen how to do that in a previous lesson.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># pick the year you are interested in looking at</span><span class="w">
+</span><span class="n">year_of_interest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2010</span><span class="w">
+
+</span><span class="c"># get the data</span><span class="w">
+</span><span class="n">df_year_interest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span><span class="o">==</span><span class="n">year_of_interest</span><span class="p">]</span><span class="w">
+</span><span class="c"># There are null values in the column 'HDI for year', these can be safely ignored</span><span class="w">
+</span><span class="n">missing_values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="p">[</span><span class="s1">'HDI for year'</span><span class="p">]</span><span class="o">.</span><span class="nf">isnull</span><span class="p">()</span><span class="w">
+</span><span class="c"># filter returns truw for null values, need to negate that to get values</span><span class="w">
+</span><span class="n">hdi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_year_interest</span><span class="p">[</span><span class="s1">'HDI for year'</span><span class="p">][</span><span class="n">~missing_values</span><span class="p">]</span><span class="w">
+
+</span><span class="n">plt.figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span><span class="w">
+</span><span class="n">plt.hist</span><span class="p">(</span><span class="n">hdi</span><span class="p">,</span><span class="w"> </span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'orange'</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span><span class="w">
+</span><span class="c"># add mean</span><span class="w">
+</span><span class="n">plt.axvline</span><span class="p">(</span><span class="n">hdi.mean</span><span class="p">(),</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="n">linestyle</span><span class="o">=</span><span class="s1">'solid'</span><span class="p">,</span><span class="w"> </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">'mean'</span><span class="p">)</span><span class="w">
+</span><span class="c"># +1 sd</span><span class="w">
+</span><span class="n">plt.axvline</span><span class="p">(</span><span class="n">hdi.mean</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">hdi.std</span><span class="p">(),</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="n">linestyle</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">,</span><span class="w"> </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">'+1 standard deviation'</span><span class="p">)</span><span class="w">
+</span><span class="c"># -1 sd</span><span class="w">
+</span><span class="n">plt.axvline</span><span class="p">(</span><span class="n">hdi.mean</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">hdi.std</span><span class="p">(),</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="n">linestyle</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">,</span><span class="w"> </span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">'-1 standard deviation'</span><span class="p">)</span><span class="w">
+
+</span><span class="n">plt.title</span><span class="p">(</span><span class="n">f</span><span class="s1">'HDI for {year_of_interest}'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.xlabel</span><span class="p">(</span><span class="s1">'HDI value'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.ylabel</span><span class="p">(</span><span class="s1">'count of specific HDI values'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'upper left'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.show</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="line-plot-and-scatter-plot">Line Plot and Scatter Plot</h2>
+
+<p>In this example, we look at the suicides/100k population using a line plot. Afterward, we look at how easy it is to change the plot by just renaming the plot type to a scatter plot.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># create dataframe for male and female</span><span class="w">
+</span><span class="n">df_male</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span><span class="o">==</span><span class="s1">'male'</span><span class="p">]</span><span class="o">.</span><span class="nf">copy</span><span class="p">()</span><span class="w">
+</span><span class="n">df_female</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span><span class="o">==</span><span class="s1">'female'</span><span class="p">]</span><span class="o">.</span><span class="nf">copy</span><span class="p">()</span><span class="w">
+
+</span><span class="c"># Comparison on same graph</span><span class="w">
+</span><span class="n">suicides_by_male</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_male</span><span class="p">[</span><span class="s1">'suicides/100k pop'</span><span class="p">]</span><span class="o">.</span><span class="nf">groupby</span><span class="p">(</span><span class="nx">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">])</span><span class="o">.</span><span class="nf">mean</span><span class="p">()</span><span class="o">.</span><span class="nf">reset_index</span><span class="p">(</span><span class="nx">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="w">
+</span><span class="n">suicides_by_female</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_female</span><span class="p">[</span><span class="s1">'suicides/100k pop'</span><span class="p">]</span><span class="o">.</span><span class="nf">groupby</span><span class="p">(</span><span class="nx">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">])</span><span class="o">.</span><span class="nf">mean</span><span class="p">()</span><span class="o">.</span><span class="nf">reset_index</span><span class="p">(</span><span class="nx">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span><span class="w">
+</span><span class="c"># plt.subplot(1,1,1)</span><span class="w">
+</span><span class="n">plt.plot</span><span class="p">(</span><span class="n">suicides_by_male</span><span class="p">[</span><span class="s1">'year'</span><span class="p">],</span><span class="w"> </span><span class="n">suicides_by_male</span><span class="p">[</span><span class="s1">'suicides/100k pop'</span><span class="p">],</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">'male'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.plot</span><span class="p">(</span><span class="n">suicides_by_female</span><span class="p">[</span><span class="s1">'year'</span><span class="p">],</span><span class="w"> </span><span class="n">suicides_by_female</span><span class="p">[</span><span class="s1">'suicides/100k pop'</span><span class="p">],</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">'female'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.title</span><span class="p">(</span><span class="n">f</span><span class="s1">'Male and Female Suicide Rates'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.xlabel</span><span class="p">(</span><span class="s1">'year'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w">
+</span><span class="n">ax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plt.gca</span><span class="p">()</span><span class="w">
+</span><span class="n">ax.set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">])</span><span class="w">
+</span><span class="n">plt.ylabel</span><span class="p">(</span><span class="s1">'suicides/100k pop'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.show</span><span class="p">()</span><span class="w">
+
+</span><span class="c"># group suicide rates by year and plot</span><span class="w">
+
+</span><span class="n">suicides_by_male</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_male</span><span class="p">[</span><span class="s1">'suicides/100k pop'</span><span class="p">]</span><span class="o">.</span><span class="nf">groupby</span><span class="p">(</span><span class="nx">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">])</span><span class="o">.</span><span class="nf">mean</span><span class="p">()</span><span class="o">.</span><span class="nf">reset_index</span><span class="p">(</span><span class="nx">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="w"> 
+</span><span class="n">suicides_by_female</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_female</span><span class="p">[</span><span class="s1">'suicides/100k pop'</span><span class="p">]</span><span class="o">.</span><span class="nf">groupby</span><span class="p">(</span><span class="nx">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">])</span><span class="o">.</span><span class="nf">mean</span><span class="p">()</span><span class="o">.</span><span class="nf">reset_index</span><span class="p">(</span><span class="nx">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="w">
+
+
+</span><span class="n">plt.figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="w">
+
+</span><span class="n">plt.subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.plot</span><span class="p">(</span><span class="n">suicides_by_male</span><span class="p">[</span><span class="s1">'year'</span><span class="p">],</span><span class="w"> </span><span class="n">suicides_by_male</span><span class="p">[</span><span class="s1">'suicides/100k pop'</span><span class="p">],</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.title</span><span class="p">(</span><span class="n">f</span><span class="s1">'Male Suicide Rates'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.xlabel</span><span class="p">(</span><span class="s1">'year'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.ylabel</span><span class="p">(</span><span class="s1">'suicides/100k pop'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">])</span><span class="w">
+
+</span><span class="n">plt.subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.plot</span><span class="p">(</span><span class="n">suicides_by_female</span><span class="p">[</span><span class="s1">'year'</span><span class="p">],</span><span class="w"> </span><span class="n">suicides_by_female</span><span class="p">[</span><span class="s1">'suicides/100k pop'</span><span class="p">],</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.title</span><span class="p">(</span><span class="n">f</span><span class="s1">'Female Suicide Rates'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.xlabel</span><span class="p">(</span><span class="s1">'year'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.ylabel</span><span class="p">(</span><span class="s1">'suicides/100k pop'</span><span class="p">)</span><span class="w">
+</span><span class="n">plt.ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">])</span><span class="w">
+
+</span><span class="n">plt.show</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+:ET

@@ -19,7 +19,7 @@ In this lesson, we are going to take a look at how to load an image into scikit-
 
 To install scikit-image:
 
-```
+```powershell
 python -m pip install scikit-image
 ```
 
@@ -29,10 +29,11 @@ First, we need to get the photo we are planning to use. In this case, the photo 
 
 ```/home/cloud_user/notebooks```
 
-```curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/flowers.jpg/home/cloud_user/notebooks/lesson1.py```
+```powershell
+curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/flowers.jpg/home/cloud_user/notebooks/lesson1.py```
 ```
 
-```
+```powershell
 # %%
 import numpy as np
 from skimage import io
@@ -47,7 +48,7 @@ We should make a backup of the picture before proceeding. The file extension (.j
 
 Let's make a backup of the picture:
 
-```
+```powershell
 io.imsave("img_bup.jpg", img)
 io.imsave("img_bup.tiff", img)
 ```
@@ -58,7 +59,7 @@ This lesson continues from our previous lesson on NumPy and Scikit-Image, and we
 
 In case you have shut your server down, please reload the image file as we did in the previous lesson.
 
-```
+```powershell
 # %%
 import numpy as np
 from skimage import io
@@ -80,7 +81,7 @@ This lesson continues from the previous lesson and reviews how we can work with 
 
 In case you have shutdown your server, re-load the image:
 
-````
+````powershell
 # %%
 import numpy as np
 from skimage import io
@@ -91,13 +92,13 @@ io.imshow(img)
 
 As you can see, the image is shown with axes values. These correspond to ````img[i][j]````, where ````i```` represents the vertical axis, and ````j```` represents the horizontal axis.
 
-````
+````powershell
 img[250][1500]
 ````
 
 As such, we can change the color of any pixel just by accessing it and changing the three-number array. Let's create a banner along with the top showing blue, green, and white. We can split these by x values:
 
-````
+````powershell
 for i in range(500):
     for j in range(1000):
         img[i][j][0] = 51
@@ -119,7 +120,7 @@ io.imshow(img)
 
 Even though this picture is a rectangle, we can put a circular mask around it using the [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem).
 
-````
+````powershell
 nrows, ncols, nsize = img.shape
 row, col = np.ogrid[:nrows, :ncols]
 cnt_row, cnt_col = nrows / 2, ncols / 2
@@ -131,7 +132,7 @@ io.imshow(img)
 
 Let's examine [colorspaces](https://scikit-image.org/docs/stable/api/skimage.color.html). We will be making use of the ```convert_colorpace``` method. If you review the documentation on this method, you will find a list of colorspaces that can be used.
 
-```
+```powershell
 from skimage import color
 
 img = io.imread('flowers.jpg')
@@ -141,4 +142,4 @@ hsv.shape
 hsv[0][0]
 io.imshow(hsv)
 ```
-{% include links.html %}
+
