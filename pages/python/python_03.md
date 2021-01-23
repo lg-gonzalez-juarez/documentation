@@ -47,9 +47,9 @@ In our day to day work, we almost always work with decimal numbers. These are no
 
 ### Documentation 
 
-[Numeral Systems](https://en.wikipedia.org/wiki/Numeral_system)
-[Bit Numbering](https://en.wikipedia.org/wiki/Bit_numbering)
-[Download the Presentation](https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/s5-number-systems-and-floating-point-accuracy_1568816995.pdf)
+- [Numeral Systems](https://en.wikipedia.org/wiki/Numeral_system)
+- [Bit Numbering](https://en.wikipedia.org/wiki/Bit_numbering)
+- [Download the Presentation](https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/s5-number-systems-and-floating-point-accuracy_1568816995.pdf)
 
 ### What are Number Systems?
 

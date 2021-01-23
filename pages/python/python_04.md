@@ -12,7 +12,7 @@ folder: python
 
 Before we start using the types that we've learned to write larger scripts with, we're going to want to know about the operators that we have access to. In this lesson, we'll be defining unary and bitwise operators.
 
-Documentation 
+### Documentation 
 
 - [Python Bitwise Operator Documentation](https://wiki.python.org/moin/BitwiseOperators)
 - [Python Operators](https://docs.python.org/3/library/operator.html#mapping-operators-to-functions)
@@ -35,7 +35,7 @@ One tool from logic (from philosophy) that is used at every level of computer sc
 
 The first bitwise operator that we're going to talk about is probably the most confusing one: the bitwise complement operator ```~```. This is the only unary operator that we're going to talk about in this lesson. It takes a number that we're going to call x, and returns the result of ```-x - 1```. To show what this looks like in binary we'll also use the ```bin``` function to show our integers as binary numbers:
 
-```
+```powershell
 >>> a = 0b010
 2
 >>> bin(a)
@@ -48,9 +48,9 @@ The first bitwise operator that we're going to talk about is probably the most c
 
 ### Bitwise OR
 
-The remainder of the bitwise operators make a lot more sense and require two numbers as the operands. The bitwise OR operation will take two numbers, and if one of them has a 1 in a bit position then it will return a 1 at that position in the final result. To use the bitwise OR we'll use a single pipe characters |:
+The remainder of the bitwise operators make a lot more sense and require two numbers as the operands. The bitwise OR operation will take two numbers, and if one of them has a 1 in a bit position then it will return a 1 at that position in the final result. To use the bitwise OR we'll use a single pipe characters `|`:
 
-```
+```powershell
 >>> a = 0b1001
 >>> b = 0b1100
 >>> bin(a | b)
@@ -61,7 +61,7 @@ The remainder of the bitwise operators make a lot more sense and require two num
 
 Where bitwise OR will return a 1 for a bit position if that position is a 1 in either number, bitwise AND requires that both have a 1 at that position, otherwise it will have a 0 at that position in the final result. The bitwise AND operator is a single ampersand &:
 
-```
+```powershell
 >>> a = 0b1001
 >>> b = 0b1100
 >>> bin(a & b)
@@ -72,7 +72,7 @@ Where bitwise OR will return a 1 for a bit position if that position is a 1 in e
 
 Bitwise XOR (exclusive or) is an interesting operator where the position in the final result will have a 1 if exactly one of the operands has a 1 in that position. The bitwise XOR operator is a caret ^:
 
-```
+```powershell
 >>> a = 0b1001
 >>> b = 0b1100
 >>> bin(a ^ b)
@@ -83,7 +83,7 @@ Bitwise XOR (exclusive or) is an interesting operator where the position in the 
 
 The final two operators allow us to shift our bit values directly sideways by a certain number of positions. To shift our bits to the right we'll use the bitwise right shift operator which is >>. Our initial values are on the left-hand side and the number of positions to shift is on the right:
 
-```
+```powershell
 >>> a = 0b110
 >>> bin(a >> 2)
 '0b1'
@@ -97,7 +97,7 @@ Notice that if we shift beyond the number of bits in our number then we simply g
 
 Bitwise left shift uses the << operator with the same rules as the right shift operator. For each position that we shift then we'll add a new 0 bit to the right.
 
-```
+```powershell
 >>> a = 0b110
 >>> bin(a << 2)
 '0b11000'
@@ -108,12 +108,15 @@ Bitwise left shift uses the << operator with the same rules as the right shift o
 
 Believe it or not, now that we understand bitwise operators we've learned the basics of doing boolean logic. We're in a great spot to learn about boolean operators.
 
-Python Documentation: [Boolean Operators](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
+### Python Documentation: 
+
+[Boolean Operators](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
 
 ### The not Operation
+
 Sometimes we want to know the opposite boolean value for something. To do this, we use the unary operators ```not```:
 
-```
+```powershell
 >>> not True
 False
 >>> not False
@@ -124,7 +127,7 @@ True
 
 The boolean ```or``` operator works the same way that the bitwise OR operator did if we are only considering one bit. The bit of ```1``` is equivalent to ```True``` and ```0``` is equivalent to ```False```
 
-```
+```powershell
 >>> True or True
 True
 >>> True or False
@@ -139,7 +142,7 @@ True
 
 The ```and``` operator is the opposite of ```or```, and both of the operands need to be true.
 
-```
+```powershell
 >>> True and True
 True
 >>> True and False
@@ -154,15 +157,16 @@ False
 
 The last operators that we need to learn about are the comparison operators. These operators allow us to know if two items are equivalent, or if one is great than the other.
 
-Documentation 
-[Comparisons](https://docs.python.org/3/library/stdtypes.html#comparisons)
-[The ord function](https://docs.python.org/3/library/functions.html#ord)
+### Documentation 
+
+- [Comparisons](https://docs.python.org/3/library/stdtypes.html#comparisons)
+- [The ord function](https://docs.python.org/3/library/functions.html#ord)
 
 ### he Greater Than and Less Than Operators
 
 We're going to work our way through the comparison operators by starting with the ones that will feel most familiar from mathematics. The four greater than and less than operators work exactly as you'd expect:
 
-```
+```powershell
 >>> 1 < 2
 True
 >>> 2 > 1
@@ -181,7 +185,7 @@ Another thing to notice is that these comparison operators always return a boole
 
 Remember that individual types dictate whether or not they work with specific operands. And strings, for instance, work with these comparison operators too:
 
-```
+```powershell
 >>> 'a' > 'b'
 False
 >>> 'b' > 'a'
@@ -196,7 +200,7 @@ When comparing strings, each character is compared with the character at the sam
 
 Once again, if we try to compare types that aren't comparable, then we'll receive an error indicating such:
 
-```
+```powershell
 >>> 'a' <= 1
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -207,7 +211,7 @@ TypeError: '<=' not supported between instances of 'str' and 'int'
 
 The equals operators are a little different than you might expect, because we already use a single equals sign for variable assignment operations. Because of this, to see if two things are equal we use a double equals sign ==:
 
-```
+```powershell
 >>> 1 == 1
 True
 >>> 1.0 == 1
@@ -224,7 +228,7 @@ Notice that this checks equivalence, so comparing an equivalent float and intege
 
 If we want to know if two objects aren't equivalent, then we can use the not equal operators !=. This will return True only if the items aren't equivalent:
 
-```
+```powershell
 >>> 1 != 1
 False
 >>> 1.0 != 1
@@ -241,7 +245,7 @@ False
 
 If we want to know if two objects are or are not exactly the same object, then we can use the identity operators. The identity operator is the keyword is and the opposite is is not (with a space).
 
-```
+```powershell
 >>> 1 is 1
 True
 >>> 1 is 1.0
@@ -256,7 +260,7 @@ False
 
 The identity operators work based on the id of the object, and most of the basic types in Python are immutable (meaning they cannot be changed), so every time that we reference a specific literal it will point to the same item in memory. We can check the id of an object by using the id function (your return values will be different):
 
-```
+```powershell
 >>> id('a')
 4444195248
 >>> id('a')
@@ -267,7 +271,7 @@ True
 
 We'll discuss immutability later, but not all objects are immutable, so you'll run into situations where you can compare two objects that look the same using is and have False returned. Here are two list literals (which aren't immutable):
 
-```
+```powershell
 >>> [] is []
 False
 ```
@@ -276,8 +280,9 @@ False
 
 Now that we've learned about quite a few operators, we're ready to learn how Python determines the order to run them if there are multiple in a single expression.
 
-Documentation 
-[Operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
+### Documentation 
+
+- [Operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
 
 ### Operator Precedence
 
@@ -303,7 +308,7 @@ For whatever reason, the Python documentation shows the least binding operators 
 
 Let's look at some examples:
 
-```
+```powershell
 >>> 14 & 3 * 2 + 4
 10
 >>> 14 & 3 * (2 + 4)
@@ -313,5 +318,3 @@ Let's look at some examples:
 >>> 14 & (3 * 2) + 4
 10
 ```
-
-{% include links.html %}

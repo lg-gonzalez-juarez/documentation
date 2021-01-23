@@ -15,11 +15,11 @@ Up to this point, we've worked with a lot of different types, but before we can 
 
 ### Documentation
 
-[Typecasting: int](https://docs.python.org/3/library/functions.html#int)
-[Typecasting: float](https://docs.python.org/3/library/functions.html#float)
-[Typecasting: str](https://docs.python.org/3/library/functions.html#str)
-[Typecasting: bool](https://docs.python.org/3/library/functions.html#bool)
-[Trust Value Testing](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)
+- [Typecasting: int](https://docs.python.org/3/library/functions.html#int)
+- [Typecasting: float](https://docs.python.org/3/library/functions.html#float)
+- [Typecasting: str](https://docs.python.org/3/library/functions.html#str)
+- [Typecasting: bool](https://docs.python.org/3/library/functions.html#bool)
+- [Trust Value Testing](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)
 
 ### Converting from a Number Type to a Number Type
 
@@ -27,14 +27,14 @@ We've already seen some typecasting happen behind the scenes when we performed s
 
 The answer is by using the float initializer.
 
-```cmd
+```powershell
 >>> float(1)
 1.0
 ```
 
 We can do the same thing going from a float to an integer using the int initializer:
 
-```cmd
+```powershell
 >>> int(1.3)
 1
 >>> int(2.6)
@@ -49,7 +49,7 @@ Converting between number types is pretty straight forward because they're both 
 
 Converting to a string is done by using the str initializer and the results are what you would expect:
 
-```cmd
+```powershell
 >>> str(1)
 '1'
 >>> str(2.6)
@@ -60,7 +60,7 @@ Converting to a string is done by using the str initializer and the results are 
 
 As we see, even booleans can be typecast to strings. More interesting than converting to strings is trying to convert strings into other usable types, like integers and floats:
 
-```cmd
+```powershell
 >>> int('1')
 1
 >>> float('1')
@@ -79,7 +79,7 @@ If the string contains something that would be a valid int or float if we typed 
 
 One of the more important, and subtle type, conversions that we use in programming is casting to a boolean. We can cast anything to a boolean in Python by using the bool function.
 
-```cmd
+```powershell
 >>> bool(1)
 True
 >>> bool(2.4)
@@ -104,7 +104,7 @@ Now that we know that every object has a boolean representation, we're ready to 
 
 These operations get a little more complicated as we use non-boolean operands:
 
-```cmd
+```powershell
 >>> 1 and 0
 0
 >>> 'This' and 'That'
@@ -119,7 +119,7 @@ Remember that and requires both operands to be true in order to return true, and
 
 The or operator works in the opposite way. It will return the first object that would evaluate to true, or the rightmost falsy value.
 
-```cmd
+```powershell
 >>> 1 or 0
 1
 >>> 0 or 1
@@ -132,7 +132,7 @@ The or operator works in the opposite way. It will return the first object that 
 
 Lastly, the not operator will simply return the opposite boolean value for whatever we pass to it:
 
-```cmd
+```powershell
 >>> not ""
 True
 >>> not 1
@@ -154,20 +154,20 @@ Computer programs aren't that interesting until they can be more dynamic. Over t
 
 Before we dig into the input function, let's talk a little bit about functions in general. Functions allow us to package up bits of code to be able to run them more than once. Additionally, functions specify expected inputs and can also return information. If we take a look at a function from mathematics, we can see the same thing:
 
-```cmd
+```powershell
 f(x) = x + 2
 ```
 
 In this case, the name of the function is f, the input is x, and the code that will be executed is x + 2. We can provide a variety of values for x and get a different return value. So f(1) would return 3. In Python, we can reference functions by name, allowing us to pass them around like variables. But a function won't be executed unless we "call it" by using parenthesis. We can see this in the REPL by typing in input without any parenthesis:
 
-```cmd
+```powershell
 >>> input
 <built-in function input>
 ```
 
 The input function is the easiest way that we can make our programs request user interaction. This function is simple in that it only takes one optional argument to be the prompt that we present the user. Whatever the user types will be returned by the input function as a string, and that means we can store it in a variable. Let's try this out in the REPL now:
 
-```cmd
+```powershell
 >>> favorite = input("Favorite Color: ")
 Favorite Color:
 ```
@@ -186,11 +186,11 @@ Let's call our script bio.py, and in this script, we'll ask for the following:
 
 Create and open bio.py in your text editor and call input three different times, once for each piece of information that we want:
 
-```
+```powershell
 ~/code/bio.py
 ```
 
-```cmd
+```powershell
 name = input("What is your name? ")
 color = input("What is your favorite color? ")
 age = input("How old are you today? ")
@@ -198,11 +198,11 @@ age = input("How old are you today? ")
 
 Both name and color make sense to be strings, but age should be a number. Let's cast the value returned from the age prompt to be an int before assigning it to the variable. We can do this by placing the parenthesis for the int function around the entire input function call:
 
-```
+```powershell
 ~/code/bio.py
 ```
 
-```cmd
+```powershell
 name = input("What is your name? ")
 color = input("What is your favorite color? ")
 age = int(input("How old are you today? "))
@@ -210,7 +210,7 @@ age = int(input("How old are you today? "))
 
 Now that we've written our script, let's run it:
 
-```cmd
+```powershell
 $ python3.7 bio.py
 What is your name? Kevin Bacon
 What is your favorite color? Orange
@@ -232,7 +232,7 @@ Now that we've taken in some user input, we're going to look at how we can custo
 
 In the first program that we wrote, we printed "Hello, World!" out to the screen using the print function. That's as simple as it gets, but printing in Python is incredibly easy. Now that our bio.py script is taking in some input from a user, we're ready to write some code to print information back out. Our goal is to take the information from the user for their name, color, and age and print out this sentence with the variables substituted in:
 
-```
+```powershell
 NAME is AGE years old and loves the color COLOR.
 ```
 
@@ -244,7 +244,7 @@ As with most things in programming, there's more than one way for us to achieve 
 
 Let's take a quick look at how the print function works by default and also when we set the sep and end arguments.
 
-```
+```powershell
 ~/code/bio.py
 
 name = input("What is your name? ")
@@ -258,7 +258,8 @@ print("and loves the color " + color + ".")
 
 If we run this now we'll see this:
 
-```
+
+```powershell
 $ python3.7 bio.py
 What is your name? Kevin Bacon
 What is your favorite color? Orange
@@ -272,7 +273,7 @@ Every time we call print, the string will be printed to the screen with a traili
 
 Let's modify our script to set the end value:
 
-```
+```powershell
 ~/code/bio.py
 
 name = input("What is your name? ")
@@ -286,7 +287,7 @@ print("and loves the color " + color + ".", end=" ")
 
 Running it again shows this:
 
-```
+```powershell
 $ python3.7 bio.py
 What is your name? Kevin Bacon
 What is your favorite color? Orange
@@ -298,7 +299,7 @@ We've successfully printed out what we needed to, but it feels a little tedious.
 
 Let's see what this looks like:
 
-```
+```powershell
 ~/code/bio.py
 
 name = input("What is your name? ")
@@ -309,7 +310,8 @@ print(name, 'is', age, 'years old and loves the color', color, '.', sep=" ")
 ```
 
 Running it again shows this:
-```
+
+```powershell
 $ python3.7 bio.py
 What is your name? Kevin Bacon
 What is your favorite color? Orange
@@ -319,7 +321,7 @@ Kevin Bacon is 61 years old and loves the color Orange .
 
 We're so close, but there's an extra space between the color and the period. We'll need to combine those into a single string instead.
 
-```
+```powershell
 ~/code/bio.py
 
 name = input("What is your name? ")
@@ -328,4 +330,3 @@ age = int(input("How old are you today? "))
 
 print(name, 'is', age, 'years old and loves the color', color + '.', sep=" ")
 ```
-{% include links.html %}
