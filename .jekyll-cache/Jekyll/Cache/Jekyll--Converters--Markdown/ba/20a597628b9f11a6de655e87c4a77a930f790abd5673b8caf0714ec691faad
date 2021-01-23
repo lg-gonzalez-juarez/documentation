@@ -1,0 +1,78 @@
+I" <h1 id="introduction">Introduction</h1>
+
+<p>As we work on more and more complex problems, we need to start creating custom types to have manageable models for the data we’re working with. Python is an object-oriented programming language, and creating classes is something we will do frequently to solve problems using Python. In this hands-on lab, we’ll define a custom class with some functionality and attributes that will allow us to model an <code class="language-plaintext highlighter-rouge">Employee</code> in our code. The <code class="language-plaintext highlighter-rouge">using_classes.py</code> script includes code that will utilize this class and provide us with some feedback to know if we’ve created a class that meets our requirements. To feel comfortable completing this lab, you’ll want to know how to create and use Python classes (watch the “Creating and Using Python Classes” video from the Certified Associate in Python Programming Certification course).</p>
+
+<h1 id="solution">Solution</h1>
+
+<p>To work through the lab, you can either log in via a terminal on your local machine and use a text editor in the terminal, or you can use VS Code in the browser. This lab guide will go through the steps using VS Code in the browser.</p>
+
+<p>In order to use VS Code in the browser, navigate to the public IP address of the workstation server (provided on the lab page) on port 8080 (e.g., http://<PUBLIC_IP>:8080).</PUBLIC_IP></p>
+
+<h1 id="create-the-employee-module-with-an-empty-employee-class">Create the employee Module with an Empty Employee Class</h1>
+
+<ol>
+  <li>
+    <p>In the menu at the top, click Terminal &gt; New Terminal.</p>
+  </li>
+  <li>
+    <p>Run <code class="language-plaintext highlighter-rouge">using_classes.py</code>:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 using_classes.py
+</code></pre></div></div>
+<p>We’ll receive an error.</p>
+
+<ol>
+  <li>Create an empty class:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch employee.py
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>In the menu at the top, click <strong>File</strong> &gt; <strong>Open</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>employee.py</strong>.</p>
+  </li>
+</ol>
+
+<p>Add the following to the file:</p>
+
+<p>class Employee:
+    pass
+Run using_classes.py again:</p>
+
+<p>python3.7 using_classes.py
+This time, we’ll see a new error.</p>
+
+<p>Implement the Employee.<strong>init</strong> Method
+Edit the employee.py file to match the following:</p>
+
+<p>class Employee:
+    def <strong>init</strong>(self, name, email_address, title, phone_number=None):
+        self.name = name
+        self.email_address = email_address
+        self.title = title
+        self.phone_number = phone_number
+Run using_classes.py again:</p>
+
+<p>python3.7 using_classes.py
+This time, we’ll see an attribute error related to email signature.</p>
+
+<p>Implement the Employee.email_signature Method
+Add the following to the end of the employee.py file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def email_signature(self, include_phone=False):
+    signature = f"{self.name} - {self.title}\n{self.email_address}"
+    if include_phone and self.phone_number:
+        signature += f" ({self.phone_number})"
+    return signature Run using_classes.py one last time:
+</code></pre></div></div>
+
+<p>python3.7 using_classes.py
+We should see no output if we’ve implemented the method correctly.</p>
+
+:ET
