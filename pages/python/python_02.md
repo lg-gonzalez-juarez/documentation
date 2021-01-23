@@ -15,18 +15,18 @@ When writing scripts, we often want to leave ourselves notes or explanations. Py
 ### Single Line Comment
 We can comment out a whole line:
 
-```python
+```powershell
 # This is a full line comment
 ```
 or we can comment at the end of a line:
 
-```python
+```powershell
 2 + 2 # This will add the numbers
 ```
 ### What About Block Comments?
 Python does not have the concept of block commenting that you may have encountered in other languages. Many people mistake a triple quoted string as being a comment, but it is not. It's a multi-line string. That being said, multi-line strings can functionally work like comments, but they will still be allocated into memory.
 
-```
+```powershell
 """
 This is not a block comment,
 but it will still work when you need
@@ -41,20 +41,20 @@ Almost any script that we write will need to provide a way for us to hold onto i
 ### Working with Variables
 We can assign a value to a variable by using a single `=` and we don't need to (nor can we) specify the type of the variable.
 
-```cmd
+```powershell
 >>> my_str = "This is a simple string"
 ```
 
 Now we can print the value of that string by using `my_var` later on:
 
-```cmd
+```powershell
 >>> print(my_str)
 This is a simple string
 ```
 
 We can also change the value that is assigned to a variable later on, either by using the standard assignment operator = or by using some of the short-hand operators that we'll learn about as we continue.
 
-```cmd
+```powershell
 >>> my_str += " testing"
 >>> my_str
 'This is a simple string testing'
@@ -62,7 +62,7 @@ We can also change the value that is assigned to a variable later on, either by 
 
 An important thing to realize is that the contents of a variable can be changed and we don't need to maintain the same type:
 
-```cmd
+```powershell
 >>> my_str = 1
 >>> print(my_str)
 1
@@ -71,7 +71,7 @@ Ideally, we wouldn't change the contents of a variable called `my_str` to be an 
 
 One last thing to remember is that, if we assign a variable with another variable, it will be assigned to the initial result of the variable and not whatever that variable points to later.
 
-```cmd
+```powershell
 >>> my_str = 1
 >>> my_int = my_str
 >>> my_str = "testing"
@@ -98,13 +98,13 @@ Let's learn about one of the core data types in Python: the `str` type.
 
 Open a REPL to start exploring Python strings:
 
-```cmd
+```powershell
 $ python3.7
 ```
 
 We've already worked with a string when we created our "Hello, World!" program. We create strings using either single quotes `(')`, double quotes `(")`, or triple-single `(''')` or double quotes for a multi-line string.
 
-```cmd
+```powershell
 >>> 'single quoted string'
 'single quoted string'
 >>> "double quoted string"
@@ -120,7 +120,7 @@ Strings also work with some arithmetic operators.
 
 We can combine strings using the + operator and multiply a string by a number using the * operator:
 
-```cmd
+```powershell
 >>> "pass" + "word"
 'password'
 >>> "Ha" * 4
@@ -130,7 +130,7 @@ A string is a sequence of grouped characters. We do need to cover the concept of
 
 `find` locates the first instance of a character (or string) in a string. This function returns the index of the character or string.
 
-```cmd
+```powershell
 >>> "double".find('s')
 -1
 >>> "double".find('u')
@@ -141,7 +141,7 @@ A string is a sequence of grouped characters. We do need to cover the concept of
 
 `lower` converts all of the characters in a string to their lowercase versions (if they have one). This function returns a new string without changing the original, and this becomes important later.
 
-```cmd
+```powershell
 >>> "TeStInG".lower() # "testing"
 'testing'
 >>> "another".lower()
@@ -152,7 +152,7 @@ A string is a sequence of grouped characters. We do need to cover the concept of
 
 Lastly, if we need to use quotes or special characters in a string, we can do that using the backslash character `\`:
 
-```cmd
+```powershell
 >>> print("Tab\tDelimited")
 Tab     Delimited
 >>> print("New\nLine")
@@ -198,11 +198,9 @@ If either of the numbers in a mathematical operation in Python is a float, then 
 ### Scientific notation
 If we happen to be working with really large numbers, and it's easier to use scientific notation, then Python can help us. For the equivalent of a float times 10 to a specified power we're able to use `e` or `E` when specifying the number:
 
-```cmd
+```powershell
 >>> 4.5e9
 4500000000.0
 >>> 4.5e9 == 4.5 * (10 ** 9) == 4.5E9 == 4.5E+9
 True
 ```
-
-{% include links.html %}

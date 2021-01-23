@@ -1,0 +1,184 @@
+I":<h2 id="21-comments">2.1. Comments</h2>
+
+<p>When writing scripts, we often want to leave ourselves notes or explanations. Python (along with most scripting languages) uses the # character to signify that the line should be ignored and not executed.</p>
+
+<h3 id="single-line-comment">Single Line Comment</h3>
+<p>We can comment out a whole line:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># This is a full line comment</span><span class="w">
+</span></code></pre></div></div>
+<p>or we can comment at the end of a line:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="c"># This will add the numbers</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="what-about-block-comments">What About Block Comments?</h3>
+<p>Python does not have the concept of block commenting that you may have encountered in other languages. Many people mistake a triple quoted string as being a comment, but it is not. It’s a multi-line string. That being said, multi-line strings can functionally work like comments, but they will still be allocated into memory.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"""
+This is not a block comment,
+but it will still work when you need
+for some lines of code to not execute.
+"""</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="22-variables-and-the-assignment-operator">2.2. Variables and the Assignment Operator</h2>
+
+<p>Almost any script that we write will need to provide a way for us to hold onto information for use later on. That’s where variables come into play.</p>
+
+<h3 id="working-with-variables">Working with Variables</h3>
+<p>We can assign a value to a variable by using a single <code class="language-plaintext highlighter-rouge">=</code> and we don’t need to (nor can we) specify the type of the variable.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"This is a simple string"</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now we can print the value of that string by using <code class="language-plaintext highlighter-rouge">my_var</code> later on:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span><span class="w">
+</span><span class="n">This</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">simple</span><span class="w"> </span><span class="nx">string</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We can also change the value that is assigned to a variable later on, either by using the standard assignment operator = or by using some of the short-hand operators that we’ll learn about as we continue.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_str</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">" testing"</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_str</span><span class="w">
+</span><span class="s1">'This is a simple string testing'</span><span class="w">
+</span></code></pre></div></div>
+
+<p>An important thing to realize is that the contents of a variable can be changed and we don’t need to maintain the same type:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span><span class="w">
+</span><span class="mi">1</span><span class="w">
+</span></code></pre></div></div>
+<p>Ideally, we wouldn’t change the contents of a variable called <code class="language-plaintext highlighter-rouge">my_str</code> to be an interger, but it is something that Python will allow us do.</p>
+
+<p>One last thing to remember is that, if we assign a variable with another variable, it will be assigned to the initial result of the variable and not whatever that variable points to later.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_str</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="nx">my_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"testing"</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">my_int</span><span class="p">)</span><span class="w">
+</span><span class="mi">1</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span><span class="w">
+</span><span class="n">testing</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="short-hand-assignment-operators">Short-Hand Assignment Operators</h3>
+
+<p>There are numerous shorthand assignment operators we can use that allow us to perform operations and also assign back to variables in the way that we did with the <code class="language-plaintext highlighter-rouge">+=</code> operator. The form for these shorthand assignment operations always follows the same pattern. We’ll take the operator that we want to use, say <code class="language-plaintext highlighter-rouge">+</code>, and create a new operator by adding <code class="language-plaintext highlighter-rouge">=</code> to the right-hand side of it. So, for the subtraction operation, we could subtract from the current value and assign the new value to a variable using the <code class="language-plaintext highlighter-rouge">-=</code> operator.</p>
+
+<p>As we learn about more and more operators we’ll be able to follow this pattern if we want to reassess our current variable based on an operation.</p>
+
+<h2 id="23-strings-and-string-operators">2.3. Strings and String Operators</h2>
+
+<p><a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">link</a></p>
+
+<p>Let’s learn about one of the core data types in Python: the <code class="language-plaintext highlighter-rouge">str</code> type.</p>
+
+<h3 id="strings">Strings</h3>
+
+<p>Open a REPL to start exploring Python strings:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="w"> </span><span class="n">python3.7</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We’ve already worked with a string when we created our “Hello, World!” program. We create strings using either single quotes <code class="language-plaintext highlighter-rouge">(')</code>, double quotes <code class="language-plaintext highlighter-rouge">(")</code>, or triple-single <code class="language-plaintext highlighter-rouge">(''')</code> or double quotes for a multi-line string.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="s1">'single quoted string'</span><span class="w">
+</span><span class="s1">'single quoted string'</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="s2">"double quoted string"</span><span class="w">
+</span><span class="s1">'double quoted string'</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="s1">'''
+... this is a triple
+... quoted string
+... '''</span><span class="w">
+</span><span class="s1">'\nthis is a triple\nquoted string\n'</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Strings also work with some arithmetic operators.</p>
+
+<p>We can combine strings using the + operator and multiply a string by a number using the * operator:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="s2">"pass"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"word"</span><span class="w">
+</span><span class="s1">'password'</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="s2">"Ha"</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="w">
+</span><span class="s1">'HaHaHaHa'</span><span class="w">
+</span></code></pre></div></div>
+<p>A string is a sequence of grouped characters. We do need to cover the concept of an “Object” in object-oriented programming before moving on. An “object” encapsulates two things: state and behavior. For the built-in types, the state makes sense because it’s the entire contents of the object. The behavior aspect means that there are functions that we can call on the instances of the objects that we have. A function bound to an object is called a method. Here are some example methods that we can call on strings:</p>
+
+<p><code class="language-plaintext highlighter-rouge">find</code> locates the first instance of a character (or string) in a string. This function returns the index of the character or string.</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; "double".find('s')
+-1
+&gt;&gt;&gt; "double".find('u')
+2
+&gt;&gt;&gt; "double".find('bl')
+3
+</code></pre>
+
+<p><code class="language-plaintext highlighter-rouge">lower</code> converts all of the characters in a string to their lowercase versions (if they have one). This function returns a new string without changing the original, and this becomes important later.</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; "TeStInG".lower() # "testing"
+'testing'
+&gt;&gt;&gt; "another".lower()
+'another'
+&gt;&gt;&gt; "PassWord123".lower()
+'password123'
+</code></pre>
+
+<p>Lastly, if we need to use quotes or special characters in a string, we can do that using the backslash character <code class="language-plaintext highlighter-rouge">\</code>:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; print("Tab\tDelimited")
+Tab     Delimited
+&gt;&gt;&gt; print("New\nLine")
+New
+Line
+&gt;&gt;&gt; print("Slash\\Character")
+Slash\Character
+&gt;&gt;&gt; print("'Single' in Double")
+'Single' in Double
+&gt;&gt;&gt; print('"Double" in Single')
+"Double" in Single
+&gt;&gt;&gt; print("\"Double\" in Double")
+"Double" in Double
+</code></pre>
+
+<h2 id="24-booleans">2.4. Booleans</h2>
+
+<p><a href="https://docs.python.org/3/library/stdtypes.html#truth-value-testing">DocPython</a>
+<a href="https://docs.python.org/3/library/stdtypes.html#boolean-values">DocPython</a></p>
+
+<p>Learn about how Python represents truthiness and nothingness.</p>
+
+<h3 id="booleans">Booleans</h3>
+
+<p>Booleans represent “truthiness” and Python has two boolean constants: <code class="language-plaintext highlighter-rouge">True</code> and <code class="language-plaintext highlighter-rouge">False</code>.</p>
+
+<p>Notice that these both start with capital letters. Later we will learn about comparisons operations, and those will often return either <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>.</p>
+
+<h3 id="everything-has-a-boolean-value">Everything has a Boolean Value</h3>
+<p>We can check the Boolean value for any object in Python by using the <code class="language-plaintext highlighter-rouge">bool</code> function. For instance, the empty string <code class="language-plaintext highlighter-rouge">""</code> has the boolean value of <code class="language-plaintext highlighter-rouge">False</code> where any other string as a boolean value of <code class="language-plaintext highlighter-rouge">True</code>.</p>
+
+<h2 id="25-numbers-integers-floats-and-scientific-notation">2.5. Numbers: Integers, Floats, and Scientific Notation</h2>
+
+<p><a href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex">Doc</a></p>
+
+<p>Let’s learn about some of the core data types in Python: the number types <code class="language-plaintext highlighter-rouge">int</code> and <code class="language-plaintext highlighter-rouge">float</code>.</p>
+
+<h3 id="numbers">Numbers</h3>
+<p>There are two main types of numbers that we’ll use in Python, int and float. The big difference between an <code class="language-plaintext highlighter-rouge">int</code> and a <code class="language-plaintext highlighter-rouge">float</code> being that the <code class="language-plaintext highlighter-rouge">float</code> class handles decimal point information.</p>
+
+<p>If either of the numbers in a mathematical operation in Python is a float, then the other will be converted before carrying out the operation and the result will always be a float.</p>
+
+<h3 id="scientific-notation">Scientific notation</h3>
+<p>If we happen to be working with really large numbers, and it’s easier to use scientific notation, then Python can help us. For the equivalent of a float times 10 to a specified power we’re able to use <code class="language-plaintext highlighter-rouge">e</code> or <code class="language-plaintext highlighter-rouge">E</code> when specifying the number:</p>
+
+<pre><code class="language-cmd">&gt;&gt;&gt; 4.5e9
+4500000000.0
+&gt;&gt;&gt; 4.5e9 == 4.5 * (10 ** 9) == 4.5E9 == 4.5E+9
+True
+</code></pre>
+
+<p>[]:</p>
+
+:ET
