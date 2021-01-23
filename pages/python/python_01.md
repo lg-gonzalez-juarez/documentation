@@ -63,7 +63,7 @@ $ None
 
 To exit the REPL, you can either type `exit()` (the parentheses are important) or you can hit `Ctrl+d` on your keyboard.
 
-## Creating a Python File
+## 1.5 Creating a Python File
 [info](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/5/module/413)
 
 Since this is a course about Python scripting, we will be writing the majority of our code in scripts instead of using the REPL. To create a Python script we can create a file ending with the file extension of `.py`.
