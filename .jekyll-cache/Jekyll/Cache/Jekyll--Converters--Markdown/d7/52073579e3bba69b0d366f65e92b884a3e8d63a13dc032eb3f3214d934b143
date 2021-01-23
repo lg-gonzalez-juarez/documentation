@@ -1,0 +1,71 @@
+I"B<h1 id="introduction">Introduction</h1>
+
+<p>We need to constantly evaluate a condition of some kind to determine what action to take or what value to assign to a variable we’ll use later in our program. In the situation where we only have an <code class="language-plaintext highlighter-rouge">if</code> and an <code class="language-plaintext highlighter-rouge">else</code>, and the body of each branch contains only one expression, then we’re able to use a conditional expression. Conditional expressions can be used to succinctly express a simple conditional. In this hands-on lab, we’ll be refactoring an existing script by rewriting the simple conditional statements as conditional expressions.</p>
+
+<h1 id="scenario">Scenario</h1>
+
+<p>Because we’re refactoring an existing script, our goal is to not change what happens when we run the script. To run process_name.py, we’ll pass it to our Python interpreter and then answer a few questions.</p>
+
+<p>$ python3.7 processing_items.py
+What is your first name? Keith
+Your name is shorter than the average first name in the United States
+The first letter of your name is not among the five most common
+K is a consonant
+e is a vowel
+i is a vowel
+t is a consonant
+h is a consonant
+We’re going to rewrite the conditional statements that are used in the process_name.py script to be conditional expressions instead. We’re able to do this only because each branch in the conditionals has just one expression.</p>
+
+<p>Log In Using VS Code in the Browser
+Navigate to the provided public IP address on port 8080 (e.g. http://PUBLIC_IP_ADDRESS:8080).
+Call print with a Different String Using a Single Conditional Expression
+Under the File menu, select Open File….</p>
+
+<p>Select the process_name.py file from the list that appears.</p>
+
+<p>Under the Terminal menu, select New Terminal.</p>
+
+<p>In the terminal, run the script.</p>
+
+<p>python3.7 process_name.py
+Enter your name and examine the results.</p>
+
+<p>Change the code under the first task description to the following.</p>
+
+<p>print(
+    “Your name is as long or longer than the average first name in the United States”
+) if len(name) &gt;= 6 else print (
+    “Your name is shorter than the average first name in the United States”
+)
+Save the changes.</p>
+
+<p>Rerun the script in the terminal and verify the results using names of various length.</p>
+
+<p>python3.7 process_name.py
+Assign a Value to the message Variable Based on a Conditional Expression
+Change the code under the second task description to the following.</p>
+
+<p>message = (
+    “The first letter in your name is among the five most common”
+    if name[0].lower() in [“a”, “j”, “m”, “e”, “l”]
+    else “The first letter of your name is not among the five most common”
+)
+Save the changes.</p>
+
+<p>Rerun the script in the terminal and verify the results using different names.</p>
+
+<p>python3.7 process_name.py
+Change the String Passed to the print Function Using a Conditional Expression
+Change the code under the third task description to the following.</p>
+
+<p>for letter in name:
+    print(
+        f”{letter} {‘is a vowel’ if letter.lower() in [‘a’, ‘e’, ‘i’, ‘o’, ‘u’] else ‘is a consonant’}”
+    )
+Save the changes.</p>
+
+<p>Rerun the script in the terminal and verify the results using different names.</p>
+
+<p>python3.7 process_name.py</p>
+:ET
