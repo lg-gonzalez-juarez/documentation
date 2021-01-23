@@ -21,13 +21,13 @@ In Python, there are a few different sequence types that we're going to work wit
 
 We create a list in Python by using the square brackets ([]) and separating the values with commas. Here's an example list:
 
-```cmd
+```powershell
 >>> my_list = [1, 2, 3, 4, 5]
 ```
 
 For standard use, there's not a limit to how long our list can be. Lists are a heterogeneous collection type, so the items within the list do not all need to be of the same type:
 
-```cmd
+```powershell
 >>> other_list = ['a', 1, 1.0, False]
 ```
 
@@ -35,7 +35,7 @@ For standard use, there's not a limit to how long our list can be. Lists are a h
 
 To access an individual element of a list, we index it the same way that we would for a character in a string:
 
-```cmd
+```powershell
 >>> my_list[0]
 1
 >>> my_list[2]
@@ -44,7 +44,7 @@ To access an individual element of a list, we index it the same way that we woul
 
 If we try to access an index that is too high (or too low) then we'll receive an error:
 
-```cmd
+```powershell
 >>> my_list[5]
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -53,14 +53,14 @@ IndexError: list index out of range
 
 To make sure that we're not trying to get an index that is out of range, we can test the length using the len function (and then subtract 1):
 
-```cmd
+```powershell
 >>> len(my_list)
 5
 ```
 
 Additionally, we can access subsections of a list by "slicing" it. We provide the starting index and the ending index (the object at that index won't be included):
 
-```cmd
+```powershell
 >>> my_list[0:2]
 [1, 2]
 >>> my_list[1:0]
@@ -77,7 +77,7 @@ Additionally, we can access subsections of a list by "slicing" it. We provide th
 
 Unlike strings, which can't be modified (we can't change a character in a string), we can change a value in a list using the subscript equals operation:
 
-```cmd
+```powershell
 >>> my_list[0] = "a"
 >>> my_list
 ['a', 2, 3, 4, 5]
@@ -85,7 +85,7 @@ Unlike strings, which can't be modified (we can't change a character in a string
 
 Lists can be added together (concatenated). This operation will return a new list, but we can use the += compound operator to add items to the end of our lists:
 
-```cmd
+```powershell
 >>> my_list + [8, 9, 10]
 ['a', 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> my_list += [8, 9, 10]
@@ -95,7 +95,7 @@ Lists can be added together (concatenated). This operation will return a new lis
 
 Items in lists can be set using slices as well:
 
-```cmd
+```powershell
 >>> my_list[1:3] = ['b', 'c']
 >>> my_list
 ['a', 'b', 'c', 4, 5, 6, 7, 8, 9, 10]
@@ -103,7 +103,7 @@ Items in lists can be set using slices as well:
 
 Slicing and assigning can still be used if the slice size is smaller than the list being assigned. This will insert additional elements:
 
-```cmd
+```powershell
 >>> my_list[3:5] = ['d', 'e', 'f']
 >>> print(my_list)
 ['a', 'b', 'c', 'd', 'e', 'f', 6, 7, 8, 9, 10]
@@ -111,7 +111,7 @@ Slicing and assigning can still be used if the slice size is smaller than the li
 
 We can remove a section of a list by assigning an empty list to the slice:
 
-```cmd
+```powershell
 >>> my_list = ['a', 'b', 'c', 'd', 5, 6, 7]
 >>> my_list[4:] = []
 >>> my_list
@@ -122,7 +122,7 @@ We can remove a section of a list by assigning an empty list to the slice:
 
 Another way that we can remove an item from a list is by using the del statement and the indexing operation:
 
-```cmd
+```powershell
 >>> my_list = ['a', 'b', 'c', 'd']
 >>> del my_list[0]
 >>> my_list
@@ -131,7 +131,7 @@ Another way that we can remove an item from a list is by using the del statement
 
 One thing to note about del is that it will remove the entire list variable if we don't pass it an index:
 
-```cmd
+```powershell
 >>> del my_list
 >>> my_list
 Traceback (most recent call last):
@@ -156,7 +156,7 @@ When it comes to lists, some methods allow us to easily achieve the same things 
 
 If we want to add an object to the end of a list, then we can use the append method:
 
-```cmd
+```powershell
 >>> my_list = [1, 2, 3]
 >>> my_list.append(4)
 >>> my_list
@@ -165,7 +165,7 @@ If we want to add an object to the end of a list, then we can use the append met
 
 Additionally, if we'd like to insert an item at a particular index, we can use the insert method:
 
-```cmd
+```powershell
 >>> my_list.insert(0, 'a')
 >>> my_list
 ['a', 1, 2, 3, 4]
@@ -175,7 +175,7 @@ Notice that we didn't replace the item that had previously been at the 0 index. 
 
 If we need to know the index of an item in a list (if the item is in the list), then we have the index method:
 
-```cmd
+```powershell
 >>> my_list = [1, 2, 3]
 >>> my_list.index(2)
 1
@@ -191,7 +191,7 @@ Since index raises an error, it's not something that we'll usually want to use b
 
 Sequence types have a few additional operators that make it easy for us to check the contents. The in and not in operators take a value that we'd like to search the sequence for on the left-hand side and a sequence on the right-hand side:
 
-```cmd
+```powershell
 >>> my_list = [1, 2, 3]
 >>> 4 in my_list
 False
@@ -207,7 +207,7 @@ These operators are great to use before employing the index method to ensure tha
 
 Besides methods, some built-in functions work great with lists. We've already seen the len function that will return the length of the list to us, but if we need to sort the contents of a list, then we have the sorted and reversed functions:
 
-```cmd
+```powershell
 >>> my_list = [1, 3, 4, 8, 2]
 >>> sorted(my_list)
 [1, 2, 3, 4, 8]
@@ -217,7 +217,7 @@ Besides methods, some built-in functions work great with lists. We've already se
 
 The reversed function doesn't return a list, but typecasting works for the list type also, and when we have a list iterator we can turn it back into a list using the list function:
 
-```cmd
+```powershell
 >>> reversed(my_list)
 <list_reverseiterator object at 0x110330d90>
 >>> list(reversed(my_list))
@@ -226,7 +226,7 @@ The reversed function doesn't return a list, but typecasting works for the list 
 
 If we want to sort, reverse, and get a list back, we can combine all three of these functions:
 
-```cmd
+```powershell
 >>> list(reversed(sorted(my_list)))
 [8, 4, 3, 2, 1]
 ```
@@ -240,14 +240,15 @@ Lists are a heterogeneous data structure and can hold onto a variety of data typ
 Matrices are a structure that has rows and columns. To model a matrix in Python, we need a new list for each row, and we'll need to make sure that each list is the same length so that the columns work properly.
 
 Here's an example matrix not in code:
-```
+
+```powershell
 1 2 3
 4 5 6
 ```
 
 To model this matrix in Python, we'll do this:
 
-```cmd
+```powershell
 >>> my_matrix = [[1, 2, 3],
 ...              [4, 5, 6]]
 >>> my_matrix
@@ -256,7 +257,7 @@ To model this matrix in Python, we'll do this:
 
 To determine how many rows are in a multi-dimensional list, we need to use the len function on the matrix itself. To get the number of columns, we would use len on any row in the matrix (assuming that it's a proper matrix with each row having the same number of columns):
 
-```cmd
+```powershell
 >>> row_count = len(my_matrix)
 >>> column_count = len(my_matrix[0])
 >>> row_count
@@ -267,7 +268,7 @@ To determine how many rows are in a multi-dimensional list, we need to use the l
 
 Now if we want to interact with an individual item in the matrix, we need to index our variable two times, first with the row, and second with the column:
 
-```cmd
+```powershell
 >>> my_matrix[0][1]
 2
 ```
@@ -275,7 +276,3 @@ Now if we want to interact with an individual item in the matrix, we need to ind
 ### Squares and Cubes
 
 Matrixes with specific dimensions have names. If a matrix has the same number of rows as columns, then it can be classified as a "cube", and some cubes have unique names. A square is 2x2, and a cube (like the 3D shape) is 3x3. The matrix that we've already created is a 2x3 matrix, and this doesn't have a special name.
-
-
-
-{% include links.html %}

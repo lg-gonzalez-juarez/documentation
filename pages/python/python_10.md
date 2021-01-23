@@ -29,7 +29,7 @@ To make things even more confusing, Unicode code points are sometimes represente
 
 Now that we have an idea of what code points are and how encodings work let's see how we can work with them in Python. If we want to see the code point for a character that we know how to type, then we can use the ord function. This function takes a single character and will return the decimal code point. Let's see what this looks like for the letter l:
 
-```cmd
+```powershell
 >>> ord('l')
 108
 ```

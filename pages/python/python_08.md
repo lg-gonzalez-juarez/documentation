@@ -21,13 +21,13 @@ The most common immutable sequence type that we're going to work with is going t
 
 Tuples are a fixed width, immutable sequence type. We create tuples using parenthesis (()) and at least one comma (,):
 
-```mcd
+```powershell
 >>> point = (2.0, 3.0)
 ```
 
 Since tuples are immutable, we don't have access to the same methods that we do on a list. We can use tuples in some operations like concatenation, but we can't change the original tuple that we created:
 
-```mcd
+```powershell
 >>> point_3d = point + (4.0,)
 >>> point_3d
 (2.0, 3.0, 4.0)
@@ -35,7 +35,7 @@ Since tuples are immutable, we don't have access to the same methods that we do 
 
 One interesting characteristic of tuples is that we can unpack them into multiple variables at the same time:
 
-```mcd
+```powershell
 >>> x, y, z = point_3d
 >>> x
 2.0
@@ -47,7 +47,7 @@ One interesting characteristic of tuples is that we can unpack them into multipl
 
 When we'll most likely to see tuples is while looking at a format string that's compatible with Python 2 (though this will go away soon):
 
-```mcd
+```powershell
 >>> print("My name is: %s %s" % ("Keith", "Thompson"))
 ```
 
@@ -70,7 +70,7 @@ If we want to model something that has a specific number of fields that we can p
 This would be something like a point in 2D or 3D space having x, y, and potentially z. Those values should always be in a specific spot.
 Another way that this could be used is to quickly model a "person" that has a name, age, and phone number:
 
-```mcd
+```powershell
 >>> person = ('Kevin Bacon', 61, '555-555-5555')
 >>> person2 = ('Bob Ross', 76, '')
 >>> person[0]
@@ -87,7 +87,7 @@ Fun Fact: While tuples are immutable, their values can change when a tuple holds
 
 To be thorough, we need to understand how having lists within tuples (and tuples within lists) works. Let's start with lists within tuples, followed by tuples within lists:
 
-```mcd
+```powershell
 >>> my_list = [1, 2, 3]
 >>> my_tuple = (my_list, 1)
 >>> my_tuple
@@ -99,12 +99,10 @@ To be thorough, we need to understand how having lists within tuples (and tuples
 
 We're able to embed lists in tuples and tuples in lists without issues. It's worth noting that tuples are immutable, but they do not require that the items within the tuple be immutable. We can modify the list that is inside of my_tuple:
 
-```mcd
+```powershell
 >>> my_tuple
 ([1, 2, 3], 1)
 >>> my_list.append(1)
 >>> my_tuple
 ([1, 2, 3, 1], 1)
 ```
-
-{% include links.html %}

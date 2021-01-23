@@ -1,0 +1,125 @@
+I"jD<h2 id="91-dictionaries">9.1. Dictionaries</h2>
+
+<p>Learn how to use dictionaries (the dict type) to hold onto key/value information in Python.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p><a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">Dictionaries</a></p>
+
+<h3 id="dictionaries">Dictionaries</h3>
+
+<p>Dictionaries are the main mapping type that we’ll use in Python. This object is comparable to a Hash or “associative array” in other languages.</p>
+
+<p>Things to note about dictionaries:</p>
+
+<ol>
+  <li>Unlike Python 2 dictionaries, Python 3.7 keys are ordered in dictionaries. We will need OrderedDict if we want this to work on another version of Python.</li>
+  <li>You can set the key to any IMMUTABLE TYPE (no lists).</li>
+  <li>Avoid using things other than simple objects as keys.</li>
+  <li>Each key can only have one value (so we don’t have duplicates when creating with dict).
+We create dictionary literals by using curly braces ({ and }), separating keys from values using colons (:), and separating key/value pairs using commas (,). Here’s an example dictionary:</li>
+</ol>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">'kevin'</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w"> </span><span class="s1">'alex'</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="w">
+</span><span class="p">{</span><span class="s1">'kevin'</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w"> </span><span class="s1">'alex'</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We can read a value from a dictionary by subscripting using the key:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="p">[</span><span class="s1">'kevin'</span><span class="p">]</span><span class="w">
+</span><span class="mi">59</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="p">[</span><span class="s1">'billy'</span><span class="p">]</span><span class="w">
+</span><span class="n">Traceback</span><span class="w"> </span><span class="p">(</span><span class="n">most</span><span class="w"> </span><span class="nx">recent</span><span class="w"> </span><span class="nx">call</span><span class="w"> </span><span class="nx">last</span><span class="p">):</span><span class="w">
+  </span><span class="n">File</span><span class="w"> </span><span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nx">line</span><span class="w"> </span><span class="nx">1</span><span class="p">,</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">module</span><span class="err">&gt;</span><span class="w">
+</span><span class="n">KeyError:</span><span class="w"> </span><span class="s1">'billy'</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Keys can be added or changed using subscripting and assignment:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="p">[</span><span class="s1">'kayla'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">21</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="w">
+</span><span class="p">{</span><span class="s1">'kevin'</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w"> </span><span class="s1">'alex'</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="s1">'kayla'</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Items can be removed from a dictionary using the del statement:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="nx">ages</span><span class="p">[</span><span class="s1">'kevin'</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="w">
+</span><span class="p">{</span><span class="s1">'alex'</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="s1">'kayla'</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">}</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="nx">ages</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="w">
+</span><span class="nx">Traceback</span><span class="w"> </span><span class="p">(</span><span class="n">most</span><span class="w"> </span><span class="nx">recent</span><span class="w"> </span><span class="nx">call</span><span class="w"> </span><span class="nx">last</span><span class="p">):</span><span class="w">
+  </span><span class="n">File</span><span class="w"> </span><span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nx">line</span><span class="w"> </span><span class="nx">1</span><span class="p">,</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">module</span><span class="err">&gt;</span><span class="w">
+</span><span class="n">NameError:</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="s1">'ages'</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">defined</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="the-in-and-not-in-operators">The <code class="language-plaintext highlighter-rouge">in</code> and <code class="language-plaintext highlighter-rouge">not</code> in Operators</h3>
+
+<p>Just like with lists and tuples, dictionaries have access to the in and not in operators. Notably, this only considers the keys:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">'kevin'</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">}</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="s1">'kevin'</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">ages</span><span class="w">
+</span><span class="nx">True</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="mi">59</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">ages</span><span class="w">
+</span><span class="nx">False</span><span class="w">
+</span><span class="n">Alternative</span><span class="w"> </span><span class="nx">Ways</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">Create</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">dict</span><span class="w"> </span><span class="nx">Using</span><span class="w"> </span><span class="nx">Keyword</span><span class="w"> </span><span class="nx">Arguments</span><span class="w">
+</span></code></pre></div></div>
+
+<p>There are a few other ways to create dictionaries that we might see, which are those using the dict constructor with key/value arguments and a list of tuples:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dict</span><span class="p">(</span><span class="n">kevin</span><span class="o">=</span><span class="mi">160</span><span class="p">,</span><span class="w"> </span><span class="n">bob</span><span class="o">=</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="n">kayla</span><span class="o">=</span><span class="mi">135</span><span class="p">)</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">weights</span><span class="w">
+</span><span class="p">{</span><span class="s1">'kevin'</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="s1">'kayla'</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="p">}</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dict</span><span class="p">([(</span><span class="s1">'kevin'</span><span class="p">,</span><span class="w"> </span><span class="s1">'blue'</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'bob'</span><span class="p">,</span><span class="w"> </span><span class="s1">'green'</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'kayla'</span><span class="p">,</span><span class="w"> </span><span class="s1">'red'</span><span class="p">)])</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">colors</span><span class="w">
+</span><span class="p">{</span><span class="s1">'kevin'</span><span class="p">:</span><span class="w"> </span><span class="s1">'blue'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">:</span><span class="w"> </span><span class="s1">'green'</span><span class="p">,</span><span class="w"> </span><span class="s1">'kayla'</span><span class="p">:</span><span class="w"> </span><span class="s1">'red'</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="92-dictionary-methods">9.2. Dictionary Methods</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">dict</code> type has plenty of useful methods that we should know, in order to make them even more useful in our code. This lesson illustrates the main methods that we’ll use:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">keys</code></li>
+  <li><code class="language-plaintext highlighter-rouge">values</code></li>
+  <li><code class="language-plaintext highlighter-rouge">items</code></li>
+</ul>
+
+<h3 id="documentation-1">Documentation</h3>
+
+<ul>
+  <li><a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">Dictionary Methods</a></li>
+</ul>
+
+<h3 id="dictionary-methods">Dictionary Methods</h3>
+
+<p>When we’re working with dictionaries, we often need to perform actions on all of the keys, all of the values, or each pair (item). Thankfully the keys, values, and items methods each return something to make this easier. Let’s take a look at the key method first:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">'kevin'</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">}</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages.keys</span><span class="p">()</span><span class="w">
+</span><span class="n">dict_keys</span><span class="p">([</span><span class="s1">'kevin'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">])</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Take notice of the return value, it’s a dict_keys item. This by itself may not seem useful, but it can be cast to a list if that type makes more sense for what we’re doing:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">(</span><span class="n">ages.keys</span><span class="p">())</span><span class="w">
+</span><span class="p">[</span><span class="s1">'kevin'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bob'</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We’ll also follow this pattern for both values and items:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages.values</span><span class="p">()</span><span class="w">
+</span><span class="n">dict_values</span><span class="p">([</span><span class="mi">61</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="p">])</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">(</span><span class="n">ages.values</span><span class="p">())</span><span class="w">
+</span><span class="p">[</span><span class="mi">61</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">ages.items</span><span class="p">()</span><span class="w">
+</span><span class="n">dict_items</span><span class="p">([(</span><span class="s1">'kevin'</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'bob'</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="p">)])</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">(</span><span class="n">ages.items</span><span class="p">())</span><span class="w">
+</span><span class="p">[(</span><span class="s1">'kevin'</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'bob'</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Because each item in a dictionary is a key and value, the result of items (when typecast to a list) is a list of 2-tuples (often called “pairs”). This is a good example of using a tuple, because we know these items will always be two items long.</p>
+
+<p>As we learn about iterating, these methods will become incredibly valuable for doing useful things with dictionaries.</p>
+:ET

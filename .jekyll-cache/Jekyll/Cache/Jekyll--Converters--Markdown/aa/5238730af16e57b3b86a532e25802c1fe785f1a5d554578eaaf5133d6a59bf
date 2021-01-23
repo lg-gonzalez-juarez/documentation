@@ -1,0 +1,249 @@
+I"/�<h2 id="71-lists">7.1. Lists</h2>
+
+<p>In Python, there are a few different sequence types that we’re going to work with, the most common of which is the list type. In this lesson, we’ll go through how we can create and modify lists.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<ul>
+  <li><a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">Sequence Types</a></li>
+  <li><a href="https://docs.python.org/3/library/stdtypes.html#list">Lists</a></li>
+</ul>
+
+<h3 id="lists">Lists</h3>
+
+<p>We create a list in Python by using the square brackets ([]) and separating the values with commas. Here’s an example list:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>For standard use, there’s not a limit to how long our list can be. Lists are a heterogeneous collection type, so the items within the list do not all need to be of the same type:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">other_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">False</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="reading-from-lists">Reading from Lists</h3>
+
+<p>To access an individual element of a list, we index it the same way that we would for a character in a string:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w">
+</span><span class="mi">1</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w">
+</span><span class="mi">2</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If we try to access an index that is too high (or too low) then we’ll receive an error:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span><span class="n">Traceback</span><span class="w"> </span><span class="p">(</span><span class="n">most</span><span class="w"> </span><span class="nx">recent</span><span class="w"> </span><span class="nx">call</span><span class="w"> </span><span class="nx">last</span><span class="p">):</span><span class="w">
+  </span><span class="n">File</span><span class="w"> </span><span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nx">line</span><span class="w"> </span><span class="nx">1</span><span class="p">,</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">module</span><span class="err">&gt;</span><span class="w">
+</span><span class="n">IndexError:</span><span class="w"> </span><span class="nx">list</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="nx">out</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">range</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To make sure that we’re not trying to get an index that is out of range, we can test the length using the len function (and then subtract 1):</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span><span class="w">
+</span><span class="mi">5</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Additionally, we can access subsections of a list by “slicing” it. We provide the starting index and the ending index (the object at that index won’t be included):</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="w">
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span><span class="w">
+</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">1</span><span class="p">]</span><span class="w">
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span><span class="w">
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="modifying-a-list">Modifying a List</h3>
+
+<p>Unlike strings, which can’t be modified (we can’t change a character in a string), we can change a value in a list using the subscript equals operation:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"a"</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w">
+</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Lists can be added together (concatenated). This operation will return a new list, but we can use the += compound operator to add items to the end of our lists:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">]</span><span class="w">
+</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w">
+</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Items in lists can be set using slices as well:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w">
+</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Slicing and assigning can still be used if the slice size is smaller than the list being assigned. This will insert additional elements:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'d'</span><span class="p">,</span><span class="w"> </span><span class="s1">'e'</span><span class="p">,</span><span class="w"> </span><span class="s1">'f'</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">,</span><span class="w"> </span><span class="s1">'d'</span><span class="p">,</span><span class="w"> </span><span class="s1">'e'</span><span class="p">,</span><span class="w"> </span><span class="s1">'f'</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We can remove a section of a list by assigning an empty list to the slice:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">,</span><span class="w"> </span><span class="s1">'d'</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w">
+</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">,</span><span class="w"> </span><span class="s1">'d'</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="removing-items-from-a-list">Removing Items from a List</h3>
+
+<p>Another way that we can remove an item from a list is by using the del statement and the indexing operation:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">,</span><span class="w"> </span><span class="s1">'d'</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="nx">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w">
+</span><span class="p">[</span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">,</span><span class="w"> </span><span class="s1">'d'</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>One thing to note about del is that it will remove the entire list variable if we don’t pass it an index:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="nx">my_list</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w">
+</span><span class="nx">Traceback</span><span class="w"> </span><span class="p">(</span><span class="n">most</span><span class="w"> </span><span class="nx">recent</span><span class="w"> </span><span class="nx">call</span><span class="w"> </span><span class="nx">last</span><span class="p">):</span><span class="w">
+  </span><span class="n">File</span><span class="w"> </span><span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nx">line</span><span class="w"> </span><span class="nx">1</span><span class="p">,</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">module</span><span class="err">&gt;</span><span class="w">
+</span><span class="n">NameError:</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="s1">'my_list'</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">defined</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="72-list-functions-and-methods">7.2. List Functions and Methods</h2>
+
+<p>We’ve learned how to use some list operators to interact with our lists, but there are quite a few useful methods and functions that will make working with lists even easier.</p>
+
+<h3 id="documentation-for-this-video">Documentation For This Video</h3>
+
+<ul>
+  <li><a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">List Methods</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#sorted">The sorted function</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#reversed">The reversed function</a></li>
+  <li><a href="https://docs.python.org/3/library/stdtypes.html#common-sequence-operations">Common Sequence Operations</a></li>
+</ul>
+
+<h3 id="list-methods">List Methods</h3>
+
+<p>When it comes to lists, some methods allow us to easily achieve the same things that we previously did using operators, and in an arguably more readable way. Indexing and slicing for the sake of reading objects is easy enough, but when it comes to adding new items to a list, there are better methods.</p>
+
+<p>If we want to add an object to the end of a list, then we can use the append method:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list.append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w">
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Additionally, if we’d like to insert an item at a particular index, we can use the insert method:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list.insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s1">'a'</span><span class="p">)</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w">
+</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Notice that we didn’t replace the item that had previously been at the 0 index. We moved all items at or after the desired index, further back in the list.</p>
+
+<p>If we need to know the index of an item in a list (if the item is in the list), then we have the index method:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list.index</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">
+</span><span class="mi">1</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list.index</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="w">
+</span><span class="n">Traceback</span><span class="w"> </span><span class="p">(</span><span class="n">most</span><span class="w"> </span><span class="nx">recent</span><span class="w"> </span><span class="nx">call</span><span class="w"> </span><span class="nx">last</span><span class="p">):</span><span class="w">
+  </span><span class="n">File</span><span class="w"> </span><span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nx">line</span><span class="w"> </span><span class="nx">1</span><span class="p">,</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">module</span><span class="err">&gt;</span><span class="w">
+</span><span class="n">ValueError:</span><span class="w"> </span><span class="nx">15</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">list</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Since index raises an error, it’s not something that we’ll usually want to use by itself. Thankfully, there’s an easy way for us to determine if an item is in a list.</p>
+
+<h3 id="the-in-and-not-in-operators">The in and not in Operators</h3>
+
+<p>Sequence types have a few additional operators that make it easy for us to check the contents. The in and not in operators take a value that we’d like to search the sequence for on the left-hand side and a sequence on the right-hand side:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">my_list</span><span class="w">
+</span><span class="nx">False</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">my_list</span><span class="w">
+</span><span class="n">True</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="nx">2</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">my_list</span><span class="w">
+</span><span class="n">True</span><span class="w">
+</span></code></pre></div></div>
+
+<p>These operators are great to use before employing the index method to ensure that we don’t get a ValueError.</p>
+
+<h3 id="helpful-functions">Helpful Functions</h3>
+
+<p>Besides methods, some built-in functions work great with lists. We’ve already seen the len function that will return the length of the list to us, but if we need to sort the contents of a list, then we have the sorted and reversed functions:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">sorted</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">reversed</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">list_reverseiterator</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">0x110330d90</span><span class="err">&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The reversed function doesn’t return a list, but typecasting works for the list type also, and when we have a list iterator we can turn it back into a list using the list function:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">reversed</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">list_reverseiterator</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">0x110330d90</span><span class="err">&gt;</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">(</span><span class="n">reversed</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span><span class="w">
+</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If we want to sort, reverse, and get a list back, we can combine all three of these functions:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">(</span><span class="n">reversed</span><span class="p">(</span><span class="n">sorted</span><span class="p">(</span><span class="n">my_list</span><span class="p">)))</span><span class="w">
+</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="73-nested-lists-matrices-and-cubes">7.3. Nested Lists: Matrices and Cubes</h2>
+
+<p>Lists are a heterogeneous data structure and can hold onto a variety of data types, this includes other lists. In this lesson, we’ll take a look at how we can model matrices in Python by nesting lists.</p>
+
+<h3 id="creating-a-matrix">Creating a Matrix</h3>
+
+<p>Matrices are a structure that has rows and columns. To model a matrix in Python, we need a new list for each row, and we’ll need to make sure that each list is the same length so that the columns work properly.</p>
+
+<p>Here’s an example matrix not in code:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To model this matrix in Python, we’ll do this:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_matrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w">
+</span><span class="o">...</span><span class="w">              </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]]</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_matrix</span><span class="w">
+</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To determine how many rows are in a multi-dimensional list, we need to use the len function on the matrix itself. To get the number of columns, we would use len on any row in the matrix (assuming that it’s a proper matrix with each row having the same number of columns):</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">row_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">my_matrix</span><span class="p">)</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">column_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">my_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">row_count</span><span class="w">
+</span><span class="nx">2</span><span class="w">
+</span><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">column_count</span><span class="w">
+</span><span class="nx">3</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now if we want to interact with an individual item in the matrix, we need to index our variable two times, first with the row, and second with the column:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">my_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w">
+</span><span class="mi">2</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="squares-and-cubes">Squares and Cubes</h3>
+
+<p>Matrixes with specific dimensions have names. If a matrix has the same number of rows as columns, then it can be classified as a “cube”, and some cubes have unique names. A square is 2x2, and a cube (like the 3D shape) is 3x3. The matrix that we’ve already created is a 2x3 matrix, and this doesn’t have a special name.</p>
+:ET
