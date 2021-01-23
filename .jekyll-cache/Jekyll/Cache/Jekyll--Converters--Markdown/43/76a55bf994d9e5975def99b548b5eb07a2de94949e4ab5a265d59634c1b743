@@ -1,0 +1,121 @@
+I"�<h1 id="introduction">Introduction</h1>
+
+<p>Modules are the main way we share code in Python, but modules are almost always shared as a part of a package. In this hands-on lab, we’ll create an installable package that contains a module and exposes some functions directly through the package itself. To feel comfortable completing this lab, you’ll want to know how to create and use packages (watch the “Creating and Using Packages” video from the Certified Associate in Python Programming Certification course), as well as how to make an installable package and install packages (watch the “Distributing and Installing Packages” video from the Certified Associate in Python Programming Certification course).</p>
+
+<h1 id="solution">Solution</h1>
+
+<p>To work through the lab, you can either log in via a terminal on your local machine and use a text editor in the terminal, or you can use VS Code in the browser. This lab guide will go through the steps using VS Code in the browser.</p>
+
+<p>In order to use VS Code in the browser, navigate to the public IP address of the workstation server (provided on the lab page) on port 8080 (e.g., http://<PUBLIC_IP>:8080).</PUBLIC_IP></p>
+
+<h1 id="create-the-folder-structure-for-the-words-package-within-the-packages-directory">Create the Folder Structure for the words Package within the ~/packages Directory</h1>
+
+<ol>
+  <li>
+    <p>In the menu at the top, click <strong>Terminal</strong> &gt; <strong>New Terminal</strong>.</p>
+  </li>
+  <li>
+    <p>In the terminal section, create the <code class="language-plaintext highlighter-rouge">~/packages/words/src/</code> directory:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p ~/packages/words/src/words
+</code></pre></div></div>
+
+<ol>
+  <li>Move the <code class="language-plaintext highlighter-rouge">~/generator.py</code> file to the newly created directory:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mv ~/generator.py ~/packages/words/src/words/
+</code></pre></div></div>
+
+<ol>
+  <li>Create the <code class="language-plaintext highlighter-rouge">setup.py</code> file:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch ~/packages/words/setup.py
+</code></pre></div></div>
+
+<ol>
+  <li>Create the <strong>init</strong>.py file:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch ~/packages/words/src/words/__init__.py
+</code></pre></div></div>
+
+<h1 id="write-the-random_word-and-random_words-functions-within-the-wordsgenerator-module">Write the random_word and random_words Functions within the words.generator Module</h1>
+
+<ol>
+  <li>
+    <p>Click Open Folder.</p>
+  </li>
+  <li>
+    <p>Open the <code class="language-plaintext highlighter-rouge">~/packages/words/</code> folder.</p>
+  </li>
+  <li>
+    <p>Click to expand <code class="language-plaintext highlighter-rouge">src</code>.</p>
+  </li>
+  <li>
+    <p>Click to open the <code class="language-plaintext highlighter-rouge">generator.py</code> file.</p>
+  </li>
+  <li>
+    <p>Add the following lines to the bottom:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def random_word():
+    return random_words(1)[0]
+
+def random_words(length):
+    return sample(WORD_LIST, length)
+</code></pre></div></div>
+
+<h1 id="customize-packageswordssrcwordsinitpy-to-provide-the-random_words-function">Customize ~/packages/words/src/words/<strong>init</strong>.py to Provide the random_words Function</h1>
+
+<ol>
+  <li>
+    <p>Click to open the ~/packages/words/src/words/__init__.py file.</p>
+  </li>
+  <li>
+    <p>Add the following to the file:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>__all__ = ["random_words"]
+from .generator import *
+</code></pre></div></div>
+
+<p>Write the setup.py, Build a Wheel, and Install the Package Using pip
+Click to open the ~/packages/words/setup.py file.</p>
+
+<p>Add the following to the file:</p>
+
+<p>from setuptools import find_packages, setup</p>
+
+<p>setup(
+    name=”words”,
+    version=”1.0.0”,
+    description=”Helper library for working with random words”,
+    package_dir={“”: “src”},
+    packages=find_packages(where=”src”),
+)
+In the terminal section, if you aren’t already in the ~/packages/words directory, change to it:</p>
+
+<p>cd ~/packages/words
+Install wheel:</p>
+
+<p>pip3.7 install –user –upgrade wheel
+Build a wheel for our package:</p>
+
+<p>python3.7 setup.py bdist_wheel
+Install our package using pip:</p>
+
+<p>pip3.7 install –user ~/packages/words/dist/words-1.0.0-py3-none-any.whl
+Change to the root directory:</p>
+
+<p>cd ~
+Run the ~/using_packages.py script:</p>
+
+<p>python3.7 using_packages.py
+You should then see a list of random words.</p>
+:ET
