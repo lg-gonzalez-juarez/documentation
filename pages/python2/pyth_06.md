@@ -27,7 +27,9 @@ python -m pip install scikit-image
 
 First, we need to get the photo we are planning to use. In this case, the photo is one I took of some flowers.
 
-```/home/cloud_user/notebooks```
+```powershell
+/home/cloud_user/notebooks
+```
 
 ```powershell
 curl -O https://raw.githubusercontent.com/linuxacademy/content-using-pythons-maths-science-and-engineering-libraries/master/flowers.jpg/home/cloud_user/notebooks/lesson1.py```
@@ -75,7 +77,6 @@ The image data is composed of arrays of 3 representing the RGB values.
 Notice this data type (```dtype```) is ```uint8```. The ```u``` means unsigned, the ```int``` means integer, and the ```8``` means 8-bit. In other words, the data is a number between 0 and 255. These are the values used to represent colors in the RGB (Red, Green, Blue) color model.
 
 ## 26.3. Transforming Images
-
 
 This lesson continues from the previous lesson and reviews how we can work with the image and colorspaces.
 
@@ -142,4 +143,3 @@ hsv.shape
 hsv[0][0]
 io.imshow(hsv)
 ```
-
