@@ -39,7 +39,8 @@ Python is an interpreted language, and code is evaluated in a line-by-line fashi
 ### Documentation
 [Python Interpreter](https://docs.python.org/3/tutorial/interpreter.html)
 
-What is a REPL?
+### What is a REPL?
+
 REPL stands for: Read, Evaluate, Print, Loop
 
 Each line is read and evaluated, the return value is printed to the screen, and then the process repeats.
