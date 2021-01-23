@@ -32,7 +32,9 @@ In this lesson, we'll cover some more foundational concepts of programming langu
 * Bytecode Instructions
 
 ## 1.4. Using the REPL
-[LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413)
+
+{% include callout.html content="**Reference information**:[LinuxAcademy](https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413)" type="primary" %}
+
 
 Python is an interpreted language, and code is evaluated in a line-by-line fashion. Since each line can be evaluated by itself, the time between evaluating each line doesn't matter, and this allows us to have a REPL.
 
@@ -50,14 +52,14 @@ Python ships with a REPL and you can access it by running `python3.7` from your 
 The `>>>` indicates that you can type on that line. Later on, you'll also see a `...` which means that you are currently in a scoped area and will need to enter a blank line (no spaces) before it will evaluate the entire code block.
 
 The simplest use of this would be to do some math:
-```cmd
+```powershell
 $ 1 + 1
 2
 >>>
 ```
 
 `2` is the return value of the expression and it is then printed to the screen. If something doesn't have a return value, then nothing will be printed to the screen and you'll see the next prompt immediately. We'll cover this later, but an example would be None:
-```cmd
+```powershell
 $ None
 >>>
 ```
@@ -73,7 +75,7 @@ Since this is a course about Python scripting, we will be writing the majority o
 Let's create our first script to write our obligatory "Hello, 
 World!" program, calling it `hello.py`.
 
-```cmd
+```powershell
 $ touch hello.py
 ```
 From inside this file, we can enter the lines of Python that we need. For the "Hello, World!" example we only need
@@ -85,7 +87,7 @@ print("Hello, World!")
 
 There are a few different pays that we can run this file. The first is by passing it to the `python3.7` CLI.
 
-```bash
+```powershell
 $ python3.7 hello.py
 Hello, World!
 ```
@@ -99,14 +101,13 @@ Thankfully, we can set the process to interpret our scripts by setting a shebang
 
 `hello.py:`
 
-```cmd
+```powershell
 #!/usr/bin/env python3.7
 print("Hello, World")
 ```
 We're not quite done. Now we need to make the file executable using `chmod:`
 
-```dos
+```powershell
 $ chmod u+x hello.py
 ```
 Run the script now by using `./hello.py` and we'll see the same result. If we'd rather not have a file extension on our script, we can remove it since we've put a shebang in the file. Running `mv hello.py` hello then performing `./hello` will still result in the same thing.
-
