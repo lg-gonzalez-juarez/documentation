@@ -36,7 +36,7 @@ Now that we have an idea of what code points are and how encodings work let's se
 
 If we try to use ord with more than one character, then it will raise an error:
 
-```cmd
+```powershell
 >>> ord('la')
 Traceback (most recent call last):
   File "<input>", line 1, in <module>
@@ -46,7 +46,7 @@ TypeError: ord() expected a character, but string of length 2 found
 
 If we already know the Unicode code point for a character that is more difficult to type, like the trademark symbol, then we can type it out using the hexadecimal notation if we prefix the number with \u:
 
-```cmd
+```powershell
 >>> ord('\u2122')
 8482
 ```
@@ -55,7 +55,7 @@ Notice that ord took a single character as the argument, but didn't give us an e
 
 It's also worth noting that when the string \u2122 is evaluated in Python, it will print the character that we're expecting:
 
-```cmd
+```powershell
 >>> '\u2122'
 '™'
 >>> '\u2124'
@@ -64,14 +64,14 @@ It's also worth noting that when the string \u2122 is evaluated in Python, it wi
 
 Say we want to take a decimal code point and convert it back into a string. To do that we'll need to use the chr function:
 
-```cmd
+```powershell
 >>> chr(8482)
 '™'
 ```
 
 Because we can write integers in hexadecimal notation using the 0x prefix, and those numbers then get converted into the decimal value, we are also able to use that form with the chr function:
 
-```cmd
+```powershell
 >>> chr(0x2122)
 '™'
 ```
@@ -91,7 +91,7 @@ As strings are one of the most important and common types that we work with, we'
 
 When working with strings, it's not uncommon for us to want to change the capitalization of the string. We can make comparisons easier or to improve the way that we display the value. Thankfully, Python provides us with simple methods on the str class for just these purposes.
 
-```cmd
+```powershell
 >>> my_str = 'tEsTinG'
 >>> my_str.lower()
 'testing'
@@ -103,17 +103,18 @@ When working with strings, it's not uncommon for us to want to change the capita
 
 The lower and upper methods are great for changing all of the characters in a string to either lowercase or uppercase. This is handy to do when capitalization doesn't matter and we want to compare against a value that we already know. For all intents and purposes, an email address: Kevin@example.com is the same as kevin@example.com. If we want to compare a user-provided value that could have odd capitalization with a known email address, then we could call lower before comparing the two values.
 
-```
+```powershell
 email = input("Your Email: ")
 print("Email is test@example.com:", email.lower() == 'test@example.com')
 ```
+
 The capitalize method is a little different, as it will lowercase every character besides the first one. It doesn't take into consideration if that's the right thing to do for the words within the string. Because of this, you might not find yourself using capitalize all that often, but in many cases, it will work for single-word strings.
 
 ### Checking String Patterns with .is___ Methods
 
 Since strings are collections of characters, they can hold onto an incredible variety of information. But that doesn't mean that there aren't different patterns that the information could fall into. For instance, the string '12' is completely numeric. For these types of patterns, the str class provides a whole family of methods that start with is, such as isnumeric:
 
-```
+```powershell
 >>> "12".isnumeric()
 True
 ```
@@ -148,7 +149,7 @@ As strings are one of the most important and common data types that we work with
 
 Sometimes we have strings that we want to break into smaller pieces to work with. If we have a delimiter that we'd like to use to separate the string into smaller strings, then we're able to use the split method to get a list of substrings. A simple example of this would be getting the individual words in a string by splitting on a single space (the default separator):
 
-```
+```powershell
 >>> phrase = "This is a simple phrase"
 >>> words = phrase.split()
 >>> words
@@ -157,7 +158,7 @@ Sometimes we have strings that we want to break into smaller pieces to work with
 
 Another way I've personally used this is to get the final segment of a URL by splitting on slashes and then selecting the last item in the list:
 
-```
+```powershell
 >>> url = 'https://example.com/users/jimmy
 >>> user = url.split('/')[-1]
 >>> user
@@ -166,7 +167,7 @@ Another way I've personally used this is to get the final segment of a URL by sp
 
 Being able to split a string is useful, but we might also want to create a single string from a list of strings that we already have. To do this we can use the join method. It's interesting because the string we start with will be the separator that we want inserted between the strings in the list. Let's take our words list and insert commas between the words instead of spaces:
 
-```
+```powershell
 >>> phrase = "This is a simple phrase"
 >>> words = phrase.split()
 >>> ", ".join(words)
@@ -175,7 +176,7 @@ Being able to split a string is useful, but we might also want to create a singl
 
 A common way that join is used is by taking a list of lines forming them into a single string with new lines between the lines:
 
-```
+```powershell
 >>> lines = ['First line', 'Second line', 'Third line']
 >>> output = '\n'.join(lines)
 >>> print(output)
@@ -190,18 +191,16 @@ The last method that we're going to talk about is the format method. We often ha
 
 The format method allows us to place {} segments into a string and then have values added into those positions:
 
-```
+```powershell
 >>> "Hello, my name is {}, and I really enjoy {}. Have a nice day!".format('Keith', 'Python')
 'Hello, my name is Keith, and I really enjoy Python. Have a nice day!'
 ```
 
 If we want to use the same value multiple times within the string, then we can place the item index within the {} values:
 
-```
+```powershell
 >>> "Hello, my name is {0}, and I really enjoy {1}. Have a nice day! - {0}".format('Keith', 'Python')
 'Hello, my name is Keith, and I really enjoy Python. Have a nice day! - Keith'
 ```
 
 It's worth noting that these two approaches can't be mixed. There's a lot more that we can do with the format method, and reading the Format String Syntax documentation can help.
-
-{% include links.html %}

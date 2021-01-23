@@ -20,14 +20,14 @@ Up to this point, all of the code that we've written will always execute sequent
 
 With a grasp on comparisons, we can now look at how to use conditionals to run different pieces of logic based on values. The main keywords for conditionals in Python are if and else. Conditionals are the first language feature we're using that require us to utilize whitespace to separate our code blocks. We will always use 4 spaces as indentation. The basic shape of an if statement is this:
 
-```
+```powershell
 if CONDITION:
     print("CONDITION was True")
 ```
 
 The CONDITION portion can be anything that evaluates to True or False, and if the value isn't explicitly a boolean then it will be implicitly converted to determine how to proceed past the conditional (essentially wrapping the CONDITION with the bool constructor):
 
-```
+```powershell
 >>> if True:
 ...     print("Was True")
 ...
@@ -37,9 +37,10 @@ Was True
 ...
 >>>
 ```
+
 To add an alternative code path, we'll use the else keyword, followed by a colon (:), and indent the code underneath:
 
-```
+```powershell
 >>> if False:
 ...     print("Was True")
 ... else:
@@ -60,7 +61,7 @@ Being able to perform one thing or another based on a condition is useful. But t
 
 When we want our programs to have more than two possible outputs, then the elif statement will work perfectly for us. The elif statement looks a lot like the if statement:
 
-```cmd
+```powershell
 if CONDITION:
    # do something
 elif CONDITION_2:
@@ -71,7 +72,7 @@ else:
 
 We can chain as many elif statements together as we need, so the number of cases that we can handle is effectively limitless. Let's put elif to use by creating a script to evaluate the length of a name provided when we run the script:
 
-```
+```powershell
 learning-conditionals.py
 
 name = input("What is your name? ")
@@ -87,7 +88,7 @@ else:
 
 When we run this, we can see the various results:
 
-```
+```powershell
 $ python3.7 learning-conditionals.py
 What is your name? Keith
 Your name is 5 characters.
@@ -121,7 +122,7 @@ When we're first working through a conditional, it's good to handle all cases, e
 
 To add an else statement without a body, we'll place a pass statement within. The pass statement is what is known as a null operation. Absolutely nothing happens when we execute a pass statement, but they are useful as a code placeholder:
 
-```cmd
+```powershell
 >>> name = "Keith"
 >>> if name == "Kevin":
 ...     print("Hello Kevin")
@@ -132,6 +133,3 @@ To add an else statement without a body, we'll place a pass statement within. Th
 ```
 
 There are other types of code contexts with Python such as functions, classes, and loops. In all of these, we're able to leverage pass if we want to create the context and not do anything.
-
-
-{% include links.html %}

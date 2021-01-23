@@ -22,14 +22,14 @@ We work with collections of data and sequence a lot in programming, and it is co
 
 The most basic type of loop that we have at our disposal is the while loop. This type of loop repeats itself based on a condition that we pass to it. Here's the general structure of a while loop:
 
-```cmd
+```powershell
 while CONDITION:
     pass
 ```
 
 The CONDITION in this statement works the same way that it does for an if statement. When we demonstrated the if statement, we first tried it by simply passing in True as the condition. Let's see when we try that same condition with a while loop:
 
-```cmd
+```powershell
 >>> while True:
 ...     print("looping")
 ...
@@ -41,7 +41,7 @@ looping
 
 That loop will continue forever, we've created an infinite loop. To stop the loop, press Ctrl-C. Infinite loops are one of the potential problems with while loops. If we don't use a condition that we can change from within the loop, then it will continue forever if it's initially true. Here's how we'll normally approach using a while loop, where we modify something about the condition on each iteration:
 
-```cmd
+```powershell
 >>> count = 1
 >>> while count <= 4:
 ...     print("looping")
@@ -64,13 +64,13 @@ We work with collections of data and sequence a lot in programming, and it is co
 ### The for Loop
 The most common use we have for looping is when we want to execute some code for each item in a sequence. For this type of looping or iteration, we'll use the for loop. The general structure for a for loop is:
 
-```cmd
+```powershell
 for TEMP_VAR in SEQUENCE:
     pass
 ```
 The TEMP_VAR will be populated with each item as we iterate through the SEQUENCE, and it will be available to us in the context of the loop. After the loop finishes one iteration, then the TEMP_VAR will be populated with the next item in the SEQUENCE, and the loop's body will execute again. This process continues until we either hit a break statement or we've iterated over every item in the SEQUENCE. Here's an example that loops over a list of colors:
 
-```cmd
+```powershell
 >>> colors = ['blue', 'green', 'red', 'purple']
 >>> for color in colors:
 ...     print(color)
@@ -89,7 +89,7 @@ Lists will be the most common type that we iterate over using a for loop, but we
 
 Here's a tuple example:
 
-```cmd
+```powershell
 >>> point = (2.1, 3.2, 7.6)
 >>> for value in point:
 ...     print(value)
@@ -102,7 +102,7 @@ Here's a tuple example:
 
 In this dictionary example, by default, will first unpack each key:
 
-```cmd
+```powershell
 >>> ages = {'kevin': 59, 'bob': 40, 'kayla': 21}
 >>> for key in ages:
 ...     print(key)
@@ -114,7 +114,7 @@ kayla
 
 If we leverage what we've learned about dictionaries, we can actually get the key and value on each iteration by using dict.items and unpacking the tuple in each iteration:
 
-```cmd
+```powershell
 >>> for key, value in ages.items():
 ...     print(key, value)
 ...
@@ -125,7 +125,7 @@ kayla 21
 
 A string example:
 
-```cmd
+```powershell
 >>> for letter in "my_string":
 ...     print(letter)
 ...
@@ -149,7 +149,7 @@ Now that we've learned how to use loops and conditionals, we can do a lot more w
 
 We've seen two of the most common types of code contexts in Python: the body of a conditional and the body of a loop. To signify code contexts in Python, we use indentation. If we need to nest contexts, like conditionals or loops, then we can add more indentation. Let's say we're looping through a list of numbers, and we only want to print the number if it's a multiple of 4. In this case, we can add a conditional check within our loop:
 
-```cmd
+```powershell
 >>> counter = 1
 >>> while counter <= 25:
 ...     if counter % 4 == 0:
@@ -178,7 +178,7 @@ There are times while working with loops, that we want to skip a single iteratio
 
 If we want to continue to the next iteration in a nested context or stop the loop entirely, we have access to the continue and break keywords:
 
-```cmd
+```powershell
 >>> count = 0
 >>> while count < 10:
 ...     if count % 2 == 0:
@@ -203,7 +203,7 @@ The break statement works similarly to the continue statement in that it keeps o
 
 Here's an example using the break statement:
 
-```
+```powershell
 >>> count = 1
 >>> while count < 10:
 ...     if count % 2 == 0:
@@ -218,7 +218,7 @@ We're counting odd numbers: 1
 
 The break and continue statements work with for loops as well. If we didn't want to print out certain colors, we could utilize the continue or break statements again. Let's say we want to skip the string 'blue' and terminate the loop if we see the string 'red':
 
-```cmd
+```powershell
 >>> colors = ['blue', 'green', 'red', 'purple']
 >>> for color in colors:
 ...     if color == 'blue':
@@ -243,7 +243,7 @@ Unlike many languages, loops in Python have an additional clause that we can use
 
 The else clause for loops in Python allows us to define an additional code context that will execute when the loop has naturally finished its iteration. In a for loop, this means that we've reached the end of our iteration, and in a while loop it means the conditional has evaluated to False. Here's an example for each of these:
 
-```cmd
+```powershell
 >>> counter = 1
 >>> while counter <= 4:
 ...     print(counter)
@@ -258,7 +258,7 @@ The else clause for loops in Python allows us to define an additional code conte
 While loop completed
 ```
 
-```
+```powershell
 >>> for i in [1, 2, 3, 4, 5]:
 ...     print(i)
 ... else:
@@ -275,7 +275,7 @@ For loop completed
 
 This might seem a little useless because we could have just as easily written these additional print statements on the line directly following the loop and achieved the same result. That's true. The else clause isn't that valuable unless we utilize it in conjunction with the break statement. The else clause's body will execute if the break statement is not hit. We can leverage this when we're iterating through a list:
 
-```
+```powershell
 >>> colors = ['red', 'pink', 'blue', 'orange', 'green']
 >>> for color in colors:
 ...     if color == 'orange':
@@ -301,7 +301,7 @@ Sometimes we want to iterate a set number of times, but we don't necessarily hav
 
 A range is an immutable sequence type that defines a start, a stop, and a step value. The values within the range start with the beginning value and are incremented until the last value in the range is reached. This allows for ranges to be used in place of sequential lists while taking less memory and including more items.
 
-```cmd
+```powershell
 >>> my_range = range(10)
 >>> my_range
 range(0, 10)
@@ -316,7 +316,7 @@ Notice that the "stop" value (in this example, 10) is not included in the range.
 By using a range with a for loop, we can specify the number of times we would like to iterate without needing to manually worry about incrementing a counter like we had to do with a while loop. Here's a previous example where we printed "looping" four times using a while loop:
 
 
-```
+```powershell
 >>> count = 1
 >>> while count <= 4:
 ...     print("looping")
@@ -330,7 +330,7 @@ looping
 
 We could achieve this same thing using for and range like this:
 
-```
+```powershell
 >>> for _ in range(1, 5):
 ...     print("looping")
 ...
@@ -353,7 +353,7 @@ Iterating over a sequence is great, but needing to transform a list into a diffe
 
 If we want to loop through a list, modify each item, and have a new list with the modified items, then we could do something like this:
 
-```
+```powershell
 >>> colors = ['red', 'blue', 'orange', 'green', 'yellow']
 >>> uppercase_colors = []
 >>> for color in colors:
@@ -365,7 +365,7 @@ If we want to loop through a list, modify each item, and have a new list with th
 
 This procedure is common enough that Python provides a shorthand method for doing it in the form of "list comprehensions." These have a unique syntax where we essentially put the for loop within square brackets ([]). Here's the equivalent for the above, using a list comprehension:
 
-```
+```powershell
 >>> colors = ['red', 'blue', 'orange', 'green', 'yellow']
 >>> uppercase_colors = [color.upper() for color in colors]
 >>> uppercase_colors
@@ -378,7 +378,7 @@ The biggest difference here is that we don't need to create an empty list and ap
 
 List comprehensions also have another feature that allows for filtering while iterating through the initial list by adding a trailing if statement within the square brackets ([]). If we wanted to iterate through our colors and only return "warm" colors (red, orange, yellow) then we could write this loop to achieve these results:
 
-```
+```powershell
 >>> colors = ['red', 'blue', 'orange', 'green', 'yellow']
 >>> warm_colors = []
 >>> for color in colors:
@@ -391,7 +391,7 @@ List comprehensions also have another feature that allows for filtering while it
 
 If we remove the concept of warm_colors being used within the loop, we can write it as a list comprehension:
 
-```
+```powershell
 >>> colors = ['red', 'blue', 'orange', 'green', 'yellow']
 >>> warm_colors = [color.upper() for color in colors if color in ['red', 'orange', 'yellow']]
 >>> warm_colors
@@ -399,6 +399,3 @@ If we remove the concept of warm_colors being used within the loop, we can write
 ```
 
 The syntax for list comprehensions are a little odd to get started with. But if you read it as a sentence, then it will start to make more sense and feel more useful. The sentence would read something like this: Uppercase each color in the colors variable if the colors are red, orange, and yellow.
-
-
-{% include links.html %}
