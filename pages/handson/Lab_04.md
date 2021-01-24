@@ -1,5 +1,5 @@
 ---
-title: 04. Hands-on Lab 04
+title: 04. Hands-on Lab Using Python Dictionaries
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."

@@ -1,5 +1,5 @@
 ---
-title: 06. Hands-on Lab 06
+title: 06. Hands-on Lab Using Python Conditionals
 tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."

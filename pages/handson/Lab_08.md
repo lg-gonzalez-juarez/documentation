@@ -1,5 +1,5 @@
 ---
-title: 08. Hands-on Lab 08
+title: 08. Hands-on Lab Defining and Using Python Functions
 tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."

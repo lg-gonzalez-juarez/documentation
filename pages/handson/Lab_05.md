@@ -1,5 +1,5 @@
 ---
-title: 05. Hands-on Lab 05
+title: 05. Hands-on Lab Using Python String Methods
 tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."

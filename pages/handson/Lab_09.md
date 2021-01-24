@@ -1,5 +1,5 @@
 ---
-title: 09. Hands-on Lab 09
+title: 09. Hands-on Lab Defining and Using Python Generators
 tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."

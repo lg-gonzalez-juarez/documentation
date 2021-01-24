@@ -1,5 +1,5 @@
 ---
-title: 02. Hands-on Lab 02
+title: 02. Hands-on Lab Lab Indexing and Slicing Python Strings
 tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."

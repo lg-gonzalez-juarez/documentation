@@ -21,13 +21,17 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Python-Entry-Level
+  - title: General Index
     output: web, pdf
     folderitems:
     - title: 00. Course Index
       url: /python_00.html
       type: homepage
       output: web, pdf
+
+  - title: Python-Entry-Level
+    output: web, pdf
+    folderitems:
       
     - title: 01. Fundamental Concepts
       url: /python_01.html
