@@ -346,8 +346,85 @@ Pivot tables are not difficult to make in `pandas`, and can greatly benefit supp
 
 ## 24.4. Stats With Dataframes
 
+Another way to examine the data in a DataFrame is to look at stats such as mean, quartiles, and standard deviation.
+
+### The describe Computation
+
+```powershell
+>>> vet_records.describe()
+            age     weight
+count   5.00000   6.000000
+mean    7.10000  17.833333
+std     5.10392  12.797135
+min     1.50000   3.000000
+25%     4.00000  10.500000
+50%     5.00000  13.500000
+75%    12.00000  27.750000
+max    13.00000  35.000000
+>>>
+```
+
+Notice that age is only using 5 values. Since one is `NaN`, those are left out of the calculation. Therefore, if you have a policy for how to deal with missing data other than leaving them out, it is advisable to adjust the missing data before any calculations.
+
+### The isna Function
+
+In large datasets, the function `isna` can be used to find missing data.
+
+```powershell
+>>> missing_data = vet_records.isna()
+>>> missing_data
+    name  owner   type  breed  color    age  weight  gender  health issues  indoor/outboor  vaccinated
+0  False  False  False  False  False  False   False   False          False           False       False
+1  False  False  False  False  False  False   False   False          False           False       False
+2  False  False  False  False  False   True   False   False          False           False       False
+3  False  False  False  False  False  False   False   False          False           False       False
+4  False  False  False  False  False  False   False   False          False           False       False
+5  False  False  False  False  False  False   False   False          False           False        True
+>>>
+```
+
+### The fillna Function
+
+`.fillna()` can be used in two different ways. First, let's look at adding a constant to every column with `None` or `NaN`.
+
+```powershell
+>>> vet_records_value = vet_records.fillna(0)
+>>> vet_records_value
+         name     owner  type      breed       color   age  weight gender  health issues indoor/outdoor vaccinated
+0      Dexter  Johnsons   dog  shiba inu  red sesame   1.5      35      m          False           both       True
+1      Alfred  Johnsons   cat        mix      tuxedo   4.0      12      m           True         indoor       True
+2       Petra     Smith   cat    ragdoll      calico   0.0      10      f          False           both       True
+3         Ava     Smith   dog        mix     blk/wht  12.0      32      f           True           both      False
+4    Schroder     Brown   cat        mix      orange  13.0      15      m          False         indoor       True
+5  Blackbeard     Brown  bird     parrot       multi   5.0       3      f          False         indoor          0
+>>>
+```
+
+We can also use a dictionary with the `.fillna` function to fill in values according to their column's format.
+
+```powershell
+>>> values = {"age": 12, "vaccinated": False}
+>>> vet_records_dict = vet_records.fillna(value=values)
+>>> vet_records_dict
+         name     owner  type      breed       color   age  weight gender  health issues indoor/outdoor  vaccinated
+0      Dexter  Johnsons   dog  shiba inu  red sesame   1.5      35      m          False           both        True
+1      Alfred  Johnsons   cat        mix      tuxedo   4.0      12      m           True         indoor        True
+2       Petra     Smith   cat    ragdoll      calico  12.0      10      f          False           both        True
+3         Ava     Smith   dog        mix     blk/wht  12.0      32      f           True           both       False
+4    Schroder     Brown   cat        mix      orange  13.0      15      m          False         indoor        True
+5  Blackbeard     Brown  bird     parrot       multi   5.0       3      f          False         indoor       False
+>>> vet_records_dict.describe()
+             age     weight
+count   6.000000   6.000000
+mean    7.916667  17.833333
+std     4.984142  12.797135
+min     1.500000   3.000000
+25%     4.250000  10.500000
+50%     8.500000  13.500000
+75%    12.000000  27.750000
+max    13.000000  35.000000
+>>> 
+```
 
 ## Hands on 24-
 https://app.linuxacademy.com/hands-on-labs/fc56cb34-866b-4f0c-9841-b119b59b97d1?redirect_uri=https:%2F%2Flinuxacademy.com%2Fcp%2Fmodules%2Fview%2Fid%2F621
-
-{% include links.html %}
