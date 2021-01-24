@@ -139,8 +139,12 @@ entries:
       type: homepage
       output: web, pdf
 
-    - title: 21. Math Functions
+    - title: 21. Simple Math Using the `math` Module
       url: /pyth_01.html
+      output: web, pdf
+
+    - title: Hands-On Calculating Circular Values with Python's Math Modules
+      url: /Lab_11.html
       output: web, pdf
 
     - title: 22. Using SciPy
@@ -151,18 +155,33 @@ entries:
       url: /pyth_03.html
       output: web, pdf
 
+    - title: Hands-On Creating a Matrix Using NumPy Arrays
+      url: /Lab_12.html
+      output: web, pdf
+
     - title: 24. Using Pandas
       url: /pyth_04.html
+      output: web, pdf
+
+    - title: Hands-On Using Pandas Data Frames and Pivot Tables in Python
+      url: /Lab_13.html
       output: web, pdf
 
     - title: 25. Using Matplotlib
       url: /pyth_05.html
       output: web, pdf
 
+    - title: Hands-On Creating Graphs with Matplotlib
+      url: /Lab_14.html
+      output: web, pdf
+
     - title: 26. Using SciKit-image
       url: /pyth_06.html
       output: web, pdf
 
+    - title: Hands-On Editing Images with scikit-image
+      url: /Lab_15.html
+      output: web, pdf
 
   - title: Programming Certification 
     output: web, pdf
