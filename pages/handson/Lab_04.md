@@ -1,11 +1,11 @@
 ---
 title: 04. Hands-on Lab Using Python Dictionaries
-tags: [python]
+tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."
 sidebar: python_sidebar
 permalink: Lab_04.html
-folder: python2
+folder: handson
 ---
 
 # Using Python Dictionaries

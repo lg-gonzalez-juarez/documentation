@@ -1,5 +1,5 @@
 ---
-title: 11. Hands-on 11 Calculating Circular Values with Python's Math Modules
+title: 11. Hands-on Lab Calculating Circular Values with Python's Math Modules
 tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."
