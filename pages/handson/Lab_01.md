@@ -1,5 +1,5 @@
 ---
-title: 01. Hands-on Lab 01
+title: 01. Hands-On Lab - Making Calculations from User Input with Python
 tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."

@@ -49,45 +49,82 @@ entries:
       url: /python_05.html
       output: web, pdf
 
+    - title: Hands-On Lab Making Calculations from User Input with Python
+      url: /Lab_01.html
+      output: web, pdf
+
     - title: 06. Strings, Operations, and Calculations
       url: /python_06.html
+      output: web, pdf
+
+    - title: Hands-On Lab Indexing and Slicing Python Strings
+      url: /Lab_02.html
       output: web, pdf
 
     - title: 07. Lists
       url: /python_07.html
       output: web, pdf
 
-    - title: 08. Tuples & Dictionaries
-      url: /python_08.html
+    - title: Hands-On Lab Using Python Lists
+      url: /Lab_03.html
       output: web, pdf
 
+    - title: 08. Tuples 
+      url: /python_08.html
+      output: web, pdf
+      
     - title: 09. Dictionaries
       url: /python_09.html
+      output: web, pdf
+
+    - title: Hands-On Lab Using Python Dictionaries
+      url: /Lab_04.html
       output: web, pdf
 
     - title: 10. String
       url: /python_10.html
       output: web, pdf
 
+    - title: Hands-On Lab Using Python String Methods
+      url: /Lab_05.html
+      output: web, pdf
+      
     - title: 11. Conditionals
       url: /python_11.html
       output: web, pdf
 
+    - title: Hands-On Lab Using Python Conditionals
+      url: /Lab_06.html
+      output: web, pdf
+      
     - title: 12. Looping
       url: /python_12.html
       output: web, pdf
 
-    - title: 13. Function Basics, Generators and Scoping
+    - title: Hands-On Lab Utilizing Python Loops
+      url: /Lab_07.html
+      output: web, pdf
+
+    - title: 13. Function Basics
       url: /python_13.html
+      output: web, pdf
+
+    - title: Hands-On Defining and Using Python Functions
+      url: /Lab_08.html
       output: web, pdf
 
     - title: 14. Generators
       url: /python_14.html
       output: web, pdf
 
+    - title: Hands-On Defining and Using Python Generators
+      url: /Lab_09.html
+      output: web, pdf
+
     - title: 15. Scoping
       url: /python_15.html
       output: web, pdf
+
 
   - title: Use Maths and libraries
     output: web, pdf
