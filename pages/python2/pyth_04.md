@@ -298,6 +298,52 @@ The tilde symbol `(~)` can be used as the logical NOT operator. This means we as
 
 ## 24.3. Creating Pivot Tables
 
+Pivot tables are a favorite use in spreadsheets. They provide complicated data in an easy-to-use format. Luckily, pandas has a [pivot table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html) function.
+
+### .pivot_table
+
+The pivot table takes a number of arguments:
+
+* data: the DataFrame to use
+* values: what columns to aggregate
+* index: what columns to group on
+* aggfunc: how to aggregate the values
+  
+There are more arguments for advanced operations; for more details, see the [official documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html).
+
+Let's create a pivot table of `age` and `weight` columns by `type` and `breed`.
+
+```powershell
+>>> table = pd.pivot_table(vet_records, values=['weight', 'age'], index=['type', 'breed'], aggfunc=sum)
+>>> table
+                 age  weight
+type breed                  
+bird parrot      5.0       3
+cat  mix        17.0      27
+     ragdoll     0.0      10
+dog  mix        12.0      32
+     shiba inu   1.5      35
+>>>
+```
+
+You can import NumPy and use its functions as the `aggfunc`, such as `aggfunc=np`.mean.
+
+```powershell
+>>> import numpy as np
+>>> table = pd.pivot_table(vet_records, values=['weight', 'age'], index=['type', 'breed'], aggfunc=np.mean)
+>>> table
+                 age  weight
+type breed                  
+bird parrot      5.0     3.0
+cat  mix         8.5    13.5
+     ragdoll     NaN    10.0
+dog  mix        12.0    32.0
+     shiba inu   1.5    35.0
+>>>
+```
+
+Pivot tables are not difficult to make in `pandas`, and can greatly benefit supporting your "argument".
+
 ## 24.4. Stats With Dataframes
 
 
