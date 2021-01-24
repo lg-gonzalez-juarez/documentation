@@ -1,0 +1,121 @@
+I"m<h2 id="introduction">Introduction</h2>
+
+<p>Modeling problems using objects is incredibly powerful, and having more specific classifications can make modeling complex problems even easier. Inheritance allows us to do this with our classes. In this hands-on lab, we’ll expand the classifications we have for employees in our codebase by adding a subclass with more functionality. To feel comfortable completing this lab, you’ll want to know how to create and use Python classes (watch the “Creating and Using Python Classes” video from the Certified Associate in Python Programming Certification course) and use inheritance and super (watch the “Inheritance and Super” video from the Certified Associate in Python Programming Certification course).</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>To work through the lab, you can either log in via a terminal on your local machine and use a text editor in the terminal, or you can use VS Code in the browser. This lab guide will go through the steps using VS Code in the browser.</p>
+
+<p>In order to use VS Code in the browser, navigate to the public IP address of the workstation server (provided on the lab page) on port 8080 (e.g., http://<PUBLIC_IP>:8080).</PUBLIC_IP></p>
+
+<h2 id="create-the-manager-class-in-a-new-manager-module">Create the Manager Class in a New manager Module</h2>
+
+<ol>
+  <li>
+    <p>In the menu at the top, click <strong>Terminal</strong> &gt; <strong>New Terminal</strong>.</p>
+  </li>
+  <li>
+    <p>Run the <code class="language-plaintext highlighter-rouge">using_inheritance.py</code> module:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 using_inheritance.py
+</code></pre></div></div>
+
+<p>We’ll see there’s no manager module.</p>
+
+<ol>
+  <li>Create <code class="language-plaintext highlighter-rouge">manager.py</code>:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch manager.py
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>In the menu at the top, click <strong>File</strong> &gt; <strong>Open</strong>.</p>
+  </li>
+  <li>
+    <p>Select manager.py.</p>
+  </li>
+  <li>
+    <p>Add the following to the file:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from employee import Employee
+
+class Manager(Employee):
+    pass
+</code></pre></div></div>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">using_inheritance.py</code> again:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 using_inheritance.py
+</code></pre></div></div>
+
+<p>Now, we’ll see an error saying the <code class="language-plaintext highlighter-rouge">Manager</code> object has no <code class="language-plaintext highlighter-rouge">meetings</code> attribute.</p>
+
+<h2 id="add-a-new-meetings-attribute-that-defaults-to-an-empty-list">Add a New meetings Attribute That Defaults to an Empty List</h2>
+
+<ol>
+  <li>Edit <code class="language-plaintext highlighter-rouge">manager.py</code> to match the following:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from employee import Employee
+
+class Manager(Employee):
+    def __init__(self, name, email_address, title, phone_number=None):
+        super().__init__(name, email_address, title, phone_number)
+        self.meetings = []
+</code></pre></div></div>
+
+<p>Run <code class="language-plaintext highlighter-rouge">using_inheritance.py</code> again:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 using_inheritance.py
+</code></pre></div></div>
+
+<p>Now, we’ll see an error saying the <code class="language-plaintext highlighter-rouge">Manager</code> object has no <code class="language-plaintext highlighter-rouge">schedule_meeting</code> attribute.</p>
+
+<h2 id="add-a-schedule_meeting-method-to-the-manager-class">Add a schedule_meeting Method to the Manager Class</h2>
+
+<ol>
+  <li>Add the following to the end of the manager.py file:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def schedule_meeting(self, invitees, time):
+        self.meetings.append({"invitees": invitees, "time": time})
+        self.meetings.sort(key=lambda m: m["time"])
+</code></pre></div></div>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">using_inheritance.py</code> again:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 using_inheritance.py
+</code></pre></div></div>
+
+<p>Now, we’ll see an error saying the <code class="language-plaintext highlighter-rouge">Manager</code> object has no <code class="language-plaintext highlighter-rouge">run_next_meeting</code> attribute.</p>
+
+<h2 id="add-a-run_next_meeting-method-to-the-manager-class">Add a run_next_meeting Method to the Manager Class</h2>
+
+<ol>
+  <li>Add the following to the end of the ´manager.py´ file:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def run_next_meeting(self):
+        return self.meetings.pop(0)
+</code></pre></div></div>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">using_inheritance.py</code> one last time:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 using_inheritance.py
+</code></pre></div></div>
+
+<p>We should see no output if we’ve implemented the method correctly.</p>
+
+:ET

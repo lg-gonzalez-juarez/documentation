@@ -1,0 +1,180 @@
+I"�<h2 id="introduction">Introduction</h2>
+
+<p>Our code won’t always be able to run without issue. So many things can go wrong when running code — network connectivity can fail, file system permissions can be wrong, bad inputs can be passed to our scripts. Thankfully, we can normally tell when these types of issues might happen in our code and we can handle them. In this hands-on lab, we’ll add exception handling to an existing script that can run into many of these issues. To feel comfortable completing this lab, you’ll want to know how to perform exception handling in Python (watch the “Handling Exceptions with try, except, else, and finally” video from the Certified Associate in Python Programming Certification course).</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>To work through the lab, you can either log in via a terminal on your local machine and use a text editor in the terminal, or you can use VS Code in the browser. This lab guide will go through the steps using VS Code in the browser.</p>
+
+<p>In order to use VS Code in the browser, navigate to the public IP address of the workstation server (provided on the lab page) on port 8080 (e.g., http://<PUBLIC_IP>:8080).</PUBLIC_IP></p>
+
+<h2 id="add-exception-handling-around-setting-the-name-variable">Add Exception Handling Around Setting the name Variable</h2>
+
+<ol>
+  <li>
+    <p>In the menu at the top, click <strong>Terminal</strong> &gt; <strong>New Terminal</strong>.</p>
+  </li>
+  <li>
+    <p>Run <code class="language-plaintext highlighter-rouge">exception_handling.py</code>:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 exception_handling.py
+</code></pre></div></div>
+
+<p>We’ll get an index error.</p>
+
+<ol>
+  <li>
+    <p>In the menu at the top, click <strong>File</strong> &gt; <strong>Open</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>exception_handling.py</strong>.</p>
+  </li>
+  <li>
+    <p>Edit the <code class="language-plaintext highlighter-rouge">name</code> variable section to match the following:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>try:
+    name = sys.argv[1]
+except IndexError:
+    print("Error: please provide a name and a repeat count to the script.")
+    sys.exit(1)
+
+# Remainder of file omitted
+</code></pre></div></div>
+
+<ol>
+  <li>Run the script again without any arguments:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 exception_handling.py
+</code></pre></div></div>
+
+<p>We should see this error message:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: please provide a name and a repeat count to the script.
+</code></pre></div></div>
+
+<ol>
+  <li>Run the script with an argument of <code class="language-plaintext highlighter-rouge">Kevin</code>:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 exception_handling.py Kevin
+</code></pre></div></div>
+
+<p>We should see this error message:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Traceback (most recent call last):
+  File "exception_handling.py", line 16, in &lt;module&gt;
+    repeat_count = int(sys.argv[2])
+IndexError: list index out of range
+</code></pre></div></div>
+
+<h2 id="handle-potential-valueerror-and-indexerror-when-setting-repeat_count-variable">Handle Potential ValueError and IndexError When Setting repeat_count Variable</h2>
+
+<ol>
+  <li>Edit the <code class="language-plaintext highlighter-rouge">repeat_count</code> variable section to match the following:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># previous code omitted
+
+try:
+    repeat_count = int(sys.argv[2])
+except IndexError:
+    print("Error: please provide a name and a repeat count to the script.")
+    sys.exit(1)
+except ValueError:
+    print("Error: the repeat count needs to be a number.")
+    sys.exit(1)
+
+# remaining code omitted
+</code></pre></div></div>
+
+<ol>
+  <li>Run the script with a new argument added:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 exception_handling.py Kevin bob
+</code></pre></div></div>
+
+<p>We’ll get an error saying the repeat count needs to be a number.</p>
+
+<ol>
+  <li>Change <code class="language-plaintext highlighter-rouge">bob</code> to <code class="language-plaintext highlighter-rouge">10</code>:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 exception_handling.py Kevin 10
+</code></pre></div></div>
+
+<p>This time, we’ll get a permissions error.</p>
+
+<h2 id="handle-potential-file-io-errors-when-writing-to-name_repeatedtxt">Handle Potential File IO Errors When Writing to name_repeated.txt</h2>
+
+<ol>
+  <li>Edit the last four lines in the file to match the following:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># previous code omitted
+
+try:
+    f = open("root_files/name_repeated.txt", "w")
+except (OSError, IOError) as err:
+    print("Error: unable to write file (", err, ")")
+    for i in range(1, repeat_count + 1):
+        print(i, "-", name)
+else:
+    names = [name + "\n" for i in range(1, repeat_count + 1)]
+    f.writelines(names)
+    f.close()
+</code></pre></div></div>
+
+<ol>
+  <li>Re-run the same command as before:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 exception_handling.py Kevin 10
+</code></pre></div></div>
+
+<p>We’ll see the same error, but it will also print the list.</p>
+
+<ol>
+  <li>Change the owner of the <code class="language-plaintext highlighter-rouge">root_files</code> directory:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chown -R cloud_user:cloud_user ~/root_files/
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">cloud_user</code> password at the prompt.</p>
+  </li>
+  <li>
+    <p>List the contents of <code class="language-plaintext highlighter-rouge">root_files</code>:</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al root_files/
+</code></pre></div></div>
+
+<p>We should see we now own it, so we should be able to write into it.</p>
+
+<ol>
+  <li>Re-run the command again:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 exception_handling.py Kevin 10
+</code></pre></div></div>
+
+<p>We shouldn’t get any errors.</p>
+
+<ol>
+  <li>View the contents of <code class="language-plaintext highlighter-rouge">name_repeated.txt</code>:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat root_files/name_repeated.txt
+</code></pre></div></div>
+
+<p>We should see the name repeated 10 times.</p>
+:ET

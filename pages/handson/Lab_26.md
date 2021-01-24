@@ -8,17 +8,17 @@ permalink: Lab_26.html
 folder: handson
 ---
 
-# Introduction
+## Introduction
 
 Modeling problems using objects is incredibly powerful, and having more specific classifications can make modeling complex problems even easier. Inheritance allows us to do this with our classes. In this hands-on lab, we'll expand the classifications we have for employees in our codebase by adding a subclass with more functionality. To feel comfortable completing this lab, you'll want to know how to create and use Python classes (watch the "Creating and Using Python Classes" video from the Certified Associate in Python Programming Certification course) and use inheritance and super (watch the "Inheritance and Super" video from the Certified Associate in Python Programming Certification course).
 
-# Solution
+## Solution
 
 To work through the lab, you can either log in via a terminal on your local machine and use a text editor in the terminal, or you can use VS Code in the browser. This lab guide will go through the steps using VS Code in the browser.
 
 In order to use VS Code in the browser, navigate to the public IP address of the workstation server (provided on the lab page) on port 8080 (e.g., http://<PUBLIC_IP>:8080).
 
-# Create the Manager Class in a New manager Module
+## Create the Manager Class in a New manager Module
 
 1. In the menu at the top, click **Terminal** > **New Terminal**.
 
@@ -58,7 +58,7 @@ python3.7 using_inheritance.py
 
 Now, we'll see an error saying the `Manager` object has no `meetings` attribute.
 
-# Add a New meetings Attribute That Defaults to an Empty List
+## Add a New meetings Attribute That Defaults to an Empty List
 
 1. Edit `manager.py` to match the following:
 
@@ -79,7 +79,7 @@ python3.7 using_inheritance.py
 
 Now, we'll see an error saying the `Manager` object has no `schedule_meeting` attribute.
 
-# Add a schedule_meeting Method to the Manager Class
+## Add a schedule_meeting Method to the Manager Class
 
 1. Add the following to the end of the manager.py file:
 
@@ -97,7 +97,7 @@ python3.7 using_inheritance.py
 
 Now, we'll see an error saying the `Manager` object has no `run_next_meeting` attribute.
 
-# Add a run_next_meeting Method to the Manager Class
+## Add a run_next_meeting Method to the Manager Class
 
 1. Add the following to the end of the ´manager.py´ file:
 

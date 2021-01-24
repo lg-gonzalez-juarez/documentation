@@ -7,17 +7,17 @@ sidebar: python_sidebar
 permalink: Lab_21.html
 folder: handson
 ---
-# Introduction
+## Introduction
 
 Being able to perform actions on a collection is incredibly useful in any type of programming, and it is pretty common to need to perform a single action on each item. We could do this by using a loop, but there are built-in collection functions that can take a collection and a function or lambda to run each item through. In this hands-on lab, we utilize higher-order functions to process some existing lists by using lambdas.
 
 The `map`, `filter`, `sorted`, and `reversed` functions are great examples of higher-order functions that can receive a function (or lambda) as an argument and do things accordingly. In this hands-on lab, we're going to leverage these functions and lambdas to process some pre-created lists within the `collection_processing.py` script.
 
-# Log In Using VS Code in the Browser
+## Log In Using VS Code in the Browser
 
 1. Navigate to the provided public IP address on port 8080 (e.g. http://PUBLIC_IP_ADDRESS:8080).
 
-# Create the sorted_by_name List by Sorting the people List of Dictionaries
+## Create the sorted_by_name List by Sorting the people List of Dictionaries
 
 1. Under the File menu, select Open File....
 
@@ -43,7 +43,7 @@ sorted_by_name = sorted(people, key=lambda d: d['name'].lower())
 python3.7 collection_processing.py
 ```
 
-# Create the name_declarations List by Mapping over sorted_by_name
+## Create the name_declarations List by Mapping over sorted_by_name
 
 1. In the `collection_processing.py` file, change line 28 from `name_declarations = None` to the following.
 
@@ -59,7 +59,7 @@ name_declarations = list(
 python3.7 collection_processing.py
 ```
 
-# Create the under_seventy List by Filtering and Sorting on the sorted_by_name List
+## Create the under_seventy List by Filtering and Sorting on the sorted_by_name List
 
 1. In the `collection_processing.py` file, change line 44 from `under_seventy = None` to the following.
 

@@ -8,17 +8,17 @@ permalink: Lab_28.html
 folder: handson
 ---
 
-# Introduction
+## Introduction
 
 Our code won't always be able to run without issue. So many things can go wrong when running code — network connectivity can fail, file system permissions can be wrong, bad inputs can be passed to our scripts. Thankfully, we can normally tell when these types of issues might happen in our code and we can handle them. In this hands-on lab, we'll add exception handling to an existing script that can run into many of these issues. To feel comfortable completing this lab, you'll want to know how to perform exception handling in Python (watch the "Handling Exceptions with try, except, else, and finally" video from the Certified Associate in Python Programming Certification course).
 
-# Solution
+## Solution
 
 To work through the lab, you can either log in via a terminal on your local machine and use a text editor in the terminal, or you can use VS Code in the browser. This lab guide will go through the steps using VS Code in the browser.
 
 In order to use VS Code in the browser, navigate to the public IP address of the workstation server (provided on the lab page) on port 8080 (e.g., http://<PUBLIC_IP>:8080).
 
-# Add Exception Handling Around Setting the name Variable
+## Add Exception Handling Around Setting the name Variable
 
 1. In the menu at the top, click **Terminal** > **New Terminal**.
 
@@ -74,7 +74,7 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
-# Handle Potential ValueError and IndexError When Setting repeat_count Variable
+## Handle Potential ValueError and IndexError When Setting repeat_count Variable
 
 1. Edit the `repeat_count` variable section to match the following:
 
@@ -109,7 +109,7 @@ python3.7 exception_handling.py Kevin 10
 
 This time, we'll get a permissions error.
 
-# Handle Potential File IO Errors When Writing to name_repeated.txt
+## Handle Potential File IO Errors When Writing to name_repeated.txt
 
 1. Edit the last four lines in the file to match the following:
 
@@ -167,4 +167,3 @@ cat root_files/name_repeated.txt
 ```
 
 We should see the name repeated 10 times.
-

@@ -8,11 +8,11 @@ permalink: Lab_22.html
 folder: handson
 ---
 
-# Introduction
+## Introduction
 
 We need to constantly evaluate a condition of some kind to determine what action to take or what value to assign to a variable we'll use later in our program. In the situation where we only have an `if` and an `else`, and the body of each branch contains only one expression, then we're able to use a conditional expression. Conditional expressions can be used to succinctly express a simple conditional. In this hands-on lab, we'll be refactoring an existing script by rewriting the simple conditional statements as conditional expressions.
 
-# Scenario
+## Scenario
 
 Because we're refactoring an existing script, our goal is to not change what happens when we run the script. To run `process_name.py`, we'll pass it to our Python interpreter and then answer a few questions.
 
@@ -30,11 +30,11 @@ h is a consonant
 
 We're going to rewrite the conditional statements that are used in the `process_name.py` script to be conditional expressions instead. We're able to do this only because each branch in the conditionals has just one expression.
 
-# Log In Using VS Code in the Browser
+## Log In Using VS Code in the Browser
 
 1. Navigate to the provided public IP address on port 8080 (e.g. http://PUBLIC_IP_ADDRESS:8080).
 
-# Call print with a Different String Using a Single Conditional Expression
+## Call print with a Different String Using a Single Conditional Expression
 
 1. Under the File menu, select Open File....
 
@@ -68,7 +68,7 @@ print(
 python3.7 process_name.py
 ```
 
-# Assign a Value to the message Variable Based on a Conditional Expression
+## Assign a Value to the message Variable Based on a Conditional Expression
 
 1. Change the code under the second task description to the following.
 
@@ -88,7 +88,7 @@ message = (
 python3.7 process_name.py
 ```
 
-# Change the String Passed to the print Function Using a Conditional Expression
+## Change the String Passed to the print Function Using a Conditional Expression
 
 1. Change the code under the third task description to the following.
 

@@ -1,0 +1,124 @@
+I"5<h2 id="introduction">Introduction</h2>
+
+<p>We need to constantly evaluate a condition of some kind to determine what action to take or what value to assign to a variable we’ll use later in our program. In the situation where we only have an <code class="language-plaintext highlighter-rouge">if</code> and an <code class="language-plaintext highlighter-rouge">else</code>, and the body of each branch contains only one expression, then we’re able to use a conditional expression. Conditional expressions can be used to succinctly express a simple conditional. In this hands-on lab, we’ll be refactoring an existing script by rewriting the simple conditional statements as conditional expressions.</p>
+
+<h2 id="scenario">Scenario</h2>
+
+<p>Because we’re refactoring an existing script, our goal is to not change what happens when we run the script. To run <code class="language-plaintext highlighter-rouge">process_name.py</code>, we’ll pass it to our Python interpreter and then answer a few questions.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python3.7 processing_items.py
+What is your first name? Keith
+Your name is shorter than the average first name in the United States
+The first letter of your name is not among the five most common
+K is a consonant
+e is a vowel
+i is a vowel
+t is a consonant
+h is a consonant
+</code></pre></div></div>
+
+<p>We’re going to rewrite the conditional statements that are used in the <code class="language-plaintext highlighter-rouge">process_name.py</code> script to be conditional expressions instead. We’re able to do this only because each branch in the conditionals has just one expression.</p>
+
+<h2 id="log-in-using-vs-code-in-the-browser">Log In Using VS Code in the Browser</h2>
+
+<ol>
+  <li>Navigate to the provided public IP address on port 8080 (e.g. http://PUBLIC_IP_ADDRESS:8080).</li>
+</ol>
+
+<h2 id="call-print-with-a-different-string-using-a-single-conditional-expression">Call print with a Different String Using a Single Conditional Expression</h2>
+
+<ol>
+  <li>
+    <p>Under the File menu, select Open File….</p>
+  </li>
+  <li>
+    <p>Select the <code class="language-plaintext highlighter-rouge">process_name.py</code> file from the list that appears.</p>
+  </li>
+  <li>
+    <p>Under the Terminal menu, select New Terminal.</p>
+  </li>
+  <li>
+    <p>In the terminal, run the script.</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 process_name.py
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Enter your name and examine the results.</p>
+  </li>
+  <li>
+    <p>Change the code under the first task description to the following.</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(
+    "Your name is as long or longer than the average first name in the United States"
+) if len(name) &gt;= 6 else print (
+    "Your name is shorter than the average first name in the United States"
+)
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Save the changes.</p>
+  </li>
+  <li>
+    <p>Rerun the script in the terminal and verify the results using names of various length.</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 process_name.py
+</code></pre></div></div>
+
+<h2 id="assign-a-value-to-the-message-variable-based-on-a-conditional-expression">Assign a Value to the message Variable Based on a Conditional Expression</h2>
+
+<ol>
+  <li>Change the code under the second task description to the following.</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>message = (
+    "The first letter in your name is among the five most common"
+    if name[0].lower() in ["a", "j", "m", "e", "l"]
+    else "The first letter of your name is not among the five most common"
+)
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Save the changes.</p>
+  </li>
+  <li>
+    <p>Rerun the script in the terminal and verify the results using different names.</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 process_name.py
+</code></pre></div></div>
+
+<h2 id="change-the-string-passed-to-the-print-function-using-a-conditional-expression">Change the String Passed to the print Function Using a Conditional Expression</h2>
+
+<ol>
+  <li>Change the code under the third task description to the following.</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for letter in name:
+    print(
+        f"{letter} {'is a vowel' if letter.lower() in ['a', 'e', 'i', 'o', 'u'] else 'is a consonant'}"
+    )
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Save the changes.</p>
+  </li>
+  <li>
+    <p>Rerun the script in the terminal and verify the results using different names.</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 process_name.py
+</code></pre></div></div>
+:ET

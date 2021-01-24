@@ -8,11 +8,11 @@ permalink: Lab_23.html
 folder: handson
 ---
 
-# Introduction
+## Introduction
 
 Being able to reuse code is incredibly useful, but to make our code even more useful, we need to bundle it up so that it can be used from other programs. The primary way this is done in Python is by using modules. In this hands-on lab, we'll define and use our custom module and built-in modules to ensure the using_modules.py file can execute properly.
 
-# Scenario
+## Scenario
 
 We already have a file called `using_modules.py` that we need to add imports to so that we can run it without error by running the following:
 
@@ -23,11 +23,11 @@ $
 
 We need to use the built-in `math` module and create the `strhelpers` module that contains a few different functions. By running the `using_modules.py` file, we'll see the errors preventing the file from running and that can guide us towards the changes we need to make. To implement the functions in `strhelpers`, we'll want to use the `random.shuffle` function.
 
-# Log In Using VS Code in the Browser
+## Log In Using VS Code in the Browser
 
 Navigate to the provided public IP address on port 8080 (e.g. http://PUBLIC_IP_ADDRESS:8080).
 
-# Import the math Module within using_modules.py
+## Import the math Module within using_modules.py
 
 1. Under the **File** menu, select **Open File**....
 
@@ -54,7 +54,7 @@ import math
 python3.7 using_modules.py
 ```
 
-# Create the `strhelpers` Module and Implement the `reverse` Function
+## Create the `strhelpers` Module and Implement the `reverse` Function
 
 1. Under the File menu, select New File.
 
@@ -85,7 +85,7 @@ from strhelpers import reverse
 python3.7 using_modules.py
 ```
 
-# Implement str_shuffle and Import It As shuffle
+## Implement str_shuffle and Import It As shuffle
 
 1. Navigate back to the `strhelpers.py` file.
 

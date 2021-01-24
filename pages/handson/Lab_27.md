@@ -8,17 +8,17 @@ permalink: Lab_27.html
 folder: handson
 ---
 
-# Introduction
+## Introduction
 
 Files are used for many things in programming, including storing and reading data as well as writing to the screen. In this hands-on lab, we'll add a way to read and store information about custom classes, using a file as a flat database for our employee information. To feel comfortable completing this lab, you'll want to know how to read and write to files (watch the "Interacting with Files" video from the Certified Associate in Python Programming Certification course), use class methods (watch the "Custom Constructors, Class Methods, and Decorators" video from the Certified Associate in Python Programming Certification course), and create and use class instances (watch the "Creating and Using Python Classes" video from the Certified Associate in Python Programming Certification course).
 
-# Solution
+## Solution
 
 To work through the lab, you can either log in via a terminal on your local machine and use a text editor in the terminal, or you can use VS Code in the browser. This lab guide will go through the steps using VS Code in the browser.
 
 In order to use VS Code in the browser, navigate to the public IP address of the workstation server (provided on the lab page) on port 8080 (e.g., http://<PUBLIC_IP>:8080).
 
-# Add identifier Attribute to Employee Instances and __init__ Method
+## Add identifier Attribute to Employee Instances and __init__ Method
 
 1. In the menu at the top, click **File** > **Open**.
 
@@ -36,7 +36,7 @@ identifier=None
 self.identifier = identifier
 ```
 
-# Add Employee.get_all Class Method to Return a List of Employee Objects
+## Add Employee.get_all Class Method to Return a List of Employee Objects
 
 1. Edit the beginning of the `employee.py` file to match the following:
 
@@ -75,7 +75,7 @@ python3.7 test_employee.py
 
 We'll get an error that we're missing the `get_at_line` attribute.
 
-# Add Employee.get_at_line Class Method to Return a Single Employee
+## Add Employee.get_at_line Class Method to Return a Single Employee
 
 1. Add the following beneath the `get_all` class method:
 
@@ -101,7 +101,7 @@ python3.7 test_employee.py
 
 We'll get an error that we're missing the save attribute.
 
-# Add save Instance Method to Employee Class to Write New Instances to the File
+## Add save Instance Method to Employee Class to Write New Instances to the File
 
 1. Add the following to the bottom of the file (beneath the `def email_signature` block):
 
@@ -206,4 +206,3 @@ python3.7 test_employee.py
 ```
 
 If the implementation is correct, we won't see any errors. If things aren't working correctly, we will see error messages that can hopefully help us.
-

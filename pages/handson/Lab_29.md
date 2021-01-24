@@ -9,17 +9,17 @@ folder: handson
 ---
 
 
-# Introduction
+## Introduction
 
 When building a larger system with custom classes, we will likely have different situations come up that wouldn't be encompassed by existing exceptions. In this hands-on lab, we'll create a few custom exception types that will fit into our employee management class hierarchy. To feel comfortable completing this lab, you'll want to know how to create custom exception types (watch the "Creating Custom Exception Types" video from the Certified Associate in Python Programming Certification course).
 
-# Solution
+## Solution
 
 To work through the lab, you can either log in via a terminal on your local machine and use a text editor in the terminal, or you can use VS Code in the browser. This lab guide will go through the steps using VS Code in the browser.
 
 In order to use VS Code in the browser, navigate to the public IP address of the workstation server (provided on the lab page) on port 8080 (e.g., http://<PUBLIC_IP>:8080).
 
-# Create MissingEmployeeError and DatabaseError in employee.py
+## Create MissingEmployeeError and DatabaseError in employee.py
 
 1. In the menu at the top, click **Terminal** > **New Terminal**.
 
@@ -54,7 +54,7 @@ python3.7 test_custom_exceptions.py
 
 This time, we'll get an error saying it expected a `DatabaseError` but instead got `FileNotFoundError`.
 
-# Raise DatabaseError Anywhere We Fail to Open the Database File
+## Raise DatabaseError Anywhere We Fail to Open the Database File
 
 1. Everywhere we use `open` in the `Employee` class, we need to catch these exceptions and instead raise a `DatabaseError`. To do so, edit the `class Employee` section to match the following:
 
@@ -136,7 +136,7 @@ class Employee:
         )
 ```
 
-# Raise MissingEmployeeError in get_at_line and save if IndexError Occurs
+## Raise MissingEmployeeError in get_at_line and save if IndexError Occurs
 
 1. At the bottom of the `get_at_line` section, add the following:
 

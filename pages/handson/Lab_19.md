@@ -1,5 +1,5 @@
 ---
-title: 19. Hands-on Lab 
+title: 19. Hands-on Lab (Empty)
 tags: [handson]
 keywords: sample
 #summary: "This is just a sample topic..."

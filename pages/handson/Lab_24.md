@@ -8,17 +8,17 @@ permalink: Lab_24.html
 folder: handson
 ---
 
-# Introduction
+## Introduction
 
 Modules are the main way we share code in Python, but modules are almost always shared as a part of a package. In this hands-on lab, we'll create an installable package that contains a module and exposes some functions directly through the package itself. To feel comfortable completing this lab, you'll want to know how to create and use packages (watch the "Creating and Using Packages" video from the Certified Associate in Python Programming Certification course), as well as how to make an installable package and install packages (watch the "Distributing and Installing Packages" video from the Certified Associate in Python Programming Certification course).
 
-# Solution
+## Solution
 
 To work through the lab, you can either log in via a terminal on your local machine and use a text editor in the terminal, or you can use VS Code in the browser. This lab guide will go through the steps using VS Code in the browser.
 
 In order to use VS Code in the browser, navigate to the public IP address of the workstation server (provided on the lab page) on port 8080 (e.g., http://<PUBLIC_IP>:8080).
 
-# Create the Folder Structure for the words Package within the ~/packages Directory
+## Create the Folder Structure for the words Package within the ~/packages Directory
 
 1. In the menu at the top, click **Terminal** > **New Terminal**.
 
@@ -46,7 +46,7 @@ touch ~/packages/words/setup.py
 touch ~/packages/words/src/words/__init__.py
 ```
 
-# Write the random_word and random_words Functions within the words.generator Module
+## Write the random_word and random_words Functions within the words.generator Module
 
 1. Click Open Folder.
 
@@ -66,7 +66,7 @@ def random_words(length):
     return sample(WORD_LIST, length)
 ```
 
-# Customize ~/packages/words/src/words/__init__.py to Provide the random_words Function
+## Customize ~/packages/words/src/words/__init__.py to Provide the random_words Function
 
 1. Click to open the ~/packages/words/src/words/\_\_init\_\_.py file.
 
@@ -77,7 +77,7 @@ __all__ = ["random_words"]
 from .generator import *
 ```
 
-# Write the setup.py, Build a Wheel, and Install the Package Using pip
+## Write the setup.py, Build a Wheel, and Install the Package Using pip
 
 1. Click to open the `~/packages/words/setup.py` file.
 
