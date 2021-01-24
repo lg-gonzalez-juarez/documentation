@@ -1,5 +1,5 @@
 ---
-title: 40. U
+title: 40. (Empty)
 tags: [python]
 keywords: sample
 #summary: "This is just a sample topic..."
@@ -8,8 +8,8 @@ permalink: pyth_40.html
 folder: python3
 ---
 
-## Hellou 
-vcbcv 
-cxz
+## Intro
 
-{% include links.html %}
+
+
+

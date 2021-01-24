@@ -24,9 +24,19 @@ entries:
   - title: General Index
     output: web, pdf
     folderitems:
+
     - title: 00. Course Index
       url: /python_00.html
       type: homepage
+      output: web, pdf
+
+    - title: 20. General Notes
+      url: /pyth_00.html
+      type: homepage
+      output: web, pdf
+
+    - title: 40. Empty
+      url: /pyth_40.html
       output: web, pdf
 
   - title: Python-Entry-Level
@@ -133,11 +143,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: 20. Index Math-Lib
-      url: /pyth_00.html
-      type: homepage
-      output: web, pdf
-
     - title: 21. Simple Math Using the `math` Module
       url: /pyth_01.html
       output: web, pdf
@@ -185,10 +190,6 @@ entries:
   - title: Programming Certification 
     output: web, pdf
     folderitems:
-
-    - title: 40. Index Certification
-      url: /pyth_40.html
-      output: web, pdf
 
     - title: 41.Lambdas, Closures and Collection Functions
       url: /pyth_41.html

@@ -1,0 +1,51 @@
+I"�<h2 id="usage-package">Usage package</h2>
+
+<p>Este es mi pinino como documentalista de software (cierta ironia), enfatizo esto tiene el fin de ayudar y ayudarme a tener notitas de todo lo que aprendo en python, si le es útil a alguien mas ya es una ganancia.</p>
+
+<!--
+Antes que nada, algunas lineas acerca de mi, soy Lorena Gonzalez-Juarez, soy una terricola con dos hogares, el primero por derecho de nacimiento y el disfrutar de ella mientras se trabaja.
+-->
+
+<p><a href="https://github.com/lg-gonzalez-juarez">personal git link</a></p>
+
+<p>La siguiente pagina es super útil para documentar <a href="http://idratherbewriting.com/learnapidoc/">course on API documentation</a>.</p>
+
+<p>See <a href="http://idratherbewriting.com/aboutme/">my blog’s about page</a> for more details about me.</p>
+
+<h2 id="how-add-a-new-section--page">How add a new section &amp; page?</h2>
+
+<p>El primer paso es generar un archivo “Name.md” en la carpeta <code class="language-plaintext highlighter-rouge">\pages\mydoc</code></p>
+
+<p>dentro de este archivo se modifica en la cabecera del mismo el campo <strong>permalink:</strong> <code class="language-plaintext highlighter-rouge">Name.html</code></p>
+
+<p>El nombre del archivo se debe incluir en el indexado, esto se realiza en la carpeta <strong>_data/sidebars/mydoc_sidebar.yml</strong></p>
+
+<p>en este archivo se debe actualizar el titulo de la sección y su correspondiente <strong>url</strong></p>
+
+<p>Por último compruebe que la correspondiente seccion se ha añadido correctamente al navegador lateral</p>
+
+<h2 id="install-jekill-on-windows">Install jekill on windows</h2>
+<p>If you’ve never installed or run a jekill site locally on your computer, follow these instructions to install:</p>
+
+<p>*<a href="mydoc_install_jekyll_on_windows.html">Install jekill on Windows</a></p>
+
+<h3 id="jekyll-help">Jekyll help</h3>
+
+<ul>
+  <li>
+    <p><a href="https://talk.jekyllrb.com">Jekyll Talk</a></p>
+  </li>
+  <li>
+    <p><a href="http://jekyllrb.com/docs/home/">Jekyll documentation</a></p>
+  </li>
+  <li>
+    <p><a href="http://stackoverflow.com/questions/tagged/jekyll">Jekyll on Stack Overflow</a></p>
+  </li>
+  <li>
+    <p><a href="http://idratherbewriting.com/category-jekyll/">Jekyll on my blog</a></p>
+  </li>
+</ul>
+
+<p>[]:</p>
+
+:ET
