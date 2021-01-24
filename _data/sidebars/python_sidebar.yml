@@ -186,30 +186,66 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: 40. Index Math-Lib
+    - title: 40. Index Certification
       url: /pyth_40.html
       output: web, pdf
 
-    - title: 41.Lambdas and Collection Functions
+    - title: 41.Lambdas, Closures and Collection Functions
       url: /pyth_41.html
+      output: web, pdf
+
+    - title: Hands-On Lab Processing Collections in Python Using Lambdas
+      url: /Lab_21.html
       output: web, pdf
 
     - title: 42. The `if` Operator
       url: /pyth_42.html
       output: web, pdf
 
+    - title: Hands-On Lab Using Python Conditional Expressions
+      url: /Lab_22.html
+      output: web, pdf
+
     - title: 43. Modules and Packages
       url: /pyth_43.html
+      output: web, pdf
+
+    - title: Hands-On Lab Creating a Python Module
+      url: /Lab_23.html
+      output: web, pdf
+
+    - title: Hands-On Lab Creating a Python Package
+      url: /Lab_24.html
       output: web, pdf
 
     - title: 44. Classes and Object-Oriented Programming
       url: /pyth_44.html
       output: web, pdf
 
+    - title: Hands-On Lab Creating and Using Python Classes
+      url: /Lab_25.html
+      output: web, pdf
+
+    - title: Hands-On Lab Using Inheritance in Python
+      url: /Lab_26.html
+      output: web, pdf
+
     - title: 45. Input and Output Basics
       url: /pyth_45.html
       output: web, pdf
 
+    - title: Hands-On Lab Reading and Writing Files with Python
+      url: /Lab_27.html
+      output: web, pdf
+
     - title: 46. Exceptions and Exception Handling
       url: /pyth_46.html
+      output: web, pdf
+
+    - title: Hands-On Lab Adding Exception Handling to a Python Script
+      url: /Lab_28.html
+      output: web, pdf
+
+    - title: Hands-On Lab Creating Custom Python Exception Types
+      url: /Lab_29.html
       output: web, pdf
