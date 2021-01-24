@@ -129,7 +129,6 @@ entries:
       url: /python_15.html
       output: web, pdf
 
-
   - title: Use Maths and libraries
     output: web, pdf
     folderitems:

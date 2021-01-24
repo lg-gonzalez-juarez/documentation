@@ -1,0 +1,225 @@
+I"��<h2 id="411-defining-and-using-lambdas">41.1. Defining and Using Lambdas</h2>
+
+<p>Sometimes we want to group some lines of code so that they can be reused, but creating a named function feels unnecessary. In these situations, such as when we’re acting on the items of a collection, we can use lambdas or “lambda expressions” to create anonymous functions. In this lesson, we’ll learn how to create and use lambdas.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p><a href="https://docs.python.org/3/reference/expressions.html#lambda">Lambda Expressions</a></p>
+
+<h3 id="what-is-an-anonymous-function">What Is an Anonymous Function?</h3>
+
+<p>An anonymous function refers to a function that doesn’t have a name. If we try to classify what makes a function, we can break it into a few requirements:</p>
+
+<ol>
+  <li>A name</li>
+  <li>A list of parameters</li>
+  <li>A function body</li>
+  <li>An optional return value</li>
+</ol>
+
+<p>The name portion is only a requirement so that we can reference it later. But if we want a “function” that isn’t useful anywhere else besides the current context, we can define a function without a name by using the <code class="language-plaintext highlighter-rouge">lambda</code> keyword to create a “lambda expression”. We could still assign it to a variable if we want. There is one catch: the lambda’s body can only be one expression.</p>
+
+<h3 id="creating-a-lambda">Creating a Lambda</h3>
+<p>To learn more about lambdas, let’s create a folder called <code class="language-plaintext highlighter-rouge">lambdas-and-collections</code>. Within it, let’s create a new file called <code class="language-plaintext highlighter-rouge">learning_lambdas.py</code>.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="w"> </span><span class="n">mkdir</span><span class="w"> </span><span class="nx">~/lambdas-and-collections</span><span class="w">
+</span><span class="err">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="nx">~/lambdas-and-collections</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The easiest way to wrap our minds around lambdas is to convert an existing function into one. Let’s convert the following <code class="language-plaintext highlighter-rouge">square</code> function to be a lambda:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">~/lambdas-and-collections/learning_lambdas.py</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">def</span><span class="w"> </span><span class="nx">square</span><span class="p">(</span><span class="n">num</span><span class="p">):</span><span class="w">
+    </span><span class="kr">return</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Lambdas are most commonly used for single-line functions like this, and the last expression in the lambda is always returned. With that in mind, this function could be written as a lambda like this: <code class="language-plaintext highlighter-rouge">~/lambdas-and-collections/learning_lambdas.py</code></p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">def</span><span class="w"> </span><span class="nx">square</span><span class="p">(</span><span class="n">num</span><span class="p">):</span><span class="w">
+    </span><span class="kr">return</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num</span><span class="w">
+
+</span><span class="n">square_lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To call our lambda, we use parenthesis the same way we do when calling a function. Let’s ensure that this function and lambda are equivalent by adding an assert statement to the end of the file before running the file:<code class="language-plaintext highlighter-rouge">~/lambdas-and-collections/learning_lambdas.py</code></p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">def</span><span class="w"> </span><span class="nx">square</span><span class="p">(</span><span class="n">num</span><span class="p">):</span><span class="w">
+    </span><span class="kr">return</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num</span><span class="w">
+
+</span><span class="n">square_lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num</span><span class="w">
+
+</span><span class="n">assert</span><span class="w"> </span><span class="nx">square</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">square_lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If we run this file, we should see that there are no errors:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="nx">~/lambdas-and-collections</span><span class="w">
+</span><span class="err">$</span><span class="w"> </span><span class="n">python3.7</span><span class="w"> </span><span class="nx">learning_lambdas.py</span><span class="w">
+</span><span class="err">$</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now that we know how to define and call lambda expressions, we’re ready to learn about when we’re most likely to put them to use: when using collection functions.</p>
+
+<h2 id="412-using-collection-functions">41.2. Using Collection Functions</h2>
+
+<p>When thinking of times where we might want to use a lambda function, we’ll also want to think about when we might want to repeat a single expression. The most common example is when we want to process a collection using a function that can also take a function as an argument. Some examples of functions like these are:</p>
+
+<ul>
+  <li><a href="https://docs.python.org/3/library/functions.html#map">map</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#filter">filter</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#reduce">reduce</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#reversed">reversed</a></li>
+  <li><a href="https://docs.python.org/3/library/functions.html#sorted">sorted</a></li>
+</ul>
+
+<p>There’s also the <a href="https://docs.python.org/3/library/stdtypes.html#list.sort">sort method</a> on the list type.</p>
+
+<h3 id="documentation-1">Documentation</h3>
+
+<ul>
+  <li>Lambda Expressions</li>
+  <li>The map function</li>
+  <li>The filter function</li>
+  <li>The reduce function</li>
+  <li>The reversed function</li>
+  <li>The sorted function</li>
+  <li>The <a href="https://docs.python.org/3/library/stdtypes.html#list.sort">list.sort</a> method</li>
+</ul>
+
+<h3 id="what-are-higher-order-functions">What are “Higher-Order Functions”?</h3>
+
+<p>When a function or method takes a function as an argument (or returns a function), it is called a “higher-order function”. This term isn’t explicitly mentioned anywhere in the PCAP syllabus, but it is worth knowing. Most of the higher-order functions that we’ll be working with take a collection and a function as parameters so that each item in the collection can be processed by the function argument.</p>
+
+<p>Let’s start digging into some of these functions.</p>
+
+<h3 id="the-map-function">The map Function</h3>
+
+<p>In mathematics, a list of potential arguments for a function is called a “domain” and for each domain there’s a corresponding “range” of the same length that is the return value of the function given each item in the domain. The map function takes a function as the first argument and a collection that acts as the domain. It returns the range. Now that we have the math talk out of the way, let’s see this in practice by creating a file called collection_funcs.py: <code class="language-plaintext highlighter-rouge">~/lambdas-and-collections/collection_funcs.py</code></p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span><span class="n">our_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">2</span><span class="p">,</span><span class="w"> </span><span class="nx">domain</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">our_range</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note that the result of <code class="language-plaintext highlighter-rouge">map</code> is an iterable, but it is not a list, so it wouldn’t print out the way we’d like. So we need to first convert it to a list.</p>
+
+<p>The function we’re mapping over doubles the provided number. Let’s run this file to see what is printed.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="nx">~/lambdas-and-collections</span><span class="w">
+</span><span class="err">$</span><span class="w"> </span><span class="n">python3.7</span><span class="w"> </span><span class="nx">collection_funcs.py</span><span class="w">
+</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="the-filter-function">The filter Function</h3>
+
+<p>Like <code class="language-plaintext highlighter-rouge">map</code>, the <code class="language-plaintext highlighter-rouge">filter</code> function takes a function and a collection. However, instead of returning the result of the function argument for each item, it returns an iterator that contains only the values from the list if the function returns a true result when using that value as an argument. This allows us to filter the collection based on a specific condition.</p>
+
+<p>Let’s give it a shot by filtering a list down to only return results that are even: <code class="language-plaintext highlighter-rouge">~/lambdas-and-collections/collection_funcs.py</code></p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span><span class="n">our_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">2</span><span class="p">,</span><span class="w"> </span><span class="nx">domain</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">our_range</span><span class="p">))</span><span class="w">
+
+</span><span class="n">evens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">filter</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">evens</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now we can run this and we should see the two even values returned:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="w"> </span><span class="n">python3.7</span><span class="w"> </span><span class="nx">collection_funcs.py</span><span class="w">
+</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">]</span><span class="w">
+</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="the-reduce-function">The reduce Function</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">reduce</code> function is not quite as straight forward as <code class="language-plaintext highlighter-rouge">map</code> and <code class="language-plaintext highlighter-rouge">filter</code>. When we reduce a collection, we’re going to utilize the values within the collection to eventually create a final single result. An example of a function that reduces the list is the <code class="language-plaintext highlighter-rouge">sum</code> function, which returns the result of all the items in a list being added together. To make this possible, we need an extra argument: a starting value. We also need the function that we pass to the <code class="language-plaintext highlighter-rouge">reduce</code> function to take two arguments: the accumulated value and the current item from the collection.</p>
+
+<p>To help solidify these ideas, let’s reimplement <code class="language-plaintext highlighter-rouge">sum</code> by using <code class="language-plaintext highlighter-rouge">reduce</code>. The reduce function used to be a built-in function but was moved into the <code class="language-plaintext highlighter-rouge">functools</code> module in Python 3, so we’ll need to import that module to use the function. We haven’t covered importing modules yet, but we will in the coming section. For the time being, just copy the <code class="language-plaintext highlighter-rouge">from ...</code> line of code and know that it gives us access to the <code class="language-plaintext highlighter-rouge">reduce</code> function: <code class="language-plaintext highlighter-rouge">~/lambdas-and-collections/collection_funcs.py</code></p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">from</span><span class="w"> </span><span class="n">functools</span><span class="w"> </span><span class="nx">import</span><span class="w"> </span><span class="nx">reduce</span><span class="w">
+
+</span><span class="n">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span><span class="n">our_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">2</span><span class="p">,</span><span class="w"> </span><span class="nx">domain</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">our_range</span><span class="p">))</span><span class="w">
+
+</span><span class="n">evens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">filter</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">evens</span><span class="p">))</span><span class="w">
+
+</span><span class="n">the_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reduce</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="nx">domain</span><span class="p">,</span><span class="w"> </span><span class="nx">0</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">the_sum</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Let’s break down our lambda. Whatever is returned by the lambda’s expression will be used as the acc value of the next iteration. For this to work, we need to have an initial value for acc, and that’s what the third argument is. By setting our initial value to 0, we can perform the addition on the first iteration. From that point on, we’ll be able to continue adding to the previous result.</p>
+
+<h3 id="sorting-functions-and-methods">Sorting Functions and Methods</h3>
+
+<p>In the PCEP course, we covered the <code class="language-plaintext highlighter-rouge">sorted</code> and <code class="language-plaintext highlighter-rouge">reversed</code> functions, but we never talked about the <code class="language-plaintext highlighter-rouge">key</code> parameter. While not entirely obvious based on the parameter name, the key parameter takes a function that each item in the collection will be processed with before the comparison is run to determine the order. The <code class="language-plaintext highlighter-rouge">list.sort</code> method also has a <code class="language-plaintext highlighter-rouge">key</code> parameter, but unlike the <code class="language-plaintext highlighter-rouge">sorted</code> function, the list will be changed in-place.</p>
+
+<p>To demonstrate how the <code class="language-plaintext highlighter-rouge">key</code> parameter can be useful, let’s take a look at how it can be used to alphabetize a list of words: <code class="language-plaintext highlighter-rouge">~/lambdas-and-collections/collection_funcs.py</code></p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">from</span><span class="w"> </span><span class="n">functools</span><span class="w"> </span><span class="nx">import</span><span class="w"> </span><span class="nx">reduce</span><span class="w">
+
+</span><span class="n">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span><span class="n">our_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">2</span><span class="p">,</span><span class="w"> </span><span class="nx">domain</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">our_range</span><span class="p">))</span><span class="w">
+
+</span><span class="n">evens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">filter</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">evens</span><span class="p">))</span><span class="w">
+
+</span><span class="n">the_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reduce</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="nx">domain</span><span class="p">,</span><span class="w"> </span><span class="nx">0</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">the_sum</span><span class="p">)</span><span class="w">
+
+</span><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'Boss'</span><span class="p">,</span><span class="w"> </span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Alfred'</span><span class="p">,</span><span class="w"> </span><span class="s1">'fig'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Daemon'</span><span class="p">,</span><span class="w"> </span><span class="s1">'dig'</span><span class="p">]</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="s2">"Sorting by default"</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">))</span><span class="w">
+
+</span><span class="n">print</span><span class="p">(</span><span class="s2">"Sorting with a lambda key"</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="n">lambda</span><span class="w"> </span><span class="nx">s:</span><span class="w"> </span><span class="nx">s.lower</span><span class="p">()))</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We can see here that the default sorted result is:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="s1">'Alfred'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Boss'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Daemon'</span><span class="p">,</span><span class="w"> </span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'dig'</span><span class="p">,</span><span class="w"> </span><span class="s1">'fig'</span><span class="p">]</span><span class="w">
+</span><span class="n">This</span><span class="w"> </span><span class="nx">isn</span><span class="s1">'t quite what we'</span><span class="nx">re</span><span class="w"> </span><span class="nx">wanting.</span><span class="w"> </span><span class="nx">By</span><span class="w"> </span><span class="nx">passing</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="nx">function</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">converts</span><span class="w"> </span><span class="nx">strings</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">lowercase</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">making</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">comparison</span><span class="p">,</span><span class="w"> </span><span class="nx">we</span><span class="s1">'re able to get a more accurate result:
+
+['</span><span class="nx">a</span><span class="s1">', '</span><span class="nx">Alfred</span><span class="s1">', '</span><span class="nx">Boss</span><span class="s1">', '</span><span class="nx">Daemon</span><span class="s1">', '</span><span class="nx">dig</span><span class="s1">', '</span><span class="nx">fig</span><span class="s1">']
+</span></code></pre></div></div>
+
+<p>Finally, let’s sort the words list in place using the <code class="language-plaintext highlighter-rouge">list.sort</code> method:<code class="language-plaintext highlighter-rouge">~/lambdas-and-collections/collection_funcs.py</code></p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">from</span><span class="w"> </span><span class="n">functools</span><span class="w"> </span><span class="nx">import</span><span class="w"> </span><span class="nx">reduce</span><span class="w">
+
+</span><span class="n">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span><span class="n">our_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">2</span><span class="p">,</span><span class="w"> </span><span class="nx">domain</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">our_range</span><span class="p">))</span><span class="w">
+
+</span><span class="n">evens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">filter</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">evens</span><span class="p">))</span><span class="w">
+
+</span><span class="n">the_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reduce</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">num:</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="nx">domain</span><span class="p">,</span><span class="w"> </span><span class="nx">0</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">the_sum</span><span class="p">)</span><span class="w">
+
+</span><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'Boss'</span><span class="p">,</span><span class="w"> </span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Alfred'</span><span class="p">,</span><span class="w"> </span><span class="s1">'fig'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Daemon'</span><span class="p">,</span><span class="w"> </span><span class="s1">'dig'</span><span class="p">]</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="s2">"Sorting by default"</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">))</span><span class="w">
+
+</span><span class="n">print</span><span class="p">(</span><span class="s2">"Sorting with a lambda key"</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="n">lambda</span><span class="w"> </span><span class="nx">s:</span><span class="w"> </span><span class="nx">s.lower</span><span class="p">()))</span><span class="w">
+
+</span><span class="n">print</span><span class="p">(</span><span class="s2">"Sorting with a method"</span><span class="p">)</span><span class="w">
+</span><span class="n">words.sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">str.lower</span><span class="p">,</span><span class="w"> </span><span class="nx">reverse</span><span class="o">=</span><span class="n">True</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This last example shows us passing the <code class="language-plaintext highlighter-rouge">str.lower</code> method as the key, instead of creating a lambda that does this. While they are a little confusing, the following lines are equivalent:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'my_STR'</span><span class="o">.</span><span class="nf">lower</span><span class="p">()</span><span class="w">
+</span><span class="n">str.lower</span><span class="p">(</span><span class="s1">'my_STR'</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now we have a better idea of how we can pass functions and lambdas to other functions.</p>
+
+:ET

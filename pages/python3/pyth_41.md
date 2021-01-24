@@ -25,39 +25,39 @@ An anonymous function refers to a function that doesn't have a name. If we try t
 3. A function body
 4. An optional return value
 
-The name portion is only a requirement so that we can reference it later. But if we want a "function" that isn't useful anywhere else besides the current context, we can define a function without a name by using the ```lambda``` keyword to create a "lambda expression". We could still assign it to a variable if we want. There is one catch: the lambda's body can only be one expression.
+The name portion is only a requirement so that we can reference it later. But if we want a "function" that isn't useful anywhere else besides the current context, we can define a function without a name by using the `lambda` keyword to create a "lambda expression". We could still assign it to a variable if we want. There is one catch: the lambda's body can only be one expression.
 
 ### Creating a Lambda
-To learn more about lambdas, let's create a folder called ```lambdas-and-collections```. Within it, let's create a new file called ```learning_lambdas.py```.
+To learn more about lambdas, let's create a folder called `lambdas-and-collections`. Within it, let's create a new file called `learning_lambdas.py`.
 
-```
+```powershell
 $ mkdir ~/lambdas-and-collections
 $ cd ~/lambdas-and-collections
 ```
 
-The easiest way to wrap our minds around lambdas is to convert an existing function into one. Let's convert the following ```square``` function to be a lambda:
+The easiest way to wrap our minds around lambdas is to convert an existing function into one. Let's convert the following `square` function to be a lambda:
 
-```
+```powershell
 ~/lambdas-and-collections/learning_lambdas.py
 ```
 
-```
+```powershell
 def square(num):
     return num * num
 ```
 
-Lambdas are most commonly used for single-line functions like this, and the last expression in the lambda is always returned. With that in mind, this function could be written as a lambda like this: ```~/lambdas-and-collections/learning_lambdas.py```
+Lambdas are most commonly used for single-line functions like this, and the last expression in the lambda is always returned. With that in mind, this function could be written as a lambda like this: `~/lambdas-and-collections/learning_lambdas.py`
 
-```
+```powershell
 def square(num):
     return num * num
 
 square_lambda = lambda num : num * num
 ```
 
-To call our lambda, we use parenthesis the same way we do when calling a function. Let's ensure that this function and lambda are equivalent by adding an assert statement to the end of the file before running the file:```~/lambdas-and-collections/learning_lambdas.py```
+To call our lambda, we use parenthesis the same way we do when calling a function. Let's ensure that this function and lambda are equivalent by adding an assert statement to the end of the file before running the file:`~/lambdas-and-collections/learning_lambdas.py`
 
-```
+```powershell
 def square(num):
     return num * num
 
@@ -68,7 +68,7 @@ assert square(3) == square_lambda(3)
 
 If we run this file, we should see that there are no errors:
 
-```
+```powershell
 $ cd ~/lambdas-and-collections
 $ python3.7 learning_lambdas.py
 $
@@ -106,19 +106,19 @@ Let's start digging into some of these functions.
 
 ### The map Function
 
-In mathematics, a list of potential arguments for a function is called a "domain" and for each domain there's a corresponding "range" of the same length that is the return value of the function given each item in the domain. The map function takes a function as the first argument and a collection that acts as the domain. It returns the range. Now that we have the math talk out of the way, let's see this in practice by creating a file called collection_funcs.py: ```~/lambdas-and-collections/collection_funcs.py```
+In mathematics, a list of potential arguments for a function is called a "domain" and for each domain there's a corresponding "range" of the same length that is the return value of the function given each item in the domain. The map function takes a function as the first argument and a collection that acts as the domain. It returns the range. Now that we have the math talk out of the way, let's see this in practice by creating a file called collection_funcs.py: `~/lambdas-and-collections/collection_funcs.py`
 
-```
+```powershell
 domain = [1, 2, 3, 4, 5]
 our_range = map(lambda num: num * 2, domain)
 print(list(our_range))
 ```
 
-Note that the result of ```map``` is an iterable, but it is not a list, so it wouldn't print out the way we'd like. So we need to first convert it to a list.
+Note that the result of `map` is an iterable, but it is not a list, so it wouldn't print out the way we'd like. So we need to first convert it to a list.
 
 The function we're mapping over doubles the provided number. Let's run this file to see what is printed.
 
-```
+```powershell
 $ cd ~/lambdas-and-collections
 $ python3.7 collection_funcs.py
 [2, 4, 6, 8, 10]
@@ -126,11 +126,11 @@ $ python3.7 collection_funcs.py
 
 ### The filter Function
 
-Like ```map```, the ```filter``` function takes a function and a collection. However, instead of returning the result of the function argument for each item, it returns an iterator that contains only the values from the list if the function returns a true result when using that value as an argument. This allows us to filter the collection based on a specific condition.
+Like `map`, the `filter` function takes a function and a collection. However, instead of returning the result of the function argument for each item, it returns an iterator that contains only the values from the list if the function returns a true result when using that value as an argument. This allows us to filter the collection based on a specific condition.
 
-Let's give it a shot by filtering a list down to only return results that are even: ```~/lambdas-and-collections/collection_funcs.py```
+Let's give it a shot by filtering a list down to only return results that are even: `~/lambdas-and-collections/collection_funcs.py`
 
-```
+```powershell
 domain = [1, 2, 3, 4, 5]
 our_range = map(lambda num: num * 2, domain)
 print(list(our_range))
@@ -141,7 +141,7 @@ print(list(evens))
 
 Now we can run this and we should see the two even values returned:
 
-```
+```powershell
 $ python3.7 collection_funcs.py
 [2, 4, 6, 8, 10]
 [2, 4]
@@ -149,11 +149,11 @@ $ python3.7 collection_funcs.py
 
 ### The reduce Function
 
-The ```reduce``` function is not quite as straight forward as ```map``` and ```filter```. When we reduce a collection, we're going to utilize the values within the collection to eventually create a final single result. An example of a function that reduces the list is the ```sum``` function, which returns the result of all the items in a list being added together. To make this possible, we need an extra argument: a starting value. We also need the function that we pass to the ```reduce``` function to take two arguments: the accumulated value and the current item from the collection.
+The `reduce` function is not quite as straight forward as `map` and `filter`. When we reduce a collection, we're going to utilize the values within the collection to eventually create a final single result. An example of a function that reduces the list is the `sum` function, which returns the result of all the items in a list being added together. To make this possible, we need an extra argument: a starting value. We also need the function that we pass to the `reduce` function to take two arguments: the accumulated value and the current item from the collection.
 
-To help solidify these ideas, let's reimplement ```sum``` by using ```reduce```. The reduce function used to be a built-in function but was moved into the ```functools``` module in Python 3, so we'll need to import that module to use the function. We haven't covered importing modules yet, but we will in the coming section. For the time being, just copy the ```from ...``` line of code and know that it gives us access to the ```reduce``` function: ```~/lambdas-and-collections/collection_funcs.py```
+To help solidify these ideas, let's reimplement `sum` by using `reduce`. The reduce function used to be a built-in function but was moved into the `functools` module in Python 3, so we'll need to import that module to use the function. We haven't covered importing modules yet, but we will in the coming section. For the time being, just copy the `from ...` line of code and know that it gives us access to the `reduce` function: `~/lambdas-and-collections/collection_funcs.py`
 
-```
+```powershell
 from functools import reduce
 
 domain = [1, 2, 3, 4, 5]
@@ -171,11 +171,11 @@ Let's break down our lambda. Whatever is returned by the lambda's expression wil
 
 ### Sorting Functions and Methods
 
-In the PCEP course, we covered the ```sorted``` and ```reversed``` functions, but we never talked about the ```key``` parameter. While not entirely obvious based on the parameter name, the key parameter takes a function that each item in the collection will be processed with before the comparison is run to determine the order. The ```list.sort``` method also has a ```key``` parameter, but unlike the ```sorted``` function, the list will be changed in-place.
+In the PCEP course, we covered the `sorted` and `reversed` functions, but we never talked about the `key` parameter. While not entirely obvious based on the parameter name, the key parameter takes a function that each item in the collection will be processed with before the comparison is run to determine the order. The `list.sort` method also has a `key` parameter, but unlike the `sorted` function, the list will be changed in-place.
 
-To demonstrate how the ```key``` parameter can be useful, let's take a look at how it can be used to alphabetize a list of words: ```~/lambdas-and-collections/collection_funcs.py```
+To demonstrate how the `key` parameter can be useful, let's take a look at how it can be used to alphabetize a list of words: `~/lambdas-and-collections/collection_funcs.py`
 
-```
+```powershell
 from functools import reduce
 
 domain = [1, 2, 3, 4, 5]
@@ -198,7 +198,7 @@ print(sorted(words, key=lambda s: s.lower()))
 
 We can see here that the default sorted result is:
 
-```
+```powershell
 ['Alfred', 'Boss', 'Daemon', 'a', 'dig', 'fig']
 This isn't quite what we're wanting. By passing in a key function that converts strings to lowercase before making the comparison, we're able to get a more accurate result:
 
@@ -207,7 +207,7 @@ This isn't quite what we're wanting. By passing in a key function that converts 
 
 Finally, let's sort the words list in place using the ```list.sort``` method:```~/lambdas-and-collections/collection_funcs.py```
 
-```
+```powershell
 from functools import reduce
 
 domain = [1, 2, 3, 4, 5]
@@ -234,11 +234,9 @@ print(words)
 
 This last example shows us passing the ```str.lower``` method as the key, instead of creating a lambda that does this. While they are a little confusing, the following lines are equivalent:
 
-```
+```powershell
 'my_STR'.lower()
 str.lower('my_STR')
 ```
 
 Now we have a better idea of how we can pass functions and lambdas to other functions.
-
-{% include links.html %}

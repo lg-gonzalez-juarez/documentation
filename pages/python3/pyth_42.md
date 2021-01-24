@@ -18,7 +18,7 @@ The PCAP syllabus includes the line "the if operator". This is a term only found
 
 The term "conditional expression" is sometimes referred to as a "ternary expression" in other languages, but sometimes we want a single line to do one thing or another based on a condition. For example, we want to set a variable to one value if a condition is true or a different value if the condition is false. Here's what this would look like using a conditional statement:
 
-```
+```powershell
 if CONDITION:
     my_var = 1
 else:
@@ -26,20 +26,19 @@ else:
 ```
 Using a conditional expression, we can do this in a single line:
 
-```
+```powershell
 my_var = 1 if CONDITION else 2
 ```
 
 This syntax isn't restricted to variable assignment, but it is a common usage. If we wanted to print a different message based on a condition we can also do that using a conditional expression:
 
-```
+```powershell
 print("something") if 1 > 2 else print("something else")
 ```
 
 Or if we want to simplify this further, we could let the conditional expression return the value directly to the print function:
 
-```
+```powershell
 print("something" if 2 > 1 else "something else")
 ```
 
-{% include links.html %}
