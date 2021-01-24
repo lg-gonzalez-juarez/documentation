@@ -8,15 +8,15 @@ permalink: Lab_15.html
 folder: handson
 ---
 
-# Introduction
+## Introduction
 
 In this lab, we work with image data using scikit-image. We will go through the process of reading in an existing image and make modifications to it programmatically.
 
-# Solution
+## Solution
 
 To get started, we need to log in to the VS Code server using the browser. To do so, use the provided public IP and the 9090 port. For example: <PUBLIC_IP>:9090
 
-# Install scikit-image
+## Install scikit-image
 
 Before we can edit images we'll need to install scikit-image:
 
@@ -30,7 +30,7 @@ Before we can edit images we'll need to install scikit-image:
  python -m pip install scikit-image
 ```
 
-# Load the highrise.jpg Image into Memory
+## Load the highrise.jpg Image into Memory
 
 Now that we have `scikit-image` installed, we're ready to start using it in our `image_editing.py` script. To test the image changes that we'd like to automate, we're going to work with a local image called highrise.jpg. This can be found at `/home/cloud_user/highrise.jpg`:
 
@@ -48,7 +48,7 @@ Now that we have `scikit-image` installed, we're ready to start using it in our 
 
 4. After the first section runs, click on Run Cell for the section we just updated.
 
-# Create a Black and White Version of highrise.jpg
+## Create a Black and White Version of highrise.jpg
 
 The first modification we'd like to automate is the conversion of an image from being a colored/RGB image to being a black and white or grayscale image. This is a common task, and we can leverage code from within the skimage.colors module to do nearly all of the work.
 
@@ -71,7 +71,7 @@ The first modification we'd like to automate is the conversion of an image from 
 
 2. Select Run Cell for this section, and we will see a comparison of our old color image and our new black and white one.
 
-# Create a Copy of highrise.jpg with a Circular Mask
+## Create a Copy of highrise.jpg with a Circular Mask
 
 Adding a mask to our image is a much more complicated task that requires us to index and slice the array that is backing our image's data:
 

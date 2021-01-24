@@ -8,7 +8,7 @@ permalink: Lab_14.html
 folder: handson
 ---
 
-# Introduction
+## Introduction
 
 Matplotlib is a popular and powerful library for plotting out information using Python. Since Python often works with datasets, and visually representing data can help demonstrate points within data, it makes sense that there is a useful Python library for just that. In this hands-on lab, we'll utilize matplotlib to create graphs to display various pieces of information about Target stores opened in the United States.
 
@@ -19,7 +19,7 @@ To feel comfortable completing this lab, you'll want to know how to do the follo
 * Use Matplotlib. Watch the lessons in the "Using Matplotlib" section from this course.
 * Be comfortable reading the matplotlib documentation to find new functions and methods to use to accomplish your goal.
 
-# Solution
+## Solution
 
 Open a new tab in your browser and navigate to the public IP address provided on the hands-on lab, specifying port 9090:
 
@@ -51,7 +51,7 @@ python -V
 python -m pip install matplotlib
 ```
 
-# Create a Bar Graph Showing Number of Stores by State
+## Create a Bar Graph Showing Number of Stores by State
 
 1. On the Welcome page, click Open folder....
 2. In the selection box, click target_graphs.py.
@@ -93,7 +93,7 @@ fig.show()
 
 6. Once that has finished running, navigate back to the code we entered at the bottom of the file and click Run Cell above the code we entered in the # 1) section.
 
-# Create a Line Graph Showing New Stores Opened Each Year
+## Create a Line Graph Showing New Stores Opened Each Year
 
 1. Add a new line in the # 2) section and paste in the following code:
 
@@ -120,7 +120,7 @@ fig2.show()
 
 2. Click Run Cell when the option appears above the code we just entered.
 
-# Create a Line Graph Showing the Total Number of Target Stores Over Time
+## Create a Line Graph Showing the Total Number of Target Stores Over Time
 
 1. Add a new line in the # 3) section and paste in the following code:
 
