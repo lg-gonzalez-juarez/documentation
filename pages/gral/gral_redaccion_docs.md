@@ -71,10 +71,12 @@ El estado del arte de un documento científico debería consistir en referencias
 - Sin deformar (conservar proporciones originales).
 - Texto explicativo debajo y también centrado.
 - Figuras siempre referenciadas. Si es posible, cerca de la propia figura, y antes de aparecer.
-Figuras vectoriales. Siempre que se pueda (logotipos, diagramas de flujo, etc) crear y utilizar imágenes de tipo vectorial. Estas imágenes no se pixelan con cambios de zoom. Se recomienda Inkscape como la alternativa libre referencia (existen alternativas propietarias como Adobe Illustrator o Corel). Para generar diagramas, tanto yEd (freeware) como Dia (libre) son buneas opciones (también pensar en https://mermaidjs.github.io/). Powerpoint también puede exportar a formatos vectoriales. LaTeX permite también crear imágenes vectoriales, por ejemplo a través de TikZ. El formato vectorial editable más recomendable es el .svg de Inkscape, o los propios de cada programa. Para incrustar en documentos LaTeX (pdflatex), se recomienda exportar a PDF. Para incrustar en documentos Word, se recomienda exportar a EMF (o WMF si sale mal)(disponible en versión Windows de Inkscape).
+Figuras vectoriales. Siempre que se pueda (logotipos, diagramas de flujo, etc) crear y utilizar imágenes de tipo vectorial. Estas imágenes no se pixelan con cambios de zoom. Se recomienda Inkscape como la alternativa libre referencia (existen alternativas propietarias como Adobe Illustrator o Corel). Para generar diagramas, tanto yEd (freeware) como Dia (libre) son buneas opciones (también pensar en https://mermaidjs.github.io/). 
+- Powerpoint también puede exportar a formatos vectoriales. LaTeX permite también crear imágenes vectoriales, por ejemplo a través de TikZ. El formato vectorial editable más recomendable es el .svg de Inkscape, o los propios de cada programa. Para incrustar en documentos LaTeX (pdflatex), se recomienda exportar a PDF. Para incrustar en documentos Word, se recomienda exportar a EMF (o WMF si sale mal)(disponible en versión Windows de Inkscape).
 - A veces debemos volver a generar las referencias cruzadas para que se actualice el orden.
 - Un buscador para imágenes libres: http://search.creativecommons.org/
 - UC3M: Aquí un enlace con logos en vectorial: https://github.com/asrob-uc3m/recursos-digitales/tree/master/logos
+- Considerar el uso drawio como una buena herramiento de dibujo, es muy intuitiva y elegante en su formato
 
 ## Formato de bibliografía
 
@@ -87,6 +89,8 @@ Figuras vectoriales. Siempre que se pueda (logotipos, diagramas de flujo, etc) c
 ## Formato de ecuaciones
 
 - Referencias entre paréntesis (no corchetes).
+- Importante indicar significado de cada una de las variables y párametros empleados en las ecuaciones (de ser posible unidades, formato tabla en anexo).
+- Se recomienda emplear la referencia cruzada en la redacción del texto (ayuda en la comprensión del mismo)
 
 ## Formato de tablas
 
@@ -101,7 +105,7 @@ Figuras vectoriales. Siempre que se pueda (logotipos, diagramas de flujo, etc) c
 - También es un plus incluir un enlace a la documentación generada por Doxygen (que además se puede configurar para generar distintos diagramas).
 
 
-## Úlitmos consejos
+## Últimos consejos
 
 - Revisar enlaces rotos y referencias internas rotas (p.ej. buscar por ?? en LaTeX/, buscar error en Microsoft Word)
 - Revisar, en todas las páginas generadas por LaTeX/Microsoft, que ninguna palabra se haya salido de márgenes (el hyphen puede hacer que esto ocurra con parabras muy largas)
