@@ -29,6 +29,15 @@ entries:
       output: web, pdf
       type: homepage
 
+  - title: Buenas Practicas
+    output: web, pdf
+    folderitems:
+
+    - title: Redaccion
+      url: /gral_redaccion_docs.html
+      output: web, pdf
+
+
   - title: Python
     output: web, pdf
     folderitems:
