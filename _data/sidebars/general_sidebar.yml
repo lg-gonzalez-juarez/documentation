@@ -37,6 +37,9 @@ entries:
       url: /gral_redaccion_docs.html
       output: web, pdf
 
+    - title: Uso Mendeley
+      url: /gral_uso_mendeley.html
+      output: web, pdf
 
   - title: Python
     output: web, pdf
