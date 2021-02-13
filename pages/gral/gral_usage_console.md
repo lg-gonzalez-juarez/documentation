@@ -10,6 +10,11 @@ folder: mydoc
 output: web, pdf
 ---
 
+## Instalacion de git bash 
+
+https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/
+
+
 ## Pasos para usar la consola
 
 
@@ -118,6 +123,8 @@ Para mover
 git mv file_old file_new)
 ```
 
+Recuerde una vez eliminado el archivo o cambiado de direccion debe realizar el paso de commit y push al repositorio web
+
 More detail in [web Asoc Robotica UC3M](https://asrob-uc3m.gitbooks.io/tutoriales/content/software/version-control/git.html#comprobar-estado-de-repositorio-git-**status**)
 
 
@@ -125,4 +132,20 @@ En resumen
 
 - use "git add/rm <file>..." to update what will be committed
 - use "git restore <file>..." to discard changes in working directory
+- screen console 
+  command:
+  ```cmd
+  clean
+  ```
+  the keyboard shortcut `ctrl+l`
 
+Eliminar el historial de Git Bash.
+```cmd
+history -c
+```
+  
+
+More links
+
+[git atlassian](https://www.atlassian.com/es/git/tutorials/git-bash)
+[git examples](https://dzone.com/articles/top-20-git-commands-with-examples)
