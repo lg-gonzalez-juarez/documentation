@@ -17,4 +17,3 @@ output: web, pdf
 {% include callout.html content="**Important information**: link to download. <br/><br/>
 <a alt='desktop drawIO' href='https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8'> Desktop drawIO</a>,  use it please!"%}
 
-

@@ -12,5 +12,8 @@ output: web, pdf
 
 ## Clone reposotory
 
-### Ejemplo clonacion de la rama schematics de wik-e
-git clone -b <branch-name> http:/sdfsdfsdfsdf
+### Ejemplo clonacion de la rama schematics de NameRepo
+
+```cmd
+ git clone -b dev_schematics https://gitlab.com/LorenaGonzalezJ/NameRepo
+ ```
