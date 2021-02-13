@@ -16,6 +16,97 @@ output: web, pdf
 Se recomienda renombrar los archivos lo menos posible
 
 Conocer el estado de los archivos en el repositorio
-´´´cmd
+```cmd
 git status
-´´´
+```
+
+La salida puede ser la siguiente
+
+```cmd
+$ git status
+On branch dev_schematics
+Your branch is up to date with 'origin/dev_schematics'.
+
+nothing to commit, working tree clean
+```
+
+Cuando se ha agregado un nuevo archivo en local los pasos son los siguientes
+
+```cmd
+git add NewFile.drawio
+```
+
+ver de nuevo el estado del repositorio
+```cmd
+git status
+```
+
+la salida obtenida es la siguiente
+```cmd
+On branch dev_schematics
+Your branch is up to date with 'origin/dev_schematics'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   NewFile.drawio
+```
+
+realice el commit del archivo
+```cmd
+$ git commit -m "new file test"
+```
+
+la salida que obtendra
+
+```cmd
+[dev_schematics c07d9cf] new file test
+ 1 file changed, 174 insertions(+)
+ create mode 100644 NewFile.drawio
+```
+
+de nuevo revise el estado del repositorio
+
+```cmd
+git status
+```
+
+La salida que obtendra
+```cmd
+On branch dev_schematics
+Your branch is ahead of 'origin/dev_schematics' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
+
+Recuerde estos cambios son el local, el paso final es actualizar en su repositorio web
+```cmd
+git push
+```
+la salida será 
+
+```cmd
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 245 bytes | 245.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote:
+remote: To create a merge request for dev_schematics, visit:
+remote:   https://gitlab.com/LorenaGonzalezJ/kiw-e/-/merge_requests/new?merge_re
+quest%5Bsource_branch%5D=dev_schematics
+remote:
+To https://gitlab.com/LorenaGonzalezJ/kiw-e
+   6bc3e15..c07d9cf  dev_schematics -> dev_schematics
+```
+
+finalmente esta sincronizado con el equipo!!!
+```cmd
+sudo apt-get party
+```
+
+
+
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
