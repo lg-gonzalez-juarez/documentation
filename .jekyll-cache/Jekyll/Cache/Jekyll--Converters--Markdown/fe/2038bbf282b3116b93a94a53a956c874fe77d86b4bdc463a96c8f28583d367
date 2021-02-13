@@ -1,0 +1,5 @@
+I"ä<h2 id="clone-reposotory">Clone reposotory</h2>
+
+<h3 id="ejemplo-clonacion-de-la-rama-schematics-de-wik-e">Ejemplo clonacion de la rama schematics de wik-e</h3>
+<p>git clone -b <branch-name> http:/sdfsdfsdfsdf</branch-name></p>
+:ET

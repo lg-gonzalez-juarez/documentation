@@ -5,9 +5,10 @@ last_updated: December 30th, 2020
 tags: [formatting]
 summary: Here documentation relative python
 sidebar: general_sidebar
-permalink: gral_usage_python.html
+permalink: gral_python_usage.html
 folder: mydoc
 output: web, pdf
+
 ---
 
 ## Aplicaciones de interes

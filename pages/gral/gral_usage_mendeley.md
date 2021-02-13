@@ -5,7 +5,7 @@ last_updated: February 2th, 2021
 tags: [formatting]
 summary: Here documentation relative mendeley
 sidebar: general_sidebar
-permalink: gral_uso_mendeley.html
+permalink: gral_usage_mendeley.html
 folder: gral
 output: web, pdf
 ---

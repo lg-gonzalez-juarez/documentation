@@ -41,6 +41,15 @@ entries:
       url: /gral_uso_mendeley.html
       output: web, pdf
 
+    - title: Uso Gitlab
+      url: /gral_usage_gitlab.html
+      output: web, pdf
+     
+    - title: Uso DrawIO
+      url: /gral_usage_drawio.html
+      output: web, pdf
+
+
   - title: Python
     output: web, pdf
     folderitems:
@@ -55,7 +64,7 @@ entries:
       output: web, pdf
 
     - title: Python Usage
-      url: /gral_python_usage.html
+      url: /gral_usage_python.html
       output: web, pdf
       type: homepage
 
