@@ -106,7 +106,23 @@ finalmente esta sincronizado con el equipo!!!
 sudo apt-get party
 ```
 
+La he liao! Que hago?
+
+Para borrar
+```cmd
+git rm NewFile.drawio
+```
+
+Para mover
+```cmd
+git mv file_old file_new)
+```
+
+More detail in [web Asoc Robotica UC3M](https://asrob-uc3m.gitbooks.io/tutoriales/content/software/version-control/git.html#comprobar-estado-de-repositorio-git-**status**)
 
 
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
+En resumen
+
+- use "git add/rm <file>..." to update what will be committed
+- use "git restore <file>..." to discard changes in working directory
+

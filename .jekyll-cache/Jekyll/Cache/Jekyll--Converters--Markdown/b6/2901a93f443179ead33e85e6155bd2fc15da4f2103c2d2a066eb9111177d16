@@ -1,0 +1,92 @@
+I"�
+<h2 id="pasos-para-usar-la-consola">Pasos para usar la consola</h2>
+
+<p>Se recomienda renombrar los archivos lo menos posible</p>
+
+<p>Conocer el estado de los archivos en el repositorio</p>
+<pre><code class="language-cmd">git status
+</code></pre>
+
+<p>La salida puede ser la siguiente</p>
+
+<pre><code class="language-cmd">$ git status
+On branch dev_schematics
+Your branch is up to date with 'origin/dev_schematics'.
+
+nothing to commit, working tree clean
+</code></pre>
+
+<p>Cuando se ha agregado un nuevo archivo en local los pasos son los siguientes</p>
+
+<pre><code class="language-cmd">git add NewFile.drawio
+</code></pre>
+
+<p>ver de nuevo el estado del repositorio</p>
+<pre><code class="language-cmd">git status
+</code></pre>
+
+<p>la salida obtenida es la siguiente</p>
+<pre><code class="language-cmd">On branch dev_schematics
+Your branch is up to date with 'origin/dev_schematics'.
+
+Changes to be committed:
+  (use "git restore --staged &lt;file&gt;..." to unstage)
+        new file:   NewFile.drawio
+</code></pre>
+
+<p>realice el commit del archivo</p>
+<pre><code class="language-cmd">$ git commit -m "new file test"
+</code></pre>
+
+<p>la salida que obtendra</p>
+
+<pre><code class="language-cmd">[dev_schematics c07d9cf] new file test
+ 1 file changed, 174 insertions(+)
+ create mode 100644 NewFile.drawio
+</code></pre>
+
+<p>de nuevo revise el estado del repositorio</p>
+
+<pre><code class="language-cmd">git status
+</code></pre>
+
+<p>La salida que obtendra</p>
+<pre><code class="language-cmd">On branch dev_schematics
+Your branch is ahead of 'origin/dev_schematics' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+</code></pre>
+
+<p>Recuerde estos cambios son el local, el paso final es actualizar en su repositorio web</p>
+<pre><code class="language-cmd">git push
+</code></pre>
+<p>la salida será</p>
+
+<pre><code class="language-cmd">Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 245 bytes | 245.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote:
+remote: To create a merge request for dev_schematics, visit:
+remote:   https://gitlab.com/LorenaGonzalezJ/kiw-e/-/merge_requests/new?merge_re
+quest%5Bsource_branch%5D=dev_schematics
+remote:
+To https://gitlab.com/LorenaGonzalezJ/kiw-e
+   6bc3e15..c07d9cf  dev_schematics -&gt; dev_schematics
+</code></pre>
+
+<p>finalmente esta sincronizado con el equipo!!!</p>
+<pre><code class="language-cmd">sudo apt-get party
+</code></pre>
+
+<p>En resumen</p>
+
+<ul>
+  <li>use “git add/rm <file>..." to update what will be committed</file></li>
+  <li>use “git restore <file>..." to discard changes in working directory</file></li>
+</ul>
+
+:ET
