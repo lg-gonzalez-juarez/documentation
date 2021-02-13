@@ -37,6 +37,10 @@ entries:
       url: /gral_redaccion_docs.html
       output: web, pdf
 
+    - title: Uso Consola
+      url: /gral_usage_console.html
+      output: web, pdf
+
     - title: Uso Mendeley
       url: /gral_usage_mendeley.html
       output: web, pdf
