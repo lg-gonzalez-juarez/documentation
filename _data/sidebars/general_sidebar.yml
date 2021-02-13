@@ -38,7 +38,7 @@ entries:
       output: web, pdf
 
     - title: Uso Mendeley
-      url: /gral_uso_mendeley.html
+      url: /gral_usage_mendeley.html
       output: web, pdf
 
     - title: Uso Gitlab
