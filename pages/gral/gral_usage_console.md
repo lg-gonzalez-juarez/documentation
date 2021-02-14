@@ -10,9 +10,17 @@ folder: mydoc
 output: web, pdf
 ---
 
-## Instalacion de git bash 
+## Instalación de git-bash 
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> file to download....</div>
 
-https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/
+[Installation Guide Git-bash](https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/)
+
+## Configuración de git-bash
+
+Seguir las instrucciones indicadas en la documentación oficial de git-lab
+
+- [Comenzar a usar GitLab](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html)
+- [Configure your environment](https://docs.gitlab.com/ee/university/training/topics/env_setup.html)
 
 
 ## Pasos para usar la consola

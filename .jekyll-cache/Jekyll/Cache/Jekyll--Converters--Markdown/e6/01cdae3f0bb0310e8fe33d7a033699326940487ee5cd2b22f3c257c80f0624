@@ -1,8 +1,0 @@
-I"÷<h2 id="pasos-para-usar-la-consola">Pasos para usar la consola</h2>
-
-<p>Se recomienda renombrar los archivos lo menos posible</p>
-
-<p>Conocer el estado de los archivos en el repositorio</p>
-<pre><code class="language-cmd">git status
-</code></pre>
-:ET
