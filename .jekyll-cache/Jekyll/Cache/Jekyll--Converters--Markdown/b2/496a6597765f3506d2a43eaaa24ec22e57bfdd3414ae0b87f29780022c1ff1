@@ -1,4 +1,4 @@
-I"�<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
+I"�<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> file to download....</div>
 
 <p><a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">Installation Guide Git-bash</a></p>
@@ -171,4 +171,52 @@ git push
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-7TDNonrjwA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
+<h2 id="eliminar-una-rama">Eliminar una rama</h2>
+
+<p>El proceso de eliminado se puede realizar desde la webIDE</p>
+
+<p>para revisar en local, se emplea el siguiente comando</p>
+
+<pre><code class="language-cmd">git branch -a
+</code></pre>
+
+<p>La salida es similar a esto</p>
+
+<pre><code class="language-cmd">* ACT1
+  remotes/origin/ACT1
+  remotes/origin/ACT2
+  remotes/origin/ACT3
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/master
+  remotes/origin/patch-1
+  remotes/origin/patch-2
+</code></pre>
+
+<p>Ver el estado de las ramas en local y en el repo</p>
+
+<pre><code class="language-cmd">git fetch -p
+</code></pre>
+
+<p>La salida puede ser similar a</p>
+
+<pre><code class="language-cmd">warning: redirecting to https://gitlab.com/nido-altran/sion.git/
+From https://gitlab.com/nido-altran/sion
+ - [deleted]         (none)     -&gt; origin/patch-1
+ - [deleted]         (none)     -&gt; origin/patch-2
+</code></pre>
+
+<p>de nuevo se ve el estado del repo</p>
+
+<pre><code class="language-cmd">git branch -a
+</code></pre>
+
+<p>La salida puede ser similar a</p>
+
+<pre><code class="language-cmd">* ACT1
+  remotes/origin/ACT1
+  remotes/origin/ACT2
+  remotes/origin/ACT3
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/master
+</code></pre>
 :ET

@@ -207,6 +207,57 @@ go gitlab and check is changed
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-7TDNonrjwA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+## Eliminar una rama
 
+El proceso de eliminado se puede realizar desde la webIDE
 
+para revisar en local, se emplea el siguiente comando
 
+```cmd
+git branch -a
+```
+
+La salida es similar a esto
+
+```cmd
+* ACT1
+  remotes/origin/ACT1
+  remotes/origin/ACT2
+  remotes/origin/ACT3
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/patch-1
+  remotes/origin/patch-2
+```
+
+Ver el estado de las ramas en local y en el repo
+
+```cmd
+git fetch -p
+```
+
+La salida puede ser similar a
+
+```cmd
+warning: redirecting to https://gitlab.com/nido-altran/sion.git/
+From https://gitlab.com/nido-altran/sion
+ - [deleted]         (none)     -> origin/patch-1
+ - [deleted]         (none)     -> origin/patch-2
+```
+
+de nuevo se ve el estado del repo
+
+```cmd
+git branch -a
+```
+
+La salida puede ser similar a
+
+```cmd
+* ACT1
+  remotes/origin/ACT1
+  remotes/origin/ACT2
+  remotes/origin/ACT3
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+```
