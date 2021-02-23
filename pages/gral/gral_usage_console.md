@@ -166,7 +166,13 @@ More links
 
 ## clonar un repo
 
+```cmd
+git clone DirRepo
+```
+
 
 ## clonar una rama
 
-git clone -b dev_schematics https://gitlab.com/nido-altran/kiw-e/
+```cmd
+git clone -b NameBranch DirRepo
+```
