@@ -163,3 +163,10 @@ More links
 
 [git atlassian](https://www.atlassian.com/es/git/tutorials/git-bash)
 [git examples](https://dzone.com/articles/top-20-git-commands-with-examples)
+
+## clonar un repo
+
+
+## clonar una rama
+
+git clone -b dev_schematics https://gitlab.com/nido-altran/kiw-e/
