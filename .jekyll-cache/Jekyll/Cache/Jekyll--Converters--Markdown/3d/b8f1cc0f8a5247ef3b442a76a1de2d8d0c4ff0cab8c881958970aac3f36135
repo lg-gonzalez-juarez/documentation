@@ -1,4 +1,4 @@
-I"�<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
+I"<<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> file to download....</div>
 
 <p><a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">Installation Guide Git-bash</a></p>
@@ -138,4 +138,6 @@ command:
 <h2 id="clonar-un-repo">clonar un repo</h2>
 
 <h2 id="clonar-una-rama">clonar una rama</h2>
+
+<p>git clone -b dev_schematics https://gitlab.com/nido-altran/kiw-e/</p>
 :ET
