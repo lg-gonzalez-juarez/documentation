@@ -207,6 +207,12 @@ go gitlab and check is changed
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-7TDNonrjwA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+## Cambiar el nombre de un folder
+
+```cmd
+git mv openconcept/ 00_openconcept/
+```
+
 ## Eliminar una rama
 
 El proceso de eliminado se puede realizar desde la webIDE
