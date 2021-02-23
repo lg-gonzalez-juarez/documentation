@@ -1,4 +1,4 @@
-I"�<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
+I"�<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> file to download....</div>
 
 <p><a href="https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/">Installation Guide Git-bash</a></p>
@@ -144,4 +144,31 @@ command:
 
 <pre><code class="language-cmd">git clone -b NameBranch DirRepo
 </code></pre>
+
+<pre><code class="language-cmd">git clone -b ACT1 https://gitlab.com/nido-altran/sion/
+</code></pre>
+
+<h2 id="cambiar-la-direccion-de-un-archivo">Cambiar la direccion de un archivo</h2>
+
+<pre><code class="language-cmd">git mv &lt;old name&gt; &lt;new name&gt;
+</code></pre>
+
+<p>proceso de generar un nuevo folder</p>
+
+<pre><code class="language-cmd">mkdir 60_BAT
+</code></pre>
+
+<p>proceso de mover archivos</p>
+
+<pre><code class="language-cmd">git mv test_battery_valores.xls 60_BAT/test_battery_valores.xls
+
+git commit -a -m "New Files at Folder added"
+
+git push 
+</code></pre>
+
+<p>go gitlab and check is changed</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-7TDNonrjwA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
 :ET
