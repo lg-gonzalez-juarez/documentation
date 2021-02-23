@@ -164,13 +164,13 @@ More links
 [git atlassian](https://www.atlassian.com/es/git/tutorials/git-bash)
 [git examples](https://dzone.com/articles/top-20-git-commands-with-examples)
 
-## clonar un repo
+## Clonar un repo
 
 ```cmd
 git clone DirRepo
 ```
 
-## clonar una rama
+## Clonar una rama
 
 ```cmd
 git clone -b NameBranch DirRepo

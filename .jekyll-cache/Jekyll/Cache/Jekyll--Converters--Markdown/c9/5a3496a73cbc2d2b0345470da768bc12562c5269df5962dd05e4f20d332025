@@ -135,12 +135,12 @@ command:
 <p><a href="https://www.atlassian.com/es/git/tutorials/git-bash">git atlassian</a>
 <a href="https://dzone.com/articles/top-20-git-commands-with-examples">git examples</a></p>
 
-<h2 id="clonar-un-repo">clonar un repo</h2>
+<h2 id="clonar-un-repo">Clonar un repo</h2>
 
 <pre><code class="language-cmd">git clone DirRepo
 </code></pre>
 
-<h2 id="clonar-una-rama">clonar una rama</h2>
+<h2 id="clonar-una-rama">Clonar una rama</h2>
 
 <pre><code class="language-cmd">git clone -b NameBranch DirRepo
 </code></pre>
