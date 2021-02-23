@@ -170,9 +170,43 @@ More links
 git clone DirRepo
 ```
 
-
 ## clonar una rama
 
 ```cmd
 git clone -b NameBranch DirRepo
 ```
+
+```cmd
+git clone -b ACT1 https://gitlab.com/nido-altran/sion/
+```
+
+## Cambiar la direccion de un archivo
+
+```cmd
+git mv <old name> <new name>
+```
+
+proceso de generar un nuevo folder
+
+```cmd
+mkdir 60_BAT
+```
+
+proceso de mover archivos
+
+```cmd
+git mv test_battery_valores.xls 60_BAT/test_battery_valores.xls
+
+git commit -a -m "New Files at Folder added"
+
+git push 
+```
+
+go gitlab and check is changed
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-7TDNonrjwA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+
