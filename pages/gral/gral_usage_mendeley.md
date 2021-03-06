@@ -10,22 +10,23 @@ folder: gral
 output: web, pdf
 ---
 
+Mendeley es un gestor de bibliografía colaborativa, se puede usar de forma local (Mendeley Desktop) y de forma remota (Mendeley web). Compartir bibliografía con compañeros del trabajo, de la universidad es posible gracias al uso de los equipos privados.
+
+Además de permitir compartir bibliografía dispone de un potente e integrado **plugging word - mendeley** lo que facilita la redacción e inclusión de referencias en los documentos 😏.
+
 # Mendeley Download
 
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> file to download....</div>
 
-[Installation Guides](https://www.mendeley.com/guides/download-mendeley-desktop/windows/instructions)
+- [Installation Guides](https://www.mendeley.com/guides/download-mendeley-desktop/windows/instructions)
 
-[Mendeley Guides](https://www.mendeley.com/guides)
-  Mendeley se puede usar por dos medios
+- [Mendeley Guides](https://www.mendeley.com/guides)
 
-  - Mendeley Desktop
-  - Mendeley Web 
+- Uso del [**pluging word - mendeley**](https://www.mendeley.com/guides/using-citation-editor)
 
-- Uso del pluging [link](https://www.mendeley.com/guides/using-citation-editor)
 
----
 # Questions?
 
-[Como usar los Private groups](https://www.mendeley.com/guides/private-groups)
+- [Como usar los Private groups](https://www.mendeley.com/guides/private-groups)
 
+Ahora sí, listo para tener una bibliografía de 10 .... 	💪💪💪!!!
