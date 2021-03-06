@@ -24,11 +24,10 @@ Además de permitir compartir bibliografía dispone de un potente e integrado **
 
 - Uso del [**pluging Word - Mendeley**](https://www.mendeley.com/guides/using-citation-editor)
 
-- [Video insercción de citas](https://youtu.be/BqSzMUmBqBI)
-
-
-# Questions?
-
 - [Como usar los Private groups](https://www.mendeley.com/guides/private-groups)
 
-Ahora sí, listo para tener una bibliografía de 10 .... 	💪💪💪!!!
+- [Video insercción de citas](https://youtu.be/BqSzMUmBqBI)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BqSzMUmBqBI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+🚴🚴🚴 Ahora sí, listo para tener una bibliografía de 10 .... 	💪💪💪!!!
