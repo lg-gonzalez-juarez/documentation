@@ -1,5 +1,5 @@
 ---
-title: Usage Mendeley
+title: Uso de Mendeley
 keywords: documentation, technical writers, help, 
 last_updated: February 2th, 2021
 tags: [formatting]
@@ -10,9 +10,9 @@ folder: gral
 output: web, pdf
 ---
 
-Mendeley es un gestor de bibliografía colaborativa, se puede usar de forma local (Mendeley Desktop) y de forma remota (Mendeley web). Compartir bibliografía con compañeros del trabajo, de la universidad es posible gracias al uso de los equipos privados.
+Mendeley es un gestor de bibliografía colaborativa, se puede usar de forma local (Mendeley Desktop) y de forma remota (Mendeley Web). Compartir bibliografía con compañeros del trabajo, de la universidad es posible gracias al uso de los equipos privados.
 
-Además de permitir compartir bibliografía dispone de un potente e integrado **plugging word - mendeley** lo que facilita la redacción e inclusión de referencias en los documentos 😏.
+Además de permitir compartir bibliografía dispone de un potente e integrado **plugging Word - Mendeley** lo que facilita la redacción e inclusión de referencias en los documentos 😏.
 
 # Mendeley Download
 
@@ -22,7 +22,9 @@ Además de permitir compartir bibliografía dispone de un potente e integrado **
 
 - [Mendeley Guides](https://www.mendeley.com/guides)
 
-- Uso del [**pluging word - mendeley**](https://www.mendeley.com/guides/using-citation-editor)
+- Uso del [**pluging Word - Mendeley**](https://www.mendeley.com/guides/using-citation-editor)
+
+- [Video insercción de citas](https://youtu.be/BqSzMUmBqBI)
 
 
 # Questions?
