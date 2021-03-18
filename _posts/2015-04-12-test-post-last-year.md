@@ -5,7 +5,7 @@ permalink: test-post-from-last-year.html
 tags: [news]
 ---
 
-Cagmeni invierte en verker para baterias
+## Cagmeni invierte en verker para baterias
 
 
 Consortium to develop electric regional aircraft for Norway by 2026
@@ -20,12 +20,13 @@ The turbogenerator is a combination of a  Honeywell 1MW generator and HGT1700 au
 Honeywell unveiled its first turbogenerator for urban air mobility (UAM) at the 2019 HAI HELI-EXPO in Atlanta. It combined Honeywell’s HTS900 turboshaft engine with two 200-kilowatt generators.
 
 
-interesante articulo 
+## Interesante articulo 
 
 https://www.hibridosyelectricos.com/articulo/tecnologia/avion-hibrido-electrico-mit-sistema-propulsion-limpio-grandes-aviones/20210209103629042346.html
 
 
-sistema de propulsion híbrida de 2 MW
+## Sistema de propulsion híbrida de 2 MW
+
 https://www.hibridosyelectricos.com/articulo/actualidad/collins-desarrollara-sistemas-propulsion-electrificados-proxima-generacion-aviones-electricos/20190413131853026995.html
 
-{% include links.html %}
+
