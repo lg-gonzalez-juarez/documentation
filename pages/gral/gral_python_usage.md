@@ -40,5 +40,16 @@ There a excellent blog on technical writing called <a alt='technical writing blo
 
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> This is a special tip about some file to download....</div>
 
+## Librerías útiles
 
-{% include links.html %}
+https://pypi.org/project/gym-electric-motor/
+
+diseño de motores
+
+https://www.pyleecan.org/
+
+
+
+
+
+
