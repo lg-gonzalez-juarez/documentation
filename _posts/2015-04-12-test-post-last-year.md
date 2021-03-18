@@ -1,5 +1,5 @@
 ---
-title:  "News Batteries"
+title:  "News NIDO"
 categories: jekyll update
 permalink: test-post-from-last-year.html
 tags: [news]

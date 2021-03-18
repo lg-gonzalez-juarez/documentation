@@ -1,17 +1,25 @@
 ---
-title:  "Sample post"
+title:  "Convertidores"
 published: true
 permalink: samplepost.html
 summary: "This is some summary frontmatter for my sample post."
 tags: [news, getting_started]
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+¿Que novedades tenemos en convertidores?
 
-## Heading
+## Nota 1
 
-but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+- https://www.meggitt.com/products-services/power-conversion/
+- https://www.aircraftspruce.com/categories/avionics_instruments/av/menus/av/convert.html
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+
+## Fabricantes con certificación DO-178 y DO254
+
+- https://meggittpower.com/product/power-converters/
+- https://aegispower.com/capabilities/aircraft/
+- https://truebluepowerusa.com/products/?gclid=CjwKCAjw9MuCBhBUEiwAbDZ-7gu3I8pI7GQ056jAqTDPyqThIvVS6CUubtH7EF2hXk5AQEUvp-VM6hoCq-oQAvD_BwE#voltage-converters
+
+-https://www.craneae.com/sites/default/files/documents/ElectricalPowerSolutionsElectrification060320.pdf
 
 {% include links.html %}
