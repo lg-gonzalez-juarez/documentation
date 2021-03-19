@@ -5,6 +5,17 @@ permalink: test-post-from-last-year.html
 tags: [news]
 ---
 
+## Batteries
+
+¿Cual es el nivel de peligro de fuego/humo asociado con baterias Li-ion (Lithium-ion)?
+
+
+links a comentar 
+
+-[AviationPros](https://www.aviationpros.com/engines-components/aircraft-airframe-accessories/batteries/article/21121803/the-batteries-in-aircraft-engines)
+
+
+
 ## Cagmeni invierte en verker para baterias
 
 
@@ -30,3 +41,25 @@ https://www.hibridosyelectricos.com/articulo/tecnologia/avion-hibrido-electrico-
 https://www.hibridosyelectricos.com/articulo/actualidad/collins-desarrollara-sistemas-propulsion-electrificados-proxima-generacion-aviones-electricos/20190413131853026995.html
 
 
+## Battery Management System (BMS)
+
+Protect against overcharge, over discharge, over-current, short circuit, over-temperature and under-temperature
+
+kinds
+
+- Lithium-ion
+- Lead-Acid 
+ - Teledyne Battery Product
+
+
+## Webs asociadas a noticias del sector eolico
+
+https://www.aviationpros.com/
+
+## comentar con Robert
+
+https://spectrum.ieee.org/aerospace/aviation/with-ultralight-lithiumsulfur-batteries-electric-airplanes-could-finally-take-off
+
+- [What type of batteries are better for aircraft and what may be changed in future](https://dmd.solutions/blog/2019/04/24/what-type-of-batteries-are-better-for-aircraft-and-what-may-be-changed-in-future/)
+- [Oxis energy](https://oxisenergy.com/applications/)
+- [tipos de baterias](https://www.flight-mechanic.com/aircraft-batteries-types-of-batteries-part-one/)

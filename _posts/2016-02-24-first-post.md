@@ -1,19 +1,16 @@
 ---
-title:  "Welcome to Jekyll!"
-categories: jekyll update
+title:  "Motors & Generators"
+categories: news
 permalink: myupdate.html
 tags: [news]
 ---
 
 
-Theme updates:
+motors:
 
-- Permalinks
-- Kramdown
-- URL specified in config file
-- removed PDF output
-- removed some of the alternative layouts
-- added blog feature
-- sidebars configurable per page
+- [Honeywell Aerospace](https://aerospace.honeywell.com/en/learn/products/electric-power/60kva-generator)
+- [Honeywell Electric & Hibrid Propulsion](https://aerospace.honeywell.com/en/learn/products/electric-power/hybrid-electric-electric-propulsion)
+- [NLR](https://www.nlr.org/article/higher-power-density-for-more-electric-aircraft/)
+- [AMETEK](https://www.ametekpds.com/products/electric-motors-dc-ac-motors)
 
-{% include links.html %}
+- [Jose-SION](https://www.marketsandmarkets.com/Market-Reports/aircraft-electrical-and-enviornmental-systems-market-1106.html)
