@@ -1,0 +1,18 @@
+I"<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Draw IO es una app de diagramas al estilo VISIO de microsoft</div>
+
+<p>DrawIO se puede usar desde la web o bien la app en el escritorio.</p>
+
+<ul>
+  <li><a href="https://app.diagrams.net/">DrawIO web</a></li>
+  <li>
+    <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
+<a alt="desktop drawIO" href="https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8"> Desktop drawIO</a>,
+</div>
+  </li>
+</ul>
+<p>&lt;/div&gt;</p>
+
+<div class="bs-callout bs-callout-"><strong>Important information</strong>: link to download. <br /><br />
+<a alt="desktop drawIO" href="https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8"> Desktop drawIO</a>,  use it please!</div>
+
+:ET
