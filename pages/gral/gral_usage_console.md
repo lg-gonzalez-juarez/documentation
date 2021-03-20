@@ -27,10 +27,10 @@ Seguir las instrucciones indicadas en la documentación oficial de git-lab
 ## Pasos para usar la consola
 
 
-### 1. Recomendaciones generales en el uso de archivos
+### Recomendaciones generales en el uso de archivos
 
-- Renombrar los archivos lo menos posible
-- Conocer el estado de los archivos en el repositorio
+#### Renombrar los archivos lo menos posible
+#### Conocer el estado de los archivos en el repositorio
   
 ```cmd
 git status
@@ -45,6 +45,7 @@ Your branch is up to date with 'origin/dev_schematics'.
 nothing to commit, working tree clean
 ```
 
+#### Una vez añadido archivo en local, ...
 - Una vez añadido el archivo en la dirección local, los pasos son los siguientes
 
 ```cmd
@@ -67,7 +68,7 @@ Changes to be committed:
         new file:   NewFile.drawio
 ```
 
-- Realice el commit del archivo
+#### Realizar commit del archivo
   
 ```cmd
 $ git commit -m "new file test"
@@ -96,7 +97,9 @@ Your branch is ahead of 'origin/dev_schematics' by 1 commit.
 nothing to commit, working tree clean
 ```
 
-- Recuerde estos cambios son el local, el paso final es actualizar en su repositorio web
+#### Agregar archivos en repo-web
+
+  Recuerde estos cambios son el local, el paso final es actualizar en su repositorio web
   
 ```cmd
 git push
@@ -124,7 +127,7 @@ finalmente esta sincronizado con el equipo!!!
 sudo apt-get party
 ```
 
-** La he liao! Que hago? ** 
+#### *La he liao! ¿Qué hago?*
 
 - Para borrar
   
@@ -143,7 +146,7 @@ Recuerde una vez eliminado el archivo o cambiado de direccion debe realizar el p
 More detail in [web Asoc Robotica UC3M](https://asrob-uc3m.gitbooks.io/tutoriales/content/software/version-control/git.html#comprobar-estado-de-repositorio-git-**status**)
 
 
-## En resumen
+### En resumen
 
 - use "git add/rm <file>..." to update what will be committed
 - use "git restore <file>..." to discard changes in working directory
@@ -174,7 +177,7 @@ More links
 [git atlassian](https://www.atlassian.com/es/git/tutorials/git-bash)
 [git examples](https://dzone.com/articles/top-20-git-commands-with-examples)
 
-## Clonar un repo
+### Clonar un repo
 
 ```cmd
 git clone DirRepo
