@@ -10,8 +10,8 @@ topnav:
       url: /python_00.html
     - title: Jekyll
       url: /getting_started.html
-    - title: Paste2Markdown
-      external_url: https://euangoddard.github.io/clipboard2markdown/
+    #- title: Paste2Markdown # Paste2Markdown
+    #  external_url: https://euangoddard.github.io/clipboard2markdown/
     - title: News
       url: /news
 
