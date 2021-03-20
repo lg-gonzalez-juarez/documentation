@@ -2,7 +2,7 @@
 title: Uso de Mendeley
 keywords: documentation, technical writers, help, 
 last_updated: February 2th, 2021
-tags: [formatting]
+tags: [mendeley]
 summary: Here documentation relative mendeley
 sidebar: general_sidebar
 permalink: gral_usage_mendeley.html
