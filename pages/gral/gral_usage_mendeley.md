@@ -10,13 +10,18 @@ folder: gral
 output: web, pdf
 ---
 
-Mendeley es un gestor de bibliografía colaborativa, se puede usar de forma local (Mendeley Desktop) y de forma remota (Mendeley Web). Compartir bibliografía con compañeros del trabajo, de la universidad es posible gracias al uso de los equipos privados.
+**Mendeley** es un gestor de bibliografía colaborativa. Se puede usar de forma local (Mendeley Desktop) y de forma remota (Mendeley Web). 
 
-Además de permitir compartir bibliografía dispone de un potente e integrado **plugging Word - Mendeley** lo que facilita la redacción e inclusión de referencias en los documentos 😏.
+**Mendeley Web** permite compartir bibliografía con compañeros del trabajo, de la universidad, esto gracias al uso de los equipos privados. Los navegadores permite el uso de la extensión **Mendeley web importer**
+
+**Mendeley Desktop** permitir compartir bibliografía a través de un potente e integrado **plugging Word - Mendeley** lo que facilita la redacción e inclusión de referencias en los documentos grupales 😏.
+
+Todo lo anterior es útil para obtener las referencias de una forma organizada, centralizada y colaborativa.
 
 # Mendeley Download
 
-<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> file to download....</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> 
+file to download....</div>
 
 - [Installation Guides](https://www.mendeley.com/guides/download-mendeley-desktop/windows/instructions)
 
