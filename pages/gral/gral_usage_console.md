@@ -1,8 +1,8 @@
 ---
 title: Uso de la consola
-keywords: documentation, python, technical writers, help, authoring tools, replacements
-last_updated: December 30th, 2020
-tags: [formatting]
+keywords: documentation, technical writers, help, authoring tools, console
+last_updated: March 20th, 2021
+tags: [console]
 summary: Here documentation relative console
 sidebar: general_sidebar
 permalink: gral_usage_console.html

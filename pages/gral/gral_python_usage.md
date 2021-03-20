@@ -2,7 +2,7 @@
 title: Python Usage
 keywords: documentation, python, technical writers, help, authoring tools, replacements
 last_updated: December 30th, 2020
-tags: [formatting]
+tags: [python]
 summary: Here documentation relative python
 sidebar: general_sidebar
 permalink: gral_usage_python.html
