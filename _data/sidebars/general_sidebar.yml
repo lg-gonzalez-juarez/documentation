@@ -19,7 +19,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Index
+  - title: I.Index
     output: web, pdf
     type: homepage
     folderitems:
@@ -29,54 +29,53 @@ entries:
       output: web, pdf
       type: homepage
 
-  - title: Buenas Practicas
+  - title: II. Buenas Practicas
     output: web, pdf
     folderitems:
 
-    - title: Redaccion
+    - title: a. Redaccion
       url: /gral_redaccion_docs.html
       output: web, pdf
 
-    - title: Uso Consola
-      url: /gral_usage_console.html
-      output: web, pdf
-
-    - title: Uso Mendeley
+    - title: b. Mendeley
       url: /gral_usage_mendeley.html
       output: web, pdf
 
-    - title: Uso Gitlab
-      url: /gral_usage_gitlab.html
-      output: web, pdf
-     
-    - title: Uso DrawIO
+    - title: c. DrawIO
       url: /gral_usage_drawio.html
       output: web, pdf
 
+    - title: d. Consola
+      url: /gral_usage_console.html
+      output: web, pdf
 
-  - title: Python
+    - title: e. Gitlab
+      url: /gral_usage_gitlab.html
+      output: web, pdf
+     
+  - title: III. Python
     output: web, pdf
     folderitems:
 
-    - title: Python Tutorials
+    - title: a. Python Tutorials
       url: /python_00.html
       output: web, pdf
       type: homepage
 
-    - title: Preliminary Knowledge
+    - title: b. Preliminary Knowledge
       url: /gral_test_lg.html
       output: web, pdf
 
-    - title: Python Usage
+    - title: c. Python Usage
       url: /gral_usage_python.html
       output: web, pdf
       type: homepage
 
-    - title: Python Pypower
+    - title: d. Python Pypower
       url: /gral_python_pypower.html
       output: web, pdf
 
-  - title: Machine Learning
+  - title: IV. Machine Learning
     output: web, pdf
     folderitems:
 
@@ -94,7 +93,7 @@ entries:
       url: /mchlrn_20.html
       output: web, pdf
 
-  - title: Courses
+  - title: VI. Courses
     output: web, pdf
     folderitems:
 
@@ -102,4 +101,3 @@ entries:
       url: /course_kb_layout.html
       output: web, pdf
   
-
