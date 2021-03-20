@@ -27,7 +27,7 @@ Todo lo anterior es útil para obtener las referencias de una forma organizada, 
 For Logging in Mendeley web, first <a alt='Logging in Mendeley web' href='https://www.mendeley.com/'>create a free account</a>.
 
 <br>
-<a alt='Logging in Mendeley web' href='https://www.mendeley.com/download-desktop-new/'>Download Mendeley Desktop</a>.
+<a alt='mendeley web importer' href='https://chrome.google.com/webstore/detail/mendeley-web-importer/dagcmkpagjlhakfdhnbomgmjdpkdklff?hl=en'>mendeley web importer</a>.
 </div>
 
 - [Installation Guides](https://www.mendeley.com/guides/download-mendeley-desktop/windows/instructions)
