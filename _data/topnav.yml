@@ -5,7 +5,7 @@ topnav:
 - title: Topnav
   items:
     - title: Welcome
-      url: /python_00.html
+      url: /gral_index.html
     - title: Python
       url: /python_00.html
     - title: Jekyll
