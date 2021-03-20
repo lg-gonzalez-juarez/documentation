@@ -20,8 +20,15 @@ Todo lo anterior es útil para obtener las referencias de una forma organizada, 
 
 # Mendeley Download
 
-<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> 
-file to download....</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> <br>
+<a alt='Download Mendeley Desktop' href='https://www.mendeley.com/download-desktop-new/'>Download Mendeley Desktop</a>
+
+<br> 
+For Logging in Mendeley web, first <a alt='Logging in Mendeley web' href='https://www.mendeley.com/'>create a free account</a>.
+
+<br>
+<a alt='Logging in Mendeley web' href='https://www.mendeley.com/download-desktop-new/'>Download Mendeley Desktop</a>.
+</div>
 
 - [Installation Guides](https://www.mendeley.com/guides/download-mendeley-desktop/windows/instructions)
 
