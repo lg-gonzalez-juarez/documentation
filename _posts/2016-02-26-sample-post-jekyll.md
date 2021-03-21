@@ -1,5 +1,5 @@
 ---
-title:  "Convertidores"
+title:  "sample jekyll"
 published: true
 permalink: samplepost.html
 summary: Manufacturing & News
