@@ -1,16 +1,9 @@
 ---
-title:  "Motors & Generators"
+title:  "First post"
 categories: news
 permalink: myupdate.html
 tags: [news]
 ---
 
 
-motors:
-
-- [Honeywell Aerospace](https://aerospace.honeywell.com/en/learn/products/electric-power/60kva-generator)
-- [Honeywell Electric & Hibrid Propulsion](https://aerospace.honeywell.com/en/learn/products/electric-power/hybrid-electric-electric-propulsion)
-- [NLR](https://www.nlr.org/article/higher-power-density-for-more-electric-aircraft/)
-- [AMETEK](https://www.ametekpds.com/products/electric-motors-dc-ac-motors)
-
-- [Jose-SION](https://www.marketsandmarkets.com/Market-Reports/aircraft-electrical-and-enviornmental-systems-market-1106.html)
+testing here
