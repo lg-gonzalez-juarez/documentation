@@ -19,3 +19,8 @@ En su mayoría estan certificados acorde con DO-178 y DO-254
 - [Listado varios](https://www.aeroexpo.online/aeronautic-manufacturer/aircraft-power-supply-4534.html)
 - [True Blue Power](https://truebluepowerusa.com/products/)
 - [Craneae.com](https://www.craneae.com/sites/default/files/documents/ElectricalPowerSolutionsElectrification060320.pdf)
+
+
+
+## actualización 25 March
+- [ingeteam](https://www.ingeteam.com/us/en-us/power-electronics/power-converters/c28_6_p/products.aspx)
