@@ -1,5 +1,5 @@
 ---
-title: Initial concepts
+title: Formats Messages
 keywords: documentation, python, technical writers, help, authoring tools, replacements
 last_updated: December 30th, 2020
 tags: [formatting]

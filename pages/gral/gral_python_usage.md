@@ -14,7 +14,6 @@ output: web, pdf
 
 - [Coursera Python](https://fopp.umsi.education/user/login?_next=/books/published/fopp/index.html)
 
-
 ### PyPower
 
 - [PyPower API](https://rwl.github.io/PYPOWER/api/)
@@ -22,18 +21,7 @@ output: web, pdf
 
 ### OpenMDAO
 
-
-
 ## Librerías útiles
 
-https://pypi.org/project/gym-electric-motor/
-
-diseño de motores
-
-https://www.pyleecan.org/
-
-
-
-
-
-
+- [Gym Electric Motor](https://pypi.org/project/gym-electric-motor/)
+- [diseño de motores](https://www.pyleecan.org/)
