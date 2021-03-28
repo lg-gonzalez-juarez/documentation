@@ -1,0 +1,69 @@
+I"�<h2 id="about-this-">About this …</h2>
+
+<p>Esta web tiene el fin de ayudar y ayudarme a tener notitas de todo lo que aprendo en python, si le es útil a alguien mas ya es una ganancia.</p>
+
+<!--
+Antes que nada, algunas lineas acerca de mi, soy Lorena Gonzalez-Juarez, soy una terricola con dos hogares, el primero por derecho de nacimiento y el disfrutar de ella mientras se trabaja.
+-->
+
+<p><a href="https://github.com/lg-gonzalez-juarez">personal git link</a></p>
+
+<p>La siguiente pagina es super útil para documentar <a href="http://idratherbewriting.com/learnapidoc/">course on API documentation</a>.</p>
+
+<h2 id="how-add-a-new-section--page">How add a new section &amp; page?</h2>
+
+<p>El primer paso es generar un archivo “Name.md” en la carpeta <code class="language-plaintext highlighter-rouge">\pages\mydoc</code></p>
+
+<p>dentro de este archivo se modifica en la cabecera del mismo el campo <strong>permalink:</strong> <code class="language-plaintext highlighter-rouge">Name.html</code></p>
+
+<p>El nombre del archivo se debe incluir en el indexado, esto se realiza en la carpeta <strong>_data/sidebars/mydoc_sidebar.yml</strong></p>
+
+<p>en este archivo se debe actualizar el titulo de la sección y su correspondiente <strong>url</strong></p>
+
+<p>Por último compruebe que la correspondiente seccion se ha añadido correctamente al navegador lateral</p>
+
+<h2 id="install-jekill-on-windows">Install jekill on windows</h2>
+<p>If you’ve never installed or run a jekill site locally on your computer, follow these instructions to install:</p>
+
+<p>*[Install jekill on Windows][mydoc_install_jekyll_on_windows]</p>
+
+<h3 id="jekyll-help">Jekyll help</h3>
+
+<ul>
+  <li>
+    <p><a href="https://talk.jekyllrb.com">Jekyll Talk</a></p>
+  </li>
+  <li>
+    <p><a href="http://jekyllrb.com/docs/home/">Jekyll documentation</a></p>
+  </li>
+  <li>
+    <p><a href="http://stackoverflow.com/questions/tagged/jekyll">Jekyll on Stack Overflow</a></p>
+  </li>
+  <li>
+    <p><a href="http://idratherbewriting.com/category-jekyll/">Jekyll on my blog</a></p>
+  </li>
+</ul>
+
+<h2 id="formatos-para-tipos-de-mensajes">Formatos para tipos de mensajes</h2>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Remember, Python is a interpreter language.</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b><br />
+There a excellent blog on technical writing called <a alt="technical writing blog" href="http://idratherbewriting.com">I’d Rather Be Writing</a>. If you’d like to stay updated with the latest trends, best practices, and other methods for writing documentation, consider <a href="https://tinyletter.com/tomjoht">subscribing</a>. I also have a site on <a href="http://idratherbewriting.com/learnapidoc">writing API documentation</a>.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Is important keep and record info.</div>
+
+<div class="bs-callout bs-callout-danger">This is my <strong>danger</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-default">This is my <strong>default</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-primary">This is my <strong>primary</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-success">This is my <strong>success</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-warning">This is my <strong>warning</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-primary"><strong>Important information</strong>: This is my callout. It has a border on the left whose color you define by passing a type parameter. I typically use this style of callout when I have more information that I want to share, often spanning multiple paragraphs. <br /><br />Here I am starting a new paragraph, because I have lots of information to share. You may wonder why I’m using line breaks instead of paragraph tags. This is because Kramdown processes the Markdown here as a span rather than a div (for whatever reason). Be grateful that you can be using Markdown at all inside of HTML. That’s usually not allowed in Markdown syntax, but it’s allowed here.</div>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> This is a special tip about some file to download....</div>
+:ET
