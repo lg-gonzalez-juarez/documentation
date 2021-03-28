@@ -1,5 +1,5 @@
 ---
-title: Python Usage
+title: Python Libraries
 keywords: documentation, python, technical writers, help, authoring tools, replacements
 last_updated: December 30th, 2020
 tags: [python]
@@ -10,11 +10,15 @@ folder: mydoc
 output: web, pdf
 ---
 
-## Aplicaciones de interes
-
 ### Python
 
+- [Coursera Python](https://fopp.umsi.education/user/login?_next=/books/published/fopp/index.html)
+
+
 ### Pypower
+
+- [PyPower API](https://rwl.github.io/PYPOWER/api/)
+- [PyPower](https://rwl.github.io/PYPOWER/usage.html)
 
 ### OpenMDAO
 

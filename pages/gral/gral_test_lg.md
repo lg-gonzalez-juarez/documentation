@@ -10,9 +10,9 @@ folder: mydoc
 output: web, pdf
 ---
 
-## Usage package 
+## About this ...
 
-Este es mi pinino como documentalista de software (cierta ironia), enfatizo esto tiene el fin de ayudar y ayudarme a tener notitas de todo lo que aprendo en python, si le es útil a alguien mas ya es una ganancia.
+Esta web tiene el fin de ayudar y ayudarme a tener notitas de todo lo que aprendo en python, si le es útil a alguien mas ya es una ganancia.
 
 <!--
 Antes que nada, algunas lineas acerca de mi, soy Lorena Gonzalez-Juarez, soy una terricola con dos hogares, el primero por derecho de nacimiento y el disfrutar de ella mientras se trabaja.
@@ -22,7 +22,6 @@ Antes que nada, algunas lineas acerca de mi, soy Lorena Gonzalez-Juarez, soy una
  
 La siguiente pagina es super útil para documentar [course on API documentation](http://idratherbewriting.com/learnapidoc/).  
  
-See [my blog's about page](http://idratherbewriting.com/aboutme/) for more details about me.
 
 ## How add a new section & page?
 
@@ -52,4 +51,3 @@ If you've never installed or run a jekill site locally on your computer, follow 
 
 * [Jekyll on my blog](http://idratherbewriting.com/category-jekyll/)
 
-{% include links.html %}
