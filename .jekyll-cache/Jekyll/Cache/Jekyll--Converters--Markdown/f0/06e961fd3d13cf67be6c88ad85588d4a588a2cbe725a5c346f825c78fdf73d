@@ -1,7 +1,0 @@
-I"<h2 id="clone-reposotory">Clone reposotory</h2>
-
-<h3 id="ejemplo-clonacion-de-la-rama-schematics-de-namerepo">Ejemplo clonacion de la rama schematics de NameRepo</h3>
-
-<pre><code class="language-cmd"> git clone -b dev_schematics https://gitlab.com/LorenaGonzalezJ/NameRepo
-</code></pre>
-:ET

@@ -19,7 +19,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: I.Index
+  - title: I.INDEX
     output: web, pdf
     type: homepage
     folderitems:
@@ -29,7 +29,7 @@ entries:
       output: web, pdf
       type: homepage
 
-  - title: II. Buenas Practicas
+  - title: II. BUENAS PRACTICAS
     output: web, pdf
     folderitems:
 
@@ -53,7 +53,7 @@ entries:
       url: /gral_usage_gitlab.html
       output: web, pdf
      
-  - title: III. Python
+  - title: III. PYTHON
     output: web, pdf
     folderitems:
 
@@ -75,7 +75,7 @@ entries:
       url: /gral_python_pypower.html
       output: web, pdf
 
-  - title: IV. Machine Learning
+  - title: IV. MACHINE LEARNING
     output: web, pdf
     folderitems:
 
@@ -93,11 +93,18 @@ entries:
       url: /mchlrn_20.html
       output: web, pdf
 
-  - title: VI. Courses
+  - title: VI. COURSES
     output: web, pdf
     folderitems:
 
     - title: Coursera
       url: /course_kb_layout.html
       output: web, pdf
-  
+
+  - title: VII. NOTES
+    output: web, pdf
+    folderitems:
+
+  - title: Notes Elec
+      url: /gral_notes_elec.html
+      output: web, pdf
