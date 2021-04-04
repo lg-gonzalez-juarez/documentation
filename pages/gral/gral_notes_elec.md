@@ -12,7 +12,10 @@ output: web, pdf
 
 **Contenido de glosario relevante**
 
-This was extracted from [Linux Academy Course](https://linuxacademy.com/cp/modules/view/id/413?redirect_uri=https://app.linuxacademy.com/search?query=entry%20level%20programmer%20certification)
-This covers:
 
-<!-- List of all pages with a python tag -->
+La **magnetohidrodinámica (MHD)** es la disciplina académica que estudia la dinámica de fluidos conductores de electricidad en presencia de campos eléctricos y magnéticos. Ejemplos de tales fluidos son los plasmas, los metales líquidos y el agua salada
+
+**isótropo** [cuerpo, medio] Que tiene la propiedad de transmitir igualmente en todas direcciones cualquier acción recibida en un punto de su masa.
+
+Se llaman **fuerzas de inercia** (o fuerzas ficticias) a las fuerzas que explican la aceleración aparente de un cuerpo visto desde un sistema de referencia no inercial.
+

@@ -1,0 +1,74 @@
+I"�<p><strong>Contenido de glosario relevante</strong></p>
+
+<p>La <strong>magnetohidrodinámica (MHD)</strong> es la disciplina académica que estudia la dinámica de fluidos conductores de electricidad en presencia de campos eléctricos y magnéticos. Ejemplos de tales fluidos son los plasmas, los metales líquidos y el agua salada</p>
+
+<p><strong>isótropo</strong> [cuerpo, medio] Que tiene la propiedad de transmitir igualmente en todas direcciones cualquier acción recibida en un punto de su masa.</p>
+
+<p>Se llaman <strong>fuerzas de inercia</strong> (o fuerzas ficticias) a las fuerzas que explican la aceleración aparente de un cuerpo visto desde un sistema de referencia no inercial.</p>
+
+<div class="container container-margin">
+        <div class="row row-content">
+            <div class="col">
+                <!--h2>Welcome!</h2-->
+                <!-- Vids are 16:9 (1.77p:1)) -->
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner" role="listbox">
+                        
+                        <div class="carousel-item active">
+                            <div class="embed-responsive" style="width: 350px; height: 197px; margin: 15px 0px 15px 0px;">
+                                <!-- Moon // Live @ AyudaTusSentidos -->
+                                <iframe src="https://www.youtube.com/embed/cxgyBXrmnUo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="embed-responsive embed-responsive-1by1" style="width: 350px; height: 197px; margin: 15px 0px 15px 0px;">
+                                <!-- Concierto solidario "Ayuda a Rosi a caminar" - 19:59 -->
+                                <iframe src="https://www.youtube.com/embed/_8Z8OI_rwTI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="embed-responsive embed-responsive-1by1" style="width: 350px; height: 197px; margin: 15px 0px 15px 0px;">
+                                <!-- Small Hotel Room - Day // Improvised Live @ GaloDoVento -->
+                                <iframe src="https://www.youtube.com/embed/kTIDk0Z2WuI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="embed-responsive embed-responsive-1by1" style="width: 350px; height: 197px; margin: 15px 0px 15px 0px;">
+                                <!-- "Derrumbes, derrames, destrozos, desastres" - Samuel Levi ft. SHR -->
+                                <iframe src="https://www.youtube.com/embed/3m7yQT4WgzU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="embed-responsive embed-responsive-1by1" style="width: 350px; height: 197px; margin: 15px 0px 15px 0px;">
+                                <!-- Small Hotel Room - North // Live @ Summer 2011 -->
+                                <iframe src="https://www.youtube.com/embed/AYd4ZWCu_ds" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
+                        <li data-target="#mycarousel" data-slide-to="3"></li>
+                        <li data-target="#mycarousel" data-slide-to="4"></li>
+                    </ol>
+
+                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+:ET
