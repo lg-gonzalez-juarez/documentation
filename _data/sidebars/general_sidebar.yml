@@ -103,8 +103,8 @@ entries:
 
   - title: VII. NOTES
     output: web, pdf
-    folderitems:
-
-  - title: Notes Elec
+    folderitems:  
+    
+    - title: Notes Elec
       url: /gral_notes_elec.html
       output: web, pdf
