@@ -44,4 +44,8 @@ Todo lo anterior es útil para obtener las referencias de una forma organizada, 
 Configuración del pluggin 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GEMhNTNi2Gk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wteVo2rx7iQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 🚴🚴🚴 Ahora sí, listo para tener una bibliografía de 10 .... 	💪💪💪!!!
