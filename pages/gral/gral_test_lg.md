@@ -10,6 +10,37 @@ folder: mydoc
 output: web, pdf
 ---
 
+# State of Art 
+
+traducir esta pag web
+https://aip.scitation.org/doi/10.1063/5.0010134
+
+cuando pueda revisar este
+https://www.sciencedirect.com/science/article/pii/S1000936118301924
+
+https://www.space.com/22916-nasa-ion-thruster-world-record-test.html
+
+https://www.aerospacetestinginternational.com/features/testing-ion-thrusters-for-space-exploration.html
+
+https://www.nasa.gov/centers/glenn/technology/Ion_Propulsion1.html
+
+https://journals.sagepub.com/doi/full/10.1177/1063293X20938422
+
+https://journals.sagepub.com/doi/full/10.1177/1063293X20938422
+
+
+# Transductores
+
+
+# Sistema de adquisicion 
+
+
+# Test Bech
+
+
+
+
+
 ## About this ...
 
 Esta web tiene el fin de ayudar y ayudarme a tener notitas de todo lo que aprendo en python, si le es útil a alguien mas ya es una ganancia.
