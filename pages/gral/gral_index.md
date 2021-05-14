@@ -26,7 +26,7 @@ https://snapcraft.io/install/openhantek/ubuntu
 aunque compilo tuve problemas con el driver (nivel hardware no detectado)
 
 Segundo paso descargar el repo de 
-
+https://github.com/OpenHantek/OpenHantek6022/blob/main/docs/build.md
 
 y hacer el mitico make
 

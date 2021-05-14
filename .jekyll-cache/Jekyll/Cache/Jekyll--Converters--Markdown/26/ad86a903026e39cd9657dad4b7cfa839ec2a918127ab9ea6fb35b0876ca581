@@ -1,0 +1,27 @@
+I"Y<p>Bienvenido!!!</p>
+
+<p>Esta web tiene el proposito de ayudarte en la redacción de tu proyecto</p>
+
+<p>¿Que necesitas al inicio?</p>
+
+<h2 id="openhantek">OpenHantek</h2>
+
+<h3 id="how-install">How install</h3>
+
+<p>Como primer paso intente usar snaps
+https://snapcraft.io/install/openhantek/ubuntu
+aunque compilo tuve problemas con el driver (nivel hardware no detectado)</p>
+
+<p>Segundo paso descargar el repo de 
+https://github.com/OpenHantek/OpenHantek6022/blob/main/docs/build.md</p>
+
+<p>y hacer el mitico make</p>
+
+<p>el procedimiento para el make lo tome de esta pag
+http://captainbodgit.blogspot.com/2018/03/hantek-6022be-on-lubuntu-1710-openhantek.html</p>
+
+<p>adjunto de todos modos el historico de la consola de ubuntu</p>
+
+<p>videos para agilizar el proceso de aprendizaje de uso de este cacharro
+https://www.youtube.com/watch?v=Oc32Ytwp1YI</p>
+:ET
