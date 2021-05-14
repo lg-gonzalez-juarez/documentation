@@ -29,6 +29,18 @@ https://journals.sagepub.com/doi/full/10.1177/1063293X20938422
 https://journals.sagepub.com/doi/full/10.1177/1063293X20938422
 
 
+
+
+# tools 
+
+https://languagetool.org/es
+https://www.spellboy.com/
+https://copywritely.com
+https://pro.spanishchecker.com/
+
+este parece el bueno
+https://spellcheckplus.com/es/
+
 # Transductores
 
 
