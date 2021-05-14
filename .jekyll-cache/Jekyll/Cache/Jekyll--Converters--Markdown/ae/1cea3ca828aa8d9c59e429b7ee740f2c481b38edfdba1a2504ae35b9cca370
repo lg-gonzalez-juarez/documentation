@@ -1,0 +1,17 @@
+I"�<p>Bienvenido!!!</p>
+
+<p>Esta web tiene el proposito de ayudarte en la redacción de tu proyecto</p>
+
+<p>¿Que necesitas al inicio?</p>
+
+<h2 id="openhantek">OpenHantek</h2>
+
+<h3 id="how-install">How install</h3>
+
+<p>Como primer paso intente usar snaps
+https://snapcraft.io/install/openhantek/ubuntu
+aunque compilo tuve problemas con el driver (nivel hardware no detectado)</p>
+
+<p>videos para agilizar el proceso de aprendizaje de uso de este cacharro
+https://www.youtube.com/watch?v=Oc32Ytwp1YI</p>
+:ET
