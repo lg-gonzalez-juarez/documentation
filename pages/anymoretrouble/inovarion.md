@@ -58,6 +58,7 @@ https://reunir.unir.net/bitstream/handle/123456789/3516/DAVILA%20%2C%20EMILIO%20
 
 un tema pendiente 
 https://ruc.udc.es/dspace/bitstream/handle/2183/23752/2019_Portalo-Calero_Comparativa-entornos-open-source-sistemas-supervision-smart-grids.pdf?sequence=3&isAllowed=y
+este incluye una comparativa
 
 #### pedirle a Novo que se revise esto
 https://pirhua.udep.edu.pe/bitstream/handle/11042/1739/ING_527.pdf
