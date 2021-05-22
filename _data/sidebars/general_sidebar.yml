@@ -108,3 +108,7 @@ entries:
     - title: Notes Elec
       url: /gral_notes_elec.html
       output: web, pdf
+
+    - title: Any More Trouble
+      url: /inovation.html
+      output: web, pdf
