@@ -1,0 +1,70 @@
+I"O
+<h1 id="issue-1">Issue 1</h1>
+
+<p>Referente a lo que hable con el amigo de Tony</p>
+
+<p>Scada open</p>
+
+<p>En sistemas con buenas prestaciones en tiempo real se tienen red hat y fendora. OpalRT al menos lo que conoci a bajo nivel trabaja en red hat. Ademas de contar con soporte tecnico, y a pesar de ser de pago tiene un precio permisivo frente a otras opciones</p>
+
+<p>SCADA - Supervisory Control and Data Aquisition
+Que ganamos con una plataforma SCADA open?
+Tener un sistema de prototipado rapido con este nos permite tener un “banco de pruebas” que permite por un lado un nuevo producto o bien un nuevo control</p>
+
+<p>indicar testeo del statcom
+indicar testeo de toyota, testado del performance de la bateria
+indicar empresa holandesa, testeo de ofshore windturbines
+indicar la empresa de marruecos que tiene el supersimulador de vuelos
+buscar a Jose en el congreso de Paris, el chico de simulador de vuelos
+indicar la certificación de reles en CIRCE</p>
+
+<p>investigar la pasta que se mueve en este sector</p>
+
+<p>Competidores actuales en el mercado</p>
+
+<ul>
+  <li>http://oscada.org/</li>
+  <li>https://www.tango-controls.org/</li>
+  <li>https://awesomeopensource.com/project/frangoteam/FUXA</li>
+  <li>https://awesomeopensource.com/project/riclolsen/OSHMI</li>
+  <li>https://awesomeopensource.com/project/SCADA-LTS/Scada-LTS</li>
+</ul>
+
+<p>source: https://awesomeopensource.com/projects/scada</p>
+
+<p>Se debe considerar el diseño &amp; implementación de las unidades terminales remotas</p>
+
+<p>https://es.wikipedia.org/wiki/Unidad_Terminal_Remota</p>
+
+<p>En cuanto a terminos de financiación e inversion
+https://reunir.unir.net/bitstream/handle/123456789/3516/DAVILA%20%2C%20EMILIO%20ARMANDO.pdf?sequence=1&amp;isAllowed=y</p>
+
+<h3 id="tending-research">Tending Research</h3>
+
+<p>https://twitter.com/citicven/status/1197490089330216960?s=20</p>
+
+<p>CloudComputing
+FogComputing
+EdgeComputing</p>
+
+<h1 id="idea-2">idea 2</h1>
+
+<p>Optimización del dimensionado de un sist de potencia híbrido a través de AI y reforcent learning</p>
+
+<h1 id="idea-3">idea 3</h1>
+
+<p>Motor multifasico
+https://www.linkedin.com/feed/update/urn:li:activity:6798141531430748160/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6798141531430748160%29</p>
+
+<p>https://www.linkedin.com/pulse/multiphase-permanent-magnet-synchronous-motor-drive-study-repumag/</p>
+
+<p>https://www.mdpi.com/1996-1073/13/15/3765</p>
+
+<h1 id="idea-4">idea 4</h1>
+
+<p>Protocolo IEC61850 extendible a aviones</p>
+
+<h1 id="idea-5">Idea 5</h1>
+
+<p>Cuanto dinero maneja una plataforma de un sistema eléctrico preliminar digital (TWIN DIGITAL)</p>
+:ET

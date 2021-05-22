@@ -18,6 +18,8 @@ Scada open
 
 En sistemas con buenas prestaciones en tiempo real se tienen red hat y fendora. OpalRT al menos lo que conoci a bajo nivel trabaja en red hat. Ademas de contar con soporte tecnico, y a pesar de ser de pago tiene un precio permisivo frente a otras opciones
 
+
+SCADA - Supervisory Control and Data Aquisition
 Que ganamos con una plataforma SCADA open?
 Tener un sistema de prototipado rapido con este nos permite tener un "banco de pruebas" que permite por un lado un nuevo producto o bien un nuevo control 
 
@@ -41,11 +43,28 @@ Competidores actuales en el mercado
 
 source: https://awesomeopensource.com/projects/scada
 
+https://core.ac.uk/download/pdf/132572505.pdf
+https://pirhua.udep.edu.pe/bitstream/handle/11042/1739/ING_527.pdf
 
-algo mas aplicable, de momento, al sector enérgetico
+
+Se debe considerar el diseño & implementación de las unidades terminales remotas
 
 https://es.wikipedia.org/wiki/Unidad_Terminal_Remota
 
+
+En cuanto a terminos de financiación e inversion
+https://reunir.unir.net/bitstream/handle/123456789/3516/DAVILA%20%2C%20EMILIO%20ARMANDO.pdf?sequence=1&isAllowed=y
+
+
+un tema pendiente 
+https://ruc.udc.es/dspace/bitstream/handle/2183/23752/2019_Portalo-Calero_Comparativa-entornos-open-source-sistemas-supervision-smart-grids.pdf?sequence=3&isAllowed=y
+
+#### pedirle a Novo que se revise esto
+https://pirhua.udep.edu.pe/bitstream/handle/11042/1739/ING_527.pdf
+
+
+##
+stwin digital para que todo va bien con los convertidores?
 
 ### Tending Research
 
@@ -63,6 +82,12 @@ Optimización del dimensionado de un sist de potencia híbrido a través de AI y
 # idea 3
 
 Motor multifasico
+https://www.linkedin.com/feed/update/urn:li:activity:6798141531430748160/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6798141531430748160%29
+
+https://www.linkedin.com/pulse/multiphase-permanent-magnet-synchronous-motor-drive-study-repumag/
+
+https://www.mdpi.com/1996-1073/13/15/3765
+
 
 # idea 4
 
