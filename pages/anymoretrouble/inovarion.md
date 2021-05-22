@@ -97,3 +97,6 @@ Protocolo IEC61850 extendible a aviones
 # Idea 5
 
 Cuanto dinero maneja una plataforma de un sistema eléctrico preliminar digital (TWIN DIGITAL)
+
+# Idea 6 
+Machine learning aplicado en el control de convertidores multinivel, de cara a reducir el riudo, distorciones armónicas, index power quality
