@@ -1,4 +1,4 @@
-I"9<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
+I"2!<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> Download click here <a alt="git to windows" href="https://gitforwindows.org">git to windows</a></div>
 
 <ul>
@@ -244,5 +244,25 @@ From https://gitlab.com/nido-altran/sion
   remotes/origin/ACT3
   remotes/origin/HEAD -&gt; origin/master
   remotes/origin/master
+</code></pre>
+
+<h3 id="reorganizando-folders-del-repo">Reorganizando folders del repo</h3>
+
+<p>Se crea la nueva carpeta, en este caso “June”. Dentro de esta carpeta se crea el archivo “test.txt”</p>
+
+<pre><code class="language-cmd">git add june/test.txt
+git commit -m "Testing"
+git push
+git add june/*
+git commit -m "testing"
+git push
+</code></pre>
+
+<p>Borrar varios archivos con una misma extensión</p>
+
+<pre><code class="language-cmd">git rm NPL.py
+git rm *.py
+git commit -m "testing"
+git push
 </code></pre>
 :ET

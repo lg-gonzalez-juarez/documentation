@@ -280,3 +280,26 @@ La salida puede ser similar a
   remotes/origin/HEAD -> origin/master
   remotes/origin/master
 ```
+
+
+### Reorganizando folders del repo
+
+Se crea la nueva carpeta, en este caso "June". Dentro de esta carpeta se crea el archivo "test.txt"
+
+```cmd
+git add june/test.txt
+git commit -m "Testing"
+git push
+git add june/*
+git commit -m "testing"
+git push
+``` 
+
+Borrar varios archivos con una misma extensión
+
+```cmd
+git rm NPL.py
+git rm *.py
+git commit -m "testing"
+git push
+``` 
