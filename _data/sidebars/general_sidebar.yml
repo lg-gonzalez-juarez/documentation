@@ -52,7 +52,12 @@ entries:
     - title: e. Gitlab
       url: /gral_usage_gitlab.html
       output: web, pdf
-     
+
+    - title: e. OpenModelica
+      url: /gral_usage_openmodelica.html
+      output: web, pdf
+
+           
   - title: III. PYTHON
     output: web, pdf
     folderitems:
