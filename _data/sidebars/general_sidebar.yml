@@ -53,7 +53,7 @@ entries:
       url: /gral_usage_gitlab.html
       output: web, pdf
 
-    - title: e. OpenModelica
+    - title: f. OpenModelica
       url: /gral_usage_openmodelica.html
       output: web, pdf
 
