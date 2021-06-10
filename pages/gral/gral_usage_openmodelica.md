@@ -10,7 +10,22 @@ folder: gral
 output: web, pdf
 ---
 
-{% include note.html content="Draw IO es una app de diagramas al estilo VISIO de microsoft" %}
+### Links Documentation & Tutorials
+
+https://www.openmodelica.org/useresresources/userdocumentation
+
+https://spoken-tutorial.org/watch/OpenModelica/Developing+an+equation-based+model/English/
+
+
+ [listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository](https://build.openmodelica.org/Documentation/)
+
+
+#### Git repository
+
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
+<a alt='git repository' href='https://openmodelica.org/git/OpenModelicaLibraries.git'> Git Repository</a></div>
+
+{% include note.html content="listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository" %}
 
 DrawIO se puede usar desde la web o bien la app en el escritorio.
 
