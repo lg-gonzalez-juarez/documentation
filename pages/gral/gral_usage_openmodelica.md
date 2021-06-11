@@ -41,6 +41,10 @@ output: web, pdf
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2Q-3WTifxcI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+#### Create package since zero
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/esSMzMCFwbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Trash
 
 {% include callout.html content="This is my **danger** type callout. It has a border on the left whose color you define by passing a type parameter." type="danger" %}
