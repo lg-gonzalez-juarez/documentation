@@ -1,0 +1,63 @@
+I"�<h3 id="links-documentation--tutorials">Links Documentation &amp; Tutorials</h3>
+
+<p>https://www.openmodelica.org/useresresources/userdocumentation</p>
+
+<p>https://spoken-tutorial.org/watch/OpenModelica/Developing+an+equation-based+model/English/</p>
+
+<p><a href="https://build.openmodelica.org/Documentation/">listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository</a></p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> This is my tip.</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> This is my warning.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> This is my important info.</div>
+
+<p>Here’s an example of each different type of callout:</p>
+
+<h3 id="video-tutorials">Video-Tutorials</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H9x-u6wxsoE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2Q-3WTifxcI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="trash">Trash</h3>
+
+<div class="bs-callout bs-callout-danger">This is my <strong>danger</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-default">This is my <strong>default</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-primary">This is my <strong>primary</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-success">This is my <strong>success</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-info">This is my <strong>info</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<div class="bs-callout bs-callout-warning">This is my <strong>warning</strong> type callout. It has a border on the left whose color you define by passing a type parameter.</div>
+
+<h4 id="git-repository">Git repository</h4>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
+<a alt="git repository" href="https://openmodelica.org/git/OpenModelicaLibraries.git"> Git Repository</a></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository</div>
+
+<p>DrawIO se puede usar desde la web o bien la app en el escritorio.</p>
+
+<ul>
+  <li><a href="https://app.diagrams.net/">DrawIO web</a></li>
+  <li>
+    <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
+<a alt="desktop drawIO" href="https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8"> Desktop drawIO</a></div>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-"><strong>Important information</strong>: En caso de usarse diagram DrawIO desde la web, este se puede vincular a google drive, a gitlab, o github. De esta manera es posible guardar los archivos generados
+<br /><br />
+🎨 Use it please!</div>
+
+<p>&amp;  Enjoy! ⭐⭐⭐</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is my note.</div>
+
+<div class="bs-callout bs-callout-info">Now <strong>info</strong> first simulation.</div>
+:ET
