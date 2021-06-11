@@ -1,0 +1,64 @@
+I"	<h3 id="links-documentation--tutorials">Links Documentation &amp; Tutorials</h3>
+
+<p><a href="https://build.openmodelica.org/Documentation/">listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository</a></p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Tutorial.</div>
+
+<ul>
+  <li>
+    <p><a href="https://www.openmodelica.org/useresresources/userdocumentation">Doc Open Modelica - Web Oficial</a></p>
+  </li>
+  <li>
+    <p><a href="https://spoken-tutorial.org/watch/OpenModelica/Developing+an+equation-based+model/English/">Doc Spoken-tutorials</a></p>
+  </li>
+</ul>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> This is my warning.</div>
+<ul>
+  <li>Los bloques deben ser nombrados diferentes al bloque</li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Practicar, practicar, practicar.</div>
+
+<h3 id="video-tutorials">Video-Tutorials</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H9x-u6wxsoE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2Q-3WTifxcI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h4 id="create-package-since-zero">Create package since zero</h4>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/esSMzMCFwbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="anothers-calls">Anothers calls</h3>
+
+<div class="bs-callout bs-callout-danger">danger.</div>
+
+<div class="bs-callout bs-callout-default"><strong>default parameters</strong>.</div>
+
+<div class="bs-callout bs-callout-primary"><strong>primary steps</strong>.</div>
+
+<div class="bs-callout bs-callout-success"><strong>success</strong> event.</div>
+
+<div class="bs-callout bs-callout-info"><strong>info</strong>  block. <br /><br />🎨 Use it please! &amp;  Enjoy! ⭐⭐⭐</div>
+
+<div class="bs-callout bs-callout-warning"> <strong>warning</strong> by passing a type parameter.</div>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
+<a alt="git repository" href="https://openmodelica.org/git/OpenModelicaLibraries.git"> Git Repository</a></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository</div>
+
+<p>DrawIO se puede usar desde la web o bien la app en el escritorio.</p>
+
+<ul>
+  <li><a href="https://app.diagrams.net/">DrawIO web</a></li>
+  <li>
+    <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
+<a alt="desktop drawIO" href="https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8"> Desktop drawIO</a></div>
+  </li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is my note.</div>
+
+:ET
