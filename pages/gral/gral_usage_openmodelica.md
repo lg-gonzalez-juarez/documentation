@@ -13,7 +13,6 @@ output: web, pdf
 ### Links Documentation & Tutorials
 
 
-
  [listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository](https://build.openmodelica.org/Documentation/)
 
 
@@ -25,7 +24,11 @@ output: web, pdf
 - [Doc Spoken-tutorials](https://spoken-tutorial.org/watch/OpenModelica/Developing+an+equation-based+model/English/)
 
 
+## Truquitos
 
+* system libraries > modelica
+* file > open modelic/ library file
+* 
 
 {% include warning.html content="This is my warning." %}
 - Los bloques deben ser nombrados diferentes al bloque
@@ -53,6 +56,13 @@ output: web, pdf
 #### Control Feedback of DC Motor 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Dw66ODbMS2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+### Repositorio de 3th Libraries
+
+https://github.com/modelica-3rdparty
+
 
 
 ### Anothers calls

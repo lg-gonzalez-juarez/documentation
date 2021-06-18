@@ -1,4 +1,4 @@
-I"	<h3 id="links-documentation--tutorials">Links Documentation &amp; Tutorials</h3>
+I" <h3 id="links-documentation--tutorials">Links Documentation &amp; Tutorials</h3>
 
 <p><a href="https://build.openmodelica.org/Documentation/">listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository</a></p>
 
@@ -11,6 +11,14 @@
   <li>
     <p><a href="https://spoken-tutorial.org/watch/OpenModelica/Developing+an+equation-based+model/English/">Doc Spoken-tutorials</a></p>
   </li>
+</ul>
+
+<h2 id="truquitos">Truquitos</h2>
+
+<ul>
+  <li>system libraries &gt; modelica</li>
+  <li>file &gt; open modelic/ library file</li>
+  <li></li>
 </ul>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> This is my warning.</div>
@@ -30,6 +38,18 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/esSMzMCFwbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
+<h4 id="simulation-of-dc-motor">Simulation of DC Motor</h4>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lWhG33YntXI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h4 id="control-feedback-of-dc-motor">Control Feedback of DC Motor</h4>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dw66ODbMS2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="repositorio-de-3th-libraries">Repositorio de 3th Libraries</h3>
+
+<p>https://github.com/modelica-3rdparty</p>
+
 <h3 id="anothers-calls">Anothers calls</h3>
 
 <div class="bs-callout bs-callout-danger">danger.</div>
@@ -40,25 +60,14 @@
 
 <div class="bs-callout bs-callout-success"><strong>success</strong> event.</div>
 
-<div class="bs-callout bs-callout-info"><strong>info</strong>  block. <br /><br />🎨 Use it please! &amp;  Enjoy! ⭐⭐⭐</div>
+<div class="bs-callout bs-callout-info"><strong>info</strong>  block. <br /><br />🎨 Use it please! &amp;  Enjoy! ⭐⭐⭐ <a href="https://app.diagrams.net/">DrawIO web</a></div>
 
 <div class="bs-callout bs-callout-warning"> <strong>warning</strong> by passing a type parameter.</div>
 
+<h3 id="more-issues">More Issues</h3>
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
-<a alt="git repository" href="https://openmodelica.org/git/OpenModelicaLibraries.git"> Git Repository</a></div>
+<a alt="git repository" href="https://openmodelica.org/git/OpenModelicaLibraries.git"> Link to Git Repository</a></div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository</div>
-
-<p>DrawIO se puede usar desde la web o bien la app en el escritorio.</p>
-
-<ul>
-  <li><a href="https://app.diagrams.net/">DrawIO web</a></li>
-  <li>
-    <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
-<a alt="desktop drawIO" href="https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8"> Desktop drawIO</a></div>
-  </li>
-</ul>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is my note.</div>
-
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
+<a alt="desktop drawIO" href="https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8"> Link to Desktop drawIO</a></div>
 :ET

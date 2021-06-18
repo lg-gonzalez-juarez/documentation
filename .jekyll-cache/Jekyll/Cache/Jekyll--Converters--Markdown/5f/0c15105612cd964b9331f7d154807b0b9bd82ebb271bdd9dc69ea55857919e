@@ -1,4 +1,4 @@
-I"¿<h3 id="links-documentation--tutorials">Links Documentation &amp; Tutorials</h3>
+I"‹<h3 id="links-documentation--tutorials">Links Documentation &amp; Tutorials</h3>
 
 <p><a href="https://build.openmodelica.org/Documentation/">listing of builtin Modelica functions, miscellaneous Modelica libraries stored in a git repository</a></p>
 
@@ -30,6 +30,18 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/esSMzMCFwbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
+<h4 id="simulation-of-dc-motor">Simulation of DC Motor</h4>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lWhG33YntXI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h4 id="control-feedback-of-dc-motor">Control Feedback of DC Motor</h4>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dw66ODbMS2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="repositorio-de-3th-libraries">Repositorio de 3th Libraries</h3>
+
+<p>https://github.com/modelica-3rdparty</p>
+
 <h3 id="anothers-calls">Anothers calls</h3>
 
 <div class="bs-callout bs-callout-danger">danger.</div>
@@ -48,11 +60,6 @@
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
 <a alt="git repository" href="https://openmodelica.org/git/OpenModelicaLibraries.git"> Link to Git Repository</a></div>
 
-<ul>
-  <li></li>
-  <li>
-    <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i>
 <a alt="desktop drawIO" href="https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8"> Link to Desktop drawIO</a></div>
-  </li>
-</ul>
 :ET
