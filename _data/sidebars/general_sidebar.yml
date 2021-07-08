@@ -57,6 +57,9 @@ entries:
       url: /gral_usage_openmodelica.html
       output: web, pdf
 
+    - title: g. MatLab
+      url: /gral_usage_matlab.html
+      output: web, pdf
            
   - title: III. PYTHON
     output: web, pdf

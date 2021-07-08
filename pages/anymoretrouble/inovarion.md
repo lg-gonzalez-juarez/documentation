@@ -10,6 +10,12 @@ folder: anymoretrouble
 output: web, pdf
 ---
 
+
+# Canvas
+
+https://edit.org/es/blog/plantillas-business-canvas-model-online
+
+
 # Issue 1
 
 Referente a lo que hable con el amigo de Tony
