@@ -50,7 +50,13 @@ https://es.mathworks.com/help/control/ug/build-a-model-of-a-multi-input-multi-ou
 
 ### Pypower
 
-### OpenMDAO
+### Organize code   
+D:\wk_matlab\uc3m\mt\pc104\MTLB\bin\MyComputePrg\iniCond
+
+condiciones iniciales de la maquina
+D:\wk_matlab\uc3m\mt\pc104\MTLB\bin\MyComputePrg\iniCond
+
+
 
 
 {% include warning.html content="Remember, Python is a interpreter language." %}

@@ -1,11 +1,47 @@
-I"È
-<h2 id="aplicaciones-de-interes">Aplicaciones de interes</h2>
+I"<h2 id="what-youll-do">What youâ€™ll Do</h2>
+
+<h2 id="links-de-interes">links de interes</h2>
+
+<ul>
+  <li>
+    <p>Convert state-space representation to transfer function
+https://es.mathworks.com/help/matlab/ref/ss2tf.html</p>
+  </li>
+  <li>
+    <p>Compute state-space model of linear electrical circuit
+https://es.mathworks.com/help/physmod/sps/powersys/ref/power_statespace.html</p>
+  </li>
+  <li>
+    <p>Tuning of a Digital Motion Control System
+https://es.mathworks.com/help/control/ug/tuning-of-a-digital-motion-control-system.html</p>
+  </li>
+  <li>
+    <p>MIMO Control System
+https://es.mathworks.com/help/control/ug/build-a-model-of-a-multi-input-multi-output-mimo-control-system.html</p>
+  </li>
+  <li>Pedro Lapique</li>
+  <li>Pedro Galindo</li>
+  <li>
+    <p>Alex Seic</p>
+  </li>
+  <li>motor contraroratorio</li>
+  <li>generador contrarotativo</li>
+  <li>20, 50,300 magna</li>
+  <li>bos</li>
+  <li>bifasico coaxial sin rotor</li>
+</ul>
+
+<h2 id="commandos">commandos</h2>
 
 <h3 id="python">Python</h3>
 
 <h3 id="pypower">Pypower</h3>
 
-<h3 id="openmdao">OpenMDAO</h3>
+<h3 id="organize-code">Organize code</h3>
+<p>D:\wk_matlab\uc3m\mt\pc104\MTLB\bin\MyComputePrg\iniCond</p>
+
+<p>condiciones iniciales de la maquina
+D:\wk_matlab\uc3m\mt\pc104\MTLB\bin\MyComputePrg\iniCond</p>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Remember, Python is a interpreter language.</div>
 
