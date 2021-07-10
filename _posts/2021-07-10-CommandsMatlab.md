@@ -202,7 +202,7 @@ winopen  'Intensidad_sag_ang.eps'
      set(gcf,'PaperPosition',[lft,bttm,wdth,hght])  
      nmFL='filtradoWND.pdf'; print('-dpdf',nmFL); 
      winopen(nmFL)
-     ```
+```
 
 ### Para saber que formato utilizar para desplegar datos por pantalla u archivo 
 
@@ -214,7 +214,7 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
 
 
 ### Tipos lineas
-     ```cmd
+```cmd
      --: trazado lineal discontinuo 
      g: verde oscuro (green)  
      -.: trazado lineal discontinuo intercalando punto y línea 
@@ -230,7 +230,7 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
      .: un punto 
      b: azul (blue) 
      c: verde claro (cyan  '-^b' '-.r' 
-     ```
+```
 
 ### Tipo de Datos
     A) ACCESO DATOS 
@@ -301,10 +301,11 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     La orden vpapermite realizar un cálculo y mostrar su resultado con una precisión especificada  sin cambiar el número de dígitos de precisión con el que se trabaja por defecto.  
     source "http://www.nebrija.es/~mjgarbayo/seminario_matlab/matlab2.html" 
     
-    ### Matlab to latex
-    %url=http://pundit.pratt.duke.edu/piki/index.php?title=MATLAB:LaTeX_Table_Writer&oldid=9734 
+   ### Matlab to latex
+   
+   %url=http://pundit.pratt.duke.edu/piki/index.php?title=MATLAB:LaTeX_Table_Writer&oldid=9734 
     
-    ```cmd
+   ```cmd
     s = sym(L);  
     v = vpa(s,5); 
     # assign numerical precision  
@@ -339,9 +340,9 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     end                           
     fprintf(FID, '\\end{tabular}\n');             
     fclose(FID);  %\begin{center} %\input{file.tex} %\end{center} 
-    ```
+   ```
     
-    CONFIGURACION EDITOR
+   ## CONFIGURACION EDITOR
     
     El tipo de letra para el editor: consolas Colores para el Editor 
     Azul -> RGB[0,255,204]  %Azul muy padre tirando pa verde :-D tipos de verdes       
@@ -353,52 +354,60 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     
     Customer fonts  toNUMBERS- muy visible: Dialog MS reference Sans 
     Serif palatino Linotype Miriam FIxed  Lucida Compacta: Iskoola Pota       
-    
-    Coordenadas Polares
-    
-    %PolarCoordinates 
+
+###    Coordenadas Polares
+
+%PolarCoordinates 
+```cmd
     angTHT= 0:0.01:2*pi; 
     rdR = sin(2*angTHT).*cos(2*angTHT); 
     [xX,yY]=pol2cart(angTHT,rdR); 
     figure;plot(xX,yY) 
     figure; polar(angTHT,rho,'--r')
+```    
     
-    
-     ### Leer archivos o datos desde otro pc
+### Leer archivos o datos desde otro pc
     
      - Entras por escritorio remoto al pc[44] 
      - Los archivos que deseas ejecutar los tienes pc[104] 
      -Abres matlab en pc[44] -Ejecutas el siguiente ejemplo: 
      
+```cmd
      dir='\\tsclient\D\MTLB\proc\StateEstimator\amediaslos2primeros';   
      addpath(dir);     
-     wls_34nudos
-     y listo se ejecuta el programa sin tenerlo en tu pc
+```
      
+wls_34nudos
+y listo se ejecuta el programa sin tenerlo en tu pc
+
+```cmd     
      addpath(genpath('C:\MATLAB\R2012a\toolbox\matpower4.1'))
+```     
      
-     
-     ### to set ubuntu: transforn toeps desde 104 desde otro pc 
-     
+### to set ubuntu: transforn toeps desde 104 desde otro pc 
+
+```cmd  
      [102]D:\lggj\code_dspace\20120222_CtrStatComBalanceado\caract 
      destine='\\tsclient\D\THESIS\CODE\plots_eps2pdf'; 
      copyfile(NameFile,destine) 
+```     
      
-     
-     ### LECTURA / ESCRITURA DE ARCHIVO 
-     
+### LECTURA / ESCRITURA DE ARCHIVO 
+
+```cmd     
      x = 0:.1:1;     
      y = [x; exp(x)]; fid = fopen('exp.m','w');     
      fprintf(fid,'Es letra:'); 
      fprintf(fid,'%6.2f %12.8f\n',y); 
      fclose(fid)
-     
+```
     http://arantxa.ii.uam.es/~iama/ficheros.pdf
     
     
-    multiples salidas matlab
+### Multiples salidas matlab
     para sacar muchos datos de otra funcion
-    
+
+```cmd 
     function[varargout]=ComputePointEq(sys,u_r0,u_s_eq,P_eq,Q_eq,varargin) 
     options=optimset('Display','off'); 
     %Solve system of nonlinear equations 
@@ -408,12 +417,13 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     varargout{1}=u_r_eq; 
     varargout{2}=x_eq; 
     end
+```
     
-    
-    ### LoadDatas
+### LoadDatas
     
     Para cuando leemos los datos a partir de un file*.mat 
-    
+
+```cmd    
     nmFL='datas.mat'; load(nmFL) 
     vars1=whos('-file',nmFL) 
     load(nmFL,vars1.name)
@@ -424,9 +434,12 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     legend('Pmed','Pref') subplot(212); 
     plot(dato.X.Data,dato.Y(6).Data,dato.X.Data,dato.Y(7).Data); 
     legend('Qmed','Qref') 
-    
-    ### reducir NumDatos 
+```
+
+### reducir NumDatos 
     Util para cuando tienes medidas
+
+```cmd
     tic %--- reduciendo datos       
     Y1=output_discreto(:,1);       
     Y2=output_discreto(:,2);       
@@ -440,17 +453,19 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
         U2(1:2:end,:)=[];           
         t_stm(1:2:end,:)=[]; 
     end 
-    
+```
+
     info matlab web;       
     http://www.mathworks.es/help/techdoc/ref/f16-42340.html#f16-6755     
     http://www.mathworks.es/help/techdoc/ref/f16-42340.html
     
     ### Conocer las propiedades de un objeto
-    
+
+```cmd 
     whos objeto, 
     whos T5_par
     string => character array <!-- -->  
-    
+```
         
     ### PROGRAMACION BASICA
     listfonts 
@@ -458,7 +473,7 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     FNCanonimous
     http://blogs.mathworks.com/loren/2013/01/10/introduction-to-functional-programming-with-anonymous-functions-part-1/ 
     
-    
+```cmd 
     c=@(a, b, theta)
     sqrt(a.^2+b.^2-2*a.*b.*cos(theta)) 
     MaxMin=@(x) [min(x), max(x)];  
@@ -478,16 +493,20 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     % Multiply by 2             @cos, ...
     % Find cosine             @(x) sprintf('x is %.5f...', x)})   
     % Return a string MIO: mapc=@(val,fcns) cellfun(@(f) f(val{:}),fcns,'UniformOutput',false); oxx=mapc({230}, {@(x)x*sqrt(2/3),@cos,@(x) sprintf('x is %.5f...', x)})   </code>  
+```    
     
-    
-    ### Integrales 
+### Integrales 
     http://www.cs.cmu.edu/~tom/10601_fall2012/recitations/matlab_quickref.pdf 
     
     ### Inline function
+```cmd
     f1=inline(’1./(2*x.^3-2*x-5)’); 
-    
+```
+
+```cmd    
     Q=quad(f1,0,2); f2=@(x)1./(2*x.^3-2*x-5);Q=quad(f2,0,2);</code> <!--  --> <b>Edit Folders, Filese</b><!--  --> <code>movefile('source','destination')</code> <!--  --> <b> function symbolicas</b> si se usa una funcion simbolica se puede  substituir valor con <b>subs </b>
-    
+```
+
      <hr><b>STRINGS</b><!--  --> a = 'hello  ';      b = 'goodbye';     using_strcat = strcat(a, b)     using_arrayop = [a, b]      % Equivalent to horzcat(a, b)      
     
     MATLAB returns     
@@ -513,6 +532,7 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     <b>MOVER ARCHIVO AL FOLDER CHILDREN </b>  
     
     carpeta destino   
+```cmd
     NameFolderChildren='sub01'   
     copyfile('source','destination')     
     NameFolderChildren='sub01'    
@@ -520,15 +540,16 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     source=strcat(old_dir,'\',NameFile)           
     destino=strcat(old_dir,'\',NameFolderChildren,'\',NameFile)
     copyfile(source,destino)
-    
-    <b>MOVER FILE</b><code>
-    
+```
+
+### MOVER FILE
+```cmd
     NameFile='datos_fglongatt.m'   
     source=strcat(old_dir,'\',NameFile)   
     destino=strcat(old_dir,'\',NameFolderChildren,'\',NameFile)   movefile(source,destino) </code> <!--  -->     <hr><b>abrir archivos de un pc remoto:</b> function anonymous:   A = [2 3 4];<br>B = [5 6 7];       sumAxBy = @(x, y) (A*x + B*y);       sumAxBy(5, 7) <!--  -->  Code performance  checkcode('filename')  Inilation variables  function q = fcnPersist1(u) % fcnPersistent creates and uses a       persistent variable. persistent y; <br> if isempty(y),    y = u;<br> else,    y = y+1;<br> end q = y;)  <!-- <br>  -->  <hr><b>FOR-CICLOS: </b>          <tt> syms a11 a12 b21 b22              A=[a11;a12];              B=[b21;b22];             % mover               for i=1:1:2;               for j=1:1:2;              fprintf('i=%d j=%d \n',i,j)                C(i,j)=A(i)
     *B(j);              fprintf('Matrix C \n');               disp(C); pause(1)             end           end </tt>  <!--  -->  
-    
 
+```
 
     <hr><b>MOVE folder:</b> $para mover un archivo a un children_folder       
     &lt;- algun comentario necesario<!-- --> <!--  -->    
