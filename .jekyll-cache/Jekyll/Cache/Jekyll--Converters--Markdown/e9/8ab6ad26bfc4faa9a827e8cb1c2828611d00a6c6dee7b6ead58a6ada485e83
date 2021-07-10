@@ -1,0 +1,145 @@
+I"�i<h3 id="print-screen">Print Screen</h3>
+<pre><code class="language-cmd">fprint-sprintf
+</code></pre>
+<p><code></code></p>
+
+<h2 id="setting-screen">Setting Screen</h2>
+<pre><code class="language-cmd">set(0,'units','centimeters')
+get(0,'MonitorPosition')
+get(0,'ScreenSize')
+fprintf(lineSec,'a','Nombre Bloques');
+disp(blks); pause (2); 
+</code></pre>
+
+<h2 id="display-properties-of-simulink-blocks">Display properties of Simulink Blocks</h2>
+<pre><code class="language-cmd"> for n=1:length(Tag_blck),  
+    title=strcat(Tag_blck{n},'=&gt; ',num2str(blks_pos{n}));
+    fprintf('%s \n',title);
+end
+
+Position==[left bottom width height]; 
+sprintf('%c',char(245)); tic
+</code></pre>
+
+<pre><code class="language-cmd">U=1*exp(2*i*pi*50); 
+    disp('U'); 
+I=0.5*exp(-i*2*pi*50); 
+    disp ('I')
+S=U*conj(I); toc ; tic; 
+    fprintf('%d \n',S); toc; tic; disp (S); toc
+</code></pre>
+
+<h2 id="no-imprime-variables">no imprime variables</h2>
+<p>tic; sprintf(‘%d \n’,S) ;toc</p>
+
+<h2 id="mejor-opcion-para-desplegar-lineas">Mejor opcion para desplegar lineas</h2>
+
+<pre><code class="language-cmd">tic; fprintf('%c',char(frame01));
+fprintf('\n'); 
+sprintf('%c',char(frame01)),sprintf('\n');toc
+
+### Adaptacion de pc/folder en matlab
+
+```cmd
+addpath('D:\MTLB\bin\MyComputePrg\Sags');&amp;#xD;
+addpath('D:\MTLB\bin\MyComputePrg\sourceVabc');&amp;#xD;
+addpath(genpath('D:\THESIS\CODE\Matlab\sysREE\rev1'))
+</code></pre>
+
+<h3 id="size-screen">SIZE SCREEN</h3>
+
+<pre><code class="language-cmd">scrsz = get(0,'ScreenSize'); en pixeles
+... tipo centimeter normalized
+left=1; bottom=1; width=20;  height=10;&amp;#xD;
+figure('units','centimeter','Position',[left, bottom, width, height]);
+
+OTHERS
+get(gcf,'Position');
+set(gcf,'Units','centimeters');
+</code></pre>
+
+<h3 id="conocer-el-tamaño-de-cada-monitor">CONOCER EL TAMAÑO DE CADA MONITOR</h3>
+
+<pre><code class="language-cmd">get(0,'MonitorPosition')
+</code></pre>
+
+<h3 id="para-imprimir-al-tamaño-deseado">Para imprimir al tamaño deseado</h3>
+
+<pre><code class="language-cmd">set(gcf, 'PaperUnits', 'centimeters');
+width = 15;   height = 15;        
+set(gcf, 'PaperSize', [width height]);
+papersize = get(gcf, 'PaperSize');       
+left = (papersize(1)- width)/2;&amp;#xD;       
+bottom = (papersize(2)- height)/2;       
+myfiguresize = [left, bottom, width, height];&amp;#xD;       
+set(gcf, 'PaperPosition', myfiguresize);
+</code></pre>
+
+<h3 id="para-imprimir-al-tamaño-deseado-1">Para imprimir al tamaño deseado</h3>
+
+<pre><code class="language-cmd">set(gcf, 'PaperUnits', 'centimeters');
+width = 15;   height = 15; 
+set(gcf, 'PaperSize', [width height]);
+papersize = get(gcf, 'PaperSize');
+left = (papersize(1)- width)/2;
+bottom = (papersize(2)- height)/2;
+myfiguresize = [left, bottom, width, height];
+set(gcf, 'PaperPosition', myfiguresize);
+set(gcf,'Units','centimeters','Position',[4,14,15,10]);
+set(gcf, 'PaperUnits', 'centimeters','PaperSize',[15,10],...
+'PaperPosition',[0,0,15,10]);
+</code></pre>
+
+<p>PLOTS</p>
+<pre><code class="language-cmd">%print -dpdf Intensidad_sag_ang.pdf;  pause(1); clf; close;
+%winopen  'Intensidad_sag_ang.pdf'
+%print -depsc Intensidad_sag_ang.eps; % pause(1); clf; close;
+winopen  'Intensidad_sag_ang.eps'&amp;#xD;    
+%copyfile('Intensidad_sag_ang.eps',destine)
+    pause(2); close all;
+</code></pre>
+
+<h3 id="para-ponerle-nombre-a-una-figura">Para ponerle nombre a una figura</h3>
+<pre><code class="language-cmd">  
+  figure('name','Ic-Vdip &lt;-&gt; Angulo de carga variando'); hold on
+    %set(figH,'Name','something else','NumberTitle','off')&amp;#xD;
+```cmd
+  
+    Esto es la mejor opcion en tiempo de computo&lt;code&gt;
+```cmd
+    tic;disp(sprintf('%c',char(frame01)));toc
+</code></pre>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>datos de numero a letras ```cmd
+num2str(SG1(1:3,1) ```cmd
+
+formato pdf: existen 2 formas &amp;#xD;a) usando un comando de linea, pero habria que darle el tamaño especifico &amp;#xD;b) imprimiendo en eps y pasandolo a pdf usando un archivo en ubuntu para esta conversion&amp;#xD;&lt;strong&gt;formato eps:&lt;/strong&gt;&lt;code&gt;print -deps NameFile&lt;/code&gt;&amp;#xD;&lt;strong&gt;Formato de impresion&lt;/strong&gt;&lt;code&gt;pdf o eps&lt;/code&gt;&amp;#xD;&lt;!-- --&gt;&amp;#xD;
+</code></pre></div></div>
+
+<h3 id="configuration-plots">CONFIGURATION PLOTS:</h3>
+
+<pre><code class="language-cmd">    iLocLeg='EastOutside';&amp;#xD;ColorLine=[0 0 0]; StyleLine='.-|--|-.|:';&amp;#xD;&amp;#xD;
+    set(gcf,'DefaultLineLineWidth',1.5)&amp;#xD;set(gcf,'DefaultAxesColorOrder',ColorLine,...&amp;#xD;      
+    'DefaultAxesLineStyleOrder',StyleLine)&amp;#xD;&amp;#xD;
+    iFontSize=14; iLineWidth=2; jFontSize=15;&amp;#xD;strFontName='Arial';
+    set(gcf,'Defaultaxesfontsize',jFontSize,...&amp;#xD;    
+    'DefaultAxesFontName','strFontName',...&amp;#xD;'DefaultAxesFontUnits','centimeters');&amp;#xD;&amp;#xD;
+    %---PutNameAxes&amp;#xD;OBJ01='xlabel(strXlabel);ylabel(strYlabel)'; 
+    %---PutSize/Type_Letter_atLATEX&amp;#xD;prop01='FontSize'; prop02='Interpreter'; INprop02='latex';&amp;#xD;propA='XLabel'; propB='YLabel';&amp;#xD;OBJ02='set(get(gca,propA),prop01,iFontSize,prop02,INprop02)';&amp;#xD;OBJ03='set(get(gca,propB),prop01,iFontSize,prop02,INprop02)';&amp;#xD;&amp;#xD;%----
+</code></pre>
+
+<h3 id="colocar-legendas-en-graficas">Colocar legendas en graficas</h3>
+
+<pre><code class="language-cmd">     OBJ05='legend(strLegend)'; propE='type';  
+     propF='text';&amp;#xD;OBJ06='set(findobj(lgOBJ,propE,propF),prop01,jFontSize,prop02,INprop02)';
+</code></pre>
+<h3 id="color-y-localizacion-de-las-etiquetas">Color y localizacion de las etiquetas</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> propG='boxoff'; propH='Location'; propI='edgecolor'; propJ='none';
+ &amp;#xD;OBJ07='legend(propG,propH,iLocLeg,propI,propJ)'
+ [num, txt, raw] = xlsread('CASOIIF.XLS') 
+ wnd=num(:,1);&amp;#xD;&amp;#xD;
+ windFILTER&amp;#xD;
+ figure(1); rng default;%x=ecg(500)'+0.25*randn(500,1); 
+ %noisy waveform&amp;#xD;&amp;#xD;%{&amp;#xD;xWND=[wnd;wnd]&amp;#xD;h=fdesign.lowpass('Fp,Fst,Ap,Ast',0.15,0.2,1,60);&amp;#xD;d=design(h,'equiripple'); %LowpassFIRFILTER&amp;#xD;WNDfltr01=filtfilt(d.Numerator,1,xWND);%zero-phaseFILTER&amp;#xD;WNDfltr02=filter(d.Numerator,1,xWND);%conventionalFILTER&amp;#xD;&amp;#xD;subplot(321);plot([WNDfltr01 WNDfltr02]);&amp;#xD;title('señales filtradas');&amp;#xD;legend('FILTRADO FASE-CERO','FILTRADO TRADICIONAL');&amp;#xD;%}&amp;#xD;xWND=[wnd]; &amp;#xD;%subplot(211); &amp;#xD;h=fdesign.lowpass('N,F3dB',12,0.15);  d1=design(h,'butter');&amp;#xD;WNDfltr03=filtfilt(d1.sosMatrix,d1.ScaleValues,xWND);&amp;#xD;&amp;#xD;%--------------------&amp;#xD;strYlabel='\bf{Viento (Medidas) [m/s]}';&amp;#xD;strXlabel='\bf{Tiempo [horas]}';&amp;#xD;strLegend={'Medici\''on sin tratar','se\~nal filtrada'};&amp;#xD;&amp;#xD;%plot(tm,P1_24hrs,'og',tm,P2_24hrs,'sr',tm,P3_24hrs,'^b',tm,P4_24hrs,'*k');&amp;#xD;plot(xWND,'k-.'); hold on; plot(WNDfltr03,'r','linewidth',2);&amp;#xD;%legend('MEDICION SIN TRATAR','SEÑAL FILTRADA','location','NorthEast');&amp;#xD;cy = get(gca,'xtick'); &amp;#xD;%set(gca,'xticklabel',[]);&amp;#xD;set(gca,'xticklabel',cy/10); &amp;#xD;eval(OBJ01); eval(OBJ02); eval(OBJ03); lgOBJ=eval(OBJ05);  eval(OBJ06);  eval(OBJ07);&amp;#xD;axis([0 240 7.5 12.5]);grid on &amp;#xD;%PRINT&amp;#xD;set(gcf,'PaperUnits','centimeters','PaperOrientation','landscape',...&amp;#xD;    'PaperType', 'A5'); pprsz=get(gcf, 'PaperSize');&amp;#xD;[wdth hght]=deal(20,14.5);&amp;#xD;[lft,bttm]=deal((pprsz(1)-wdth)/2,(pprsz(2)-hght)/2);&amp;#xD;set(gcf,'PaperPosition',[lft,bttm,wdth,hght])&amp;#xD;&amp;#xD;nmFL='filtradoWND.pdf'; print('-dpdf',nmFL); winopen(nmFL)&amp;#xD;&lt;/code&gt;&lt;!-- --&gt;  &amp;#xD;para saber que formato utilizar para desplegar datos por pantalla u archivo&amp;#xD;http://www.mathworks.es/help/techdoc/ref/fprintf.html&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;caption&gt;LATEX&lt;/caption&gt;&amp;#xD;&lt;code&gt;latex(S)--exportar a latex&lt;/code&gt;&amp;#xD;http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html#brgekck&amp;#xD;&lt;dl&gt;&amp;#xD;&lt;dt&gt;tipos lineas&lt;/dt&gt;&amp;#xD;&lt;dd&gt;--: trazado lineal discontinuo&amp;#xD;g: verde oscuro (green) &amp;#xD;-.: trazado lineal discontinuo intercalando punto y línea&amp;#xD;k: negro (black) &amp;#xD;: : trazado con línea de puntos&amp;#xD;m: rojo oscuro (magenta)&amp;#xD;*: marca *&amp;#xD;r: rojo (red)&amp;#xD;+: marca +&amp;#xD;w: blanco (white)&amp;#xD;o: círculo&amp;#xD;y: amarillo (yellow)&amp;#xD;x: marca con un aspa&amp;#xD;.: un punto&amp;#xD;b: azul (blue)&amp;#xD;c: verde claro (cyan&amp;#xD;&amp;#xD;'-^b'&amp;#xD;'-.r'&amp;#xD;&lt;/dd&gt;&amp;#xD;&lt;dt&gt;Tipo de Datos&lt;/dt&gt;&amp;#xD;&lt;dd&gt;A) ACCESO DATOS&amp;#xD;1) cell       koman2:  NameCell{n_cell}&amp;#xD;&amp;#xD;2) Numeric Arrays       koman2:  NameCell{n_cell}&amp;#xD;B = [12, 62, 93, -8, 22; 16, 2, 87, 43, 91; -4, 17, -72, 95, 6]&amp;#xD;&amp;#xD;2) Character Strings&amp;#xD;myString = 'Hello, world';&amp;#xD;&amp;#xD;A) ADMINISTRACION DATOS&amp;#xD;1) Importación Datos&amp;#xD;&amp;#xD; load: Números separados por espacios-&gt; matriz&amp;#xD; Puede cargar desde ficheros .mat o ASCII&amp;#xD; load ('fichero .mat' [, var1, var2, varN ])&amp;#xD; load('fichero ascii') %carga matrix de números&amp;#xD; csvread → Hojas de cálculo        dlmread → Números, cualquier separador&amp;#xD; textread → para leer celdas, varios tipos   textscan → Más complejo y potente que textread&amp;#xD; xmlread → Formatos XML → Document ObjectModel&amp;#xD;&amp;#xD;Exportación de datos&amp;#xD; save: Guarda datos para ser cargados con load&amp;#xD; save ('fichero', variables...)&amp;#xD; csvwrite&amp;#xD; dlmwrite → Números, cualquier separador&amp;#xD; xmlwrite → Guarda en formato XML&amp;#xD;&lt;/dd&gt;&amp;#xD; &lt;dt&gt;Uso general de ficheros&lt;/dt&gt;&amp;#xD;&lt;dd&gt;&amp;#xD;1.Abrir: fopen&amp;#xD;2.Lectura y escritura: fload, fwrite, fread, fscanf, fprintf...&amp;#xD;3.Cerrar: fclose, Hay que comprobar posibles errores al operar con ficheros&amp;#xD; Alternativas: Matlab(simple) y estilo C (potente)&amp;#xD;&amp;#xD;[fid, msg]=fopen('nombre', 'modo')&amp;#xD;-Modo:&amp;#xD;- 'r' → fichero existente para lectura&amp;#xD;- 'w' → escritura, borra el contenido previo&amp;#xD;- 'a' → escritura, añadiendo al final del fichero&amp;#xD;- 'r+' → fichero existente, lectura y escritura&amp;#xD;- 'w+' → lectura y escritura, borrando el contenidoprevio&amp;#xD;- 'a+' → lectura y escritura, al final del fichero&amp;#xD;&amp;#xD;&amp;#xD;fprintf(fid, 'formato', variables...)&amp;#xD;- Escribe las variables en el fichero siguendo el&amp;#xD;formato indicado&amp;#xD;- Si se omite fid escribe en pantalla&amp;#xD;- Formato: cadena de conversión estilo C&amp;#xD;- %d %i: Decimal con signo&amp;#xD;- %o %u, %x: octal, sin signo, hexadecimal,&amp;#xD;- %E,e: Double precisión, notación [-]d.ddddE(+|-)dd&amp;#xD;- %f: [-]ddd.ddd; %g: usa %e o %f según el caso&amp;#xD;- %s: cadena de caracteres&amp;#xD;Lectura y escritura&amp;#xD;- Longitud y decimales: %l.d antes del&amp;#xD;modificador&amp;#xD;- Delimitadores&amp;#xD;- \n: salto de linea&amp;#xD;- \r: retorno de carro&amp;#xD;- \t: tabulador&amp;#xD;- \b: retroceso (backspace)&amp;#xD;- \\: para imprimir \ (carácter de escape)&amp;#xD;&amp;#xD;Lectura&amp;#xD;- A= fscanf (fid, 'formato')&amp;#xD;-v=fscanf(fid, '%g') → Lee todo el fichero, numero a&amp;#xD;numero, volcandolo en el vector v&amp;#xD;- [A, leidos] = fscanf(fid, 'formato', dimension)&amp;#xD;- Leidos= leidos correctamente&amp;#xD;- Dimension&amp;#xD;- n= n elementos en un vector columna&amp;#xD;- inf=todos los elementos&amp;#xD;- [M, N] Rellena la matriz MxN por columnas. N puede ser&amp;#xD;inf&amp;#xD;Lectura por lineas&amp;#xD;linea=fgetl(fid) → lee linea a linea (sin&amp;#xD;guardar \n). -1 si llega al final de fichero (se&amp;#xD;puede comprobar con ~ischar(linea)&amp;#xD;- fgets(fid) → lee la siguiente linea, incluyendo \n&amp;#xD;- fgets(fid, nchar) → lee nchar caracteres&amp;#xD;máximo de la siguiente linea&amp;#xD;&amp;#xD;Formato de numeros&amp;#xD;Orden de MATLAB Comentarios Ejemplo&amp;#xD;format long &amp;#xD;format short 16 dígitos &amp;#xD;visualización por defecto 35.83333333333334 &amp;#xD;35.8333&amp;#xD;format short e 5 dígitos más exponente 3.5833e+01&amp;#xD;format long e 16 dígitos más exponente 3.583333333333334e+01&amp;#xD;format hex hexadecimal 4041eaaaaaaaaaab&amp;#xD;format bank 2 decimales 35.83&amp;#xD;format + signo +&amp;#xD;format rat aproximación racional 215/6&amp;#xD;&amp;#xD;La orden digits(n)cambia el número de dígitos de precisión que se usa por defecto en la toolbox. &amp;#xD;La orden digits nos permite conocer cual es el valor de este número. &amp;#xD;La orden vpapermite realizar un cálculo y mostrar su resultado con una precisión especificada &amp;#xD;sin cambiar el número de dígitos de precisión con el que se trabaja por defecto. &amp;#xD;source "http://www.nebrija.es/~mjgarbayo/seminario_matlab/matlab2.html"&amp;#xD;&lt;/dd&gt;&lt;/dl&gt;&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;caption&gt;matlab to latex&lt;/caption&gt;&amp;#xD; %url=http://pundit.pratt.duke.edu/piki/index.php?title=MATLAB:LaTeX_Table_Writer&amp;oldid=9734&amp;#xD;&lt;code&gt;%s = sym(L);&amp;#xD; %v = vpa(s,5); %# assign numerical precision&amp;#xD; %latex(v)&amp;#xD;            TC = [-273.15 -40 0 100]';&amp;#xD;            TK = TC + 273.15;&amp;#xD;            TF = (TC+40)*9/5-40;&amp;#xD;            TR = TF + 459.67;&amp;#xD;&amp;#xD;            for k=1:length(TC)&amp;#xD;                fprintf('%8.2f &amp; %8.2f &amp; %8.2f &amp; %8.2f \\\\ \n', TC(k), TK(k), TF(k), TR(k))&amp;#xD;            end&amp;#xD;            &amp;#xD;            for k=1:length(TC)&amp;#xD;                fprintf('%8.2f &amp; %8.2f &amp; %8.2f &amp; %8.2f \\\\ \\hline  \n', TC(k), TK(k), TF(k), TR(k))&amp;#xD;            end&amp;#xD;            &amp;#xD;            FID = fopen('file.tex', 'w')&amp;#xD;            for k=1:size(MainMat, 1)&amp;#xD;                fprintf(FID, '%8.2f &amp; %8.2f &amp; %8.2f &amp; %8.2f \\\\ \n', TC(k), TK(k), TF(k), TR(k))&amp;#xD;            end&amp;#xD;            fclose(FID)&amp;#xD;            &amp;#xD;            FID = fopen('file.tex', 'w');&amp;#xD;            fprintf(FID, '\\begin{tabular}{|rrrr|}\\hline \n');&amp;#xD;            fprintf(FID, 'T ($^{\\circ}$C) &amp; T (K) &amp; T ($^{\\circ}$F) &amp; T ($^{\\circ}$R)\\\\ \\hline \n');&amp;#xD;            for k=1:length(TC)&amp;#xD;                fprintf(FID, '%8.2f &amp; %8.2f &amp; %8.2f &amp; %8.2f \\\\ ', TC(k), TK(k), TF(k), TR(k));&amp;#xD;                if k==length(TC)&amp;#xD;                    fprintf(FID, '\\hline ');&amp;#xD;                end&amp;#xD;                fprintf(FID, '\n');&amp;#xD;            end&amp;#xD;             &amp;#xD;            fprintf(FID, '\\end{tabular}\n');&amp;#xD;            fclose(FID);&amp;#xD;&amp;#xD;%\begin{center}&amp;#xD;%\input{file.tex}&amp;#xD;%\end{center}&amp;#xD;&lt;/code&gt;&amp;#xD;&amp;#xD;&lt;hr&gt;&lt;caption&gt;CONFIGURACION EDITOR&lt;/caption&gt;&amp;#xD;El tipo de letra para el editor: consolas&amp;#xD;Colores para el Editor&amp;#xD;Azul -&gt; RGB[0,255,204]  %Azul muy padre tirando pa verde :-D&amp;#xD;tipos de verdes&amp;#xD;      verde-amarillo [189 221 150]&amp;#xD;      verde-azul-suave [130,239,178]&amp;#xD;&amp;#xD;      codigo ascii de caracteres utiles&amp;#xD;      0xAE -- flecha&amp;#xD;      U+219 --- Flecha okis&amp;#xD;      para saber el # ascii&amp;#xD;      clc;for n=126:1:255;disp([char(n) num2str(n)]);end&amp;#xD;Customer fonts&amp;#xD;&amp;#xD;toNUMBERS-&amp;#xD;muy visible: Dialog&amp;#xD;MS reference Sans Serif&amp;#xD;palatino Linotype&amp;#xD;Miriam FIxed &amp;#xD;Lucida&amp;#xD;Compacta: Iskoola Pota &amp;#xD;  &amp;#xD; &amp;#xD;&lt;hr&gt;&lt;caption&gt;Coordenadas Polares---&lt;/caption&gt;&lt;code&gt;&amp;#xD;%PolarCoordinates&amp;#xD;angTHT= 0:0.01:2*pi;&amp;#xD;rdR = sin(2*angTHT).*cos(2*angTHT);&amp;#xD;[xX,yY]=pol2cart(angTHT,rdR);&amp;#xD;figure;plot(xX,yY)&amp;#xD;figure; polar(angTHT,rho,'--r')&lt;/code&gt;&amp;#xD;&amp;#xD;&lt;!--&lt;article&gt;--&gt;&amp;#xD;&lt;hr&gt;&lt;caption&gt;Leer archivos o datos desde otro pc---&lt;/caption&gt;&amp;#xD;- Entras por escritorio remoto al pc[44]&amp;#xD;- Los archivos que deseas ejecutar los tienes pc[104]&amp;#xD;-Abres matlab en pc[44]&amp;#xD;-Ejecutas el siguiente ejemplo:&amp;#xD;&lt;!----&gt;&amp;#xD;&lt;code&gt;dir='\\tsclient\D\MTLB\proc\StateEstimator\amediaslos2primeros';&amp;#xD;  addpath(dir);     wls_34nudos&lt;/code&gt;&amp;#xD;&lt;!----&gt;&amp;#xD;y listo se ejecuta el programa sin tenerlo en tu pc&amp;#xD;&lt;code&gt;addpath(genpath('C:\MATLAB\R2012a\toolbox\matpower4.1'))&lt;/code&gt;&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;hr&gt;&lt;caption&gt;to set ubuntu: transforn toeps desde 104 desde otro pc-&lt;/caption&gt;&amp;#xD;&lt;code&gt;[102]D:\lggj\code_dspace\20120222_CtrStatComBalanceado\caract&amp;#xD;destine='\\tsclient\D\THESIS\CODE\plots_eps2pdf'; copyfile(NameFile,destine)&amp;#xD;&lt;/code&gt;&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;hr&gt;&lt;caption&gt;LECTURA / ESCRITURA DE ARCHIVO &lt;/caption&gt;&amp;#xD;&lt;code&gt;x = 0:.1:1;     y = [x; exp(x)];&amp;#xD;fid = fopen('exp.m','w');     fprintf(fid,'Es letra:');&amp;#xD;fprintf(fid,'%6.2f %12.8f\n',y);&amp;#xD;fclose(fid)&lt;/code&gt;&amp;#xD; http://arantxa.ii.uam.es/~iama/ficheros.pdf&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;!--&lt;h1 style="text-align:center;"&gt;multiples salidas matlab&lt;/h1&gt;--&gt;&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;hr&gt;&lt;caption&gt;para sacar muchos datos de otra funcion&lt;/caption&gt;&amp;#xD;&lt;code&gt;function[varargout]=ComputePointEq(sys,u_r0,u_s_eq,P_eq,Q_eq,varargin)&amp;#xD;options=optimset('Display','off');&amp;#xD;%Solve system of nonlinear equations&amp;#xD;u_r_eq=fsolve(@(u_r)kk(u_r,sys,u_s_eq,P_eq,Q_eq),u_r0,options); &amp;#xD;u=[u_s_eq;u_r_eq]; &amp;#xD;x_eq=(eye(4)-sys.A)\(sys.B*u);&amp;#xD;varargout{1}=u_r_eq; varargout{2}=x_eq;&amp;#xD;end &lt;/code&gt;&lt;/section&gt;&lt;/pre&gt;&amp;#xD;&lt;!-- --&gt;  &amp;#xD;&lt;footer&gt; LGGJ sec:C @uc3m&lt;/footer&gt;&lt;time pubdate datetime="2012-03-01"&gt;&lt;/time&gt;&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;pre&gt;&lt;section&gt;&lt;caption&gt;LoadDatas&lt;/caption&gt;&amp;#xD; Para cuando leemos los datos a partir de un file*.mat&amp;#xD;&lt;code&gt;nmFL='datas.mat';&amp;#xD;load(nmFL)&amp;#xD;vars1=whos('-file',nmFL)&amp;#xD;load(nmFL,vars1.name)&amp;#xD;%d=load('nmFL','-regexp','x0',)&amp;#xD;dato=importdata(nmFL)&amp;#xD;%dato.Y.Data&amp;#xD;%-- dato.X.Data --time&amp;#xD;%-- dato.Y.Name -- Esto esta padre pa saber que es cada dato&amp;#xD;nmDATA=dato.Y(1).Name, &amp;#xD;subplot(211);&amp;#xD;plot(dato.X.Data,dato.Y(4).Data,dato.X.Data,dato.Y(5).Data);&amp;#xD;legend('Pmed','Pref')&amp;#xD;subplot(212);&amp;#xD;plot(dato.X.Data,dato.Y(6).Data,dato.X.Data,dato.Y(7).Data);&amp;#xD;legend('Qmed','Qref')&amp;#xD;&lt;/code&gt;&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;hr&gt;&lt;caption&gt;reducir NumDatos &lt;/caption&gt;Util para cuando tienes medidas&amp;#xD;&lt;code&gt;tic %--- reduciendo datos&amp;#xD;      Y1=output_discreto(:,1);&amp;#xD;      Y2=output_discreto(:,2);&amp;#xD;      U1=input_discreto(:,1);&amp;#xD;      U2=input_discreto(:,2);&amp;#xD;      n=3;&amp;#xD;      for i=1:1:n&amp;#xD;          Y1(1:2:end,:)=[];&amp;#xD;          Y2(1:2:end,:)=[];&amp;#xD;          U1(1:2:end,:)=[];&amp;#xD;          U2(1:2:end,:)=[];&amp;#xD;          t_stm(1:2:end,:)=[];&amp;#xD;end&amp;#xD;&lt;/code&gt;&amp;#xD; &lt;!-- --&gt;  &amp;#xD;    info matlab wer;  &amp;#xD;    http://www.mathworks.es/help/techdoc/ref/f16-42340.html#f16-6755&amp;#xD;    http://www.mathworks.es/help/techdoc/ref/f16-42340.html&amp;#xD;&lt;!-- --&gt;&amp;#xD;&lt;caption&gt;Conocer las propiedades de un objeto&lt;/caption&gt;&amp;#xD;&lt;code&gt;whos objeto, whos T5_par&lt;/code&gt;&amp;#xD;  string =&gt; character array&amp;#xD;&lt;!-- --&gt; &amp;#xD;&lt;body&gt;&lt;pre&gt;&lt;hr&gt;&lt;caption&gt;PROGRAMACION BASICA&lt;/caption&gt; &amp;#xD;listfonts&amp;#xD;&lt;!--  --&gt;&amp;#xD;&lt;b&gt;FNCanonimous&lt;/b&gt;&amp;#xD;http://blogs.mathworks.com/loren/2013/01/10/introduction-to-functional-programming-with-anonymous-functions-part-1/&amp;#xD;&lt;code&gt;c=@(a, b, theta) sqrt(a.^2+b.^2-2*a.*b.*cos(theta))&amp;#xD;MaxMin=@(x) [min(x), max(x)];  MaxMin(2)&amp;#xD;ans =     2     2&amp;#xD;[extremo,idx] = cellfun(@(f) f([3 4 1 6 2]), {@min, @max})&amp;#xD;min_and_max = @(x) cellfun(@(f) f(x), {@min, @max});&amp;#xD;y = randi(10, 1, 10)&amp;#xD;just_values        = min_and_max(y)&amp;#xD;[~, just_indices]  = min_and_max(y)&amp;#xD;[extrema, indices] = min_and_max(y)&amp;#xD;mapc = @(val, fcns) cellfun(@(f) f(val{:}), fcns, 'UniformOutput', false);&amp;#xD;mapc({pi}, {@(x) 2 * x, ...                     % Multiply by 2&amp;#xD;            @cos, ...                           % Find cosine&amp;#xD;            @(x) sprintf('x is %.5f...', x)})   % Return a string&amp;#xD;MIO:&amp;#xD;mapc=@(val,fcns) cellfun(@(f) f(val{:}),fcns,'UniformOutput',false);&amp;#xD;oxx=mapc({230}, {@(x)x*sqrt(2/3),@cos,@(x) sprintf('x is %.5f...', x)})  &amp;#xD;&lt;/code&gt;&amp;#xD;&amp;#xD;&lt;b&gt;Integrales &lt;/b&gt; http://www.cs.cmu.edu/~tom/10601_fall2012/recitations/matlab_quickref.pdf&amp;#xD;&lt;code&gt;f1=inline(’1./(2*x.^3-2*x-5)’); Q=quad(f1,0,2);&amp;#xD;f2=@(x)1./(2*x.^3-2*x-5);Q=quad(f2,0,2);&lt;/code&gt;&amp;#xD;&lt;!--  --&gt;&amp;#xD;&lt;b&gt;Edit Folders, Filese&lt;/b&gt;&lt;!--  --&gt;&amp;#xD;&lt;code&gt;movefile('source','destination')&lt;/code&gt;&amp;#xD;&lt;!--  --&gt;&amp;#xD;&lt;b&gt; function symbolicas&lt;/b&gt; si se usa una funcion simbolica se puede  substituir valor con &lt;b&gt;subs &lt;/b&gt;&amp;#xD;&lt;!--  --&gt;&amp;#xD;&lt;!--  --&gt;&amp;#xD;&lt;hr&gt;&lt;b&gt;STRINGS&lt;/b&gt;&lt;!--  --&gt;&amp;#xD;a = 'hello  ';      b = 'goodbye';&amp;#xD;    using_strcat = strcat(a, b)&amp;#xD;    using_arrayop = [a, b]      % Equivalent to horzcat(a, b)&amp;#xD;     MATLAB returns&amp;#xD;    using_strcat =hellogoodbye&amp;#xD;    using_arrayop =hello  goodbye&amp;#xD;    alfabeto griego en latex para matlab&amp;#xD;&lt;!--  --&gt;&amp;#xD;&lt;b&gt;String Evaluation&lt;/b&gt;  &lt;code&gt;eval, feval&lt;/code&gt;&amp;#xD;&lt;b&gt;multiplicacion matrices&lt;/b&gt;&amp;#xD;&lt;code&gt;clear all; close all; clc %% multiplicacion Matrix&amp;#xD;%a(mn)&amp;#xD;syms a11 a12 a13 %a11...a1n&amp;#xD;syms a21 a22 a23 &amp;#xD;syms a31 a32 a33 %am1..anm&amp;#xD;%b(np)&amp;#xD;syms b11  %b11...b1p&amp;#xD;syms b21  &amp;#xD;syms b31  %bn1..anp&amp;#xD;&amp;#xD;A=[a11,a12,a13;...&amp;#xD;a21,a22,a23;...&amp;#xD;a31,a32,a33]; %am1..anm&amp;#xD;B=[b11;b21;b31]; C=A*B&amp;#xD;&lt;/code&gt;&amp;#xD;&lt;!--  --&gt;&amp;#xD;&lt;hr&gt;&lt;b&gt; MATRIX&lt;/b&gt;&amp;#xD;Para sumar los elementos de una matrix&amp;#xD;&lt;code&gt;  [baseMVA, bus, gen, branch] = loadcase(casefile);&amp;#xD;    % obtener el vector de las potencias &amp;#xD;    P=bus(:,3);    Q=bus(:,4);&amp;#xD;    PQ=bus([1:4],[3 4]) %submatrix elementos donde se interseptan filas 1,4  y columnas 3,4&amp;#xD;    % en la primera prueba usamos todas la potencias para que sea la total&amp;#xD;    Pt_test1=sum(P,1) % 1 es para que sume en vertical&amp;#xD;    Qt_test1=sum(Q,1)% 1 es para que sume en vertical&amp;#xD;    PQ_1=sum(PQ,1)&amp;#xD;    % en la segunda prueba solo emplearemos las 3 primeras cargas&amp;#xD;    PQ_tst2=bus([1:3],[3 4])%submatrix elementos donde se interseptan filas 1,3  y columnas 3,4&amp;#xD;    PQ_2=sum(PQ_tst2,1)  &amp;#xD;    source:algabra matlab&lt;/code&gt;&amp;#xD; &lt;!--  --&gt;  &amp;#xD; &lt;hr&gt;&lt;b&gt;VECTORES&lt;/b&gt;dot-product of two vectors -- norm(V)&amp;#xD;cross computes the cross product of two vectors in R3.&amp;#xD;&lt;!--  --&gt;&amp;#xD;&lt;hr&gt;&lt;caption&gt; ATAJOS KOman2&lt;/caption&gt;  Para seleccionar matlab con el tabulador&amp;#xD;  para seleccionar en la barra superior Alt+ F E V b D W H&amp;#xD;&lt;!--  --&gt;&amp;#xD;&lt;b&gt; abrir archivos de un pc remoto:&lt;/b&gt;&lt;code&gt;strcat(old_dir,'\',NameFile)&lt;/code&gt;&amp;#xD; $ en el path colocar &amp;lt;- \tsclient\D)&amp;#xD;&lt;!--  --&gt;  &amp;#xD;&lt;hr&gt;&lt;caption&gt; FOLDERs&lt;/caption&gt; &lt;b&gt;MOVER ARCHIVO AL FOLDER CHILDREN &lt;/b&gt;&amp;#xD; &lt;code&gt;carpeta destino&amp;#xD;  NameFolderChildren='sub01'&amp;#xD;  copyfile('source','destination') &amp;#xD;   NameFolderChildren='sub01'&amp;#xD;   NameFile='dt_2G_8buses.m'&amp;#xD;          source=strcat(old_dir,'\',NameFile)&amp;#xD;          destino=strcat(old_dir,'\',NameFolderChildren,'\',NameFile)&lt;br&gt;&amp;#xD;copyfile(source,destino)&lt;/code&gt;&amp;#xD;&lt;!--  --&gt;       &amp;#xD;&lt;b&gt;MOVER FILE&lt;/b&gt;&lt;code&gt;NameFile='datos_fglongatt.m'&amp;#xD;  source=strcat(old_dir,'\',NameFile)&amp;#xD;  destino=strcat(old_dir,'\',NameFolderChildren,'\',NameFile)&amp;#xD;  movefile(source,destino) &lt;/code&gt;&amp;#xD;&lt;!--  --&gt;  &amp;#xD;  &lt;hr&gt;&lt;b&gt;abrir archivos de un pc remoto:&lt;/b&gt;&amp;#xD;function anonymous:   A = [2 3 4];&lt;br&gt;B = [5 6 7];&amp;#xD;      sumAxBy = @(x, y) (A*x + B*y);&amp;#xD;      sumAxBy(5, 7)&amp;#xD;&lt;!--  --&gt; &amp;#xD;Code performance&amp;#xD; checkcode('filename') &amp;#xD;Inilation variables &amp;#xD;function q = fcnPersist1(u)&amp;#xD;% fcnPersistent creates and uses a&amp;#xD;      persistent variable.&amp;#xD;persistent y; &lt;br&gt; if isempty(y),    y = u;&lt;br&gt;&amp;#xD;else,    y = y+1;&lt;br&gt;&amp;#xD;end q = y;)&amp;#xD;&amp;#xD;&lt;!-- &lt;br&gt;  --&gt; &amp;#xD;&lt;hr&gt;&lt;b&gt;FOR-CICLOS: &lt;/b&gt;&amp;#xD;         &lt;tt&gt; syms a11 a12 b21 b22&amp;#xD;             A=[a11;a12];&amp;#xD;             B=[b21;b22]; &amp;#xD;           % mover &amp;#xD;             for i=1:1:2;&amp;#xD;              for j=1:1:2;&amp;#xD;             fprintf('i=%d j=%d \n',i,j) &amp;#xD;              C(i,j)=A(i)*B(j);&amp;#xD;             fprintf('Matrix C \n');&amp;#xD;              disp(C); pause(1) &amp;#xD;           end &amp;#xD;         end &lt;/tt&gt; &amp;#xD;&lt;!--  --&gt; &amp;#xD;&lt;hr&gt;&lt;b&gt;MOVE folder:&lt;/b&gt; $para mover un archivo a un children_folder   &amp;#xD;   &amp;lt;- algun comentario necesario&lt;!-- --&gt;&amp;#xD;&lt;!--  --&gt;   &amp;#xD;&lt;b&gt;INDICAR DIRECCION ACTUAL&lt;/b&gt; old_dir=pwd;  B=[b21;b22];&lt;!--  --&gt;          &amp;#xD;&lt;b&gt;CARPETA DESTINO&lt;/b&gt;&lt;!-- --&gt;&amp;#xD;&lt;code&gt;NameFolderChildren='sub01' &amp;#xD;      copyfile('source','destination')&amp;#xD;      NameFolderChildren='sub01';&amp;#xD;      NameFile='dt_2G_8buses.m'&amp;#xD;      source=strcat(old_dir,'\',NameFile)&amp;#xD;      destino=strcat&amp;#xD;      (old_dir,'\',NameFolderChildren,'\',NameFile)&amp;#xD;      copyfile(source,destino)
+</code></pre></div></div>
+:ET
