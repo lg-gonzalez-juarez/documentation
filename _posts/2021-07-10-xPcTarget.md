@@ -10,6 +10,10 @@ tags: [news]
 La compatibilidad de matlab se tiene hasta 2011, con respecto al código realizado en phD.
 
 
+### Puntos a considerar antes de comenzar a trabajar con xPcTarget
+
+Durante el arranque del xpc target es necesario generar un disco de arranque del pc maestro. Este disco después se emplea como disco de arranque del pc esclavo. También es necesario comprobar el correcto funcionamiento de el compilador de matlab. Revisar tener instalada la versión estable en el momento de usar xPcTarget
+
 ## Ecuaciones de estado
 
 Metodo.  obteniendo ecuaciones de estado espacio
@@ -74,12 +78,7 @@ En este ejemplo se emplea el dispositivo ``PCI-6040E``
 
 ## Hackings 
 
-Comandos utiles para la XpcTarget:
-1) 
-2) xpctargetping
-3) getxpcpci
-4) rtwintgt
-
+En la tabla de esta sección se resumen comandos útiles en el desarrollo de sistemas de control implementados en la xPCTarget:
 
 | Command |Description|
 |xpctest| executes a test suite to check for proper setup of the xPC Target environment|
