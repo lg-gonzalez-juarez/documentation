@@ -1,0 +1,11 @@
+I"<h2 id="xpctarget">xPcTarget</h2>
+
+<p>La compatibilidad de matlab se tiene hasta 2011, con respecto al código realizado en phD.</p>
+
+<h2 id="ecuaciones-de-estado">Ecuaciones de estado</h2>
+<p>Metodo.  obteniendo ecuaciones de estado espacio
+… Para obtener the state-space representation of the model circuitl with the power_analyze command.
+%sys1 = power_analyze(‘Dstatcom_v1’,’structure’)
+sys1 = power_analyze(‘Dstatcom_v2’,’structure’) %sps = power_analyze(‘Dstatcom_v1’,’sort’)</p>
+
+:ET

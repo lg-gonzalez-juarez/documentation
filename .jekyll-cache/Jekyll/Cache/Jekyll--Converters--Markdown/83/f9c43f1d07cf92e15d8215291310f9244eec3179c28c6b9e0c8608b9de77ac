@@ -1,0 +1,77 @@
+I"s<h2 id="xpctarget">xPcTarget</h2>
+
+<p>La compatibilidad de matlab se tiene hasta 2011, con respecto al código realizado en phD.</p>
+
+<h2 id="ecuaciones-de-estado">Ecuaciones de estado</h2>
+
+<p>Metodo.  obteniendo ecuaciones de estado espacio
+… Para obtener the state-space representation of the model circuitl with the power_analyze command.</p>
+
+<pre><code class="language-cmd">%sys1 = power_analyze('Dstatcom_v1','structure')
+sys1 = power_analyze('Dstatcom_v2','structure') %sps = power_analyze('Dstatcom_v1','sort')
+</code></pre>
+
+<h2 id="notitas-de-control">Notitas de control</h2>
+<p>Una interrupcion del bobinado de excitacion durante el funcionamiento en vacio de un motor de continua en derivacion trae por consecuencia que el motor se desboque.</p>
+
+<h1 id="procedimiento-del-uso-de-xpctarget-con-la-tarjeta-de-labview">Procedimiento del uso de xPcTarget con la tarjeta de labview</h1>
+
+<h2 id="pasos-de-configuración-y-puesta-en-marcha-de-un-xpc-target">Pasos de configuración y puesta en marcha de un xPc-Target</h2>
+
+<ol>
+  <li>
+    <p>Encender el XPC target (el blanco).</p>
+  </li>
+  <li>
+    <p>Ejecutar Matlab</p>
+  </li>
+  <li>
+    <p>Con el comando <code class="language-plaintext highlighter-rouge">xpctargetping</code> conoces el  estado de operación, con ver en pantalla [success] esta ok.   **</p>
+  </li>
+  <li>
+    <p>Para conocer los detalles de la xPCtarget[getxpcenv] **</p>
+  </li>
+  <li>
+    <p>Para configurar la xPCtarget [xpcexplr]** Aquí puedo ver los osciloscopio del host</p>
+  </li>
+  <li>
+    <p>Para conocer las características de las tarjetas que tienes en la xPCtarget  se usa el comando [getxpcpci]. Aparece en pantalla:</p>
+  </li>
+</ol>
+
+<h2 id="list-of-installed-pci-devices">List of installed PCI devices:</h2>
+
+<p>National Instruments     PCI-6025E</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Bus 0, Slot 11, IRQ 12
+
+ AI AO DI DO Counter
+
+ VendorID 0x1093, DeviceID 0x2a80
+</code></pre></div></div>
+
+<p>National Instruments     PCI-6040E (PCI-MIO-16E-4)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Bus 0, Slot 13, IRQ 11
+
+ AI AO DI DO Counter
+
+ VendorID 0x1093, DeviceID 0x1190
+</code></pre></div></div>
+
+<p>Ahora estamos usando el PCI-6040E</p>
+
+<p>** solo se usan la primera vez que se configura la xPCtarget</p>
+
+<ol>
+  <li>En tu archivo “mdl”, insertas los bloques entrada y salida de la tarjeta de adauisicion.</li>
+  <li>Las funciones para la tarjeta están el toolbox “xPCTarget”</li>
+  <li>La adquisición de datos se hace con: xPCtarget =&gt; A/D  =&gt;  National Instruments =&gt; PCI6040E.</li>
+  <li>La configuración de la entrada del bloque (SLOT13)</li>
+  <li>Para el PWM se emplea:  xPCtarget =&gt; counter  =&gt;  National Instruments =&gt; PCI6040E Generate</li>
+</ol>
+
+<p>PARA CONFIGURAR DURANTE OPERACION:
+ xpcexplr</p>
+
+:ET

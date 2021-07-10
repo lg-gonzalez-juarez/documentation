@@ -1,4 +1,4 @@
-I"þ<p>The following pages and posts are tagged with <button type="button" style="cursor: default" class="btn btn-default navbar-btn">publishing</button></p>
+I"©<p>The following pages and posts are tagged with <button type="button" style="cursor: default" class="btn btn-default navbar-btn">special_layouts</button></p>
 <table><thead><tr><th>Title</th><th>Type</th><th>Excerpt</th></tr></thead>
     <tbody>
     
@@ -131,298 +131,226 @@
    
     
         
-     
-   
-    
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-   
-    
-        
 
-        <tr><td><a href="mydoc_build_arguments.html">Build arguments</a></td>
+        <tr><td><a href="course_kb_layout.html">MY firts COURSE</a></td>
             <td><span class="label label-default">Page</span></td>
-          <td> You use various build arguments with your Jekyll project. You can also create shell scripts to act as shortcuts for long build commands. You can store the co... </td>
+          <td> This shows a review of mainly courses that I have considered </td>
         </tr>
         
      
    
     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
         
 
-        <tr><td><a href="mydoc_build_scripts.html">10. Configure the build scripts</a></td>
+        <tr><td><a href="mydoc_faq_layout.html">FAQ layout</a></td>
             <td><span class="label label-default">Page</span></td>
-          <td> You need to customize the build scripts. These script automate the publishing of your PDFs and web outputs through shell scripts on the command line. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-
-        <tr><td><a href="mydoc_generating_pdfs.html">Generating PDFs</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> You can generate a PDF from your Jekyll project. You do this by creating a web version of your project that is printer friendly. You then use utility called ... </td>
-        </tr>
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-
-        <tr><td><a href="mydoc_help_api.html">Help APIs and UI tooltips</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> You can loop through files and generate a JSON file that developers can consume like a help API. Developers can pull in values from the JSON into interface e... </td>
-        </tr>
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-
-        <tr><td><a href="mydoc_iterm_profiles.html">iTerm profiles</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> You can set up profiles in iTerm to facilitate the build process with just a few clicks. This can make it a lot easier to quickly build multiple outputs. </td>
+          <td> You can use an accordion-layout that takes advantage of Bootstrap styling. This is useful for an FAQ page. </td>
         </tr>
         
      
@@ -430,6 +358,40 @@
     
         
      
+        
+     
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+        
+
+        <tr><td><a href="mydoc_glossary.html">Glossary layout</a></td>
+            <td><span class="label label-default">Page</span></td>
+          <td> Your glossary page can take advantage of definitions stored in a data file. This gives you the ability to reuse the same definition in multiple places. Addit... </td>
+        </tr>
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
    
     
         
@@ -442,31 +404,23 @@
     
         
      
-   
-    
-        
-     
-        
-     
         
      
    
     
-        
-     
-        
-     
-        
-     
    
     
+   
+    
+        
+     
    
     
         
 
-        <tr><td><a href="mydoc_push_build_to_server.html">Pushing builds to server</a></td>
+        <tr><td><a href="mydoc_kb_layout.html">Knowledge-base layout</a></td>
             <td><span class="label label-default">Page</span></td>
-          <td> You can push your build to AWS using commands from the command line. By including your copy commands in commands, you can package all of the build and deploy... </td>
+          <td> This shows a sample layout for a knowledge base. Each square could link to a tag archive page. In this example, font icons from Font Awesome are used for the... </td>
         </tr>
         
      
@@ -481,37 +435,13 @@
    
     
         
-
-        <tr><td><a href="mydoc_search_configuration.html">Search configuration</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> The search feature uses JavaScript to look for keyword matches in a JSON file. The results show instant matches, but it doesn't provide a search results page... </td>
-        </tr>
-        
-     
-        
      
    
     
         
      
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
         
      
-   
-    
-        
-     
-   
-    
         
      
    
@@ -520,6 +450,10 @@
      
         
      
+        
+     
+   
+    
    
     
         
@@ -536,17 +470,27 @@
     
         
      
+        
+     
    
     
         
      
+   
+    
+   
+    
+   
+    
+   
+    
    
     
         
 
-        <tr><td><a href="mydoc_themes.html">Themes</a></td>
+        <tr><td><a href="mydoc_shuffle.html">Shuffle layout</a></td>
             <td><span class="label label-default">Page</span></td>
-          <td> You can choose between two different themes (one green, the other blue) for your projects. The theme CSS is stored in the CSS folder and configured in the co... </td>
+          <td> This layout shows an example of a knowledge-base style navigation system, where there is no hierarchy, just groups of pages that have certain tags. </td>
         </tr>
         
      
@@ -556,6 +500,50 @@
      
    
     
+        
+
+        <tr><td><a href="mydoc_special_layouts.html">Special layouts overview</a></td>
+            <td><span class="label label-default">Page</span></td>
+          <td> This theme has a few special layouts. Special layouts include the JS files they need directly in the page. The JavaScript for each special layout does not lo... </td>
+        </tr>
+        
+     
+   
+    
+        
+     
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
+        
+     
+   
+    
    
     
         
@@ -772,6 +760,10 @@
     
    
 
+        
+        
+        
+        
         
         
         
