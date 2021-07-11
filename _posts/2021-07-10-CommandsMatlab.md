@@ -69,6 +69,7 @@ left=1; bottom=1; width=20;  height=10;
 figure('units','centimeter','Position',[left, bottom, width, height]);
 
 OTHERS
+
 get(gcf,'Position');
 set(gcf,'Units','centimeters');
 ```
@@ -107,9 +108,7 @@ set(gcf,'Units','centimeters','Position',[4,14,15,10]);
 set(gcf, 'PaperUnits', 'centimeters','PaperSize',[15,10],...
 'PaperPosition',[0,0,15,10]);
 ```
-
-
-PLOTS
+### PLOTS
 ```cmd
 %print -dpdf Intensidad_sag_ang.pdf;  pause(1); clf; close;
 %winopen  'Intensidad_sag_ang.pdf'
@@ -132,13 +131,18 @@ winopen  'Intensidad_sag_ang.eps'
 ```
     
     
-    datos de numero a letras
+### Datos de numero a letras
 ```cmd
     num2str(SG1(1:3,1)
-```cmd
+```
     
-    formato pdf: existen 2 formas  a) usando un comando de linea, pero habria que darle el tamaño especifico  b) imprimiendo en eps y pasandolo a pdf usando un archivo en ubuntu para esta conversion <strong>formato eps:</strong><code>print -deps NameFile</code> <strong>Formato de impresion</strong><code>pdf o eps</code> <!-- --> 
-    
+###  Formato pdf: existen 2 formas  
+
+a) usando un comando de linea, pero habria que darle el tamaño especifico  
+b) imprimiendo en eps y pasandolo a pdf usando un archivo en ubuntu para esta conversion **formato eps:**
+`print -deps NameFile`
+**Formato de impresion** `pdf o eps`
+
 
 ### CONFIGURATION PLOTS:
     
@@ -455,7 +459,7 @@ y listo se ejecuta el programa sin tenerlo en tu pc
     end 
 ```
 
-    info matlab web;       
+### Info matlab web;       
     http://www.mathworks.es/help/techdoc/ref/f16-42340.html#f16-6755     
     http://www.mathworks.es/help/techdoc/ref/f16-42340.html
     
@@ -467,10 +471,10 @@ y listo se ejecuta el programa sin tenerlo en tu pc
     string => character array <!-- -->  
 ```
         
-    ### PROGRAMACION BASICA
+### PROGRAMACION BASICA
     listfonts 
     
-    FNCanonimous
+### FNCanonimous
     http://blogs.mathworks.com/loren/2013/01/10/introduction-to-functional-programming-with-anonymous-functions-part-1/ 
     
 ```cmd 
@@ -498,40 +502,96 @@ y listo se ejecuta el programa sin tenerlo en tu pc
 ### Integrales 
     http://www.cs.cmu.edu/~tom/10601_fall2012/recitations/matlab_quickref.pdf 
     
-    ### Inline function
+### Inline function
 ```cmd
     f1=inline(’1./(2*x.^3-2*x-5)’); 
 ```
 
 ```cmd    
-    Q=quad(f1,0,2); f2=@(x)1./(2*x.^3-2*x-5);Q=quad(f2,0,2);</code> <!--  --> <b>Edit Folders, Filese</b><!--  --> <code>movefile('source','destination')</code> <!--  --> <b> function symbolicas</b> si se usa una funcion simbolica se puede  substituir valor con <b>subs </b>
+    Q=quad(f1,0,2); 
+    f2=@(x)1./(2*x.^3-2*x-5);
+    Q=quad(f2,0,2);
 ```
 
-     <hr><b>STRINGS</b><!--  --> a = 'hello  ';      b = 'goodbye';     using_strcat = strcat(a, b)     using_arrayop = [a, b]      % Equivalent to horzcat(a, b)      
+### Edit Folders, Filese
+```cmd
+   movefile('source','destination')
+```
     
-    MATLAB returns     
+### function symbolicas
+ 
+     si se usa una funcion simbolica se puede  substituir valor con **subs**
+
+
+### STRINGS
+
+```cmd  
+     a = 'hello  ';      
+     b = 'goodbye';     
+     using_strcat = strcat(a, b)     
+     using_arrayop = [a, b]      
+     % Equivalent to horzcat(a, b)      
+```
+
+### MATLAB returns
+
+```cmd
     using_strcat =hellogoodbye     
     using_arrayop =hello  goodbye     
-    alfabeto griego en latex para matlab
+```
+
+alfabeto griego en latex para matlab
+String Evaluation
+eval, feval
+
+
+### Multiplicacion matrices
+
+```cmd     
+    clear all; close all; clc 
+    %% multiplicacion Matrix %a(mn) syms a11 a12 a13 %a11...a1n 
+    syms a21 a22 a23  
+    syms a31 a32 a33 %am1..anm %b(np) 
+    syms b11  %b11...b1p syms b21   
+    syms b31  %bn1..anp  
+    A=[a11,a12,a13;... a21,a22,a23;... a31,a32,a33]; 
+    %am1..anm B=[b11;b21;b31]; 
+    C=A*B 
+```
+### MATRIX
+
+Para sumar los elementos de una matrix 
+
+```cmd
+[baseMVA, bus, gen, branch] = loadcase(casefile);     % obtener el vector de las potencias      
+P=bus(:,3);    Q=bus(:,4);     
+PQ=bus([1:4],[3 4]) %submatrix elementos donde se interseptan filas 1,4  y columnas 3,4     
+% en la primera prueba usamos todas la potencias para que sea la total     
+Pt_test1=sum(P,1) % 1 es para que sume en vertical     
+Qt_test1=sum(Q,1)% 1 es para que sume en vertical     
+PQ_1=sum(PQ,1)     % en la segunda prueba solo emplearemos las 3 primeras cargas     
+PQ_tst2=bus([1:3],[3 4])%submatrix elementos donde se interseptan filas 1,3  y columnas 3,4     
+PQ_2=sum(PQ_tst2,1)       
+```
+
+ 
+### VECTORES
+
+dot-product of two vectors -- norm(V) cross computes the cross product of two vectors in R3.
+
+
+### ATAJOS KOman2
+
+- Para seleccionar matlab con el tabulador   
+- Para seleccionar en la barra superior Alt+ F E V b D W H 
     
-    
-     <!--  --> <b>String Evaluation</b>  <code>eval, feval</code> <b>multiplicacion matrices</b> <code>clear all; close all; clc %% multiplicacion Matrix %a(mn) syms a11 a12 a13 %a11...a1n syms a21 a22 a23  syms a31 a32 a33 %am1..anm %b(np) syms b11  %b11...b1p syms b21   syms b31  %bn1..anp  A=[a11,a12,a13;... a21,a22,a23;... a31,a32,a33]; %am1..anm B=[b11;b21;b31]; C=A*B </code> 
-    
-    <!--  --> <hr><b> MATRIX</b> Para sumar los elementos de una matrix <code>  [baseMVA, bus, gen, branch] = loadcase(casefile);     % obtener el vector de las potencias      P=bus(:,3);    Q=bus(:,4);     PQ=bus([1:4],[3 4]) %submatrix elementos donde se interseptan filas 1,4  y columnas 3,4     % en la primera prueba usamos todas la potencias para que sea la total     Pt_test1=sum(P,1) % 1 es para que sume en vertical     Qt_test1=sum(Q,1)% 1 es para que sume en vertical     PQ_1=sum(PQ,1)     % en la segunda prueba solo emplearemos las 3 primeras cargas     PQ_tst2=bus([1:3],[3 4])%submatrix elementos donde se interseptan filas 1,3  y columnas 3,4     PQ_2=sum(PQ_tst2,1)       source:algabra matlab</code>  <!--  -->    
-    
-    
-    <hr><b>VECTORES</b>
-    dot-product of two vectors -- norm(V) cross computes the cross product of two vectors in R3.
-    
-    
-    <hr><caption> ATAJOS KOman2</caption>  
-    
-    Para seleccionar matlab con el tabulador   para seleccionar en la barra superior Alt+ F E V b D W H <!--  --> <b> abrir archivos de un pc remoto:</b><code>strcat(old_dir,'\',NameFile)</code>  $ en el path colocar &lt;- \tsclient\D) <!--  -->   
-    
-    <hr><caption> FOLDERs</caption> 
-    <b>MOVER ARCHIVO AL FOLDER CHILDREN </b>  
-    
-    carpeta destino   
+### Abrir archivos de un pc remoto:
+
+```cmd
+    strcat(old_dir,'\',NameFile) & en el path colocar `\tsclient\D)`
+```    
+
+### Carpeta destino   
 ```cmd
     NameFolderChildren='sub01'   
     copyfile('source','destination')     
@@ -546,16 +606,60 @@ y listo se ejecuta el programa sin tenerlo en tu pc
 ```cmd
     NameFile='datos_fglongatt.m'   
     source=strcat(old_dir,'\',NameFile)   
-    destino=strcat(old_dir,'\',NameFolderChildren,'\',NameFile)   movefile(source,destino) </code> <!--  -->     <hr><b>abrir archivos de un pc remoto:</b> function anonymous:   A = [2 3 4];<br>B = [5 6 7];       sumAxBy = @(x, y) (A*x + B*y);       sumAxBy(5, 7) <!--  -->  Code performance  checkcode('filename')  Inilation variables  function q = fcnPersist1(u) % fcnPersistent creates and uses a       persistent variable. persistent y; <br> if isempty(y),    y = u;<br> else,    y = y+1;<br> end q = y;)  <!-- <br>  -->  <hr><b>FOR-CICLOS: </b>          <tt> syms a11 a12 b21 b22              A=[a11;a12];              B=[b21;b22];             % mover               for i=1:1:2;               for j=1:1:2;              fprintf('i=%d j=%d \n',i,j)                C(i,j)=A(i)
-    *B(j);              fprintf('Matrix C \n');               disp(C); pause(1)             end           end </tt>  <!--  -->  
-
+    destino=strcat(old_dir,'\',NameFolderChildren,'\',NameFile)   
+    movefile(source,destino)
 ```
 
-    <hr><b>MOVE folder:</b> $para mover un archivo a un children_folder       
-    &lt;- algun comentario necesario<!-- --> <!--  -->    
+### Function anonymous:
+```cmd
+    A = [2 3 4];<br>B = [5 6 7];       
+    sumAxBy = @(x, y) (A*x + B*y);       
+    sumAxBy(5, 7) 
+```
+
+### Code performance - persistent function
+
+```cmd
+     checkcode('filename')  
+     Inilation variables  function 
+     q = fcnPersist1(u) % fcnPersistent creates and uses a persistent 
+     variable. persistent y; 
+     
+    if isempty(y),    
+        y = u;
+        else,    
+        y = y+1;<br> 
+    end 
+      q = y;
+```
+
+### FOR-CICLOS:
+
+```cmd       
+        syms a11 a12 b21 b22              
+        A=[a11;a12];              
+        B=[b21;b22];             % mover               
+        for i=1:1:2;               
+        for j=1:1:2;              
+        fprintf('i=%d j=%d \n',i,j)                
+        C(i,j)=A(i)*B(j);              
+        fprintf('Matrix C \n');               
+        disp(C); pause(1)             
+        end           
+        end 
+```
+
     
-    <b>INDICAR DIRECCION ACTUAL</b> old_dir=pwd;  B=[b21;b22];<!--  -->           
-    
-    
-    
-    <b>CARPETA DESTINO</b><!-- --> <code>NameFolderChildren='sub01'        copyfile('source','destination')       NameFolderChildren='sub01';       NameFile='dt_2G_8buses.m'       source=strcat(old_dir,'\',NameFile)       destino=strcat       (old_dir,'\',NameFolderChildren,'\',NameFile)       copyfile(source,destino)
+
+### CARPETA DESTINO & MOVER FOLDER
+
+```cmd
+    old_dir=pwd; 
+    NameFolderChildren='sub01'        
+    copyfile('source','destination')       
+    NameFolderChildren='sub01';       
+    NameFile='dt_2G_8buses.m'       
+    source=strcat(old_dir,'\',NameFile)       
+    destino=strcat(old_dir,'\',NameFolderChildren,'\',NameFile)       
+    copyfile(source,destino)
+```
