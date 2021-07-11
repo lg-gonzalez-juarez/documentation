@@ -1,4 +1,4 @@
-I"6?<h2 id="about-alerts">About alerts</h2>
+I">?<h2 id="about-alerts">About alerts</h2>
 
 <p>Alerts are little warnings, info, or other messages that you have called out in special formatting. In order to use these alerts or callouts, reference the appropriate value stored in the alerts.yml file as described in the following sections.</p>
 
@@ -186,7 +186,7 @@ def foo(x):<br />
 
 <p>Here’s the result:</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Altran is pleased to announce an upcoming release.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The LorenaGonzalez is pleased to announce an upcoming release.</div>
 
 <p>Note the omission of quotation marks with variable parameters.</p>
 
