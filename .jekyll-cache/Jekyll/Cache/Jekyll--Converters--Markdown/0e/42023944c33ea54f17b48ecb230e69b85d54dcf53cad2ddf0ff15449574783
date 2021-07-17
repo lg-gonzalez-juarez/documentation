@@ -1,0 +1,34 @@
+I"�<p>En este apartados se tienen los pasos a seguir para instalar y usar FEniCS en una maquina virtual bajo el sistema operativo Linux y usando como entorno de programación Visual studio code</p>
+
+<p>Lo primero que se necesita es descargar la máquina virtual</p>
+
+<p><a href="https://www.virtualbox.org/wiki/Downloads">oficial site download virtualbox</a></p>
+
+<ul>
+  <li>
+    <p>Al instalar, seleccionar el idioma en ingles e instalar ubuntu en el pc</p>
+  </li>
+  <li>
+    <p>Seleccionar el idioma de entrada del teclado emplear en español</p>
+  </li>
+  <li>
+    <p>durante la instalación habilite la opción de install “third-party software…”</p>
+  </li>
+  <li></li>
+</ul>
+
+<p>Instalar la guess additions
+Instalar fenics por consola
+Descargar visual studio code *.dev
+Instalar</p>
+<ul>
+  <li>Copiar el nombre del folder</li>
+  <li>Cd Downloads</li>
+  <li>Sudo apt install ./”namefolder”</li>
+</ul>
+
+<p>Pasos para usarlo
+Ir a la carpeta que te guste
+Code . (resaltar espacio antes del punto
+)</p>
+:ET

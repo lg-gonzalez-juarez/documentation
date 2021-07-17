@@ -5,11 +5,121 @@ permalink: CommandsMatlab.html
 tags: [news]
 ---
 
+
+Buscar los papers de control de motores para pasarselos a Alberto
+
+
+
+problematica, algun dato numerico (1,2 carecen de numero)
+estategia de baterias - poner stick positivo a la opcion mas guai
+
+falta de conocimiento , tecnologia esperada maquina
+pila de combustible, reto peso de sus sistema de almacenamiento
+
+nivel de hibridacion es una conclusion para aeronaves CS-25, preguntas
+
+
+
+
+##  List utiles 
+
+[add path](https://es.mathworks.com/help/matlab/matlab_env/add-folders-to-matlab-search-path-at-startup.html)
+
+https://es.mathworks.com/help/matlab/matlab_env/add-folders-to-matlab-search-path-at-startup.html#btpajlr
+
+
+
+## Lista de software desintalado
+
+- Udacity
+- Altium Designer Release 10
+- calibre, 24 bits leer ebooks
+- FreeCAD
+- R studio
+- SketchBook
+- Tortoise 
+- OpenShot Video Editor
+- MPLAB Tools v8.92
+- MPLAB XC8 C Compiler
+- HI TECH C Compiler for the PIC10/12/16 MCUs
+
+
+
+# Practice Case
+
+
+Descripción de este ejemplo
+
+- Generar el modelo matemático del motor
+- Generar el modelo matematico en ecuaciones de estado espacio y en el dominio de laplace
+- Diseñar el sistema de control
+- Testar el sistema de control
+
+
+
+- Las condiciones iniciales se obtienen del sistema de ecuaciones diferenciales igualadas a cero
+
+## Organización de los archivos
+
+
+curva de capabilidad
+
+`pc104\MTLB\src\capability`
+
+
+diseño del control del motor de dc
+
+`pc104\MTLB\src\Motors\DCmtr\mdl\3th_v2\rev5`
+
+
+
+
+`\pc104\MTLB\bin\MyComputePrg` es tiene 
+
+las funciones a reutilizar en matlab
+
+ - las condiciones iniciales se tienen en `\pc104\MTLB\bin\MyComputePrg\AsignCondIni`
+ - modelado de las ecuaciones iniciales esta en `\pc104\MTLB\bin\MyComputePrg\AsynMach`
+
+Maquina sincrona
+`\pc104\MTLB\bin\MyComputePrg\MtrSincr`
+
+
+Codigo bueno en `\pc104\MTLB\src`
+
+
+last update control
+`\pc104\MTLB\src\CTR`
+
+parte de modelado del motor
+`\pc104\MTLB\src\Motors`
+
+
+
+
+
+
+# Commands
+
+
+
+## Dimensionado de gráficas
+
+```cmd
+%scrsz = get(0,'ScreenSize'); en pixeles
+... tipo centimeter normalized
+left=1; bottom=1; width=20;  height=10;
+figure('units','centimeter','Position',[left, bottom, width, height]);
+```
+
+
+
 ### Print Screen
 ```cmd
 fprint-sprintf
 ```
 <code>
+
 
 
 ## Setting Screen

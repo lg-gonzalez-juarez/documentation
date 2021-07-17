@@ -60,7 +60,12 @@ entries:
     - title: g. MatLab
       url: /gral_usage_matlab.html
       output: web, pdf
-           
+
+    - title: h. FEniCS
+      url: /gral_usage_fecnis.html
+      output: web, pdf
+
+
   - title: III. PYTHON
     output: web, pdf
     folderitems:
