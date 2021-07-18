@@ -125,7 +125,7 @@ cd wk
 ```
 
 ```cmd
-Code .
+code .
 ``` 
 
 **Notesé el espacio entre code y punto**, porque funciona mejor pillando carpeta entera (con subcarpetas) y además se integra mejor con git y código.
