@@ -170,7 +170,18 @@ git config --list
 
 **NOTA:** El email tiene que ser el mismo que el de la cuenta de GitHub o GitLab según sea la plataforma donde se tiene el repositorio.
 
-
-
 {% include image.html file="/visualstudiocode/configuration_git.png" url="https://code.visualstudio.com/" alt="download Visual Studio Code" caption="Visual Studio Code Process Instalation" %}
+
+
+### 6.1 Clonar la primer rama de un repositorio
+
+- Lanzar el comando de clonado de una rama `git clone -b BranchName  DirectoryRepo`. Por ejemplo para la rama **testing** del repo **Fenics**
+
+```linux
+git clone -b testing  https://gitlab.com/capgeminido/fenics
+```
+
+{% include image.html file="/visualstudiocode/first_cloneRepoGitLab.png" url="https://code.visualstudio.com/" alt="download Visual Studio Code" caption=" Process Configuration of GitLab" %}
+
+Los pasos de como usar la variedad de comandos disponibles los puede seguir leyendo en la pestaña de esta web [uso de la consola](https://lg-gonzalez-juarez.github.io/Doc/gral_usage_console.html)
 
