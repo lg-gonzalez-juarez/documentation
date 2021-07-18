@@ -15,7 +15,7 @@ En este apartados se tienen los pasos a seguir para instalar y usar FEniCS en un
 En este ejemplo el sistema operativo host corresponde a win2 10 y el sistema operativo del guest corresponde a ubuntu 20.4 LTS
 
 
-# 0. Habilitación de virtualización (VT) del PC
+## 0. Habilitación de virtualización (VT) del PC
 
 La opción de habilitar la virtualización depende del equipo. En el siguiente link se da una amplia explicación acerca de este punto: [¿puedo habilitar la virtualización de mi equipo?](https://support.bluestacks.com/hc/es/articles/115003910391--C%C3%B3mo-puedo-habilitar-la-virtualizaci%C3%B3n-VT-en-mi-PC-). En el caso de mi PC, se accede a la **PC BIOS** por la tecla fnc+f2, o bien f2. Se adjunta captura de pantalla del objetivo final de este paso.
 
@@ -24,7 +24,7 @@ La opción de habilitar la virtualización depende del equipo. En el siguiente l
 
 
 
-# 1. Instalación máquina virtual
+## 1. Instalación máquina virtual
 
 Lo primero que se necesita es descargar la máquina virtual, [oficial site download virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
@@ -54,12 +54,12 @@ Lo primero que se necesita es descargar la máquina virtual, [oficial site downl
 setxkbmap es,es
 ```
 
-# 2 Guest Additions & Pack Extensions
+## 2 Guest Additions & Pack Extensions
 
 Los pack extensions y las guess additions se puede emplear para mejorar la compatibilidad y gestión de interfaces entre el equipo host y el equipo guess. Esto a través de "mount guest extension iso" en el caso de usar la consola de ubuntu. O bien también se puede realizar usando la  pestaña del host. Se lanza ejecutable en guest & host, según las necesidades y caracteristicas del equipo.
 
 
-## 2.1 Instalar la guess additions
+### 2.1 Instalar la guess additions
 
 Descargar el archivo `VBoxGuestAdditions_4.0.0.iso` del sitio [download oficial](http://download.virtualbox.org/virtualbox/4.0.0/).
 
@@ -86,37 +86,63 @@ Dado que se se ha montado la imagen (archivo extension iso) en el paso anterior 
 sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
 ```
 
-Una vez se ha ejecutado el comando reiniciar Ubuntu. Debería verse algo similar a la siguiente captura de pantalla
+Una vez se ha ejecutado el comando reiniciar Ubuntu. Debería verse algo similar a la siguiente captura de pantalla:
 
 {% include image.html file="/virtualmachine/working_guestAdditions.png" url="http://download.virtualbox.org/virtualbox/4.0.0/" alt="download guest additions" caption="EXIT Guest Addition Process Instalation" %}
 
+Una vez reiniciado el Ubuntu y la máquina virtual, la opción de portapapeles direccionales se habilita en la pestaña de dispositivos. **A disfrutar de Ubuntu virtualizado** 🥁
 
+## 3. Instalación de FEniCS
 
-
-
-# 3. Instalación de FEniCS
-Instalar fenics por consola
+Se recomienda desde comando nativo de Ubuntu lanzar el siguiente comando:
 
 ```cmd
 sudo apt install fenics
 ```
 
+## 4. Instalación de Visual Studio Code
 
+Descargar del sitio web [descarga oficial Visual Studio Code](https://code.visualstudio.com/). Descargar el archivo con extension **.dev**
 
+{% include image.html file="/visualstudiocode/download_dev.png" url="https://code.visualstudio.com/" alt="download Visual Studio Code" caption="Visual Studio Code Process Instalation" %}
 
-Descargar visual studio code *.dev
-Instalar
--	Copiar el nombre del folder
+-	Copiar el nombre del folder (por ejemplo code_1.58.2-1626302803_amd64.deb)
+
+-	Ejecute los siguientes comandos en consola nativa
 
 ```cmd
 cd Downloads
-sudo apt install ./”namefolder”
+sudo apt install ./code_1.58.2-1626302803_amd64.deb
+```
+Puede suceder que el nombre el sistema operativo lo índice cortado, en el mensaje de error indicará la longitud del truncado (p.ej. quitando el .deb y/o algo más)
+
+- Pasos para usarlo
+Ir a la carpeta que te guste, por ejemplo en 
+
+```cmd
+
+cd wk 
 ```
 
-Pasos para usarlo
-Ir a la carpeta que te guste
 ```cmd
 Code .
+``` 
+
+**Notesé el espacio entre code y punto**, porque funciona mejor pillando carpeta entera (con subcarpetas) y además se integra mejor con git y código.
+
+Si se ejecuta Python desde la consola nativa de ubuntu (consola bash) emplee el comando 
+
+```cmd
+Python nombre.py
 ```
-**Notesé saltar espacio entre code y punto**
+
+En el caso de programar en consola nativa, recuerde abrir el interprete `ipython`y ejecute copiando+pegando línea a línea el código para ejecutarlo. O bien ejecute a través de las pestañas del propio visual estudio code
+
+## 5. Instalación de Python 3 a través de Visual Studio Code
+
+En la barra izquierda lateral seleccione el cuarto icono y busque de las opciones desplegables `python 3.9.0`. Una vez instalado reinicie Visual Studio Code para actualizar las librerias instaladas y tener una correcta integración en la IDE.
+
+{% include image.html file="/visualstudiocode/install_python3.png" url="https://code.visualstudio.com/" alt="install python 3" caption="Python 3 Code Process Instalation" %}
+
+## 6. Instalación de Git en Ubuntu
 
