@@ -14,6 +14,11 @@ En este apartados se tienen los pasos a seguir para instalar y usar FEniCS en un
 
 En este ejemplo el sistema operativo host corresponde a win2 10 y el sistema operativo del guest corresponde a ubuntu 20.4 LTS
 
+
+# 0. Habilitación de virtualización del equipo
+
+
+
 # 1. Instalación máquina virtual
 
 Lo primero que se necesita es descargar la máquina virtual
@@ -33,15 +38,21 @@ Lo primero que se necesita es descargar la máquina virtual
 
 # 2 Instalar la guess additions
 
+[download oficial](http://download.virtualbox.org/virtualbox/4.0.0/)
 
-El pack extensión se puede emplear para mejorar la compatibilidad y gestión de interfaces entre el equipo host y el equipo guess. Esto a través de "mount guest extension iso", esto se localiza en una pestaña del host. Se lanza ejecutable en guest.
+descargar el archivo `VBoxGuestAdditions_4.0.0.iso`
+
+
+El pack extensión se puede emplear para mejorar la compatibilidad y gestión de interfaces entre el equipo host y el equipo guess. Esto a través de "mount guest extension iso" en el caso de usar la consola de ubuntu. O bien también se puede realizar usando la  pestaña del host. Se lanza ejecutable en guest.
 
 
 
 una vez que se ha montado la imagen (archivo extension iso). Ejecutar el siguiente comando
 
 
-`sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms`
+```cmd
+sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
+```
 
 una vez se ha ejecutado el comando reiniciar ubuntu
 
@@ -59,11 +70,16 @@ sudo apt install fenics
 Descargar visual studio code *.dev
 Instalar
 -	Copiar el nombre del folder
--	Cd Downloads
--	Sudo apt install ./”namefolder”
 
+```cmd
+cd Downloads
+sudo apt install ./”namefolder”
+```
 
 Pasos para usarlo
 Ir a la carpeta que te guste
-Code . (resaltar espacio antes del punto
-)
+```cmd
+Code .
+```
+**Notesé saltar espacio entre code y punto**
+

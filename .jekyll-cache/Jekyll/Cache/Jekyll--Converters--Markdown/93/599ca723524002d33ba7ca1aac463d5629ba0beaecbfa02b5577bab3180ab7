@@ -1,6 +1,9 @@
-I"g<p>En este apartados se tienen los pasos a seguir para instalar y usar FEniCS en una maquina virtual bajo el sistema operativo Linux y usando como entorno de programación Visual studio code</p>
+I"r
+<p>En este apartados se tienen los pasos a seguir para instalar y usar FEniCS en una maquina virtual bajo el sistema operativo Linux y usando como entorno de programación Visual studio code</p>
 
 <p>En este ejemplo el sistema operativo host corresponde a win2 10 y el sistema operativo del guest corresponde a ubuntu 20.4 LTS</p>
+
+<h1 id="0-habilitación-de-virtualización-del-equipo">0. Habilitación de virtualización del equipo</h1>
 
 <h1 id="1-instalación-máquina-virtual">1. Instalación máquina virtual</h1>
 
@@ -26,22 +29,34 @@
 
 <h1 id="2-instalar-la-guess-additions">2 Instalar la guess additions</h1>
 
-<p>El pack extensión se puede emplear para mejorar la compatibilidad y gestión de interfaces entre el equipo host y el equipo guess. Esto a través de “mount guest extension iso”, esto se localiza en una pestaña del host. Se lanza ejecutable en guest.</p>
+<p><a href="http://download.virtualbox.org/virtualbox/4.0.0/">download oficial</a></p>
+
+<p>descargar el archivo <code class="language-plaintext highlighter-rouge">VBoxGuestAdditions_4.0.0.iso</code></p>
+
+<p>El pack extensión se puede emplear para mejorar la compatibilidad y gestión de interfaces entre el equipo host y el equipo guess. Esto a través de “mount guest extension iso” en el caso de usar la consola de ubuntu. O bien también se puede realizar usando la  pestaña del host. Se lanza ejecutable en guest.</p>
 
 <p>una vez que se ha montado la imagen (archivo extension iso). Ejecutar el siguiente comando</p>
 
-<p><code class="language-plaintext highlighter-rouge">sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms</code></p>
+<pre><code class="language-cmd">sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
+</code></pre>
 
 <p>una vez se ha ejecutado el comando reiniciar ubuntu</p>
 
-<p>Instalar fenics por consola
-Descargar visual studio code *.dev
+<h1 id="3-instalación-de-fenics">3. Instalación de FEniCS</h1>
+<p>Instalar fenics por consola</p>
+
+<pre><code class="language-cmd">sudo apt install fenics
+</code></pre>
+
+<p>Descargar visual studio code *.dev
 Instalar</p>
 <ul>
   <li>Copiar el nombre del folder</li>
-  <li>Cd Downloads</li>
-  <li>Sudo apt install ./”namefolder”</li>
 </ul>
+
+<pre><code class="language-cmd">cd Downloads
+sudo apt install ./”namefolder”
+</code></pre>
 
 <p>Pasos para usarlo
 Ir a la carpeta que te guste
