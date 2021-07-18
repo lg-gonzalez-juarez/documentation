@@ -146,3 +146,31 @@ En la barra izquierda lateral seleccione el cuarto icono y busque de las opcione
 
 ## 6. Instalación de Git en Ubuntu
 
+- Abrir una terminal y lanzar el siguiente comando
+
+  ```linux
+  sudo apt install git
+  ```
+- Confirmar la instalación de git y revisar la versión instalada
+
+  ```linux
+  git --version
+  ```
+- Definir los parámetros del usuario a nivel global
+
+  ```linux
+  git config --global user.name "UserName"
+  git config --global user.email "Useremail@UserDomain"
+  ```
+- Revisar la correcta definición de los ajustes del usuario
+
+```linux
+git config --list
+```
+
+**NOTA:** El email tiene que ser el mismo que el de la cuenta de GitHub o GitLab según sea la plataforma donde se tiene el repositorio.
+
+
+
+{% include image.html file="/visualstudiocode/configuration_git.png" url="https://code.visualstudio.com/" alt="download Visual Studio Code" caption="Visual Studio Code Process Instalation" %}
+
