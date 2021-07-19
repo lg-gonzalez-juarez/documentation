@@ -202,4 +202,8 @@ paraview
 
 listo a disfrutar
 
-## 8. 
+## 8. Instalación de una maquina virtual existente
+
+{% include image.html file="/virtualbox/export_existenteMaq_01.png" url="https://code.visualstudio.com/" alt="import_virtual_machine" caption=" Process import virtual machine" %}
+
+
