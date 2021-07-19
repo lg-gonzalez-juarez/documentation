@@ -213,4 +213,26 @@ listo a disfrutar
 
 {% include image.html file="/virtualmachine/export_existenteMaq_01.png" url="https://code.visualstudio.com/" alt="import_virtual_machine" caption=" Process import of virtual machine" %}
 
+- En este paso el tamaño de memoria asignado depende del espacio disponible en la máquina host. Importante seleccionar justo donde termine la sección verde la línea de asignación de memoria
+
+{% include image.html file="/virtualmachine/export_existenteMaq_02.png" url="https://code.visualstudio.com/" alt="import_virtual_machine" caption=" Process import of virtual machine" %}
+
+- Seleccionar la opción de usar un archivo de disco duro virtual existente e indicar la dirección donde se tiene el archivo con extensión **.VDI**
+
+{% include image.html file="/virtualmachine/export_existenteMaq_03.png" url="https://code.visualstudio.com/" alt="import_virtual_machine" caption=" Process import of virtual machine" %}
+
+- Se recomienda colocar el archivo de la máquina virtual existente en C>user>VirtualBox VMs
+
+{% include image.html file="/virtualmachine/export_existenteMaq_04.png" url="https://code.visualstudio.com/" alt="import_virtual_machine" caption=" Process import of virtual machine" %}
+
+- Una vez seleccionar crear la máquina
+
+{% include image.html file="/virtualmachine/export_existenteMaq_05.png" url="https://code.visualstudio.com/" alt="import_virtual_machine" caption=" Process import of virtual machine" %}
+
+- Una vez creada la máquina a partir de la máquina virtual existente, reiniciar tanto Ubuntu y Oracle VM VirtualBox
+
+- Iniciar su nueva máquina y disfrutar!!!
+
+- En el apartado 2.1 se tiene las instrucciones para instalar la guest additions
+
 
