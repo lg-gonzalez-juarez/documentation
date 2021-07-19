@@ -133,7 +133,7 @@ code .
 Si se ejecuta Python desde la consola nativa de ubuntu (consola bash) emplee el comando 
 
 ```cmd
-Python nombre.py
+python nombre.py
 ```
 
 En el caso de programar en consola nativa, recuerde abrir el interprete `ipython`y ejecute copiando+pegando línea a línea el código para ejecutarlo. O bien ejecute a través de las pestañas del propio visual estudio code
@@ -185,7 +185,9 @@ git clone -b testing  https://gitlab.com/capgeminido/fenics
 
 Los pasos de como usar la variedad de comandos disponibles los puede seguir leyendo en la pestaña de esta web [uso de la consola](https://lg-gonzalez-juarez.github.io/Doc/gral_usage_console.html)
 
-## 7. Instalar 
+## 7. Instalar de Paraview
+
+Lazar los siguientes comandos
 
 ````cmd
 sudo apt-get update
@@ -197,3 +199,7 @@ una vez instalado ejecute el siguiente comando
 ````cmd
 paraview
 ````
+
+listo a disfrutar
+
+## 8. 
