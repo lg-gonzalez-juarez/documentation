@@ -204,6 +204,13 @@ listo a disfrutar
 
 ## 8. Instalación de una maquina virtual existente
 
-{% include image.html file="/virtualbox/export_existenteMaq_01.png" url="https://code.visualstudio.com/" alt="import_virtual_machine" caption=" Process import virtual machine" %}
+- Abrir la aplicación de Oracle VM VirtualBox
+- Seleccionar nueva
+  - Rellenar Nombre de la maquina virtual
+  - Tipo: Linux
+  - Versión: Ubuntu (64bits)
+  - Seleccionar **Next**
+
+{% include image.html file="/virtualmachine/export_existenteMaq_01.png" url="https://code.visualstudio.com/" alt="import_virtual_machine" caption=" Process import of virtual machine" %}
 
 
