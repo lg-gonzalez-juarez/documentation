@@ -185,3 +185,15 @@ git clone -b testing  https://gitlab.com/capgeminido/fenics
 
 Los pasos de como usar la variedad de comandos disponibles los puede seguir leyendo en la pestaña de esta web [uso de la consola](https://lg-gonzalez-juarez.github.io/Doc/gral_usage_console.html)
 
+## 7. Instalar 
+
+````cmd
+sudo apt-get update
+sudo apt-get install paraview
+````
+
+una vez instalado ejecute el siguiente comando
+
+````cmd
+paraview
+````

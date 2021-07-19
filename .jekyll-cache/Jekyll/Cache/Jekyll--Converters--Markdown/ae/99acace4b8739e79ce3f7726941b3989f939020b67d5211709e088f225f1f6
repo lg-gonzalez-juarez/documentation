@@ -1,4 +1,4 @@
-I"(<p>En este apartados se tienen los pasos a seguir para instalar y usar FEniCS en una maquina virtual bajo el sistema operativo Linux y usando como entorno de programación Visual studio code</p>
+I"T-<p>En este apartados se tienen los pasos a seguir para instalar y usar FEniCS en una maquina virtual bajo el sistema operativo Linux y usando como entorno de programación Visual studio code</p>
 
 <p>En este ejemplo el sistema operativo host corresponde a win2 10 y el sistema operativo del guest corresponde a ubuntu 20.4 LTS</p>
 
@@ -159,6 +159,31 @@ git config --global user.email "Useremail@UserDomain"
 <pre><code class="language-linux">git config --list
 </code></pre>
 
+<p><strong>NOTA:</strong> El email tiene que ser el mismo que el de la cuenta de GitHub o GitLab según sea la plataforma donde se tiene el repositorio.</p>
+
 <figure><a class="no_icon" target="_blank" rel="noopener" href="https://code.visualstudio.com/"><img class="docimage" src="images//visualstudiocode/configuration_git.png" alt="download Visual Studio Code" /></a><figcaption>Visual Studio Code Process Instalation</figcaption></figure>
 
+<h3 id="61-clonar-la-primer-rama-de-un-repositorio">6.1 Clonar la primer rama de un repositorio</h3>
+
+<ul>
+  <li>Lanzar el comando de clonado de una rama <code class="language-plaintext highlighter-rouge">git clone -b BranchName  DirectoryRepo</code>. Por ejemplo para la rama <strong>testing</strong> del repo <strong>Fenics</strong></li>
+</ul>
+
+<pre><code class="language-linux">git clone -b testing  https://gitlab.com/capgeminido/fenics
+</code></pre>
+
+<figure><a class="no_icon" target="_blank" rel="noopener" href="https://code.visualstudio.com/"><img class="docimage" src="images//visualstudiocode/first_cloneRepoGitLab.png" alt="download Visual Studio Code" /></a><figcaption> Process Configuration of GitLab</figcaption></figure>
+
+<p>Los pasos de como usar la variedad de comandos disponibles los puede seguir leyendo en la pestaña de esta web <a href="https://lg-gonzalez-juarez.github.io/Doc/gral_usage_console.html">uso de la consola</a></p>
+
+<h2 id="7-instalar">7. Instalar</h2>
+
+<pre><code class="language-cmd">sudo apt-get update
+sudo apt-get install paraview
+</code></pre>
+
+<p>una vez instalado ejecute el siguiente comando</p>
+
+<pre><code class="language-cmd">
+</code></pre>
 :ET
