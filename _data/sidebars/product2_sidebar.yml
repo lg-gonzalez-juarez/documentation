@@ -2,8 +2,8 @@
 
 entries:
 - title: Sidebar
-  product: Product2
-  version: 1.0
+  product: Matlab Product2
+  version: 2012
   folders:
 
   - title:
@@ -22,7 +22,7 @@ entries:
   - title: Getting Started
     output: web, pdf
     folderitems:
-    - title: Product 1 home
+    - title: Matlab Product 1 home
       url: /p2_landing_page.html
       type: homepage
       output: web, pdf
@@ -55,39 +55,39 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Sample 6
+    - title: Sample 6 MATLAB
       url: /p2_sample6.html
       output: web, pdf
 
-    - title: Sample 7
+    - title: Sample 7 MATLAB
       url: /p2_sample7.html
       output: web, pdf
 
-    - title: Sample 8
+    - title: Sample 8 MATLAB
       url: /p2_sample8.html
       output: web, pdf
 
-    - title: Sample 9
+    - title: Sample 9 MATLAB
       url: /p2_sample9.html
       output: web, pdf
 
-    - title: Sample 10
+    - title: Sample 10 MATLAB
       url: /p2_sample10.html
       output: web, pdf
 
-    - title: Sample 11
+    - title: Sample 11 MATLAB
       url: /p2_sample11.html
       output: web, pdf
 
-    - title: Sample 12
+    - title: Sample 12 MATLAB
       url: /p2_sample12.html
       output: web, pdf
 
-    - title: Sample 13
+    - title: Sample 13 MATLAB
       url: /p2_sample13.html
       output: web, pdf
 
-    - title: Sample 14
+    - title: Sample 14 MATLAB
       url: /p2_sample14.html
       output: web, pdf
       

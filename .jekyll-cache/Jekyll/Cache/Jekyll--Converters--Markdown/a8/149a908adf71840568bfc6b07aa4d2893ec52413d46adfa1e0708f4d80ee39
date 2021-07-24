@@ -1,0 +1,41 @@
+I"�<p>Buscar los papers de control de motores para pasarselos a Alberto</p>
+
+<p>problematica, algun dato numerico (1,2 carecen de numero)
+estategia de baterias - poner stick positivo a la opcion mas guai</p>
+
+<p>falta de conocimiento , tecnologia esperada maquina
+pila de combustible, reto peso de sus sistema de almacenamiento</p>
+
+<p>nivel de hibridacion es una conclusion para aeronaves CS-25, preguntas</p>
+
+<h2 id="lista-de-software-desintalado">Lista de software desintalado</h2>
+
+<ul>
+  <li>Udacity</li>
+  <li>Altium Designer Release 10</li>
+  <li>calibre, 24 bits leer ebooks</li>
+  <li>FreeCAD</li>
+  <li>R studio</li>
+  <li>SketchBook</li>
+  <li>Tortoise</li>
+  <li>OpenShot Video Editor</li>
+  <li>MPLAB Tools v8.92</li>
+  <li>MPLAB XC8 C Compiler</li>
+  <li>HI TECH C Compiler for the PIC10/12/16 MCUs</li>
+</ul>
+
+<h1 id="practice-case">Practice Case</h1>
+
+<p>Descripción de este ejemplo</p>
+
+<ul>
+  <li>Generar el modelo matemático del motor</li>
+  <li>Generar el modelo matematico en ecuaciones de estado espacio y en el dominio de laplace</li>
+  <li>Diseñar el sistema de control</li>
+  <li>
+    <p>Testar el sistema de control</p>
+  </li>
+  <li>Las condiciones iniciales se obtienen del sistema de ecuaciones diferenciales igualadas a cero</li>
+</ul>
+
+:ET
