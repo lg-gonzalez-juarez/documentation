@@ -8,11 +8,6 @@ permalink: p1_sample1.html
 folder: product1
 ---
 
-
-{% include image.html file="CF_timeline.png" url="http://jekyllrb.com" alt="Jekyll" caption="This is a sample caption" %}
-
-
-
 ## OLD TITLE
 
 Esto es un código raw
