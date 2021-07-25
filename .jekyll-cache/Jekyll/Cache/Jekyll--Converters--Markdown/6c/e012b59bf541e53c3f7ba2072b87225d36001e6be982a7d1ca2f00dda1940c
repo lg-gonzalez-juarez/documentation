@@ -1,0 +1,27 @@
+I",<h2 id="modelado-motor-sincrono">Modelado motor sincrono</h2>
+
+<h3 id="funciones-a-reutilizar-en-matlab">Funciones a reutilizar en matlab</h3>
+
+<ul>
+  <li>las condiciones iniciales se tienen en <code class="language-plaintext highlighter-rouge">\pc104\MTLB\bin\MyComputePrg\AsignCondIni</code></li>
+  <li>modelado de las ecuaciones iniciales esta en <code class="language-plaintext highlighter-rouge">\pc104\MTLB\bin\MyComputePrg\AsynMach</code></li>
+</ul>
+
+<h3 id="maquina-sincrona">Maquina sincrona</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pc104\MTLB\bin\MyComputePrg\MtrSincr
+</code></pre></div></div>
+
+<h3 id="codigo-bueno-en-">Codigo bueno en ``</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pc104\MTLB\src
+</code></pre></div></div>
+
+<h3 id="last-update-control">Last update control</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pc104\MTLB\src\CTR
+</code></pre></div></div>
+
+<p>[]:</p>
+
+:ET

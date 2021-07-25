@@ -12,4 +12,25 @@ folder: product1
 
 Modelado matemático del motor dc
 
+### Diseño del control del motor de dc
+
+{% raw %}
+```html
+pc104\MTLB\src\Motors\DCmtr\mdl\3th_v2\rev5
+pc104\MTLB\bin\MyComputePrg
+```
+{% endraw %}
+
+
+### parte de modelado del motor
+{% raw %}
+```html
+pc104\MTLB\src\Motors
+```
+{% endraw %}
+
+
+
+
+
 {% include links.html %}

@@ -27,67 +27,7 @@ This renders to the following:
 
 https://es.mathworks.com/help/matlab/matlab_env/add-folders-to-matlab-search-path-at-startup.html#btpajlr
 
-
-## Organización de los archivos
-
-### Curva de capabilidad
-
-{% raw %}
-```html
-pc104\MTLB\src\capability
-```
-{% endraw %}
-
-
-### Diseño del control del motor de dc
-
-{% raw %}
-```html
-pc104\MTLB\src\Motors\DCmtr\mdl\3th_v2\rev5
-pc104\MTLB\bin\MyComputePrg
-```
-{% endraw %}
-
-### Funciones a reutilizar en matlab
-
- - las condiciones iniciales se tienen en `\pc104\MTLB\bin\MyComputePrg\AsignCondIni`
- - modelado de las ecuaciones iniciales esta en `\pc104\MTLB\bin\MyComputePrg\AsynMach`
-
-### Maquina sincrona
-{% raw %}
-```html
-pc104\MTLB\bin\MyComputePrg\MtrSincr
-```
-{% endraw %}
-
-
-### Codigo bueno en ``
-{% raw %}
-```html
-pc104\MTLB\src
-```
-{% endraw %}
-
-### Last update control
-{% raw %}
-```html
-pc104\MTLB\src\CTR
-```
-{% endraw %}
-
-
-### parte de modelado del motor
-{% raw %}
-```html
-pc104\MTLB\src\Motors
-```
-{% endraw %}
-
-
-
 ## Commands
-
-
 
 ### Dimensionado de gráficas
 
@@ -103,8 +43,6 @@ figure('units','centimeter','Position',[left, bottom, width, height]);
 fprint-sprintf
 ```
 <code>
-
-
 
 ### Setting Screen
 ```cmd
@@ -464,43 +402,6 @@ http://www.mathworks.es/help/techdoc/matlab_env/f6-30186.html
     figure; polar(angTHT,rho,'--r')
 ```    
     
-### Leer archivos o datos desde otro pc
-    
-     - Entras por escritorio remoto al pc[44] 
-     - Los archivos que deseas ejecutar los tienes pc[104] 
-     -Abres matlab en pc[44] -Ejecutas el siguiente ejemplo: 
-     
-```cmd
-     dir='\\tsclient\D\MTLB\proc\StateEstimator\amediaslos2primeros';   
-     addpath(dir);     
-```
-     
-wls_34nudos
-y listo se ejecuta el programa sin tenerlo en tu pc
-
-```cmd     
-     addpath(genpath('C:\MATLAB\R2012a\toolbox\matpower4.1'))
-```     
-     
-### to set ubuntu: transforn toeps desde 104 desde otro pc (HIL-LAB)
-
-```cmd  
-     [102]D:\lggj\code_dspace\20120222_CtrStatComBalanceado\caract 
-     destine='\\tsclient\D\THESIS\CODE\plots_eps2pdf'; 
-     copyfile(NameFile,destine) 
-```     
-     
-### LECTURA / ESCRITURA DE ARCHIVO 
-
-```cmd     
-     x = 0:.1:1;     
-     y = [x; exp(x)]; fid = fopen('exp.m','w');     
-     fprintf(fid,'Es letra:'); 
-     fprintf(fid,'%6.2f %12.8f\n',y); 
-     fclose(fid)
-```
-    http://arantxa.ii.uam.es/~iama/ficheros.pdf
-    
     
 ### Multiples salidas matlab
     para sacar muchos datos de otra funcion
@@ -809,43 +710,6 @@ dPsikq=d.w_base*(vkq-d.Rkq*ikq);
 Te=(3/2)*p*Psid*iq-Psiq*id;
 dwr=(Tm-Te)/(2*d.H);
 ```
-
-
-###
-## Parámetros de la máquina 
-
-`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\StateStable`
-
-
-- D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\StateStable_ok2021
-
-
-
-### Inicialización de la máquina sincrona
-
-
-`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\MySyncGnrt\model_ok_Junio2011`
-
-finalmente encontrado y operativo
-`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\MySyncGnrt\model_ok_Junio2011_ok2021`
-
-
-### Diseño del sistema de control
-
-revisar estos archivos
-`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\CheeMunOng`
-
-
-Este es el folder bueno que usamos para los italianos
-
-`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\Kundur `
-
-
-
-
-
-
-
 
 
 {% include links.html %}
