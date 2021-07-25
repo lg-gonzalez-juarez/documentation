@@ -3,8 +3,8 @@
 
 entries:
 - title: Sidebar
-  product: Product1
-  version: 1.0
+  product: Matlab
+  version: 2012a
   folders:
 
   - title:
@@ -39,14 +39,14 @@ entries:
       url: /p1_sample3.html
       output: web, pdf
 
-  - title: Another heading
-    output: web, pdf
-
-    folderitems:
     - title: HIL
       url: /p1_sample4.html
       output: web, pdf
 
+  - title: Another heading
+    output: web, pdf
+
+    folderitems:
     - title: Sample 5
       url: /p1_sample5.html
       output: web, pdf
