@@ -1,31 +1,19 @@
 ---
-title: Matlab 1
+title: Commands
 keywords: sample
 last_updated: July 25, 2021
-summary: "comandos útiles para matlab"
+summary: "Comandos útiles para matlab"
 sidebar: product1_sidebar
 permalink: p1_sample1.html
 folder: product1
 ---
 
-## OLD TITLE
 
-Esto es un código raw
-{% raw %}
-```html
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.jekyll_platform}}">Jekyll</a> is my favorite tool for building websites.
-```
-{% endraw %}
+##  Links
 
-This renders to the following:
+[setting path at startup](https://es.mathworks.com/help/matlab/matlab_env/add-folders-to-matlab-search-path-at-startup.html)
 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.jekyll_platform}}">Jekyll</a> is my favorite tool for building websites.
-
-##  List utiles 
-
-[add path](https://es.mathworks.com/help/matlab/matlab_env/add-folders-to-matlab-search-path-at-startup.html)
-
-https://es.mathworks.com/help/matlab/matlab_env/add-folders-to-matlab-search-path-at-startup.html#btpajlr
+[search path at startup](https://es.mathworks.com/help/matlab/matlab_env/add-folders-to-matlab-search-path-at-startup.html#btpajlr)
 
 ## Commands
 
@@ -710,6 +698,4 @@ dPsikq=d.w_base*(vkq-d.Rkq*ikq);
 Te=(3/2)*p*Psid*iq-Psiq*id;
 dwr=(Tm-Te)/(2*d.H);
 ```
-
-
 {% include links.html %}
