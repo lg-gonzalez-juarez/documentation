@@ -1,5 +1,5 @@
 ---
-title: Sample 2 Topic (Product 1)
+title: DC Machine Simulation
 keywords: sample
 summary: "This is just a sample topic..."
 sidebar: product1_sidebar

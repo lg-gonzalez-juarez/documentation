@@ -1,7 +1,7 @@
 ---
-title: Sample 4 Topic (Product 1)
+title: Hardware in the loop
 keywords: sample
-summary: "This is just a sample topic..."
+summary: "comandos empleados en la integración de labview, dSPACE, Opal-RT con MatLab"
 sidebar: product1_sidebar
 permalink: p1_sample4.html
 folder: product1
