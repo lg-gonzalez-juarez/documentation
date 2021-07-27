@@ -9,6 +9,11 @@ folder: product1
 
 ## Proceso de Modelado 
 
+En este apartado se explica el proceso de inicialización de la máquina. En la figura se presenta la captura de pantalla del modelo realizado en simulink
+
+{% include image.html file="/matlab/maqsincrona/mdl_maqsynch_8th.png" alt="matlab sim" caption="Simulation machine syncrhonous" %}
+
+
 En los siguientes directorio se tiene:
 - Modelado del motor
 - Medidas PQ
