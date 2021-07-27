@@ -1,4 +1,22 @@
-I"k	<h2 id="modelado-motor-sincrono">Modelado motor sincrono</h2>
+I"<h2 id="proceso-de-modelado">Proceso de Modelado</h2>
+
+<p>En los siguientes directorio se tiene:</p>
+<ul>
+  <li>Modelado del motor</li>
+  <li>Medidas PQ</li>
+  <li>Datos del motor</li>
+</ul>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">addpath</span><span class="p">(</span><span class="s1">'D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\MtrSincr'</span><span class="p">)</span>
+<span class="nb">addpath</span><span class="p">(</span><span class="s1">'D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\medidas'</span><span class="p">)</span>
+<span class="nb">addpath</span><span class="p">(</span><span class="s1">'D:\wk_matlab\uc3m\mt\pc104\Matlab\DataSheet'</span><span class="p">);</span><span class="n">dtGenSin31300V_v1</span>
+</code></pre></div></div>
+
+<h3 id="modelado-de-las-ecuaciones">Modelado de las ecuaciones</h3>
+
+<p>Se emplea el modelo de octavo orden</p>
+
+<h2 id="modelado-motor-sincrono">Modelado motor sincrono</h2>
 
 <h3 id="funciones-a-reutilizar-en-matlab">Funciones a reutilizar en matlab</h3>
 
