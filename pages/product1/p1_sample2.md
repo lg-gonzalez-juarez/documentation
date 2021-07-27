@@ -9,6 +9,11 @@ folder: product1
 
 ## Simulación del motor DC
 
+En este apartado se explica el proceso de inicialización de la máquina. En la figura se presenta la captura de pantalla del modelo realizado en simulink
+
+{% include image.html file="/matlab/mdl_machineDC.PNG" alt="matlab sim" caption="Simulation DC Machine" %}
+
+
 ### Datos del motor
 
 ```matlab
