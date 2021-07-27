@@ -265,6 +265,11 @@ tf_ctrOK=series(tf_ctr22,tf22);     tf_cl=feedback(tf_ctrOK,1);
 subplot(3,1,3),plot(t,y); xlabel('time [sec]'), ylabel('ifd(t)')
 ```
 
+### Ajuste del control
+
+
+
+
 ## Directorios Motor DC
 
 
