@@ -256,7 +256,6 @@ Outputs:
 
 
 
-
 ### Funciones a reutilizar en matlab
 
  - las condiciones iniciales se tienen en `\pc104\MTLB\bin\MyComputePrg\AsignCondIni`
