@@ -250,7 +250,7 @@ Outputs:
 ```
 
 
-
+**NOTA** El código de este apartado se encuentra en `D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\MySyncGnrt\model_ok_Junio2011_ok2021`
 
 
 
