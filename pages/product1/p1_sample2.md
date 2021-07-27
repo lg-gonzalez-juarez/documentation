@@ -44,6 +44,46 @@ save d
 
 ```
 
+### Modelado dinámico del motor de DC
+
+```matlab
+%% update 2021
+%{
+ Simulation of DC Machine Transient Behavior
+inputs  -> [Ua Uf  Tl]
+states -> [ia if wm]
+%}
+function [sys,x0,str,ts]=MotorDC3th(t,x,u,flag,d,ini)
+switch flag,
+case 0,  [sys,x0,str,ts]=mdlInitializeSizes(d,ini);
+case 1,  sys=mdlDerivatives(t,x,u,d);
+case 3,  sys=mdlOutputs(t,x,u,d);
+case {2,4,9},   sys=[];
+otherwise   
+        error(['Unhandled flag=',num2str(flag)]);
+end
+
+function [sys,x0,str,ts]=mdlInitializeSizes(d,ini)
+ sizes = simsizes;                  sizes.NumContStates  =3; 
+ sizes.NumDiscStates  =0;    sizes.NumOutputs     =3;
+ sizes.NumInputs      =3;       sizes.DirFeedthrough =0;        
+ sizes.NumSampleTimes =1;   sys = simsizes(sizes);
+x0=ini;     str=[];      ts=[0 0];   
+
+function sys=mdlDerivatives(t,x,u,d)   
+%Laf=d.Kb/ifd; %Te=Laf*ia*ifd;
+Ua=u(1); Ufd=u(2); Tm=u(3);
+ia=x(1); ifd=x(2); w=x(3);
+dia=(Ua-d.Ra*ia-d.Kb*w)/d.La;
+difd=(Ufd-d.Rf*ifd)/d.Lf;
+Te=d.Kb*ia;
+dw=(Te-d.B*w-Tm)/d.J;
+sys=[dia;difd;dw]; 
+
+function sys=mdlOutputs(t,x,u,d)
+sys=[x(1);x(2);x(3)];
+```
+
 
 ### Inicialización del motor
 
