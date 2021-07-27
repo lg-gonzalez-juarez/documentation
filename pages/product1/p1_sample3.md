@@ -126,10 +126,123 @@ Tm0 = Model_op.Input(4).u
 
 En esta parte se tiene la inicialización, con la función `addoutputspec` y se calcula con el comando `findop`.
 
+### Datos del motor
+
+```matlab
+% loading machine parameters for synchronous machine
+clear all; close all; clc
+%...Description Parameters                     
+%   Snom => rated power      [VA]        p =>   pair of poles      
+%   f    => rated frequency  [Hz]        nr =>  nominal speed  [rpm]
+%   Vll  => peak value of rated phase voltage [V]  rms
+% MAIN
+f_red=50; Sn = 31.3e3 ; Vrms = 400 ; f_base = f_red ; pp=2;
+% MACHINE PU
+d.Ra=0.04186 ; d.Ll=0.063 ; 
+d.Lad=1.497 ; d.Laq=0.717;
+d.Rfd=0.02306; d.Lffd=0.1381+d.Lad;
+d.R1d=0.1118 ; d.L11d=0.1858+d.Lad;
+d.R1q=0.09745 ; d.L11q=0.1258+d.Laq;
+d.R2q=0; d.L22q=0.0;
+d.H=0.08671; d.Ld=d.Lad+d.Ll; d.Lq=d.Laq+d.Ll;
+d.Kd=0;
+Ra=d.Ra ; Lad=d.Lad ; Laq=d.Laq;
+Ll=d.Ll ; H=d.H; Ld=d.Ld ; Lq=d.Lq;
+Rfd=d.Rfd ; Lffd=d.Lffd;
+R1d=d.R1d ; L11d=d.L11d;
+R1q=d.R1q ; L11q=d.L11q;
+R2q=d.R2q ; L22q=d.L22q;
+% BASE VALUES
+S_base=Sn ; es_base=Vrms*sqrt(2/3);
+is_base=2/3*S_base/es_base;
+w_base=2*pi*f_base; d.w_base=w_base; %adding w_base to 'd' structure
+wm_base=w_base/pp;
+Zs_base=es_base/is_base;
+Ls_base=Zs_base/w_base;
+fluxs_base=Ls_base*is_base;
+T_base=S_base/wm_base;
+t_base=1/w_base;
+%INIT VALUES************************************
+%TERMINAL VALUES (per unit)
+Pt= 31.3e3/S_base ; Qt=0/S_base;
+Ut=1;
+It=sqrt(Pt^2+Qt^2)/Ut;
+fdp=Pt/Ut/It;
+fi=acos(fdp);
+%LOAD ANGLE;
+delta_i=atan( (Lq*It*cos(fi)-Ra*It*sin(fi) ) / (Ut+Ra*It*cos(fi)+Lq*It*sin(fi)) );
+%dq VOLTAGE & CURRENT
+Ud_init=Ut*sin(delta_i);       Uq_init=Ut*cos(delta_i);
+Id_init=It*sin(delta_i+fi);    Iq_init=It*cos(delta_i+fi);
+% field and amortisseur circuits VOLTAGE & CURRENT
+Ifd_init=(Uq_init+Ra*Iq_init+Ld*Id_init)/Lad;
+Ufd_init=Rfd*Ifd_init;
+I1d_init=0 ; I1q_init=0; I2q_init=0;
+%MECH
+w_init=1 ;
+theta_init=-pi/2+delta_i;
+Tm_init=Pt+Ra*It^2;
+
+flux_d0=0.698536725;flux_fd0=1.047739435;flux_1d0=0.834806149;
+flux_q0=-0.715574206;flux_11q0=-0.66190614;flux_22q0=-0.66190614;
+inc_wr0=0;delta0=0.6426;
+ini=[flux_d0;flux_fd0;flux_1d0;flux_q0;flux_11q0;flux_22q0;inc_wr0;delta0];
+```
+
+
+
 
 ### Salida de la inicializacion
 
 Al ejecutar este script se tiene como salida lo siguiente:
+
+
+```matlab
+1).  Operating Point Specifics Define 
+	 	 	-  Stator P0=  1
+	 	 	-  Stator Q0= 0
+	 	 	- delta0  = 0 
+	  Unknown: efd0 Tm0 
+
+ Operating Point Search Report:
+---------------------------------
+
+ Operating Report for the Model SymMtrSin8th.
+ (Time-Varying Components Evaluated at time t=0)
+
+Operating point specifications were successfully met.
+States: 
+----------
+(1.) SymMtrSin8th/Planta
+      x:         0.834      dx:      8.72e-15 (0)
+      x:          1.03      dx:     -5.45e-15 (0)
+      x:         0.872      dx:     -1.56e-14 (0)
+      x:        -0.624      dx:      2.18e-15 (0)
+      x:        -0.574      dx:      1.53e-14 (0)
+      x:        -0.574      dx:            -0 (0)
+      x:      1.89e-17      dx:      8.67e-09 (0)
+      x:             0      dx:      5.94e-15 (0)
+
+Inputs: 
+----------
+(1.) SymMtrSin8th/ed
+      u:             0
+(2.) SymMtrSin8th/efd
+      u:        0.0272    [-Inf Inf]
+(3.) SymMtrSin8th/eq
+      u:             0
+(4.) SymMtrSin8th/Tm
+      u:          1.04    [-Inf Inf]
+
+Outputs: 
+----------
+(1.) SymMtrSin8th/out2
+      y:             1    (1)
+(2.) SymMtrSin8th/out2
+      y:      1.67e-15    (0)
+(3.) SymMtrSin8th/out2
+      y:             0    [-Inf Inf]
+```
 
 
 
