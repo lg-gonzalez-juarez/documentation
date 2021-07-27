@@ -75,8 +75,68 @@ wr=1+x(7); %wr=1pu+inc_wr
 sys=[id;ifd;iq;x(7);x(8);Te];
 ```
 
+importante este modelo depende el que se usa
 
-## Modelado motor sincrono
+
+### Inicialización del modelo 
+
+```matlab
+%Valores de consigna.
+addpath('D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\MtrSincr')
+addpath('D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\medidas')
+addpath('D:\wk_matlab\uc3m\mt\pc104\Matlab\DataSheet');dtGenSin31300V_v1
+%ini=[flux_d0;flux_fd0;flux_1d0;flux_q0;flux_11q0;flux_22q0;inc_wr0;delta0];
+
+ed0=0.5993;  eq0=0.8005;     
+P0=1;     Q0=0;   delta0=0;  % valores consigna
+efd0=0;   Tm0=0;    % estos valores deben ser cero
+
+disp(sprintf('\t 1).  Operating Point Specifics Define '));
+disp(sprintf('\t \t \t-  Stator P0=  %d',P0));
+disp(sprintf('\t \t \t-  Stator Q0= %d',Q0));
+disp(sprintf('\t \t \t- delta0  = %d ',delta0));
+disp(sprintf('\t  Unknown: efd0 Tm0 '));  
+
+NameModel='SymMtrSin8th';
+Model_spec = operspec(NameModel) ; % obtiene el punto de operacion
+
+NameBlockOutAdd='SymMtrSin8th/out2';
+Model_spec=addoutputspec(Model_spec,NameBlockOutAdd,1);
+Model_spec=addoutputspec(Model_spec,NameBlockOutAdd,2);
+Model_spec=addoutputspec(Model_spec,NameBlockOutAdd,3);
+
+Model_spec.States(1).Known= [0 0 0 0 0 0 0 1]'; 
+Model_spec.States(1).x = [0 0 0 0 0 0 0 delta0]';
+
+Model_spec.Input(1).Known = 1; Model_spec.Input(1).u = 0;
+Model_spec.Input(2).Known = 0; Model_spec.Input(2).u = efd0;
+Model_spec.Input(3).Known = 1; Model_spec.Input(3).u = 0;
+Model_spec.Input(4).Known = 0; Model_spec.Input(4).u = Tm0;
+%[P0 Q0 delta0]
+Model_spec.Outputs(1).Known=1; Model_spec.Outputs(1).y= P0;
+Model_spec.Outputs(2).Known=1; Model_spec.Outputs(2).y= Q0;
+Model_spec.Outputs(3).Known=0; Model_spec.Outputs(3).y=delta0;
+
+[Model_op,op_report]=findop(NameModel,Model_spec);
+ini=Model_op.States.x; 
+efd0= Model_op.Input(2).u
+Tm0 = Model_op.Input(4).u
+```
+
+
+En esta parte se tiene la inicialización, con la función `addoutputspec` y se calcula con el comando `findop`.
+
+
+### Salida de la inicializacion
+
+Al ejecutar este script se tiene como salida lo siguiente:
+
+
+
+
+
+
+
 
 
 ### Funciones a reutilizar en matlab

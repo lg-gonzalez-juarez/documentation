@@ -1,0 +1,171 @@
+I"�u<h2 id="proceso-de-modelado">Proceso de Modelado</h2>
+
+<p>En los siguientes directorio se tiene:</p>
+<ul>
+  <li>Modelado del motor</li>
+  <li>Medidas PQ</li>
+  <li>Datos del motor</li>
+</ul>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">addpath</span><span class="p">(</span><span class="s1">'D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\MtrSincr'</span><span class="p">)</span>
+<span class="nb">addpath</span><span class="p">(</span><span class="s1">'D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\medidas'</span><span class="p">)</span>
+<span class="nb">addpath</span><span class="p">(</span><span class="s1">'D:\wk_matlab\uc3m\mt\pc104\Matlab\DataSheet'</span><span class="p">);</span><span class="n">dtGenSin31300V_v1</span>
+</code></pre></div></div>
+
+<h3 id="modelado-de-las-ecuaciones">Modelado de las ecuaciones</h3>
+
+<p>Se emplea el modelo de octavo orden</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% Calculate operating characteristics of synchronous machine</span>
+<span class="k">function</span> <span class="p">[</span><span class="n">sys</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">str</span><span class="p">,</span><span class="n">ts</span><span class="p">]</span><span class="o">=</span><span class="n">SynMachine8th</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="nb">flag</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">ini</span><span class="p">)</span>
+<span class="c1">% State variables       x:      [flux_d flux_fd flux_1d flux_q flux_1q flux_2q inc_wr delta]</span>
+<span class="c1">% Inputs                u:      [ed efd eq Tm]</span>
+<span class="c1">% Outputs               y:      [id ifd iq inc_wr delta Te]</span>
+<span class="c1">% Inicial conditions    ini:    [flux_d flux_fd flux_1d flux_q flux_1q flux_2q inc_wr delta]</span>
+<span class="k">switch</span> <span class="nb">flag</span><span class="p">,</span>
+    <span class="k">case</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="n">sys</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">str</span><span class="p">,</span><span class="n">ts</span><span class="p">]</span><span class="o">=</span><span class="n">mdlInitializeSizes</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">ini</span><span class="p">);</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sys</span><span class="o">=</span><span class="n">mdlDerivatives</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sys</span><span class="o">=</span><span class="n">mdlOutputs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+    <span class="k">case</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span>   <span class="n">sys</span><span class="o">=</span><span class="p">[];</span>
+    <span class="k">otherwise</span><span class="p">,</span>   <span class="nb">error</span><span class="p">([</span><span class="s1">'Unhandled flag='</span><span class="p">,</span><span class="nb">num2str</span><span class="p">(</span><span class="nb">flag</span><span class="p">)]);</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="p">[</span><span class="n">sys</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">str</span><span class="p">,</span><span class="n">ts</span><span class="p">]</span><span class="o">=</span><span class="n">mdlInitializeSizes</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">ini</span><span class="p">)</span>
+ <span class="k">global</span> <span class="n">invL</span> 
+    <span class="n">sizes</span> <span class="o">=</span> <span class="n">simsizes</span><span class="p">;</span>     <span class="n">sizes</span><span class="o">.</span><span class="n">NumContStates</span>  <span class="o">=</span><span class="mi">8</span><span class="p">;</span>    <span class="n">sizes</span><span class="o">.</span><span class="n">NumDiscStates</span>  <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="n">sizes</span><span class="o">.</span><span class="n">NumOutputs</span>     <span class="o">=</span><span class="mi">6</span><span class="p">;</span>   <span class="n">sizes</span><span class="o">.</span><span class="n">NumInputs</span>      <span class="o">=</span><span class="mi">4</span><span class="p">;</span>    <span class="n">sizes</span><span class="o">.</span><span class="n">DirFeedthrough</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="n">sizes</span><span class="o">.</span><span class="n">NumSampleTimes</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span>    <span class="n">sys</span> <span class="o">=</span> <span class="n">simsizes</span><span class="p">(</span><span class="n">sizes</span><span class="p">);</span>    <span class="n">x0</span><span class="o">=</span><span class="n">ini</span><span class="p">;</span>     <span class="n">str</span><span class="o">=</span><span class="p">[];</span>       <span class="n">ts</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span> <span class="mi">0</span><span class="p">];</span> 
+    <span class="n">L_d</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">Ld</span> <span class="n">d</span><span class="o">.</span><span class="n">Lad</span> <span class="n">d</span><span class="o">.</span><span class="n">Lad</span><span class="p">;</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">Lad</span> <span class="n">d</span><span class="o">.</span><span class="n">Lffd</span> <span class="n">d</span><span class="o">.</span><span class="n">Lad</span><span class="p">;</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">Lad</span> <span class="n">d</span><span class="o">.</span><span class="n">Lad</span> <span class="n">d</span><span class="o">.</span><span class="n">L11d</span><span class="p">];</span>
+    <span class="n">L_q</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">Lq</span> <span class="n">d</span><span class="o">.</span><span class="n">Laq</span> <span class="n">d</span><span class="o">.</span><span class="n">Laq</span><span class="p">;</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">Laq</span> <span class="n">d</span><span class="o">.</span><span class="n">L11q</span> <span class="n">d</span><span class="o">.</span><span class="n">Laq</span><span class="p">;</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">Laq</span> <span class="n">d</span><span class="o">.</span><span class="n">Laq</span> <span class="n">d</span><span class="o">.</span><span class="n">L22q</span><span class="p">];</span>
+    <span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="n">L_d</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">L_q</span><span class="p">];</span>
+    <span class="n">invL</span><span class="o">=</span><span class="nb">inv</span><span class="p">(</span><span class="n">L</span><span class="p">);</span>
+        
+<span class="k">function</span> <span class="n">sys</span><span class="o">=</span><span class="n">mdlDerivatives</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>   
+ <span class="k">global</span> <span class="n">invL</span>
+<span class="n">i_total</span><span class="o">=</span><span class="n">invL</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">);</span>
+<span class="n">id</span><span class="o">=</span><span class="n">i_total</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="n">ifd</span><span class="o">=</span><span class="n">i_total</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="n">i1d</span><span class="o">=</span><span class="n">i_total</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="n">iq</span><span class="o">=</span><span class="n">i_total</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="n">i1q</span><span class="o">=</span><span class="n">i_total</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="n">i2q</span><span class="o">=</span><span class="n">i_total</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+<span class="n">Te</span><span class="o">=</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">iq</span><span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">id</span><span class="p">;</span>
+<span class="n">wr</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span> <span class="c1">%wr=1pu+inc_wr</span>
+<span class="n">dflux_d</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">w_base</span><span class="o">*</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">wr</span><span class="o">+</span><span class="n">d</span><span class="o">.</span><span class="n">Ra</span><span class="o">*</span><span class="n">id</span><span class="p">);</span>
+<span class="n">dflux_fd</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">w_base</span><span class="o">*</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">Rfd</span><span class="o">*</span><span class="n">ifd</span><span class="p">);</span>
+<span class="n">dflux_1d</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">w_base</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">R1d</span><span class="o">*</span><span class="n">i1d</span><span class="p">);</span>
+<span class="n">dflux_q</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">w_base</span><span class="o">*</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">wr</span><span class="o">+</span><span class="n">d</span><span class="o">.</span><span class="n">Ra</span><span class="o">*</span><span class="n">iq</span><span class="p">);</span>
+<span class="n">dflux_1q</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">w_base</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">R1q</span><span class="o">*</span><span class="n">i1q</span><span class="p">);</span>
+<span class="n">dflux_2q</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">w_base</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">R2q</span><span class="o">*</span><span class="n">i2q</span><span class="p">);</span>
+<span class="n">dinc_wr</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="n">Te</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">Kd</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">7</span><span class="p">))/(</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">H</span><span class="p">);</span>
+<span class="n">ddelta</span><span class="o">=</span><span class="n">x</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">w_base</span><span class="p">;</span>
+<span class="n">sys</span><span class="o">=</span><span class="p">[</span><span class="n">dflux_d</span><span class="p">;</span><span class="n">dflux_fd</span><span class="p">;</span><span class="n">dflux_1d</span><span class="p">;</span><span class="n">dflux_q</span><span class="p">;</span><span class="n">dflux_1q</span><span class="p">;</span><span class="n">dflux_2q</span><span class="p">;</span><span class="n">dinc_wr</span><span class="p">;</span><span class="n">ddelta</span><span class="p">];</span>
+
+<span class="k">function</span> <span class="n">sys</span><span class="o">=</span><span class="n">mdlOutputs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
+<span class="k">global</span> <span class="n">invL</span> 
+<span class="n">i_total</span><span class="o">=</span><span class="n">invL</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">);</span>
+<span class="n">id</span><span class="o">=</span><span class="n">i_total</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="n">ifd</span><span class="o">=</span><span class="n">i_total</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="n">iq</span><span class="o">=</span><span class="n">i_total</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">Te</span><span class="o">=</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">iq</span><span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">id</span><span class="p">;</span>
+<span class="n">wr</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span> <span class="c1">%wr=1pu+inc_wr</span>
+<span class="n">sys</span><span class="o">=</span><span class="p">[</span><span class="n">id</span><span class="p">;</span><span class="n">ifd</span><span class="p">;</span><span class="n">iq</span><span class="p">;</span><span class="n">x</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="n">x</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="n">Te</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>importante este modelo depende el que se usa</p>
+
+<h3 id="inicialización-del-modelo">Inicialización del modelo</h3>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">%Valores de consigna.</span>
+<span class="nb">addpath</span><span class="p">(</span><span class="s1">'D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\MtrSincr'</span><span class="p">)</span>
+<span class="nb">addpath</span><span class="p">(</span><span class="s1">'D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\medidas'</span><span class="p">)</span>
+<span class="nb">addpath</span><span class="p">(</span><span class="s1">'D:\wk_matlab\uc3m\mt\pc104\Matlab\DataSheet'</span><span class="p">);</span><span class="n">dtGenSin31300V_v1</span>
+<span class="c1">%ini=[flux_d0;flux_fd0;flux_1d0;flux_q0;flux_11q0;flux_22q0;inc_wr0;delta0];</span>
+
+<span class="n">ed0</span><span class="o">=</span><span class="mf">0.5993</span><span class="p">;</span>  <span class="n">eq0</span><span class="o">=</span><span class="mf">0.8005</span><span class="p">;</span>     
+<span class="n">P0</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>     <span class="n">Q0</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>   <span class="n">delta0</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>  <span class="c1">% valores consigna</span>
+<span class="n">efd0</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>   <span class="n">Tm0</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>    <span class="c1">% estos valores deben ser cero</span>
+
+<span class="nb">disp</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s1">'\t 1).  Operating Point Specifics Define '</span><span class="p">));</span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s1">'\t \t \t-  Stator P0=  %d'</span><span class="p">,</span><span class="n">P0</span><span class="p">));</span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s1">'\t \t \t-  Stator Q0= %d'</span><span class="p">,</span><span class="n">Q0</span><span class="p">));</span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s1">'\t \t \t- delta0  = %d '</span><span class="p">,</span><span class="n">delta0</span><span class="p">));</span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s1">'\t  Unknown: efd0 Tm0 '</span><span class="p">));</span>  
+
+<span class="n">NameModel</span><span class="o">=</span><span class="s1">'SymMtrSin8th'</span><span class="p">;</span>
+<span class="n">Model_spec</span> <span class="o">=</span> <span class="n">operspec</span><span class="p">(</span><span class="n">NameModel</span><span class="p">)</span> <span class="p">;</span> <span class="c1">% obtiene el punto de operacion</span>
+
+<span class="n">NameBlockOutAdd</span><span class="o">=</span><span class="s1">'SymMtrSin8th/out2'</span><span class="p">;</span>
+<span class="n">Model_spec</span><span class="o">=</span><span class="n">addoutputspec</span><span class="p">(</span><span class="n">Model_spec</span><span class="p">,</span><span class="n">NameBlockOutAdd</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">Model_spec</span><span class="o">=</span><span class="n">addoutputspec</span><span class="p">(</span><span class="n">Model_spec</span><span class="p">,</span><span class="n">NameBlockOutAdd</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">Model_spec</span><span class="o">=</span><span class="n">addoutputspec</span><span class="p">(</span><span class="n">Model_spec</span><span class="p">,</span><span class="n">NameBlockOutAdd</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="n">Model_spec</span><span class="o">.</span><span class="n">States</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">Known</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">]</span><span class="o">'</span><span class="p">;</span> 
+<span class="n">Model_spec</span><span class="o">.</span><span class="n">States</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="n">delta0</span><span class="p">]</span><span class="o">'</span><span class="p">;</span>
+
+<span class="n">Model_spec</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">Known</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">Model_spec</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Model_spec</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">Known</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">Model_spec</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="n">efd0</span><span class="p">;</span>
+<span class="n">Model_spec</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">Known</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">Model_spec</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Model_spec</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">Known</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">Model_spec</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="n">Tm0</span><span class="p">;</span>
+<span class="c1">%[P0 Q0 delta0]</span>
+<span class="n">Model_spec</span><span class="o">.</span><span class="n">Outputs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">Known</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">Model_spec</span><span class="o">.</span><span class="n">Outputs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">y</span><span class="o">=</span> <span class="n">P0</span><span class="p">;</span>
+<span class="n">Model_spec</span><span class="o">.</span><span class="n">Outputs</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">Known</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">Model_spec</span><span class="o">.</span><span class="n">Outputs</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">y</span><span class="o">=</span> <span class="n">Q0</span><span class="p">;</span>
+<span class="n">Model_spec</span><span class="o">.</span><span class="n">Outputs</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">Known</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">Model_spec</span><span class="o">.</span><span class="n">Outputs</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">y</span><span class="o">=</span><span class="n">delta0</span><span class="p">;</span>
+
+<span class="p">[</span><span class="n">Model_op</span><span class="p">,</span><span class="n">op_report</span><span class="p">]</span><span class="o">=</span><span class="n">findop</span><span class="p">(</span><span class="n">NameModel</span><span class="p">,</span><span class="n">Model_spec</span><span class="p">);</span>
+<span class="n">ini</span><span class="o">=</span><span class="n">Model_op</span><span class="o">.</span><span class="n">States</span><span class="o">.</span><span class="n">x</span><span class="p">;</span> 
+<span class="n">efd0</span><span class="o">=</span> <span class="n">Model_op</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">u</span>
+<span class="n">Tm0</span> <span class="o">=</span> <span class="n">Model_op</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">u</span>
+</code></pre></div></div>
+
+<p>En esta parte se tiene la inicialización, con la función <code class="language-plaintext highlighter-rouge">addoutputspec</code> y se calcula con el comando <code class="language-plaintext highlighter-rouge">findop</code>.</p>
+
+<p>Al ejecutar este script se tiene como salida lo siguiente:</p>
+
+<h3 id="funciones-a-reutilizar-en-matlab">Funciones a reutilizar en matlab</h3>
+
+<ul>
+  <li>las condiciones iniciales se tienen en <code class="language-plaintext highlighter-rouge">\pc104\MTLB\bin\MyComputePrg\AsignCondIni</code></li>
+  <li>modelado de las ecuaciones iniciales esta en <code class="language-plaintext highlighter-rouge">\pc104\MTLB\bin\MyComputePrg\AsynMach</code></li>
+</ul>
+
+<h3 id="maquina-sincrona">Maquina sincrona</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pc104\MTLB\bin\MyComputePrg\MtrSincr
+</code></pre></div></div>
+
+<h3 id="codigo-bueno-en-">Codigo bueno en ``</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pc104\MTLB\src
+</code></pre></div></div>
+
+<h3 id="last-update-control">Last update control</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pc104\MTLB\src\CTR
+</code></pre></div></div>
+
+<h2 id="parámetros-de-la-máquina">Parámetros de la máquina</h2>
+
+<p><code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\StateStable</code></p>
+
+<ul>
+  <li>D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\StateStable_ok2021</li>
+</ul>
+
+<h3 id="inicialización-de-la-máquina-sincrona">Inicialización de la máquina sincrona</h3>
+
+<p><code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\MySyncGnrt\model_ok_Junio2011</code></p>
+
+<p>finalmente encontrado y operativo
+<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\MySyncGnrt\model_ok_Junio2011_ok2021</code></p>
+
+<h3 id="diseño-del-sistema-de-control">Diseño del sistema de control</h3>
+
+<p>revisar estos archivos
+<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\CheeMunOng</code></p>
+
+<p>Este es el folder bueno que usamos para los italianos</p>
+
+<p><code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\SYNgnrt\Kundur </code></p>
+
+<h3 id="curva-de-capabilidad">Curva de capabilidad</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pc104\MTLB\src\capability
+</code></pre></div></div>
+
+<p>[]:</p>
+
+:ET
