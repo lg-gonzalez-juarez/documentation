@@ -13,7 +13,7 @@ En este apartado se explica el proceso de inicialización de la máquina. En la 
 
 {% include image.html file="/matlab/mdl_machineDC.PNG" alt="matlab sim" caption="Simulation DC Machine" %}
 
-
+dir=`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\DCmtr\mdl\3th_v2\rev1`
 ### Datos del motor
 
 ```matlab
