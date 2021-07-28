@@ -43,17 +43,19 @@ entries:
       url: /p1_sample4.html
       output: web, pdf
 
+    - title: Electronics
+      url: /p1_sample5.html
+      output: web, pdf
+
+    - title: More Issues
+      url: /p1_sample6.html
+      output: web, pdf
+
+
   - title: Another heading
     output: web, pdf
 
     folderitems:
-    - title: Sample 5
-      url: /p1_sample5.html
-      output: web, pdf
-
-    - title: Sample 6
-      url: /p1_sample6.html
-      output: web, pdf
 
     - title: Sample 7
       url: /p1_sample7.html
