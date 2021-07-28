@@ -7,6 +7,33 @@ permalink: p1_sample4.html
 folder: product1
 ---
 
+
+## Open Modelica integración con Python
+
+
+https://askubuntu.com/questions/1248743/installation-of-openmodelica
+
+
+
+https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/ompython.html
+
+https://openmodelica.org/download/download-linux
+
+Temas importantes 
+
+- En cuanto a la instalación se tiene el mismo problema que con dockers, conflicto con la instalacion por las APA (install PIP, propias de cada app)
+
+- vinculo de las variables de entornos en win2, mitico problema al no ser administradores
+  
+
+Solucion temporal usar la maquina virtual que tengo, probado y de momento bien
+
+
+### Instalación 
+
+
+
+
 ## HIL
 
 
