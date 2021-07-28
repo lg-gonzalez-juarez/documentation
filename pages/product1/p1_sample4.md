@@ -66,7 +66,15 @@ ipython3
 ```
 
 
-y comienza el testing de comandos de un ejemplo 
+y comienza el testing de comandos de un ejemplo, adjunto primero captura de pantallas del proceso con resultados exitosos :-D!
+
+{% include image.html file="/omcpython/CapturaInstall_01.PNG" alt="OpenModelica with python" caption="testing01" %}
+{% include image.html file="/omcpython/CapturaInstall_02.PNG" alt="OpenModelica with python" caption="testing01" %}
+{% include image.html file="/omcpython/CapturaInstall_03.PNG" alt="OpenModelica with python" caption="testing01" %}
+{% include image.html file="/omcpython/CapturaInstall_04.PNG" alt="OpenModelica with python" caption="testing01" %}
+
+
+
 
 ```cmd
 import OMPython 
