@@ -29,9 +29,76 @@ Temas importantes
 Solucion temporal usar la maquina virtual que tengo, probado y de momento bien
 
 
-### Instalación 
+### Instalación en ubuntu LTS 2020
+
+```cmd
+sudo apt install openmodelica 
+```
+
+En mi caso, noto que el pc va corto de espacio, reviso como andamos
+
+```cmd
+df -lh
+```
+
+revisando que todo bien con openmodelica
+
+```cmd
+omc
+```
+
+comenzando a trabajar con openModelica
+
+```cmd
+OMEdit
+```
+
+El paquete para enlazar python con openModelica es OMPython
+
+```cmd
+ pip install -U https://github.com/OpenModelica/OMPython/archive/master.zip
+```
+
+manos a la obra....
+
+```cmd
+ipython3
+```
 
 
+y comienza el testing de comandos de un ejemplo 
+
+```cmd
+import OMPython 
+from OMPython import OMCSessionZMQ  
+omc = OMCSessionZMQ()   
+omc.sendExpression("getVersion()")  
+omc.sendExpression("cd()")
+
+omc.sendExpression("loadModel(Modelica)")             
+
+omc.sendExpression("loadFile(getInstallationDirectoryPath() + \"/share/doc/omc/testmodels/BouncingBall.mo\")")   
+
+omc.sendExpression("instantiateModel(BouncingBall)")    
+
+from OMPython import ModelicaSystem    
+
+model_path=omc.sendExpression("getInstallationDirectoryPath()") + "/share/doc/omc/testmodels/" 
+
+mod=ModelicaSystem(model_path + "BouncingBall.mo","BouncingBall")  
+
+mod=ModelicaSystem(model_path + "BouncingBall.mo","BouncingBall",["Modelica"]) 
+
+
+mod=ModelicaSystem(model_path + "BouncingBall.mo","BouncingBall",commandLineOptions="-d=newInst") 
+mod.buildModel()       
+
+mod.getQuantities()       
+mod.getParameters()
+mod.getParameters(["c","radius"]) 
+mod.getParameters(["e","radius"])  
+mod.getSimulationOptions()
+```
 
 
 ## HIL

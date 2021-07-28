@@ -1,0 +1,96 @@
+I"3<h2 id="open-modelica-integración-con-python">Open Modelica integración con Python</h2>
+
+<p>https://askubuntu.com/questions/1248743/installation-of-openmodelica</p>
+
+<p>https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/ompython.html</p>
+
+<p>https://openmodelica.org/download/download-linux</p>
+
+<p>Temas importantes</p>
+
+<ul>
+  <li>
+    <p>En cuanto a la instalación se tiene el mismo problema que con dockers, conflicto con la instalacion por las APA (install PIP, propias de cada app)</p>
+  </li>
+  <li>
+    <p>vinculo de las variables de entornos en win2, mitico problema al no ser administradores</p>
+  </li>
+</ul>
+
+<p>Solucion temporal usar la maquina virtual que tengo, probado y de momento bien</p>
+
+<h3 id="instalación-en-ubuntu-lts-2020">Instalación en ubuntu LTS 2020</h3>
+
+<pre><code class="language-cmd">sudo apt install openmodelica 
+</code></pre>
+
+<p>En mi caso, noto que el pc va corto de espacio, reviso como andamos</p>
+
+<pre><code class="language-cmd">df -lh
+</code></pre>
+
+<p>revisando que todo bien con openmodelica</p>
+
+<pre><code class="language-cmd">omc
+</code></pre>
+
+<p>comenzando a trabajar con openModelica</p>
+
+<pre><code class="language-cmd">OMEdit
+</code></pre>
+
+<p>El paquete para enlazar python con openModelica es OMPython</p>
+
+<pre><code class="language-cmd"> pip install -U https://github.com/OpenModelica/OMPython/archive/master.zip
+</code></pre>
+
+<p>manos a la obra….</p>
+
+<pre><code class="language-cmd">ipython3
+</code></pre>
+
+<p>y comienza el testing de comandos de un ejemplo</p>
+
+<pre><code class="language-cmd">
+</code></pre>
+
+<h2 id="hil">HIL</h2>
+
+<h3 id="leer-archivos-o-datos-desde-otro-pc">Leer archivos o datos desde otro pc</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> - Entras por escritorio remoto al pc[44] 
+ - Los archivos que deseas ejecutar los tienes pc[104] 
+ -Abres matlab en pc[44] -Ejecutas el siguiente ejemplo: 
+</code></pre></div></div>
+
+<pre><code class="language-cmd">     dir='\\tsclient\D\MTLB\proc\StateEstimator\amediaslos2primeros';   
+     addpath(dir);     
+</code></pre>
+
+<p>wls_34nudos
+y listo se ejecuta el programa sin tenerlo en tu pc</p>
+
+<pre><code class="language-cmd">     addpath(genpath('C:\MATLAB\R2012a\toolbox\matpower4.1'))
+</code></pre>
+
+<h3 id="to-set-ubuntu-transforn-toeps-desde-104-desde-otro-pc-hil-lab">to set ubuntu: transforn toeps desde 104 desde otro pc (HIL-LAB)</h3>
+
+<pre><code class="language-cmd">     [102]D:\lggj\code_dspace\20120222_CtrStatComBalanceado\caract 
+     destine='\\tsclient\D\THESIS\CODE\plots_eps2pdf'; 
+     copyfile(NameFile,destine) 
+</code></pre>
+
+<h3 id="lectura--escritura-de-archivo">LECTURA / ESCRITURA DE ARCHIVO</h3>
+
+<pre><code class="language-cmd">     x = 0:.1:1;     
+     y = [x; exp(x)]; fid = fopen('exp.m','w');     
+     fprintf(fid,'Es letra:'); 
+     fprintf(fid,'%6.2f %12.8f\n',y); 
+     fclose(fid)
+</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://arantxa.ii.uam.es/~iama/ficheros.pdf
+</code></pre></div></div>
+
+<p>[]:</p>
+
+:ET
