@@ -124,6 +124,10 @@ step(sysd1,'r',sysd2,'b');legend('show');title('Disturbance Rejection')
 
 ### Truquitos útiles
 
+```cmd
+D:\wk_matlab\uc3m\mt\pc104\MTLB\src\CTR\discrete
+```
+
 En formato simbolico
 
 ```matlab
