@@ -11,6 +11,10 @@ folder: product1
 
 En este apartado se resumen los comandos para obtener los valores del controlador de tipo PID, basado en la función de transferencia de la planta a controlar
 
+```md
+D:\wk_matlab\uc3m\mt\pc104\MTLB\src\CTR\discrete
+```
+
 ```matlab
 %% diseño con comandos de matlab
 clear all; close all; clc;
@@ -117,5 +121,68 @@ subplot 212
 step(sysd1,'r',sysd2,'b');legend('show');title('Disturbance Rejection')
 
 ```
+
+### Truquitos útiles
+
+En formato simbolico
+
+```matlab
+clear all; close all;clc
+
+fprintf('\n Simbolico')
+Gp.sym=sym('1/(T*s+1)');
+Gp.gt=ilaplace(Gp.sym);
+Gp.gt=subs(Gp.gt,'t','k*Ts');
+Gp.z1=ztrans(Gp.gt);
+Gp.z=times(Gp.z1,'(z-1)/z');
+Gp.Gz=collect(Gp.z,'z')
+Gp.Gz=simplify(Gp.Gz)
+disp('Funciones simbolicas')
+[num,den]=numden(Gp.Gz)
+
+num=subs(num, 'T',1.0);
+den=subs(den, 'T',1.0);
+num=subs(num, 'Ts',0.01);
+den=subs(den, 'Ts',0.01);
+numN=sym2poly(num), denN=sym2poly(den)
+printsys(numN,denN,'z')
+```
+
+### Usando un modelo de matlab
+
+```matlab
+% use P controller with gain=1
+[numcl,dencl]=feedback(numN,denN,1,1);
+dstep(numcl,dencl)
+xlabel('Time (k*0.1sec)')
+ylabel(' ')
+open_system('M1')
+sim('M1')
+```
+
+### Método de discretización
+
+```matlab
+d.L=10e-3;d.R=3;
+Gp.tfCNT=tf(1,[d.L/d.R 1])
+Gp.Ts=1e-4;
+Gp.tfDSC=c2d(Gp.tfCNT,1e-4,'zoh')
+%[Gp.nmDSC,Gp.dnDSC]=tfdata(Gp.tfDSC,'v');
+```
+
+```matlab
+fprintf('\n \tFuncion Transf. Planta con delay interno entrada');Gp.tf.cntDLYin
+disp('discretizado');
+Gp.tf.dscDLYin=c2d(Gp.tf.cntDLYin,Gp.Ts,'zoh');
+Gp.tf.dscDLYin
+```
+
+#### Propiedades de la función de transferencia
+
+```matlab
+fprintf('\n Propiedades de los sistemas')
+get(Gp.tfDSC),get(Gp.tf.dscDLYin)
+```
+
 
 {% include links.html %}
