@@ -184,5 +184,123 @@ fprintf('\n Propiedades de los sistemas')
 get(Gp.tfDSC),get(Gp.tf.dscDLYin)
 ```
 
+```matlab
+[Gp.nmDSC,Gp.dnDSC]=tfdata(Gp.tfDSC,'v');
+fprintf('\n \tFuncion Transf. Planta'); 
+printsys(Gp.nmCNT,Gp.dnCNT,'s')
+printsys(Gp.nmDSC,Gp.dnDSC,'z')
+%---
+celldisp(get(Gp.tfDSC,'num')),
+celldisp(get(Gp.tfDSC,'den'))
+
+%% 
+roots(Gp.dnCNT)
+roots(Gp.dnDSC)
+```
+
+### Gráficas de la función de transferencia
+
+```matlab
+subplot 211, stepplot(Gp.tfCNT,Gp.tfDSC);
+title('Respuesta al escalon lazon abierto')
+GCL.cnt=feedback(Gp.tfCNT,1)
+GCL.dsc=feedback(Gp.tfDSC,1)
+subplot 212, stepplot(GCL.cnt,GCL.dsc)
+title('Lazo Cerrado')
+```
+
+### Gráfica en lazo abierto
+
+```matlab
+%% PLANT with internal time Delays en la entrada
+Gp.dlyIN=2;
+Gp.tf.cntDLYin=tf(Gp.nmCNT,Gp.dnCNT,'InputDelay',Gp.dlyIN);%exp
+fprintf('\n \tFuncion Transf. Planta con delay interno entrada');Gp.tf.cntDLYin
+disp('discretizado');
+Gp.tf.dscDLYin=c2d(Gp.tf.cntDLYin,Gp.Ts,'zoh');
+Gp.tf.dscDLYin
+
+%...PLANT with internal time Delays en la salida
+%pltB=tf(1,[Ts 1],'OutputDelay',3,'Ts',0.001)
+%---- planta actuador y sensor
+
+str.Ttl.A='planta';
+str.Ttl.B='planta con retraso';
+
+subplot 211,step(Gp.tfCNT); hold on; step(Gp.tfDSC,'-or'); hold off;
+title(str.Ttl.A); 
+subplot 212,step(Gp.tf.cntDLYin); hold on; step(Gp.tf.dscDLYin,'-or'); hold off;title(str.Ttl.B); 
+set(gcf,'PaperPositionMode','auto','units','pixels','Position',[1,53,1024,1150])
+
+fprintf('\n Propiedades de los sistemas')
+get(Gp.tfDSC),get(Gp.tf.dscDLYin)
+
+%--
+stpInfo.cnt = stepinfo(Gp.tfCNT)
+stpInfo.dsc = stepinfo(Gp.tfDSC)
+stpInfo.cntDLYin = stepinfo(Gp.tf.cntDLYin)
+stpInfo.dscDLYin = stepinfo(Gp.tf.dscDLYin)
+
+[x1,x2,x3,x4]=margin(Gp.tfCNT)
+[y1,y2,y3,y4]=margin(Gp.tfDSC)
+[z1,z2,z3,z4]=margin(Gp.tf.cntDLYin)
+[r1,r2,r3,r4]=margin(Gp.tf.dscDLYin)
+
+
+%% Closing Feedback Loops with Time Delays
+
+%...REGULATOR
+Gr.tfCNT=pid(0.5,2.3);
+Gr.tfDSC=c2d(Gr.tfCNT,Gp.Ts,'zoh');
+Gt.tf.cnt=feedback(Gr.tfCNT*Gp.tfCNT,1)
+Gt.tf.cntDLYin=feedback(Gr.tfCNT*Gp.tf.cntDLYin,1)
+```
+
+### Gráficas en lazo cerrado
+
+```matlab
+%--planta+control en lazo cerrado
+Gt.tf.dsc=feedback(Gr.tf.dsc*Gp.tf.dsc,1)
+Gt.tf.dscDLYin=feedback(Gr.tf.dsc*Gp.tf.dscDLYin,1)
+
+%-ForwardEuler-'zoh'
+figure()
+subplot 211;step(Gt.tf.cnt);hold on; step(Gt.tf.dsc);hold off
+subplot 212;step(Gt.tf.cntDLYin);hold on; step(Gt.tf.dscDLYin);hold off
+
+%{
+G = tf(1,[1 10],'InputDelay',2.1);C = pid(0.5,2.3);
+T = feedback(C*G,1);T.InternalDelay;step(T)
+%}
+ 
+disp('SMILE @@ ...... :-D')
+figure()
+P = bodeoptions('cstprefs')
+P.PhaseUnits='rad';
+P.PhaseMatching='on';
+P.PhaseWrapping='off';
+P.MagScale='linear';
+P.PhaseMatchingFreq=3;
+P.PhaseMatchingValue=2*pi;
+h1=bodeplot(Gp.tf.cnt,P)
+h2=getoptions(h1)
+
+figure(); 
+subplot 411,margin(Gp.tf.cnt);
+subplot 412,margin(Gp.tf.dsc);
+subplot 413,margin(Gp.tf.cntDLYin);
+subplot 414,margin(Gp.tf.dscDLYin);
+
+figure();
+bodeplot(Gp.tf.cnt,Gp.tf.dsc,'or',Gp.tf.cntDLYin,Gp.tf.dscDLYin,'+m',P); 
+legend('cnt','dsc','cntDLY','dscDLY')
+title('planta')
+
+figure()
+bodeplot(Gt.tf.cnt,Gt.tf.dsc,'or',Gt.tf.cntDLYin,Gt.tf.dscDLYin,'+m',P); 
+legend('cnt','dsc','cntDLY','dscDLY')
+
+%ltiprops(Gt.tf.dscDLYin)
+```
 
 {% include links.html %}
