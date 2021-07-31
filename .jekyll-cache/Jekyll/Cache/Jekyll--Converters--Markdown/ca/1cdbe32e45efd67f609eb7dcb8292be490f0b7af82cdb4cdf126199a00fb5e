@@ -1,44 +1,34 @@
----
-title: Control
-keywords: sample
-summary: "This is just a sample topic..."
-sidebar: product1_sidebar
-permalink: p1_sample6.html
-folder: product1
----
+I"�<h2 id="comandos-relativos-a-control">Comandos relativos a control</h2>
 
-## Comandos relativos a control
+<p>En este apartado se resumen los comandos para obtener los valores del controlador de tipo PID, basado en la función de transferencia de la planta a controlar</p>
 
-En este apartado se resumen los comandos para obtener los valores del controlador de tipo PID, basado en la función de transferencia de la planta a controlar
-
-```matlab
-%% diseño con comandos de matlab
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%% diseño con comandos de matlab
 clear all; close all; clc;
 
 %% from:cascadepiddemo
 
 d=struct('Sn',1.5e3,'fs',1e4,'Vd',230,'L',2e-3,'C',1100e-6,'R',3.5,'Vdc',1700);
 [d.Ts,d.tau]=deal(1/d.fs,d.L/d.R);%pag19
-d.T=d.Ts/2; d.Ti=d.tau; d.Kp=d.tau*d.R/(2*d.T);
-d.Teq=2*d.T; d.a=2.41;
-d.Tiv=d.a^2*d.Teq; 
-d.Kpv=2*d.Vdc*d.C/(3*d.Vd*sqrt(d.Tiv*d.Teq));
+d.T=d.Ts/2; d.Ti=d.tau; d.Kp=d.tau<span class="ge">*d.R/(2*</span>d.T);
+d.Teq=2<span class="err">*</span>d.T; d.a=2.41;
+d.Tiv=d.a^2<span class="err">*</span>d.Teq; 
+d.Kpv=2<span class="ge">*d.Vdc*</span>d.C/(3<span class="ge">*d.Vd*</span>sqrt(d.Tiv<span class="err">*</span>d.Teq));
 sprintf('======== Data Estructura ============');
 disp(d)
 
 %% PLANT
-G.plt.tf=tf(1,d.R*[1 d.R/d.L]);%[num,den]=tfdata(G.plt.tf,'V')
+G.plt.tf=tf(1,d.R<span class="err">*</span>[1 d.R/d.L]);%[num,den]=tfdata(G.plt.tf,'V')
 G.dly.tf=tf(1,[d.T 1]);
-G.ctrI.tf=tf(d.Kp*[d.Ti 1],[d.Ti 0]);
+G.ctrI.tf=tf(d.Kp<span class="err">*</span>[d.Ti 1],[d.Ti 0]);
 
 F.plt.tf=tf(1,[d.C 0]);
-F.ffw.k=1.5*(d.Vd/d.Vdc);
+F.ffw.k=1.5<span class="err">*</span>(d.Vd/d.Vdc);
 F.dly.tf=tf(1,[d.Teq 1]);
-F.ctrU.n=d.Kpv*[d.Tiv 1]; F.ctrU.d=[d.Tiv 0]; F.ctrU.tf=tf(F.ctrU.n,F.ctrU.d);
+F.ctrU.n=d.Kpv<span class="err">*</span>[d.Tiv 1]; F.ctrU.d=[d.Tiv 0]; F.ctrU.tf=tf(F.ctrU.n,F.ctrU.d);<span class="sb">
 
 
-sprintf('======== Planta OPEN LOOP ============');
-P1 =G.plt.tf*G.dly.tf
+</span>sprintf('======== Planta OPEN LOOP ============');
+P1 =G.plt.tf<span class="err">*</span>G.dly.tf
 
 bndWDTH=bandwidth(P1);
 sprintf('bandwith: %.2f',bndWDTH)
@@ -46,11 +36,11 @@ sprintf('bandwith: %.2f',bndWDTH)
 figure('name','polos G_OL'),rlocus(P1); 
 
 ppp=pole(P1)';
-sprintf('polo: %.2f \n',ppp)
+sprintf('polo: %.2f <span class="se">\n</span>',ppp)
 
 [Gm,Pm,Wcg,Wcp] = margin(P1);%Gm-GainMarrgen %PhaseMargin: Pm
 
-fprintf('GM: %d \t crossover frequency (Wcg): %d \n',Gm,Wcg);
+fprintf('GM: %d <span class="se">\t</span> crossover frequency (Wcg): %d <span class="se">\n</span>',Gm,Wcg);
 [CA InfoA] = pidtune(P1,'pi') 
 
 C0 = pidstd(d.Kp,1,1,1,'InputName','e','OutputName','u');
@@ -62,11 +52,9 @@ C0
 %[CA infoA] = pidtune(c2d(P1,d.Ts),C0)
 %[CA infoA] = pidtune(c2d(P1,1),C0)
 
-```
+</code></pre></div></div>
 
-
-```matlab
-P2=F.plt.tf%*F.ffw.k*F.dly.tf;
+<pre><code class="language-cmd">P2=F.plt.tf%*F.ffw.k*F.dly.tf;
 [CB InfoB] = pidtune(P2,'pi') 
 
 %% Designing a Single Loop Control System with a PI Controller
@@ -116,6 +104,8 @@ sysd2 = P1/(1+P2*C2+P2*P1*C1*C2); set(sysd2,'Name','Cascade');
 subplot 212
 step(sysd1,'r',sysd2,'b');legend('show');title('Disturbance Rejection')
 
-```
+</code></pre>
 
-{% include links.html %}
+<p>[]:</p>
+
+:ET
