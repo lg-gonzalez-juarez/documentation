@@ -1,5 +1,5 @@
 ---
-title: "Indíce"
+title: "Index"
 keywords: sample homepage
 tags: [getting_started]
 sidebar: general_sidebar

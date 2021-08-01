@@ -1,4 +1,4 @@
-I"5E<h2 id="add-a-tag-to-a-page">Add a tag to a page</h2>
+I"1E<h2 id="add-a-tag-to-a-page">Add a tag to a page</h2>
 <p>You can add tags to pages by adding <code class="language-plaintext highlighter-rouge">tags</code> in the frontmatter with values inside brackets, like this:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
@@ -290,7 +290,7 @@ sidebar: mydoc_sidebar
 
 
 
-<li><a href="index.html">Indíce</a></li>
+<li><a href="index.html">Index</a></li>
 
 
 
@@ -1343,7 +1343,7 @@ Getting started pages:
 
 
 
-<li><a href="index.html">Indíce</a></li>
+<li><a href="index.html">Index</a></li>
 
 
 
