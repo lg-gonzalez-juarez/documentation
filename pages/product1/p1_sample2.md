@@ -303,5 +303,10 @@ pc104\MTLB\src\Motors
 dir=`D:\wk_matlab\uc3m\mt\pc104\Matlab\basics\goals\REDUCTOR\buck_with_dc_machine`
 
 
+### Implementación experimental del motor con XPCtarget
+
+dir=`D:\wk_matlab\uc3m\mt\pc104\Matlab\basics\goals\REDUCTOR\xpctarget`
+
+
 
 {% include links.html %}
