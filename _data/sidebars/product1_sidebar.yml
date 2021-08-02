@@ -47,16 +47,10 @@ entries:
       url: /p1_sample5.html
       output: web, pdf
 
-    - title: More Issues
+    - title: Control
       url: /p1_sample6.html
       output: web, pdf
 
-
-  - title: Another heading
-    output: web, pdf
-
-    folderitems:
-
-    - title: Sample 7
+    - title: Filters
       url: /p1_sample7.html
       output: web, pdf
