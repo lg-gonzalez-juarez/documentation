@@ -298,6 +298,9 @@ pc104\MTLB\src\Motors
 {% endraw %}
 
 
+### Implementación del control con PSIM
+
+dir=`D:\wk_matlab\uc3m\mt\pc104\Matlab\basics\goals\REDUCTOR\buck_with_dc_machine`
 
 
 

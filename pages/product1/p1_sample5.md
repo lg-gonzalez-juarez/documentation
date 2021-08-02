@@ -54,4 +54,13 @@ iDQ0=y(end,:), plot(t,y);
 pause(2); close all
 ```
 
+### Repaso de control
+
+dir=`D:\wk_matlab\uc3m\mt\pc103\MTLB\CTR\Xian`
+
+
+### Análisis de la respuesta del sistema de control
+
+dir=`D:\wk_matlab\uc3m\mt\pc103\MTLB\statcom\dgrmBLCK` 
+
 {% include links.html %}
