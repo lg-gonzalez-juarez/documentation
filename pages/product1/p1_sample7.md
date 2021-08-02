@@ -68,5 +68,8 @@ Filtered_Freq = fft(Filterd_Output,NFFT)/L;
 f = Fs/2*linspace(0,1,NFFT/2+1);
 ```
 
+## Implementación física del PLL
+
+`D:\wk_matlab\uc3m\mt\pc104\Matlab\basics\goals\pll`
 
 {% include links.html %}

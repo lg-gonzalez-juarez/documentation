@@ -7,6 +7,10 @@ permalink: p1_sample6.html
 folder: product1
 ---
 
+## Comandos relativos a gráficos
+`D:\wk_matlab\uc3m\mt\pc104\Matlab\basics\MyPlotsCurves`
+
+
 ## Comandos relativos a control
 
 En este apartado se resumen los comandos para obtener los valores del controlador de tipo PID, basado en la función de transferencia de la planta a controlar
@@ -306,5 +310,10 @@ legend('cnt','dsc','cntDLY','dscDLY')
 
 %ltiprops(Gt.tf.dscDLYin)
 ```
+
+
+## Implementación del control vectorial 
+
+`D:\wk_matlab\uc3m\mt\pc104\Matlab\basics\SpcVctr`
 
 {% include links.html %}
