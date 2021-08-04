@@ -272,8 +272,11 @@ subplot(3,1,3),plot(t,y); xlabel('time [sec]'), ylabel('ifd(t)')
 
 ### Ajuste del control
 
+NOTA: revisar esta con los chicos
 
-
+```md
+D:\wk_matlab\uc3m\mt\pc104\MTLB\src\Motors\DCmtr\mdl\3th_v2\rev5
+```
 
 ## Directorios Motor DC
 
