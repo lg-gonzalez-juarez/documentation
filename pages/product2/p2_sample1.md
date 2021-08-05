@@ -22,3 +22,21 @@ Comandos para generar una git page que usa gem especifica
 * `bundle exec jekyll build o serve`
 
 importante si se tienen problemas revisar en los releases, las versiones de gem, jekyll, ruby, etc
+
+
+
+## Comandos para solucionar el problema de *.JPG al exportar de powepoint
+
+Al exportar las diapositivas de un archivo `*.ppt`, en windows las imagenes se generan con la extensión `.JPG`. Esto algunas veces puede causar problemas con las directivas que usa el servidor y que la web al ser publicada rompa. 
+
+Para ello, cambiamos la extensión `.JPG` pot `.jpg` a mano antes de insertarlos en el directorio local de git, o bien si ya lo hemos agregado en el directorio local resolver el problema con los siguientes comandos 
+
+```dos
+git mv DT/DT04.JPG digitaltween/slide04.jpg
+
+git add assets/images/digitaltween/slide04.jpg
+
+git commit -a -m "new slides"
+
+git push
+```
