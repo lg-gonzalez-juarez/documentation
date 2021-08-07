@@ -11,6 +11,10 @@ folder: product1
 
 ### Lista de libros y modelos
 
+
+boton derecho, inspeccionar
+buscar arriba izquierda botoncito movil-tablet
+
 - Fraile Mora
   - resumen de la pagina 416 y 417 reaccion de polos salientes
 
