@@ -54,3 +54,11 @@ entries:
     - title: Filters
       url: /p1_sample7.html
       output: web, pdf
+
+    - title: Mupad
+      url: /p1_sample8.html
+      output: web, pdf
+
+    - title: MoreIssues
+      url: /p1_sample9.html
+      output: web, pdf

@@ -1,0 +1,30 @@
+I"�<p>Comandos para generar una git page que usa gem especifica</p>
+
+<ul>
+  <li>generar git-page</li>
+  <li>habilitar el link publico dentro de mi usuario</li>
+  <li>fork theme git-jenkyll</li>
+  <li>modify Gemfile (cuidado con la seccion de cada gitpage)</li>
+  <li>una vez que los enlaces son correctos en local y servidor, vienen los siguientes comandos</li>
+  <li><code class="language-plaintext highlighter-rouge">gem install</code></li>
+  <li><code class="language-plaintext highlighter-rouge">bundle install</code></li>
+  <li><code class="language-plaintext highlighter-rouge">bundle exec jekyll build o serve</code></li>
+</ul>
+
+<p>importante si se tienen problemas revisar en los releases, las versiones de gem, jekyll, ruby, etc</p>
+
+<h2 id="comandos-para-solucionar-el-problema-de-jpg-al-exportar-de-powepoint">Comandos para solucionar el problema de *.JPG al exportar de powepoint</h2>
+
+<p>Al exportar las diapositivas de un archivo <code class="language-plaintext highlighter-rouge">*.ppt</code>, en windows las imagenes se generan con la extensión <code class="language-plaintext highlighter-rouge">.JPG</code>. Esto algunas veces puede causar problemas con las directivas que usa el servidor y que la web al ser publicada rompa.</p>
+
+<p>Para ello, cambiamos la extensión <code class="language-plaintext highlighter-rouge">.JPG</code> pot <code class="language-plaintext highlighter-rouge">.jpg</code> a mano antes de insertarlos en el directorio local de git, o bien si ya lo hemos agregado en el directorio local resolver el problema con los siguientes comandos</p>
+
+<pre><code class="language-dos">git mv DT/DT04.JPG digitaltween/slide04.jpg
+
+git add assets/images/digitaltween/slide04.jpg
+
+git commit -a -m "new slides"
+
+git push
+</code></pre>
+:ET
