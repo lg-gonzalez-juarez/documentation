@@ -1,0 +1,234 @@
+I"!:<div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Services Panels</h2>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                          <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>Service One</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                          <i class="fa fa-car fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>Service Two</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                          <i class="fa fa-support fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>Service Three</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                          <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>Service Four</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Service Tabs --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-lg-12"&gt;
+        &lt;h2 class="page-header"&gt;Service Tabs&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class="col-lg-12"&gt;
+
+        &lt;ul id="myTab" class="nav nav-tabs nav-justified"&gt;
+            &lt;li class="active"&gt;&lt;a href="#service-one" data-toggle="tab"&gt;&lt;i class="fa fa-tree"&gt;&lt;/i&gt; Service One&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=""&gt;&lt;a href="#service-two" data-toggle="tab"&gt;&lt;i class="fa fa-car"&gt;&lt;/i&gt; Service Two&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=""&gt;&lt;a href="#service-three" data-toggle="tab"&gt;&lt;i class="fa fa-support"&gt;&lt;/i&gt; Service Three&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=""&gt;&lt;a href="#service-four" data-toggle="tab"&gt;&lt;i class="fa fa-database"&gt;&lt;/i&gt; Service Four&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;div id="myTabContent" class="tab-content"&gt;
+            &lt;div class="tab-pane fade active in" id="service-one"&gt;
+                &lt;h4&gt;Service One&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="tab-pane fade" id="service-two"&gt;
+                &lt;h4&gt;Service Two&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="tab-pane fade" id="service-three"&gt;
+                &lt;h4&gt;Service Three&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="tab-pane fade" id="service-four"&gt;
+                &lt;h4&gt;Service Four&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;!-- Service List --&gt;
+&lt;!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-lg-12"&gt;
+        &lt;h2 class="page-header"&gt;Commands List&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="media"&gt;
+            &lt;div class="pull-left"&gt;
+                &lt;span class="fa-stack fa-2x"&gt;
+                      &lt;i class="fa fa-circle fa-stack-2x text-primary"&gt;&lt;/i&gt;
+                      &lt;i class="fa fa-tree fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="media-body"&gt;
+                &lt;h4 class="media-heading"&gt;Section One&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="media"&gt;
+            &lt;div class="pull-left"&gt;
+                &lt;span class="fa-stack fa-2x"&gt;
+                      &lt;i class="fa fa-circle fa-stack-2x text-primary"&gt;&lt;/i&gt;
+                      &lt;i class="fa fa-car fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="media-body"&gt;
+                &lt;h4 class="media-heading"&gt;Section Two&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="media"&gt;
+            &lt;div class="pull-left"&gt;
+                &lt;span class="fa-stack fa-2x"&gt;
+                      &lt;i class="fa fa-circle fa-stack-2x text-primary"&gt;&lt;/i&gt;
+                      &lt;i class="fa fa-support fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="media-body"&gt;
+                &lt;h4 class="media-heading"&gt;Section Three&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="media"&gt;
+            &lt;div class="pull-left"&gt;
+                &lt;span class="fa-stack fa-2x"&gt;
+                      &lt;i class="fa fa-circle fa-stack-2x text-primary"&gt;&lt;/i&gt;
+                      &lt;i class="fa fa-database fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="media-body"&gt;
+                &lt;h4 class="media-heading"&gt;Service Four&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="media"&gt;
+            &lt;div class="pull-left"&gt;
+                &lt;span class="fa-stack fa-2x"&gt;
+                      &lt;i class="fa fa-circle fa-stack-2x text-primary"&gt;&lt;/i&gt;
+                      &lt;i class="fa fa-bomb fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="media-body"&gt;
+                &lt;h4 class="media-heading"&gt;Service Five&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="media"&gt;
+            &lt;div class="pull-left"&gt;
+                &lt;span class="fa-stack fa-2x"&gt;
+                      &lt;i class="fa fa-circle fa-stack-2x text-primary"&gt;&lt;/i&gt;
+                      &lt;i class="fa fa-bank fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="media-body"&gt;
+                &lt;h4 class="media-heading"&gt;Service Six&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="media"&gt;
+            &lt;div class="pull-left"&gt;
+                &lt;span class="fa-stack fa-2x"&gt;
+                      &lt;i class="fa fa-circle fa-stack-2x text-primary"&gt;&lt;/i&gt;
+                      &lt;i class="fa fa-paper-plane fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="media-body"&gt;
+                &lt;h4 class="media-heading"&gt;Service Seven&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="media"&gt;
+            &lt;div class="pull-left"&gt;
+                &lt;span class="fa-stack fa-2x"&gt;
+                      &lt;i class="fa fa-circle fa-stack-2x text-primary"&gt;&lt;/i&gt;
+                      &lt;i class="fa fa-space-shuttle fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="media-body"&gt;
+                &lt;h4 class="media-heading"&gt;Service Eight&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="media"&gt;
+            &lt;div class="pull-left"&gt;
+                &lt;span class="fa-stack fa-2x"&gt;
+                      &lt;i class="fa fa-circle fa-stack-2x text-primary"&gt;&lt;/i&gt;
+                      &lt;i class="fa fa-recycle fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="media-body"&gt;
+                &lt;h4 class="media-heading"&gt;Service Nine (LG)&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+:ET
