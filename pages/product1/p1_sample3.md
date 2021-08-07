@@ -7,6 +7,24 @@ permalink: p1_sample3.html
 folder: product1
 ---
 
+## Notas acerca del estado del arte de la maquina sincrona
+
+### Lista de libros y modelos
+
+- Fraile Mora
+  - resumen de la pagina 416 y 417 reaccion de polos salientes
+
+- Krause control, [Krause,Wasynczuk,Sudhoff]analyisOfElectricalMachineryandDriveSystems
+  -  pag 36, circuito de la maquina de polos salientes, 
+  -  pag 193 ecuaciones dinamica
+  -  linealizacion 316
+- - maquina reducida de orden 342,357 
+
+- Chapma, circuito equivalente
+
+- Dynamic Simulation of Electric Machine using Matlab
+- pag 309, modelo con kd
+
 
 ## Modelo basado en kundur
 
