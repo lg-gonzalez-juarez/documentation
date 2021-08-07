@@ -23,6 +23,12 @@ Comandos para generar una git page que usa gem especifica
 
 importante si se tienen problemas revisar en los releases, las versiones de gem, jekyll, ruby, etc
 
+## Despues de lanzar al servidor 
+
+Se puede ver el comportamiento de la web en tablet y móvil de la siguiente forma
+
+* boton derecho, inspeccionar
+* buscar arriba izquierda botoncito movil-tablet
 
 
 ## Comandos para solucionar el problema de *.JPG al exportar de powepoint

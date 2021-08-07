@@ -12,8 +12,6 @@ folder: product1
 ### Lista de libros y modelos
 
 
-boton derecho, inspeccionar
-buscar arriba izquierda botoncito movil-tablet
 
 - Fraile Mora
   - resumen de la pagina 416 y 417 reaccion de polos salientes
@@ -26,9 +24,12 @@ buscar arriba izquierda botoncito movil-tablet
 
 - Chapma, circuito equivalente
 
-- Dynamic Simulation of Electric Machine using Matlab
-- pag 309, modelo con kd
-
+- Dynamic Simulation of Electric Machine using Matlab, cheen
+      - pag 309, modelo con kd
+      - permanent magnets pag 311
+      - tres fases, pag 323
+      - seis fases,  pag 340-350
+      - 
 
 ## Modelo basado en kundur
 
