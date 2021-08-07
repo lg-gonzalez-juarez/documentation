@@ -7,6 +7,13 @@ permalink: p1_sample3.html
 folder: product1
 ---
 
+
+## Modelo basado en kundur
+
+`D:\wk_matlab\uc3m\mt\pc104\Matlab\Motors\SYNgnrt\Kundur\mdl\aux2`
+inicializacion, ok 2021
+
+
 ## Proceso de Modelado 
 
 En este apartado se explica el proceso de inicialización de la máquina. En la figura se presenta la captura de pantalla del modelo realizado en simulink
