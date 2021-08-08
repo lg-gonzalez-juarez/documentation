@@ -1,4 +1,4 @@
-I"2�<h2 id="notas-acerca-del-estado-del-arte-de-la-maquina-sincrona">Notas acerca del estado del arte de la maquina sincrona</h2>
+I""�<h2 id="notas-acerca-del-estado-del-arte-de-la-maquina-sincrona">Notas acerca del estado del arte de la maquina sincrona</h2>
 
 <h3 id="lista-de-libros-y-modelos">Lista de libros y modelos</h3>
 
@@ -31,28 +31,17 @@
     -</li>
 </ul>
 
-<p>revisando la doc de matlab</p>
+<h3 id="modelado-mátemático-según-krause">Modelado mátemático según Krause</h3>
 
-<p>se basa en el libro de krause, lo he descargado (Analysis of Electric Machine)</p>
-
-\[V_{abc}=\]
-
-\[f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}\]
+<p>De acuerdo a la documentación de matlab, el modelo proporcionado por la toolbox se basa en el libro de krause (Analysis of Electric Machine, página 122, máquina de tres fases, dos polos, de imanes permanentes). Las ecuaciones son las siguientes</p>
 
 \[\begin{align*}
-  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \\
-      \vdots &amp; \ddots &amp; \vdots \\
-      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
+&amp;\bf{v}_{abc,s}=\bf{r}_s \bf{i}_{abc,s} + p \bf{\lambda}_{abc,s}\\
+\bf{\lambda}_{abc,s}&amp;=\bf{L}_s \bf{i}_{abc,s} + \bf{\lambda}^{'}_m\\
+T_e&amp;=J\left( \frac{2}{p}p \omega_r \right) + B_m\left( \frac{2}{p}\omega_r \right) + T_L
 \end{align*}\]
+
+<p><strong>Recuerde p, es el operador derivada</strong></p>
 
 <h2 id="modelo-basado-en-kundur">Modelo basado en kundur</h2>
 

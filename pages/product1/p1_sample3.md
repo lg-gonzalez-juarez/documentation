@@ -31,31 +31,25 @@ folder: product1
       - seis fases,  pag 340-350
       - 
 
-revisando la doc de matlab
+### Modelado mátemático según Krause
 
-se basa en el libro de krause, lo he descargado (Analysis of Electric Machine)
-
-$$V_{abc}= $$
-
-
-$$f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}$$ 
+De acuerdo a la documentación de matlab, el modelo proporcionado por la toolbox se basa en el libro de krause (Analysis of Electric Machine, página 122, máquina de tres fases, dos polos, de imanes permanentes). Las ecuaciones son las siguientes
 
 $$
 \begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
+&\bf{v}_{abc,s}=\bf{r}_s \bf{i}_{abc,s} + p \bf{\lambda}_{abc,s}\\
+\bf{\lambda}_{abc,s}&=\bf{L}_s \bf{i}_{abc,s} + \bf{\lambda}^{'}_m\\
+T_e&=J\left( \frac{2}{p}p \omega_r \right) + B_m\left( \frac{2}{p}\omega_r \right) + T_L
 \end{align*}
 $$
+
+**Recuerde p, es el operador derivada**
+
+**NOTE** REVISAR SECCION-> VOLTAGE AND TORQUE EQUATIONS IN ROTOR
+REFERENCE-FRAME VARIABLES --> pag 126
+
+
+Las ecuaciones a implementar son: 4.3-10 hasta 4.3.12
 
 
 ## Modelo basado en kundur
