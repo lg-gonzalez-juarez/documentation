@@ -48,7 +48,7 @@ entries:
       url: /p2_sample4.html
       output: web, pdf
 
-    - title: Sample5
+    - title: Arduino MKR Zero
       url: /p2_sample5.html
       output: web, pdf
 
