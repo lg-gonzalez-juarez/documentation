@@ -1,4 +1,4 @@
-I""Ô<h2 id="notas-acerca-del-estado-del-arte-de-la-maquina-sincrona">Notas acerca del estado del arte de la maquina sincrona</h2>
+I"Õ<h2 id="notas-acerca-del-estado-del-arte-de-la-maquina-sincrona">Notas acerca del estado del arte de la maquina sincrona</h2>
 
 <h3 id="lista-de-libros-y-modelos">Lista de libros y modelos</h3>
 
@@ -43,9 +43,14 @@ T_e&amp;=J\left( \frac{2}{p}p \omega_r \right) + B_m\left( \frac{2}{p}\omega_r \
 
 <p><strong>Recuerde p, es el operador derivada</strong></p>
 
-<h2 id="modelo-basado-en-kundur">Modelo basado en kundur</h2>
+<p><strong>NOTE</strong> REVISAR SECCION-&gt; VOLTAGE AND TORQUE EQUATIONS IN ROTOR
+REFERENCE-FRAME VARIABLES â€“&gt; pag 126</p>
 
-<p><code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\Matlab\Motors\SYNgnrt\Kundur\mdl\aux2</code>
+<p>Las ecuaciones a implementar son: 4.3-10 hasta 4.3.12</p>
+
+<h2 id="modelo-basado-en-kundur">Modelo basado en kundur</h2>
+<p>REVISAR ESTO CON ALBERTO EN MODELICA
+<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\Matlab\Motors\SYNgnrt\Kundur\mdl\aux2</code>
 inicializacion, ok 2021</p>
 
 <h2 id="proceso-de-modelado">Proceso de Modelado</h2>
