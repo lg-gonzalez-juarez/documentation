@@ -32,7 +32,7 @@ entries:
       output: web, pdf
       folderitems:
 
-    - title: Sample1
+    - title: Edicion GitPages
       url: /p2_sample1.html
       output: web, pdf
 
