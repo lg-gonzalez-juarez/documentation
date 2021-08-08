@@ -27,7 +27,6 @@ entries:
     - title: Indice General
       url: /index.html
       output: web, pdf
-      type: homepage
 
   - title: II. BUENAS PRACTICAS
     output: web, pdf
