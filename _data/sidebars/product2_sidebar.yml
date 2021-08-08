@@ -22,8 +22,9 @@ entries:
   - title: Getting Started
     output: web, pdf
     folderitems:
-    - title: Matlab Product 1 home
-      url: /p2_landing_page.html
+
+    - title: Arduino
+      url: /arduino.html
       type: homepage
       output: web, pdf
 

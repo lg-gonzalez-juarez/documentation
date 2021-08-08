@@ -1,9 +1,9 @@
 ---
-title: Product 2
+title: Arduino
 keywords: mydoc
 sidebar: product2_sidebar
-toc: false
-permalink: p2_landing_page.html
+toc: true
+permalink: arduino.html
 folder: product2
 ---
 <div class="row">
