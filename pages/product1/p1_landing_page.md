@@ -151,9 +151,9 @@ folder: product1
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4> next 8</h4>
+                    <h4> Arduino</h4>
                     <p>About next.</p>
-                    <a href="p1_sample8.html" class="btn btn-primary"> Learn More</a>
+                    <a href="arduino/arduino01.html" class="btn btn-primary"> Learn More</a>
                 </div>
             </div>
         </div>
