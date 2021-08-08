@@ -53,7 +53,7 @@ Las ecuaciones a implementar son: 4.3-10 hasta 4.3.12
 
 
 ## Modelo basado en kundur
-
+REVISAR ESTO CON ALBERTO EN MODELICA
 `D:\wk_matlab\uc3m\mt\pc104\Matlab\Motors\SYNgnrt\Kundur\mdl\aux2`
 inicializacion, ok 2021
 
