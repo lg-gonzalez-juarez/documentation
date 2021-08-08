@@ -31,6 +31,33 @@ folder: product1
       - seis fases,  pag 340-350
       - 
 
+revisando la doc de matlab
+
+se basa en el libro de krause, lo he descargado (Analysis of Electric Machine)
+
+$$V_{abc}= $$
+
+
+$$f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}$$ 
+
+$$
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+$$
+
+
 ## Modelo basado en kundur
 
 `D:\wk_matlab\uc3m\mt\pc104\Matlab\Motors\SYNgnrt\Kundur\mdl\aux2`

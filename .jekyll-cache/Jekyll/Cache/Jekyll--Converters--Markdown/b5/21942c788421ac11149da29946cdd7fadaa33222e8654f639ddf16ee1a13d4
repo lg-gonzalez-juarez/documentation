@@ -1,4 +1,4 @@
-I"‡<p>Comandos para generar una git page que usa gem especifica</p>
+I"Ú<p>Comandos para generar una git page que usa gem especifica</p>
 
 <ul>
   <li>generar git-page</li>
@@ -12,6 +12,15 @@
 </ul>
 
 <p>importante si se tienen problemas revisar en los releases, las versiones de gem, jekyll, ruby, etc</p>
+
+<h2 id="despues-de-lanzar-al-servidor">Despues de lanzar al servidor</h2>
+
+<p>Se puede ver el comportamiento de la web en tablet y m√≥vil de la siguiente forma</p>
+
+<ul>
+  <li>boton derecho, inspeccionar</li>
+  <li>buscar arriba izquierda botoncito movil-tablet</li>
+</ul>
 
 <h2 id="comandos-para-solucionar-el-problema-de-jpg-al-exportar-de-powepoint">Comandos para solucionar el problema de *.JPG al exportar de powepoint</h2>
 
