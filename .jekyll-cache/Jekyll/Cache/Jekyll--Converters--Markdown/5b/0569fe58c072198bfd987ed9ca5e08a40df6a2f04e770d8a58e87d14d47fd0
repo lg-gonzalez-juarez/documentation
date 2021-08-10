@@ -1,14 +1,7 @@
----
-title: "Index"
-keywords: sample homepage
-tags: [getting_started]
-sidebar: general_sidebar
-permalink: index.html
-summary: These brief of alls docs 
----
+I"Š<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is general index, more information can be found in the <a alt="Personal Web Page" href="https://lg-gonzalez-juarez.github.io/pruebas-web/"> personal web page</a>.</div>
 
-{% include note.html content="This is general index, more information can be found in the <a alt='Personal Web Page' href='https://lg-gonzalez-juarez.github.io/pruebas-web/'> personal web page</a>." %}
-
+<h1 id="courses">Courses</h1>
+<h2 id="7-aws-certified-machine-learning---specialty-2020">7. <a href="mchlrn_20.html">AWS Certified Machine Learning - Specialty 2020</a></h2>
 
 <div class="row">
         <div class="col-lg-12">
@@ -59,7 +52,7 @@ summary: These brief of alls docs
                 </div>
             </div>
         </div>
-</div>  
+</div>
 
 <div class="row">
         <div class="col-lg-12">
@@ -104,9 +97,9 @@ summary: These brief of alls docs
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>AWS Certified Machine Learning - Specialty 2020</h4>
-                    <p></p>
-                    <a href="mchlrn_20.html" class="btn btn-primary">Let's go</a>
+                    <h4>Control</h4>
+                    <p>More issues.</p>
+                    <a href="p1_sample6.html" class="btn btn-primary">Let's go</a>
                 </div>
             </div>
         </div>
@@ -162,3 +155,4 @@ summary: These brief of alls docs
             </div>
         </div>
 </div>
+:ET

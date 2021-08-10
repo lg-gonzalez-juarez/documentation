@@ -1,14 +1,13 @@
----
-title: "Index"
-keywords: sample homepage
-tags: [getting_started]
-sidebar: general_sidebar
-permalink: index.html
-summary: These brief of alls docs 
----
+I"²<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is general index, more information can be found in the <a alt="Personal Web Page" href="https://lg-gonzalez-juarez.github.io/pruebas-web/"> personal web page</a>.</div>
 
-{% include note.html content="This is general index, more information can be found in the <a alt='Personal Web Page' href='https://lg-gonzalez-juarez.github.io/pruebas-web/'> personal web page</a>." %}
-
+<h1 id="courses">Courses</h1>
+<h2 id="1-">1. <a href=""></a></h2>
+<h2 id="2-">2. <a href=""></a></h2>
+<h2 id="3-python-programming-gui">3. <a href="python_00.html">Python Programming GUI</a></h2>
+<h2 id="4-certified-associate-in-python">4. <a href="pyth_41.html">Certified Associate in Python</a></h2>
+<h2 id="5-introduction-javascript">5. <a href="javascript_00.html">Introduction Javascript</a></h2>
+<h2 id="6-introduction-machine-learning">6. <a href="mchlrn_00.html">Introduction Machine Learning</a></h2>
+<h2 id="7-aws-certified-machine-learning---specialty-2020">7. <a href="mchlrn_20.html">AWS Certified Machine Learning - Specialty 2020</a></h2>
 
 <div class="row">
         <div class="col-lg-12">
@@ -53,13 +52,13 @@ summary: These brief of alls docs
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>Python Programming GUI</h4>
-                    <p></p>
-                    <a href="python_00.html" class="btn btn-primary">Learn More</a>
+                    <h4>Syncrhonous Machine Simulation</h4>
+                    <p>This section present a simulation of syncrhonous machine at Simulink</p>
+                    <a href="p1_sample3.html" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
         </div>
-</div>  
+</div>
 
 <div class="row">
         <div class="col-lg-12">
@@ -74,9 +73,9 @@ summary: These brief of alls docs
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>Certified Associate in Python</h4>
-                    <p></p>
-                    <a href="pyth_41.html" class="btn btn-primary">Let's go</a>
+                    <h4>HIL</h4>
+                    <p>Simulaciones en tiempo real en Matlab.</p>
+                    <a href="p1_sample4.html" class="btn btn-primary">Let's go</a>
                 </div>
             </div>
         </div>
@@ -89,9 +88,9 @@ summary: These brief of alls docs
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>Introduction Machine Learning</h4>
-                    <p></p>
-                    <a href="mchlrn_00.html" class="btn btn-primary"> Learn More</a>
+                    <h4> Electronic</h4>
+                    <p>About Converters.</p>
+                    <a href="p1_sample5.html" class="btn btn-primary"> Learn More</a>
                 </div>
             </div>
         </div>
@@ -104,9 +103,9 @@ summary: These brief of alls docs
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>AWS Certified Machine Learning - Specialty 2020</h4>
-                    <p></p>
-                    <a href="mchlrn_20.html" class="btn btn-primary">Let's go</a>
+                    <h4>Control</h4>
+                    <p>More issues.</p>
+                    <a href="p1_sample6.html" class="btn btn-primary">Let's go</a>
                 </div>
             </div>
         </div>
@@ -155,10 +154,11 @@ summary: These brief of alls docs
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>Introduction Javascript</h4>
+                    <h4>Next 9</h4>
                     <p>next.</p>
-                    <a href="javascript_00.html" class="btn btn-primary">Let's go</a>
+                    <a href="p1_sample9.html" class="btn btn-primary">Let's go</a>
                 </div>
             </div>
         </div>
 </div>
+:ET
