@@ -3,5 +3,6 @@
   "files.associations": {
     "*.html": "liquid"
   },
-  "editor.fontSize": 16
+  "editor.wordWrap": "on",
+  "editor.fontSize": 12
 }
