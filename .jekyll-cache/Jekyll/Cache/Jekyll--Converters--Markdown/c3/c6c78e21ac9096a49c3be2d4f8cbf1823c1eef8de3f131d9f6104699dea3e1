@@ -1,14 +1,4 @@
----
-title: "Index"
-keywords: sample homepage
-tags: [getting_started]
-sidebar: general_sidebar
-permalink: index.html
-summary: These brief of alls docs 
----
-
-{% include note.html content="This is general index, more information can be found in the <a alt='Personal Web Page' href='https://lg-gonzalez-juarez.github.io/pruebas-web/'> personal web page</a>." %}
-
+I"n<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is general index, more information can be found in the <a alt="Personal Web Page" href="https://lg-gonzalez-juarez.github.io/pruebas-web/"> personal web page</a>.</div>
 
 <div class="row">
     <div class="col-lg-12">
@@ -38,11 +28,11 @@ summary: These brief of alls docs
                 </span>
             </div>
         <div class="panel-body">
-                <h4>Using Python's Math, Science, and Engineering Libraries</h4>
-                <p></p>
-                <a href="pyth_01.html" class="btn btn-primary">Learn More</a>
-        </div>
-        </div>
+                    <h4>Using Python's Math, Science, and Engineering Libraries</h4>
+                    <p></p>
+                    <a href="pyth_01.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
         </div>
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
@@ -52,14 +42,14 @@ summary: These brief of alls docs
                           <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
-            <div class="panel-body">
+                <div class="panel-body">
                     <h4>Python Programming GUI</h4>
                     <p></p>
                     <a href="python_00.html" class="btn btn-primary">Learn More</a>
+                </div>
             </div>
         </div>
-        </div>
-</div>  
+</div>
 
 <div class="row">
         <div class="col-lg-12">
@@ -162,3 +152,4 @@ summary: These brief of alls docs
             </div>
         </div>
 </div>
+:ET
