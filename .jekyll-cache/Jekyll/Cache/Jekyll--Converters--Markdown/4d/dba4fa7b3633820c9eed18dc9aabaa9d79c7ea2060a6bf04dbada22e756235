@@ -1,4 +1,4 @@
-I"ù<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is general index, more information can be found in the <a alt="Personal Web Page" href="https://lg-gonzalez-juarez.github.io/pruebas-web/"> personal web page</a>.</div>
+I"ç<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is general index, more information can be found in the <a alt="Personal Web Page" href="https://lg-gonzalez-juarez.github.io/pruebas-web/"> personal web page</a>.</div>
 
 <div class="row">
     <div class="col-lg-12"><!---<h2 class="page-header">Sections</h2>-->
@@ -8,7 +8,7 @@
             <div class="panel-heading">
                 <span class="fa-stack fa-3x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <i class="fa fa-arrow-circle-right fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-desktop fa-stack-1x fa-inverse"></i>
                 </span>
             </div>
         <div class="panel-body">
@@ -22,7 +22,7 @@
                 <div class="panel-heading">
                     <span class="fa-stack fa-3x">
                     <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
         <div class="panel-body">
@@ -36,7 +36,7 @@
             <div class="panel-heading">
                 <span class="fa-stack fa-3x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                 </span>
             </div>
         <div class="panel-body">
@@ -69,7 +69,7 @@
             <div class="panel-heading">
                 <span class="fa-stack fa-3x">
                     <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa fa-microchip fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
                 </span>
             </div>
             <div class="panel-body">
@@ -83,7 +83,7 @@
             <div class="panel-heading">
                 <span class="fa-stack fa-3x">
                     <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
                 </span>
             </div>
             <div class="panel-body">
@@ -130,7 +130,7 @@
             <div class="panel-heading">
                 <span class="fa-stack fa-3x">
                     <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa fa-js fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-cog fa-stack-1x fa-inverse"></i>
                 </span>
             </div>
             <div class="panel-body">
