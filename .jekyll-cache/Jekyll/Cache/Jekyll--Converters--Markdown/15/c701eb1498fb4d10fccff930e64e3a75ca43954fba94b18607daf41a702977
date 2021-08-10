@@ -273,7 +273,7 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
     <span class="nx">Prince</span><span class="p">.</span><span class="nx">addScriptFunc</span><span class="p">(</span><span class="dl">"</span><span class="s2">datestamp</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="dl">"</span><span class="s2">PDF last generated: August 09, 2021</span><span class="dl">"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="dl">"</span><span class="s2">PDF last generated: August 10, 2021</span><span class="dl">"</span><span class="p">;</span>
     <span class="p">});</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span>
