@@ -1,13 +1,4 @@
----
-title: "Index"
-keywords: sample homepage
-tags: [getting_started]
-sidebar: general_sidebar
-permalink: index.html
-summary: These brief of alls docs 
----
-
-{% include note.html content="This is general index, more information can be found in the <a alt='Personal Web Page' href='https://lg-gonzalez-juarez.github.io/pruebas-web/'> personal web page</a>." %}
+I"Ÿ<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is general index, more information can be found in the <a alt="Personal Web Page" href="https://lg-gonzalez-juarez.github.io/pruebas-web/"> personal web page</a>.</div>
 
 <div class="row">
     <div class="col-lg-12"><!---<h2 class="page-header">Sections</h2>-->
@@ -149,3 +140,4 @@ summary: These brief of alls docs
         </div>
     </div>
 </div>
+:ET
