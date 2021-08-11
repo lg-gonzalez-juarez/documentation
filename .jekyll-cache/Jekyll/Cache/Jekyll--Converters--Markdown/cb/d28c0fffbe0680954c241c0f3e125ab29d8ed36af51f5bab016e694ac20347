@@ -1,0 +1,40 @@
+I"<h2 id="clasificacón-general-de-las-máquinas-eléctricas">Clasificacón general de las máquinas eléctricas</h2>
+
+<p>La relación de las frecuencias del inductor e inducido se relacionan con el número de polos y las r.p.m. del rotor, de acuerdo a la ecuación general:</p>
+
+\[f_2=f_1\pm \frac{np}{60}\]
+
+<p>La clasificación de las máquinas se realiza a acorde con los siguientes criterios:</p>
+
+<h3 id="primer-criterio-movimiento-del-inductor-o-inducido">PRIMER CRITERIO: Movimiento del inductor o inducido</h3>
+
+<ul>
+  <li>Máquina estática, \(f_2=f_1\)</li>
+  <li>Máquina rotativa, \(f_2=f_1\pm \frac{np}{60}\)</li>
+</ul>
+
+<h3 id="segundo-criterio-características-del-flujo-inductor">SEGUNDO CRITERIO: Características del flujo inductor</h3>
+
+<p>a) Si el flujo inductor es constante, es decir, independiente del tiempo, indica que la frecuencia de la corriente que alimenta este devanado es \(f_1=0\). En el caso de máquinas estáticas, se cumpliría</p>
+
+\[f_2=f_1=0\]
+
+<p>no existiendo ninguna máquina que cumpla esta condición, ya que al no aparecer variaciones de flujo en el inducido no se tiene conversión de energía.</p>
+
+<p>Para las máquinas dotadas de movimiento, la condición \(f_1=0\), se tiene la expresión general:</p>
+
+\[f_2=\pm \frac{np}{60}\]
+
+<p>es decir, la frecuencia del inducido es función directa de la velocidad del rotor. Normalmente cuando el inductor está recorrido por una c.c. (\(f_1=0\)), la máquina tiene una estructura física en forma de <strong>polos salientes</strong>.</p>
+
+<p>b) Si el flujo del inductor es variable, es \(f_1\neq0\), lo cual indica, en el caso de máquinas estáticas</p>
+
+\[f_2=f_1\neq 0\]
+
+<h3 id="tercer-criterio-dispositivo-de-conexión-al-circuito-exterior">TERCER CRITERIO: Dispositivo de conexión al circuito exterior</h3>
+
+<p>a) Si la máquina tiene un inducido cuya unión con el circuito exterior se realiza por medio de conexiones fijas (caso en que el inducido está situado en el estator) o por anillos (inducidos en el rotor).</p>
+
+<p>*Source:** Fraile Mora, pag. 142</p>
+
+:ET

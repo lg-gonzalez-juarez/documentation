@@ -52,7 +52,13 @@ $$
 
 ### TERCER CRITERIO: Dispositivo de conexión al circuito exterior
 
+a) Si la máquina tiene un inducido cuya unión con el circuito exterior se realiza por medio de conexiones fijas (caso en que el inducido está situado en el estator) o por anillos (inducidos en el rotor).
 
+  - Transformador y regulador de inducción monofásic
+  - máquina síncrona constituida por el generador síncrono o alternador, y el motor síncrono
+  - Máquinas asíncronas o de inducción, constituidas por el generador asíncrono, el motor asíncrono y los convertidores asíncronos
+
+b) Si la máquina tiene un inducido cuya unión con el circuito exterior se realiza por medio de un colector de delgas.
 
 
 
