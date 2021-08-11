@@ -27,17 +27,36 @@ La clasificación de las máquinas se realiza a acorde con los siguientes criter
 
 ### SEGUNDO CRITERIO: Características del flujo inductor
 
-
-
+a) Si el flujo inductor es constante, es decir, independiente del tiempo, indica que la frecuencia de la corriente que alimenta este devanado es $$f_1=0$$. En el caso de máquinas estáticas, se cumpliría
 
 $$
-\begin{align*}
-&\bf{v}_{abc,s}=\bf{r}_s \bf{i}_{abc,s} + p \bf{\lambda}_{abc,s}\\
-\bf{\lambda}_{abc,s}&=\bf{L}_s \bf{i}_{abc,s} + \bf{\lambda}^{'}_m\\
-T_e&=J\left( \frac{2}{p}p \omega_r \right) + B_m\left( \frac{2}{p}\omega_r \right) + T_L
-\end{align*}
+f_2=f_1=0
 $$
 
+no existiendo ninguna máquina que cumpla esta condición, ya que al no aparecer variaciones de flujo en el inducido no se tiene conversión de energía.
 
+
+Para las máquinas dotadas de movimiento, la condición $$f_1=0$$, se tiene la expresión general:
+
+$$
+f_2=\pm \frac{np}{60}
+$$
+
+es decir, la frecuencia del inducido es función directa de la velocidad del rotor. Normalmente cuando el inductor está recorrido por una c.c. ($$f_1=0$$), la máquina tiene una estructura física en forma de **polos salientes**.
+
+b) Si el flujo del inductor es variable, es $$f_1\neq0$$, lo cual indica, en el caso de máquinas estáticas
+
+$$
+f_2=f_1\neq 0
+$$
+
+### TERCER CRITERIO: Dispositivo de conexión al circuito exterior
+
+
+
+
+
+
+*Source:** Fraile Mora, pag. 142
 
 
