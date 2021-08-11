@@ -124,3 +124,12 @@ entries:
     - title: Any More Trouble
       url: /inovation.html
       output: web, pdf
+
+  - title: IX. THEORY
+    output: web, pdf
+    folderitems:
+
+    - title: Machines
+      url: /theory01.html
+      output: web, pdf
+
