@@ -141,3 +141,11 @@ entries:
       url: /matlab00.html
       output: web, pdf
 
+  - title: XI. ARDUINO
+    output: web, pdf
+    folderitems:
+
+    - title: Arduino Notes
+      url: /arduino01.html
+      output: web, pdf
+
