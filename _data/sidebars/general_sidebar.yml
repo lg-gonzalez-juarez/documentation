@@ -133,3 +133,11 @@ entries:
       url: /theory01.html
       output: web, pdf
 
+  - title: X. MATLAB
+    output: web, pdf
+    folderitems:
+
+    - title: Matlab Index
+      url: /matlab00.html
+      output: web, pdf
+

@@ -1,0 +1,296 @@
+I"��<h2 id="comandos-relativos-a-gráficos">Comandos relativos a gráficos</h2>
+<p><code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\Matlab\basics\MyPlotsCurves</code></p>
+
+<h2 id="comandos-relativos-a-control">Comandos relativos a control</h2>
+
+<p>En este apartado se resumen los comandos para obtener los valores del controlador de tipo PID, basado en la función de transferencia de la planta a controlar</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:<span class="se">\w</span>k_matlab<span class="se">\u</span>c3m<span class="se">\m</span>t<span class="se">\p</span>c104<span class="se">\M</span>TLB<span class="se">\s</span>rc<span class="se">\C</span>TR<span class="se">\d</span>iscrete
+</code></pre></div></div>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">%% diseño con comandos de matlab</span>
+<span class="nb">clear</span> <span class="nb">all</span><span class="p">;</span> <span class="nb">close</span> <span class="nb">all</span><span class="p">;</span> <span class="nb">clc</span><span class="p">;</span>
+
+<span class="c1">%% from:cascadepiddemo</span>
+
+<span class="n">d</span><span class="o">=</span><span class="nb">struct</span><span class="p">(</span><span class="s1">'Sn'</span><span class="p">,</span><span class="mf">1.5e3</span><span class="p">,</span><span class="s1">'fs'</span><span class="p">,</span><span class="mf">1e4</span><span class="p">,</span><span class="s1">'Vd'</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="s1">'L'</span><span class="p">,</span><span class="mf">2e-3</span><span class="p">,</span><span class="s1">'C'</span><span class="p">,</span><span class="mf">1100e-6</span><span class="p">,</span><span class="s1">'R'</span><span class="p">,</span><span class="mf">3.5</span><span class="p">,</span><span class="s1">'Vdc'</span><span class="p">,</span><span class="mi">1700</span><span class="p">);</span>
+<span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">Ts</span><span class="p">,</span><span class="n">d</span><span class="o">.</span><span class="n">tau</span><span class="p">]</span><span class="o">=</span><span class="nb">deal</span><span class="p">(</span><span class="mi">1</span><span class="p">/</span><span class="n">d</span><span class="o">.</span><span class="n">fs</span><span class="p">,</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="p">/</span><span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="p">);</span><span class="c1">%pag19</span>
+<span class="n">d</span><span class="o">.</span><span class="n">T</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">Ts</span><span class="p">/</span><span class="mi">2</span><span class="p">;</span> <span class="n">d</span><span class="o">.</span><span class="n">Ti</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">tau</span><span class="p">;</span> <span class="n">d</span><span class="o">.</span><span class="n">Kp</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">tau</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="p">/(</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">T</span><span class="p">);</span>
+<span class="n">d</span><span class="o">.</span><span class="n">Teq</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">T</span><span class="p">;</span> <span class="n">d</span><span class="o">.</span><span class="n">a</span><span class="o">=</span><span class="mf">2.41</span><span class="p">;</span>
+<span class="n">d</span><span class="o">.</span><span class="n">Tiv</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">a</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">Teq</span><span class="p">;</span> 
+<span class="n">d</span><span class="o">.</span><span class="n">Kpv</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">Vdc</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">C</span><span class="p">/(</span><span class="mi">3</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">Vd</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">Tiv</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">Teq</span><span class="p">));</span>
+<span class="nb">sprintf</span><span class="p">(</span><span class="s1">'======== Data Estructura ============'</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="c1">%% PLANT</span>
+<span class="n">G</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">tf</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span> <span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="p">/</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="p">]);</span><span class="c1">%[num,den]=tfdata(G.plt.tf,'V')</span>
+<span class="n">G</span><span class="o">.</span><span class="n">dly</span><span class="o">.</span><span class="n">tf</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="n">d</span><span class="o">.</span><span class="n">T</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="n">G</span><span class="o">.</span><span class="n">ctrI</span><span class="o">.</span><span class="n">tf</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">Kp</span><span class="o">*</span><span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">Ti</span> <span class="mi">1</span><span class="p">],[</span><span class="n">d</span><span class="o">.</span><span class="n">Ti</span> <span class="mi">0</span><span class="p">]);</span>
+
+<span class="n">F</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">tf</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="n">d</span><span class="o">.</span><span class="n">C</span> <span class="mi">0</span><span class="p">]);</span>
+<span class="n">F</span><span class="o">.</span><span class="n">ffw</span><span class="o">.</span><span class="n">k</span><span class="o">=</span><span class="mf">1.5</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">Vd</span><span class="p">/</span><span class="n">d</span><span class="o">.</span><span class="n">Vdc</span><span class="p">);</span>
+<span class="n">F</span><span class="o">.</span><span class="n">dly</span><span class="o">.</span><span class="n">tf</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="n">d</span><span class="o">.</span><span class="n">Teq</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="n">F</span><span class="o">.</span><span class="n">ctrU</span><span class="o">.</span><span class="n">n</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">Kpv</span><span class="o">*</span><span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">Tiv</span> <span class="mi">1</span><span class="p">];</span> <span class="n">F</span><span class="o">.</span><span class="n">ctrU</span><span class="o">.</span><span class="n">d</span><span class="o">=</span><span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">Tiv</span> <span class="mi">0</span><span class="p">];</span> <span class="n">F</span><span class="o">.</span><span class="n">ctrU</span><span class="o">.</span><span class="n">tf</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">ctrU</span><span class="o">.</span><span class="n">n</span><span class="p">,</span><span class="n">F</span><span class="o">.</span><span class="n">ctrU</span><span class="o">.</span><span class="n">d</span><span class="p">);</span>
+
+
+<span class="nb">sprintf</span><span class="p">(</span><span class="s1">'======== Planta OPEN LOOP ============'</span><span class="p">);</span>
+<span class="n">P1</span> <span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">tf</span><span class="o">*</span><span class="n">G</span><span class="o">.</span><span class="n">dly</span><span class="o">.</span><span class="n">tf</span>
+
+<span class="n">bndWDTH</span><span class="o">=</span><span class="nb">bandwidth</span><span class="p">(</span><span class="n">P1</span><span class="p">);</span>
+<span class="nb">sprintf</span><span class="p">(</span><span class="s1">'bandwith: %.2f'</span><span class="p">,</span><span class="n">bndWDTH</span><span class="p">)</span>
+
+<span class="nb">figure</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span><span class="s1">'polos G_OL'</span><span class="p">),</span><span class="n">rlocus</span><span class="p">(</span><span class="n">P1</span><span class="p">);</span> 
+
+<span class="n">ppp</span><span class="o">=</span><span class="n">pole</span><span class="p">(</span><span class="n">P1</span><span class="p">)</span><span class="o">'</span><span class="p">;</span>
+<span class="nb">sprintf</span><span class="p">(</span><span class="s1">'polo: %.2f \n'</span><span class="p">,</span><span class="n">ppp</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">Gm</span><span class="p">,</span><span class="n">Pm</span><span class="p">,</span><span class="n">Wcg</span><span class="p">,</span><span class="n">Wcp</span><span class="p">]</span> <span class="o">=</span> <span class="n">margin</span><span class="p">(</span><span class="n">P1</span><span class="p">);</span><span class="c1">%Gm-GainMarrgen %PhaseMargin: Pm</span>
+
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'GM: %d \t crossover frequency (Wcg): %d \n'</span><span class="p">,</span><span class="n">Gm</span><span class="p">,</span><span class="n">Wcg</span><span class="p">);</span>
+<span class="p">[</span><span class="n">CA</span> <span class="n">InfoA</span><span class="p">]</span> <span class="o">=</span> <span class="n">pidtune</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span><span class="s1">'pi'</span><span class="p">)</span> 
+
+<span class="n">C0</span> <span class="o">=</span> <span class="n">pidstd</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">Kp</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">'InputName'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'OutputName'</span><span class="p">,</span><span class="s1">'u'</span><span class="p">);</span>
+<span class="n">C0</span>
+
+<span class="c1">%discrete</span>
+<span class="c1">%C0 = pidstd(1,1,1,1,'Ts',d.Ts,'IFormula','BackwardEuler',...</span>
+ <span class="c1">%                            'DFormula','BackwardEuler');</span>
+<span class="c1">%[CA infoA] = pidtune(c2d(P1,d.Ts),C0)</span>
+<span class="c1">%[CA infoA] = pidtune(c2d(P1,1),C0)</span>
+
+</code></pre></div></div>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">P2</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">tf</span><span class="c1">%*F.ffw.k*F.dly.tf;</span>
+<span class="p">[</span><span class="n">CB</span> <span class="n">InfoB</span><span class="p">]</span> <span class="o">=</span> <span class="n">pidtune</span><span class="p">(</span><span class="n">P2</span><span class="p">,</span><span class="s1">'pi'</span><span class="p">)</span> 
+
+<span class="c1">%% Designing a Single Loop Control System with a PI Controller</span>
+<span class="c1">% The plant model is P = P1*P2</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">P1</span><span class="o">*</span><span class="n">P2</span><span class="p">;</span>
+<span class="p">[</span><span class="n">C</span> <span class="n">Info</span><span class="p">]</span> <span class="o">=</span> <span class="n">pidtune</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="s1">'pi'</span><span class="p">)</span> 
+<span class="c1">% Use a PID or PIDSTD object to define the desired controller structure</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">pidstd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">%wo=3e2;%1/(sqrt(2)*d.T)</span>
+<span class="c1">%OPT = pidtuneOptions('Crossover',2*Info.CrossoverFrequency); </span>
+<span class="n">wo</span><span class="o">=</span><span class="n">Info</span><span class="o">.</span><span class="n">CrossoverFrequency</span><span class="p">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="c1">% Use pidtune options to specify performance and robustness targets</span>
+<span class="n">options</span> <span class="o">=</span> <span class="n">pidtuneOptions</span><span class="p">(</span><span class="s1">'CrossoverFrequency'</span><span class="p">,</span><span class="n">wo</span><span class="o">*</span><span class="mi">10</span><span class="p">);</span>
+<span class="c1">% Design PI controller</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">pidtune</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">options</span><span class="p">);</span>
+<span class="nb">sprintf</span><span class="p">(</span><span class="s1">'========\n'</span><span class="p">),</span> <span class="nb">disp</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+
+
+<span class="c1">%% Designing a Cascade Control System with Two PI Controller</span>
+<span class="n">C2</span> <span class="o">=</span> <span class="n">pidtune</span><span class="p">(</span><span class="n">P2</span><span class="p">,</span><span class="n">pidstd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">pidtuneOptions</span><span class="p">(</span><span class="s1">'CrossoverFrequency'</span><span class="p">,</span><span class="n">wo</span><span class="p">));</span>
+<span class="n">C2</span>
+
+<span class="c1">% Inner loop system when the control loop is closed first</span>
+<span class="n">clsys</span> <span class="o">=</span> <span class="n">feedback</span><span class="p">(</span><span class="n">P2</span><span class="o">*</span><span class="n">C2</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">% Plant seen by the outer loop controller C1 is clsys*P1</span>
+<span class="n">C1</span> <span class="o">=</span> <span class="n">pidtune</span><span class="p">(</span><span class="n">clsys</span><span class="o">*</span><span class="n">P1</span><span class="p">,</span><span class="n">pidstd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">pidtuneOptions</span><span class="p">(</span><span class="s1">'CrossoverFrequency'</span><span class="p">,</span><span class="n">wo</span><span class="o">*</span><span class="mi">10</span><span class="p">));</span>
+<span class="n">C1</span>
+
+<span class="c1">%% Performance Comparison</span>
+<span class="nb">figure</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span><span class="s1">'Performance Comparison'</span><span class="p">)</span>
+<span class="c1">% single loop system for reference tracking</span>
+<span class="n">sys1</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">P</span><span class="o">*</span><span class="n">C</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="nb">set</span><span class="p">(</span><span class="n">sys1</span><span class="p">,</span><span class="s1">'Name'</span><span class="p">,</span><span class="s1">'Single Loop'</span><span class="p">);</span>
+<span class="c1">% cascade system for reference tracking</span>
+<span class="n">sys2</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">clsys</span><span class="o">*</span><span class="n">P1</span><span class="o">*</span><span class="n">C1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="nb">set</span><span class="p">(</span><span class="n">sys2</span><span class="p">,</span><span class="s1">'Name'</span><span class="p">,</span><span class="s1">'Cascade'</span><span class="p">);</span>
+<span class="c1">% plot step response</span>
+<span class="nb">subplot</span> <span class="mi">211</span>
+<span class="nb">step</span><span class="p">(</span><span class="n">sys1</span><span class="p">,</span><span class="s1">'r'</span><span class="p">,</span><span class="n">sys2</span><span class="p">,</span><span class="s1">'b'</span><span class="p">);</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s1">'show'</span><span class="p">,</span><span class="s1">'location'</span><span class="p">,</span><span class="s1">'southeast'</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s1">'Reference Tracking'</span><span class="p">)</span>
+
+<span class="c1">% single loop system for rejecting d2</span>
+<span class="n">sysd1</span> <span class="o">=</span> <span class="n">feedback</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span><span class="n">P2</span><span class="o">*</span><span class="n">C</span><span class="p">);</span> <span class="nb">set</span><span class="p">(</span><span class="n">sysd1</span><span class="p">,</span><span class="s1">'Name'</span><span class="p">,</span><span class="s1">'Single Loop'</span><span class="p">);</span>
+<span class="c1">% cascade system for rejecting d2</span>
+<span class="n">sysd2</span> <span class="o">=</span> <span class="n">P1</span><span class="p">/(</span><span class="mi">1</span><span class="o">+</span><span class="n">P2</span><span class="o">*</span><span class="n">C2</span><span class="o">+</span><span class="n">P2</span><span class="o">*</span><span class="n">P1</span><span class="o">*</span><span class="n">C1</span><span class="o">*</span><span class="n">C2</span><span class="p">);</span> <span class="nb">set</span><span class="p">(</span><span class="n">sysd2</span><span class="p">,</span><span class="s1">'Name'</span><span class="p">,</span><span class="s1">'Cascade'</span><span class="p">);</span>
+<span class="c1">% plot step response</span>
+<span class="nb">subplot</span> <span class="mi">212</span>
+<span class="nb">step</span><span class="p">(</span><span class="n">sysd1</span><span class="p">,</span><span class="s1">'r'</span><span class="p">,</span><span class="n">sysd2</span><span class="p">,</span><span class="s1">'b'</span><span class="p">);</span><span class="nb">legend</span><span class="p">(</span><span class="s1">'show'</span><span class="p">);</span><span class="nb">title</span><span class="p">(</span><span class="s1">'Disturbance Rejection'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h3 id="truquitos-útiles">Truquitos útiles</h3>
+
+<pre><code class="language-cmd">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\CTR\discrete
+</code></pre>
+
+<p>En formato simbolico</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">clear</span> <span class="nb">all</span><span class="p">;</span> <span class="nb">close</span> <span class="nb">all</span><span class="p">;</span><span class="nb">clc</span>
+
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'\n Simbolico'</span><span class="p">)</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">sym</span><span class="o">=</span><span class="n">sym</span><span class="p">(</span><span class="s1">'1/(T*s+1)'</span><span class="p">);</span>
+<span class="n">Gp</span><span class="o">.</span><span class="nb">gt</span><span class="o">=</span><span class="n">ilaplace</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">sym</span><span class="p">);</span>
+<span class="n">Gp</span><span class="o">.</span><span class="nb">gt</span><span class="o">=</span><span class="n">subs</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="nb">gt</span><span class="p">,</span><span class="s1">'t'</span><span class="p">,</span><span class="s1">'k*Ts'</span><span class="p">);</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">z1</span><span class="o">=</span><span class="n">ztrans</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="nb">gt</span><span class="p">);</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">z</span><span class="o">=</span><span class="nb">times</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">z1</span><span class="p">,</span><span class="s1">'(z-1)/z'</span><span class="p">);</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">Gz</span><span class="o">=</span><span class="n">collect</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">z</span><span class="p">,</span><span class="s1">'z'</span><span class="p">)</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">Gz</span><span class="o">=</span><span class="nb">simplify</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">Gz</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s1">'Funciones simbolicas'</span><span class="p">)</span>
+<span class="p">[</span><span class="n">num</span><span class="p">,</span><span class="n">den</span><span class="p">]</span><span class="o">=</span><span class="n">numden</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">Gz</span><span class="p">)</span>
+
+<span class="n">num</span><span class="o">=</span><span class="n">subs</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s1">'T'</span><span class="p">,</span><span class="mf">1.0</span><span class="p">);</span>
+<span class="n">den</span><span class="o">=</span><span class="n">subs</span><span class="p">(</span><span class="n">den</span><span class="p">,</span> <span class="s1">'T'</span><span class="p">,</span><span class="mf">1.0</span><span class="p">);</span>
+<span class="n">num</span><span class="o">=</span><span class="n">subs</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s1">'Ts'</span><span class="p">,</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">den</span><span class="o">=</span><span class="n">subs</span><span class="p">(</span><span class="n">den</span><span class="p">,</span> <span class="s1">'Ts'</span><span class="p">,</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">numN</span><span class="o">=</span><span class="n">sym2poly</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">denN</span><span class="o">=</span><span class="n">sym2poly</span><span class="p">(</span><span class="n">den</span><span class="p">)</span>
+<span class="n">printsys</span><span class="p">(</span><span class="n">numN</span><span class="p">,</span><span class="n">denN</span><span class="p">,</span><span class="s1">'z'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="usando-un-modelo-de-matlab">Usando un modelo de matlab</h3>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% use P controller with gain=1</span>
+<span class="p">[</span><span class="n">numcl</span><span class="p">,</span><span class="n">dencl</span><span class="p">]</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">numN</span><span class="p">,</span><span class="n">denN</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">dstep</span><span class="p">(</span><span class="n">numcl</span><span class="p">,</span><span class="n">dencl</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'Time (k*0.1sec)'</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+<span class="n">open_system</span><span class="p">(</span><span class="s1">'M1'</span><span class="p">)</span>
+<span class="n">sim</span><span class="p">(</span><span class="s1">'M1'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="método-de-discretización">Método de discretización</h3>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="o">=</span><span class="mf">10e-3</span><span class="p">;</span><span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">tfCNT</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="p">/</span><span class="n">d</span><span class="o">.</span><span class="n">R</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">Ts</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">;</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="o">=</span><span class="n">c2d</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfCNT</span><span class="p">,</span><span class="mf">1e-4</span><span class="p">,</span><span class="s1">'zoh'</span><span class="p">)</span>
+<span class="c1">%[Gp.nmDSC,Gp.dnDSC]=tfdata(Gp.tfDSC,'v');</span>
+</code></pre></div></div>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">fprintf</span><span class="p">(</span><span class="s1">'\n \tFuncion Transf. Planta con delay interno entrada'</span><span class="p">);</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s1">'discretizado'</span><span class="p">);</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="o">=</span><span class="n">c2d</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">Ts</span><span class="p">,</span><span class="s1">'zoh'</span><span class="p">);</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span>
+</code></pre></div></div>
+
+<h4 id="propiedades-de-la-función-de-transferencia">Propiedades de la función de transferencia</h4>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">fprintf</span><span class="p">(</span><span class="s1">'\n Propiedades de los sistemas'</span><span class="p">)</span>
+<span class="nb">get</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">),</span><span class="nb">get</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">Gp</span><span class="o">.</span><span class="n">nmDSC</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">dnDSC</span><span class="p">]</span><span class="o">=</span><span class="n">tfdata</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">,</span><span class="s1">'v'</span><span class="p">);</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'\n \tFuncion Transf. Planta'</span><span class="p">);</span> 
+<span class="n">printsys</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">nmCNT</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">dnCNT</span><span class="p">,</span><span class="s1">'s'</span><span class="p">)</span>
+<span class="n">printsys</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">nmDSC</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">dnDSC</span><span class="p">,</span><span class="s1">'z'</span><span class="p">)</span>
+<span class="c1">%---</span>
+<span class="nb">celldisp</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">,</span><span class="s1">'num'</span><span class="p">)),</span>
+<span class="nb">celldisp</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">,</span><span class="s1">'den'</span><span class="p">))</span>
+
+<span class="c1">%% </span>
+<span class="nb">roots</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">dnCNT</span><span class="p">)</span>
+<span class="nb">roots</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">dnDSC</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="gráficas-de-la-función-de-transferencia">Gráficas de la función de transferencia</h3>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">subplot</span> <span class="mi">211</span><span class="p">,</span> <span class="n">stepplot</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfCNT</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s1">'Respuesta al escalon lazon abierto'</span><span class="p">)</span>
+<span class="n">GCL</span><span class="o">.</span><span class="n">cnt</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfCNT</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">GCL</span><span class="o">.</span><span class="n">dsc</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">subplot</span> <span class="mi">212</span><span class="p">,</span> <span class="n">stepplot</span><span class="p">(</span><span class="n">GCL</span><span class="o">.</span><span class="n">cnt</span><span class="p">,</span><span class="n">GCL</span><span class="o">.</span><span class="n">dsc</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s1">'Lazo Cerrado'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="gráfica-en-lazo-abierto">Gráfica en lazo abierto</h3>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">%% PLANT with internal time Delays en la entrada</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">dlyIN</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">nmCNT</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">dnCNT</span><span class="p">,</span><span class="s1">'InputDelay'</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">dlyIN</span><span class="p">);</span><span class="c1">%exp</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'\n \tFuncion Transf. Planta con delay interno entrada'</span><span class="p">);</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s1">'discretizado'</span><span class="p">);</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="o">=</span><span class="n">c2d</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">Ts</span><span class="p">,</span><span class="s1">'zoh'</span><span class="p">);</span>
+<span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span>
+
+<span class="c1">%...PLANT with internal time Delays en la salida</span>
+<span class="c1">%pltB=tf(1,[Ts 1],'OutputDelay',3,'Ts',0.001)</span>
+<span class="c1">%---- planta actuador y sensor</span>
+
+<span class="n">str</span><span class="o">.</span><span class="n">Ttl</span><span class="o">.</span><span class="n">A</span><span class="o">=</span><span class="s1">'planta'</span><span class="p">;</span>
+<span class="n">str</span><span class="o">.</span><span class="n">Ttl</span><span class="o">.</span><span class="n">B</span><span class="o">=</span><span class="s1">'planta con retraso'</span><span class="p">;</span>
+
+<span class="nb">subplot</span> <span class="mi">211</span><span class="p">,</span><span class="nb">step</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfCNT</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span> <span class="nb">step</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">,</span><span class="s1">'-or'</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">off</span><span class="p">;</span>
+<span class="nb">title</span><span class="p">(</span><span class="n">str</span><span class="o">.</span><span class="n">Ttl</span><span class="o">.</span><span class="n">A</span><span class="p">);</span> 
+<span class="nb">subplot</span> <span class="mi">212</span><span class="p">,</span><span class="nb">step</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span> <span class="nb">step</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">,</span><span class="s1">'-or'</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">off</span><span class="p">;</span><span class="nb">title</span><span class="p">(</span><span class="n">str</span><span class="o">.</span><span class="n">Ttl</span><span class="o">.</span><span class="n">B</span><span class="p">);</span> 
+<span class="nb">set</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s1">'PaperPositionMode'</span><span class="p">,</span><span class="s1">'auto'</span><span class="p">,</span><span class="s1">'units'</span><span class="p">,</span><span class="s1">'pixels'</span><span class="p">,</span><span class="s1">'Position'</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">1024</span><span class="p">,</span><span class="mi">1150</span><span class="p">])</span>
+
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'\n Propiedades de los sistemas'</span><span class="p">)</span>
+<span class="nb">get</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">),</span><span class="nb">get</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">)</span>
+
+<span class="c1">%--</span>
+<span class="n">stpInfo</span><span class="o">.</span><span class="n">cnt</span> <span class="o">=</span> <span class="n">stepinfo</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfCNT</span><span class="p">)</span>
+<span class="n">stpInfo</span><span class="o">.</span><span class="n">dsc</span> <span class="o">=</span> <span class="n">stepinfo</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">)</span>
+<span class="n">stpInfo</span><span class="o">.</span><span class="n">cntDLYin</span> <span class="o">=</span> <span class="n">stepinfo</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">)</span>
+<span class="n">stpInfo</span><span class="o">.</span><span class="n">dscDLYin</span> <span class="o">=</span> <span class="n">stepinfo</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">,</span><span class="n">x4</span><span class="p">]</span><span class="o">=</span><span class="n">margin</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfCNT</span><span class="p">)</span>
+<span class="p">[</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="n">y4</span><span class="p">]</span><span class="o">=</span><span class="n">margin</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfDSC</span><span class="p">)</span>
+<span class="p">[</span><span class="n">z1</span><span class="p">,</span><span class="n">z2</span><span class="p">,</span><span class="n">z3</span><span class="p">,</span><span class="n">z4</span><span class="p">]</span><span class="o">=</span><span class="n">margin</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">)</span>
+<span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">,</span><span class="n">r3</span><span class="p">,</span><span class="n">r4</span><span class="p">]</span><span class="o">=</span><span class="n">margin</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">)</span>
+
+
+<span class="c1">%% Closing Feedback Loops with Time Delays</span>
+
+<span class="c1">%...REGULATOR</span>
+<span class="n">Gr</span><span class="o">.</span><span class="n">tfCNT</span><span class="o">=</span><span class="n">pid</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.3</span><span class="p">);</span>
+<span class="n">Gr</span><span class="o">.</span><span class="n">tfDSC</span><span class="o">=</span><span class="n">c2d</span><span class="p">(</span><span class="n">Gr</span><span class="o">.</span><span class="n">tfCNT</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">Ts</span><span class="p">,</span><span class="s1">'zoh'</span><span class="p">);</span>
+<span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cnt</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">Gr</span><span class="o">.</span><span class="n">tfCNT</span><span class="o">*</span><span class="n">Gp</span><span class="o">.</span><span class="n">tfCNT</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">Gr</span><span class="o">.</span><span class="n">tfCNT</span><span class="o">*</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="gráficas-en-lazo-cerrado">Gráficas en lazo cerrado</h3>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">%--planta+control en lazo cerrado</span>
+<span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dsc</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">Gr</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dsc</span><span class="o">*</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dsc</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">Gr</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dsc</span><span class="o">*</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">%-ForwardEuler-'zoh'</span>
+<span class="nb">figure</span><span class="p">()</span>
+<span class="nb">subplot</span> <span class="mi">211</span><span class="p">;</span><span class="nb">step</span><span class="p">(</span><span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cnt</span><span class="p">);</span><span class="nb">hold</span> <span class="n">on</span><span class="p">;</span> <span class="nb">step</span><span class="p">(</span><span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dsc</span><span class="p">);</span><span class="nb">hold</span> <span class="n">off</span>
+<span class="nb">subplot</span> <span class="mi">212</span><span class="p">;</span><span class="nb">step</span><span class="p">(</span><span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">);</span><span class="nb">hold</span> <span class="n">on</span><span class="p">;</span> <span class="nb">step</span><span class="p">(</span><span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">);</span><span class="nb">hold</span> <span class="n">off</span>
+
+<span class="c1">%{</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="mi">1</span> <span class="mi">10</span><span class="p">],</span><span class="s1">'InputDelay'</span><span class="p">,</span><span class="mf">2.1</span><span class="p">);</span><span class="n">C</span> <span class="o">=</span> <span class="n">pid</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.3</span><span class="p">);</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">feedback</span><span class="p">(</span><span class="n">C</span><span class="o">*</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="n">T</span><span class="o">.</span><span class="n">InternalDelay</span><span class="p">;</span><span class="nb">step</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="c1">%}</span>
+ 
+<span class="nb">disp</span><span class="p">(</span><span class="s1">'SMILE @@ ...... :-D'</span><span class="p">)</span>
+<span class="nb">figure</span><span class="p">()</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">bodeoptions</span><span class="p">(</span><span class="s1">'cstprefs'</span><span class="p">)</span>
+<span class="n">P</span><span class="o">.</span><span class="n">PhaseUnits</span><span class="o">=</span><span class="s1">'rad'</span><span class="p">;</span>
+<span class="n">P</span><span class="o">.</span><span class="n">PhaseMatching</span><span class="o">=</span><span class="s1">'on'</span><span class="p">;</span>
+<span class="n">P</span><span class="o">.</span><span class="n">PhaseWrapping</span><span class="o">=</span><span class="s1">'off'</span><span class="p">;</span>
+<span class="n">P</span><span class="o">.</span><span class="n">MagScale</span><span class="o">=</span><span class="s1">'linear'</span><span class="p">;</span>
+<span class="n">P</span><span class="o">.</span><span class="n">PhaseMatchingFreq</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">P</span><span class="o">.</span><span class="n">PhaseMatchingValue</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">;</span>
+<span class="n">h1</span><span class="o">=</span><span class="n">bodeplot</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cnt</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+<span class="n">h2</span><span class="o">=</span><span class="n">getoptions</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+
+<span class="nb">figure</span><span class="p">();</span> 
+<span class="nb">subplot</span> <span class="mi">411</span><span class="p">,</span><span class="n">margin</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cnt</span><span class="p">);</span>
+<span class="nb">subplot</span> <span class="mi">412</span><span class="p">,</span><span class="n">margin</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dsc</span><span class="p">);</span>
+<span class="nb">subplot</span> <span class="mi">413</span><span class="p">,</span><span class="n">margin</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">);</span>
+<span class="nb">subplot</span> <span class="mi">414</span><span class="p">,</span><span class="n">margin</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">);</span>
+
+<span class="nb">figure</span><span class="p">();</span>
+<span class="n">bodeplot</span><span class="p">(</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cnt</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dsc</span><span class="p">,</span><span class="s1">'or'</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">,</span><span class="n">Gp</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">,</span><span class="s1">'+m'</span><span class="p">,</span><span class="n">P</span><span class="p">);</span> 
+<span class="nb">legend</span><span class="p">(</span><span class="s1">'cnt'</span><span class="p">,</span><span class="s1">'dsc'</span><span class="p">,</span><span class="s1">'cntDLY'</span><span class="p">,</span><span class="s1">'dscDLY'</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s1">'planta'</span><span class="p">)</span>
+
+<span class="nb">figure</span><span class="p">()</span>
+<span class="n">bodeplot</span><span class="p">(</span><span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cnt</span><span class="p">,</span><span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dsc</span><span class="p">,</span><span class="s1">'or'</span><span class="p">,</span><span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">cntDLYin</span><span class="p">,</span><span class="n">Gt</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">dscDLYin</span><span class="p">,</span><span class="s1">'+m'</span><span class="p">,</span><span class="n">P</span><span class="p">);</span> 
+<span class="nb">legend</span><span class="p">(</span><span class="s1">'cnt'</span><span class="p">,</span><span class="s1">'dsc'</span><span class="p">,</span><span class="s1">'cntDLY'</span><span class="p">,</span><span class="s1">'dscDLY'</span><span class="p">)</span>
+
+<span class="c1">%ltiprops(Gt.tf.dscDLYin)</span>
+</code></pre></div></div>
+
+<h2 id="implementación-del-control-vectorial">Implementación del control vectorial</h2>
+
+<p><code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\Matlab\basics\SpcVctr</code></p>
+
+<p>[]:</p>
+
+:ET
