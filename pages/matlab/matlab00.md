@@ -22,7 +22,7 @@ folder: matlab
             <a href="p1_sample2.html" class="btn btn-primary">Learn More</a>
         </div>
     </div>
-</div>
+    </div>
     <div class="col-md-3 col-sm-6">
         <div class="panel panel-default text-center">
             <div class="panel-heading">
@@ -37,7 +37,7 @@ folder: matlab
                 <a href="p1_sample3.html" class="btn btn-primary">Learn More</a>
         </div>
     </div>
-</div>
+    </div>
     <div class="col-md-3 col-sm-6">
         <div class="panel panel-default text-center">
             <div class="panel-heading">
@@ -52,7 +52,7 @@ folder: matlab
                  <a href="p1_sample4.html" class="btn btn-primary">Let's go</a>
         </div>
     </div>
-</div>
+    </div>
 </div>
 <div class="row">
     <div class="col-md-3 col-sm-6">
@@ -69,28 +69,25 @@ folder: matlab
             <a href="p1_sample5.html" class="btn btn-primary"> Learn More</a>
         </div>
     </div>
-</div>
+    </div>
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
                     <span class="fa-stack fa-3x">
-                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                          <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
-                <div class="panel-body">
-                    <h4>Control</h4>
-                    <p>More issues.</p>
-                    <a href="p1_sample6.html" class="btn btn-primary">Let's go</a>
+            <div class="panel-body">
+                <h4>Control</h4>
+                <p>More issues.</p>
+                <a href="p1_sample6.html" class="btn btn-primary">Let's go</a>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 
 <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header"></h2>
-        </div>
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
