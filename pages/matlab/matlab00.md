@@ -8,90 +8,68 @@ folder: matlab
 ---
 
 <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">Sections</h2>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <span class="fa-stack fa-3x">
-                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                          <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <h4>Commands</h4>
-                    <p>Listado de comandos útiles para la realización de scripts & simulaciones en tiempo real en Matlab.</p>
-                    <a href="p1_sample1.html" class="btn btn-primary">Let's go</a>
-                </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="panel panel-default text-center">
+            <div class="panel-heading">
+                <span class="fa-stack fa-3x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                </span>
             </div>
+        <div class="panel-body">
+            <h4>DC Machine Simulation</h4>
+            <p>Simulation at Simulink.</p>
+            <a href="p1_sample2.html" class="btn btn-primary">Learn More</a>
         </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <span class="fa-stack fa-3x">
-                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                          <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <h4>DC Machine Simulation</h4>
-                    <p>This section present a simulation of DC machine at Simulink.</p>
-                    <a href="p1_sample2.html" class="btn btn-primary">Learn More</a>
-                </div>
+    </div>
+</div>
+    <div class="col-md-3 col-sm-6">
+        <div class="panel panel-default text-center">
+            <div class="panel-heading">
+                <span class="fa-stack fa-3x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
+                </span>
             </div>
+        <div class="panel-body">
+            <h4>Syncrhonous Machine Simulation</h4>
+                <p>Simulation at Simulink</p>
+                <a href="p1_sample3.html" class="btn btn-primary">Learn More</a>
         </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <span class="fa-stack fa-3x">
-                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                          <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <h4>Syncrhonous Machine Simulation</h4>
-                    <p>This section present a simulation of syncrhonous machine at Simulink</p>
-                    <a href="p1_sample3.html" class="btn btn-primary">Learn More</a>
-                </div>
+    </div>
+</div>
+    <div class="col-md-3 col-sm-6">
+        <div class="panel panel-default text-center">
+            <div class="panel-heading">
+                <span class="fa-stack fa-3x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
+                </span>
             </div>
+        <div class="panel-body">
+                <h4>HIL</h4>
+                <p>RT Matlab.</p>
+                 <a href="p1_sample4.html" class="btn btn-primary">Let's go</a>
         </div>
-</div>  
-
+    </div>
+</div>
+</div>
 <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header"></h2>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <span class="fa-stack fa-3x">
-                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                          <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <h4>HIL</h4>
-                    <p>Simulaciones en tiempo real en Matlab.</p>
-                    <a href="p1_sample4.html" class="btn btn-primary">Let's go</a>
-                </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="panel panel-default text-center">
+            <div class="panel-heading">
+                <span class="fa-stack fa-3x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-microchip fa-stack-1x fa-inverse"></i>
+                </span>
             </div>
+        <div class="panel-body">
+            <h4> Electronic</h4>
+            <p>About Converters.</p>
+            <a href="p1_sample5.html" class="btn btn-primary"> Learn More</a>
         </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <span class="fa-stack fa-3x">
-                          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                          <i class="fa fa-microchip fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <h4> Electronic</h4>
-                    <p>About Converters.</p>
-                    <a href="p1_sample5.html" class="btn btn-primary"> Learn More</a>
-                </div>
-            </div>
-        </div>
+    </div>
+</div>
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
