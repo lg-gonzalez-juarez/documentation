@@ -4,10 +4,14 @@
 topnav:
 - title: Topnav
   items:
+    - title: HOME
+      url: /gral_index.html
+    - title: PYTHON
+      url: /python_00.html
+    - title: MATLAB
+      url: /matlab00.html
     - title: Welcome
       url: /gral_index.html
-    - title: Python
-      url: /python_00.html
     - title: Jekyll
       url: /getting_started.html
     #- title: Paste2Markdown # Paste2Markdown
