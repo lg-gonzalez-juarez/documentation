@@ -1,13 +1,4 @@
----
-title: Matlab
-keywords: mydoc
-sidebar: product1_sidebar
-toc: false
-permalink: p1_landing_page.html
-folder: product1
----
-
-<div class="row">
+I"d<div class="row">
         <div class="col-lg-12">
         </div>
         <div class="col-md-3 col-sm-6">
@@ -20,7 +11,7 @@ folder: product1
                 </div>
                 <div class="panel-body">
                     <h4>Commands</h4>
-                    <p>Scripts & Commands - RT Matlab.</p>
+                    <p>Listado de comandos útiles para la realización de scripts &amp; simulaciones en tiempo real en Matlab.</p>
                     <a href="p1_sample1.html" class="btn btn-primary">Let's go</a>
                 </div>
             </div>
@@ -35,7 +26,7 @@ folder: product1
                 </div>
                 <div class="panel-body">
                     <h4>DC Machine Simulation</h4>
-                    <p>Simulation at Simulink.</p>
+                    <p>This section present a simulation of DC machine at Simulink.</p>
                     <a href="p1_sample2.html" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
@@ -50,15 +41,16 @@ folder: product1
                 </div>
                 <div class="panel-body">
                     <h4>Syncrhonous Machine Simulation</h4>
-                    <p>Simulation at Simulink</p>
+                    <p>This section present a simulation of syncrhonous machine at Simulink</p>
                     <a href="p1_sample3.html" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
         </div>
-</div>  
+</div>
 
 <div class="row">
         <div class="col-lg-12">
+            <h2 class="page-header"></h2>
         </div>
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
@@ -70,7 +62,7 @@ folder: product1
                 </div>
                 <div class="panel-body">
                     <h4>HIL</h4>
-                    <p>RT at Matlab.</p>
+                    <p>Simulaciones en tiempo real en Matlab.</p>
                     <a href="p1_sample4.html" class="btn btn-primary">Let's go</a>
                 </div>
             </div>
@@ -109,6 +101,7 @@ folder: product1
 
 <div class="row">
         <div class="col-lg-12">
+            <h2 class="page-header"></h2>
         </div>
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
@@ -156,3 +149,4 @@ folder: product1
             </div>
         </div>
 </div>
+:ET
