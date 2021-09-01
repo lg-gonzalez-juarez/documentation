@@ -65,6 +65,27 @@ https://github.com/modelica-3rdparty
 
 
 
+## instalación en ubuntu
+
+Los comandos pueden ser encontrados en:
+
+[descarga oficial](https://openmodelica.org/download/download-linux)
+
+
+y el video puede servir de forma orientativa
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q0VVE9I2p7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>https://www.youtube.com/watch?v=Q0VVE9I2p7Y
+
+
+## llamado de open modelica en ubuntu
+```cmd
+OMEdit
+```
+
+enlaces útiles 
+http://www.spoken-tutorial.iitb.ac.in/NCCPS_2018/8.OpenModelica_Installation_Sheet.pdf
+
+
+
 ### Anothers calls
 
 {% include callout.html content="danger." type="danger" %}
