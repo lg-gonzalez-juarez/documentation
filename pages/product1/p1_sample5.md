@@ -9,18 +9,14 @@ folder: product1
 
 ## Sample Content
 
-
-dir
-
-```md
-D:\wk_matlab\uc3m\mt\pc104\Matlab\ElctPtc\inversor\inversor3ph
-```
+{% include callout.html content="**Code Repo** = D:\wk_matlab\uc3m\mt\pc104\Matlab\ElctPtc\inversor\inversor3ph" type="info" %}
 
 
 ## VSC & STATCOM,
 Se resuelve en sistema en representación ODE definiendo el solver mas adecuado
 
-dir=`D:\wk_matlab\uc3m\mt\pc103\MTLB\CTR\solveODE`
+{% include callout.html content="**Code Repo** = D:\wk_matlab\uc3m\mt\pc103\MTLB\CTR\solveODE" type="info" %}
+
 
 ```matlab
 clear all; close all; clc
@@ -57,19 +53,18 @@ pause(2); close all
 
 ### Repaso de control
 
-dir=`D:\wk_matlab\uc3m\mt\pc103\MTLB\CTR\Xian`
+{% include callout.html content="**Code Repo** = D:\wk_matlab\uc3m\mt\pc103\MTLB\CTR\Xian" type="info" %}
 
 
 ### Análisis de la respuesta del sistema de control
 
-
-dir=`D:\wk_matlab\uc3m\mt\pc103\MTLB\statcom\dgrmBLCK` 
-
-{% include links.html %}
+{% include callout.html content="**Code Repo** = D:\wk_matlab\uc3m\mt\pc103\MTLB\statcom\dgrmBLCK" type="info" %}
 
 
 ## Modelado & Setting completo
-source: D:\wk_matlab\uc3m\mt\pc104\Matlab\ElctPtc\MODELS_STATCOM_ck\KaiSimMdl
+
+{% include callout.html content="**Code Repo** = D:\wk_matlab\uc3m\mt\pc104\Matlab\ElctPtc\MODELS_STATCOM_ck\KaiSimMdl" type="info" %}
+
 
 ```matlab
 clear all; close all; clc
@@ -170,5 +165,7 @@ step(G_FB,2);
 
 figure();bodeplot(cl_ff,G_FB)
 ```
+## Bibliografia: 
 
-bibliografia: Kai tesis dinamarca
+- [ ] Kai tesis dinamarca
+- [ ] TFM Linda & Barrado

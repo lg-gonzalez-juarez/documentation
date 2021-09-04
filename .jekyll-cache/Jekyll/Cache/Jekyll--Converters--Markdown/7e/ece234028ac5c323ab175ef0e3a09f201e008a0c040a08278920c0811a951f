@@ -1,0 +1,156 @@
+I"�a<h2 id="sample-content">Sample Content</h2>
+
+<p>dir</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:<span class="se">\w</span>k_matlab<span class="se">\u</span>c3m<span class="se">\m</span>t<span class="se">\p</span>c104<span class="se">\M</span>atlab<span class="se">\E</span>lctPtc<span class="se">\i</span>nversor<span class="se">\i</span>nversor3ph
+</code></pre></div></div>
+
+<h2 id="vsc--statcom">VSC &amp; STATCOM,</h2>
+<p>Se resuelve en sistema en representación ODE definiendo el solver mas adecuado</p>
+
+<p>dir=<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc103\MTLB\CTR\solveODE</code></p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">clear</span> <span class="nb">all</span><span class="p">;</span> <span class="nb">close</span> <span class="nb">all</span><span class="p">;</span> <span class="nb">clc</span>
+
+<span class="n">Vll</span><span class="o">=</span><span class="mi">30</span><span class="p">;</span> <span class="n">fnom</span><span class="o">=</span><span class="mi">50</span><span class="p">;</span>  <span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="o">=</span><span class="mf">10e-3</span><span class="p">;</span>       <span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="o">=</span><span class="mf">3.5</span><span class="p">;</span>
+<span class="n">Udc</span><span class="o">=</span><span class="mi">300</span><span class="p">;</span>
+<span class="c1">%% valores a por unidad</span>
+<span class="n">Vbase</span><span class="o">=</span><span class="n">Vll</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">/</span><span class="mi">3</span><span class="p">);</span>  
+<span class="n">ibase</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>      
+<span class="n">Sbase</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">ibase</span><span class="o">*</span><span class="n">Vbase</span><span class="p">;</span>  
+<span class="c1">%Zbase=Vbase/ibase; Lbase=Zbase/wbase; Cbase=1/(Zbase*wbase);</span>
+<span class="n">d</span><span class="o">.</span><span class="n">wbase</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">fnom</span><span class="p">;</span> 
+<span class="n">S</span><span class="o">=</span><span class="nb">complex</span><span class="p">(</span><span class="mf">5e1</span><span class="p">,</span><span class="mf">2e1</span><span class="p">);</span>  <span class="n">U</span><span class="o">=</span><span class="nb">complex</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">/</span><span class="mi">3</span><span class="p">),</span><span class="mi">0</span><span class="p">);</span> 
+<span class="n">I</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="nb">conj</span><span class="p">(</span><span class="n">S</span><span class="p">/</span><span class="n">U</span><span class="p">);</span>   <span class="n">id0</span><span class="o">=</span><span class="nb">real</span><span class="p">(</span><span class="n">I</span><span class="p">);</span> <span class="n">iq0</span><span class="o">=</span><span class="nb">imag</span><span class="p">(</span><span class="n">I</span><span class="p">);</span> 
+
+<span class="c1">%% usando ODE</span>
+<span class="c1">%%</span>
+<span class="n">tspan</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span> <span class="mf">0.2</span><span class="p">];</span>	<span class="n">Xo</span><span class="o">=</span><span class="p">[</span><span class="n">id0</span> <span class="n">iq0</span><span class="p">];</span>  
+<span class="n">Dd</span><span class="o">=</span><span class="mf">0.01</span> <span class="p">;</span>  <span class="n">Dq</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>  <span class="n">Vd</span><span class="o">=</span><span class="mi">300</span><span class="o">*</span><span class="n">Dd</span><span class="p">;</span> <span class="n">Vq</span><span class="o">=</span><span class="mi">300</span><span class="o">*</span><span class="n">Dq</span><span class="p">;</span>
+<span class="n">dVd</span><span class="o">=</span><span class="nb">real</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">-</span><span class="n">Vd</span> <span class="p">,</span>   <span class="n">dVq</span><span class="o">=</span><span class="nb">imag</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">-</span><span class="n">Vq</span>
+
+<span class="c1">%id=x(1), iq=x(2)</span>
+<span class="c1">%fA=inline('[(d.L*d.wbase*x(2) - d.R*x(1) + dVd )/d.L ;(-d.L*d.wbase*x(1)- d.R*x(2) + dVq )/d.L]');</span>
+<span class="c1">%invtrSMALLsgn=@(t,x)[fA];</span>
+
+<span class="n">invtrSMALLsgn</span><span class="o">=@</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="k">...</span>
+		<span class="p">[(</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">wbase</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">dVd</span> <span class="p">)/</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="p">;</span><span class="k">...</span>
+		 <span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">wbase</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span> <span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">dVq</span> <span class="p">)/</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="nb">ode45</span><span class="p">(</span><span class="n">invtrSMALLsgn</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">Xo</span><span class="p">);</span>
+<span class="n">iDQ0</span><span class="o">=</span><span class="n">y</span><span class="p">(</span><span class="k">end</span><span class="p">,:),</span> <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="nb">close</span> <span class="nb">all</span>
+</code></pre></div></div>
+
+<h3 id="repaso-de-control">Repaso de control</h3>
+
+<p>dir=<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc103\MTLB\CTR\Xian</code></p>
+
+<h3 id="análisis-de-la-respuesta-del-sistema-de-control">Análisis de la respuesta del sistema de control</h3>
+
+<div class="bs-callout bs-callout-info"><strong>code_repo=</strong> D:\wk_matlab\uc3m\mt\pc103\MTLB\statcom\dgrmBLCK</div>
+
+<h2 id="modelado--setting-completo">Modelado &amp; Setting completo</h2>
+<p>source: D:\wk_matlab\uc3m\mt\pc104\Matlab\ElctPtc\MODELS_STATCOM_ck\KaiSimMdl</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">clear</span> <span class="nb">all</span><span class="p">;</span> <span class="nb">close</span> <span class="nb">all</span><span class="p">;</span> <span class="nb">clc</span>
+
+<span class="c1">%% simbolicEQ</span>
+<span class="c1">%{</span>
+<span class="n">syms</span> <span class="n">L</span> <span class="n">u</span> <span class="n">R</span> <span class="n">t</span> <span class="n">w</span>
+<span class="c1">%e=u+CUR*complex(R,L*w)</span>
+<span class="c1">%w=sym('w(t)');tht=diff(w,t)</span>
+<span class="n">tht</span><span class="o">=</span><span class="n">int</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">CUR</span><span class="o">=</span><span class="n">sym</span><span class="p">(</span><span class="s1">'CUR(t)'</span><span class="p">)</span>
+<span class="n">euler</span><span class="o">=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">j</span><span class="o">*</span><span class="n">tht</span><span class="p">);</span>
+<span class="n">CUR</span><span class="o">=</span><span class="n">CUR</span><span class="o">*</span><span class="n">euler</span>
+<span class="n">U_L</span><span class="o">=</span><span class="n">L</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">CUR</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">U_R</span><span class="o">=</span><span class="n">CUR</span><span class="o">*</span><span class="n">R</span>
+<span class="n">Ug</span><span class="o">=</span><span class="n">u</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">j</span><span class="o">*</span><span class="n">tht</span><span class="p">)</span>
+<span class="k">break</span>
+<span class="c1">%}</span>
+
+<span class="n">d</span><span class="o">=</span><span class="nb">struct</span><span class="p">(</span><span class="s1">'R'</span><span class="p">,</span><span class="mf">24.8e-3</span><span class="p">,</span><span class="s1">'L'</span><span class="p">,</span><span class="mf">2e-3</span><span class="p">,</span><span class="s1">'w'</span><span class="p">,</span><span class="mi">100</span><span class="o">*</span><span class="nb">pi</span><span class="p">);</span>
+<span class="n">s</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="s1">'s'</span><span class="p">);</span>
+<span class="p">[</span><span class="n">aD</span><span class="p">,</span><span class="n">aFF</span><span class="p">]</span><span class="o">=</span><span class="nb">deal</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="p">,</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">w</span><span class="p">);</span>
+<span class="n">M</span><span class="o">=</span><span class="p">[</span><span class="n">aD</span><span class="p">,</span><span class="o">-</span><span class="n">aFF</span><span class="p">;</span><span class="n">aFF</span><span class="p">,</span><span class="n">aD</span><span class="p">];</span><span class="c1">%M=[d.L*s+d.R,-d.L*d.w;d.L*d.w,d.L*s+d.R];</span>
+<span class="n">Madj</span><span class="o">=</span><span class="p">[</span><span class="n">aD</span> <span class="n">aFF</span><span class="p">;</span><span class="o">-</span><span class="n">aFF</span> <span class="n">aD</span><span class="p">];</span>
+<span class="n">detM</span><span class="o">=</span><span class="n">aD</span><span class="o">*</span><span class="n">aD</span><span class="o">-</span><span class="p">(</span><span class="o">-</span><span class="n">aFF</span><span class="o">*</span><span class="n">aFF</span><span class="p">);</span>
+<span class="n">invM</span><span class="o">=</span><span class="n">Madj</span><span class="p">/</span><span class="n">detM</span><span class="p">;</span>
+
+<span class="n">tf1</span><span class="o">=</span><span class="n">aD</span><span class="p">/</span><span class="n">detM</span><span class="p">;</span>
+<span class="n">tf2</span><span class="o">=</span><span class="n">aFF</span><span class="p">/</span><span class="n">detM</span><span class="p">;</span>
+<span class="n">G_jw</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span> <span class="n">tf</span><span class="p">(</span><span class="o">-</span><span class="n">aFF</span><span class="p">);</span><span class="n">tf</span><span class="p">(</span><span class="n">aFF</span><span class="p">)</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'\n*************************\n'</span><span class="p">)</span>
+<span class="n">Gbis</span><span class="o">=</span><span class="n">minreal</span><span class="p">(</span><span class="n">invM</span><span class="p">/(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">Madj</span><span class="o">*</span><span class="n">G_jw</span><span class="p">/</span><span class="n">detM</span><span class="p">)))</span>
+
+<span class="n">GJW</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">invM</span><span class="p">,</span><span class="n">G_jw</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">10</span><span class="p">;</span> <span class="n">dltU</span><span class="o">=-</span><span class="mf">0.1</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="mi">4</span> <span class="o">&amp;</span> <span class="n">t</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">);</span><span class="c1">%disturbance</span>
+<span class="n">u</span><span class="o">=</span><span class="p">[</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">t</span><span class="p">));</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">t</span><span class="p">))];</span><span class="c1">%u=[Vd;ones(size(t))];              </span>
+<span class="c1">%lsimplot(GJW,u,t)</span>
+
+<span class="n">G</span><span class="o">=</span><span class="mi">1</span><span class="p">/</span><span class="n">M</span><span class="p">;</span> 
+<span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="s1">'InputName'</span><span class="p">,{</span><span class="s1">'id'</span><span class="p">,</span><span class="s1">'iq'</span><span class="p">},</span><span class="s1">'OutputName'</span><span class="p">,{</span><span class="s1">'Vd'</span><span class="p">,</span><span class="s1">'Vq'</span><span class="p">},</span><span class="s1">'variable'</span><span class="p">,</span><span class="s1">'p'</span><span class="p">);</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'sysFT: Gzpk'</span><span class="p">)</span>
+
+<span class="n">Gzpk</span><span class="o">=</span><span class="n">zpk</span><span class="p">(</span><span class="n">minreal</span><span class="p">(</span><span class="n">G</span><span class="p">));</span><span class="c1">%Gzero=tzero(G);</span>
+<span class="n">Gss</span><span class="o">=</span><span class="n">ss</span><span class="p">(</span><span class="n">Gzpk</span><span class="p">);</span><span class="nb">fprintf</span><span class="p">(</span><span class="s1">'sysSS: Gss'</span><span class="p">)</span>
+<span class="p">[</span><span class="n">sysG1</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">Ti</span><span class="p">]</span><span class="o">=</span><span class="n">balreal</span><span class="p">(</span><span class="n">minreal</span><span class="p">(</span><span class="n">Gss</span><span class="p">))</span>
+<span class="c1">%type='modal';%companion</span>
+<span class="c1">%[G1,T]=canon(G,type);%balreal(G1)%minreal(G)</span>
+<span class="n">G2ss</span><span class="o">=</span><span class="n">ss2ss</span><span class="p">(</span><span class="n">sysG1</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>
+<span class="c1">%H=[0 -d.L*d.w;d.L*d.w 0];</span>
+<span class="n">Gdscpl</span><span class="o">=</span><span class="n">minreal</span><span class="p">(</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">G_jw</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">F</span><span class="o">=</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="p">/</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="nb">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">F</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="mi">1</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">G_</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">/</span><span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="nb">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">%dotX=</span>
+
+<span class="n">kFF1</span><span class="o">=</span><span class="mi">1</span><span class="p">/</span><span class="n">dcgain</span><span class="p">(</span><span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span> <span class="n">kFF2</span><span class="o">=</span><span class="mi">1</span><span class="p">/</span><span class="n">dcgain</span><span class="p">(</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">C1</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="n">kFF1</span><span class="p">,[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">]);</span>     <span class="n">C2</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="n">kFF2</span><span class="p">,[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">]);</span> 
+<span class="n">kC</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span> <span class="n">kFF1</span><span class="p">;</span><span class="n">kFF2</span> <span class="mi">0</span><span class="p">];</span>    <span class="n">cl_ff</span><span class="o">=</span><span class="n">G_</span><span class="o">*</span><span class="n">kC</span>
+
+<span class="c1">%'InputName',{'w_ref','Td'},'OutputName','w'</span>
+<span class="c1">%set(cl_ff);</span>
+
+<span class="c1">%title('Setpoint tracking and disturbance rejection')</span>
+<span class="c1">% Annotate plot</span>
+<span class="c1">%line([5,5],[.2,.3]); line([10,10],[.2,.3]);</span>
+<span class="c1">%text(7.5,.25,{'disturbance','T_d = -0.1Nm'},...</span>
+ <span class="c1">%           'vertic','middle','horiz','center','color','r');</span>
+    
+<span class="c1">%% FEEDBACKctr</span>
+<span class="c1">%rlocusplot</span>
+<span class="n">Grlc</span><span class="o">=</span><span class="n">Gdscpl</span><span class="p">;</span>
+<span class="n">sysRLCS</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">Grlc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">[</span><span class="n">R</span><span class="p">,</span><span class="n">K</span><span class="p">]</span> <span class="o">=</span> <span class="n">rlocus</span><span class="p">(</span><span class="n">sysRLCS</span><span class="p">)</span>
+
+
+<span class="n">TFp</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="mi">1</span> <span class="n">d</span><span class="o">.</span><span class="n">L</span><span class="p">/</span><span class="n">d</span><span class="o">.</span><span class="n">R</span><span class="p">]);</span>
+<span class="p">[</span><span class="n">R</span><span class="p">,</span><span class="n">K</span><span class="p">]</span> <span class="o">=</span> <span class="n">rlocus</span><span class="p">(</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">TFp</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">K</span><span class="p">)</span><span class="c1">%-13</span>
+<span class="c1">%KK=K(10);</span>
+<span class="n">KK</span><span class="o">=</span><span class="n">K</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<span class="n">CC</span><span class="o">=</span><span class="n">tf</span><span class="p">(</span><span class="n">KK</span><span class="p">,[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">GCL</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">CC</span><span class="o">*</span><span class="n">TFp</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">%rlocusplot(GCL); hold on</span>
+<span class="n">stepplot</span><span class="p">(</span><span class="n">GCL</span><span class="p">);</span><span class="nb">hold</span> <span class="n">on</span> 
+<span class="k">end</span>
+
+<span class="n">ctrC</span><span class="o">=</span><span class="nb">append</span><span class="p">(</span><span class="n">CC</span><span class="p">,</span><span class="n">CC</span><span class="p">)</span>
+<span class="nb">figure</span><span class="p">();</span><span class="n">G_FB</span><span class="o">=</span><span class="n">feedback</span><span class="p">(</span><span class="n">ctrC</span><span class="o">*</span><span class="n">Grlc</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="nb">step</span><span class="p">(</span><span class="n">G_FB</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="c1">%figure();lsimplot(cl_ff,G_FB,u,t);</span>
+<span class="c1">%set(G_FB,'InputName',{'uq','ud'},'OutputName',{'id','iq'});</span>
+<span class="c1">%title('Setpoint tracking and disturbance rejection')</span>
+<span class="c1">%legend('feedforward','feedback w/ rlocus','Location','NorthWest')</span>
+
+<span class="nb">figure</span><span class="p">();</span><span class="n">bodeplot</span><span class="p">(</span><span class="n">cl_ff</span><span class="p">,</span><span class="n">G_FB</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>bibliografia: Kai tesis dinamarca</p>
+:ET
