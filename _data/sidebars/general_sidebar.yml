@@ -87,7 +87,23 @@ entries:
       url: /gral_python_pypower.html
       output: web, pdf
 
-  - title: IV. MACHINE LEARNING
+  - title: IV. MATLAB
+    output: web, pdf
+    folderitems:
+
+    - title: Matlab Index
+      url: /matlab00.html
+      output: web, pdf
+
+  - title: V. ARDUINO
+    output: web, pdf
+    folderitems:
+
+    - title: Arduino Notes
+      url: /arduino01.html
+      output: web, pdf
+
+  - title: VI. MACHINE LEARNING
     output: web, pdf
     folderitems:
 
@@ -105,7 +121,7 @@ entries:
       url: /mchlrn_20.html
       output: web, pdf
 
-  - title: VI. COURSES
+  - title: VII. COURSES
     output: web, pdf
     folderitems:
 
@@ -113,7 +129,7 @@ entries:
       url: /course_kb_layout.html
       output: web, pdf
 
-  - title: VII. NOTES
+  - title: VIII. NOTES
     output: web, pdf
     folderitems:  
     
@@ -131,21 +147,5 @@ entries:
 
     - title: Machines
       url: /theory01.html
-      output: web, pdf
-
-  - title: X. MATLAB
-    output: web, pdf
-    folderitems:
-
-    - title: Matlab Index
-      url: /matlab00.html
-      output: web, pdf
-
-  - title: XI. ARDUINO
-    output: web, pdf
-    folderitems:
-
-    - title: Arduino Notes
-      url: /arduino01.html
       output: web, pdf
 
