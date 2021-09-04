@@ -1,5 +1,5 @@
 ---
-title: welcome & OpenHantek
+title: welcome 
 keywords: documentation, help
 last_updated: March 20th, 2021
 tags: [formatting]

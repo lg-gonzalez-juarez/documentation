@@ -95,7 +95,7 @@ entries:
       url: /matlab00.html
       output: web, pdf
 
-  - title: V. ARDUINO
+  - title: V. HIL & ARDUINO
     output: web, pdf
     folderitems:
 
