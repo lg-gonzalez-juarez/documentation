@@ -303,3 +303,51 @@ git rm *.py
 git commit -m "testing"
 git push
 ``` 
+## configuración de git en Ubuntu
+
+
+```cmd
+sudo apt install git
+```
+
+## Descomprimir archivos
+
+source : https://askubuntu.com/questions/86849/how-to-unzip-a-zip-file-from-the-terminal
+
+commands sequence:
+
+If the `unzip` command isn't already installed on your system, then run:
+
+```cmd
+sudo apt-get install unzip
+```
+
+After installing the unzip utility, if you want to extract to a particular destination folder, you can use:
+
+```cmd
+unzip file.zip -d destination_folder
+```
+
+If the source and destination directories are the same, you can simply do:
+
+```cmd
+unzip file.zip
+```
+
+This command installs **7z**:
+
+```cmd
+sudo apt-get install p7zip-full
+```
+
+This command lists the contents of the zip:
+
+```cmd
+7z l zipfile.zip
+```
+
+This command extracts the contents of the zip:
+
+```cmd
+7z x zipfile.zip
+```

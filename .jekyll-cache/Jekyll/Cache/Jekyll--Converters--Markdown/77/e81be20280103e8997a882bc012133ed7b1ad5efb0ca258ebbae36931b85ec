@@ -1,4 +1,4 @@
-I"2!<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
+I"&<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> Download click here <a alt="git to windows" href="https://gitforwindows.org">git to windows</a></div>
 
 <ul>
@@ -264,5 +264,45 @@ git push
 git rm *.py
 git commit -m "testing"
 git push
+</code></pre>
+<h2 id="configuración-de-git-en-ubuntu">configuración de git en Ubuntu</h2>
+
+<pre><code class="language-cmd">sudo apt install git
+</code></pre>
+
+<h2 id="descomprimir-archivos">Descomprimir archivos</h2>
+
+<p>source : https://askubuntu.com/questions/86849/how-to-unzip-a-zip-file-from-the-terminal</p>
+
+<p>commands sequence:</p>
+
+<p>If the <code class="language-plaintext highlighter-rouge">unzip</code> command isn’t already installed on your system, then run:</p>
+
+<pre><code class="language-cmd">sudo apt-get install unzip
+</code></pre>
+
+<p>After installing the unzip utility, if you want to extract to a particular destination folder, you can use:</p>
+
+<pre><code class="language-cmd">unzip file.zip -d destination_folder
+</code></pre>
+
+<p>If the source and destination directories are the same, you can simply do:</p>
+
+<pre><code class="language-cmd">unzip file.zip
+</code></pre>
+
+<p>This command installs <strong>7z</strong>:</p>
+
+<pre><code class="language-cmd">sudo apt-get install p7zip-full
+</code></pre>
+
+<p>This command lists the contents of the zip:</p>
+
+<pre><code class="language-cmd">7z l zipfile.zip
+</code></pre>
+
+<p>This command extracts the contents of the zip:</p>
+
+<pre><code class="language-cmd">7z x zipfile.zip
 </code></pre>
 :ET
