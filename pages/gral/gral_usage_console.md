@@ -310,6 +310,29 @@ git push
 sudo apt install git
 ```
 
+clonar el repo 
+
+
+```cmd
+git clone -b examples https://gitlab.com/capgeminido/fenics/
+Cloning into 'fenics'...
+Username for 'https://gitlab.com': nameUser sin arroba
+Password for 'https://LorenaGonzalezJ@gitlab.com': 
+warning: redirecting to https://gitlab.com/capgeminido/fenics.git/
+remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 22 (delta 4), reused 16 (delta 4), pack-reused 6
+Unpacking objects: 100% (22/22), 3.56 KiB | 456.00 KiB/s, done.
+```
+
+update_status_gitlab.PNG
+
+forma sencilla para hacer el push es con visual estudio tal y como se muestra en la siguiente figura
+
+añadir nuevos archivos
+
+
 ## Descomprimir archivos
 
 source : https://askubuntu.com/questions/86849/how-to-unzip-a-zip-file-from-the-terminal
