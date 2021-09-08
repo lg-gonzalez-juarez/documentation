@@ -169,3 +169,12 @@ figure();bodeplot(cl_ff,G_FB)
 
 - [ ] Kai tesis dinamarca
 - [ ] TFM Linda & Barrado
+
+
+## Modelo promediado
+
+dir
+`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcomFiltro`
+
+
+
