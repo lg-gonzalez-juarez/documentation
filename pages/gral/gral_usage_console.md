@@ -385,8 +385,24 @@ whoami
 ## Habilitación correcta de las carpetas compartidas
 
 Si despues de habilitarlo desde VBM presenta algún error en compatibilidad de permisos habilitar el siguiente comando
+
 ```cmd
 sudo usermod -a -G vboxsf $(nido)
 ```
 
 source:https://geekland.eu/compartir-carpetas-y-archivos-en-virtualbox/
+
+
+## Se me quedo pillado ubuntu!!
+
+trankis, y ejecuta el siguiente comando
+
+```cmd
+sudo killall gmsh
+```
+
+## Ejecutar Visual Studio Code desde ubuntu
+
+```cmd
+code
+```
