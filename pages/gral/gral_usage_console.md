@@ -374,3 +374,19 @@ This command extracts the contents of the zip:
 ```cmd
 7z x zipfile.zip
 ```
+
+
+## Find username at ubuntu
+
+```cmd
+whoami
+```
+
+## Habilitación correcta de las carpetas compartidas
+
+Si despues de habilitarlo desde VBM presenta algún error en compatibilidad de permisos habilitar el siguiente comando
+```cmd
+sudo usermod -a -G vboxsf $(nido)
+```
+
+source:https://geekland.eu/compartir-carpetas-y-archivos-en-virtualbox/

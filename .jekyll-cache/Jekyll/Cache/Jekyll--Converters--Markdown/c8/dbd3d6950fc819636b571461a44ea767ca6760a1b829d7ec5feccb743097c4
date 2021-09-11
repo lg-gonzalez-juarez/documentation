@@ -1,4 +1,4 @@
-I"&<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
+I"+<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> Download click here <a alt="git to windows" href="https://gitforwindows.org">git to windows</a></div>
 
 <ul>
@@ -270,6 +270,26 @@ git push
 <pre><code class="language-cmd">sudo apt install git
 </code></pre>
 
+<p>clonar el repo</p>
+
+<pre><code class="language-cmd">git clone -b examples https://gitlab.com/capgeminido/fenics/
+Cloning into 'fenics'...
+Username for 'https://gitlab.com': nameUser sin arroba
+Password for 'https://LorenaGonzalezJ@gitlab.com': 
+warning: redirecting to https://gitlab.com/capgeminido/fenics.git/
+remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 22 (delta 4), reused 16 (delta 4), pack-reused 6
+Unpacking objects: 100% (22/22), 3.56 KiB | 456.00 KiB/s, done.
+</code></pre>
+
+<p>update_status_gitlab.PNG</p>
+
+<p>forma sencilla para hacer el push es con visual estudio tal y como se muestra en la siguiente figura</p>
+
+<p>añadir nuevos archivos</p>
+
 <h2 id="descomprimir-archivos">Descomprimir archivos</h2>
 
 <p>source : https://askubuntu.com/questions/86849/how-to-unzip-a-zip-file-from-the-terminal</p>
@@ -305,4 +325,17 @@ git push
 
 <pre><code class="language-cmd">7z x zipfile.zip
 </code></pre>
+
+<h2 id="find-username-at-ubuntu">Find username at ubuntu</h2>
+
+<pre><code class="language-cmd">whoami
+</code></pre>
+
+<h2 id="habilitación-correcta-de-las-carpetas-compartidas">Habilitación correcta de las carpetas compartidas</h2>
+
+<p>Si despues de habilitarlo desde VBM presenta algún error en compatibilidad de permisos habilitar el siguiente comando</p>
+<pre><code class="language-cmd">sudo usermod -a -G vboxsf $(nido)
+</code></pre>
+
+<p>source:https://geekland.eu/compartir-carpetas-y-archivos-en-virtualbox/</p>
 :ET

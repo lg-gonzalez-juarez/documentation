@@ -1,4 +1,4 @@
-I"b<h2 id="sample-content">Sample Content</h2>
+I"Ñb<h2 id="sample-content">Sample Content</h2>
 
 <div class="bs-callout bs-callout-info"><strong>Code Repo</strong> = D:\wk_matlab\uc3m\mt\pc104\Matlab\ElctPtc\inversor\inversor3ph</div>
 
@@ -155,4 +155,10 @@
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Kai tesis dinamarca</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />TFM Linda &amp; Barrado</li>
 </ul>
+
+<h2 id="modelo-promediado">Modelo promediado</h2>
+
+<p>dir
+<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcomFiltro</code></p>
+
 :ET
