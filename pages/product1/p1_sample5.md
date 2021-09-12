@@ -174,7 +174,155 @@ figure();bodeplot(cl_ff,G_FB)
 ## Modelo promediado
 
 dir
+```cmd
 `D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcomFiltro`
+```
+
+## Co-simulación con PSIM
+
+```cmd
+D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_plots_thesis_danesa\inversor\inversor3ph\myCodeInverter3ph_work
+```
+
+## Actualización del modelo de un inversor promediado
+
+### Descripción de la planta (modelo dinámico)
+
+```matlab
+%% x=[id iq Vd Vq Idc] u=[Vdc f Dd Dq]     parameters => [L C R]   inputs: outputs:
+function [sys,x0,str,ts] = inv3ph(t,x,u,flag,d,ini)
+switch flag,
+    case 0,  [sys,x0,str,ts]=mdlInitializeSizes(d,ini);
+    case 1,  sys=mdlDerivatives(t,x,u,d);
+    case 3,  sys=mdlOutputs(t,x,u,d);
+   case { 2, 4, 9 },         sys = [];
+    otherwise,    error(['Unhandled flag = ',num2str(flag)]);
+end
+
+function [sys,x0,str,ts]=mdlInitializeSizes(d,ini)
+sizes = simsizes;     sizes.NumContStates=4;     sizes.NumDiscStates=0;
+sizes.NumOutputs=5;     sizes.NumInputs=4;     sizes.DirFeedthrough=1;
+sizes.NumSampleTimes=1;  sys=simsizes(sizes);     x0=ini;      str=[];       ts=[0 0];
+   
+function sys=mdlDerivatives(t,x,u,d)
+... u=[Vdc f Dd Dq]
+Vdc=u(1);   f=u(2); Dd=u(3); Dq=u(4);
+id=x(1); iq=x(2); Vd=x(3); Vq=x(4);
+omega=2*pi*f;
+did=Dd/(3*d.L)*Vdc+omega*iq-Vd/(3*d.L);
+diq=Dq/(3*d.L)*Vdc-omega*id-Vq/(3*d.L);
+dVd=(id/d.C)+omega*Vq-(Vd/(d.R*d.C));
+dVq=(iq/d.C)-omega*Vd-(Vq/(d.R*d.C));
+sys=[did;diq;dVd;dVq];
+
+function sys=mdlOutputs(t,x,u,d)
+Vdc=u(1);   f=u(2); Dd=u(3); Dq=u(4);
+id=x(1); iq=x(2); Vd=x(3); Vq=x(4);
+Idc=Dd*id+Dq*iq;
+sys=[id;iq;Vd;Vq;Idc];
+```
+
+### Inicialización 
+
+```matlab
+... Ecuaciones Carlos Alvarez
+addpath('D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\inverter3ph');
+addpath('D:\wk_matlab\uc3m\mt\pc104\Matlab\MyComputePrg\ctr');
+
+%% Load datas
+addpath('D:\wk_matlab\uc3m\mt\pc104\Matlab\DataSheet'); dtInverter3ph_v2
+
+%% normalizar datos
+%{
+d.R=R/Zbase; d.L=L/Lbase; %d.C=1/(C/Cbase);% pud.omega=wbase; %pu
+C_base=pi^2/(3*Zbase); d.C=C/C_base; Udc_base=3*Vll/pi; 
+Vdc0=Udc/Udc_base
+%}
+
+ %d.R=R;  d.L=L; d.C=C;  save d
+
+Vdc0=450;   theta_inv=0;
+%theta_inv=0;
+Vd0=Vbase*cos(theta_inv)/sqrt(2);  Vq0=Vbase*sin(theta_inv)/sqrt(2);
+%% inicialization
+Idc0=4;  frec0=50;   id0=-1.95;  iq0=-0.05;   
+ini=[id0;iq0;Vd0;Vq0]; Dd0=0; Dq0=0;
+
+disp 'Operating Point Specs:';
+disp(sprintf('%s=%d','id0',id0,'iq0',iq0,'Vd0',Vd0,'Vq0',Vq0,'Idc0',Idc0));
+disp 'Unknown: Dd0, Dq0';
+ 
+NameModel='SimInv3ph'; NameModel_spec = operspec(NameModel);  % find operating point
+% outputs
+NameOutputAdd1='SimInv3ph/outC';
+NameModel_spec=addoutputspec(NameModel_spec,NameOutputAdd1,1); %id 
+NameModel_spec=addoutputspec(NameModel_spec,NameOutputAdd1,2); %iq 
+NameModel_spec=addoutputspec(NameModel_spec,NameOutputAdd1,3); %Vd
+NameModel_spec=addoutputspec(NameModel_spec,NameOutputAdd1,4); %Vq
+NameModel_spec=addoutputspec(NameModel_spec,NameOutputAdd1,5); %Id
+% inputs 
+NameModel_spec.Input(1).Known=1;    NameModel_spec.Input(1).u=0;  %Vdc0
+NameModel_spec.Input(2).Known=1;    NameModel_spec.Input(2).u=0;  %frec
+NameModel_spec.Input(3).Known=0;    NameModel_spec.Input(3).u=Dd0;  %Dd0
+NameModel_spec.Input(4).Known=0;    NameModel_spec.Input(4).u=Dq0;  %Dq0
+% states      .....   1-know 0-unknow
+NameModel_spec.States.Known=[0 0 1 1]'; NameModel_spec.States.x=[id0 iq0 Vd0 Vq0]';  
+%[Idc0 I2dc0]
+NameModel_spec.Outputs(1).Known=0;  NameModel_spec.Outputs(1).y= id0;
+NameModel_spec.Outputs(2).Known=0;  NameModel_spec.Outputs(2).y=iq0;
+NameModel_spec.Outputs(3).Known=1;  NameModel_spec.Outputs(3).y= Vd0;
+NameModel_spec.Outputs(4).Known=1;  NameModel_spec.Outputs(4).y=Vq0;
+NameModel_spec.Outputs(5).Known=0;  NameModel_spec.Outputs(5).y= Idc0;
+%}
+% calculate operating point specific
+[NameModel_op,op_report]=findop(NameModel,NameModel_spec);
+ini=NameModel_op.States.x; 
+Dd0= NameModel_op.Input(3).u; Dq0 = NameModel_op.Input(4).u;
+disp '-- Solution: ---------';
+disp(sprintf('%s=%d \t','Dd0',Dd0,'Dq0',Dq0));
+save NameModel_op
 
 
+%% linealizacion
+NameInput1='SimInv3ph/Sum3'; NameModel_io(1)=linio(NameInput1,1,'in'); %Dd
+NameInput2='SimInv3ph/Sum4'; NameModel_io(2)=linio(NameInput2,1,'in'); %Dq
+%NameOutputAdd1='SimInv3ph/outC';
+NameModel_io(3)=linio(NameOutputAdd1,3,'out');    NameModel_io(3).OpenLoop='on';
+NameModel_io(4)=linio(NameOutputAdd1,4,'out');    NameModel_io(4).OpenLoop='on';
 
+setlinio(NameModel,NameModel_io);
+NameModel_lin=linearize(NameModel,NameModel_op,NameModel_io);
+set(NameModel_lin,'inputn',{'Dd';'Dd'},'outputn',{'Vd';'Vq'},'statename',{'Id';'Iq';'Vd';'Vq'}); 
+
+%save('.\ctr_mtx\NameModel_lin2');
+NameModel_io(1)=linio(NameInput1,1,'none');  
+NameModel_io(2)=linio(NameInput2,1,'none');  
+NameModel_io(3)=linio(NameOutputAdd1,3,'none');   NameModel_io(3).OpenLoop='off';
+NameModel_io(4)=linio(NameOutputAdd1,4,'none');   NameModel_io(4).OpenLoop='off';
+setlinio(NameModel,NameModel_io); size(NameModel_lin);
+NameModel_tf=tf(NameModel_lin);% save('.\ctr_mtx\NameModel_tf2');
+NameModel_can= canon(NameModel_lin,'modal');%forma canonica
+NameModel_tf_can=tf(NameModel_can);
+
+%% makeCtrs
+
+[numtf,dentf]=tfdata(NameModel_tf);  %save('.\ctr_mtx\numtf2');  save('.\ctr_mtx\dentf2');
+Gs=NameModel_tf(1:2,1:2); [numGs,denGs]=tfdata(Gs);
+Gs_det=minreal(Gs(1,1)*Gs(2,2)-(Gs(1,2)*Gs(2,1))); %det_A=a11*a22-a12*a21;
+Gs_adj=[Gs(2,2) -Gs(2,1);-Gs(1,2) Gs(1,1)];%adjunta
+Gs_inv=minreal(mldivide(Gs_det,Gs_adj));%%invA=minreal(mldivide(det_A,adj_A))
+X_s=eye(2);
+Ds=minreal(mtimes(Gs_inv,X_s)); %%Ds=minreal(mldivide(Gs,X_s))
+Qs=minreal(mtimes(Ds,Gs));
+D12=minreal(mrdivide(-Gs(1,2),Gs(1,1)));D21=minreal(mrdivide(-Gs(2,1),Gs(2,2)));
+D_s=[1 D12;D21 1], [numD_s,denD_s]=tfdata(D_s);
+%save('.\ctr_mtx\numD_s2'); save('.\ctr_mtx\denD_s2')
+Qs=minreal(mtimes(D_s,Gs)), [numQs,denQs]=tfdata(Qs);
+Q11=minreal(Gs(1,1)*(1-(minreal((Gs(1,2)*Gs(2,1))/(Gs(1,1)*Gs(2,2))))));
+Q22=minreal(Gs(2,2)*(1-(minreal((Gs(1,2)*Gs(2,1))/(Gs(1,1)*Gs(2,2))))));
+num_C4=10.61*[0.0011 1];  den_C4=[1 0];C4=tf(num_C4,den_C4);
+num_C5=10.61*[0.0011 1];  den_C5=[1 0]; C5=tf(num_C5,den_C5);
+Ctr2=[C4 1;1 C5]; [numCtr2,denCtr2]=tfdata(Ctr2);
+%save('.\ctr_mtx\numCtr2');     save('.\ctr_mtx\denCtr2');
+%}N
+```

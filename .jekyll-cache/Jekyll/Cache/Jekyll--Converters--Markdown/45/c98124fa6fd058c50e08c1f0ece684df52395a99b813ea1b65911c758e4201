@@ -1,4 +1,4 @@
-I"裝<h2 id="sample-content">Sample Content</h2>
+I"遠<h2 id="sample-content">Sample Content</h2>
 
 <div class="bs-callout bs-callout-info"><strong>Code Repo</strong> = D:\wk_matlab\uc3m\mt\pc104\Matlab\ElctPtc\inversor\inversor3ph</div>
 
@@ -158,7 +158,47 @@
 
 <h2 id="modelo-promediado">Modelo promediado</h2>
 
-<p>dir
-<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcomFiltro</code></p>
+<p>dir</p>
+<pre><code class="language-cmd">`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcomFiltro`
+</code></pre>
 
+<h2 id="co-simulaci贸n-con-psim">Co-simulaci贸n con PSIM</h2>
+
+<pre><code class="language-cmd">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_plots_thesis_danesa\inversor\inversor3ph\myCodeInverter3ph_work
+</code></pre>
+
+<h2 id="actualizaci贸n-del-modelo-de-un-inversor-promediado">Actualizaci贸n del modelo de un inversor promediado</h2>
+
+<pre><code class="language-cmd">%% x=[id iq Vd Vq Idc] u=[Vdc f Dd Dq]     parameters =&gt; [L C R]   inputs: outputs:
+function [sys,x0,str,ts] = inv3ph(t,x,u,flag,d,ini)
+switch flag,
+    case 0,  [sys,x0,str,ts]=mdlInitializeSizes(d,ini);
+    case 1,  sys=mdlDerivatives(t,x,u,d);
+    case 3,  sys=mdlOutputs(t,x,u,d);
+   case { 2, 4, 9 },         sys = [];
+    otherwise,    error(['Unhandled flag = ',num2str(flag)]);
+end
+
+function [sys,x0,str,ts]=mdlInitializeSizes(d,ini)
+sizes = simsizes;     sizes.NumContStates=4;     sizes.NumDiscStates=0;
+sizes.NumOutputs=5;     sizes.NumInputs=4;     sizes.DirFeedthrough=1;
+sizes.NumSampleTimes=1;  sys=simsizes(sizes);     x0=ini;      str=[];       ts=[0 0];
+   
+function sys=mdlDerivatives(t,x,u,d)
+... u=[Vdc f Dd Dq]
+Vdc=u(1);   f=u(2); Dd=u(3); Dq=u(4);
+id=x(1); iq=x(2); Vd=x(3); Vq=x(4);
+omega=2*pi*f;
+did=Dd/(3*d.L)*Vdc+omega*iq-Vd/(3*d.L);
+diq=Dq/(3*d.L)*Vdc-omega*id-Vq/(3*d.L);
+dVd=(id/d.C)+omega*Vq-(Vd/(d.R*d.C));
+dVq=(iq/d.C)-omega*Vd-(Vq/(d.R*d.C));
+sys=[did;diq;dVd;dVq];
+
+function sys=mdlOutputs(t,x,u,d)
+Vdc=u(1);   f=u(2); Dd=u(3); Dq=u(4);
+id=x(1); iq=x(2); Vd=x(3); Vq=x(4);
+Idc=Dd*id+Dq*iq;
+sys=[id;iq;Vd;Vq;Idc];
+</code></pre>
 :ET
