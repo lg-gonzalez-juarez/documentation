@@ -326,3 +326,126 @@ Ctr2=[C4 1;1 C5]; [numCtr2,denCtr2]=tfdata(Ctr2);
 %save('.\ctr_mtx\numCtr2');     save('.\ctr_mtx\denCtr2');
 %}N
 ```
+
+### Esquematico de simulación de planta
+
+{% include image.html file="/matlab/mdl_planta_inverter.PNG" alt="matlab sim" caption="Simulation inverter" %}
+
+### Esquematico de simulación de planta con control
+
+{% include image.html file="/matlab/mdl_planta_inverter_ctr.PNG" alt="matlab sim" caption="Simulation inverter con control" %}
+
+### Salida de inicialización en workspace
+
+```matlab
+Operating Point Specs:
+id0=-1.950000e+00iq0=-5.000000e-02Vd0=1.327906e+02Vq0=0Idc0=4
+Unknown: Dd0, Dq0
+
+
+Operating Point Search Report:
+---------------------------------
+
+ Operating Report for the Model SimInv3ph.
+ (Time-Varying Components Evaluated at time t=0)
+
+Operating point specifications were successfully met.
+States: 
+----------
+(1.) SimInv3ph/S-Function1
+      x:      1.33e+03      dx:     -3.64e-12 (0)
+      x:          1.25      dx:             0 (0)
+      x:           133      dx:             0 (0)
+      x:             0      dx:             0 (0)
+
+Inputs: 
+----------
+(1.) SimInv3ph/V(dc)
+      u:             0
+(2.) SimInv3ph/f(0)
+      u:             0
+(3.) SimInv3ph/D(d)
+      u:          0.29    [-Inf Inf]
+(4.) SimInv3ph/D(q)
+      u:          5.56    [-Inf Inf]
+
+Outputs: 
+----------
+(1.) SimInv3ph/outC
+      y:      1.33e+03    [-Inf Inf]
+(2.) SimInv3ph/outC
+      y:          1.25    [-Inf Inf]
+(3.) SimInv3ph/outC
+      y:           133    (133)
+(4.) SimInv3ph/outC
+      y:             0    (0)
+(5.) SimInv3ph/outC
+      y:           392    [-Inf Inf]
+
+-- Solution: ---------
+Dd0=2.898478e-01 	Dq0=5.562318e+00 	
+
+
+State-space model with 2 outputs, 2 inputs, and 4 states.
+
+D_s =
+ 
+  From input "Vq" to output...
+   Vd:  1
+ 
+            628.3 s + 1.047e08
+   Vq:  ---------------------------
+        s^2 + 3.333e05 s + 5.457e06
+ 
+  From input "Vd" to output...
+            -628.3 s - 1.047e08
+   Vd:  ---------------------------
+        s^2 + 3.333e05 s + 5.457e06
+ 
+   Vq:  1
+ 
+Continuous-time transfer function.
+
+
+Qs =
+ 
+  From input "Dd" to output...
+                   2.5e09 s^4 + 3.333e15 s^3 + 1.667e21 s^2 + 3.703e26 s + 3.086e31
+   Vd:  ---------------------------------------------------------------------------------------
+        s^6 + 1.667e06 s^5 + 1.111e12 s^4 + 3.703e17 s^3 + 6.172e22 s^2 + 4.115e27 s + 6.736e28
+ 
+                                                                                                
+        -24.37 s^7 + 7.498e08 s^6 + 6.364e14 s^5 + 1.708e20 s^4 + 1.428e25 s^3 + 1.911e27 s^2   
+                                                                                                
+                                                                          + 1.46e30 s + 1.404e32
+                                                                                                
+   Vq:  ----------------------------------------------------------------------------------------
+                                                                                                
+        s^10 + 1.667e06 s^9 + 1.111e12 s^8 + 3.704e17 s^7 + 6.175e22 s^6 + 4.119e27 s^5         
+                                                                                                
+                             + 3.54e29 s^4 + 8.241e32 s^3 + 4.117e34 s^2 + 4.076e37 s + 6.598e38
+                                                                                                
+ 
+  From input "Dd" to output...
+                                                                                                
+        -24.37 s^7 + 1.789e08 s^6 + 1.607e14 s^5 + 4.388e19 s^4 + 3.706e24 s^3 + 1.373e27 s^2   
+                                                                                                
+                                                                         + 4.081e29 s + 1.233e32
+                                                                                                
+   Vd:  ----------------------------------------------------------------------------------------
+                                                                                                
+        s^10 + 1.667e06 s^9 + 1.111e12 s^8 + 3.704e17 s^7 + 6.175e22 s^6 + 4.119e27 s^5         
+                                                                                                
+                             + 3.54e29 s^4 + 8.241e32 s^3 + 4.117e34 s^2 + 4.076e37 s + 6.598e38
+                                                                                                
+ 
+                   2.5e09 s^4 + 3.333e15 s^3 + 1.667e21 s^2 + 3.703e26 s + 3.086e31
+   Vq:  ---------------------------------------------------------------------------------------
+        s^6 + 1.667e06 s^5 + 1.111e12 s^4 + 3.703e17 s^3 + 6.172e22 s^2 + 4.115e27 s + 6.736e28
+ 
+Continuous-time transfer function.
+
+
+```
+
+SOURCE: `D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_plots_thesis_danesa\inversor\inversor3ph\DQ_new\rev1`
