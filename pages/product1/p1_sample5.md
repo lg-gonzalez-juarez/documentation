@@ -449,3 +449,13 @@ Continuous-time transfer function.
 ```
 
 SOURCE: `D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_plots_thesis_danesa\inversor\inversor3ph\DQ_new\rev1`
+
+### Implementación del inversor con matlab (modelo similar al de PSIM)
+
+SOURCE:`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_plots_thesis_danesa\inversor\inversor3ph\DQ_new\test_19Nov2011`
+
+{% include image.html file="/matlab/mod_promediado_inverter_IGBTs_01.PNG" alt="matlab sim" caption="Simulation average inverter" %}
+
+{% include image.html file="/matlab/mod_promediado_inverter_IGBTs_02.PNG" alt="matlab sim" caption="Simulation average inverter" %}
+
+{% include image.html file="/matlab/mod_promediado_inverter_IGBTs_03.PNG" alt="matlab sim" caption="Simulation average inverter" %}
