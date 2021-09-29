@@ -459,3 +459,56 @@ SOURCE:`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_pl
 {% include image.html file="/matlab/mod_promediado_inverter_IGBTs_02.PNG" alt="matlab sim" caption="Simulation average inverter" %}
 
 {% include image.html file="/matlab/mod_promediado_inverter_IGBTs_03.PNG" alt="matlab sim" caption="Simulation average inverter" %}
+
+
+## Modulación vectorial implementación en Matlab
+
+
+```matlab
+function [Ts1,Ts3,Ts5,Ta,Tb,To] = fcn(a,n,V,Vd,Ts)
+%{
+INPUTS:
+a-> angle
+n-> number of sectors
+V-> (2/3)Vdc or less
+Vd-> Vdc
+Ts-> switching time
+
+OUTPUTS:
+Ts1-> time of switches
+Ts3->
+Ts5->
+%}
+%#eml
+
+a=a.*pi./180;%degree2radian
+s=(3.^0.5).*(V/Vd).*Ts;
+Ta= s.*sin((n.*pi./3)-a-pi./3);
+Tb= s.*sin(a-(n-1).*pi./3);
+To=Ts-Ta-Tb;%%To_off
+Ts1=0;
+Ts3=0;
+Ts5=0;
+
+switch n
+    case 1 
+        Ts1= (Ts-(Ta+Tb+To./2))./Ts;         Ts3= (Ts-(Tb+To./2))./Ts;       Ts5= (Ts-(To./2))./Ts;
+    case 2
+         Ts1= (Ts-(Ta+To./2))./Ts;         Ts3= (Ts-(Ta+Tb+To./2))./Ts;      Ts5= (Ts-(To./2))./Ts;
+    case 3
+        Ts1= (Ts-(To./2))./Ts;         Ts3=(Ts-(Ta+Tb+To./2))./Ts;         Ts5=  (Ts-(Tb+To./2))./Ts;
+    case 4
+        Ts1= (Ts-(To./2))./Ts;         Ts3=(Ts-(Ta+To./2))./Ts;     Ts5= (Ts-(Ta+Tb+To./2))./Ts;     
+    case 5
+        Ts1= (Ts-(Tb+To./2))./Ts;         Ts3= (Ts-(To./2))./Ts;      Ts5=(Ts-(Ta+Tb+To./2))./Ts; 
+    case 6   
+         Ts1=(Ts-(Ta+Tb+To./2))./Ts;          Ts3= (Ts-(To./2))./Ts;      Ts5= (Ts-(Ta+To./2))./Ts;
+end
+return;
+```
+
+
+
+{% include image.html file="/matlab/ImplementacionModulacionVectorial.PNG" alt="matlab sim" caption="Implementacion Modulacion Vectorial" %}
+
+source:`D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\modulation`

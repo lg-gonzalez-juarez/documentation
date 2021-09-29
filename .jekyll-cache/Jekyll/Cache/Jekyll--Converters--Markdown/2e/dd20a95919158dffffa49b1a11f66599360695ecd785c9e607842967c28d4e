@@ -1,4 +1,4 @@
-I"覵<h2 id="sample-content">Sample Content</h2>
+I"gX<h2 id="sample-content">Sample Content</h2>
 
 <div class="bs-callout bs-callout-info"><strong>Code Repo</strong> = D:\wk_matlab\uc3m\mt\pc104\Matlab\ElctPtc\inversor\inversor3ph</div>
 
@@ -428,4 +428,17 @@
 
 </code></pre></div></div>
 
+<p>SOURCE: <code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_plots_thesis_danesa\inversor\inversor3ph\DQ_new\rev1</code></p>
+
+<h3 id="implementaci贸n-del-inversor-con-matlab-modelo-similar-al-de-psim">Implementaci贸n del inversor con matlab (modelo similar al de PSIM)</h3>
+
+<p>SOURCE:<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_plots_thesis_danesa\inversor\inversor3ph\DQ_new\test_19Nov2011</code></p>
+
+<figure><img class="docimage" src="images//matlab/mod_promediado_inverter_IGBTs_01.PNG" alt="matlab sim" /><figcaption>Simulation average inverter</figcaption></figure>
+
+<figure><img class="docimage" src="images//matlab/mod_promediado_inverter_IGBTs_02.PNG" alt="matlab sim" /><figcaption>Simulation average inverter</figcaption></figure>
+
+<figure><img class="docimage" src="images//matlab/mod_promediado_inverter_IGBTs_03.PNG" alt="matlab sim" /><figcaption>Simulation average inverter</figcaption></figure>
+
+<h2 id="modulaci贸n-vectorial-implementaci贸n-en-matlab">Modulaci贸n vectorial implementaci贸n en Matlab</h2>
 :ET

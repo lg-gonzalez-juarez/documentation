@@ -1,5 +1,4 @@
-I"�
-<h2 id="sample-content">Sample Content</h2>
+I"m�<h2 id="sample-content">Sample Content</h2>
 
 <div class="bs-callout bs-callout-info"><strong>Code Repo</strong> = D:\wk_matlab\uc3m\mt\pc104\Matlab\ElctPtc\inversor\inversor3ph</div>
 
@@ -316,4 +315,176 @@
 <h3 id="esquematico-de-simulación-de-planta-con-control">Esquematico de simulación de planta con control</h3>
 
 <figure><img class="docimage" src="images//matlab/mdl_planta_inverter_ctr.PNG" alt="matlab sim" /><figcaption>Simulation inverter con control</figcaption></figure>
+
+<h3 id="salida-de-inicialización-en-workspace">Salida de inicialización en workspace</h3>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Operating</span> <span class="n">Point</span> <span class="n">Specs</span><span class="p">:</span>
+<span class="n">id0</span><span class="o">=-</span><span class="mf">1.950000e+00</span><span class="n">iq0</span><span class="o">=-</span><span class="mf">5.000000e-02</span><span class="n">Vd0</span><span class="o">=</span><span class="mf">1.327906e+02</span><span class="n">Vq0</span><span class="o">=</span><span class="mi">0</span><span class="n">Idc0</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">Unknown</span><span class="p">:</span> <span class="n">Dd0</span><span class="p">,</span> <span class="n">Dq0</span>
+
+
+<span class="n">Operating</span> <span class="n">Point</span> <span class="n">Search</span> <span class="n">Report</span><span class="p">:</span>
+<span class="o">---------------------------------</span>
+
+ <span class="n">Operating</span> <span class="n">Report</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Model</span> <span class="n">SimInv3ph</span><span class="o">.</span>
+ <span class="p">(</span><span class="n">Time</span><span class="o">-</span><span class="n">Varying</span> <span class="n">Components</span> <span class="n">Evaluated</span> <span class="n">at</span> <span class="nb">time</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">Operating</span> <span class="n">point</span> <span class="n">specifications</span> <span class="n">were</span> <span class="n">successfully</span> <span class="n">met</span><span class="o">.</span>
+<span class="n">States</span><span class="p">:</span> 
+<span class="o">----------</span>
+<span class="p">(</span><span class="mf">1.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">S</span><span class="o">-</span><span class="n">Function1</span>
+      <span class="n">x</span><span class="p">:</span>      <span class="mf">1.33e+03</span>      <span class="n">dx</span><span class="p">:</span>     <span class="o">-</span><span class="mf">3.64e-12</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="n">x</span><span class="p">:</span>          <span class="mf">1.25</span>      <span class="n">dx</span><span class="p">:</span>             <span class="mi">0</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="n">x</span><span class="p">:</span>           <span class="mi">133</span>      <span class="n">dx</span><span class="p">:</span>             <span class="mi">0</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="n">x</span><span class="p">:</span>             <span class="mi">0</span>      <span class="n">dx</span><span class="p">:</span>             <span class="mi">0</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">Inputs</span><span class="p">:</span> 
+<span class="o">----------</span>
+<span class="p">(</span><span class="mf">1.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">V</span><span class="p">(</span><span class="n">dc</span><span class="p">)</span>
+      <span class="n">u</span><span class="p">:</span>             <span class="mi">0</span>
+<span class="p">(</span><span class="mf">2.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="n">u</span><span class="p">:</span>             <span class="mi">0</span>
+<span class="p">(</span><span class="mf">3.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">D</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+      <span class="n">u</span><span class="p">:</span>          <span class="mf">0.29</span>    <span class="p">[</span><span class="o">-</span><span class="nb">Inf</span> <span class="nb">Inf</span><span class="p">]</span>
+<span class="p">(</span><span class="mf">4.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">D</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+      <span class="n">u</span><span class="p">:</span>          <span class="mf">5.56</span>    <span class="p">[</span><span class="o">-</span><span class="nb">Inf</span> <span class="nb">Inf</span><span class="p">]</span>
+
+<span class="n">Outputs</span><span class="p">:</span> 
+<span class="o">----------</span>
+<span class="p">(</span><span class="mf">1.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">outC</span>
+      <span class="n">y</span><span class="p">:</span>      <span class="mf">1.33e+03</span>    <span class="p">[</span><span class="o">-</span><span class="nb">Inf</span> <span class="nb">Inf</span><span class="p">]</span>
+<span class="p">(</span><span class="mf">2.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">outC</span>
+      <span class="n">y</span><span class="p">:</span>          <span class="mf">1.25</span>    <span class="p">[</span><span class="o">-</span><span class="nb">Inf</span> <span class="nb">Inf</span><span class="p">]</span>
+<span class="p">(</span><span class="mf">3.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">outC</span>
+      <span class="n">y</span><span class="p">:</span>           <span class="mi">133</span>    <span class="p">(</span><span class="mi">133</span><span class="p">)</span>
+<span class="p">(</span><span class="mf">4.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">outC</span>
+      <span class="n">y</span><span class="p">:</span>             <span class="mi">0</span>    <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="mf">5.</span><span class="p">)</span> <span class="n">SimInv3ph</span><span class="p">/</span><span class="n">outC</span>
+      <span class="n">y</span><span class="p">:</span>           <span class="mi">392</span>    <span class="p">[</span><span class="o">-</span><span class="nb">Inf</span> <span class="nb">Inf</span><span class="p">]</span>
+
+<span class="o">--</span> <span class="n">Solution</span><span class="p">:</span> <span class="o">---------</span>
+<span class="n">Dd0</span><span class="o">=</span><span class="mf">2.898478e-01</span> 	<span class="n">Dq0</span><span class="o">=</span><span class="mf">5.562318e+00</span> 	
+
+
+<span class="n">State</span><span class="o">-</span><span class="n">space</span> <span class="n">model</span> <span class="n">with</span> <span class="mi">2</span> <span class="n">outputs</span><span class="p">,</span> <span class="mi">2</span> <span class="n">inputs</span><span class="p">,</span> <span class="nb">and</span> <span class="mi">4</span> <span class="n">states</span><span class="o">.</span>
+
+<span class="n">D_s</span> <span class="o">=</span>
+ 
+  <span class="n">From</span> <span class="nb">input</span> <span class="s2">"Vq"</span> <span class="n">to</span> <span class="n">output</span><span class="k">...</span>
+   <span class="n">Vd</span><span class="p">:</span>  <span class="mi">1</span>
+ 
+            <span class="mf">628.3</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">1.047e08</span>
+   <span class="n">Vq</span><span class="p">:</span>  <span class="o">---------------------------</span>
+        <span class="n">s</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">3.333e05</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">5.457e06</span>
+ 
+  <span class="n">From</span> <span class="nb">input</span> <span class="s2">"Vd"</span> <span class="n">to</span> <span class="n">output</span><span class="k">...</span>
+            <span class="o">-</span><span class="mf">628.3</span> <span class="n">s</span> <span class="o">-</span> <span class="mf">1.047e08</span>
+   <span class="n">Vd</span><span class="p">:</span>  <span class="o">---------------------------</span>
+        <span class="n">s</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">3.333e05</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">5.457e06</span>
+ 
+   <span class="n">Vq</span><span class="p">:</span>  <span class="mi">1</span>
+ 
+<span class="n">Continuous</span><span class="o">-</span><span class="nb">time</span> <span class="n">transfer</span> <span class="k">function</span><span class="o">.</span>
+
+
+<span class="n">Qs</span> <span class="o">=</span>
+ 
+  <span class="n">From</span> <span class="nb">input</span> <span class="s2">"Dd"</span> <span class="n">to</span> <span class="n">output</span><span class="k">...</span>
+                   <span class="mf">2.5e09</span> <span class="n">s</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">3.333e15</span> <span class="n">s</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">1.667e21</span> <span class="n">s</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">3.703e26</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">3.086e31</span>
+   <span class="n">Vd</span><span class="p">:</span>  <span class="o">---------------------------------------------------------------------------------------</span>
+        <span class="n">s</span><span class="o">^</span><span class="mi">6</span> <span class="o">+</span> <span class="mf">1.667e06</span> <span class="n">s</span><span class="o">^</span><span class="mi">5</span> <span class="o">+</span> <span class="mf">1.111e12</span> <span class="n">s</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">3.703e17</span> <span class="n">s</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">6.172e22</span> <span class="n">s</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">4.115e27</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">6.736e28</span>
+ 
+                                                                                                
+        <span class="o">-</span><span class="mf">24.37</span> <span class="n">s</span><span class="o">^</span><span class="mi">7</span> <span class="o">+</span> <span class="mf">7.498e08</span> <span class="n">s</span><span class="o">^</span><span class="mi">6</span> <span class="o">+</span> <span class="mf">6.364e14</span> <span class="n">s</span><span class="o">^</span><span class="mi">5</span> <span class="o">+</span> <span class="mf">1.708e20</span> <span class="n">s</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">1.428e25</span> <span class="n">s</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">1.911e27</span> <span class="n">s</span><span class="o">^</span><span class="mi">2</span>   
+                                                                                                
+                                                                          <span class="o">+</span> <span class="mf">1.46e30</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">1.404e32</span>
+                                                                                                
+   <span class="n">Vq</span><span class="p">:</span>  <span class="o">----------------------------------------------------------------------------------------</span>
+                                                                                                
+        <span class="n">s</span><span class="o">^</span><span class="mi">10</span> <span class="o">+</span> <span class="mf">1.667e06</span> <span class="n">s</span><span class="o">^</span><span class="mi">9</span> <span class="o">+</span> <span class="mf">1.111e12</span> <span class="n">s</span><span class="o">^</span><span class="mi">8</span> <span class="o">+</span> <span class="mf">3.704e17</span> <span class="n">s</span><span class="o">^</span><span class="mi">7</span> <span class="o">+</span> <span class="mf">6.175e22</span> <span class="n">s</span><span class="o">^</span><span class="mi">6</span> <span class="o">+</span> <span class="mf">4.119e27</span> <span class="n">s</span><span class="o">^</span><span class="mi">5</span>         
+                                                                                                
+                             <span class="o">+</span> <span class="mf">3.54e29</span> <span class="n">s</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">8.241e32</span> <span class="n">s</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">4.117e34</span> <span class="n">s</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">4.076e37</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">6.598e38</span>
+                                                                                                
+ 
+  <span class="n">From</span> <span class="nb">input</span> <span class="s2">"Dd"</span> <span class="n">to</span> <span class="n">output</span><span class="k">...</span>
+                                                                                                
+        <span class="o">-</span><span class="mf">24.37</span> <span class="n">s</span><span class="o">^</span><span class="mi">7</span> <span class="o">+</span> <span class="mf">1.789e08</span> <span class="n">s</span><span class="o">^</span><span class="mi">6</span> <span class="o">+</span> <span class="mf">1.607e14</span> <span class="n">s</span><span class="o">^</span><span class="mi">5</span> <span class="o">+</span> <span class="mf">4.388e19</span> <span class="n">s</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">3.706e24</span> <span class="n">s</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">1.373e27</span> <span class="n">s</span><span class="o">^</span><span class="mi">2</span>   
+                                                                                                
+                                                                         <span class="o">+</span> <span class="mf">4.081e29</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">1.233e32</span>
+                                                                                                
+   <span class="n">Vd</span><span class="p">:</span>  <span class="o">----------------------------------------------------------------------------------------</span>
+                                                                                                
+        <span class="n">s</span><span class="o">^</span><span class="mi">10</span> <span class="o">+</span> <span class="mf">1.667e06</span> <span class="n">s</span><span class="o">^</span><span class="mi">9</span> <span class="o">+</span> <span class="mf">1.111e12</span> <span class="n">s</span><span class="o">^</span><span class="mi">8</span> <span class="o">+</span> <span class="mf">3.704e17</span> <span class="n">s</span><span class="o">^</span><span class="mi">7</span> <span class="o">+</span> <span class="mf">6.175e22</span> <span class="n">s</span><span class="o">^</span><span class="mi">6</span> <span class="o">+</span> <span class="mf">4.119e27</span> <span class="n">s</span><span class="o">^</span><span class="mi">5</span>         
+                                                                                                
+                             <span class="o">+</span> <span class="mf">3.54e29</span> <span class="n">s</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">8.241e32</span> <span class="n">s</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">4.117e34</span> <span class="n">s</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">4.076e37</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">6.598e38</span>
+                                                                                                
+ 
+                   <span class="mf">2.5e09</span> <span class="n">s</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">3.333e15</span> <span class="n">s</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">1.667e21</span> <span class="n">s</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">3.703e26</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">3.086e31</span>
+   <span class="n">Vq</span><span class="p">:</span>  <span class="o">---------------------------------------------------------------------------------------</span>
+        <span class="n">s</span><span class="o">^</span><span class="mi">6</span> <span class="o">+</span> <span class="mf">1.667e06</span> <span class="n">s</span><span class="o">^</span><span class="mi">5</span> <span class="o">+</span> <span class="mf">1.111e12</span> <span class="n">s</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">3.703e17</span> <span class="n">s</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">6.172e22</span> <span class="n">s</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">4.115e27</span> <span class="n">s</span> <span class="o">+</span> <span class="mf">6.736e28</span>
+ 
+<span class="n">Continuous</span><span class="o">-</span><span class="nb">time</span> <span class="n">transfer</span> <span class="k">function</span><span class="o">.</span>
+
+
+</code></pre></div></div>
+
+<p>SOURCE: <code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_plots_thesis_danesa\inversor\inversor3ph\DQ_new\rev1</code></p>
+
+<h3 id="implementación-del-inversor-con-matlab-modelo-similar-al-de-psim">Implementación del inversor con matlab (modelo similar al de PSIM)</h3>
+
+<p>SOURCE:<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\MODELS_STATCOM_ck\statcom_plots_thesis_danesa\inversor\inversor3ph\DQ_new\test_19Nov2011</code></p>
+
+<figure><img class="docimage" src="images//matlab/mod_promediado_inverter_IGBTs_01.PNG" alt="matlab sim" /><figcaption>Simulation average inverter</figcaption></figure>
+
+<figure><img class="docimage" src="images//matlab/mod_promediado_inverter_IGBTs_02.PNG" alt="matlab sim" /><figcaption>Simulation average inverter</figcaption></figure>
+
+<figure><img class="docimage" src="images//matlab/mod_promediado_inverter_IGBTs_03.PNG" alt="matlab sim" /><figcaption>Simulation average inverter</figcaption></figure>
+
+<h2 id="modulación-vectorial-implementación-en-matlab">Modulación vectorial implementación en Matlab</h2>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="p">[</span><span class="n">Ts1</span><span class="p">,</span><span class="n">Ts3</span><span class="p">,</span><span class="n">Ts5</span><span class="p">,</span><span class="n">Ta</span><span class="p">,</span><span class="n">Tb</span><span class="p">,</span><span class="n">To</span><span class="p">]</span> <span class="o">=</span> <span class="n">fcn</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">Vd</span><span class="p">,</span><span class="n">Ts</span><span class="p">)</span>
+<span class="c1">%{</span>
+<span class="n">INPUTS</span><span class="p">:</span>
+<span class="n">a</span><span class="o">-&gt;</span> <span class="nb">angle</span>
+<span class="n">n</span><span class="o">-&gt;</span> <span class="n">number</span> <span class="n">of</span> <span class="n">sectors</span>
+<span class="n">V</span><span class="o">-&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">/</span><span class="mi">3</span><span class="p">)</span><span class="n">Vdc</span> <span class="nb">or</span> <span class="n">less</span>
+<span class="n">Vd</span><span class="o">-&gt;</span> <span class="n">Vdc</span>
+<span class="n">Ts</span><span class="o">-&gt;</span> <span class="n">switching</span> <span class="nb">time</span>
+
+<span class="n">OUTPUTS</span><span class="p">:</span>
+<span class="n">Ts1</span><span class="o">-&gt;</span> <span class="nb">time</span> <span class="n">of</span> <span class="n">switches</span>
+<span class="n">Ts3</span><span class="o">-&gt;</span>
+<span class="n">Ts5</span><span class="o">-&gt;</span>
+<span class="c1">%}</span>
+<span class="c1">%#eml</span>
+
+<span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="o">.*</span><span class="nb">pi</span><span class="o">.</span><span class="p">/</span><span class="mi">180</span><span class="p">;</span><span class="c1">%degree2radian</span>
+<span class="n">s</span><span class="o">=</span><span class="p">(</span><span class="mf">3.</span><span class="o">^</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="n">V</span><span class="p">/</span><span class="n">Vd</span><span class="p">)</span><span class="o">.*</span><span class="n">Ts</span><span class="p">;</span>
+<span class="n">Ta</span><span class="o">=</span> <span class="n">s</span><span class="o">.*</span><span class="nb">sin</span><span class="p">((</span><span class="n">n</span><span class="o">.*</span><span class="nb">pi</span><span class="o">.</span><span class="p">/</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="nb">pi</span><span class="o">.</span><span class="p">/</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">Tb</span><span class="o">=</span> <span class="n">s</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.*</span><span class="nb">pi</span><span class="o">.</span><span class="p">/</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">To</span><span class="o">=</span><span class="n">Ts</span><span class="o">-</span><span class="n">Ta</span><span class="o">-</span><span class="n">Tb</span><span class="p">;</span><span class="c1">%%To_off</span>
+<span class="n">Ts1</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">Ts3</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">Ts5</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+<span class="k">switch</span> <span class="n">n</span>
+    <span class="k">case</span> <span class="mi">1</span> 
+        <span class="n">Ts1</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Ta</span><span class="o">+</span><span class="n">Tb</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>         <span class="n">Ts3</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Tb</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>       <span class="n">Ts5</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">2</span>
+         <span class="n">Ts1</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Ta</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>         <span class="n">Ts3</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Ta</span><span class="o">+</span><span class="n">Tb</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>      <span class="n">Ts5</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">3</span>
+        <span class="n">Ts1</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>         <span class="n">Ts3</span><span class="o">=</span><span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Ta</span><span class="o">+</span><span class="n">Tb</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>         <span class="n">Ts5</span><span class="o">=</span>  <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Tb</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">4</span>
+        <span class="n">Ts1</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>         <span class="n">Ts3</span><span class="o">=</span><span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Ta</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>     <span class="n">Ts5</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Ta</span><span class="o">+</span><span class="n">Tb</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>     
+    <span class="k">case</span> <span class="mi">5</span>
+        <span class="n">Ts1</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Tb</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>         <span class="n">Ts3</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>      <span class="n">Ts5</span><span class="o">=</span><span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Ta</span><span class="o">+</span><span class="n">Tb</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span> 
+    <span class="k">case</span> <span class="mi">6</span>   
+         <span class="n">Ts1</span><span class="o">=</span><span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Ta</span><span class="o">+</span><span class="n">Tb</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>          <span class="n">Ts3</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>      <span class="n">Ts5</span><span class="o">=</span> <span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="p">(</span><span class="n">Ta</span><span class="o">+</span><span class="n">To</span><span class="o">.</span><span class="p">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="p">/</span><span class="n">Ts</span><span class="p">;</span>
+<span class="k">end</span>
+<span class="k">return</span><span class="p">;</span>
+</code></pre></div></div>
+
+<figure><img class="docimage" src="images//matlab/ImplementacionModulacionVectorial.PNG" alt="matlab sim" /><figcaption>Implementacion Modulacion Vectorial</figcaption></figure>
+
+<p>source:<code class="language-plaintext highlighter-rouge">D:\wk_matlab\uc3m\mt\pc104\MTLB\src\ElctPtc\modulation</code></p>
 :ET
