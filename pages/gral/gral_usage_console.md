@@ -406,3 +406,17 @@ sudo killall gmsh
 ```cmd
 code
 ```
+
+## Recursive download
+
+wget -r -np -R "index.html*" http://example.com/configs/.vim/
+
+
+https://altrangroup.sharepoint.com/:f:/r/sites/NIDO-SistemasElectricos/Shared%20Documents/Sistemas%20Electricos/00_Dise%C3%B1o_Maquina_6fases?csf=1&web=1&e=OuFBWd
+
+https://altrangroup.sharepoint.com/sites/NIDO-SistemasElectricos/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FNIDO%2DSistemasElectricos%2FShared%20Documents%2FSistemas%20Electricos&download=1
+
+wget -m -e robots=off --no-parent https://altrangroup.sharepoint.com/sites/NIDO-SistemasElectricos/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FNIDO%2DSistemasElectricos%2FShared%20Documents%2FSistemas%20Electricos&download=1
+
+
+wget -m -e robots=off --no-parent -r -R "index.html*" https://altrangroup.sharepoint.com/:f:/r/sites/NIDO-SistemasElectricos/Shared%20Documents/Sistemas%20Electricos/00_Dise%C3%B1o_Maquina_6fases?csf=1&web=1&e=OuFBWd

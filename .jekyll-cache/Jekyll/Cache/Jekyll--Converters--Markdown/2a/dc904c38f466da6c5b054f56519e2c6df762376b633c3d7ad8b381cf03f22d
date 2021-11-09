@@ -1,4 +1,4 @@
-I"h,<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
+I"S0<h2 id="instalación-de-git-bash">Instalación de git-bash</h2>
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> Download click here <a alt="git to windows" href="https://gitforwindows.org">git to windows</a></div>
 
 <ul>
@@ -351,4 +351,16 @@ Unpacking objects: 100% (22/22), 3.56 KiB | 456.00 KiB/s, done.
 
 <pre><code class="language-cmd">code
 </code></pre>
+
+<h2 id="recursive-download">Recursive download</h2>
+
+<p>wget -r -np -R “index.html*” http://example.com/configs/.vim/</p>
+
+<p>https://altrangroup.sharepoint.com/:f:/r/sites/NIDO-SistemasElectricos/Shared%20Documents/Sistemas%20Electricos/00_Dise%C3%B1o_Maquina_6fases?csf=1&amp;web=1&amp;e=OuFBWd</p>
+
+<p>https://altrangroup.sharepoint.com/sites/NIDO-SistemasElectricos/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FNIDO%2DSistemasElectricos%2FShared%20Documents%2FSistemas%20Electricos&amp;download=1</p>
+
+<p>wget -m -e robots=off –no-parent https://altrangroup.sharepoint.com/sites/NIDO-SistemasElectricos/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FNIDO%2DSistemasElectricos%2FShared%20Documents%2FSistemas%20Electricos&amp;download=1</p>
+
+<p>wget -m -e robots=off –no-parent -r -R “index.html*” https://altrangroup.sharepoint.com/:f:/r/sites/NIDO-SistemasElectricos/Shared%20Documents/Sistemas%20Electricos/00_Dise%C3%B1o_Maquina_6fases?csf=1&amp;web=1&amp;e=OuFBWd</p>
 :ET

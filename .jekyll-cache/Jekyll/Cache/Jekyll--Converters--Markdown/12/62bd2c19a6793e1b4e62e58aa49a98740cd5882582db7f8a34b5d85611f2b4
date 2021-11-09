@@ -1,4 +1,4 @@
-I"ùˆ<h2 id="pdf-overview">PDF overview</h2>
+I"øˆ<h2 id="pdf-overview">PDF overview</h2>
 <p>This process for creating a PDF relies on Prince XML to transform the HTML content into PDF. Prince costs about $500 per license. That might seem like a lot, but if youâ€™re creating a PDF, youâ€™re probably working for a company that sells a product, so you likely have access to some resources. Thereâ€™s also a free license that prints a small â€œPâ€ watermark on your title page, so if youâ€™re fine with that, great.</p>
 
 <p>The basic approach is to generate a list of all web pages that need to be added to the PDF, and then add leverage Prince to package them up into a PDF. Once you set it up, building a pdf is just a matter of running a couple of commands. Also, creating a PDF this way gives you a lot more control and customization capabilities than with other methods for creating PDFs. If you know CSS, you can entirely customize the output.</p>
@@ -273,7 +273,7 @@ prince <span class="nt">--javascript</span> <span class="nt">--input-list</span>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
     <span class="nx">Prince</span><span class="p">.</span><span class="nx">addScriptFunc</span><span class="p">(</span><span class="dl">"</span><span class="s2">datestamp</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="dl">"</span><span class="s2">PDF last generated: September 29, 2021</span><span class="dl">"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="dl">"</span><span class="s2">PDF last generated: November 09, 2021</span><span class="dl">"</span><span class="p">;</span>
     <span class="p">});</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span>
