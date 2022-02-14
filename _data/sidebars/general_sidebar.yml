@@ -24,7 +24,7 @@ entries:
     type: homepage
     folderitems:
 
-    - title: Indice General
+    - title: General Index
       url: /index.html
       output: web, pdf
 
