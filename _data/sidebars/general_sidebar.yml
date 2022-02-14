@@ -2,7 +2,7 @@
 
 entries:
 - title: Sidebar
-  product: Doc Gral
+  product: Topics
   version: #1.0
   folders:
 
@@ -28,7 +28,7 @@ entries:
       url: /index.html
       output: web, pdf
 
-  - title: II. BUENAS PRACTICAS
+  - title: II. BEST PRACTICES
     output: web, pdf
     folderitems:
 
