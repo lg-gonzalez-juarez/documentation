@@ -302,7 +302,38 @@ git rm NPL.py
 git rm *.py
 git commit -m "testing"
 git push
+
 ``` 
+
+
+### Reorganización de archivos
+
+#### Renombrar un archivo 
+
+Se cambia el nombre el archivo, el nombre del archivo incluye la extension del archivo (Nama.md for instance)
+
+```
+git mv old_filename new_filename
+```
+
+Verificar el cambio efectivo
+
+```
+git status
+```
+
+Indicar el cambio a través del commit 
+
+```
+git commit -m "Rename file"
+```
+
+Efectuar el cambio en github
+
+```
+git push 
+```
+
 ## configuración de git en Ubuntu
 
 

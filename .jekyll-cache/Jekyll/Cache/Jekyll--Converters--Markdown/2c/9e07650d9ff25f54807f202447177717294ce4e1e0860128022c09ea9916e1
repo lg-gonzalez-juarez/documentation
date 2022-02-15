@@ -882,9 +882,9 @@
     
         
 
-        <tr><td><a href="theory01.html">Teoría Máquina Sincrona</a></td>
+        <tr><td><a href="theory02.html">Recopilacion de libros</a></td>
             <td><span class="label label-default">Page</span></td>
-          <td> ## Clasificacón general de las máquinas eléctricas La relación de las frecuencias del inductor e inducido se relacionan con el número de polos y las r.p.m. del rotor, de acuerdo a la ecuación general: $$ f_2=f_1\pm \frac{np}{60} $$ La clasificación de las máquinas se realiza a acorde con los siguientes... </td>
+          <td> ## Krause dir E:\00_ALLS_BOOKS\100_BOOKS ELECTRIC two poles, salient-pole syncrhonous machine pag 199, stator voltage equation in arbitrary reference-frame variables eq 5.4-1, 5.4-3 pag 203, con referencia al rotor por unidad pag 209 pag 247, Computer Simulation Chapman, pag 741 Este es el término equivalente de clasificación que usan aquí Non-Salient... </td>
         </tr>
         
      
@@ -892,9 +892,9 @@
     
         
 
-        <tr><td><a href="theory02.html">Recopilacion de libros</a></td>
+        <tr><td><a href="theory01.html">Teoría Máquina Sincrona</a></td>
             <td><span class="label label-default">Page</span></td>
-          <td> ## Krause dir E:\00_ALLS_BOOKS\100_BOOKS ELECTRIC two poles, salient-pole syncrhonous machine pag 199, stator voltage equation in arbitrary reference-frame variables eq 5.4-1, 5.4-3 pag 203, con referencia al rotor por unidad pag 209 pag 247, Computer Simulation Chapman, pag 741 Este es el término equivalente de clasificación que usan aquí Non-Salient... </td>
+          <td> ## Clasificacón general de las máquinas eléctricas La relación de las frecuencias del inductor e inducido se relacionan con el número de polos y las r.p.m. del rotor, de acuerdo a la ecuación general: $$ f_2=f_1\pm \frac{np}{60} $$ La clasificación de las máquinas se realiza a acorde con los siguientes... </td>
         </tr>
         
      
