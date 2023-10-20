@@ -1,7 +1,7 @@
 ---
 title: Matlab Usage
 keywords: documentation, matlab, technical writers, help, authoring tools, replacements
-last_updated: July 8th, 2021
+last_updated: Oct 20th, 2023
 tags: [formatting]
 summary: Here documentation relative python
 sidebar: general_sidebar
@@ -44,8 +44,6 @@ https://es.mathworks.com/help/control/ug/build-a-model-of-a-multi-input-multi-ou
 
 ## commandos 
 
-
-
 ### Python
 
 ### Pypower
@@ -55,8 +53,6 @@ D:\wk_matlab\uc3m\mt\pc104\MTLB\bin\MyComputePrg\iniCond
 
 condiciones iniciales de la maquina
 D:\wk_matlab\uc3m\mt\pc104\MTLB\bin\MyComputePrg\iniCond
-
-
 
 
 {% include warning.html content="Remember, Python is a interpreter language." %}
@@ -81,4 +77,23 @@ There a excellent blog on technical writing called <a alt='technical writing blo
 <div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> This is a special tip about some file to download....</div>
 
 
+
+
+## Segunda parte
+
+
+{% include callout.html content="startup.m" type="warning" %}
+
+```matlab
+addpath('C:\PROGRA~2\GAMESA\OCSTOOL\r2012b')
+addpath('C:\PROGRA~2\GAMESA\OCSTOOL\r2012b\src')
+addpath('C:\PROGRA~2\GAMESA\OCSTOOL\r2012b\src\Bladed_cosim')
+addpath('C:\PROGRA~2\GAMESA\OCSTOOL\common')
+addpath('C:\PROGRA~2\GAMESA\OCSTOOL')
+
+addpath(genpath('C:\SVN\PCA\ControllerDLL\trunk'))
+cd('C:\SVN\PCA\ControllerDLL\trunk')
+disp('-----------------')
 {% include links.html %}
+```
+
