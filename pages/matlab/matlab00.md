@@ -65,7 +65,7 @@ folder: matlab
                 </span>
             </div>
         <div class="panel-body">
-            <h4>HIL</h4>
+            <h4>HIL LG</h4>
             <p>RT at Matlab.</p>
             <a href="p1_sample4.html" class="btn btn-primary">Let's go</a>
         </div>
