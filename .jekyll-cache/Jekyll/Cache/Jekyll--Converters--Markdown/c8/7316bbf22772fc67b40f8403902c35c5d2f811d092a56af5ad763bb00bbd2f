@@ -1,0 +1,136 @@
+I"�<h2 id="logging">logging</h2>
+
+<h3 id="dimensionado-de-gráficas">Dimensionado de gráficas</h3>
+
+<pre><code class="language-cmd">simscape.logging.
+sscexplore
+sscprintzcs
+simscape.logging.plot({simlog1.TS.x simlog2.TS.x},'names',{'Run1' 'Run2'});
+</code></pre>
+<h3 id="comandos-para-lanzar-simulaciones">Comandos para lanzar simulaciones</h3>
+
+<pre><code class="language-cmd">set_param(mdl,'SimulationCommand','Start')
+set_param(mdl,'SimulationCommand','Stop')
+set_param(mdl,'SimulationCommand','Pause')
+set_param('vdp','SimulationCommand','continue')
+set_param('vdp','SimulationCommand','update')
+set_param('my_model','StartFcn','openscopes')
+</code></pre>
+
+<p>buscar dentro de un bloque</p>
+<pre><code class="language-cmd">'SaveFinalState'
+'SaveOperatingPoint'    
+'SaveOutput'         
+'SaveState'          
+'SaveTime'    
+</code></pre>
+
+<pre><code class="language-cmd">whos("-file",activeConfigObj)%noOK
+</code></pre>
+
+<p>encontrando los valores de los bloques</p>
+
+<pre><code class="language-cmd">% Type de block
+BlockPaths = find_system(mdl,'Type','Block')
+
+
+formatSpec = ' Name is %s  &amp; number is %i \n';
+% display name of blocks
+for idx=1:1:length(BlockPaths)
+    fprintf(formatSpec,BlockPaths{idx}, idx)
+end
+% display values
+
+for idx=1:1:length(BlockPaths)
+    fprintf('%s',BlockPaths{idx})
+    BlockDialogParameters = get_param(BlockPaths{idx},'DialogParameters')
+    BlockTypes = get_param(BlockPaths{idx},'BlockType')
+end
+
+%% obtener lista de los parametros -- cuadro de dialogo
+BlckDialPars13 =get_param(BlockPaths{13},'DialogParameters');
+%BlockDialogParameters = get_param('A0_FuelCell_240109model_FMU/FuelCellStack','DialogParameters')
+
+
+NamesDialPars13 =fieldnames(BlckDialPars13)
+
+for idx=1:1:length(NamesDialPars13)
+    fprintf('%s \t %s \n',NamesDialPars13{idx}, get_param(BlockPaths{13},NamesDialPars13{idx}))
+end
+</code></pre>
+
+<h2 id="parametros-del-sim-solver-de-matlab">Parametros del sim solver de matlab</h2>
+
+<pre><code class="language-cmd">simOut = sim('vdp','SimulationMode','normal',...
+            'SaveState','on','StateSaveName','xout',...
+            'SaveOutput','on','OutputSaveName','yout',...
+            'SaveFormat', 'Dataset');
+outputs = simOut.yout
+</code></pre>
+
+<h2 id="logging-1">logging</h2>
+
+<pre><code class="language-cmd">simscape.logging.
+sscexplore
+sscprintzcs
+simscape.logging.plot({simlog1.TS.x simlog2.TS.x},'names',{'Run1' 'Run2'});
+</code></pre>
+
+<h2 id="obtener-los-datos-de-un-archivo-mat">obtener los datos de un archivo *.mat</h2>
+
+<pre><code class="language-cmd">% Type de block
+BlockPaths = find_system(mdl,'Type','Block')
+
+
+formatSpec = ' Name is %s  &amp; number is %i \n';
+% display name of blocks
+for idx=1:1:length(BlockPaths)
+    fprintf(formatSpec,BlockPaths{idx}, idx)
+end
+
+% display values
+
+for idx=1:1:length(BlockPaths)
+    fprintf('%s',BlockPaths{idx})
+    BlockDialogParameters = get_param(BlockPaths{idx},'DialogParameters')
+    BlockTypes = get_param(BlockPaths{idx},'BlockType')
+end
+
+%% obtener lista de los parametros -- cuadro de dialogo
+BlckDialPars13 =get_param(BlockPaths{13},'DialogParameters');
+%BlockDialogParameters = get_param('A0_FuelCell_240109model_FMU/FuelCellStack','DialogParameters')
+
+
+NamesDialPars13 =fieldnames(BlckDialPars13)
+
+for idx=1:1:length(NamesDialPars13)
+    fprintf('%s \t %s \n',NamesDialPars13{idx}, get_param(BlockPaths{13},NamesDialPars13{idx}))
+end
+</code></pre>
+
+<h2 id="comandos-para-lanzar-simulaciones-1">comandos para lanzar simulaciones</h2>
+
+<pre><code class="language-cmd">% set_param(mdl,'SimulationCommand','Start')
+set_param(mdl,'SimulationCommand','Stop')
+set_param(mdl,'SimulationCommand','Pause')
+set_param('vdp','SimulationCommand','continue')
+set_param('vdp','SimulationCommand','update')
+set_param('my_model','StartFcn','openscopes')
+</code></pre>
+
+<h2 id="apps-_-model-linearizer">apps _&gt; Model Linearizer.</h2>
+
+<p>steady state manager</p>
+
+<p>Find the operating point that meets these specifications.</p>
+
+<pre><code class="language-cmd">op = findop(mdl,opspec);
+</code></pre>
+<h2 id="open--run-simulation-commands">Open &amp; run simulation commands</h2>
+
+<p>load &amp; open Model</p>
+<pre><code class="language-cmd">mdl='B0_ee_fuel_cell_iv_ch';
+open_system(strcat(mdl,'.slx'))
+load_system(strcat(mdl,'.slx'))
+</code></pre>
+:ET

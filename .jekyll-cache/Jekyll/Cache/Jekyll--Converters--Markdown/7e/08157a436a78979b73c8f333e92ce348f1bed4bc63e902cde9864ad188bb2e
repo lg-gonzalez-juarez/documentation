@@ -1,4 +1,4 @@
-I"=<h2 id="logging">logging</h2>
+I"g	<h2 id="logging">logging</h2>
 
 <h3 id="dimensionado-de-gráficas">Dimensionado de gráficas</h3>
 
@@ -57,5 +57,22 @@ NamesDialPars13 =fieldnames(BlckDialPars13)
 for idx=1:1:length(NamesDialPars13)
     fprintf('%s \t %s \n',NamesDialPars13{idx}, get_param(BlockPaths{13},NamesDialPars13{idx}))
 end
+</code></pre>
+
+<h2 id="parametros-del-sim-solver-de-matlab">Parametros del sim solver de matlab</h2>
+
+<pre><code class="language-cmd">simOut = sim('vdp','SimulationMode','normal',...
+            'SaveState','on','StateSaveName','xout',...
+            'SaveOutput','on','OutputSaveName','yout',...
+            'SaveFormat', 'Dataset');
+outputs = simOut.yout
+</code></pre>
+
+<h2 id="logging-1">logging</h2>
+
+<pre><code class="language-cmd">simscape.logging.
+sscexplore
+sscprintzcs
+simscape.logging.plot({simlog1.TS.x simlog2.TS.x},'names',{'Run1' 'Run2'});
 </code></pre>
 :ET
