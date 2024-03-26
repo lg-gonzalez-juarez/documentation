@@ -1,7 +1,7 @@
 ---
 title: Buenas practicas en la redacción de documentos
 keywords: documentation, technical writers, 
-last_updated: February 2th, 2021
+last_updated: March 28th, 2024
 tags: [formatting]
 summary: Pautas para una buena redacción
 sidebar: general_sidebar
@@ -9,6 +9,7 @@ permalink: gral_redaccion_docs.html
 folder: gral
 output: web, pdf
 ---
+
 
 ## Herramientas de redacción
 
