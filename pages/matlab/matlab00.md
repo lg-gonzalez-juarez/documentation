@@ -143,8 +143,8 @@ folder: matlab
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>Next 9</h4>
-                    <p>next.</p>
+                    <h4>Inside of model </h4>
+                    <p>About configuration of models</p>
                     <a href="p1_sample9.html" class="btn btn-primary">Let's go</a>
                 </div>
             </div>
