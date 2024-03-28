@@ -1,4 +1,4 @@
-I"�<h2 id="logging">logging</h2>
+I"�"<h2 id="logging">logging</h2>
 
 <h3 id="dimensionado-de-gráficas">Dimensionado de gráficas</h3>
 
@@ -226,4 +226,69 @@ simIn = setBlockParameter(simIn,nameBlckA,...
 	"Value","3e5");
 </code></pre>
 
+<h2 id="modificar-el-valor-de-resistor-por-parametros-1">modificar el valor de resistor por parametros</h2>
+
+<pre><code class="language-cmd">nameBlckB=strcat(mdl,'/Resistor')
+get_param(nameBlckB,'DialogParameters')
+
+SetPointValues = 1:50:100;
+spv_length = length(SetPointValues);
+
+for i = spv_length:-1:1
+    in(i) = Simulink.SimulationInput(mdl);
+    in(i) = in(i).setBlockParameter(nameBlckB,...
+        'R',num2str(SetPointValues(i)));
+end
+
+%out = parsim(in,'ShowSimulationManager','on','ShowProgress','on')
+
+simOut = parsim(in,'ShowSimulationManager','on','ShowProgress','on')
+props = who(simOut)
+
+logsout_A = get(simOut(:,1),'logsout_eeFCchars')
+logsout_B = get(simOut(:,2),'logsout_eeFCchars')
+logsoutL1 = getElement(logsout_A,'watts')
+logsoutL2 = getElement(logsout_B,'watts')
+
+% comparative de ambos
+figure
+
+plot(logsoutL2.Values.Time,logsoutL2.Values.Data,...
+    logsoutL1.Values.Time,logsoutL1.Values.Data)
+
+legend(num2str(SetPointValues(2)),num2str(SetPointValues(1)))
+
+
+%{
+logsoutL1.Values
+yout = find(simOut,"yout")
+outputX1 = getElement(yout,'watts')
+outputX1.Values.Data
+%}
+
+% old manner
+%{
+simIn = Simulink.SimulationInput(mdl);
+simIn = setBlockParameter(simIn,nameBlckB,"R","100");
+simOut = sim(simIn);
+props = who(simOut)
+simMetadata = getSimulationMetadata(simOut)
+%}
+
+%% analizando los resultados
+%{
+% 'logsout_eeFCchars'
+logsout = get(simOut,'logsout_eeFCchars')
+logsoutL1 = getElement(logsout,'watts')
+logsoutL1.Values
+yout = find(simOut,"yout")
+outputX1 = getElement(yout,'watts')
+outputX1.Values.Data
+%}
+</code></pre>
+
+<p>formas de salvar de forma automatica a traves del “Configuration parameters”
+Simscape -&gt; Workspace variable Name</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"simlog_eeFCiv_char"
+</code></pre></div></div>
 :ET

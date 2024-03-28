@@ -319,3 +319,10 @@ outputX1 = getElement(yout,'watts')
 outputX1.Values.Data
 %}
 ```
+
+
+formas de salvar de forma automatica a traves del "Configuration parameters"
+Simscape -> Workspace variable Name
+```
+"simlog_eeFCiv_char"
+```
