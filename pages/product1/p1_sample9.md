@@ -6,9 +6,22 @@ sidebar: product1_sidebar
 permalink: p1_sample9.html
 folder: product1
 ---
+# Comandos utiles
+
+```
+who, lista las variables en el workspace
+```
+
+## renombrar archivo
+```cmd
+movefile OldName.m NewName.m
+```
+### abrir el Simulation Data Inspector
+```cmd
+Simulink.sdi.view
+```
 
 ## logging 
-
 
 ### Dimensionado de gráficas
 

@@ -1,4 +1,8 @@
-I"�"<h2 id="logging">logging</h2>
+I"U#<h2 id="renombrar-archivo">renombrar archivo</h2>
+
+<h2 id="logging">logging</h2>
+<pre><code class="language-cmd">movefile OldName.m NewName.m
+</code></pre>
 
 <h3 id="dimensionado-de-gráficas">Dimensionado de gráficas</h3>
 
