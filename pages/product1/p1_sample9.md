@@ -42,7 +42,7 @@ set_param('vdp','SimulationCommand','update')
 set_param('my_model','StartFcn','openscopes')
 ```
 
- buscar dentro de un bloque 
+### buscar dentro de un bloque 
 ```cmd
 'SaveFinalState'
 'SaveOperatingPoint'    
@@ -57,7 +57,7 @@ whos("-file",activeConfigObj)%noOK
 
 
 
-encontrando los valores de los bloques
+### encontrando los valores de los bloques
 
 ```cmd
 % Type de block
@@ -76,11 +76,13 @@ for idx=1:1:length(BlockPaths)
     BlockDialogParameters = get_param(BlockPaths{idx},'DialogParameters')
     BlockTypes = get_param(BlockPaths{idx},'BlockType')
 end
+```
 
-%% obtener lista de los parametros -- cuadro de dialogo
+### obtener lista de los parametros -- cuadro de dialogo
+ 
+```cmd
 BlckDialPars13 =get_param(BlockPaths{13},'DialogParameters');
 %BlockDialogParameters = get_param('A0_FuelCell_240109model_FMU/FuelCellStack','DialogParameters')
-
 
 NamesDialPars13 =fieldnames(BlckDialPars13)
 
@@ -111,7 +113,6 @@ simscape.logging.plot({simlog1.TS.x simlog2.TS.x},'names',{'Run1' 'Run2'});
 
 ## obtener los datos de un archivo *.mat
 
-
 ```cmd
 % Type de block
 BlockPaths = find_system(mdl,'Type','Block')
@@ -130,8 +131,10 @@ for idx=1:1:length(BlockPaths)
     BlockDialogParameters = get_param(BlockPaths{idx},'DialogParameters')
     BlockTypes = get_param(BlockPaths{idx},'BlockType')
 end
+```
 
-%% obtener lista de los parametros -- cuadro de dialogo
+### obtener lista de los parametros -- cuadro de dialogo
+```cmd
 BlckDialPars13 =get_param(BlockPaths{13},'DialogParameters');
 %BlockDialogParameters = get_param('A0_FuelCell_240109model_FMU/FuelCellStack','DialogParameters')
 
@@ -220,8 +223,10 @@ get_param(activeConfigObj,'InitFcn')
 get_param(activeConfigObj,'SimulationTime')
 get_param(activeConfigObj,'InitialState')
 %}
+```
 
-% new configuration
+### new configuration
+```cmd
 %{
 newConfigObj = copy(activeConfigObj);
 set_param(newConfigObj,'Name','ConfigCopy');
@@ -334,7 +339,7 @@ outputX1.Values.Data
 ```
 
 
-formas de salvar de forma automatica a traves del "Configuration parameters"
+### formas de salvar de forma automatica a traves del "Configuration parameters"
 Simscape -> Workspace variable Name
 ```
 "simlog_eeFCiv_char"

@@ -1,5 +1,13 @@
-I"U#<h2 id="renombrar-archivo">renombrar archivo</h2>
+I"�&<h1 id="comandos-utiles">Comandos utiles</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>who, lista las variables en el workspace
+</code></pre></div></div>
+
+<h2 id="renombrar-archivo">renombrar archivo</h2>
 <pre><code class="language-cmd">movefile OldName.m NewName.m
+</code></pre>
+<h3 id="abrir-el-simulation-data-inspector">abrir el Simulation Data Inspector</h3>
+<pre><code class="language-cmd">Simulink.sdi.view
 </code></pre>
 
 <h2 id="logging">logging</h2>
@@ -21,7 +29,7 @@ set_param('vdp','SimulationCommand','update')
 set_param('my_model','StartFcn','openscopes')
 </code></pre>
 
-<p>buscar dentro de un bloque</p>
+<h3 id="buscar-dentro-de-un-bloque">buscar dentro de un bloque</h3>
 <pre><code class="language-cmd">'SaveFinalState'
 'SaveOperatingPoint'    
 'SaveOutput'         
@@ -32,7 +40,7 @@ set_param('my_model','StartFcn','openscopes')
 <pre><code class="language-cmd">whos("-file",activeConfigObj)%noOK
 </code></pre>
 
-<p>encontrando los valores de los bloques</p>
+<h3 id="encontrando-los-valores-de-los-bloques">encontrando los valores de los bloques</h3>
 
 <pre><code class="language-cmd">% Type de block
 BlockPaths = find_system(mdl,'Type','Block')
@@ -50,11 +58,12 @@ for idx=1:1:length(BlockPaths)
     BlockDialogParameters = get_param(BlockPaths{idx},'DialogParameters')
     BlockTypes = get_param(BlockPaths{idx},'BlockType')
 end
+</code></pre>
 
-%% obtener lista de los parametros -- cuadro de dialogo
-BlckDialPars13 =get_param(BlockPaths{13},'DialogParameters');
+<h3 id="obtener-lista-de-los-parametros--cuadro-de-dialogo">obtener lista de los parametros – cuadro de dialogo</h3>
+
+<pre><code class="language-cmd">BlckDialPars13 =get_param(BlockPaths{13},'DialogParameters');
 %BlockDialogParameters = get_param('A0_FuelCell_240109model_FMU/FuelCellStack','DialogParameters')
-
 
 NamesDialPars13 =fieldnames(BlckDialPars13)
 
@@ -99,9 +108,10 @@ for idx=1:1:length(BlockPaths)
     BlockDialogParameters = get_param(BlockPaths{idx},'DialogParameters')
     BlockTypes = get_param(BlockPaths{idx},'BlockType')
 end
+</code></pre>
 
-%% obtener lista de los parametros -- cuadro de dialogo
-BlckDialPars13 =get_param(BlockPaths{13},'DialogParameters');
+<h3 id="obtener-lista-de-los-parametros--cuadro-de-dialogo-1">obtener lista de los parametros – cuadro de dialogo</h3>
+<pre><code class="language-cmd">BlckDialPars13 =get_param(BlockPaths{13},'DialogParameters');
 %BlockDialogParameters = get_param('A0_FuelCell_240109model_FMU/FuelCellStack','DialogParameters')
 
 
@@ -183,9 +193,10 @@ get_param(activeConfigObj,'InitFcn')
 get_param(activeConfigObj,'SimulationTime')
 get_param(activeConfigObj,'InitialState')
 %}
+</code></pre>
 
-% new configuration
-%{
+<h3 id="new-configuration">new configuration</h3>
+<pre><code class="language-cmd">%{
 newConfigObj = copy(activeConfigObj);
 set_param(newConfigObj,'Name','ConfigCopy');
 attachConfigSet(model, newConfigObj);
@@ -291,8 +302,8 @@ outputX1.Values.Data
 %}
 </code></pre>
 
-<p>formas de salvar de forma automatica a traves del “Configuration parameters”
-Simscape -&gt; Workspace variable Name</p>
+<h3 id="formas-de-salvar-de-forma-automatica-a-traves-del-configuration-parameters">formas de salvar de forma automatica a traves del “Configuration parameters”</h3>
+<p>Simscape -&gt; Workspace variable Name</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"simlog_eeFCiv_char"
 </code></pre></div></div>
 :ET
